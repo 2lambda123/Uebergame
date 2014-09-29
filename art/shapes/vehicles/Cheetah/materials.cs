@@ -20,38 +20,46 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// Load up all scripts.  This function is called when
-// a server is constructed.
-exec("./camera.cs");
-exec("./triggers.cs");
-exec("./inventory.cs");
-exec("./shapeBase.cs");
-exec("./item.cs");
-exec("./projectile.cs");
-exec("./radiusDamage.cs");
-exec("./teleporter.cs");
+singleton Material(Cheetah_Main)
+{
+   mapTo = "Cheetah_Main";
+   diffuseMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_D";
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = "10";
+   translucentBlendOp = "None";
+   normalMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_N";
+   specularMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_S";
+};
 
-// Load our supporting weapon script, it contains methods used by all weapons.
-exec("./weapon.cs");
+singleton Material(Cheetah_TailLights)
+{
+   mapTo = "Cheetah_TailLights";
+   diffuseColor[0] = "0.588235 0 0 1";
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = "10";
+   translucentBlendOp = "None";
+   glow[0] = "1";
+   emissive[0] = "1";
+};
 
-// Load our weapon scripts
-// We only need weapon scripts for those weapons that work differently from the
-// class methods defined in weapon.cs
-exec("./proximityMine.cs");
+singleton Material(Cheetah_MuzzleFlash)
+{
+   mapTo = "Cheetah_MuzzleFlash";
+   diffuseMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_MuzzleFlash_D";
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = "10";
+   translucentBlendOp = "AddAlpha";
+   glow[0] = "1";
+   emissive[0] = "1";
+   castShadows = "0";
+   translucent = "1";
+};
 
-// Load our default player script
-exec("./player.cs");
-
-// Load our player scripts
-exec("./aiPlayer.cs");
-
-exec("./vehicle.cs");
-exec("./vehicleWheeled.cs");
-exec("./cheetah.cs");
-
-// Load turret support scripts
-exec("./turret.cs");
-
-// Load our gametypes
-exec("./gameCore.cs"); // This is the 'core' of the gametype functionality.
-exec("./gameDM.cs"); // Overrides GameCore with DeathMatch functionality.
+singleton Material(Cheetah_Collider)
+{
+   mapTo = "Collider";
+   diffuseColor[0] = "1 0 0 0.75";
+   specular[0] = "0.9 0.9 0.9 1";
+   specularPower[0] = "10";
+   translucent = "1";
+};

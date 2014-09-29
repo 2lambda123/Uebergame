@@ -202,17 +202,17 @@ datablock DebrisData(BulletShell)
 //-----------------------------------------------------------------------------
 // Projectile Object
 //-----------------------------------------------------------------------------
-datablock LightDescription( BulletProjectileLightDesc )
+datablock LightDescription( LurkerProjectileLightDesc )
 {
    color  = "0.0 0.5 0.7";
    range = 3.0;
 };
 
-datablock ProjectileData( BulletProjectile )
+datablock ProjectileData( LurkerProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 5;
+   directDamage        = 25;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -233,13 +233,13 @@ datablock ProjectileData( BulletProjectile )
    gravityMod          = 1;
 };
 
-function BulletProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
+function LurkerProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
 {
    // Apply impact force from the projectile.
    
    // Apply damage to the object all shape base objects
    if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,%this.directDamage,"BulletProjectile");
+      %col.damage(%obj,%pos,%this.directDamage,"LurkerProjectile");
 }
 
 
@@ -316,6 +316,7 @@ datablock ItemData(Lurker)
    description = "Lurker";
    image = LurkerWeaponImage;
    reticle = "crossHair";
+   ZoomReticle = "crossHair";
 };
 
 
@@ -352,7 +353,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    ammo = LurkerAmmo;
    clip = LurkerClip;
    
-   projectile = BulletProjectile;
+   projectile = LurkerProjectile;
    projectileType = Projectile;
    projectileSpread = "0.005";
 
@@ -598,6 +599,7 @@ datablock ItemData(LurkerGrenadeLauncher)
    description = "Lurker Grenade Launcher";
    image = LurkerGrenadeLauncherImage;
    reticle = "crossHair";
+   ZoomReticle = "crossHair";
 };
 
 datablock ShapeBaseImageData(LurkerGrenadeLauncherImage)

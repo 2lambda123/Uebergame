@@ -62,24 +62,3 @@ datablock ItemData(HealthKitSmall)
    pickupName = "a small health kit";
    repairAmount = 50;
 };
-
-// This is the "health patch" dropped by a dying player.
-datablock ItemData(HealthKitPatch)
-{
-   // Mission editor category, this datablock will show up in the
-   // specified category under the "shapes" root category.
-   category = "Health";
-
-   className = "HealthPatch";
-
-   // Basic Item properties
-   shapeFile = "art/shapes/items/patch/healthpatch.dts";
-   mass = 2;
-   friction = 1;
-   elasticity = 0.3;
-   emap = true;
-
-   // Dynamic properties defined by the scripts
-   pickupName = "a health patch";
-   repairAmount = 50;
-};

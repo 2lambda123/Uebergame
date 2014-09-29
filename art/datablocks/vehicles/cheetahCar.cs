@@ -148,7 +148,7 @@ datablock ParticleEmitterData(TurretFireSmokeEmitter)
 datablock ShapeBaseImageData(TurretImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/Cheetah/Cheetah_Turret.DAE";
+   shapeFile = "art/shapes/vehicles/Cheetah/Cheetah_Turret.DAE";
    emap = true;
 
    // Specify mount point & offset for 3rd person, and eye offset
@@ -275,7 +275,7 @@ datablock WheeledVehicleTire(CheetahCarTire)
    // forces to move the vehicle. These distortion/spring forces
    // are what convert wheel angular velocity into forces that
    // act on the rigid body.
-   shapeFile = "art/shapes/Cheetah/wheel.DAE";
+   shapeFile = "art/shapes/vehicles/Cheetah/wheel.DAE";
    staticFriction = 4.2;
    kineticFriction = "1";
 
@@ -297,7 +297,7 @@ datablock WheeledVehicleTire(CheetahCarTireRear)
    // forces to move the vehicle. These distortion/spring forces
    // are what convert wheel angular velocity into forces that
    // act on the rigid body.
-   shapeFile = "art/shapes/Cheetah/wheelBack.DAE";
+   shapeFile = "art/shapes/vehicles/Cheetah/wheelBack.DAE";
    staticFriction = "7.2";
    kineticFriction = "1";
 
@@ -325,7 +325,7 @@ datablock WheeledVehicleSpring(CheetahCarSpring)
 datablock WheeledVehicleData(CheetahCar)
 {
    category = "Vehicles";
-   shapeFile = "art/shapes/Cheetah/Cheetah_Body.DAE";
+   shapeFile = "art/shapes/vehicles/Cheetah/Cheetah_Body.DAE";
    emap = 1;
 
    mountPose[0] = sitting;

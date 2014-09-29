@@ -507,7 +507,7 @@ datablock PlayerData(DefaultPlayerData)
    throwForce = 30;
 
    minLookAngle = "-1.4";
-   maxLookAngle = "0.9";
+   maxLookAngle = "1.4";
    maxFreelookAngle = 3.0;
 
    mass = 120;
@@ -515,50 +515,50 @@ datablock PlayerData(DefaultPlayerData)
    maxdrag = 0.4;
    density = 1.1;
    maxDamage = 100;
-   maxEnergy =  60;
-   repairRate = 0.33;
+   maxEnergy =  "100";
+   repairRate = "0.016";
    energyPerDamagePoint = 75;
 
    rechargeRate = 0.256;
 
    runForce = 4320;
-   runEnergyDrain = 0;
-   minRunEnergy = 0;
-   maxForwardSpeed = 8;
-   maxBackwardSpeed = 6;
-   maxSideSpeed = 6;
+   runEnergyDrain = "0.128";
+   minRunEnergy = "10";
+   maxForwardSpeed = "4";
+   maxBackwardSpeed = "3";
+   maxSideSpeed = "3";
 
    sprintForce = 4320;
-   sprintEnergyDrain = 0;
-   minSprintEnergy = 0;
-   maxSprintForwardSpeed = 14;
-   maxSprintBackwardSpeed = 8;
-   maxSprintSideSpeed = 6;
+   sprintEnergyDrain = "0.512";
+   minSprintEnergy = "10";
+   maxSprintForwardSpeed = "8";
+   maxSprintBackwardSpeed = "4";
+   maxSprintSideSpeed = "6";
    sprintStrafeScale = 0.25;
    sprintYawScale = 0.05;
    sprintPitchScale = 0.05;
    sprintCanJump = true;
 
    crouchForce = 405;
-   maxCrouchForwardSpeed = 4.0;
-   maxCrouchBackwardSpeed = 2.0;
-   maxCrouchSideSpeed = 2.0;
+   maxCrouchForwardSpeed = "2";
+   maxCrouchBackwardSpeed = "1";
+   maxCrouchSideSpeed = "1.5";
 
-   maxUnderwaterForwardSpeed = 8.4;
-   maxUnderwaterBackwardSpeed = 7.8;
-   maxUnderwaterSideSpeed = 4.0;
+   maxUnderwaterForwardSpeed = "1.5";
+   maxUnderwaterBackwardSpeed = "1";
+   maxUnderwaterSideSpeed = "1";
 
    jumpForce = "747";
-   jumpEnergyDrain = 0;
-   minJumpEnergy = 0;
-   jumpDelay = "15";
-   airControl = 0.3;
+   jumpEnergyDrain = "15";
+   minJumpEnergy = "15";
+   jumpDelay = "10";
+   airControl = "0.3";
 
    fallingSpeedThreshold = -6.0;
 
-   landSequenceTime = 0.33;
+   landSequenceTime = "0";
    transitionToLand = false;
-   recoverDelay = 0;
+   recoverDelay = "0";
    recoverRunForceScale = 0;
 
    minImpactSpeed = 10;
@@ -672,4 +672,12 @@ datablock PlayerData(DefaultPlayerData)
 
    // available skins (see materials.cs in model folder)
    availableSkins =  "base	DarkBlue	DarkGreen	LightGreen	Orange	Red	Teal	Violet	Yellow";
+   maxInvDeployableTurret = "0";
+   maxInvRyder = "1";
+   maxInvLurkerGrenadeLauncher = "0";
+   maxInvRyderClip = "10";
+   maxInvLurker = "1";
+   maxInvProxMine = "0";
+   maxInvLurkerGrenadeAmmo = "0";
+   maxInvLurkerClip = "20";
 };

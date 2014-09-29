@@ -12,6 +12,7 @@ shaders/procedural/
 *.png
 *.dds
 *.jpg
+*.bmp
 
 #sound
 *.wav

@@ -60,7 +60,45 @@ datablock SFXProfile(RyderSwitchinSound)
 //-----------------------------------------------------------------------------
 // Projectile Object
 //-----------------------------------------------------------------------------
+datablock LightDescription( RyderProjectileLightDesc )
+{
+   color  = "0.0 0.5 0.7";
+   range = 3.0;
+};
 
+datablock ProjectileData( RyderProjectile )
+{
+   projectileShapeName = "";
+
+   directDamage        = 30;
+   radiusDamage        = 0;
+   damageRadius        = 0.5;
+   areaImpulse         = 0.5;
+   impactForce         = 1;
+
+   explosion           = BulletDirtExplosion;
+   decal               = BulletHoleDecal;
+
+   muzzleVelocity      = 120;
+   velInheritFactor    = 1;
+
+   armingDelay         = 0;
+   lifetime            = 992;
+   fadeDelay           = 1472;
+   bounceElasticity    = 0;
+   bounceFriction      = 0;
+   isBallistic         = false;
+   gravityMod          = 1;
+};
+
+function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
+{
+   // Apply impact force from the projectile.
+   
+   // Apply damage to the object all shape base objects
+   if ( %col.getType() & $TypeMasks::GameBaseObjectType )
+      %col.damage(%obj,%pos,%this.directDamage,"RyderProjectile");
+}
 
 //-----------------------------------------------------------------------------
 // Ammo Item
@@ -135,6 +173,7 @@ datablock ItemData(Ryder)
    description = "Ryder";
    image = RyderWeaponImage;
    reticle = "crossHair";
+   ZoomReticle = "crossHair";
 };
 
 
@@ -171,7 +210,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    ammo = RyderAmmo;
    clip = RyderClip;
 
-   projectile = BulletProjectile;
+   projectile = RyderProjectile;
    projectileType = Projectile;
    projectileSpread = "0.0";
 

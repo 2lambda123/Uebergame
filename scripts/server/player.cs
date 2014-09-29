@@ -23,6 +23,74 @@
 // Timeouts for corpse deletion.
 $CorpseTimeoutValue = 45 * 1000;
 
+//----------------------------------------------------------------------------
+// Drowning script
+//----------------------------------------------------------------------------
+// How often to check the player's underwater status.
+$Drowning::TickTime = 1 * 1000;   
+
+// The length of the hold breath timer in number of ticks.  Used in combination
+// with $Drowning::TickTime to calculate how long a player can hold his breath
+// before taking damage.
+$Drowning::HoldBreathTicks = 20; 
+
+// Damage done per $Drowning::TickTime if the player is underwater and the
+// hold breath timer has expired.
+$Drowning::DamagePerTick = 10;
+
+function checkUnderwater(%obj)
+{
+   if (%obj.getState() $= "Dead")
+   {
+      // If we get here and the player is dead we should hide the breath meter
+      // and make sure that the next underWater check is cancelled. 
+      cancel(%obj.drowning);
+   }
+   else
+   {
+      // We'll use a "drowning" damageType so the game will know to distinguish
+      // between a drowning and other types of death.
+      %damageType = "Drowning";
+
+      // If a ray cast straight up from the eye point of the player intersects
+      // the surface of a waterblock then the player is obviously underwater.
+      %start = %obj.getEyePoint();
+      %end = VectorAdd(%start, "0 0 100"); // change if water is deeper than 100
+      %searchMasks = $TypeMasks::WaterObjectType;
+      if (ContainerRayCast(%start, %end, %searchMasks))
+      {   
+         // If the player is underwater increment a "holding breath" counter.
+         %obj.holdingbreath++;
+
+         // A GuiProgressCtrl expects values 0-1.  We're just calculating a 
+         // percentage in order to generate the appropriate range of values
+         // that will be used to adjust the lenght of the bar shown.  The
+         // bar shrinks over time until we're out of air.
+         %remainingTime = ($Drowning::HoldBreathTicks - %obj.holdingBreath) / $Drowning::HoldBreathTicks;
+         if(%remainingTime < 0)
+            %remainingTime = 0;
+         
+         // If the holdingbreath counter is greater than $Drowning::HoldBreathTicks
+         // then damage the player - he's choking on water!
+         if (%obj.holdingbreath > $Drowning::HoldBreathTicks)
+            %obj.damage(0, %obj.getPosition(), $Drowning::DamagePerTick, %damageType);
+      }
+      else
+      {
+         // The player appears to have surfaced and is breathing normally.
+         // Reset the holdingbreath counter and hide the breathmeter.
+         %obj.holdingbreath = 0;
+      }
+
+      // We're still in the water and not dead yet, so do it again.
+      %obj.drowning = schedule($Drowning::TickTime, 0, "checkUnderwater", %obj);
+   }
+}
+
+function sendMsgClientKilled_Drowning(%msgType, %client, %sourceClient, %damLoc)
+{
+   messageAll(%msgType, '%1 is not Aquaman!', %client.playerName);// Customized kill message for drowning
+}
 
 //----------------------------------------------------------------------------
 // Player Datablock methods
@@ -35,7 +103,8 @@ function PlayerData::onAdd(%this, %obj)
 
    // Default dynamic armor stats
    %obj.setRechargeRate(%this.rechargeRate);
-   %obj.setRepairRate(0);
+   %obj.setRepairRate(%this.repairRate);
+   
 }
 
 function PlayerData::onRemove(%this, %obj)
@@ -200,6 +269,19 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
       return;
 
+   %location = %obj.getDamageLocation(%position);//"Body";
+   %bodyPart = getWord(%location, 0);
+   %region = getWord(%location, 1);
+   //echo(%obj @" \c4% DAMAGELOCATION:  bodyPart = "@ %bodyPart @" || REGION = "@ %region);
+   switch$ (%bodyPart)
+   {
+      case "head":
+         %damage = %damage*3; // triple damage for headshots
+      case "torso":
+      case "legs":
+         %damage = %damage/1.6; // about two third damage for legs
+   }
+   
    %obj.applyDamage(%damage);
 
    %location = "Body";
@@ -212,7 +294,7 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    if (isObject(%client))
    {
       // Determine damage direction
-      if (%damageType !$= "Suicide")
+      if (%damageType !$= "Suicide"&& %damageType !$= "Drowning")//prevent Damage Direction indicator while drowning
          %obj.setDamageDirection(%sourceObject, %position);
 
       if (%obj.getState() $= "Dead")
@@ -230,7 +312,7 @@ function PlayerData::onDamage(%this, %obj, %delta)
       %obj.setDamageFlash(1);
 
       // If the pain is excessive, let's hear about it.
-      if (%delta > 10)
+      if (%delta > 33)
          %obj.playPain();
    }
 }
@@ -259,13 +341,12 @@ function PlayerData::onDisabled(%this, %obj, %state)
          %obj.throw(%item.image.clip, 1);
    }
 
-   // Toss out a health patch
-   %obj.tossPatch();
-
    %obj.playDeathCry();
    %obj.playDeathAnimation();
    //%obj.setDamageFlash(0.75);
 
+   %obj.setRepairRate(0);
+   
    // Disable any vehicle map
    commandToClient(%obj.client, 'toggleVehicleMap', false);
 
@@ -303,11 +384,13 @@ function PlayerData::onEnterMissionArea(%this, %obj)
 function PlayerData::onEnterLiquid(%this, %obj, %coverage, %type)
 {
    //echo("\c4this:"@ %this @" object:"@ %obj @" just entered water of type:"@ %type @" for "@ %coverage @"coverage");
+   %obj.drowning = schedule($Drowning::TickTime, 0, "checkUnderwater", %obj);
 }
 
 function PlayerData::onLeaveLiquid(%this, %obj, %type)
 {
    //
+   cancel(%obj.drowning); 
 }
 
 //-----------------------------------------------------------------------------
