@@ -23,7 +23,7 @@ shaders/procedural/
 
 ##misc
 #fonts
-*.uft 
+*.uft
 
 #editor settings
 settings.xml

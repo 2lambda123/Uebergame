@@ -25,8 +25,8 @@
 // is not loaded on a client, then the master must be defined. 
 // $pref::Master[0] = "2:master.garagegames.com:28002";
 
-$pref::Player::Name = "Visitor";
-$pref::Player::defaultFov = 65;
+$pref::Player::Name = "Player";
+$pref::Player::defaultFov = 90;
 $pref::Player::zoomSpeed = 0;
 
 $pref::Net::LagThreshold = 400;
@@ -47,7 +47,7 @@ $sceneLighting::purgeMethod = "lastCreated";
 $sceneLighting::cacheLighting = 1;
 
 $pref::Video::displayDevice = "D3D9";
-$pref::Video::disableVerticalSync = 1;
+$pref::Video::disableVerticalSync = 0;
 $pref::Video::mode = "1024 768 false 32 60 4";
 $pref::Video::defaultFenceCount = 0;
 $pref::Video::screenShotSession = 0;

@@ -11,6 +11,23 @@ singleton Material(concrete_cracks_01)
    normalMap[0] = "art/textures/concrete/concrete_cracks_01_N2.dds";
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+};
+
+singleton Material(concrete_dirty_01)
+{
+   mapTo = "concrete_dirty_01";
+   materialTag0 = "concrete";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   subSurfaceColor[0] = "1 0.2 0.2 1";
+   diffuseMap[0] = "art/textures/concrete/concrete_dirty_01_D.dds";
+   specularMap[0] = "art/textures/concrete/concrete_dirty_01_S.dds";
+   normalMap[0] = "art/textures/concrete/concrete_dirty_01_N.dds";
+   specularStrength[0] = "0.5";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
 };
 
 singleton Material(concrete_mossy_01)
@@ -25,6 +42,7 @@ singleton Material(concrete_mossy_01)
    normalMap[0] = "art/textures/concrete/concrete_mossy_01_N2.dds";
    specularMap[0] = "art/textures/concrete/concrete_mossy_01_S.dds";
    useAnisotropic[0] = "1";
+   vertColor[0] = "1";
 };
 
 singleton Material(concrete_panels_01)
@@ -84,6 +102,21 @@ singleton Material(concrete_plaster_01)
    diffuseMap[0] = "art/textures/concrete/concrete_plaster_01_D.dds";
    normalMap[0] = "art/textures/concrete/concrete_plaster_01_N.dds";
    specularMap[0] = "art/textures/concrete/concrete_plaster_01_S.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+};
+
+singleton Material(concrete_rough_01)
+{
+   mapTo = "concrete_rough_01";
+   materialTag0 = "concrete";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   subSurfaceColor[0] = "1 0.2 0.2 1";
+   diffuseMap[0] = "art/textures/concrete/concrete_rough_01_D.dds";
+   normalMap[0] = "art/textures/concrete/concrete_rough_01_N.dds";
+   specularMap[0] = "art/textures/concrete/concrete_rough_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
 };

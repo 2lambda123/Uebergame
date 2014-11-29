@@ -549,7 +549,7 @@ function GameCore::onClientEnterGame(%game, %client)
 
    // Inform the client we've joined up
    messageClient(%client,
-      'MsgClientJoin', '\c2Welcome to the Torque demo app %1.',
+      'MsgClientJoin', '',
       %client.playerName,
       %client,
       %client.sendGuid,
@@ -882,8 +882,8 @@ function GameCore::spawnPlayer(%game, %client, %spawnPoint, %noControl)
    }
 
    // Player setup...
-   if (%player.isMethod("setShapeName"))
-      %player.setShapeName(%client.playerName);
+   //if (%player.isMethod("setShapeName"))
+   //   %player.setShapeName(%client.playerName); //no shape names anymore
 
    if (%player.isMethod("setEnergyLevel"))
       %player.setEnergyLevel(%player.getDataBlock().maxEnergy);

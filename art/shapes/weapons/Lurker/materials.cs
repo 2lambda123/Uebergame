@@ -23,24 +23,26 @@
 singleton Material(Lurker_ScopeScreen_Base)
 {
    mapTo = "Lurker_ScopeScreen_Base";
-   diffuseMap[0] = "Lurker_D.dds";
+   diffuseMap[0] = "art/shapes/weapons/Lurker/Lurker_D.dds";
    specular[0] = "1 1 1 1";
    specularPower[0] = "10";
    translucentBlendOp = "None";
-   glow[0] = "1";
-   emissive[0] = "1";
+   glow[0] = "0";
+   emissive[0] = "0";
+   materialTag0 = "weapon";
 };
 
 singleton Material(Lurker_Base)
 {
    mapTo = "Lurker_Base";
-   diffuseMap[0] = "Lurker_D.dds";
-   normalMap[0] = "Lurker_N.dds";
-   specularMap[0] = "Lurker_S.dds";
+   diffuseMap[0] = "art/shapes/weapons/Lurker/Lurker_D.dds";
+   specularMap[0] = "art/shapes/weapons/Lurker/Lurker_D.dds";
    specular[0] = "1 1 1 1";
    specularPower[0] = "10";
    translucentBlendOp = "None";
    useAnisotropic[0] = "1";
+   normalMap[0] = "art/shapes/weapons/Lurker/Lurker_N.dds";
+   materialTag0 = "weapon";
 };
 
 singleton Material(Lurker_MuzzleFlash_Base)
@@ -62,4 +64,5 @@ singleton Material(Lurker_MuzzleFlash_Base)
    waveFreq[0] = "5.313";
    waveAmp[0] = "0.016";
    castShadows = "0";
+   materialTag0 = "weapon";
 };

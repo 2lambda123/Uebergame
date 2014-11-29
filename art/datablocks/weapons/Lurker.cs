@@ -187,7 +187,7 @@ datablock ExplosionData(BulletDirtExplosion)
 datablock DebrisData(BulletShell)
 {
    shapeFile = "art/shapes/weapons/shared/RifleShell.DAE";
-   lifetime = 6.0;
+   lifetime = 30.0;
    minSpinSpeed = 300.0;
    maxSpinSpeed = 400.0;
    elasticity = 0.65;
@@ -212,7 +212,7 @@ datablock ProjectileData( LurkerProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 25;
+   directDamage        = 20;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -225,12 +225,12 @@ datablock ProjectileData( LurkerProjectile )
    velInheritFactor    = 1;
 
    armingDelay         = 0;
-   lifetime            = 992;
+   lifetime            = 1984;
    fadeDelay           = 1472;
    bounceElasticity    = 0;
    bounceFriction      = 0;
-   isBallistic         = false;
-   gravityMod          = 1;
+   isBallistic         = true;
+   gravityMod          = 0.5;
 };
 
 function LurkerProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
@@ -253,18 +253,20 @@ datablock ItemData(LurkerClip)
 
    // Add the Ammo namespace as a parent.  The ammo namespace provides
    // common ammo related functions and hooks into the inventory system.
-   className = "AmmoClip";
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
    mass = 1;
-   elasticity = 0.2;
-   friction = 0.6;
+   elasticity = "0.199413";
+   friction = "0.599218";
 
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker clip";
    count = 1;
-   maxInventory = 10;
+   maxInventory = 30;
+   cameraMaxDist = "0.756797";
+   class = "AmmoClip";
+   repairRate = "0.0066";
 };
 
 datablock ItemData(LurkerAmmo)
@@ -274,18 +276,19 @@ datablock ItemData(LurkerAmmo)
 
    // Add the Ammo namespace as a parent.  The ammo namespace provides
    // common ammo related functions and hooks into the inventory system.
-   className = "Ammo";
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
    mass = 1;
-   elasticity = 0.2;
-   friction = 0.6;
+   elasticity = "0.199413";
+   friction = "0.599218";
 
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker ammo";
    maxInventory = 30;
    clip = LurkerClip;
+   cameraMaxDist = "0.756797";
+   class = "ammo";
 };
 
 //--------------------------------------------------------------------------
@@ -374,9 +377,9 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = false;
-   camShakeFreq = "0 0 0";
-   camShakeAmp = "0 0 0";
+   shakeCamera = true;
+   camShakeFreq = "0.5 0.5 0.5";
+   camShakeAmp = "0.01 0.01 0.02";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This
@@ -573,7 +576,7 @@ datablock ItemData(LurkerGrenadeAmmo)
 
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker grenade ammo";
-   maxInventory = 20;
+   maxInventory = 4;
 };
 
 datablock ItemData(LurkerGrenadeLauncher)

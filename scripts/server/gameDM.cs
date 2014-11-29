@@ -69,10 +69,10 @@ function DeathMatchGame::initGameVars(%game)
    $Game::defaultCameraSpawnGroups = "CameraSpawnPoints PlayerSpawnPoints PlayerDropPoints";
 
    // Set the gameplay parameters
-   %game.duration = 30 * 60;
+   %game.duration = 20 * 60;
    %game.endgameScore = 20;
    %game.endgamePause = 10;
-   %game.allowCycling = false;   // Is mission cycling allowed?
+   %game.allowCycling = true;   // Is mission cycling allowed?
 }
 
 function DeathMatchGame::startGame(%game)

@@ -68,16 +68,25 @@ singleton GuiControlProfile (ChatHudTextProfile)
 singleton GuiControlProfile ("ChatHudMessageProfile")
 {
    fontType = "Arial";
-   fontSize = 16;
-   fontColor = "44 172 181";      // default color (death msgs, scoring, inventory)
+   fontSize = "16";
+   fontColor = "230 127 25 255";      // default color (death msgs, scoring, inventory)
    fontColors[1] = "4 235 105";   // client join/drop, tournament mode
    fontColors[2] = "219 200 128"; // gameplay, admin/voting, pack/deployable
    fontColors[3] = "77 253 95";   // team chat, spam protection message, client tasks
-   fontColors[4] = "40 231 240";  // global chat
+   fontColors[4] = "253 254 254 255";  // global chat
    fontColors[5] = "200 200 50 200";  // used in single player game
    // WARNING! Colors 6-9 are reserved for name coloring
    autoSizeWidth = true;
    autoSizeHeight = true;
+   fontColors[0] = "230 127 25 255";
+   fontColorHL = "4 235 105 255";
+   fontColorNA = "219 200 128 255";
+   fontColorSEL = "77 253 95 255";
+   fontColorLink = "253 254 254 255";
+   fontColorLinkHL = "200 200 50 200";
+   bevelColorHL = "255 0 255 255";
+   fontColors[6] = "255 0 255 255";
+   fontColors[7] = "255 0 255 255";
 };
 
 singleton GuiControlProfile ("ChatHudScrollProfile")
@@ -147,18 +156,25 @@ singleton GuiControlProfile (HudTextNormalProfile)
 {
    opaque = false;
    fontType = "Arial";
-   fontSize = 14;
-   fontColor = "255 255 255";
+   fontSize = "16";
+   fontColor = "210 210 210 255";
+   fontColors[0] = "210 210 210 255";
 };
 
 singleton GuiControlProfile (HudTextItalicProfile : HudTextNormalProfile)
 {
    fontType = "ArialItalic";
+   fontSize = "26";
+   fontColors[0] = "200 200 200 255";
+   fontColor = "200 200 200 255";
 };
 
 singleton GuiControlProfile (HudTextBoldProfile : HudTextNormalProfile)
 {
    fontType = "ArialBold";
+   fontSize = "16";
+   fontColors[0] = "210 210 210 255";
+   fontColor = "210 210 210 255";
 };
 
 // -----------------------------------------------------------------------------

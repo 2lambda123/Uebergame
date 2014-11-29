@@ -1,6 +1,6 @@
 singleton Material(plaster_dirty_01)
 {
-   mapTo = "plaster_dirt_01";
+   mapTo = "plaster_dirty_01";
    materialTag0 = "plaster";
    specularPower[0] = "1";
    pixelSpecular[0] = "0";
@@ -13,30 +13,15 @@ singleton Material(plaster_dirty_01)
    vertColor[0] = "1";
 };
 
-singleton Material(plaster_plain_01_grey)
+singleton Material(plaster_plain_01)
 {
-   mapTo = "plaster_plain_01_grey";
+   mapTo = "plaster_plain_01";
    materialTag0 = "plaster";
    specularPower[0] = "1";
    pixelSpecular[0] = "0";
    minnaertConstant[0] = "-1";
    subSurfaceColor[0] = "1 0.2 0.2 1";
-   diffuseMap[0] = "art/textures/plaster/plaster_plain_01_D_grey.dds";
-   specularMap[0] = "art/textures/plaster/plaster_plain_01_S.dds";
-   normalMap[0] = "art/textures/plaster/plaster_plain_01_N.dds";
-   useAnisotropic[0] = "1";
-   vertColor[0] = "1";
-};
-
-singleton Material(plaster_plain_01_blue)
-{
-   mapTo = "plaster_plain_01_blue";
-   materialTag0 = "plaster";
-   specularPower[0] = "1";
-   pixelSpecular[0] = "0";
-   minnaertConstant[0] = "-1";
-   subSurfaceColor[0] = "1 0.2 0.2 1";
-   diffuseMap[0] = "art/textures/plaster/plaster_plain_01_D_blue.dds";
+   diffuseMap[0] = "art/textures/plaster/plaster_plain_01_D.dds";
    specularMap[0] = "art/textures/plaster/plaster_plain_01_S.dds";
    normalMap[0] = "art/textures/plaster/plaster_plain_01_N.dds";
    useAnisotropic[0] = "1";
@@ -45,7 +30,7 @@ singleton Material(plaster_plain_01_blue)
 
 singleton Material(plaster_sprinkled_01)
 {
-   mapTo = "plaster_spri_01";
+   mapTo = "plaster_sprinkled_01";
    materialTag0 = "plaster";
    specularPower[0] = "1";
    pixelSpecular[0] = "0";
@@ -60,7 +45,7 @@ singleton Material(plaster_sprinkled_01)
 
 singleton Material(plaster_stucco_01)
 {
-   mapTo = "plaster_stuc_01";
+   mapTo = "plaster_stucco_01";
    materialTag0 = "plaster";
    specularPower[0] = "1";
    pixelSpecular[0] = "0";
@@ -69,6 +54,21 @@ singleton Material(plaster_stucco_01)
    diffuseMap[0] = "art/textures/plaster/plaster_stucco_01_D.dds";
    specularMap[0] = "art/textures/plaster/plaster_stucco_01_S.dds";
    normalMap[0] = "art/textures/plaster/plaster_stucco_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+};
+
+singleton Material(plaster_decay_01)
+{
+   mapTo = "plaster_decay_01";
+   materialTag0 = "plaster";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   subSurfaceColor[0] = "1 0.2 0.2 1";
+   diffuseMap[0] = "art/textures/plaster/plaster_decay_01_D.dds";
+   specularMap[0] = "art/textures/plaster/plaster_decay_01_S.dds";
+   normalMap[0] = "art/textures/plaster/plaster_decay_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
 };

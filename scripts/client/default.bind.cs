@@ -45,15 +45,15 @@ function showPlayerList(%val)
       PlayerListGui.toggle();
 }
 
-moveMap.bind( keyboard, F2, showPlayerList );
+moveMap.bind( keyboard, tab, showPlayerList );
 
-function hideHUDs(%val)
-{
-   if (%val)
-      HudlessPlayGui.toggle();
-}
+//function hideHUDs(%val)
+//{
+//  if (%val)
+//      HudlessPlayGui.toggle();
+//}
 
-moveMap.bind(keyboard, "ctrl h", hideHUDs);
+//moveMap.bind(keyboard, "ctrl h", hideHUDs);
 
 function doScreenShotHudless(%val)
 {
@@ -67,7 +67,7 @@ function doScreenShotHudless(%val)
       canvas.setContent(PlayGui);
 }
 
-moveMap.bind(keyboard, "alt p", doScreenShotHudless);
+moveMap.bind(keyboard, "f6", doScreenShotHudless);
 
 //------------------------------------------------------------------------------
 // Movement Keys
@@ -398,11 +398,11 @@ function turnOffZoom()
    ppOptionsUpdateDOFSettings();
 }
 
-function setZoomFOV(%val)
-{
-   if(%val)
-      toggleZoomFOV();
-}
+//function setZoomFOV(%val)
+//{
+//   if(%val)
+//      toggleZoomFOV();
+//}
 
 function toggleZoom(%val)
 {
@@ -428,8 +428,8 @@ function mouseButtonZoom(%val)
    toggleZoom(%val);
 }
 
-moveMap.bind(keyboard, f, setZoomFOV); // f for field of view
-moveMap.bind(keyboard, z, toggleZoom); // z for zoom
+//moveMap.bind(keyboard, f, setZoomFOV); // f for field of view
+//moveMap.bind(keyboard, z, toggleZoom); // z for zoom
 moveMap.bind( mouse, button1, mouseButtonZoom );
 
 //------------------------------------------------------------------------------
@@ -458,12 +458,12 @@ function toggleCamera(%val)
       commandToServer('ToggleCamera');
 }
 
-moveMap.bind( keyboard, v, toggleFreeLook ); // v for vanity
-moveMap.bind(keyboard, tab, toggleFirstPerson );
-moveMap.bind(keyboard, "alt c", toggleCamera);
+//moveMap.bind( keyboard, v, toggleFreeLook ); // v for vanity
+//moveMap.bind(keyboard, F2, toggleFirstPerson );
+//moveMap.bind(keyboard, "alt c", toggleCamera);
 
-moveMap.bind( gamepad, btn_start, toggleCamera );
-moveMap.bind( gamepad, btn_x, toggleFirstPerson );
+//moveMap.bind( gamepad, btn_start, toggleCamera );
+//moveMap.bind( gamepad, btn_x, toggleFirstPerson );
 
 // ----------------------------------------------------------------------------
 // Misc. Player stuff
@@ -558,8 +558,8 @@ function resizeMessageHud( %val )
       cycleMessageHudSize();
 }
 
-moveMap.bind(keyboard, u, toggleMessageHud );
-//moveMap.bind(keyboard, y, teamMessageHud );
+moveMap.bind(keyboard, t, toggleMessageHud );
+moveMap.bind(keyboard, y, teamMessageHud );
 moveMap.bind(keyboard, "pageUp", pageMessageHudUp );
 moveMap.bind(keyboard, "pageDown", pageMessageHudDown );
 moveMap.bind(keyboard, "p", resizeMessageHud );
@@ -588,20 +588,20 @@ moveMap.bind( keyboard, F4, stopRecordingDemo );
 // Helper Functions
 //------------------------------------------------------------------------------
 
-function dropCameraAtPlayer(%val)
-{
-   if (%val)
-      commandToServer('dropCameraAtPlayer');
-}
+//function dropCameraAtPlayer(%val)
+//{
+//   if (%val)
+//      commandToServer('dropCameraAtPlayer');
+//}
 
-function dropPlayerAtCamera(%val)
-{
-   if (%val)
-      commandToServer('DropPlayerAtCamera');
-}
+//function dropPlayerAtCamera(%val)
+//{
+//   if (%val)
+//      commandToServer('DropPlayerAtCamera');
+//}
 
-moveMap.bind(keyboard, "F8", dropCameraAtPlayer);
-moveMap.bind(keyboard, "F7", dropPlayerAtCamera);
+//moveMap.bind(keyboard, "F8", dropCameraAtPlayer);
+//moveMap.bind(keyboard, "F7", dropPlayerAtCamera);
 
 function bringUpOptions(%val)
 {
@@ -609,7 +609,7 @@ function bringUpOptions(%val)
       Canvas.pushDialog(OptionsDlg);
 }
 
-GlobalActionMap.bind(keyboard, "ctrl o", bringUpOptions);
+GlobalActionMap.bind(keyboard, "f8", bringUpOptions);
 
 
 //------------------------------------------------------------------------------
@@ -647,7 +647,7 @@ GlobalActionMap.bind(keyboard, "ctrl F3", doProfile);
 // Misc.
 //------------------------------------------------------------------------------
 
-GlobalActionMap.bind(keyboard, "tilde", toggleConsole);
+GlobalActionMap.bind(keyboard, "F12", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 GlobalActionMap.bindCmd(keyboard, "F1", "", "contextHelp();");

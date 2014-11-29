@@ -530,13 +530,13 @@ datablock PlayerData(DefaultPlayerData)
 
    sprintForce = 4320;
    sprintEnergyDrain = "0.512";
-   minSprintEnergy = "10";
+   minSprintEnergy = "0";
    maxSprintForwardSpeed = "8";
    maxSprintBackwardSpeed = "4";
    maxSprintSideSpeed = "6";
    sprintStrafeScale = 0.25;
-   sprintYawScale = 0.05;
-   sprintPitchScale = 0.05;
+   sprintYawScale = "0.1";
+   sprintPitchScale = "0.1";
    sprintCanJump = true;
 
    crouchForce = 405;
@@ -671,13 +671,14 @@ datablock PlayerData(DefaultPlayerData)
    maxInv[DeployableTurret] = 5;
 
    // available skins (see materials.cs in model folder)
-   availableSkins =  "base	DarkBlue	DarkGreen	LightGreen	Orange	Red	Teal	Violet	Yellow";
+   availableSkins =  "base	olive	urban	desert	swamp	water";
    maxInvDeployableTurret = "0";
    maxInvRyder = "1";
    maxInvLurkerGrenadeLauncher = "0";
-   maxInvRyderClip = "10";
+   maxInvRyderClip = "8";
    maxInvLurker = "1";
    maxInvProxMine = "0";
    maxInvLurkerGrenadeAmmo = "0";
-   maxInvLurkerClip = "20";
+   maxInvLurkerClip = "4";
+   swimForce = "4320";
 };

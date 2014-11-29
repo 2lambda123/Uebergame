@@ -23,26 +23,28 @@
 singleton Material(FP_Ryder_Base)
 {
    mapTo = "FP_Ryder_Base";
-   diffuseMap[0] = "./FP_Ryder_D.dds";
-   normalMap[0] = "./FP_Ryder_N.dds";
-   specularMap[0] = "./FP_Ryder_S.dds";
+   diffuseMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_D.dds";
+   specularMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_D.dds";
    specular[0] = "0.9 0.9 0.9 1";
    specularPower[0] = "10";
    translucentBlendOp = "None";
    pixelSpecular[0] = "1";
    useAnisotropic[0] = "1";
+   normalMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_N.dds";
+   materialTag0 = "weapon";
 };
 
 singleton Material(TP_Ryder_Base)
 {
    mapTo = "TP_Ryder_Base";
-   diffuseMap[0] = "./TP_Ryder_D.dds";
-   normalMap[0] = "./TP_Ryder_N.dds";
-   specularMap[0] = "./TP_Ryder_D.dds";
+   diffuseMap[0] = "./FP_Ryder_D.dds";
+   normalMap[0] = "./FP_Ryder_N.dds";
+   specularMap[0] = "./FP_Ryder_D.dds";
    specular[0] = "1.0 1.0 1.0 1";
    specularPower[0] = "10";
    translucentBlendOp = "None";
    pixelSpecular[0] = "1";
+   materialTag0 = "weapon";
 };
 
 singleton Material(Ryder_MuzzleFlash_Base)
@@ -64,5 +66,6 @@ singleton Material(Ryder_MuzzleFlash_Base)
    waveFreq[0] = "5.313";
    waveAmp[0] = "0.016";
    castShadows = "0";
+   materialTag0 = "weapon";
 };
 

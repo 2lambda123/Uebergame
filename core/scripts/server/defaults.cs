@@ -23,11 +23,11 @@
 // List of master servers to query, each one is tried in order
 // until one responds
 $Pref::Server::RegionMask = 2;
-$pref::Master[0] = "2:master.garagegames.com:28002";
+$pref::Master[0] = "2:88.198.65.149:28002";
 
 // Information about the server
-$Pref::Server::Name = "Torque 3D Server";
-$Pref::Server::Info = "This is a Torque 3D server.";
+$Pref::Server::Name = "Uebergame server";
+$Pref::Server::Info = "This is an Uebergame server.";
 
 // The connection error message is transmitted to the client immediatly
 // on connection, if any further error occures during the connection
@@ -36,9 +36,9 @@ $Pref::Server::Info = "This is a Torque 3D server.";
 // usefull to the client, such as the url or ftp address of where the
 // latest version of the game can be obtained.
 $Pref::Server::ConnectionError =
-   "You do not have the correct version of the FPS starter kit or "@
-   "the related art needed to play on this server, please contact "@
-   "the server operator for more information.";
+   "You likely do not have the correct version of the game installed or "@
+   "you are missing some of the related art and levels. "@
+   "Please contact the server administrator and try to solve the issue.";
 
 // The network port is also defined by the client, this value 
 // overrides pref::net::port for dedicated servers
@@ -52,7 +52,7 @@ $Pref::Server::Password = "";
 $Pref::Server::AdminPassword = "";
 
 // Misc server settings.
-$Pref::Server::MaxPlayers = 64;
+$Pref::Server::MaxPlayers = 16;
 $Pref::Server::TimeLimit = 20;               // In minutes
 $Pref::Server::KickBanTime = 300;            // specified in seconds
 $Pref::Server::BanTime = 1800;               // specified in seconds

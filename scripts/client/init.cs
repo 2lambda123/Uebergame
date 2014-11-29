@@ -82,7 +82,6 @@ function initClient()
    exec("art/gui/mainMenuGui.gui");
    exec("art/gui/joinServerDlg.gui");
    exec("art/gui/endGameGui.gui");
-   exec("art/gui/StartupGui.gui");
    exec("art/gui/chooseLevelDlg.gui");
    exec("art/gui/loadingGui.gui");
    exec("art/gui/optionsDlg.gui");
@@ -93,7 +92,6 @@ function initClient()
    exec("./chatHud.cs");
    exec("./messageHud.cs");
    exec("scripts/gui/playGui.cs");
-   exec("scripts/gui/startupGui.cs");
    exec("scripts/gui/chooseLevelDlg.cs");
    exec("scripts/gui/loadingGui.cs");
    exec("scripts/gui/optionsDlg.cs");
@@ -146,7 +144,7 @@ function initClient()
    else {
       // Otherwise go to the splash screen.
       Canvas.setCursor("DefaultCursor");
-      loadStartup();
+      loadMainMenu();
    }   
 }
 

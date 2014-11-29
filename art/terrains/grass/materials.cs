@@ -37,7 +37,7 @@ new TerrainMaterial()
    internalName = "grass_dry_sparse_01";
    diffuseSize = "250";
    detailDistance = "100";
-   macroSize = "100";
+   macroSize = "32";
    macroStrength = "0.8";
    parallaxScale = "0.07";
    detailSize = "5";

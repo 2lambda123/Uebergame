@@ -84,7 +84,7 @@ function toggleGuiEditor( %make )
    }
 }
 
-GlobalActionMap.bind( keyboard, "f10", toggleGuiEditor );
+//GlobalActionMap.bind( keyboard, "f10", toggleGuiEditor ); //disable gui editor hotkey
 
 //=============================================================================================
 //    Methods.

@@ -70,7 +70,7 @@ datablock ProjectileData( RyderProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 30;
+   directDamage        = 25;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -83,12 +83,12 @@ datablock ProjectileData( RyderProjectile )
    velInheritFactor    = 1;
 
    armingDelay         = 0;
-   lifetime            = 992;
+   lifetime            = 1488;
    fadeDelay           = 1472;
    bounceElasticity    = 0;
    bounceFriction      = 0;
-   isBallistic         = false;
-   gravityMod          = 1;
+   isBallistic         = true;
+   gravityMod          = 0.5;
 };
 
 function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
@@ -212,7 +212,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
 
    projectile = RyderProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.0";
+   projectileSpread = "0.002";
 
    altProjectile = GrenadeLauncherProjectile;
    altProjectileSpread = "0.02";
@@ -231,9 +231,9 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = false;
-   camShakeFreq = "0 0 0";
-   camShakeAmp = "0 0 0";
+   shakeCamera = true;
+   camShakeFreq = "0.5 0.5 0.5";
+   camShakeAmp = "0.01 0.01 0.02";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This

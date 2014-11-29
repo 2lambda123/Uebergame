@@ -20,7 +20,7 @@ new SimGroup(MissionGroup) {
       soundDistanceModel = "Linear";
       canSave = "1";
       canSaveDynamicFields = "1";
-         desc0 = "loading program";
+         desc0 = "loading program, use this when creating new levels";
          enabled = "1";
          levelName = "Construct";
    };

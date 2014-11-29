@@ -34,7 +34,7 @@ datablock DecalData(ScorchRXDecal)
 {
    Material = "DECAL_RocketEXP";
    size = "5.0";
-   lifeSpan = "20000";
+   lifeSpan = "100000";
    randomize = "1";
    texRows = "2";
    texCols = "2";
@@ -46,8 +46,8 @@ datablock DecalData(ScorchRXDecal)
 datablock DecalData(bulletHoleDecal)
 {
    Material = "DECAL_bulletHole";
-   size = "0.25";
-   lifeSpan = "5000";
+   size = "0.35";
+   lifeSpan = "100000";
    randomize = "1";
    texRows = "2";
    texCols = "2";

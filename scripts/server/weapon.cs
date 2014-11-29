@@ -45,14 +45,14 @@ function Weapon::onUse(%data, %obj)
       serverPlay3D(WeaponUseSound, %obj.getTransform());
 
       %obj.mountImage(%data.image, $WeaponSlot);
-      if (%obj.client)
-      {
-         if (%data.description !$= "")
-            messageClient(%obj.client, 'MsgWeaponUsed', '\c0%1 selected.', %data.description);
-         else
-            messageClient(%obj.client, 'MsgWeaponUsed', '\c0Weapon selected');
-      }
-      
+      // if (%obj.client)
+      // {
+      //    if (%data.description !$= "")
+      //       messageClient(%obj.client, 'MsgWeaponUsed', '\c0%1 selected.', %data.description);
+      //    else
+      //       messageClient(%obj.client, 'MsgWeaponUsed', '\c0Weapon selected');
+      // }
+      // commented out to stop consolespam on weapon change
       // If this is a Player class object then allow the weapon to modify allowed poses
       if (%obj.isInNamespaceHierarchy("Player"))
       {
