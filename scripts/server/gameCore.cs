@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
+// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -663,7 +664,7 @@ function sendMsgClientKilled_Default( %msgType, %client, %sourceClient, %damLoc 
    else if ( %sourceClient.team !$= "" && %sourceClient.team $= %client.team )
       messageAll( %msgType, '%1 killed by %2 - friendly fire!', %client.playerName, %sourceClient.playerName );
    else
-      messageAll( %msgType, '%1 gets nailed by %2!', %client.playerName, %sourceClient.playerName );
+      messageAll( %msgType, '%1 got killed by %2!', %client.playerName, %sourceClient.playerName );
 }
 
 function GameCore::onDeath(%game, %client, %sourceObject, %sourceClient, %damageType, %damLoc)

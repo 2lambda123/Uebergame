@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
+// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -655,20 +656,20 @@ datablock PlayerData(DefaultPlayerData)
    DecalData = "PlayerFootprint";
 
    // Allowable Inventory Items
-   mainWeapon = Ryder;
+   mainWeapon = Lurker;
 
    maxInv[Lurker] = 1;
    maxInv[LurkerClip] = 20;
 
    maxInv[LurkerGrenadeLauncher] = 1;
-   maxInv[LurkerGrenadeAmmo] = 20;
+   maxInv[LurkerGrenadeAmmo] = 8;
 
    maxInv[Ryder] = 1;
-   maxInv[RyderClip] = 10;
+   maxInv[RyderClip] = 8;
 
-   maxInv[ProxMine] = 5;
+   maxInv[ProxMine] = 4;
 
-   maxInv[DeployableTurret] = 5;
+   maxInv[DeployableTurret] = 1;
 
    // available skins (see materials.cs in model folder)
    availableSkins =  "base	olive	urban	desert	swamp	water";

@@ -25,9 +25,8 @@ singleton Material(grenade_grenade)
 {
 	mapTo = "grenade";
 
-	diffuseMap[0] = "Grenade2_Diff";
-	normalMap[0] = "Grenade2_Norm";
-	specularMap[0] = "Grenade2_Spec";
+	diffuseMap[0] = "art/shapes/weapons/Grenade/Grenade2_D.dds";
+	specularMap[0] = "art/shapes/weapons/Grenade/Grenade2_S.dds";
 
 	diffuseColor[0] = "1 1 1 0";
 	specular[0] = "1 1 1 1";

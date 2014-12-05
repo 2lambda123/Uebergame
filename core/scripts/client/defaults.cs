@@ -243,7 +243,7 @@ new SimGroup( MeshQualityGroup )
       caseSensitive = true;
       
       key["$pref::TS::detailAdjust"] = 0.5;
-      key["$pref::TS::skipRenderDLs"] = 1;      
+      key["$pref::TS::skipRenderDLs"] = 0;      
       key["$pref::Terrain::lodScale"] = 2.0;
       key["$pref::decalMgr::enabled"] = false;
       key["$pref::GroundCover::densityScale"] = 0.5;

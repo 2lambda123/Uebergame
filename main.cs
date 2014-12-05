@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
+// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -45,7 +46,7 @@ function createCanvas(%windowTitle)
    
    // Set the window title
    if (isObject(Canvas))
-      Canvas.setWindowTitle(getEngineName() @ " - " @ $appName);
+      Canvas.setWindowTitle($appName);
    
    return true;
 }

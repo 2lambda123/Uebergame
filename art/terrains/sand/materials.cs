@@ -15,45 +15,45 @@ new TerrainMaterial()
 new TerrainMaterial()
 {
    diffuseMap = "art/terrains/sand/sand_flat_dirty_01_B";
-   diffuseSize = "200";
+   diffuseSize = "250";
    detailMap = "art/terrains/sand/sand_flat_dirty_01_D";
    detailDistance = "100";
-   macroSize = "25";
+   macroSize = "75";
    internalName = "sand_flat_dirty_01";
    macroStrength = "0.5";
    detailSize = "4";
    macroMap = "art/terrains/sand/sand_flat_dirty_01_D";
    normalMap = "art/terrains/sand/sand_flat_dirty_01_N";
-   parallaxScale = "0.12";
+   parallaxScale = "0.1";
 };
 
 new TerrainMaterial()
 {
    diffuseMap = "art/terrains/sand/sand_flat_dirty_02_B";
-   diffuseSize = "200";
+   diffuseSize = "250";
    detailMap = "art/terrains/sand/sand_flat_dirty_02_D";
    detailDistance = "100";
    macroMap = "art/terrains/sand/sand_flat_dirty_02_D";
-   macroSize = "25";
+   macroSize = "75";
    internalName = "sand_flat_dirty_02";
    detailSize = "4";
    macroStrength = "0.5";
    normalMap = "art/terrains/sand/sand_flat_dirty_02_N";
-   parallaxScale = "0.15";
+   parallaxScale = "0.1";
 };
 
 new TerrainMaterial()
 {
    diffuseMap = "art/terrains/sand/sand_flat_dirty_03_B";
-   diffuseSize = "200";
+   diffuseSize = "250";
    detailMap = "art/terrains/sand/sand_flat_dirty_03_D";
    detailDistance = "100";
-   macroSize = "50";
+   macroSize = "75";
    internalName = "sand_flat_dirty_03";
    macroMap = "art/terrains/sand/sand_flat_dirty_03_D";
-   macroStrength = "0.7";
+   macroStrength = "0.5";
    normalMap = "art/terrains/sand/sand_flat_dirty_03_N";
-   parallaxScale = "0.15";
+   parallaxScale = "0.1";
 };
 
 new TerrainMaterial()

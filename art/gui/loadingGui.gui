@@ -35,10 +35,10 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl(LoadingLogo) {
-         bitmap = "art/gui/uebergame-title-v0.01.png";
+         bitmap = "art/gui/uebergame-logo.png";
          wrap = "0";
-         position = "38 23";
-         extent = "430 96";
+         position = "-7 -4";
+         extent = "512 174";
          minExtent = "8 2";
          horizSizing = "center";
          vertSizing = "bottom";
@@ -59,8 +59,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "4 126";
-         extent = "487 36";
+         position = "6 124";
+         extent = "488 32";
          minExtent = "8 2";
          horizSizing = "center";
          vertSizing = "bottom";

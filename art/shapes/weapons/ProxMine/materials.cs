@@ -36,11 +36,11 @@ singleton Material(ProxMine_Base)
 singleton Material(ProxMine_Glow_Base)
 {
    mapTo = "ProxMine_Glow_Base";
-   diffuseMap[0] = "ProxMine_Glow.dds";
+   diffuseMap[0] = "art/shapes/weapons/ProxMine/ProxMine_Glow.dds";
    specular[0] = "0.9 0.9 0.9 1";
    specularPower[0] = "10";
    translucent = "1";
-   glow[0] = "1";
-   emissive[0] = "1";
+   glow[0] = "0";
+   emissive[0] = "0";
    translucentBlendOp = "Add";
 };

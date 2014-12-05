@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
+// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -26,7 +27,7 @@
 
 datablock SFXProfile(RyderFireSound)
 {
-   filename = "art/sound/weapons/wpn_ryder_fire";
+   filename = "art/sound/weapons/pistol_heavy_default";
    description = AudioClose3D;
    preload = true;
 };
@@ -70,7 +71,7 @@ datablock ProjectileData( RyderProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 25;
+   directDamage        = 30;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -231,9 +232,9 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = true;
-   camShakeFreq = "0.5 0.5 0.5";
-   camShakeAmp = "0.01 0.01 0.02";
+   shakeCamera = false;
+   camShakeFreq = "0 0 0";
+   camShakeAmp = "0 0 0";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This
@@ -254,7 +255,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
-   stateTimeoutValue[1]             = 1.5;
+   stateTimeoutValue[1]             = 1.0;
    stateSequence[1]                 = "switch_in";
    stateSound[1]                    = RyderSwitchinSound;
 

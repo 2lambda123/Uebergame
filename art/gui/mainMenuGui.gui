@@ -20,10 +20,10 @@
       isDecoy = "0";
 
    new GuiBitmapCtrl(MainMenuAppLogo) {
-      bitmap = "art/gui/uebergame-title-v0.01.png";
+      bitmap = "art/gui/uebergame-logo.png";
       wrap = "0";
-      position = "-13 1";
-      extent = "430 96";
+      position = "0 -8";
+      extent = "432 124";
       minExtent = "8 2";
       horizSizing = "windowRelative";
       vertSizing = "windowRelative";
@@ -43,7 +43,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "38 96";
+      position = "38 112";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -64,7 +64,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "1";
-      position = "230 96";
+      position = "230 112";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -84,7 +84,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "422 96";
+      position = "422 112";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -104,7 +104,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "611 96";
+      position = "611 112";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -125,7 +125,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "803 96";
+      position = "803 112";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -138,6 +138,29 @@
       hovertime = "1000";
       isContainer = "0";
       internalName = "ExitButton";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiTextCtrl(Version_Number) {
+      text = "Version: 0.01";
+      maxLength = "1024";
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "828 6";
+      extent = "196 33";
+      minExtent = "8 2";
+      horizSizing = "left";
+      vertSizing = "bottom";
+      profile = "GuiBigTextProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
       canSave = "1";
       canSaveDynamicFields = "0";
    };

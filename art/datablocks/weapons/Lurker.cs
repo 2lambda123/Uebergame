@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
+// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -25,7 +26,7 @@
 //--------------------------------------------------------------------------
 datablock SFXProfile(LurkerFireSound)
 {
-   filename = "art/sound/weapons/wpn_lurker_fire";
+   filename = "art/sound/weapons/machine_gun_heavy_default";
    description = AudioClose3D;
    preload = true;
 };
@@ -253,20 +254,18 @@ datablock ItemData(LurkerClip)
 
    // Add the Ammo namespace as a parent.  The ammo namespace provides
    // common ammo related functions and hooks into the inventory system.
+   className = "AmmoClip";
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
    mass = 1;
-   elasticity = "0.199413";
-   friction = "0.599218";
+   elasticity = 0.2;
+   friction = 0.6;
 
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker clip";
    count = 1;
-   maxInventory = 30;
-   cameraMaxDist = "0.756797";
-   class = "AmmoClip";
-   repairRate = "0.0066";
+   maxInventory = 4;
 };
 
 datablock ItemData(LurkerAmmo)
@@ -276,19 +275,18 @@ datablock ItemData(LurkerAmmo)
 
    // Add the Ammo namespace as a parent.  The ammo namespace provides
    // common ammo related functions and hooks into the inventory system.
+   className = "Ammo";
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
    mass = 1;
-   elasticity = "0.199413";
-   friction = "0.599218";
+   elasticity = 0.2;
+   friction = 0.6;
 
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker ammo";
    maxInventory = 30;
    clip = LurkerClip;
-   cameraMaxDist = "0.756797";
-   class = "ammo";
 };
 
 //--------------------------------------------------------------------------
@@ -377,9 +375,9 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = true;
-   camShakeFreq = "0.5 0.5 0.5";
-   camShakeAmp = "0.01 0.01 0.02";
+   shakeCamera = false;
+   camShakeFreq = "0 0 0";
+   camShakeAmp = "0 0 0";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This
@@ -447,7 +445,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateName[5]                     = "Fire";
    stateTransitionGeneric0In[5]     = "SprintEnter";
    stateTransitionOnTimeout[5]      = "NewRound";
-   stateTimeoutValue[5]             = 0.15;
+   stateTimeoutValue[5]             = 0.11;
    stateFire[5]                     = true;
    stateRecoil[5]                   = "";
    stateAllowImageChange[5]         = false;

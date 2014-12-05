@@ -24,6 +24,8 @@ shaders/procedural/
 ##misc
 #fonts
 *.uft
+#compilergarbage
+*.exp
 
 #editor settings
 settings.xml

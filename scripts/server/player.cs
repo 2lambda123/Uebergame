@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
+// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -89,7 +90,7 @@ function checkUnderwater(%obj)
 
 function sendMsgClientKilled_Drowning(%msgType, %client, %sourceClient, %damLoc)
 {
-   messageAll(%msgType, '%1 is not Aquaman!', %client.playerName);// Customized kill message for drowning
+   messageAll(%msgType, '%1 drowned', %client.playerName);// Customized kill message for drowning
 }
 
 //----------------------------------------------------------------------------
@@ -276,7 +277,7 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    switch$ (%bodyPart)
    {
       case "head":
-         %damage = %damage*3; // triple damage for headshots
+         %damage = %damage*2.5; // 2,5 times the damage for a headshot
       case "torso":
       case "legs":
          %damage = %damage/1.6; // about two third damage for legs
