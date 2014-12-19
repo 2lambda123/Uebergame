@@ -27,7 +27,7 @@
 // anything else will be sent back as an error to the client.
 // All the connect args are passed also to onConnectRequest
 //
-function GameConnection::onConnectRequest( %client, %netAddress, %name )
+function GameConnection::onConnectRequest( %client, %netAddress, %name, %skin )
 {
    echo("Connect request from: " @ %netAddress);
    if($Server::PlayerCount >= $pref::Server::MaxPlayers)
@@ -38,7 +38,7 @@ function GameConnection::onConnectRequest( %client, %netAddress, %name )
 //-----------------------------------------------------------------------------
 // This script function is the first called on a client accept
 //
-function GameConnection::onConnect( %client, %name )
+function GameConnection::onConnect( %client, %name, %skin )
 {
    // Send down the connection error info, the client is
    // responsible for displaying this message if a connection
@@ -71,7 +71,7 @@ function GameConnection::onConnect( %client, %name )
    %client.gender = "Male";
    %client.armor = "Light";
    %client.race = "Human";
-   %client.skin = addTaggedString( "base" );
+   %client.skin = addTaggedString($pref::Player::Skin);
    %client.setPlayerName(%name);
    %client.team = "";
    %client.score = 0;

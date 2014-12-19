@@ -1,7 +1,7 @@
 $PostFXManager::Settings::ColorCorrectionRamp = "core/scripts/client/postFx/null_color_ramp.png";
 $PostFXManager::Settings::DOF::BlurCurveFar = "7.71028";
 $PostFXManager::Settings::DOF::BlurCurveNear = "16.0465";
-$PostFXManager::Settings::DOF::BlurMax = "0.471963";
+$PostFXManager::Settings::DOF::BlurMax = "0.219626";
 $PostFXManager::Settings::DOF::BlurMin = "0.102804";
 $PostFXManager::Settings::DOF::EnableAutoFocus = "1";
 $PostFXManager::Settings::DOF::EnableDOF = "";

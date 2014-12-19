@@ -1,7 +1,7 @@
 new TerrainMaterial()
 {
-   diffuseMap = "art/terrains/asphalt/asphalt_street_01_B";
-   detailMap = "art/terrains/asphalt/asphalt_street_01_D";
+   diffuseMap = "art/terrains/asphalt/asphalt_street_plain_01_B";
+   detailMap = "art/terrains/asphalt/asphalt_street_plain_01_D";
    detailDistance = "100";
    internalName = "asphalt_street_01";
    macroSize = "100";
@@ -9,25 +9,25 @@ new TerrainMaterial()
    detailStrength = "1.5";
    detailSize = "3";
    diffuseSize = "500";
-   macroMap = "art/terrains/asphalt/asphalt_street_01_M";
-   normalMap = "art/terrains/asphalt/asphalt_street_01_N";
+   macroMap = "art/terrains/asphalt/asphalt_street_plain_01_M";
+   normalMap = "art/terrains/asphalt/asphalt_street_plain_01_N";
    parallaxScale = "0";
 };
 
 new TerrainMaterial()
 {
-   diffuseMap = "art/terrains/asphalt/asphalt_street_02_B";
+   diffuseMap = "art/terrains/asphalt/asphalt_street_plain_02_B";
    diffuseSize = "500";
-   detailMap = "art/terrains/asphalt/asphalt_street_02_D";
+   detailMap = "art/terrains/asphalt/asphalt_street_plain_02_D";
    detailStrength = "1";
    detailDistance = "100";
-   macroMap = "art/terrains/asphalt/asphalt_street_02_M";
+   macroMap = "art/terrains/asphalt/asphalt_street_plain_02_M";
    macroSize = "90";
    internalName = "asphalt_street_02";
    macroStrength = "0.4";
    detailSize = "4";
    parallaxScale = "0";
-   normalMap = "art/terrains/asphalt/asphalt_street_02_N";
+   normalMap = "art/terrains/asphalt/asphalt_street_plain_02_N";
 };
 
 new TerrainMaterial()

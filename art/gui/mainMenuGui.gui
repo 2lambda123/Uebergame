@@ -23,7 +23,7 @@
       bitmap = "art/gui/uebergame-logo.png";
       wrap = "0";
       position = "0 -8";
-      extent = "432 124";
+      extent = "432 128";
       minExtent = "8 2";
       horizSizing = "windowRelative";
       vertSizing = "windowRelative";
@@ -43,7 +43,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "38 112";
+      position = "49 118";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -51,7 +51,7 @@
       profile = "GuiMenuButtonProfile";
       visible = "1";
       active = "1";
-      command = "Canvas.pushDialog(joinServerDlg);";
+      command = "Canvas.pushDialog(joinServerDlg);JoinServerDlg.query();";
       tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "0";
@@ -64,7 +64,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "1";
-      position = "230 112";
+      position = "241 118";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -84,7 +84,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "422 112";
+      position = "433 118";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -104,7 +104,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "611 112";
+      position = "625 118";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";
@@ -125,7 +125,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "803 112";
+      position = "817 118";
       extent = "179 64";
       minExtent = "8 8";
       horizSizing = "relative";

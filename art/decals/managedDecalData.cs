@@ -27,7 +27,7 @@ datablock DecalData(ScorchBigDecal)
 {
    Material = "DECAL_scorch";
    size = "5.0";
-   lifeSpan = "50000";
+   lifeSpan = "10000";
 };
 
 datablock DecalData(ScorchRXDecal)
@@ -55,3 +55,16 @@ datablock DecalData(bulletHoleDecal)
    screenEndRadius = "5";
    clippingAngle = "180";
 };
+
+datablock DecalData(BloodDecalData)  
+{  
+   Material = "DECAL_blood_splatter_01";  
+   size = "0.5";
+   lifeSpan = "100000";
+   randomize = "1";
+   texRows = "2";
+   texCols = "2";
+   clippingAngle = "45";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+}; 

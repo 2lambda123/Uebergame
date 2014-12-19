@@ -241,3 +241,59 @@ datablock ParticleEmitterNodeData(TorchFireEmitterNode)
 {
    timeMultiple = 1;
 };
+
+datablock ParticleData(bloodBulletDirtSpray)
+{
+   dragCoefficient = "0.5";
+   gravityCoefficient = "0.5";
+   constantAcceleration = "-1";
+   lifetimeMS = "300";
+   lifetimeVarianceMS = "300";
+   spinRandomMin = "-120";
+   spinRandomMax = "120";
+   useInvAlpha = "1";
+   textureName = "art/particles/blood_particle_01";
+   animTexName = "art/particles/blood_particle_01";
+   colors[0] = "0.582677 0 0.00787402 1";
+   colors[1] = "0.992126 0 0.00787402 1";
+   colors[2] = "0.322835 0 0.00787402 0.291339";
+   sizes[0] = "0.1";
+   sizes[1] = "0.5";
+   times[1] = "0.5";
+   times[2] = "1";
+   inheritedVelFactor = "0.2";
+};
+
+    datablock ParticleEmitterData(bloodBulletDirtSprayEmitter)  
+    {   
+       dragCoefficient      = "0.646";  
+       gravityCoefficient   = "4";  
+       lifetimeMS           = "6";  
+       lifetimeVarianceMS   = "5";  
+       spinRandomMin = -140;  
+       spinRandomMax =  140;  
+       useInvAlpha   = 1;  
+         
+       colors[0]     = "0.582677 0 0.00787402 1";  
+       colors[1]     = "0.992126 0 0.00787402 1";  
+       colors[2]     = "0.322835 0 0.00787402 0.291339";  
+      
+       sizes[0]      = "0.299091";  
+       sizes[1]      = "0.796557";  
+       sizes[2]      = "1.19636";  
+      
+       times[0]      = 0.0;  
+       times[1]      = "0.494118";  
+       times[2]      = 1.0;  
+       constantAcceleration = "-3";
+       ejectionPeriodMS = "15";
+       periodVarianceMS = "10";
+       ejectionVelocity = "1";
+       velocityVariance = "1";
+       thetaMax = "180";
+       orientParticles = "1";
+       particles = "bloodBulletDirtSpray";
+       blendStyle = "NORMAL";
+       softParticles = "0";
+         
+    };  

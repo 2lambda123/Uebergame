@@ -213,7 +213,7 @@ datablock ProjectileData( LurkerProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 20;
+   directDamage        = 1;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -222,7 +222,7 @@ datablock ProjectileData( LurkerProjectile )
    explosion           = BulletDirtExplosion;
    decal               = BulletHoleDecal;
 
-   muzzleVelocity      = 120;
+   muzzleVelocity      = 200;
    velInheritFactor    = 1;
 
    armingDelay         = 0;
@@ -546,7 +546,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.5;
+   stateTimeoutValue[13]            = 0.3;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;

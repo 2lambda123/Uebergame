@@ -46,9 +46,9 @@ singleton Material(Mat_Soldier_Dazzle)
 
    diffuseMap[0] = "art/shapes/actors/Soldier/Soldier_Dazzle.dds";
 
-   diffuseColor[0] = "1 1 1 1";
+   diffuseColor[0] = "0.196078 0.196078 0.196078 1";
    specular[0] = "0.9 0.9 0.9 1";
-   specularPower[0] = 10;
+   specularPower[0] = "1";
 
    doubleSided = false;
    translucent = "1";

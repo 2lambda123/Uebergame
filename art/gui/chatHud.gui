@@ -97,7 +97,7 @@ new GuiControl(MessageHud)
 
       new GuiBitmapBorderCtrl(OuterChatHud) {
          position = "0 0";
-         extent = "260 88";
+         extent = "400 88";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -114,7 +114,7 @@ new GuiControl(MessageHud)
             bitmap = "art/gui/hudfill.png";
             wrap = "0";
             position = "1 -4";
-            extent = "256 84";
+            extent = "396 84";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -132,7 +132,7 @@ new GuiControl(MessageHud)
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "208 64";
+            position = "348 64";
             extent = "36 14";
             minExtent = "8 8";
             horizSizing = "left";
@@ -163,7 +163,7 @@ new GuiControl(MessageHud)
             anchorLeft = "1";
             anchorRight = "0";
             position = "8 8";
-            extent = "244 64";
+            extent = "384 64";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -184,7 +184,7 @@ new GuiControl(MessageHud)
                matchColor = "0 0 255 255";
                maxColorIndex = "5";
                position = "0 0";
-               extent = "244 16";
+               extent = "384 16";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";

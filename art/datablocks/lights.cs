@@ -606,3 +606,42 @@ datablock LightFlareData( LightFlareExample2 )
    elementRotate[7] = true;
    elementUseLightColor[7] = true;
 };
+
+datablock LightFlareData( LightFlareExample3 )
+{
+   overallScale = 2.0;
+   flareEnabled = true;
+   renderReflectPass = true;
+   flareTexture = "art/lights/lensFlareSheet1";
+   
+   elementRect[0] = "0 0 0 0";
+   elementDist[0] = "0";
+   elementScale[0] = "0";
+   elementTint[0] = "1.0 1.0 1.0";
+   elementRotate[0] = false;
+   elementUseLightColor[0] = false;
+   
+   elementRect[1] = "512 0 512 512";
+   elementDist[1] = 0.0;
+   elementScale[1] = "1";
+   elementTint[1] = "0.501961 0.501961 0.501961 1";
+   elementRotate[1] = false;
+   elementUseLightColor[1] = false;
+   occlusionRadius = "0.25";
+   elementTint[8] = "InvisibleBlack";
+};
+
+datablock LightFlareData( LightFlareBasic01 )
+{
+   overallScale = 2.0;
+   flareEnabled = true;
+   renderReflectPass = true;
+   flareTexture = "art/lights/lensflare_basic_01.png";
+   
+   elementRect[0] = "0 0 512 512";
+   elementDist[0] = "0";
+   elementScale[0] = "0.5";
+   elementTint[0] = "0.847059 0.831373 0.745098 1";
+   elementRotate[0] = false;
+   elementUseLightColor[0] = "1";
+   };

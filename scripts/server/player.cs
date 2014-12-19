@@ -269,6 +269,23 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
 {
    if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
       return;
+	  
+  //do decals 
+   %Decalposition = VectorAdd(getRandom(-1, 1) SPC getRandom(-1, 1) SPC "0", %obj.getPosition());   
+   %normal = "1.0 1.0 1.0";  
+   %decalObj = decalManagerAddDecal(%Decalposition, %normal, getRandom(360), getRandom(0, 2), bloodDecalData, false);  
+   //do decals  
+   %particles = new ParticleEmitterNode()   
+   {  
+      position = %position;  
+      rotation = "1 0 0 0";  
+      scale = "1 1 1";  
+      dataBlock = "SmokeEmitterNode";  
+      emitter = "bloodBulletDirtSprayEmitter";  
+      velocity = "1";  
+   };  
+   MissionCleanup.add(%particles);  
+   %particles.schedule(1000, "delete");	  
 
    %location = %obj.getDamageLocation(%position);//"Body";
    %bodyPart = getWord(%location, 0);

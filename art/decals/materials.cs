@@ -62,3 +62,23 @@ singleton Material(DECAL_defaultblobshadow)
    //alphaRef = 64;
    //emissive[0] = "1";
 };
+
+singleton Material(DECAL_blood_splatter_01)
+{
+
+   vertColor[0] = true;
+   translucent = true;
+   translucentBlendOp = LerpAlpha;
+   translucentZWrite = true;
+   mapTo = "DECAL_blood_splatter_01";
+   diffuseMap[0] = "art/decals/blood_splatter_01.png";
+   alphaTest = "1";
+   alphaRef = "113";
+   materialTag0 = "Decal";
+   specular[0] = "0.494118 0.054902 0.117647 1";
+   pixelSpecular[0] = "1";
+   specularPower[0] = "32";
+   specular[1] = "1 1 1 1";
+   diffuseColor[0] = "White";
+};
+

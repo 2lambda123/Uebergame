@@ -37,13 +37,13 @@ singleton Material(FP_Ryder_Base)
 singleton Material(TP_Ryder_Base)
 {
    mapTo = "TP_Ryder_Base";
-   diffuseMap[0] = "./FP_Ryder_D.dds";
-   normalMap[0] = "./FP_Ryder_N.dds";
-   specularMap[0] = "./FP_Ryder_D.dds";
+   diffuseMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_D.dds";
+   normalMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_N.dds";
+   specularMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_D.dds";
    specular[0] = "1.0 1.0 1.0 1";
    specularPower[0] = "10";
    translucentBlendOp = "None";
-   pixelSpecular[0] = "1";
+   pixelSpecular[0] = "0";
    materialTag0 = "weapon";
 };
 

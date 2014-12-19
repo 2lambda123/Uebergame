@@ -117,8 +117,11 @@ function OptionsDlg::setPane(%this, %pane)
 {
    %this-->OptAudioPane.setVisible(false);
    %this-->OptGraphicsPane.setVisible(false);
+   %this-->OptAdvGraphicsPane.setVisible(false);
    %this-->OptNetworkPane.setVisible(false);
    %this-->OptControlsPane.setVisible(false);
+   %this-->OptGeneralPane.setVisible(false);
+   %this-->OptServerPane.setVisible(false);
    
    %this.findObjectByInternalName( "Opt" @ %pane @ "Pane", true ).setVisible(true);
    
@@ -142,6 +145,26 @@ function OptionsDlg::onWake(%this)
    }
    %this-->OptGraphicsVSyncToggle.setStateOn( !$pref::Video::disableVerticalSync );
    
+   
+   //%this-->Tgl_1.setStateOn( $pref::Interior::VertexLighting );
+   %this-->Tgl_2.setStateOn( $pref::Water::disableTrueReflections );
+   %this-->Tgl_3.setStateOn( $pref::Video::disablePixSpecular );
+   %this-->Tgl_4.setStateOn( $pref::Video::disableParallaxMapping );
+   %this-->Tgl_5.setStateOn( $pref::Video::disableNormalMapping );
+   %this-->Tgl_6.setStateOn( $pref::Video::disableCubemapping );
+   %this-->Tgl_7.setStateOn( $pref::Decals::enabled );
+   %this-->Tgl_8.setStateOn( $pref::Shadows::disable );
+   %this-->Tgl_9.setStateOn( $pref::enablePostEffects );
+   
+   //%this-->Tgl_10.setStateOn( $pref::LightManager::Enable::AA );
+   %this-->Tgl_11.setStateOn( $pref::LightManager::Enable::HDR );
+   %this-->Tgl_12.setStateOn( $pref::LightManager::Enable::SSAO );
+   %this-->Tgl_13.setStateOn( $pref::LightManager::Enable::LightRay );
+   %this-->Tgl_14.setStateOn( $pref::LightManager::Enable::DOF );
+   
+   //%this-->Tgl_DisplayMaster.setStateOn($pref::Net::DisplayOnMaster);
+
+
    OptionsDlg.initResMenu();
    %resSelId = OptionsDlg-->OptGraphicsResolutionMenu.findText( _makePrettyResString( $pref::Video::mode ) );
    if( %resSelId != -1 )
@@ -165,6 +188,7 @@ function OptionsDlg::onWake(%this)
    %this-->OptTextureQualityPopup.init( TextureQualityGroup );
    %this-->OptLightingQualityPopup.init( LightingQualityGroup );
    %this-->OptShaderQualityPopup.init( ShaderQualityGroup );
+   %this-->OptEffectQualityPopup.init( EffectQualityGroup );
 
    // Setup the anisotropic filtering menu.
    %ansioCtrl = %this-->OptAnisotropicPopup;
@@ -395,9 +419,10 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
    
    // Test and apply the graphics settings.
    if ( %this-->OptMeshQualityPopup.apply( MeshQualityGroup, %testNeedApply ) ) return true;            
-   if ( %this-->OptTextureQualityPopup.apply( TextureQualityGroup, %testNeedApply ) ) return true;            
+   if ( %this-->OptTextureQualityPopup.apply( TextureQualityGroup, %testNeedApply ) ) return true;                       
    if ( %this-->OptLightingQualityPopup.apply( LightingQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptShaderQualityPopup.apply( ShaderQualityGroup, %testNeedApply ) ) return true;   
+   if ( %this-->OptEffectQualityPopup.apply( EffectQualityGroup, %testNeedApply ) ) return true;   
 
    // Check the anisotropic filtering.   
    %level = %this-->OptAnisotropicPopup.getSelected();
@@ -835,10 +860,120 @@ function OptMouseSetSensitivity(%value)
    $pref::Input::LinkMouseSensitivity = %value;  
 }  
 
-/*
-function OptAudioHardwareToggle::onClick(%this)
+
+
+//-----------------------------------------------------------------------------
+function Tgl_9::onAction(%this)
 {
-   if (!sfxCreateDevice($pref::SFX::provider, $pref::SFX::device, $pref::SFX::useHardware, -1))
-      error("Unable to create SFX device: " @ $pref::SFX::provider SPC $pref::SFX::device SPC $pref::SFX::useHardware);
+   if ( %this.getValue() )
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:PostFX Enabled" );
+      }
+      
+      PostFXManager.settingsSetEnabled(true);
+      $pref::LightManager::Enable = "1";
+   }
+   else
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:PostFX Disabled" );
+      }
+      
+      PostFXManager.settingsSetEnabled(false);
+      $pref::LightManager::Enable = "0";
+   }
+}
+/*
+function Tgl_10::onAction(%this)
+{
+   if ( %this.getValue() )
+   {
+      echo( "LightManager:MLAA Enabled" );
+      //PostFXManager.settingsEffectSetEnabled("MLAA", true);
+      MLAAPostFX.enable();
+      $pref::LightManager::Enable::MLAA = "1";
+   }
+   else
+   {
+      echo( "LightManager:MLAA Disabled" );
+      //PostFXManager.settingsEffectSetEnabled("MLAA", false);
+      MLAAPostFX.disable();
+      $pref::LightManager::Enable::MLAA = "0";
+   }
+   //OptionsDlg._updateApplyState();
 }
 */
+function Tgl_11::onAction(%this)
+{
+   if ( %this.getValue() )
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:HDR Enabled" );
+      }
+      
+      HDRPostFX.enable();
+      $pref::LightManager::Enable::HDR = "1";
+   }
+   else
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:HDR Disabled" );
+      }
+      
+      HDRPostFX.disable();
+      $pref::LightManager::Enable::HDR = "0";
+   }
+}
+
+function Tgl_12::onAction(%this)
+{
+   if ( %this.getValue() )
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:SSAO Enabled" );
+      }
+      
+      SSAO2PostFX.enable();
+      $pref::LightManager::Enable::SSAO = "1";
+   }
+   else
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:SSAO Disabled" );
+      }
+      
+      SSAO2PostFX.disable();
+      $pref::LightManager::Enable::SSAO = "0";
+   }
+}
+
+function Tgl_13::onAction(%this)
+{
+   if ( %this.getValue() )
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:LightRays Enabled" );
+      }
+      
+      LightRayPostFX.enable();
+      $pref::LightManager::Enable::LightRays = "1";
+   }
+   else
+   {
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:LightRays Disabled" );
+      }
+      
+      LightRayPostFX.disable();
+      $pref::LightManager::Enable::LightRays = "0";
+   }
+}

@@ -43,6 +43,28 @@ datablock PrecipitationData(HeavyRain)
    useTrueBillboards = false;
    splashMS = 500;
 };
+// ----------------------------------------------------------------------------
+// Sandstorm
+// ----------------------------------------------------------------------------
+
+datablock SFXProfile(SandstormSound)
+{
+   filename = "art/sound/wind/wind_01.ogg";
+   description = AudioLoop2d;
+};
+
+datablock PrecipitationData(Sandstorm)
+{
+   soundProfile = "SandstormSound";
+
+   dropTexture = "art/environment/precipitation/stormcloud_01.png";
+   dropSize = 1;
+   splashSize = 0;
+   useTrueBillboards = 0;
+   splashMS = 0;
+   dropsPerSide = "1";
+   splashesPerSide = "0";
+};
 
 // ----------------------------------------------------------------------------
 // Lightning

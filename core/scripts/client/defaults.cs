@@ -24,13 +24,30 @@
 // loaded on both clients & dedicated servers.  If the server mod
 // is not loaded on a client, then the master must be defined. 
 // $pref::Master[0] = "2:master.garagegames.com:28002";
+$pref::debug::consoleSpam = "1";
+$pref::debug::FPV = "1";
+$pref::debug::showFramerate = "1";
+$pref::enablePostEffects = "1";
+$pref::HostMultiPlayer = "1";
+$pref::Server::EnableAI = "1";
+
+$pref::imposter::canShadow = "1";
+$pref::enableBadWordFilter = "1";
+
+$pref::SFX::distanceModel = "logarithmic";
+$pref::SFX::dopplerFactor = "0.75";
+$pref::SFX::rolloffFactor = "0.25";
 
 $pref::Player::Name = "Player";
-$pref::Player::defaultFov = 90;
-$pref::Player::zoomSpeed = 0;
+$pref::Player::Skin = "base";
+$pref::Player::defaultFov = 75;
+$pref::Player::zoomSpeed = 1;
 
 $pref::Net::LagThreshold = 400;
 $pref::Net::Port = 28000;
+$pref::Net::PacketRateToClient = "32";
+$pref::Net::PacketRateToServer = "32";
+$pref::Net::PacketSize = "450";
 
 $pref::HudMessageLogSize = 40;
 $pref::ChatHudLength = 1;
@@ -88,10 +105,30 @@ if($platform $= "xenon")
 /// to memory and not to disk.
 $shaderGen::cachePath = "shaders/procedural";
 
-/// The perfered light manager to use at startup.  If blank
+/// The prefered light manager to use at startup.  If blank
 /// or if the selected one doesn't work on this platfom it
 /// will try the defaults below.
-$pref::lightManager = "";
+$pref::lightManager = "Advanced Lighting";
+$pref::LightManager::Enable = "1";
+$pref::LightManager::Enable::AA = "1";
+$pref::LightManager::Enable::DOF = "1";
+$pref::LightManager::Enable::HDR = "1";
+$pref::LightManager::Enable::LightRay = "1";
+$pref::LightManager::Enable::LightRays = "1";
+$pref::LightManager::Enable::SSAO = "1";
+$pref::LightManager::sgAtlasMaxDynamicLights = "64";
+$pref::LightManager::sgDynamicShadowDetailSize = "0";
+$pref::LightManager::sgDynamicShadowQuality = "0";
+$pref::LightManager::sgLightingProfileAllowShadows = "1";
+$pref::LightManager::sgLightingProfileQuality = "0";
+$pref::LightManager::sgMaxBestLights = "50";
+$pref::LightManager::sgMultipleDynamicShadows = "0";
+$pref::LightManager::sgShowCacheStats = "0";
+$pref::LightManager::sgUseBloom = "";
+$pref::LightManager::sgUseDRLHighDynamicRange = "0";
+$pref::LightManager::sgUseDynamicRangeLighting = "0";
+$pref::LightManager::sgUseDynamicShadows = "1";
+$pref::LightManager::sgUseToneMapping = "";
 
 /// This is the default list of light managers ordered from
 /// most to least desirable for initialization.
@@ -184,6 +221,9 @@ $pref::Decals::enabled = true;
 ///
 $pref::Decals::lifeTimeScale = "1";
 
+//
+$pref::PhysicsDebris::lifetimeScale = "1";
+
 /// The number of mipmap levels to drop on loaded textures
 /// to reduce video memory usage.  
 ///
@@ -234,6 +274,8 @@ if ( isObject( LightingQualityGroup ) )
    LightingQualityGroup.delete();
 if ( isObject( ShaderQualityGroup ) )
    ShaderQualityGroup.delete();
+if ( isObject( EffectQualityGroup ) )
+   EffectQualityGroup.delete();
  
 new SimGroup( MeshQualityGroup )
 { 
@@ -424,7 +466,7 @@ new SimGroup( ShaderQualityGroup )
       
       key["$pref::Video::disablePixSpecular"] = false;
       key["$pref::Video::disableNormalmapping"] = false;
-      key["$pref::Video::disableParallaxMapping"] = false;   
+      key["$pref::Video::disableParallaxMapping"] = true;   
       key["$pref::Water::disableTrueReflections"] = false;   
    };
    
@@ -441,6 +483,99 @@ new SimGroup( ShaderQualityGroup )
 };
 
 
+
+//mp
+// need to add particle optimizations here...
+new SimGroup( EffectQualityGroup )
+{
+   new ArrayObject( [Lowest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::LightManager::Enable::SSAO"] = false;
+      key["$pref::LightManager::Enable::LightRay"] = false;
+      key["$pref::LightManager::Enable::AA"] = false;
+      key["$pref::LightManager::Enable::HDR"] = false;
+   };
+   
+   new ArrayObject( [Low] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::LightManager::Enable::SSAO"] = false;
+      key["$pref::LightManager::Enable::LightRay"] = false;
+      key["$pref::LightManager::Enable::AA"] = true;
+      key["$pref::LightManager::Enable::HDR"] = false;
+   };
+   
+   new ArrayObject( [Normal] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::LightManager::Enable::SSAO"] = false;
+      key["$pref::LightManager::Enable::LightRay"] = true;
+      key["$pref::LightManager::Enable::AA"] = true;   
+      key["$pref::LightManager::Enable::HDR"] = false;   
+   };
+   
+   new ArrayObject( [High] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::LightManager::Enable::SSAO"] = true;
+      key["$pref::LightManager::Enable::LightRay"] = true;
+      key["$pref::LightManager::Enable::AA"] = true;     
+      key["$pref::LightManager::Enable::HDR"] = false;          
+   };   
+   new ArrayObject( [Highest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::LightManager::Enable::SSAO"] = true;
+      key["$pref::LightManager::Enable::LightRay"] = true;
+      key["$pref::LightManager::Enable::AA"] = true;     
+      key["$pref::LightManager::Enable::HDR"] = true;          
+   };  
+};
+
+function EffectQualityGroup::onApply( %this, %level )
+{
+   // Set the light manager.  This should do nothing 
+   // if its already set or if its not compatible. 
+     
+   /*
+      if($pref::LightManager::Enable::AA)
+         MLAAPostFX.enable();
+      else
+         MLAAPostFX.disable();
+   */
+   
+      if($pref::LightManager::Enable::SSAO)
+         SSAOPostFX.enable();
+      else
+         SSAOPostFX.disable();
+         
+      if($pref::LightManager::Enable::LightRay)
+         LightRayPostFX.enable();
+      else
+         LightRayPostFX.disable();
+         
+      if($pref::LightManager::Enable::HDR)
+         HDRPostFX.enable();
+      else
+         HDRPostFX.disable();
+      
+      if($pref::LightManager::Enable::DOF)
+         DOFPostFX.enable();
+      else
+         DOFPostFX.disable();
+
+}
 function GraphicsQualityAutodetect()
 {
    $pref::Video::autoDetect = false;
@@ -468,6 +603,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
          ShaderQualityGroup-->Low.apply();   
+         EffectQualityGroup-->Low.apply(); 
       }
       else
       {
@@ -475,6 +611,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
          ShaderQualityGroup-->Lowest.apply();   
+         EffectQualityGroup-->Lowest.apply();  
       }
    }   
    else
@@ -485,6 +622,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->High.apply();
          LightingQualityGroup-->High.apply();
          ShaderQualityGroup-->High.apply();
+         EffectQualityGroup-->Highest.apply();
       }
       else if ( %videoMem > 400 || %videoMem == 0 )
       {
@@ -492,6 +630,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Normal.apply();
          LightingQualityGroup-->Normal.apply();
          ShaderQualityGroup-->Normal.apply();
+         EffectQualityGroup-->Normal.apply();
          
          if ( %videoMem == 0 )
             return "Torque was unable to detect available video memory. Applying 'Normal' quality.";
@@ -502,6 +641,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Low.apply();
          LightingQualityGroup-->Low.apply();
          ShaderQualityGroup-->Low.apply();
+         EffectQualityGroup-->Low.apply();
       }
    }
    

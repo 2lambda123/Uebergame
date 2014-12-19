@@ -498,9 +498,9 @@ datablock PlayerData(DefaultPlayerData)
    canObserve = 1;
    cmdCategory = "Clients";
 
-   cameraDefaultFov = 55.0;
-   cameraMinFov = 5.0;
-   cameraMaxFov = 65.0;
+   cameraDefaultFov = "75";
+   cameraMinFov = "5";
+   cameraMaxFov = "75";
 
    debrisShapeName = "art/shapes/actors/common/debris_player.dts";
    debris = playerDebris;
@@ -512,7 +512,7 @@ datablock PlayerData(DefaultPlayerData)
    maxFreelookAngle = 3.0;
 
    mass = 120;
-   drag = 1.3;
+   drag = "1.3";
    maxdrag = 0.4;
    density = 1.1;
    maxDamage = 100;
@@ -523,7 +523,7 @@ datablock PlayerData(DefaultPlayerData)
    rechargeRate = 0.256;
 
    runForce = 4320;
-   runEnergyDrain = "0.128";
+   runEnergyDrain = "0.136";
    minRunEnergy = "10";
    maxForwardSpeed = "4";
    maxBackwardSpeed = "3";
@@ -532,12 +532,12 @@ datablock PlayerData(DefaultPlayerData)
    sprintForce = 4320;
    sprintEnergyDrain = "0.512";
    minSprintEnergy = "0";
-   maxSprintForwardSpeed = "8";
+   maxSprintForwardSpeed = "7";
    maxSprintBackwardSpeed = "4";
-   maxSprintSideSpeed = "6";
+   maxSprintSideSpeed = "5";
    sprintStrafeScale = 0.25;
-   sprintYawScale = "0.1";
-   sprintPitchScale = "0.1";
+   sprintYawScale = "0.12";
+   sprintPitchScale = "0.12";
    sprintCanJump = true;
 
    crouchForce = 405;
@@ -549,10 +549,10 @@ datablock PlayerData(DefaultPlayerData)
    maxUnderwaterBackwardSpeed = "1";
    maxUnderwaterSideSpeed = "1";
 
-   jumpForce = "747";
-   jumpEnergyDrain = "15";
+   jumpForce = "760";
+   jumpEnergyDrain = "10";
    minJumpEnergy = "15";
-   jumpDelay = "10";
+   jumpDelay = "4";
    airControl = "0.3";
 
    fallingSpeedThreshold = -6.0;
@@ -567,7 +567,7 @@ datablock PlayerData(DefaultPlayerData)
    speedDamageScale = 0.4;
 
    boundingBox = "0.65 0.75 1.85";
-   crouchBoundingBox = "0.65 0.75 1.3";
+   crouchBoundingBox = "0.65 0.75 1.25";
    swimBoundingBox = "1 2 2";
    pickupRadius = 1;
 
@@ -603,7 +603,7 @@ datablock PlayerData(DefaultPlayerData)
 
    // Controls over slope of runnable/jumpable surfaces
    runSurfaceAngle  = 38;
-   jumpSurfaceAngle = 80;
+   jumpSurfaceAngle = "45";
    maxStepHeight = 0.35;  //two meters
    minJumpSpeed = 20;
    maxJumpSpeed = 30;
@@ -682,4 +682,7 @@ datablock PlayerData(DefaultPlayerData)
    maxInvLurkerGrenadeAmmo = "0";
    maxInvLurkerClip = "4";
    swimForce = "4320";
+   firstPersonShadows = "0";
+   jumpTowardsNormal = "1";
+   shadowSize = "512";
 };
