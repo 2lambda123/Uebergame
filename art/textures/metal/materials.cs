@@ -11,6 +11,8 @@ singleton Material(metal_bare_01)
    normalMap[0] = "art/textures/metal/metal_bare_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_corrugated_01)
@@ -26,6 +28,8 @@ singleton Material(metal_corrugated_01)
    normalMap[0] = "art/textures/metal/metal_corrugated_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_floor_01)
@@ -41,6 +45,8 @@ singleton Material(metal_floor_01)
    normalMap[0] = "art/textures/metal/metal_floor_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_panels_01)
@@ -56,6 +62,8 @@ singleton Material(metal_panels_01)
    normalMap[0] = "art/textures/metal/metal_panels_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_panels_02)
@@ -71,6 +79,8 @@ singleton Material(metal_panels_02)
    normalMap[0] = "art/textures/metal/metal_panels_02_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_rusted_01)
@@ -86,6 +96,8 @@ singleton Material(metal_rusted_01)
    normalMap[0] = "art/textures/metal/metal_rusted_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_rusted_02)
@@ -101,6 +113,8 @@ singleton Material(metal_rusted_02)
    specularMap[0] = "art/textures/metal/metal_rusted_02_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(metal_stripes_01)
@@ -116,4 +130,6 @@ singleton Material(metal_stripes_01)
    normalMap[0] = "art/textures/metal/metal_stripes_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

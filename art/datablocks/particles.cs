@@ -261,15 +261,15 @@ datablock ParticleData(bloodBulletDirtSpray)
    sizes[1] = "0.5";
    times[1] = "0.5";
    times[2] = "1";
-   inheritedVelFactor = "0.2";
+   inheritedVelFactor = "0.3";
 };
 
     datablock ParticleEmitterData(bloodBulletDirtSprayEmitter)  
     {   
        dragCoefficient      = "0.646";  
        gravityCoefficient   = "4";  
-       lifetimeMS           = "6";  
-       lifetimeVarianceMS   = "5";  
+       lifetimeMS           = "16";  
+       lifetimeVarianceMS   = "12";  
        spinRandomMin = -140;  
        spinRandomMax =  140;  
        useInvAlpha   = 1;  

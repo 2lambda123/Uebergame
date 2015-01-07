@@ -45,7 +45,7 @@ function showPlayerList(%val)
       PlayerListGui.toggle();
 }
 
-moveMap.bind( keyboard, tab, showPlayerList );
+moveMap.bind( keyboard, F2, showPlayerList );
 
 //function hideHUDs(%val)
 //{
@@ -458,8 +458,8 @@ function toggleCamera(%val)
       commandToServer('ToggleCamera');
 }
 
-//moveMap.bind( keyboard, v, toggleFreeLook ); // v for vanity
-//moveMap.bind(keyboard, F2, toggleFirstPerson );
+moveMap.bind( keyboard, v, toggleFreeLook ); // v for vanity
+moveMap.bind(keyboard, tab, toggleFirstPerson );
 //moveMap.bind(keyboard, "alt c", toggleCamera);
 
 //moveMap.bind( gamepad, btn_start, toggleCamera );

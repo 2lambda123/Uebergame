@@ -11,6 +11,8 @@ singleton Material(wood_chipboard_01)
    specularMap[0] = "art/textures/wood/wood_chipboard_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_chipboard_02)
@@ -26,6 +28,8 @@ singleton Material(wood_chipboard_02)
    normalMap[0] = "art/textures/wood/wood_chipboard_02_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_dirty_01)
@@ -41,6 +45,8 @@ singleton Material(wood_dirty_01)
    specularMap[0] = "art/textures/wood/wood_dirty_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_dirty_02)
@@ -56,6 +62,8 @@ singleton Material(wood_dirty_02)
    specularMap[0] = "art/textures/wood/wood_dirty_02_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_laminate_01)
@@ -71,6 +79,8 @@ singleton Material(wood_laminate_01)
    normalMap[0] = "art/textures/wood/wood_laminate_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_planks_01)
@@ -86,6 +96,8 @@ singleton Material(wood_planks_01)
    specularMap[0] = "art/textures/wood/wood_planks_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_planks_02)
@@ -101,6 +113,8 @@ singleton Material(wood_planks_02)
    specularMap[0] = "art/textures/wood/wood_planks_02_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_planks_03)
@@ -116,6 +130,8 @@ singleton Material(wood_planks_03)
    specularMap[0] = "art/textures/wood/wood_planks_03_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(wood_planks_04)
@@ -131,5 +147,7 @@ singleton Material(wood_planks_04)
    specularMap[0] = "art/textures/wood/wood_planks_04_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 

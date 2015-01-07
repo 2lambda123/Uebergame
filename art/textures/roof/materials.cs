@@ -11,6 +11,8 @@ singleton Material(roof_tar_01)
    normalMap[0] = "art/textures/roof/roof_tar_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(roof_tiles_01)
@@ -26,6 +28,8 @@ singleton Material(roof_tiles_01)
    normalMap[0] = "art/textures/roof/roof_tiles_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(roof_tiles_02)
@@ -41,6 +45,8 @@ singleton Material(roof_tiles_02)
    normalMap[0] = "art/textures/roof/roof_tiles_02_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(roof_tiles_03)
@@ -56,4 +62,6 @@ singleton Material(roof_tiles_03)
    normalMap[0] = "art/textures/roof/roof_tiles_03_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

@@ -2,7 +2,6 @@
 if (isObject(moveMap)) moveMap.delete();
 new ActionMap(moveMap);
 moveMap.bindCmd(keyboard, "escape", "", "handleEscape();");
-moveMap.bind(keyboard, "tab", showPlayerList);
 moveMap.bind(keyboard, "a", moveleft);
 moveMap.bind(keyboard, "d", moveright);
 moveMap.bind(keyboard, "left", moveleft);
@@ -36,6 +35,9 @@ moveMap.bindCmd(keyboard, "ctrl z", "carjack();", "");
 moveMap.bind(keyboard, "f5", doScreenShot);
 moveMap.bind(keyboard, "f6", doScreenShotHudless);
 moveMap.bind(keyboard, "space", jump);
+moveMap.bind(keyboard, "v", toggleFreeLook);
+moveMap.bind(keyboard, "f2", showPlayerList);
+moveMap.bind(keyboard, "tab", toggleFirstPerson);
 moveMap.bind(mouse0, "xaxis", yaw);
 moveMap.bind(mouse0, "yaxis", pitch);
 moveMap.bind(mouse0, "button0", mouseFire);

@@ -11,4 +11,6 @@ singleton Material(plastic_nubs_01_orange)
    normalMap[0] = "art/textures/plastic/plastic_nubs_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

@@ -49,15 +49,17 @@ singleton SFXDescription( AudioSoft3D : AudioEffect )
 singleton SFXDescription( AudioClose3D : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 10.0;
+   ReferenceDistance = 5.0;
    MaxDistance       = 60.0;
+   priority = "1";
 };
 
 singleton SFXDescription( AudioClosest3D : AudioEffect )
 {
    is3D              = true;
    ReferenceDistance = 5.0;
-   MaxDistance       = 10.0;
+   MaxDistance       = 30.0;
+   priority = "1";
 };
 
 //-----------------------------------------------------------------------------
@@ -86,6 +88,7 @@ singleton SFXDescription( AudioClosestLoop3D : AudioEffect )
    is3D              = true;
    ReferenceDistance = 5.0;
    MaxDistance       = 10.0;
+   priority = "1";
 };
 
 //-----------------------------------------------------------------------------

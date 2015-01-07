@@ -298,4 +298,64 @@ function SoldierDAE::onLoad(%this)
    %this.setSequenceGroundSpeed( "Turret_Crouch_Forward", "0 2 0");
    %this.setSequenceGroundSpeed( "Turret_Crouch_Side", "1 0 0");
    // END: Turret Sequences
+   
+   // add trigger keyframes for SFX footsteps etc
+   %this.addTrigger("Back", "4", "1");
+   %this.addTrigger("Back", "13", "2");
+   %this.addTrigger("jump", "6", "1");
+   %this.addTrigger("Land", "5", "1");
+   %this.addTrigger("Run", "7.5", "1");
+   %this.addTrigger("Run", "16.5", "2");
+   %this.addTrigger("Pistol_Back", "6", "1");
+   %this.addTrigger("Pistol_Back", "12", "2");
+   %this.addTrigger("Crouch_Backward", "8", "1");
+   %this.addTrigger("Crouch_Backward", "19", "2");
+   %this.addTrigger("Crouch_Forward", "12", "1");
+   %this.addTrigger("Crouch_Forward", "24", "2");
+   %this.addTrigger("Crouch_Side", "16", "1");
+   %this.addTrigger("Crouch_Side", "23", "2");
+   %this.addTrigger("Side", "0", "1");
+   %this.addTrigger("Side", "9.5", "2");
+   %this.addTrigger("Pistol_Crouch_Backward", "10", "1");
+   %this.addTrigger("Pistol_Crouch_Backward", "24", "2");
+   %this.addTrigger("Pistol_Crouch_Forward", "9", "1");
+   %this.addTrigger("Pistol_Crouch_Forward", "25", "2");
+   %this.addTrigger("Pistol_Crouch_Side", "8", "1");
+   %this.addTrigger("Pistol_Crouch_Side", "23", "2");
+   %this.addTrigger("Pistol_Jump", "5", "1");
+   %this.addTrigger("Pistol_Land", "9", "1");
+   %this.addTrigger("Pistol_Run", "7.5", "1");
+   %this.addTrigger("Pistol_Run", "16.5", "2");
+   %this.addTrigger("Pistol_Side", "8", "1");
+   %this.addTrigger("Pistol_Side", "17", "2");
+   %this.addTrigger("ProxMine_Back", "3", "1");
+   %this.addTrigger("ProxMine_Back", "12", "2");
+   %this.addTrigger("ProxMine_Crouch_Backward", "9", "1");
+   %this.addTrigger("ProxMine_Crouch_Backward", "18", "2");
+   %this.addTrigger("ProxMine_Crouch_Forward", "12", "1");
+   %this.addTrigger("ProxMine_Crouch_Forward", "25", "2");
+   %this.addTrigger("ProxMine_Crouch_Side", "12", "1");
+   %this.addTrigger("ProxMine_Crouch_Side", "27", "2");
+   %this.addTrigger("ProxMine_Fall", "15", "1");
+   %this.addTrigger("ProxMine_Jump", "5", "1");
+   %this.addTrigger("ProxMine_Land", "7", "1");
+   %this.addTrigger("ProxMine_Run", "7.5", "1");
+   %this.addTrigger("ProxMine_Run", "16.5", "2");
+   %this.addTrigger("ProxMine_Side", "7", "1");
+   %this.addTrigger("ProxMine_Side", "18", "2");
+   %this.addTrigger("Turret_Back", "4", "1");
+   %this.addTrigger("Turret_Back", "11", "2");
+   %this.addTrigger("Turret_Crouch_Backward", "8", "1");
+   %this.addTrigger("Turret_Crouch_Backward", "26", "2");
+   %this.addTrigger("Turret_Crouch_Forward", "12", "1");
+   %this.addTrigger("Turret_Crouch_Forward", "24", "2");
+   %this.addTrigger("Turret_Crouch_Side", "13", "1");
+   %this.addTrigger("Turret_Crouch_Side", "24", "2");
+   %this.addTrigger("Turret_Run", "7.5", "1");
+   %this.addTrigger("Turret_Run", "16.5", "2");
+   %this.addTrigger("Turret_Jump", "6", "1");
+   %this.addTrigger("Turret_Land", "3", "1");
+   %this.addTrigger("Turret_Side", "9", "1");
+   %this.addTrigger("Turret_Side", "17", "2");
+   // end keyframes
 }

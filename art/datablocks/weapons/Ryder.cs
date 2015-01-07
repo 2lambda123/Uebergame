@@ -71,7 +71,7 @@ datablock ProjectileData( RyderProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 30;
+   directDamage        = 20;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -80,7 +80,7 @@ datablock ProjectileData( RyderProjectile )
    explosion           = BulletDirtExplosion;
    decal               = BulletHoleDecal;
 
-   muzzleVelocity      = 200;
+   muzzleVelocity      = 300;
    velInheritFactor    = 1;
 
    armingDelay         = 0;
@@ -89,7 +89,7 @@ datablock ProjectileData( RyderProjectile )
    bounceElasticity    = 0;
    bounceFriction      = 0;
    isBallistic         = true;
-   gravityMod          = 0.5;
+   gravityMod          = 0.75;
 };
 
 function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
@@ -98,7 +98,7 @@ function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
    
    // Apply damage to the object all shape base objects
    if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,%this.directDamage,"RyderProjectile");
+      %col.damage(%obj,%pos,getRandom(%this.directDamage)+20,"RyderProjectile");
 }
 
 //-----------------------------------------------------------------------------

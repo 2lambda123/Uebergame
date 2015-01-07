@@ -11,6 +11,8 @@ singleton Material(bricks_classic_01)
    specularMap[0] = "art/textures/bricks/bricks_classic_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_classic_02)
@@ -27,6 +29,8 @@ singleton Material(bricks_classic_02)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_cinder_01)
@@ -42,6 +46,8 @@ singleton Material(bricks_cinder_01)
    specularMap[0] = "art/textures/bricks/bricks_cinder_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_clean_01)
@@ -57,6 +63,8 @@ singleton Material(bricks_clean_01)
    specularMap[0] = "art/textures/bricks/bricks_clean_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_clean_02)
@@ -73,6 +81,8 @@ singleton Material(bricks_clean_02)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_decay_01)
@@ -89,6 +99,8 @@ singleton Material(bricks_decay_01)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_decay_01)
@@ -104,6 +116,8 @@ singleton Material(bricks_decay_01)
    specularMap[0] = "art/textures/bricks/bricks_decay_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(bricks_facade_01)
@@ -119,5 +133,7 @@ singleton Material(bricks_facade_01)
    specularMap[0] = "art/textures/bricks/bricks_facade_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 

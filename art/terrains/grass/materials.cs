@@ -1,77 +1,137 @@
-new TerrainMaterial()
-{
-   diffuseMap = "art/terrains/grass/grass_lush_clover_01_B";
-   detailMap = "art/terrains/grass/grass_lush_clover_01_D";
-   internalName = "grass_lush_clover_01";
-   detailSize = "4";
-   detailDistance = "100";
-   macroSize = "50";
-   macroStrength = "1";
-   diffuseSize = "250";
-   macroMap = "art/terrains/grass/grass_lush_clover_01_M";
-   detailStrength = "1.5";
-   parallaxScale = "0.05";
-   normalMap = "art/terrains/grass/grass_lush_clover_01_N";
+singleton Material(TerrainFX_ter_grass_flowers_01)    
+{    
+   mapTo = "ter_grass_flowers_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
 };
 
 new TerrainMaterial()
 {
-   detailMap = "art/terrains/grass/grass_lush_daisies_01_D";
-   internalName = "grass_lush_daisies_01";
+   diffuseMap = "art/terrains/grass/ter_grass_flowers_01_B";
+   detailMap = "art/terrains/grass/ter_grass_flowers_01_D";
+   internalName = "ter_grass_flowers_01";
+   diffuseSize = "250";
+   detailDistance = "100";
+   macroSize = "100";
+   parallaxScale = "0.05";
+   macroStrength = "1";
+   macroMap = "art/terrains/grass/ter_grass_flowers_01_M";
+   detailStrength = "1.2";
+   detailSize = "4";
+   normalMap = "art/terrains/grass/ter_grass_flowers_01_N";
+};
+
+singleton Material(TerrainFX_ter_grass_flowers_02)    
+{    
+   mapTo = "ter_grass_flowers_02_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   detailMap = "art/terrains/grass/ter_grass_flowers_02_D";
+   internalName = "ter_grass_flowers_02";
    diffuseSize = "250";
    macroSize = "50";
    macroStrength = "0.7";
    detailStrength = "1.5";
    detailDistance = "100";
-   normalMap = "art/terrains/grass/grass_lush_daisies_01_N";
+   normalMap = "art/terrains/grass/ter_grass_flowers_02_N";
    parallaxScale = "0.05";
-   diffuseMap = "art/terrains/grass/grass_lush_daisies_01_B";
-   macroMap = "art/terrains/grass/grass_lush_daisies_01_M";
+   diffuseMap = "art/terrains/grass/ter_grass_flowers_02_B";
+   macroMap = "art/terrains/grass/ter_grass_flowers_02_M";
    detailSize = "4";
+};
+
+singleton Material(TerrainFX_ter_grass_lush_01)    
+{    
+   mapTo = "ter_grass_lush_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
 };
 
 new TerrainMaterial()
 {
-   diffuseMap = "art/terrains/grass/grass_dry_sparse_01_B";
-   detailMap = "art/terrains/grass/grass_dry_sparse_01_D";
-   internalName = "grass_dry_sparse_01";
+   diffuseMap = "art/terrains/grass/ter_grass_lush_01_B";
+   detailMap = "art/terrains/grass/ter_grass_lush_01_D";
+   internalName = "ter_grass_lush_01";
+   detailSize = "4";
+   detailDistance = "100";
+   macroSize = "50";
+   macroStrength = "1";
+   diffuseSize = "250";
+   macroMap = "art/terrains/grass/ter_grass_lush_01_M";
+   detailStrength = "1.5";
+   parallaxScale = "0.05";
+   normalMap = "art/terrains/grass/ter_grass_lush_01_N";
+};
+
+singleton Material(TerrainFX_ter_grass_short_01)    
+{    
+   mapTo = "ter_grass_short_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/grass/ter_grass_short_01_B";
+   diffuseSize = "250";
+   detailMap = "art/terrains/grass/ter_grass_short_01_D";
+   detailDistance = "100";
+   macroSize = "100";
+   internalName = "ter_grass_short_01";
+   macroStrength = "0.7";
+   detailSize = "4";
+   macroMap = "art/terrains/grass/ter_grass_short_01_M";
+   parallaxScale = "0.03";
+   normalMap = "art/terrains/grass/ter_grass_short_01_N";
+};
+
+singleton Material(TerrainFX_ter_grass_sparse_01)    
+{    
+   mapTo = "ter_grass_sparse_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/grass/ter_grass_sparse_01_B";
+   detailMap = "art/terrains/grass/ter_grass_sparse_01_D";
+   internalName = "ter_grass_sparse_01";
    diffuseSize = "250";
    detailDistance = "100";
    macroSize = "32";
    macroStrength = "0.8";
    parallaxScale = "0.07";
    detailSize = "5";
-   normalMap = "art/terrains/grass/grass_dry_sparse_01_N";
-   macroMap = "art/terrains/grass/grass_dry_sparse_01_M";
-};
-
-new TerrainMaterial()
-{
-   diffuseMap = "art/terrains/grass/grass_mixed_flowers_01_B";
-   detailMap = "art/terrains/grass/grass_mixed_flowers_01_D";
-   internalName = "grass_mixed_flowers_01";
-   diffuseSize = "250";
-   detailDistance = "100";
-   macroSize = "100";
-   parallaxScale = "0.05";
-   macroStrength = "1";
-   macroMap = "art/terrains/grass/grass_mixed_flowers_01_M";
-   detailStrength = "1.2";
-   detailSize = "4";
-   normalMap = "art/terrains/grass/grass_mixed_flowers_01_N";
-};
-
-new TerrainMaterial()
-{
-   diffuseMap = "art/terrains/grass/grass_cut_short_01_B";
-   diffuseSize = "250";
-   detailMap = "art/terrains/grass/grass_cut_short_01_D";
-   detailDistance = "100";
-   macroSize = "100";
-   internalName = "grass_cut_short_01";
-   macroStrength = "0.7";
-   detailSize = "4";
-   macroMap = "art/terrains/grass/grass_cut_short_01_M";
-   parallaxScale = "0.03";
-   normalMap = "art/terrains/grass/grass_cut_short_01_N";
+   normalMap = "art/terrains/grass/ter_grass_sparse_01_N";
+   macroMap = "art/terrains/grass/ter_grass_sparse_01_M";
 };

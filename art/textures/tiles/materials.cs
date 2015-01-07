@@ -11,6 +11,8 @@ singleton Material(tiles_floor_01)
    normalMap[0] = "art/textures/tiles/tiles_floor_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_01_yellow)
@@ -27,6 +29,8 @@ singleton Material(tiles_wall_01_yellow)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_01_white)
@@ -43,6 +47,8 @@ singleton Material(tiles_wall_01_white)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_01_blue)
@@ -59,6 +65,8 @@ singleton Material(tiles_wall_01_blue)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_01_red)
@@ -75,6 +83,8 @@ singleton Material(tiles_wall_01_red)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_01_green)
@@ -91,6 +101,8 @@ singleton Material(tiles_wall_01_green)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_02)
@@ -107,6 +119,8 @@ singleton Material(tiles_wall_02)
    specularStrength[0] = "0.4";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(tiles_wall_03)
@@ -122,4 +136,6 @@ singleton Material(tiles_wall_03)
    specularMap[0] = "art/textures/tiles/tiles_wall_03_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

@@ -12,6 +12,8 @@ singleton Material(door_garage_01)
    specularStrength[0] = "0.5";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(door_warehouse_02)
@@ -27,4 +29,6 @@ singleton Material(door_warehouse_02)
    normalMap[0] = "art/textures/door/door_warehouse_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

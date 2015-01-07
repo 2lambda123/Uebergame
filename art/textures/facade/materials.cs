@@ -11,6 +11,8 @@ singleton Material(facade_slabs_01)
    normalMap[0] = "art/textures/facade/facade_slabs_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(facade_wood_01)
@@ -26,4 +28,6 @@ singleton Material(facade_wood_01)
    specularMap[0] = "art/textures/facade/facade_wood_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

@@ -70,8 +70,8 @@ function DeathMatchGame::initGameVars(%game)
 
    // Set the gameplay parameters
    %game.duration = 20 * 60;
-   %game.endgameScore = 20;
-   %game.endgamePause = 10;
+   %game.endgameScore = 0;
+   %game.endgamePause = 7;
    %game.allowCycling = true;   // Is mission cycling allowed?
 }
 

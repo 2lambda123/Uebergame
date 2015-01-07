@@ -10,4 +10,6 @@ singleton Material(ceiling_bare_01)
    specularMap[0] = "art/textures/ceiling/ceiling_bare_01_S.dds";
    normalMap[0] = "art/textures/ceiling/ceiling_bare_01_N.dds";
    useAnisotropic[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

@@ -11,6 +11,8 @@ singleton Material(pavement_blocks_01)
    specularMap[0] = "art/textures/pavement/pavement_blocks_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(pavement_regular_01)
@@ -26,6 +28,8 @@ singleton Material(pavement_regular_01)
    specularMap[0] = "art/textures/pavement/pavement_regular_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(pavement_slabs_01)
@@ -41,6 +45,8 @@ singleton Material(pavement_slabs_01)
    specularMap[0] = "art/textures/pavement/pavement_slabs_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(pavement_slabs_02)
@@ -56,6 +62,8 @@ singleton Material(pavement_slabs_02)
    specularMap[0] = "art/textures/pavement/pavement_slabs_02_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(pavement_slabs_03)
@@ -72,5 +80,7 @@ singleton Material(pavement_slabs_03)
    useAnisotropic[0] = "1";
    specularStrength[0] = "0.75";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 

@@ -11,4 +11,6 @@ singleton Material(marble_blotchy_01)
    normalMap[0] = "art/textures/marble/marble_blotchy_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

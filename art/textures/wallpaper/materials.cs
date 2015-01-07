@@ -11,4 +11,6 @@ singleton Material(wallpaper_odd_01)
    normalMap[0] = "art/textures/wallpaper/wallpaper_odd_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

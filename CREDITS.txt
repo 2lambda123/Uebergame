@@ -1,7 +1,11 @@
 This lists contains the credits to all art assets, all are licensed CC0 (Public Domain)
 Credits are not mandatory for CC0 but this file is to keep track and for verification.
 
-art/sound/weapons/pistol_heavy_default.wav  -Kodack  https://www.freesound.org/people/Kodack/sounds/253736/  -edited by Duion
-art/sound/weapons/machine_gun_heavy_default.wav -Jon285 https://www.freesound.org/people/Jon285/sounds/49513/  -edited by Duion
+
+art/sound/environment/night/night_crickets_01.ogg  -icuttv  https://www.freesound.org/people/icuttv/sounds/181362/  -edited by Duion
+art/sound/environment/wind/wind_basic_01.ogg  -klangfabrik  https://www.freesound.org/people/klangfabrik/sounds/26714/  -edited by Duion
+art/sound/weapons/pistol_heavy_default.ogg  -Kodack  https://www.freesound.org/people/Kodack/sounds/253736/  -edited by Duion
+art/sound/weapons/machine_gun_heavy_default.ogg -Jon285 https://www.freesound.org/people/Jon285/sounds/49513/  -edited by Duion
+art/sound/impact_concrete_01.ogg -Yoyodaman234 https://www.freesound.org/people/Yoyodaman234/sounds/166508/ -edited by Duion
 
 art/sound/wind/wind_01.ogg  -asbestos bill  https://www.freesound.org/people/asbestos%20bill/sounds/181287/ -edited by Duion

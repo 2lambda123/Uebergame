@@ -67,12 +67,12 @@ datablock SFXPlayList(LurkerFireSoundList)
    track[ 0 ] = LurkerFireSound;
 };
 
-/*datablock SFXProfile(BulletImpactSound)
+ datablock SFXProfile(BulletImpactSound)
 {
-   filename = "art/sound/weapons/SCARFIRE";
-   description = AudioClose3D;
+   filename = "art/sound/weapons/ricochet/bullet_ricochet_01";
+   description = AudioClosest3D;
    preload = true;
-};*/
+};
 
 // ----------------------------------------------------------------------------
 // Particles
@@ -125,7 +125,7 @@ datablock ParticleEmitterData(GunFireSmokeEmitter)
 datablock ParticleData(BulletDirtDust)
 {
    textureName          = "art/particles/impact";
-   dragCoefficient      = "1";
+   dragCoefficient      = "0.997067";
    gravityCoefficient   = "-0.100122";
    windCoefficient      = 0;
    inheritedVelFactor   = 0.0;
@@ -136,16 +136,16 @@ datablock ParticleData(BulletDirtDust)
    spinRandomMax =  180.0;
    useInvAlpha   = true;
 
-   colors[0]     = "0.496063 0.393701 0.299213 0.692913";
-   colors[1]     = "0.692913 0.614173 0.535433 0.346457";
+   colors[0]     = "0.496063 0.393701 0.299213 0.685039";
+   colors[1]     = "0.685039 0.606299 0.527559 0.346457";
    colors[2]     = "0.897638 0.84252 0.795276 0";
 
    sizes[0]      = "0.997986";
-   sizes[1]      = "2";
-   sizes[2]      = "2.5";
+   sizes[1]      = "1.99902";
+   sizes[2]      = "2.49954";
 
    times[0]      = 0.0;
-   times[1]      = "0.498039";
+   times[1]      = "0.494118";
    times[2]      = 1.0;
    animTexName = "art/particles/impact";
 };
@@ -158,9 +158,11 @@ datablock ParticleEmitterData(BulletDirtDustEmitter)
    velocityVariance = 1.0;
    thetaMin         = 0.0;
    thetaMax         = 180.0;
-   lifetimeMS       = 250;
+   lifetimeMS       = "250";
    particles = "BulletDirtDust";
    blendStyle = "NORMAL";
+   ambientFactor = "0";
+   softParticles = "0";
 };
 
 //-----------------------------------------------------------------------------
@@ -213,7 +215,7 @@ datablock ProjectileData( LurkerProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 1;
+   directDamage        = 10;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
@@ -222,7 +224,7 @@ datablock ProjectileData( LurkerProjectile )
    explosion           = BulletDirtExplosion;
    decal               = BulletHoleDecal;
 
-   muzzleVelocity      = 200;
+   muzzleVelocity      = 300;
    velInheritFactor    = 1;
 
    armingDelay         = 0;
@@ -231,7 +233,7 @@ datablock ProjectileData( LurkerProjectile )
    bounceElasticity    = 0;
    bounceFriction      = 0;
    isBallistic         = true;
-   gravityMod          = 0.5;
+   gravityMod          = 0.75;
 };
 
 function LurkerProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
@@ -240,7 +242,7 @@ function LurkerProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
    
    // Apply damage to the object all shape base objects
    if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,%this.directDamage,"LurkerProjectile");
+      %col.damage(%obj,%pos,getRandom(%this.directDamage)+15,"LurkerProjectile");
 }
 
 

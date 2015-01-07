@@ -72,18 +72,17 @@
 
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiTabBorderProfile";
-         visible = "0";
+         visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "OptGeneralPane";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 
@@ -145,7 +144,6 @@
             sinkAllKeyEvents = "0";
             password = "0";
             passwordMask = "*";
-            text = "urban";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -217,7 +215,7 @@
       };
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -331,7 +329,7 @@
             sbUsesNAColor = "0";
             reverseTextList = "0";
             bitmapBounds = "16 16";
-            text = "1600 x 900  (16:9)";
+            text = "1280 x 960  (4:3)";
             maxLength = "255";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -804,7 +802,7 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "389 352";
+            position = "384 352";
             extent = "154 22";
             minExtent = "8 2";
             horizSizing = "right";
@@ -875,7 +873,7 @@
             range = "0.001 2.2";
             ticks = "0";
             snap = "0";
-            value = "1.17292";
+            value = "1.10708";
             position = "114 290";
             extent = "344 15";
             minExtent = "8 2";
@@ -914,10 +912,31 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
+         new GuiButtonCtrl(Cmd_Apply) {
+            text = "Apply";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            position = "537 94";
+            extent = "64 160";
+            minExtent = "8 8";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiButtonProfile";
+            visible = "1";
+            active = "0";
+            command = "optionsDlg.applyGraphics();Cmd_Apply.setactive(0);";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "apply";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
       };
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -1071,7 +1090,7 @@
                range = "0 1";
                ticks = "0";
                snap = "0";
-               value = "0.816594";
+               value = "0.787582";
                position = "118 0";
                extent = "316 14";
                minExtent = "8 8";
@@ -1295,7 +1314,7 @@
       };
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -1452,7 +1471,7 @@
       };
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -1733,17 +1752,18 @@
       };
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiTabBorderProfile";
-         visible = "1";
+         visible = "0";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "OptNetworkPane";
+         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 
@@ -2106,7 +2126,7 @@
       };
       new GuiBitmapBorderCtrl() {
          position = "10 80";
-         extent = "560 390";
+         extent = "620 390";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -2135,7 +2155,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "458 330";
+            position = "511 330";
             extent = "85 18";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2164,7 +2184,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "254 117";
+            position = "249 117";
             extent = "46 18";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2336,7 +2356,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "459 289";
+            position = "512 289";
             extent = "84 18";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2365,7 +2385,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "458 360";
+            position = "511 360";
             extent = "85 18";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2435,7 +2455,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "8 116";
+            position = "13 116";
             extent = "85 17";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2458,7 +2478,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "178 117";
+            position = "172 117";
             extent = "63 15";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2527,7 +2547,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "349 289";
+            position = "402 289";
             extent = "102 19";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2550,7 +2570,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "361 361";
+            position = "414 361";
             extent = "92 16";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2573,7 +2593,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "361 330";
+            position = "414 330";
             extent = "83 21";
             minExtent = "8 2";
             horizSizing = "right";
@@ -2816,27 +2836,6 @@
          hovertime = "1000";
          isContainer = "1";
          hidden = "1";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiButtonCtrl(Cmd_Apply) {
-         text = "Apply";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "573 174";
-         extent = "64 160";
-         minExtent = "8 8";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "GuiButtonProfile";
-         visible = "1";
-         active = "0";
-         command = "optionsDlg.applyGraphics();Cmd_Apply.setactive(0);";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         internalName = "apply";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

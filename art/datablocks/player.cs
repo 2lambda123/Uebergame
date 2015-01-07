@@ -91,6 +91,22 @@ datablock SFXProfile(FootLightUnderwaterSound)
 };
 
 //----------------------------------------------------------------------------
+
+datablock SFXProfile(ImpactLightSoftSound)
+{
+   filename    = "art/sound/orc_death";
+   description = AudioClose3d;
+   preload = true;
+};
+
+datablock SFXProfile(ImpactLightHardSound)
+{
+   filename    = "art/sound/impact_concrete_01";
+   description = AudioClose3d;
+   preload = true;
+};
+
+//----------------------------------------------------------------------------
 // Splash
 //----------------------------------------------------------------------------
 
@@ -371,7 +387,7 @@ datablock SplashData(PlayerSplash)
 datablock ParticleData(LightPuff)
 {
    dragCoefficient      = 2.0;
-   gravityCoefficient   = -0.01;
+   gravityCoefficient   = 0.02;
    inheritedVelFactor   = 0.6;
    constantAcceleration = 0.0;
    lifetimeMS           = 800;
@@ -446,8 +462,11 @@ datablock ParticleEmitterData(LiftoffDustEmitter)
 
 datablock DecalData(PlayerFootprint)
 {
-   size = 0.4;
+   size = "0.35";
    material = CommonPlayerFootprint;
+   lifeSpan = "16000";
+   fadeTime = "16000";
+   textureCoordCount = "0";
 };
 
 datablock DebrisData( PlayerDebris )
@@ -488,7 +507,7 @@ datablock PlayerData(DefaultPlayerData)
 
    // Third person shape
    shapeFile = "art/shapes/actors/Soldier/soldier_rigged.DAE";
-   cameraMaxDist = 3;
+   cameraMaxDist = "2.5";
    allowImageStateAnimation = true;
 
    // First person arms
@@ -511,10 +530,10 @@ datablock PlayerData(DefaultPlayerData)
    maxLookAngle = "1.4";
    maxFreelookAngle = 3.0;
 
-   mass = 120;
+   mass = "100";
    drag = "1.3";
    maxdrag = 0.4;
-   density = 1.1;
+   density = "1.1";
    maxDamage = 100;
    maxEnergy =  "100";
    repairRate = "0.016";
@@ -522,14 +541,14 @@ datablock PlayerData(DefaultPlayerData)
 
    rechargeRate = 0.256;
 
-   runForce = 4320;
+   runForce = "3240";
    runEnergyDrain = "0.136";
    minRunEnergy = "10";
    maxForwardSpeed = "4";
    maxBackwardSpeed = "3";
    maxSideSpeed = "3";
 
-   sprintForce = 4320;
+   sprintForce = "2160";
    sprintEnergyDrain = "0.512";
    minSprintEnergy = "0";
    maxSprintForwardSpeed = "7";
@@ -549,13 +568,13 @@ datablock PlayerData(DefaultPlayerData)
    maxUnderwaterBackwardSpeed = "1";
    maxUnderwaterSideSpeed = "1";
 
-   jumpForce = "760";
+   jumpForce = "600";
    jumpEnergyDrain = "10";
    minJumpEnergy = "15";
    jumpDelay = "4";
    airControl = "0.3";
 
-   fallingSpeedThreshold = -6.0;
+   fallingSpeedThreshold = "-4";
 
    landSequenceTime = "0";
    transitionToLand = false;
@@ -564,7 +583,7 @@ datablock PlayerData(DefaultPlayerData)
 
    minImpactSpeed = 10;
    minLateralImpactSpeed = 20;
-   speedDamageScale = 0.4;
+   speedDamageScale = 3;
 
    boundingBox = "0.65 0.75 1.85";
    crouchBoundingBox = "0.65 0.75 1.25";
@@ -603,7 +622,7 @@ datablock PlayerData(DefaultPlayerData)
 
    // Controls over slope of runnable/jumpable surfaces
    runSurfaceAngle  = 38;
-   jumpSurfaceAngle = "45";
+   jumpSurfaceAngle = "80";
    maxStepHeight = 0.35;  //two meters
    minJumpSpeed = 20;
    maxJumpSpeed = 30;
@@ -633,8 +652,8 @@ datablock PlayerData(DefaultPlayerData)
    //movingBubblesSound   = ArmorMoveBubblesSound;
    //waterBreathSound     = WaterBreathMaleSound;
 
-   //impactSoftSound      = ImpactLightSoftSound;
-   //impactHardSound      = ImpactLightHardSound;
+   impactSoftSound      = ImpactLightSoftSound;
+   impactHardSound      = ImpactLightHardSound;
    //impactMetalSound     = ImpactLightMetalSound;
    //impactSnowSound      = ImpactLightSnowSound;
 
@@ -642,10 +661,10 @@ datablock PlayerData(DefaultPlayerData)
    //impactWaterMedium    = ImpactLightWaterMediumSound;
    //impactWaterHard      = ImpactLightWaterHardSound;
 
-   groundImpactMinSpeed    = "45";
-   groundImpactShakeFreq   = "4.0 4.0 4.0";
+   groundImpactMinSpeed    = "4.1";
+   groundImpactShakeFreq   = "3 3 3";
    groundImpactShakeAmp    = "1.0 1.0 1.0";
-   groundImpactShakeDuration = 0.8;
+   groundImpactShakeDuration = "1";
    groundImpactShakeFalloff = 10.0;
 
    //exitingWater         = ExitingWaterLightSound;
@@ -682,7 +701,7 @@ datablock PlayerData(DefaultPlayerData)
    maxInvLurkerGrenadeAmmo = "0";
    maxInvLurkerClip = "4";
    swimForce = "4320";
-   firstPersonShadows = "0";
+   firstPersonShadows = "1";
    jumpTowardsNormal = "1";
    shadowSize = "512";
 };

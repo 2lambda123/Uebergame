@@ -11,6 +11,8 @@ singleton Material(vent_louver_01)
    normalMap[0] = "art/textures/vents/vent_louver_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(vent_louver_02)
@@ -26,4 +28,6 @@ singleton Material(vent_louver_02)
    normalMap[0] = "art/textures/vents/vent_louver_02_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };

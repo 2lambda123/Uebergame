@@ -11,6 +11,8 @@ singleton Material(plaster_dirty_01)
    normalMap[0] = "art/textures/plaster/plaster_dirty_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(plaster_plain_01)
@@ -26,6 +28,8 @@ singleton Material(plaster_plain_01)
    normalMap[0] = "art/textures/plaster/plaster_plain_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(plaster_sprinkled_01)
@@ -41,6 +45,8 @@ singleton Material(plaster_sprinkled_01)
    normalMap[0] = "art/textures/plaster/plaster_sprinkled_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(plaster_stucco_01)
@@ -56,6 +62,8 @@ singleton Material(plaster_stucco_01)
    normalMap[0] = "art/textures/plaster/plaster_stucco_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(plaster_decay_01)
@@ -71,4 +79,6 @@ singleton Material(plaster_decay_01)
    normalMap[0] = "art/textures/plaster/plaster_decay_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
 };
