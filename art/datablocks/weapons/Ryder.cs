@@ -97,6 +97,7 @@ function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
    // Apply impact force from the projectile.
    
    // Apply damage to the object all shape base objects
+   // a random value between 0 and the directDamage gets picked and a fixed damage added
    if ( %col.getType() & $TypeMasks::GameBaseObjectType )
       %col.damage(%obj,%pos,getRandom(%this.directDamage)+20,"RyderProjectile");
 }
@@ -114,7 +115,7 @@ datablock ItemData(RyderClip)
    className = "AmmoClip";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.DAE";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -232,9 +233,11 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = false;
-   camShakeFreq = "0 0 0";
-   camShakeAmp = "0 0 0";
+   shakeCamera = true;
+   camShakeFreq = "2 2 2";
+   camShakeAmp = "4.5 4.5 4.5";
+   camShakeDuration = "0.5";
+   camShakeRadius = "2";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This

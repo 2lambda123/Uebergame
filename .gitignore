@@ -26,9 +26,14 @@ shaders/procedural/
 *.uft
 #compilergarbage
 *.exp
+*.bat
 
 #editor settings
 settings.xml
 
 #console outpout
 console.log
+
+#binaries
+*.exe
+*.dll

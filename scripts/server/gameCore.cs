@@ -616,23 +616,23 @@ function GameCore::loadOut(%game, %player)
    %player.clearWeaponCycle();
    
    %player.setInventory(Ryder, 1);
-   %player.setInventory(RyderClip, %player.maxInventory(RyderClip));
+   %player.setInventory(RyderClip, 3 ); //%player.maxInventory(RyderClip)
    %player.setInventory(RyderAmmo, %player.maxInventory(RyderAmmo));    // Start the gun loaded
    %player.addToWeaponCycle(Ryder);
 
    %player.setInventory(Lurker, 1);
-   %player.setInventory(LurkerClip, %player.maxInventory(LurkerClip));
+   %player.setInventory(LurkerClip, 1); //%player.maxInventory(LurkerClip)
    %player.setInventory(LurkerAmmo, %player.maxInventory(LurkerAmmo));  // Start the gun loaded
    %player.addToWeaponCycle(Lurker);
 
    %player.setInventory(LurkerGrenadeLauncher, 1);
-   %player.setInventory(LurkerGrenadeAmmo, %player.maxInventory(LurkerGrenadeAmmo));
+   %player.setInventory(LurkerGrenadeAmmo, 8); //%player.maxInventory(LurkerGrenadeAmmo)
    %player.addToWeaponCycle(LurkerGrenadeLauncher);
 
-   %player.setInventory(ProxMine, %player.maxInventory(ProxMine));
+   %player.setInventory(ProxMine, 4 ); //%player.maxInventory(ProxMine)
    %player.addToWeaponCycle(ProxMine);
 
-   %player.setInventory(DeployableTurret, %player.maxInventory(DeployableTurret));
+   %player.setInventory(DeployableTurret, 0); //%player.maxInventory(DeployableTurret)
    %player.addToWeaponCycle(DeployableTurret);
    
    if (%player.getDatablock().mainWeapon.image !$= "")

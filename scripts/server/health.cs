@@ -34,11 +34,20 @@ function HealthPatch::onCollision(%this, %obj, %col)
    // Works for all shapebase objects.
    if (%col.getDamageLevel() != 0 && %col.getState() !$= "Dead")
    {
-      %col.applyRepair(%this.repairAmount);
+       %col.applyRepair(%this.repairAmount); //additional over time regeneration
+	  		
+       //thank you steve yorks
+       %dam = %col.getDamageLevel();
+       %dam = %dam - (%this.repairInstant); //instantly added health
+       if(%dam < 0)
+          %dam = 0;
+         
+       %col.setDamageLevel(%dam);
 
+	  
       %obj.respawn();
       if (%col.client)
-         messageClient(%col.client, 'MsgHealthPatchUsed', '\c2Health Patch Applied');
+         // messageClient(%col.client, 'MsgHealthPatchUsed', '\c2Health Patch Applied');
       serverPlay3D(HealthUseSound, %obj.getTransform());
    }
 }

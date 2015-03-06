@@ -69,21 +69,21 @@ singleton GuiControlProfile ("ChatHudMessageProfile")
 {
    fontType = "Arial";
    fontSize = "16";
-   fontColor = "230 127 25 255";      // default color (death msgs, scoring, inventory)
-   fontColors[1] = "4 235 105";   // client join/drop, tournament mode
-   fontColors[2] = "219 200 128"; // gameplay, admin/voting, pack/deployable
-   fontColors[3] = "77 253 95";   // team chat, spam protection message, client tasks
-   fontColors[4] = "253 254 254 255";  // global chat
-   fontColors[5] = "200 200 50 200";  // used in single player game
+   fontColor = "255 255 255 255";      // default color (death msgs, scoring, inventory)
+   fontColors[1] = "255 255 255 255";   // client join/drop, tournament mode
+   fontColors[2] = "255 255 255 255"; // gameplay, admin/voting, pack/deployable
+   fontColors[3] = "255 255 255 255";   // team chat, spam protection message, client tasks
+   fontColors[4] = "255 255 255 255";  // global chat
+   fontColors[5] = "255 255 255 255";  // used in single player game
    // WARNING! Colors 6-9 are reserved for name coloring
    autoSizeWidth = true;
    autoSizeHeight = true;
-   fontColors[0] = "230 127 25 255";
-   fontColorHL = "4 235 105 255";
-   fontColorNA = "219 200 128 255";
-   fontColorSEL = "77 253 95 255";
-   fontColorLink = "253 254 254 255";
-   fontColorLinkHL = "200 200 50 200";
+   fontColors[0] = "255 255 255 255";
+   fontColorHL = "255 255 255 255";
+   fontColorNA = "255 255 255 255";
+   fontColorSEL = "255 255 255 255";
+   fontColorLink = "255 255 255 255";
+   fontColorLinkHL = "255 255 255 255";
    bevelColorHL = "255 0 255 255";
    fontColors[6] = "255 0 255 255";
    fontColors[7] = "255 0 255 255";

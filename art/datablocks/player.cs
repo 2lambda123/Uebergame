@@ -524,7 +524,7 @@ datablock PlayerData(DefaultPlayerData)
    debrisShapeName = "art/shapes/actors/common/debris_player.dts";
    debris = playerDebris;
    
-   throwForce = 30;
+   throwForce = 25;
 
    minLookAngle = "-1.4";
    maxLookAngle = "1.4";
@@ -678,28 +678,29 @@ datablock PlayerData(DefaultPlayerData)
    mainWeapon = Lurker;
 
    maxInv[Lurker] = 1;
-   maxInv[LurkerClip] = 20;
+   maxInv[LurkerClip] = 6;
 
    maxInv[LurkerGrenadeLauncher] = 1;
    maxInv[LurkerGrenadeAmmo] = 8;
 
    maxInv[Ryder] = 1;
-   maxInv[RyderClip] = 8;
+   maxInv[RyderClip] = 6;
 
    maxInv[ProxMine] = 4;
+   maxInv[ProxMineAmmo] = 4;
 
    maxInv[DeployableTurret] = 1;
 
    // available skins (see materials.cs in model folder)
    availableSkins =  "base	olive	urban	desert	swamp	water";
-   maxInvDeployableTurret = "0";
-   maxInvRyder = "1";
-   maxInvLurkerGrenadeLauncher = "0";
-   maxInvRyderClip = "8";
-   maxInvLurker = "1";
-   maxInvProxMine = "0";
-   maxInvLurkerGrenadeAmmo = "0";
-   maxInvLurkerClip = "4";
+   //maxInvDeployableTurret = "0";
+   //maxInvRyder = "1";
+   //maxInvLurkerGrenadeLauncher = "1";
+   //maxInvRyderClip = "2";
+   //maxInvLurker = "1";
+   //maxInvProxMine = "0";
+   //maxInvLurkerGrenadeAmmo = "0";
+   //maxInvLurkerClip = "2";
    swimForce = "4320";
    firstPersonShadows = "1";
    jumpTowardsNormal = "1";

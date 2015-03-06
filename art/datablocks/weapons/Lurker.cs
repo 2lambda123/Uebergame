@@ -259,7 +259,7 @@ datablock ItemData(LurkerClip)
    className = "AmmoClip";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.DAE";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -267,7 +267,7 @@ datablock ItemData(LurkerClip)
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker clip";
    count = 1;
-   maxInventory = 4;
+   maxInventory = 10;
 };
 
 datablock ItemData(LurkerAmmo)
@@ -377,9 +377,11 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = false;
-   camShakeFreq = "0 0 0";
-   camShakeAmp = "0 0 0";
+   shakeCamera = true;
+   camShakeFreq = "4 4 4";
+   camShakeAmp = "4 4 4";
+   camShakeDuration = "0.5";
+   camShakeRadius = "2";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This
@@ -569,14 +571,14 @@ datablock ItemData(LurkerGrenadeAmmo)
    className = "Ammo";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/shared/rocket.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
 
    // Dynamic properties defined by the scripts
    pickUpName = "Lurker grenade ammo";
-   maxInventory = 4;
+   maxInventory = 1;
 };
 
 datablock ItemData(LurkerGrenadeLauncher)
@@ -649,9 +651,11 @@ datablock ShapeBaseImageData(LurkerGrenadeLauncherImage)
    lightBrightness = 2;
 
    // Shake camera while firing.
-   shakeCamera = false;
-   camShakeFreq = "0 0 0";
-   camShakeAmp = "0 0 0";
+   shakeCamera = true;
+   camShakeFreq = "2 2 2";
+   camShakeAmp = "7 7 7";
+   camShakeDuration = "0.5";
+   camShakeRadius = "2";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This

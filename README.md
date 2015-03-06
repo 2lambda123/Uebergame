@@ -22,6 +22,7 @@ Engine-source directory: https://github.com/Duion/Torque3D
 License:
 ===============
 Copyright (c) 2012 GarageGames, LLC
+
 Copyright (c) 2014 Christian Femmer aka Duion
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

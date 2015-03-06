@@ -43,7 +43,7 @@ datablock SFXProfile(HealthUseSound)
 // with a patch.
 //-----------------------------------------------------------------------------
 
-datablock ItemData(HealthKitSmall)
+datablock ItemData(Medpack_medium)
 {
    // Mission editor category, this datablock will show up in the
    // specified category under the "shapes" root category.
@@ -52,7 +52,7 @@ datablock ItemData(HealthKitSmall)
    className = "HealthPatch";
 
    // Basic Item properties
-   shapeFile = "art/shapes/items/kit/healthkit.dts";
+   shapeFile = "art/shapes/items/health/medpack_01.dae";
    mass = 2;
    friction = 1;
    elasticity = 0.3;
@@ -60,5 +60,6 @@ datablock ItemData(HealthKitSmall)
 
    // Dynamic properties defined by the scripts
    pickupName = "a small health kit";
-   repairAmount = 50;
+   repairAmount = 30;
+   repairInstant = 20;
 };

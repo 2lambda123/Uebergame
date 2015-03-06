@@ -34,11 +34,11 @@
 // Respawntime is the amount of time it takes for a static "auto-respawn"
 // object, such as an ammo box or weapon, to re-appear after it's been
 // picked up.  Any item marked as "static" is automaticlly respawned.
-$Item::RespawnTime = 30 * 1000;
+$Item::RespawnTime = 60 * 1000;
 
 // Poptime represents how long dynamic items (those that are thrown or
 // dropped) will last in the world before being deleted.
-$Item::PopTime = 30 * 1000;
+$Item::PopTime = 60 * 1000;
 
 //-----------------------------------------------------------------------------
 // ItemData base class methods used by all items
@@ -126,8 +126,8 @@ function ItemData::onPickup(%this, %obj, %user, %amount)
     %user.incInventory(%this, %count);
 
     // Inform the client what they got.
-    if (%user.client)
-       messageClient(%user.client, 'MsgItemPickup', '\c0You picked up %1', %this.pickupName);
+    //if (%user.client)
+    //   messageClient(%user.client, 'MsgItemPickup', '\c0You picked up %1', %this.pickupName);
 
     // If the item is a static respawn item, then go ahead and
     // respawn it, otherwise remove it from the world.
@@ -145,7 +145,7 @@ function ItemData::createItem(%data)
    {
       dataBlock = %data;
       static = true;
-      rotate = true;
+      rotate = false;
    };
    return %obj;
 }

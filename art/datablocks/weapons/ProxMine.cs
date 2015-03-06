@@ -41,7 +41,27 @@ datablock SFXProfile( MineTriggeredSound )
    preload = true;
 };
 
-datablock ProximityMineData( ProxMine )
+datablock ItemData(ProxMineAmmo)
+{
+   // Mission editor category
+   category = "Ammo";
+
+   // Add the Ammo namespace as a parent.  The ammo namespace provides
+   // common ammo related functions and hooks into the inventory system.
+   className = "ProxyMine";
+
+   // Basic Item properties
+   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.DAE";
+   mass = 1;
+   elasticity = 0.2;
+   friction = 0.6;
+
+   // Dynamic properties defined by the scripts
+   pickUpName = "Proxy Mine";
+   maxInventory = 1;
+};
+
+datablock ProximityMineData(ProxMine)
 {
    // ShapeBaseData fields
    category = "Weapon";
@@ -61,8 +81,8 @@ datablock ProximityMineData( ProxMine )
 
    autoTriggerDelay = 0;
    triggerOnOwner = true;
-   triggerRadius = 3.0;
-   triggerDelay = 0.45;
+   triggerRadius = 2.0;
+   triggerDelay = 1;
    triggerSound = MineTriggeredSound;
 
    explosionOffset = 0.1;
@@ -70,7 +90,7 @@ datablock ProximityMineData( ProxMine )
    // dynamic fields
    pickUpName = "a proximity mine";
    description = "Proximity Mine";
-   maxInventory = 20;
+   maxInventory = 1;
    image = ProxMineImage;
 
    previewImage = 'mine.png';
@@ -78,7 +98,7 @@ datablock ProximityMineData( ProxMine )
    zoomReticle = 'blank';
 
    damageType = "MineDamage";   // type of damage applied to objects in radius
-   radiusDamage = 300;           // amount of damage to apply to objects in radius
+   radiusDamage = 160;           // amount of damage to apply to objects in radius
    damageRadius = 8;            // search radius to damage objects when exploding
    areaImpulse = 2000;          // magnitude of impulse to apply to objects in radius
 };
@@ -111,6 +131,7 @@ datablock ShapeBaseImageData( ProxMineImage )
 
    // Projectiles and Ammo.
    item = ProxMine;
+   ammo = ProxMineAmmo;
 
    // Shake camera while firing.
    shakeCamera = false;
@@ -134,7 +155,7 @@ datablock ShapeBaseImageData( ProxMineImage )
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
-   stateTimeoutValue[1]             = 3.0;
+   stateTimeoutValue[1]             = 2.0;
    stateSequence[1]                 = "switch_in";
    stateShapeSequence[1]            = "Reload";
    stateSound[1]                    = MineSwitchinSound;
@@ -187,7 +208,7 @@ datablock ShapeBaseImageData( ProxMineImage )
    stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnTimeout[6]      = "Ready";
    stateWaitForTimeout[6]           = true;
-   stateTimeoutValue[6]             = 3.0;
+   stateTimeoutValue[6]             = 2.0;
    stateSequence[6]                 = "switch_in";
    stateShapeSequence[6]            = "Reload";
    stateSound[6]                    = MineSwitchinSound;

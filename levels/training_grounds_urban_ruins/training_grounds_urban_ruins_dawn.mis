@@ -129,8 +129,8 @@ new SimGroup(MissionGroup) {
       billboardUVs[5] = "0 0 1 1";
       billboardUVs[6] = "0 0 1 1";
       billboardUVs[7] = "0 0 1 1";
-      layer[0] = "sand_flat_dirty_03";
-      layer[1] = "sand_flat_dirty_03";
+      layer[0] = "ter_sand_dirty_03";
+      layer[1] = "ter_sand_dirty_03";
       invertLayer[0] = "0";
       invertLayer[1] = "0";
       invertLayer[2] = "0";
@@ -271,7 +271,7 @@ new SimGroup(MissionGroup) {
       billboardUVs[5] = "0 0 1 1";
       billboardUVs[6] = "0 0 1 1";
       billboardUVs[7] = "0 0 1 1";
-      layer[0] = "sand_flat_dirty_03";
+      layer[0] = "ter_sand_dirty_03";
       invertLayer[0] = "0";
       invertLayer[1] = "0";
       invertLayer[2] = "0";
@@ -412,7 +412,7 @@ new SimGroup(MissionGroup) {
       billboardUVs[5] = "0 0 1 1";
       billboardUVs[6] = "0 0 1 1";
       billboardUVs[7] = "0 0 1 1";
-      layer[0] = "sand_flat_dirty_03";
+      layer[0] = "ter_sand_dirty_03";
       invertLayer[0] = "0";
       invertLayer[1] = "0";
       invertLayer[2] = "0";
@@ -7361,7 +7361,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7384,7 +7384,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7407,7 +7407,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7430,7 +7430,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7453,7 +7453,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7476,7 +7476,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7499,7 +7499,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -7522,7 +7522,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
-         volume = "0.7";
+         volume = "0.6";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";

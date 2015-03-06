@@ -97,11 +97,11 @@ datablock WheeledVehicleTire(DefaultCarTire)
    // are what convert wheel angular velocity into forces that
    // act on the rigid body.
    shapeFile = "art/shapes/vehicles/buggy/wheel.dts";
-   staticFriction = 4.2;
-   kineticFriction = 3.15;
+   staticFriction = "2";
+   kineticFriction = "2";
 
    // Spring that generates lateral tire forces
-   lateralForce = 18000;
+   lateralForce = "48000";
    lateralDamping = 6000;
    lateralRelaxation = 1;
 
@@ -109,14 +109,15 @@ datablock WheeledVehicleTire(DefaultCarTire)
    longitudinalForce = 18000;
    longitudinalDamping = 4000;
    longitudinalRelaxation = 1;
+   radius = "0.6022";
 };
 
 datablock WheeledVehicleSpring(DefaultCarSpring)
 {
    // Wheel suspension properties
    length = 0.85;             // Suspension travel
-   force = 2800;              // Spring force
-   damping = 3600;             // Spring damping
+   force = "10000";              // Spring force
+   damping = "6000";             // Spring damping
    antiSwayForce = 3;         // Lateral anti-sway force
 };
 
@@ -140,7 +141,7 @@ datablock WheeledVehicleData(DefaultCar)
    cameraDecay = 1.25;        // Decay per sec. rate of velocity lag
 
    // Rigid Body
-   mass = "500";
+   mass = "1200";
    massCenter = "0 -0.2 0";    // Center of mass for rigid body
    massBox = "0 0 0";         // Size of box used for moment of inertia,
                               // if zero it defaults to object bounding box
@@ -155,9 +156,9 @@ datablock WheeledVehicleData(DefaultCar)
    contactTol = 0.1;          // Contact velocity tolerance
 
    // Engine
-   engineTorque = "3300";       // Engine power
-   engineBrake = 600;         // Braking when throttle is 0
-   brakeTorque = 4000;        // When brakes are applied
+   engineTorque = "12000";       // Engine power
+   engineBrake = "1000";         // Braking when throttle is 0
+   brakeTorque = "6000";        // When brakes are applied
    maxWheelSpeed = "60";        // Engine scale by current speed / max speed
 
    // Energy

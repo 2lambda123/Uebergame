@@ -32,6 +32,7 @@ function radiusDamage(%sourceObject, %position, %radius, %damage, %damageType, %
    InitContainerRadiusSearch(%position, %radius, $TypeMasks::ShapeBaseObjectType);
 
    %halfRadius = %radius / 2;
+   
    while ((%targetObject = containerSearchNext()) != 0)
    {
       // Calculate how much exposure the current object has to

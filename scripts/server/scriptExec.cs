@@ -27,6 +27,7 @@ exec("./triggers.cs");
 exec("./inventory.cs");
 exec("./shapeBase.cs");
 exec("./item.cs");
+exec("./health.cs");
 exec("./projectile.cs");
 exec("./radiusDamage.cs");
 exec("./teleporter.cs");

@@ -885,9 +885,9 @@ datablock ParticleEmitterData(GrenadeProjSmokeTrailEmitter)
 datablock ProjectileData(GrenadeLauncherProjectile)
 {
    projectileShapeName = "art/shapes/weapons/shared/rocket.dts";
-   directDamage = 30;
-   radiusDamage = 30;
-   damageRadius = 5;
+   directDamage = 0;
+   radiusDamage = 155;
+   damageRadius = 7;
    areaImpulse = 2000;
 
    explosion = GrenadeLauncherExplosion;
@@ -899,17 +899,17 @@ datablock ProjectileData(GrenadeLauncherProjectile)
    particleEmitter = GrenadeProjSmokeTrailEmitter;
    particleWaterEmitter = GrenadeTrailWaterEmitter;
 
-   muzzleVelocity = 30;
+   muzzleVelocity = 50;
    velInheritFactor = 0.3;
 
-   armingDelay = 2000;
+   armingDelay = 1750;
    lifetime = 10000;
    fadeDelay = 4500;
 
    bounceElasticity = 0.4;
-   bounceFriction = 0.3;
+   bounceFriction = -0.2;
    isBallistic = true;
-   gravityMod = 0.9;
+   gravityMod = 2;
 
    lightDesc = GrenadeLauncherLightDesc;
 

@@ -503,14 +503,18 @@ function throwWeapon(%val)
    if (%val)
       commandToServer('Throw', "Weapon");
 }
+
+//disabled untill fixed to throw ammo clips instead
+/* 
 function tossAmmo(%val)
 {
    if (%val)
       commandToServer('Throw', "Ammo");
 }
+*/
 
-moveMap.bind(keyboard, "alt w", throwWeapon);
-moveMap.bind(keyboard, "alt a", tossAmmo);
+moveMap.bind(keyboard, "alt g", throwWeapon);
+moveMap.bind(keyboard, "alt r", tossAmmo);
 
 function nextWeapon(%val)
 {
