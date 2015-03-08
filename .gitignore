@@ -1,35 +1,15 @@
 ## Uebergame repository ignore list
 
 #shaders cache
-shaders/procedural/
+#shaders/procedural/*
 
 ## art
-#models
+#models source files
 *.dae
-*.dts
 
-#textures
-*.png
-*.dds
-*.jpg
-*.bmp
-
-#sound
-*.wav
-*.ogg
-
-#terrains
-*.ter
-
-##misc
-#fonts
-*.uft
 #compilergarbage
 *.exp
 *.bat
-
-#editor settings
-settings.xml
 
 #console outpout
 console.log

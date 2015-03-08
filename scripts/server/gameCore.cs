@@ -626,10 +626,10 @@ function GameCore::loadOut(%game, %player)
    %player.addToWeaponCycle(Lurker);
 
    %player.setInventory(LurkerGrenadeLauncher, 1);
-   %player.setInventory(LurkerGrenadeAmmo, 8); //%player.maxInventory(LurkerGrenadeAmmo)
+   %player.setInventory(LurkerGrenadeAmmo, 0); //%player.maxInventory(LurkerGrenadeAmmo)
    %player.addToWeaponCycle(LurkerGrenadeLauncher);
 
-   %player.setInventory(ProxMine, 4 ); //%player.maxInventory(ProxMine)
+   %player.setInventory(ProxMine, 0 ); //%player.maxInventory(ProxMine)
    %player.addToWeaponCycle(ProxMine);
 
    %player.setInventory(DeployableTurret, 0); //%player.maxInventory(DeployableTurret)

@@ -769,7 +769,7 @@ datablock ExplosionData(GrenadeLauncherExplosion)
 
    // Camera Shaking
    shakeCamera = true;
-   camShakeFreq = "10.0 11.0 9.0";
+   camShakeFreq = "5.0 6.0 4.0";
    camShakeAmp = "15.0 15.0 15.0";
    camShakeDuration = 1.5;
    camShakeRadius = 20;

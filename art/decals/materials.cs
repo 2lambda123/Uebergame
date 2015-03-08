@@ -73,7 +73,7 @@ singleton Material(DECAL_blood_splatter_01)
    mapTo = "DECAL_blood_splatter_01";
    diffuseMap[0] = "art/decals/blood_splatter_01.png";
    alphaTest = "1";
-   alphaRef = "113";
+   alphaRef = "172";
    materialTag0 = "Decal";
    specular[0] = "0.494118 0.054902 0.117647 1";
    pixelSpecular[0] = "1";
