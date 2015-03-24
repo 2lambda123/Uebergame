@@ -121,3 +121,10 @@ function serverCmdReloadWeapon(%client)
    if (%image > 0)
       %image.clearAmmoClip(%player, $WeaponSlot);
 }
+
+function serverCmdtakeSkinName(%client,%skinName)
+{
+   %client.skin = addTaggedString(%skinName);
+   
+   Game.taskAfterGettingSKinInfo(%client);
+}

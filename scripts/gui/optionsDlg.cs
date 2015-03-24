@@ -940,3 +940,33 @@ function Tgl_13::onAction(%this)
       $pref::LightManager::Enable::LightRays = "0";
    }
 }
+
+//exec("scripts/gui/optionsDlg.cs")
+//skin selctor code
+$playerSkinlList= "base	olive	urban	desert	swamp	water";
+function playerSkinSelector::onWake(%this)
+{
+   playerSkinSelector.clear();
+   if($playerSkinlList !$= "")
+   {
+      %n=getWordCount($playerSkinlList);
+      for(%i=0;%i<%n;%i++)
+      {
+         %extractedRaceName=getWord($playerSkinlList,%i);
+         playerSkinSelector.add(%extractedRaceName, %i);
+      }
+      playerSkinSelector.setSelected(0); 
+   } 
+}
+
+function playerSkinSelector::applyRace() // playerSkinSelector.applyRace(); 
+{
+   %selectedRace = playerSkinSelector.getText();
+   if(%selectedRace !$= "") 
+   {
+      $pref::Player::Skin=%selectedRace;
+      //echo(%selectedRace); 
+      
+   }
+}
+

@@ -180,3 +180,8 @@ function turretMountCallback(%turret, %player, %mounted)
       turretMap.pop();
    }
 }
+
+function clientCmdsendSkinName()
+{
+   commandToServer('takeSkinName',$pref::Player::Skin);
+}
