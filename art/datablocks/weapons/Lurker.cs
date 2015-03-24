@@ -379,9 +379,9 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    // Shake camera while firing.
    shakeCamera = true;
    camShakeFreq = "4 4 4";
-   camShakeAmp = "4 4 4";
+   camShakeAmp = "3 3 3";
    camShakeDuration = "0.5";
-   camShakeRadius = "2";
+   camShakeRadius = "1.2";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This

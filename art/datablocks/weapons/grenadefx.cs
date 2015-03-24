@@ -529,8 +529,8 @@ datablock ExplosionData(GrenadeExplosion)
    debris = GrenadeDebris;
    debrisThetaMin = 10;
    debrisThetaMax = 60;
-   debrisNum = 4;
-   debrisNumVariance = 2;
+   debrisNum = 8;
+   debrisNumVariance = 4;
    debrisVelocity = 25;
    debrisVelocityVariance = 5;
 
@@ -778,8 +778,8 @@ datablock ExplosionData(GrenadeLauncherExplosion)
    debris = GrenadeDebris;
    debrisThetaMin = 10;
    debrisThetaMax = 60;
-   debrisNum = 4;
-   debrisNumVariance = 2;
+   debrisNum = 8;
+   debrisNumVariance = 4;
    debrisVelocity = 25;
    debrisVelocityVariance = 5;
 

@@ -26,14 +26,14 @@
 datablock DecalData(ScorchBigDecal)
 {
    Material = "DECAL_scorch";
-   size = "5.0";
+   size = "4.0";
    lifeSpan = "10000";
 };
 
 datablock DecalData(ScorchRXDecal)
 {
    Material = "DECAL_RocketEXP";
-   size = "5.0";
+   size = "4.0";
    lifeSpan = "100000";
    randomize = "1";
    texRows = "2";

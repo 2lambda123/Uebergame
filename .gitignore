@@ -1,11 +1,14 @@
 ## Uebergame repository ignore list
 
 #shaders cache
-#shaders/procedural/*
+shaders/procedural/*
 
 ## art
 #models source files
 *.dae
+
+#screenshots
+#screenshots/*
 
 #compilergarbage
 *.exp
@@ -17,3 +20,6 @@ console.log
 #binaries
 *.exe
 *.dll
+
+#settings
+tools/settings.xml

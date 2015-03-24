@@ -237,7 +237,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    camShakeFreq = "2 2 2";
    camShakeAmp = "4.5 4.5 4.5";
    camShakeDuration = "0.5";
-   camShakeRadius = "2";
+   camShakeRadius = "1.2";
 
    // Images have a state system which controls how the animations
    // are run, which sounds are played, script callbacks, etc. This

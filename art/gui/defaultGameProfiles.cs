@@ -68,7 +68,7 @@ singleton GuiControlProfile (ChatHudTextProfile)
 singleton GuiControlProfile ("ChatHudMessageProfile")
 {
    fontType = "Arial";
-   fontSize = "16";
+   fontSize = "18";
    fontColor = "255 255 255 255";      // default color (death msgs, scoring, inventory)
    fontColors[1] = "255 255 255 255";   // client join/drop, tournament mode
    fontColors[2] = "255 255 255 255"; // gameplay, admin/voting, pack/deployable
@@ -87,6 +87,7 @@ singleton GuiControlProfile ("ChatHudMessageProfile")
    bevelColorHL = "255 0 255 255";
    fontColors[6] = "255 0 255 255";
    fontColors[7] = "255 0 255 255";
+   bevelColorLL = "Magenta";
 };
 
 singleton GuiControlProfile ("ChatHudScrollProfile")
