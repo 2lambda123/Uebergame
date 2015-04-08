@@ -547,7 +547,7 @@ function JoinServerDlg::join(%this)
 
       %conn = new GameConnection(ServerConnection);
       %conn.setConnectArgs($pref::Player::Name);
-	  %conn.setConnectArgs($pref::Player::Skin);
+	  //%conn.setConnectArgs($pref::Player::Skin);
       %conn.setJoinPassword($Client::Password);
       %conn.connect($ServerInfo::Address);
    }

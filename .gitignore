@@ -8,7 +8,7 @@ shaders/procedural/*
 *.dae
 
 #screenshots
-#screenshots/*
+screens/*
 
 #compilergarbage
 *.exp
