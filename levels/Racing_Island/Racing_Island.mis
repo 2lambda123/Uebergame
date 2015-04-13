@@ -10,6 +10,7 @@ new SimGroup(MissionGroup) {
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
       visibleDistance = "5000";
+      visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.6 0.6 0.7 1";
       fogDensity = "0";
@@ -110,6 +111,7 @@ new SimGroup(MissionGroup) {
       castShadows = "1";
       squareSize = "1";
       baseTexSize = "1024";
+      baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
       position = "-512 -512 0";
@@ -127,6 +129,7 @@ new SimGroup(MissionGroup) {
       ambientScale = "0.592157 0.462745 0.282353 1";
       fogScale = "1 1 1 1";
       exposure = "1";
+      zOffset = "0";
       azimuth = "240";
       elevation = "35";
       moonAzimuth = "0";
@@ -267,8 +270,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "159.028 -255.044 57.1154";
-      rotation = "-0.02179 0.023537 0.999485 227.305";
+      position = "159.027 -255.022 57.1184";
+      rotation = "-0.0165317 0.0189788 0.999683 227.28";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -278,8 +281,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "159.362 -244.753 56.895";
-      rotation = "-0.11824 0.0969817 0.988238 227.358";
+      position = "159.407 -244.847 57.1145";
+      rotation = "-0.0259195 0.0171072 0.999518 227.274";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -289,8 +292,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "160.18 -235.258 56.4617";
-      rotation = "-0.0734613 0.0970597 0.992564 227.53";
+      position = "160.215 -235.312 56.6964";
+      rotation = "-0.00817218 0.0356676 0.99933 227.508";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -300,8 +303,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "161.208 -226.847 55.9598";
-      rotation = "-0.00958947 0.0566339 0.998349 227.326";
+      position = "161.218 -226.813 56.1166";
+      rotation = "-0.0109927 0.0551781 0.998416 227.313";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -311,8 +314,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "162.661 -219.069 55.4703";
-      rotation = "-0.097423 0.117746 0.988253 226.941";
+      position = "162.717 -219.155 55.6578";
+      rotation = "-0.00960928 0.0348153 0.999348 227.015";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -322,8 +325,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "164.304 -210.584 55.4191";
-      rotation = "0.104983 -0.0431637 0.993537 226.097";
+      position = "164.202 -210.578 55.6981";
+      rotation = "0.00367154 -0.0266651 0.999638 227.245";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -333,8 +336,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "164.42 -202.162 56.1859";
-      rotation = "0.119203 -0.0521333 0.9915 227.9";
+      position = "164.279 -202.16 56.3726";
+      rotation = "0.00613318 -0.0549291 0.998471 229.158";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -344,8 +347,8 @@ new SimGroup(MissionGroup) {
       disableMove = "0";
       isAIControlled = "0";
       dataBlock = "DefaultCar";
-      position = "163.486 -195.358 56.5273";
-      rotation = "-0.0514735 -0.0344117 0.998081 226.652";
+      position = "163.442 -195.383 56.641";
+      rotation = "-0.0514699 -0.0375356 0.997969 226.716";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
