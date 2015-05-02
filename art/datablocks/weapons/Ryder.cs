@@ -362,11 +362,13 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "Ready";
    stateWaitForTimeout[10]           = true;
-   stateTimeoutValue[10]             = 2.0;
+   stateTimeoutValue[10]             = 2.5;
    stateReload[10]                   = true;
    stateSequence[10]                 = "reload";
    stateShapeSequence[10]            = "Reload";
    stateScaleShapeSequence[10]       = true;
+   stateScaleAnimation[10]           = true;
+   stateScaleAnimationFP[10]         = false;
    stateSound[10]                    = RyderReloadSound;
 
    // Start Sprinting

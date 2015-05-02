@@ -32,9 +32,11 @@ new ActionMap(moveMap);
 function escapeFromGame()
 {
    if ( $Server::ServerType $= "SinglePlayer" )
-      MessageBoxYesNo( "Exit", "Exit from this Mission?", "disconnect();", "");
+      //MessageBoxYesNo( "Exit", "Exit from this Mission?", "disconnect();", "");
+	  Canvas.pushDialog(exitGameGui);
    else
-      MessageBoxYesNo( "Disconnect", "Disconnect from the server?", "disconnect();", "");
+      //MessageBoxYesNo( "Disconnect", "Disconnect from the server?", "disconnect();", "");
+	  Canvas.pushDialog(exitGameGui);
 }
 
 moveMap.bindCmd(keyboard, "escape", "", "handleEscape();");
@@ -403,7 +405,7 @@ function turnOffZoom()
 //   if(%val)
 //      toggleZoomFOV();
 //}
-
+/*
 function toggleZoom(%val)
 {
    if (%val)
@@ -427,10 +429,10 @@ function mouseButtonZoom(%val)
 {
    toggleZoom(%val);
 }
-
+*/ //zoom disabled temporary until better solutions is available
 //moveMap.bind(keyboard, f, setZoomFOV); // f for field of view
 //moveMap.bind(keyboard, z, toggleZoom); // z for zoom
-moveMap.bind( mouse, button1, mouseButtonZoom );
+//moveMap.bind( mouse, button1, mouseButtonZoom );
 
 //------------------------------------------------------------------------------
 // Camera & View functions

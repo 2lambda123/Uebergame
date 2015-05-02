@@ -282,8 +282,6 @@ package GameCore
       %client.armor = "Light";
       %client.race = "Human";
       %client.setPlayerName(%name);
-      //%client.skin = addTaggedString($pref::Player::Skin);
-      //commandToClient( %client, 'sendSkinName');
       %client.team = "";
       %client.score = 0;
       %client.kills = 0;

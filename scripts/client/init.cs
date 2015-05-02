@@ -82,6 +82,7 @@ function initClient()
    exec("art/gui/mainMenuGui.gui");
    exec("art/gui/joinServerDlg.gui");
    exec("art/gui/endGameGui.gui");
+   exec("art/gui/exitGameGui.gui");
    exec("art/gui/chooseLevelDlg.gui");
    exec("art/gui/loadingGui.gui");
    exec("art/gui/optionsDlg.gui");

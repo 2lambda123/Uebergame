@@ -7,6 +7,7 @@ new SimGroup(MissionGroup) {
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
       visibleDistance = "1000";
+      visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.6 0.6 0.7 1";
       fogDensity = "0";
@@ -37,8 +38,8 @@ new SimGroup(MissionGroup) {
    new Sun(theSun) {
       azimuth = "230.396";
       elevation = "45";
-      color = "1 1 1 1";
-      ambient = "1 1 1 1";
+      color = "0.9 0.9 0.9 1";
+      ambient = "0.333333 0.333333 0.333333 1";
       brightness = "1";
       castShadows = "1";
       coronaEnabled = "1";

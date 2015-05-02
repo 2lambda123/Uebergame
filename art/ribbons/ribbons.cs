@@ -19,18 +19,45 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
-
-singleton Material( BlankWhite )
+  
+datablock RibbonNodeData(DefaultRibbonNodeData)
 {
-   diffuseMap[0] = "core/art/white";
-   mapTo = "white";
-   materialTag0 = "Miscellaneous";
-   specularPower[0] = "1";
-   showFootprints = "0";
-   footstepSoundId = "0";
-   impactSoundId = "0";
+   timeMultiple = 1.0;
 };
 
-singleton Material( Empty )
+//ribbon data////////////////////////////////////////
+
+datablock RibbonData(BasicRibbon)
 {
+   size[0] = 0.5;
+   color[0] = "1.0 0.0 0.0 1.0";
+   position[0] = 0.0;
+ 
+   size[1] = 0.0;
+   color[1] = "1.0 0.0 0.0 0.0";
+   position[1] = 1.0;
+ 
+   RibbonLength = 40;
+   fadeAwayStep = 0.1;
+   UseFadeOut = true;
+   RibbonMaterial = BasicRibbonMat;
+};
+
+datablock RibbonData(TexturedRibbon)
+{
+   RibbonMaterial = TexturedRibbonMat;
+   size[0] = 0.5;
+   color[0] = "1.0 1.0 1.0 1.0";
+   position[0] = 0.0;
+ 
+   size[1] = 0.5;
+   color[1] = "1.0 1.0 1.0 1.0";
+   position[1] = 1.0;
+ 
+   RibbonLength = 40;
+   fadeAwayStep = 0.1;
+   UseFadeOut = true;
+   tileScale = 1;
+   fixedTexCoords = true;
+   TexcoordsRelativeToDistance = true;
 };

@@ -1,7 +1,7 @@
-Übergame v0.01
+Übergame v0.02
 ===============
 
-Übergame is supposed to become a free open source, realism like, multi-purpose,
+Übergame is a free open source, realism like, multi-purpose,
 multiplayer, casual, first-person-shooter game, based on the Torque3D MIT engine.
 
 Official Homepage:

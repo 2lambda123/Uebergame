@@ -886,8 +886,8 @@ datablock ProjectileData(GrenadeLauncherProjectile)
 {
    projectileShapeName = "art/shapes/weapons/shared/rocket.dts";
    directDamage = 0;
-   radiusDamage = 155;
-   damageRadius = 7;
+   radiusDamage = 160;
+   damageRadius = 5;
    areaImpulse = 2000;
 
    explosion = GrenadeLauncherExplosion;
@@ -902,7 +902,7 @@ datablock ProjectileData(GrenadeLauncherProjectile)
    muzzleVelocity = 50;
    velInheritFactor = 0.3;
 
-   armingDelay = 1750;
+   armingDelay = 1500;
    lifetime = 10000;
    fadeDelay = 4500;
 

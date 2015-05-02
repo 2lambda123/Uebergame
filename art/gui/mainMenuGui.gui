@@ -142,7 +142,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiTextCtrl(Version_Number) {
-      text = "Version: 0.01";
+      text = "Version: 0.02";
       maxLength = "1024";
       margin = "0 0 0 0";
       padding = "0 0 0 0";

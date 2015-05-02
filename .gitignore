@@ -3,6 +3,9 @@
 #shaders cache
 shaders/procedural/*
 
+#fonts cache
+core/fonts/*
+
 ## art
 #models source files
 *.dae
@@ -24,3 +27,6 @@ console.log
 #settings
 tools/settings.xml
 /.project
+
+#linux binaries
+Uebergame-Linux-32-Bit

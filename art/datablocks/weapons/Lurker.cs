@@ -508,7 +508,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateScript[9]                   = "onDryFire";
    stateSound[9]                    = MachineGunDryFire;
 
-   // Play the reload clip animation
+   // Play the reload clip animation //with fix for reload animation bug
    stateName[10]                     = "ReloadClip";
    stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "Ready";
@@ -518,6 +518,8 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateSequence[10]                 = "reload";
    stateShapeSequence[10]            = "Reload";
    stateScaleShapeSequence[10]       = true;
+   stateScaleAnimation[10]           = true;
+   stateScaleAnimationFP[10]         = false;
    stateSound[10]                    = LurkerReloadSound;
 
    // Start Sprinting

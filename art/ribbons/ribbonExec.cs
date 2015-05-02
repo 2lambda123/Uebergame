@@ -20,17 +20,4 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-singleton Material( BlankWhite )
-{
-   diffuseMap[0] = "core/art/white";
-   mapTo = "white";
-   materialTag0 = "Miscellaneous";
-   specularPower[0] = "1";
-   showFootprints = "0";
-   footstepSoundId = "0";
-   impactSoundId = "0";
-};
-
-singleton Material( Empty )
-{
-};
+exec("./ribbons.cs");
