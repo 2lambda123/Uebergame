@@ -104,7 +104,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "1 1";
-            extent = "537 8";
+            extent = "540 18";
             minExtent = "8 8";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -128,7 +128,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "308 69";
+         position = "277 69";
          extent = "44 20";
          minExtent = "8 8";
          horizSizing = "right";
@@ -151,7 +151,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "387 69";
+         position = "340 69";
          extent = "44 20";
          minExtent = "8 8";
          horizSizing = "right";
@@ -166,7 +166,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl() {
-         text = "Game";
+         text = "Map";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -174,8 +174,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "468 69";
-         extent = "35 20";
+         position = "415 69";
+         extent = "25 20";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -308,7 +308,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl(JS_statusText) {
-            text = "Querying master server";
+            text = "Query Servers";
             maxLength = "255";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -392,7 +392,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(JS_status) {
-         text = "No servers found.";
+         text = "One server found.";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -401,7 +401,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "91 35";
-         extent = "100 20";
+         extent = "101 20";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -498,7 +498,7 @@ function JoinServerDlg::query(%this)
       0,          // maxBots
       2,          // regionMask
       0,          // maxPing
-      100,        // minCPU
+      0,          // minCPU
       0           // filterFlags
    );
 }
@@ -516,7 +516,7 @@ function JoinServerDlg::queryLan(%this)
       0,          // maxBots
       2,          // regionMask
       0,          // maxPing
-      100,        // minCPU
+      0,          // minCPU
       0           // filterFlags
    );
 }

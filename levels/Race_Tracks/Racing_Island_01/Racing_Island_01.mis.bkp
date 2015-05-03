@@ -107,7 +107,7 @@ new SimGroup(MissionGroup) {
       };
    };
    new TerrainBlock(Racing_Island) {
-      terrainFile = "levels/Racing_Island/Racing_Island.ter";
+      terrainFile = "./Racing_Island_01.ter";
       castShadows = "1";
       squareSize = "1";
       baseTexSize = "1024";

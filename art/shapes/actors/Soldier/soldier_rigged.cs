@@ -314,8 +314,8 @@ function SoldierDAE::onLoad(%this)
    %this.addTrigger("Crouch_Forward", "24", "2");
    %this.addTrigger("Crouch_Side", "16", "1");
    %this.addTrigger("Crouch_Side", "23", "2");
-   %this.addTrigger("Side", "0", "1");
-   %this.addTrigger("Side", "9.5", "2");
+   %this.addTrigger("Side", "14", "1");
+   %this.addTrigger("Side", "9", "2");
    %this.addTrigger("Pistol_Crouch_Backward", "10", "1");
    %this.addTrigger("Pistol_Crouch_Backward", "24", "2");
    %this.addTrigger("Pistol_Crouch_Forward", "9", "1");
@@ -326,8 +326,8 @@ function SoldierDAE::onLoad(%this)
    %this.addTrigger("Pistol_Land", "9", "1");
    %this.addTrigger("Pistol_Run", "7.5", "1");
    %this.addTrigger("Pistol_Run", "16.5", "2");
-   %this.addTrigger("Pistol_Side", "8", "1");
-   %this.addTrigger("Pistol_Side", "17", "2");
+   %this.addTrigger("Pistol_Side", "14", "1");
+   %this.addTrigger("Pistol_Side", "9", "2");
    %this.addTrigger("ProxMine_Back", "3", "1");
    %this.addTrigger("ProxMine_Back", "12", "2");
    %this.addTrigger("ProxMine_Crouch_Backward", "9", "1");
@@ -341,8 +341,8 @@ function SoldierDAE::onLoad(%this)
    %this.addTrigger("ProxMine_Land", "7", "1");
    %this.addTrigger("ProxMine_Run", "7.5", "1");
    %this.addTrigger("ProxMine_Run", "16.5", "2");
-   %this.addTrigger("ProxMine_Side", "7", "1");
-   %this.addTrigger("ProxMine_Side", "18", "2");
+   %this.addTrigger("ProxMine_Side", "14", "1");
+   %this.addTrigger("ProxMine_Side", "9", "2");
    %this.addTrigger("Turret_Back", "4", "1");
    %this.addTrigger("Turret_Back", "11", "2");
    %this.addTrigger("Turret_Crouch_Backward", "8", "1");
@@ -355,7 +355,7 @@ function SoldierDAE::onLoad(%this)
    %this.addTrigger("Turret_Run", "16.5", "2");
    %this.addTrigger("Turret_Jump", "6", "1");
    %this.addTrigger("Turret_Land", "3", "1");
-   %this.addTrigger("Turret_Side", "9", "1");
-   %this.addTrigger("Turret_Side", "17", "2");
+   %this.addTrigger("Turret_Side", "14", "1");
+   %this.addTrigger("Turret_Side", "9", "2");
    // end keyframes
 }

@@ -23,7 +23,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "Training Level in the desert ruins at dawn";
          enabled = "1";
-         levelName = "Training grounds desert ruins dawn";
+         levelName = "TG_DesertRuins_dawn";
    };
    new ScatterSky(Sky) {
       skyBrightness = "20";
@@ -72,7 +72,7 @@ new SimGroup(MissionGroup) {
          mieScattering = "0.0045";
    };
    new TerrainBlock(Terrain) {
-      terrainFile = "levels/Training_Grounds/TG_DesertRuins.ter";
+      terrainFile = "./TG_DesertRuins.ter";
       castShadows = "0";
       squareSize = "1";
       baseTexSize = "1024";
