@@ -40,6 +40,7 @@ moveMap.bind(keyboard, "f2", toggleFirstPerson);
 moveMap.bind(keyboard, "j", celebrationWave);
 moveMap.bind(keyboard, "k", celebrationSalute);
 moveMap.bind(keyboard, "lcontrol", doCrouch);
+moveMap.bind(keyboard, "alt h", hideHUDs);
 moveMap.bind(mouse0, "xaxis", yaw);
 moveMap.bind(mouse0, "yaxis", pitch);
 moveMap.bind(mouse0, "button0", mouseFire);

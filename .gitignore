@@ -6,10 +6,6 @@ shaders/procedural/*
 #fonts cache
 core/fonts/*
 
-## art
-#models source files
-*.dae
-
 #screenshots
 screens/*
 
@@ -30,3 +26,8 @@ tools/settings.xml
 
 #linux binaries
 Uebergame-Linux-32-Bit
+
+#linux garbage
+libSDL2-2.0.so
+libSDL2-2.0.so.1
+libSDL2-2.0.so.0.2.1

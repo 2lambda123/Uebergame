@@ -10,8 +10,11 @@ http://www.duion.com/games/uebergame/main
 Moddb Page:
 http://www.moddb.com/games/uebergame
 
+For Binaries download the latest version or go to
+http://www.duion.com/games/uebergame/playtesting
+for nightly builds if available, or compile them yourself using the engine Repoistory.
 
-based on:
+Engine Repository:
 
 Torque 3D
 ===============

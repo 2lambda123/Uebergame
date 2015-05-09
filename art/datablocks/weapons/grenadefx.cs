@@ -902,7 +902,7 @@ datablock ProjectileData(GrenadeLauncherProjectile)
    muzzleVelocity = 50;
    velInheritFactor = 0.3;
 
-   armingDelay = 1500;
+   armingDelay = 1200;
    lifetime = 10000;
    fadeDelay = 4500;
 

@@ -49,13 +49,13 @@ function showPlayerList(%val)
 
 moveMap.bind( keyboard, F2, showPlayerList );
 
-//function hideHUDs(%val)
-//{
-//  if (%val)
-//      HudlessPlayGui.toggle();
-//}
+function hideHUDs(%val)
+{
+  if (%val)
+      HudlessPlayGui.toggle();
+}
 
-//moveMap.bind(keyboard, "ctrl h", hideHUDs);
+moveMap.bind(keyboard, "alt h", hideHUDs);
 
 function doScreenShotHudless(%val)
 {
