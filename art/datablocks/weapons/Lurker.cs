@@ -260,7 +260,7 @@ datablock ItemData(LurkerClip)
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.DAE";
-   mass = 1;
+   mass = 5;
    elasticity = 0.2;
    friction = 0.6;
 
@@ -379,7 +379,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    // Shake camera while firing.
    shakeCamera = true;
    camShakeFreq = "4 4 4";
-   camShakeAmp = "3 3 3";
+   camShakeAmp = "4 4 4";
    camShakeDuration = "0.5";
    camShakeRadius = "1.2";
 

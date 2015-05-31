@@ -72,7 +72,7 @@ new SimGroup(MissionGroup) {
          mieScattering = "0.0045";
    };
    new TerrainBlock(Terrain) {
-      terrainFile = "./TG_DesertRuins.ter";
+      terrainFile = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins.ter";
       castShadows = "0";
       squareSize = "1";
       baseTexSize = "1024";
@@ -982,7 +982,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "19.1972 -51.925 0.75";
+         position = "19.3258 -51.925 0.75";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -5318,7 +5318,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "30.4407 -35.2536 -1.90735e-006";
+            position = "30.4407 -35.1539 -1.90735e-006";
             rotation = "0.00175266 -0.00133089 0.999998 89.1684";
             scale = "0.735788 1 1";
             canSave = "1";
@@ -5638,7 +5638,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "30.5 -42 0";
+            position = "30.5 -42.014 -0.0891796";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -8094,8 +8094,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "-6.25 -53.5 0.213669";
-         rotation = "0.609335 -0.494484 0.619836 233.405";
+         position = "-6.36188 -54.1113 0.213669";
+         rotation = "0.596892 -0.524455 0.607179 236.159";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8174,8 +8174,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "-5.90642 0.332756 0.189568";
-         rotation = "-0.615271 0.305567 0.726684 234.208";
+         position = "-6.31521 0.160921 0.282834";
+         rotation = "0.226055 -0.830386 -0.509273 110.332";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8214,8 +8214,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "6.25 -82.5 0.344886";
-         rotation = "0.643243 0.471772 -0.60305 228.612";
+         position = "6.25 -76.0266 0.233741";
+         rotation = "0.602388 0.528484 -0.598192 238.747";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8354,8 +8354,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "38.7733 -41.0854 0.431879";
-         rotation = "0.262011 -0.946007 -0.190843 96.8215";
+         position = "38.6258 -42.0163 0.266755";
+         rotation = "0.491986 -0.626052 -0.604987 119.921";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8434,8 +8434,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "49 -24.75 0.381069";
-         rotation = "0.142099 0.98369 0.110281 94.8218";
+         position = "49.2404 -24.5799 0.246058";
+         rotation = "0.625097 0.490203 -0.607416 238.2";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8494,8 +8494,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "31.3468 5.94676 0.287797";
-         rotation = "-0.368939 0.613021 0.698634 232.984";
+         position = "30.8062 5.10047 0.287797";
+         rotation = "0.223374 -0.850262 -0.476611 103.518";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8516,26 +8516,6 @@ new SimGroup(MissionGroup) {
          forceDetail = "-1";
          position = "41.25 2.75 0";
          rotation = "0 0 1 90";
-         scale = "1 1 1";
-         canSave = "1";
-         canSaveDynamicFields = "1";
-      };
-      new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
-         playAmbient = "1";
-         meshCulling = "0";
-         originSort = "0";
-         collisionType = "Visible Mesh";
-         decalType = "Visible Mesh";
-         allowPlayerStep = "1";
-         alphaFadeEnable = "0";
-         alphaFadeStart = "100";
-         alphaFadeEnd = "150";
-         alphaFadeInverse = "0";
-         renderNormals = "0";
-         forceDetail = "-1";
-         position = "-22 -23.25 0.266225";
-         rotation = "0.690352 -0.218782 -0.6896 161.18";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8876,6 +8856,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -8899,6 +8880,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -8922,6 +8904,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -8945,6 +8928,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -8968,6 +8952,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -8991,6 +8976,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -9014,6 +9000,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
@@ -9037,6 +9024,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.3";
          pitch = "1";
          fadeInTime = "0";

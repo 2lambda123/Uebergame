@@ -87,7 +87,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiButtonCtrl(disconnect) {
-         text = "Disconnect";
+         text = "Exit";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";

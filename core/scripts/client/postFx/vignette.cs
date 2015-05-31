@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.  
 //-----------------------------------------------------------------------------  
 
-$VignettePostEffect::VMax = 0.6;
+$VignettePostEffect::VMax = 2.0;
 $VignettePostEffect::VMin = 0.2;
 
 singleton ShaderData( VignetteShader )

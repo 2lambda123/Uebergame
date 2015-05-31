@@ -14,7 +14,7 @@ singleton Material(TerrainFX_ter_soil_dark_01)
 
 new TerrainMaterial()
 {
-   diffuseMap = "art/terrains/soil/ter_soil_dark_01_B";
+   diffuseMap = "art/terrains/soil/ter_soil_dark_02_B";
    detailMap = "art/terrains/soil/ter_soil_dark_01_D";
    internalName = "ter_soil_dark_01";
    diffuseSize = "250";
@@ -24,7 +24,7 @@ new TerrainMaterial()
    normalMap = "art/terrains/soil/ter_soil_dark_01_N";
    parallaxScale = "0.05";
    macroStrength = "0.5";
-   macroMap = "art/terrains/soil/ter_soil_dark_01_B";
+   macroMap = "art/terrains/soil/ter_soil_dark_02_B";
 };
 
 singleton Material(TerrainFX_ter_soil_dark_02)    

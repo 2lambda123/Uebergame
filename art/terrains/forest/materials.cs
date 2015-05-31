@@ -19,7 +19,7 @@ new TerrainMaterial()
    macroSize = "64";
    internalName = "ter_forest_dirt_01";
    detailSize = "5";
-   macroStrength = "0.5";
+   macroStrength = "0.3";
    parallaxScale = "0.04";
    normalMap = "art/terrains/forest/ter_forest_dirt_01_N";
    macroMap = "art/terrains/forest/ter_forest_dirt_01_M";

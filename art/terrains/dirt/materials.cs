@@ -21,7 +21,7 @@ new TerrainMaterial()
    macroStrength = "0.5";
    parallaxScale = "0.05";
    normalMap = "art/terrains/dirt/ter_dirt_ash_01_N";
-   macroMap = "art/terrains/dirt/ter_dirt_ash_01_M";
+   macroMap = "art/terrains/dirt/ter_dirt_ash_02_M";
    detailMap = "art/terrains/dirt/ter_dirt_ash_01_D";
    detailStrength = "1.2";
 };
@@ -160,4 +160,31 @@ new TerrainMaterial()
    macroStrength = "0.5";
    parallaxScale = "0.08";
    normalMap = "art/terrains/dirt/ter_dirt_gravel_04_N";
+};
+
+singleton Material(TerrainFX_ter_dirt_gravel_05)    
+{    
+   mapTo = "ter_dirt_gravel_05_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "1";    
+   showFootprints = "1";   
+   materialTag0 = "Terrain_Dirt";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/dirt/ter_dirt_gravel_05_B";
+   diffuseSize = "200";
+   detailMap = "art/terrains/dirt/ter_dirt_gravel_05_D";
+   detailSize = "4";
+   detailDistance = "100";
+   macroSize = "64";
+   internalName = "ter_dirt_gravel_05";
+   macroMap = "art/terrains/dirt/ter_dirt_gravel_05_M";
+   macroStrength = "0.9";
+   parallaxScale = "0.04";
+   normalMap = "art/terrains/dirt/ter_dirt_gravel_05_N";
 };

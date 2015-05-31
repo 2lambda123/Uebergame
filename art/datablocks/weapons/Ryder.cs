@@ -116,7 +116,7 @@ datablock ItemData(RyderClip)
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.DAE";
-   mass = 1;
+   mass = 5;
    elasticity = 0.2;
    friction = 0.6;
 
@@ -235,7 +235,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    // Shake camera while firing.
    shakeCamera = true;
    camShakeFreq = "2 2 2";
-   camShakeAmp = "4.5 4.5 4.5";
+   camShakeAmp = "5 5 5";
    camShakeDuration = "0.5";
    camShakeRadius = "1.2";
 

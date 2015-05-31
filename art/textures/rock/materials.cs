@@ -1,0 +1,89 @@
+singleton Material(rock_main)
+{
+   mapTo = "base_rock_main";
+   materialTag0 = "rock";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_rough_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_rough_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_rough_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};
+
+singleton Material(spotted_01_rock_main : rock_main)
+{
+   mapTo = "spotted_01_rock_main";
+   materialTag0 = "rock";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_spotted_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_spotted_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_spotted_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};
+
+singleton Material(rough_02_rock_main : rock_main)
+{
+   mapTo = "rough_02_rock_main";
+   materialTag0 = "rock";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_rough_02_D.dds";
+   specularMap[0] = "art/textures/rock/rock_rough_02_S.dds";
+   normalMap[0] = "art/textures/rock/rock_rough_02_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};
+
+singleton Material(rugged_01_rock_main : rock_main)
+{
+   mapTo = "rugged_01_rock_main";
+   materialTag0 = "rock";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_rugged_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_rugged_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_rugged_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};
+
+singleton Material(shale_01_rock_main : rock_main)
+{
+   mapTo = "shale_01_rock_main";
+   materialTag0 = "rock";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_shale_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_shale_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_shale_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};

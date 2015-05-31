@@ -13,4 +13,5 @@ singleton Material(sandbag_01)
    vertColor[0] = "1";
    showFootprints = "0";
    footstepSoundId = "1";
+   specularStrength[0] = "0.5";
 };
