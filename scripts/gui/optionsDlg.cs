@@ -970,7 +970,7 @@ function Tgl_13::onAction(%this)
 
 //exec("scripts/gui/optionsDlg.cs")
 //skin selctor code
-$playerSkinlList= "base	olive	urban	desert	swamp	water";
+$playerSkinlList= "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
 function playerSkinSelector::onWake(%this)
 {
    playerSkinSelector.clear();

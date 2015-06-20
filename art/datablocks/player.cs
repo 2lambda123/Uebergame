@@ -506,7 +506,7 @@ datablock PlayerData(DefaultPlayerData)
    computeCRC = false;
 
    // Third person shape
-   shapeFile = "art/shapes/actors/Soldier/soldier_rigged.DAE";
+   shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
    cameraMaxDist = "2.5";
    allowImageStateAnimation = true;
 
@@ -692,7 +692,7 @@ datablock PlayerData(DefaultPlayerData)
    maxInv[DeployableTurret] = 1;
 
    // available skins (see materials.cs in model folder)
-   availableSkins =  "base	olive	urban	desert	swamp	water";
+   availableSkins =  "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
    //maxInvDeployableTurret = "0";
    //maxInvRyder = "1";
    //maxInvLurkerGrenadeLauncher = "1";

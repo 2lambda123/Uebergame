@@ -63,3 +63,27 @@ singleton Material(Mat_water_FP_Soldier_Arms_Main : Mat_FP_Soldier_Arms_Main)
    mapTo = "water_FP_Soldier_Arms_Main";
    diffuseMap[0] = "FP_SoldierArms_water_D.dds";
 };
+
+singleton Material(Mat_blue_FP_Soldier_Arms_Main : Mat_FP_Soldier_Arms_Main)
+{
+   mapTo = "blue_FP_Soldier_Arms_Main";
+   diffuseMap[0] = "FP_SoldierArms_blue_D.dds";
+};
+
+singleton Material(Mat_red_FP_Soldier_Arms_Main : Mat_FP_Soldier_Arms_Main)
+{
+   mapTo = "red_FP_Soldier_Arms_Main";
+   diffuseMap[0] = "FP_SoldierArms_red_D.dds";
+};
+
+singleton Material(Mat_green_FP_Soldier_Arms_Main : Mat_FP_Soldier_Arms_Main)
+{
+   mapTo = "green_FP_Soldier_Arms_Main";
+   diffuseMap[0] = "FP_SoldierArms_green_D.dds";
+};
+
+singleton Material(Mat_yellow_FP_Soldier_Arms_Main : Mat_FP_Soldier_Arms_Main)
+{
+   mapTo = "yellow_FP_Soldier_Arms_Main";
+   diffuseMap[0] = "FP_SoldierArms_yellow_D.dds";
+};

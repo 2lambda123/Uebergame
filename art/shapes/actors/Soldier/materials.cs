@@ -24,9 +24,9 @@ singleton Material(Mat_Soldier_Main)
 {
    mapTo = "base_Soldier_Main";
 
-   diffuseMap[0] = "art/shapes/actors/Soldier/Soldier_D.dds";
-   normalMap[0] = "art/shapes/actors/Soldier/Soldier_N.dds";
-   specularMap[0] = "art/shapes/actors/Soldier/Soldier_S.dds";
+   diffuseMap[0] = "Soldier_D.dds";
+   normalMap[0] = "Soldier_N.dds";
+   specularMap[0] = "Soldier_S.dds";
 
    diffuseColor[0] = "1 1 1 1";
    specular[0] = "0.9 0.9 0.9 1";
@@ -44,7 +44,7 @@ singleton Material(Mat_Soldier_Dazzle)
 {
    mapTo = "base_Soldier_Dazzle";
 
-   diffuseMap[0] = "art/shapes/actors/Soldier/Soldier_Dazzle.dds";
+   diffuseMap[0] = "Soldier_Dazzle.dds";
 
    diffuseColor[0] = "0.196078 0.196078 0.196078 1";
    specular[0] = "0.9 0.9 0.9 1";
@@ -103,12 +103,36 @@ singleton Material(Mat_desert_Soldier_Main : Mat_Soldier_Main)
 singleton Material(Mat_swamp_Soldier_Main : Mat_Soldier_Main)
 {
    mapTo = "swamp_Soldier_Main";
-   diffuseMap[0] = "art/shapes/actors/Soldier/Soldier_swamp_D.dds";
+   diffuseMap[0] = "Soldier_swamp_D.dds";
 };
 
 singleton Material(Mat_water_Soldier_Main : Mat_Soldier_Main)
 {
    mapTo = "water_Soldier_Main";
    diffuseMap[0] = "Soldier_water_D.dds";
+};
+
+singleton Material(Mat_blue_Soldier_Main : Mat_Soldier_Main)
+{
+   mapTo = "blue_Soldier_Main";
+   diffuseMap[0] = "Soldier_blue_D.dds";
+};
+
+singleton Material(Mat_red_Soldier_Main : Mat_Soldier_Main)
+{
+   mapTo = "red_Soldier_Main";
+   diffuseMap[0] = "Soldier_red_D.dds";
+};
+
+singleton Material(Mat_green_Soldier_Main : Mat_Soldier_Main)
+{
+   mapTo = "green_Soldier_Main";
+   diffuseMap[0] = "Soldier_green_D.dds";
+};
+
+singleton Material(Mat_yellow_Soldier_Main : Mat_Soldier_Main)
+{
+   mapTo = "yellow_Soldier_Main";
+   diffuseMap[0] = "Soldier_yellow_D.dds";
 };
 

@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(SoldierDAE)
 {
-   baseShape = "./soldier_rigged.DAE";
+   baseShape = "./soldier_rigged.dts";
    loadLights = "0";
    unit = "1.0";
    upAxis = "DEFAULT";

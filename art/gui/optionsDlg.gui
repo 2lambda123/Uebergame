@@ -163,7 +163,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl() {
-            text = "Available Skins: base, olive, urban, desert, swamp, water";
+            text = "Available Skins: base, olive, urban, desert, swamp, water, blue, red, green, yellow";
             maxLength = "1024";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
