@@ -586,7 +586,7 @@ function stopRecordingDemo( %val )
       stopDemoRecord();
 }
 
-moveMap.bind( keyboard, F3, startRecordingDemo );
+moveMap.bind( keyboard, F4, startRecordingDemo );
 moveMap.bind( keyboard, F4, stopRecordingDemo );
 
 
@@ -622,6 +622,16 @@ GlobalActionMap.bind(keyboard, "f8", bringUpOptions);
 // Debugging Functions
 //------------------------------------------------------------------------------
 
+// Opens a Gui ingame that displays all metrics in one window
+// #issue: still needs function to be toggled off when pressing the key again
+// currently the gui does close when pressing esc
+function showMetrics(%val)
+{
+   if(%val)
+      metrics("fps gfx shadow sfx terrain groundcover forest net");
+}
+
+GlobalActionMap.bind(keyboard, "F3", showMetrics);
 
 //------------------------------------------------------------------------------
 //
