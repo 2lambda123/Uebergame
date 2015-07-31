@@ -111,7 +111,7 @@ new GuiControl(MessageHud)
          canSaveDynamicFields = "0";
 
          new GuiBitmapCtrl() {
-            bitmap = "art/gui/hudfill.png";
+            bitmap = "art/gui/images/hudfill.png";
             wrap = "0";
             position = "0 0";
             extent = "394 84";

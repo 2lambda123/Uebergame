@@ -5,7 +5,7 @@
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
-   profile = "GuiOverlayProfile";
+   profile = "GuiModelessDialogProfile";
    visible = "1";
    active = "1";
    tooltipProfile = "GuiToolTipProfile";
@@ -16,35 +16,11 @@
       enabled = "1";
       launchInEditor = "0";
 
-   new GuiBitmapButtonCtrl() {
-      bitmap = "art/gui/hudfill_clear.png";
-      bitmapMode = "Stretched";
-      autoFitExtents = "0";
-      useModifiers = "0";
-      useStates = "1";
-      groupNum = "-1";
-      buttonType = "PushButton";
-      useMouseEvents = "0";
-      position = "0 0";
-      extent = "1024 768";
-      minExtent = "8 2";
-      horizSizing = "width";
-      vertSizing = "height";
-      profile = "GuiDefaultProfile";
-      visible = "1";
-      active = "1";
-      command = "Canvas.popDialog(ChooseLevelDlg);";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "0";
-      canSave = "1";
-      canSaveDynamicFields = "0";
-   };
    new GuiWindowCtrl(ChooseLevelWindow) {
       text = "Choose Level";
       resizeWidth = "0";
       resizeHeight = "0";
-      canMove = "0";
+      canMove = "1";
       canClose = "1";
       canMinimize = "0";
       canMaximize = "0";
@@ -72,7 +48,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/no-preview";
+         bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_dawn_preview";
          wrap = "0";
          position = "119 136";
          extent = "400 300";
@@ -90,7 +66,7 @@
          canSaveDynamicFields = "1";
       };
       new GuiTextCtrl() {
-         text = "Construct";
+         text = "TG_DesertRuins_dawn";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -168,7 +144,7 @@
          fillRowFirst = "1";
          dynamicSize = "0";
          padding = "0 0 0 0";
-         position = "29 24";
+         position = "3 24";
          extent = "584 81";
          minExtent = "8 2";
          horizSizing = "right";
@@ -184,7 +160,7 @@
          canSaveDynamicFields = "0";
 
          new GuiBitmapButtonCtrl() {
-            bitmap = "art/gui/no-preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_dawn_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -209,7 +185,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Race_Tracks/Racing_Island_01/Racing_Island_01_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -234,7 +210,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_dawn_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_night_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -259,7 +235,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_storm_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -284,7 +260,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_night_preview";
+            bitmap = "levels/Training_Grounds/TG_DirtPit/TG_DirtPit_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -308,39 +284,13 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
-         new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_storm_preview";
-            bitmapMode = "Stretched";
-            autoFitExtents = "0";
-            useModifiers = "0";
-            useStates = "1";
-            groupNum = "-1";
-            buttonType = "PushButton";
-            useMouseEvents = "0";
-            position = "0 81";
-            extent = "108 81";
-            minExtent = "8 2";
-            horizSizing = "right";
-            vertSizing = "bottom";
-            profile = "GuiDefaultProfile";
-            visible = "0";
-            active = "1";
-            command = "ChooseLevelWindow.previewSelected(ChooseLevelWindow->SmallPreviews->SmallPreview5);";
-            tooltipProfile = "GuiToolTipProfile";
-            hovertime = "1000";
-            isContainer = "0";
-            internalName = "SmallPreview5";
-            hidden = "1";
-            canSave = "1";
-            canSaveDynamicFields = "0";
-         };
       };
       new GuiTextListCtrl(CL_levelList) {
          columns = "0";
          fitParentWidth = "1";
          clipColumnText = "0";
          position = "1 22";
-         extent = "80 180";
+         extent = "80 150";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -374,7 +324,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl() {
-         bitmap = "art/gui/previous-button";
+         bitmap = "art/gui/images/previous-button";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -388,20 +338,21 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiDefaultProfile";
-         visible = "1";
+         visible = "0";
          active = "1";
          command = "ChooseLevelWindow.previousPreviews();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "PreviousSmallPreviews";
+         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
             enabled = "1";
             wrap = "0";
       };
       new GuiBitmapButtonCtrl() {
-         bitmap = "art/gui/next-button";
+         bitmap = "art/gui/images/next-button";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -415,13 +366,14 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiDefaultProfile";
-         visible = "1";
+         visible = "0";
          active = "1";
          command = "ChooseLevelWindow.nextPreviews();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "NextSmallPreviews";
+         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
       };

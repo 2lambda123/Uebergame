@@ -38,7 +38,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/playerlist_hudfill.png";
+         bitmap = "art/gui/playGui/playerlist_hudfill.png";
          wrap = "0";
          position = "0 0";
          extent = "256 384";

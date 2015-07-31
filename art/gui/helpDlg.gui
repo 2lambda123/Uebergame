@@ -1,10 +1,10 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiControl(recordingsDlg) {
+%guiContent = new GuiControl(HelpDlg) {
    position = "0 0";
    extent = "1024 768";
    minExtent = "8 8";
-   horizSizing = "right";
-   vertSizing = "bottom";
+   horizSizing = "width";
+   vertSizing = "height";
    profile = "GuiModelessDialogProfile";
    visible = "1";
    active = "1";
@@ -13,10 +13,9 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      helpTag = "0";
 
    new GuiWindowCtrl() {
-      text = "Demo Recordings";
+      text = "Help";
       resizeWidth = "1";
       resizeHeight = "1";
       canMove = "1";
@@ -24,7 +23,7 @@
       canMinimize = "1";
       canMaximize = "1";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(recordingsDlg);";
+      closeCommand = "Canvas.popDialog(HelpDlg);";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -32,9 +31,9 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "247 215";
-      extent = "530 338";
-      minExtent = "192 192";
+      position = "192 144";
+      extent = "640 480";
+      minExtent = "256 256";
       horizSizing = "center";
       vertSizing = "center";
       profile = "GuiWindowProfile";
@@ -48,8 +47,8 @@
 
       new GuiScrollCtrl() {
          willFirstRespond = "1";
-         hScrollBar = "dynamic";
-         vScrollBar = "alwaysOn";
+         hScrollBar = "alwaysOff";
+         vScrollBar = "dynamic";
          lockHorizScroll = "0";
          lockVertScroll = "0";
          constantThumbHeight = "0";
@@ -61,9 +60,57 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "8 26";
-         extent = "513 269";
-         minExtent = "32 32";
+         position = "10 27";
+         extent = "128 400";
+         minExtent = "8 8";
+         horizSizing = "right";
+         vertSizing = "height";
+         profile = "GuiScrollProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiTextListCtrl(HelpFileList) {
+            columns = "0";
+            fitParentWidth = "1";
+            clipColumnText = "0";
+            position = "1 1";
+            extent = "126 16";
+            minExtent = "8 8";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
+      new GuiScrollCtrl() {
+         willFirstRespond = "1";
+         hScrollBar = "alwaysOff";
+         vScrollBar = "alwaysOn";
+         lockHorizScroll = "0";
+         lockVertScroll = "0";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+         mouseWheelScrollSpeed = "-1";
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "0";
+         anchorRight = "1";
+         position = "147 27";
+         extent = "483 442";
+         minExtent = "8 8";
          horizSizing = "width";
          vertSizing = "height";
          profile = "GuiScrollProfile";
@@ -75,60 +122,40 @@
          canSave = "1";
          canSaveDynamicFields = "0";
 
-         new GuiTextListCtrl(RecordingsDlgList) {
-            columns = "0";
-            fitParentWidth = "1";
-            clipColumnText = "0";
+         new GuiMLTextCtrl(HelpText) {
+            lineSpacing = "2";
+            allowColorChars = "0";
+            maxChars = "-1";
+            useURLMouseCursor = "0";
             position = "1 1";
-            extent = "495 20";
-            minExtent = "8 20";
-            horizSizing = "right";
+            extent = "446 112";
+            minExtent = "8 8";
+            horizSizing = "width";
             vertSizing = "bottom";
-            profile = "GuiTextArrayProfile";
+            profile = "GuiMLTextProfile";
             visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
-            isContainer = "1";
+            isContainer = "0";
             canSave = "1";
             canSaveDynamicFields = "0";
          };
       };
-      new GuiButtonCtrl(DR_StartDemoBtn) {
-         text = "Play";
+      new GuiButtonCtrl() {
+         text = "CLOSE";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "8 299";
-         extent = "64 32";
-         minExtent = "8 8";
+         position = "8 434";
+         extent = "128 36";
+         minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "top";
          profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
-         command = "StartSelectedDemo();";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiButtonCtrl(DR_CancelBtn) {
-         text = "Cancel";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "457 299";
-         extent = "64 32";
-         minExtent = "8 8";
-         horizSizing = "left";
-         vertSizing = "top";
-         profile = "GuiButtonProfile";
-         visible = "1";
-         active = "1";
-         command = "Canvas.popDialog(recordingsDlg);";
-         accelerator = "escape";
+         command = "Canvas.popDialog(HelpDlg);";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -138,4 +165,3 @@
    };
 };
 //--- OBJECT WRITE END ---
-

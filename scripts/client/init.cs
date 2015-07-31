@@ -87,6 +87,8 @@ function initClient()
    exec("art/gui/loadingGui.gui");
    exec("art/gui/optionsDlg.gui");
    exec("art/gui/remapDlg.gui");
+   exec("art/gui/extrasDlg.gui");
+   exec("art/gui/helpDlg.gui");
    
    // Gui scripts
    exec("./playerList.cs");
@@ -96,6 +98,7 @@ function initClient()
    exec("scripts/gui/chooseLevelDlg.cs");
    exec("scripts/gui/loadingGui.cs");
    exec("scripts/gui/optionsDlg.cs");
+   exec("scripts/gui/helpDlg.cs");
 
    // Client scripts
    exec("./client.cs");

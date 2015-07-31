@@ -28,7 +28,7 @@
       noCursor = "1";
 
    new GuiBitmapCtrl(centerPrintDlg) {
-      bitmap = "art/gui/hudfill.png";
+      bitmap = "art/gui/images/hudfill.png";
       wrap = "0";
       position = "237 374";
       extent = "550 20";
@@ -66,7 +66,7 @@
       };
    };
    new GuiBitmapCtrl(bottomPrintDlg) {
-      bitmap = "art/gui/hudfill.png";
+      bitmap = "art/gui/images/hudfill.png";
       wrap = "0";
       position = "237 719";
       extent = "550 20";
@@ -104,7 +104,7 @@
       };
    };
    new GuiBitmapCtrl(LagIcon) {
-      bitmap = "art/gui/lagIcon.png";
+      bitmap = "art/gui/playGui/lagIcon.png";
       wrap = "0";
       position = "969 653";
       extent = "32 32";
@@ -180,7 +180,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/damageFront.png";
+         bitmap = "art/gui/playGui/damageFront.png";
          wrap = "0";
          position = "0 0";
          extent = "1920 1200";
@@ -199,7 +199,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/damageTop.png";
+         bitmap = "art/gui/playGui/damageTop.png";
          wrap = "0";
          position = "0 0";
          extent = "1920 1200";
@@ -218,7 +218,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/damageBottom.png";
+         bitmap = "art/gui/playGui/damageBottom.png";
          wrap = "0";
          position = "0 0";
          extent = "1920 1200";
@@ -237,7 +237,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/damageLeft.png";
+         bitmap = "art/gui/playGui/damageLeft.png";
          wrap = "0";
          position = "0 0";
          extent = "1920 1200";
@@ -256,7 +256,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/damageRight.png";
+         bitmap = "art/gui/playGui/damageRight.png";
          wrap = "0";
          position = "0 0";
          extent = "1920 1200";
@@ -331,7 +331,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01.png";
+         bitmap = "art/gui/playGui/bar_tube_01.png";
          wrap = "0";
          position = "0 0";
          extent = "96 56";
@@ -348,7 +348,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01.png";
+         bitmap = "art/gui/playGui/bar_tube_01.png";
          wrap = "0";
          position = "89 0";
          extent = "180 56";
@@ -407,7 +407,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/red_cross.png";
+         bitmap = "art/gui/playGui/red_cross.png";
          wrap = "0";
          position = "13 48";
          extent = "24 24";
@@ -470,7 +470,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01.png";
+         bitmap = "art/gui/playGui/bar_tube_01.png";
          wrap = "0";
          position = "36 4";
          extent = "240 42";
@@ -487,7 +487,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01_short.png";
+         bitmap = "art/gui/playGui/bar_tube_01_short.png";
          wrap = "0";
          position = "3 4";
          extent = "44 44";
@@ -504,7 +504,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01_short.png";
+         bitmap = "art/gui/playGui/bar_tube_01_short.png";
          wrap = "0";
          position = "3 38";
          extent = "44 44";
@@ -521,7 +521,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01.png";
+         bitmap = "art/gui/playGui/bar_tube_01.png";
          wrap = "0";
          position = "83 38";
          extent = "240 44";
@@ -538,7 +538,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/bar_tube_01_short.png";
+         bitmap = "art/gui/playGui/bar_tube_01_short.png";
          wrap = "0";
          position = "39 38";
          extent = "56 44";
@@ -555,7 +555,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/running_man.png";
+         bitmap = "art/gui/playGui/running_man.png";
          wrap = "0";
          position = "8 13";
          extent = "30 26";

@@ -5,7 +5,7 @@
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
-   profile = "GuiOverlayProfile";
+   profile = "GuiModelessDialogProfile";
    visible = "1";
    active = "1";
    tooltipProfile = "GuiToolTipProfile";
@@ -15,30 +15,6 @@
    canSaveDynamicFields = "1";
       fixedAspectRatio = "0";
 
-   new GuiBitmapButtonCtrl() {
-      bitmap = "art/gui/hudfill_clear.png";
-      bitmapMode = "Stretched";
-      autoFitExtents = "0";
-      useModifiers = "0";
-      useStates = "1";
-      groupNum = "-1";
-      buttonType = "PushButton";
-      useMouseEvents = "0";
-      position = "0 0";
-      extent = "1024 768";
-      minExtent = "8 2";
-      horizSizing = "width";
-      vertSizing = "height";
-      profile = "GuiDefaultProfile";
-      visible = "1";
-      active = "1";
-      command = "Canvas.popDialog(optionsDlg);";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "0";
-      canSave = "1";
-      canSaveDynamicFields = "0";
-   };
    new GuiWindowCtrl() {
       text = "Options";
       resizeWidth = "0";
@@ -251,13 +227,12 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiTabBorderProfile";
-         visible = "0";
+         visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "OptGraphicsPane";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 
@@ -360,7 +335,7 @@
             sbUsesNAColor = "0";
             reverseTextList = "0";
             bitmapBounds = "16 16";
-            text = "1776 x 1000  (16:9)";
+            text = "1024 x 768  (4:3)";
             maxLength = "255";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -1121,7 +1096,7 @@
                range = "0 1";
                ticks = "0";
                snap = "0";
-               value = "0.673203";
+               value = "0.72549";
                position = "120 0";
                extent = "316 14";
                minExtent = "8 8";
@@ -2162,12 +2137,13 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiTabBorderProfile";
-         visible = "1";
+         visible = "0";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
          internalName = "OptServerPane";
+         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "0";
 

@@ -73,9 +73,14 @@ function initializeCore()
    exec("~/art/gui/console.gui");
    exec("~/art/gui/consoleVarDlg.gui");
    exec("~/art/gui/netGraphGui.gui");
-   
+   exec("~/art/gui/RecordingsDlg.gui");
+   exec("~/art/gui/guiMusicPlayer.gui");
+
+	
    // Gui Helper Scripts.
    exec("~/scripts/gui/help.cs");
+   exec("~/scripts/gui/recordingsDlg.cs");
+   exec("~/scripts/gui/guiMusicPlayer.cs");
 
    // Random Scripts.
    exec("~/scripts/client/screenshot.cs");
@@ -87,9 +92,8 @@ function initializeCore()
    // Client scripts
    exec("~/scripts/client/devHelpers.cs");
    exec("~/scripts/client/metrics.cs");
-   exec("~/scripts/client/recordings.cs");
    exec("~/scripts/client/centerPrint.cs");
-
+   
    // Materials and Shaders for rendering various object types
    loadCoreMaterials();
 
