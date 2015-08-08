@@ -43,12 +43,12 @@ new TerrainMaterial()
    diffuseSize = "100";
    normalMap = "art/terrains/forest/ter_forest_grass_01_N";
    detailMap = "art/terrains/forest/ter_forest_grass_01_D";
-   detailStrength = "1.2";
+   detailStrength = "1";
    detailDistance = "100";
    macroMap = "art/terrains/forest/ter_forest_grass_01_M";
-   macroSize = "50";
+   macroSize = "40";
    macroStrength = "0.8";
-   parallaxScale = "0.05";
+   parallaxScale = "0.02";
    internalName = "ter_forest_grass_01";
 };
 

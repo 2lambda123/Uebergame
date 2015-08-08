@@ -28,5 +28,66 @@
 new SimGroup(ForestBrushGroup) {
    canSave = "1";
    canSaveDynamicFields = "1";
+
+   new ForestBrush() {
+      internalName = "fir_01";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+
+      new ForestBrushElement() {
+         internalName = "fir_01_15m_a";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "fir_01_15m_a";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0.1";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "60";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "fir_01_15m_b";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "fir_01_15m_b";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0.1";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "60";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "fir_01_15m_c";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "fir_01_15m_c";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0.1";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "60";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+   };
 };
 //--- OBJECT WRITE END ---

@@ -631,7 +631,7 @@ function showMetrics(%val)
       metrics("fps gfx shadow sfx terrain groundcover forest net");
 }
 
-GlobalActionMap.bind(keyboard, "F3", showMetrics);
+GlobalActionMap.bind(keyboard, "F7", showMetrics);
 
 //------------------------------------------------------------------------------
 //

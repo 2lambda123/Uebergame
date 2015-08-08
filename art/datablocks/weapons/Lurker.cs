@@ -429,7 +429,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnNoAmmo[3]       = "NoAmmo";
    stateTransitionOnTriggerDown[3]  = "Fire";
    stateSequence[3]                 = "idle_fidget1";
-   stateSound[3]                    = LurkerIdleSound;
+   //stateSound[3]                    = LurkerIdleSound;
 
    // Ready to fire with player moving
    stateName[4]                     = "ReadyMotion";
@@ -705,7 +705,7 @@ datablock ShapeBaseImageData(LurkerGrenadeLauncherImage)
    stateTransitionOnNoAmmo[3]       = "NoAmmo";
    stateTransitionOnTriggerDown[3]  = "Fire";
    stateSequence[3]                 = "idle_fidget1";
-   stateSound[3]                    = LurkerIdleSound;
+   //stateSound[3]                    = LurkerIdleSound;
 
    // Ready to fire with player moving
    stateName[4]                     = "ReadyMotion";

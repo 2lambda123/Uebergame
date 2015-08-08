@@ -24,3 +24,36 @@
 // Forest Editor Editor (this script is executed from onServerCreated())
 
 
+
+datablock TSForestItemData(fir_01_15m_a)
+{
+   internalName = "fir_01_15m_a";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_a.dae";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(fir_01_15m_b)
+{
+   internalName = "fir_01_15m_b";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_b.dae";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(fir_01_15m_c)
+{
+   internalName = "fir_01_15m_c";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_c.dae";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};

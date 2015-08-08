@@ -30,9 +30,6 @@ datablock MissionMarkerData(SpawnSphereMarker)
 {
    category = "Misc";
    shapeFile = "core/art/shapes/octahedron.dts";
-   shadowProjectionDistance = "10";
-   cameraMaxDist = "0.75";
-   shadowSphereAdjust = "1";
 };
 
 datablock MissionMarkerData(CameraBookmarkMarker)

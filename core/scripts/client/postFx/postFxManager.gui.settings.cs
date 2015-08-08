@@ -299,6 +299,9 @@ function PostFXManager::settingsApplyFromPreset(%this)
    $DOFPostFx::BlurCurveNear           = $PostFXManager::Settings::DOF::BlurCurveNear;
    $DOFPostFx::BlurCurveFar            = $PostFXManager::Settings::DOF::BlurCurveFar;
   
+   //Vignette settings   
+   $VignettePostEffect::VMax           = $PostFXManager::Settings::Vignette::VMax;
+  
    if ( $PostFXManager::forceEnableFromPresets )
    {
       $PostFXManager::PostFX::Enabled           = $PostFXManager::Settings::EnablePostFX;
@@ -392,6 +395,8 @@ function PostFXManager::settingsApplyDOF(%this)
 
 function PostFXManager::settingsApplyVignette(%this)
 {
+   $PostFXManager::Settings::Vignette::VMax                 = $VignettePostEffect::VMax;
+
    postVerbose("% - PostFX Manager - Settings Saved - Vignette");   
    
 }
