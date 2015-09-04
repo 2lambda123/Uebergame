@@ -21,7 +21,7 @@ new SimGroup(MissionGroup) {
       soundDistanceModel = "Linear";
       canSave = "1";
       canSaveDynamicFields = "1";
-         desc0 = "Training Level in the desert ruins at day";
+         desc0 = "Training Level in the desert ruins by day";
          enabled = "1";
          levelName = "TG_DesertRuins_day";
    };

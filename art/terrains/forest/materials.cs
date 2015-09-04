@@ -13,13 +13,13 @@ singleton Material(TerrainFX_ter_forest_dirt_01)
 new TerrainMaterial()
 {
    diffuseMap = "art/terrains/forest/ter_forest_dirt_01_B";
-   diffuseSize = "150";
+   diffuseSize = "200";
    detailMap = "art/terrains/forest/ter_forest_dirt_01_D";
    detailDistance = "100";
-   macroSize = "64";
+   macroSize = "32";
    internalName = "ter_forest_dirt_01";
    detailSize = "5";
-   macroStrength = "0.3";
+   macroStrength = "0.5";
    parallaxScale = "0.04";
    normalMap = "art/terrains/forest/ter_forest_dirt_01_N";
    macroMap = "art/terrains/forest/ter_forest_dirt_01_M";

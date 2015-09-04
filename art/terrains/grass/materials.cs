@@ -43,12 +43,12 @@ new TerrainMaterial()
    detailMap = "art/terrains/grass/ter_grass_flowers_02_D";
    internalName = "ter_grass_flowers_02";
    diffuseSize = "250";
-   macroSize = "50";
-   macroStrength = "0.7";
+   macroSize = "42";
+   macroStrength = "1";
    detailStrength = "1.5";
    detailDistance = "100";
    normalMap = "art/terrains/grass/ter_grass_flowers_02_N";
-   parallaxScale = "0.05";
+   parallaxScale = "0.04";
    diffuseMap = "art/terrains/grass/ter_grass_flowers_02_B";
    macroMap = "art/terrains/grass/ter_grass_flowers_02_M";
    detailSize = "4";
@@ -78,7 +78,7 @@ new TerrainMaterial()
    diffuseSize = "250";
    macroMap = "art/terrains/grass/ter_grass_lush_01_M";
    detailStrength = "1.5";
-   parallaxScale = "0.05";
+   parallaxScale = "0.03";
    normalMap = "art/terrains/grass/ter_grass_lush_01_N";
 };
 

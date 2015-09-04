@@ -48,7 +48,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl() {
-         bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_dawn_preview";
+         bitmap = "art/gui/images/no-preview";
          wrap = "0";
          position = "119 136";
          extent = "400 300";
@@ -66,7 +66,7 @@
          canSaveDynamicFields = "1";
       };
       new GuiTextCtrl() {
-         text = "TG_DesertRuins_dawn";
+         text = "Construct";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -144,10 +144,10 @@
          fillRowFirst = "1";
          dynamicSize = "0";
          padding = "0 0 0 0";
-         position = "3 24";
-         extent = "584 81";
+         position = "30 24";
+         extent = "582 81";
          minExtent = "8 2";
-         horizSizing = "right";
+         horizSizing = "center";
          vertSizing = "bottom";
          profile = "GuiDefaultProfile";
          visible = "1";
@@ -160,7 +160,7 @@
          canSaveDynamicFields = "0";
 
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_dawn_preview";
+            bitmap = "art/gui/images/no-preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -185,7 +185,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_dawn_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -210,7 +210,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_night_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -235,7 +235,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_storm_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_night_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -260,7 +260,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiBitmapButtonCtrl() {
-            bitmap = "levels/Training_Grounds/TG_DirtPit/TG_DirtPit_preview";
+            bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_storm_preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -284,13 +284,39 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
+         new GuiBitmapButtonCtrl() {
+            bitmap = "levels/Training_Grounds/TG_DirtPit/TG_DirtPit_preview";
+            bitmapMode = "Stretched";
+            autoFitExtents = "0";
+            useModifiers = "0";
+            useStates = "1";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            position = "0 81";
+            extent = "108 81";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiDefaultProfile";
+            visible = "0";
+            active = "1";
+            command = "ChooseLevelWindow.previewSelected(ChooseLevelWindow->SmallPreviews->SmallPreview5);";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            internalName = "SmallPreview5";
+            hidden = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
       };
       new GuiTextListCtrl(CL_levelList) {
          columns = "0";
          fitParentWidth = "1";
          clipColumnText = "0";
          position = "1 22";
-         extent = "80 150";
+         extent = "80 180";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -323,6 +349,26 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
+      new GuiCheckBoxCtrl() {
+         text = "Multiplayer";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         position = "547 422";
+         extent = "81 14";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiCheckBoxProfile";
+         visible = "1";
+         active = "1";
+         variable = "pref::HostMultiPlayer";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
       new GuiBitmapButtonCtrl() {
          bitmap = "art/gui/images/previous-button";
          bitmapMode = "Stretched";
@@ -338,14 +384,13 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiDefaultProfile";
-         visible = "0";
+         visible = "1";
          active = "1";
          command = "ChooseLevelWindow.previousPreviews();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "PreviousSmallPreviews";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
             enabled = "1";
@@ -366,36 +411,15 @@
          horizSizing = "right";
          vertSizing = "bottom";
          profile = "GuiDefaultProfile";
-         visible = "0";
+         visible = "1";
          active = "1";
          command = "ChooseLevelWindow.nextPreviews();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          internalName = "NextSmallPreviews";
-         hidden = "1";
          canSave = "1";
          canSaveDynamicFields = "1";
-      };
-      new GuiCheckBoxCtrl() {
-         text = "Multiplayer";
-         groupNum = "-1";
-         buttonType = "ToggleButton";
-         useMouseEvents = "0";
-         position = "547 422";
-         extent = "81 14";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "GuiCheckBoxProfile";
-         visible = "1";
-         active = "1";
-         variable = "pref::HostMultiPlayer";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
       };
    };
 };

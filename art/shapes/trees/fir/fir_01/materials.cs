@@ -10,8 +10,8 @@ singleton Material(fir_01_branch)
    doubleSided = "0";
    alphaTest = "1";
    alphaRef = "80";
-   subSurface[0] = "1";
-   subSurfaceColor[0] = "0.443137 0.537255 0.176471 1";
+   subSurface[0] = "0";
+   subSurfaceColor[0] = "0.286275 0.345098 0.109804 1";
    subSurfaceRolloff[0] = "0.2";
    normalMap[0] = "art/shapes/trees/fir/fir_01/fir_01_branch_N.dds";
    useAnisotropic[0] = "1";

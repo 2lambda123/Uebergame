@@ -3,8 +3,8 @@ singleton Material(TerrainFX_ter_dirt_ash_01)
    mapTo = "ter_dirt_ash_01_B";    
    footstepSoundId = "0";    
    terrainMaterials = "1";    
-   ShowDust = "1";    
-   showFootprints = "1";   
+   ShowDust = "0";    
+   showFootprints = "0";   
    materialTag0 = "Terrain_Dirt";    
    specularPower[0] = "1";  
    impactSoundId = "0";
@@ -31,8 +31,8 @@ singleton Material(TerrainFX_ter_dirt_ash_02)
    mapTo = "ter_dirt_ash_02_B";    
    footstepSoundId = "0";    
    terrainMaterials = "1";    
-   ShowDust = "1";    
-   showFootprints = "1";   
+   ShowDust = "0";    
+   showFootprints = "0";   
    materialTag0 = "Terrain_Dirt";    
    specularPower[0] = "1";  
    impactSoundId = "0";

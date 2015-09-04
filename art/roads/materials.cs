@@ -40,3 +40,40 @@ singleton Material(DefaultRoadMaterialOther)
    diffuseMap[0] = "art/roads/defaultRoadTextureOther.png";
    materialTag0 = "RoadAndPath";
 };
+
+singleton Material(road_asphalt_small_01)
+{
+   mapTo = "road_asphalt_small_01";
+   diffuseMap[0] = "art/roads/road_asphalt_small_01_D.dds";
+   materialTag0 = "RoadAndPath";
+   normalMap[0] = "art/roads/road_asphalt_small_01_N.dds";
+   specularPower[0] = "1";
+   specularStrength[0] = "0.5";
+   specularMap[0] = "art/roads/road_asphalt_small_01_S.dds";
+   useAnisotropic[0] = "1";
+   alphaTest = "1";
+   alphaRef = "128";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   impactSoundId = "0";
+};
+
+singleton Material(road_asphalt_stripes_01)
+{
+   mapTo = "road_asphalt_stripes_01";
+   diffuseMap[0] = "art/roads/road_asphalt_stripes_01_D.dds";
+   materialTag0 = "RoadAndPath";
+   normalMap[0] = "art/roads/road_asphalt_stripes_01_N.dds";
+   specularMap[0] = "art/roads/road_asphalt_stripes_01_S.dds";
+   useAnisotropic[0] = "1";
+   castShadows = "0";
+   translucentBlendOp = "None";
+   alphaTest = "1";
+   alphaRef = "128";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   impactSoundId = "0";
+   specularPower[0] = "1";
+   specularStrength[0] = "0.5";
+   effectColor[0] = "InvisibleBlack";
+};

@@ -21,9 +21,9 @@ new SimGroup(MissionGroup) {
       soundDistanceModel = "Linear";
       canSave = "1";
       canSaveDynamicFields = "1";
-         desc0 = "Training Grounds - Dirt Pit Arena";
+         desc0 = "Training Grounds - Dirt Pit Arena by day";
          enabled = "1";
-         levelName = "TG_DirtPit";
+         levelName = "TG_DirtPit_day";
    };
    new SimGroup(PlayerDropPoints) {
       canSave = "1";

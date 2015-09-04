@@ -7,7 +7,7 @@ shaders/procedural/*
 core/fonts/*
 
 #screenshots
-screens/*
+screenshots/*
 
 #compilergarbage
 *.exp

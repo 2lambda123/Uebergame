@@ -57,3 +57,86 @@ datablock TSForestItemData(fir_01_15m_c)
    detailAmp = "0.1";
    detailFreq = "0.1";
 };
+
+datablock TSForestItemData(fir_01_10m_b)
+{
+   internalName = "fir_01_10m_b";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_10m_b.dae";
+   windScale = "0.75";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+   radius = "0.8";
+};
+
+datablock TSForestItemData(fir_01_10m_a)
+{
+   internalName = "fir_01_10m_a";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_10m_a.dae";
+   windScale = "0.75";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+   radius = "0.8";
+};
+
+datablock TSForestItemData(fir_01_5m_b)
+{
+   internalName = "fir_01_5m_b";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_5m_b.dae";
+   windScale = "0.5";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(fir_01_5m_a)
+{
+   internalName = "fir_01_5m_a";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_5m_a.dae";
+   windScale = "0.5";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+
+datablock TSForestItemData(fern_01_a)
+{
+   internalName = "fern_01_a";
+   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_a.dae";
+   radius = "0.2";
+   windScale = "1";
+   trunkBendScale = "0.05";
+   branchAmp = "0.02";
+   detailAmp = "0.05";
+   detailFreq = "0.02";
+};
+
+datablock TSForestItemData(fern_01_c)
+{
+   internalName = "fern_01_c";
+   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_c.dae";
+   radius = "0.2";
+   windScale = "1";
+   trunkBendScale = "0.05";
+   branchAmp = "0.02";
+   detailAmp = "0.05";
+   detailFreq = "0.02";
+};
+
+datablock TSForestItemData(fern_01_b)
+{
+   internalName = "fern_01_b";
+   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_b.dae";
+   radius = "0.2";
+   windScale = "1";
+   trunkBendScale = "0.05";
+   branchAmp = "0.02";
+   detailAmp = "0.05";
+   detailFreq = "0.02";
+};

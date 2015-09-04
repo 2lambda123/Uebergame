@@ -102,7 +102,7 @@ function _screenShot( %tiles, %overlap )
                   
    %name = "screenshot_" @ formatSessionNumber($pref::Video::screenShotSession) @ "-" @
             formatImageNumber($screenshotNumber);            
-   %name = "screens/"@expandFileName( %name );
+   %name = "screenshots/"@expandFileName( %name );
    
    $screenshotNumber++;
    
