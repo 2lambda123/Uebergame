@@ -899,17 +899,17 @@ datablock ProjectileData(GrenadeLauncherProjectile)
    particleEmitter = GrenadeProjSmokeTrailEmitter;
    particleWaterEmitter = GrenadeTrailWaterEmitter;
 
-   muzzleVelocity = 50;
+   muzzleVelocity = 40;
    velInheritFactor = 0.3;
 
-   armingDelay = 1200;
+   armingDelay = 500;
    lifetime = 10000;
    fadeDelay = 4500;
 
    bounceElasticity = 0.4;
    bounceFriction = -0.2;
    isBallistic = true;
-   gravityMod = 2;
+   gravityMod = 1;
 
    lightDesc = GrenadeLauncherLightDesc;
 

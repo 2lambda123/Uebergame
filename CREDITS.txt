@@ -8,4 +8,6 @@ art/sound/environment/wind/wind_basic_01.ogg  -klangfabrik  https://www.freesoun
 art/sound/weapons/pistol_heavy_default.ogg  -Kodack  https://www.freesound.org/people/Kodack/sounds/253736/  -edited by Duion
 art/sound/weapons/machine_gun_heavy_default.ogg -Jon285 https://www.freesound.org/people/Jon285/sounds/49513/  -edited by Duion
 art/sound/impact_concrete_01.ogg -Yoyodaman234 https://www.freesound.org/people/Yoyodaman234/sounds/166508/ -edited by Duion
-art/sound/wind/wind_01.ogg  -asbestos bill  https://www.freesound.org/people/asbestos%20bill/sounds/181287/ -edited by Duion
+art/sound/environment/wind/wind_storm_01.ogg  -asbestos bill  https://www.freesound.org/people/asbestos%20bill/sounds/181287/ -edited by Duion
+art/sound/environment/wind_forest_01.ogg -MrAuralization https://www.freesound.org/people/MrAuralization/sounds/243617/
+art/sound/environment/wind_forest_birds_01.ogg -bolland https://www.freesound.org/people/bolland/sounds/196005/
