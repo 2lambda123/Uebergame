@@ -18,12 +18,12 @@ new TerrainMaterial()
    internalName = "ter_asphalt_street_01";
    macroSize = "100";
    macroStrength = "0.5";
-   detailStrength = "1.5";
+   detailStrength = "1";
    detailSize = "3";
    diffuseSize = "500";
    macroMap = "art/terrains/asphalt/ter_asphalt_street_01_M";
-   normalMap = "art/terrains/asphalt/ter_asphalt_street_01_N";
    parallaxScale = "0";
+   normalMap = "art/terrains/asphalt/ter_asphalt_street_01_N";
 };
 
 singleton Material(TerrainFX_ter_asphalt_street_02)    

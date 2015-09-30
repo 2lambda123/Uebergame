@@ -24,7 +24,7 @@ new TerrainMaterial()
    macroStrength = "1.2";
    macroMap = "art/terrains/sand/ter_sand_bumpy_01_M";
    normalMap = "art/terrains/sand/ter_sand_bumpy_01_N";
-   parallaxScale = "0.1";
+   parallaxScale = "0.05";
 };
 
 singleton Material(TerrainFX_ter_sand_dirty_01)    
