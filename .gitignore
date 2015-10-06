@@ -9,6 +9,9 @@ core/fonts/*
 #screenshots
 screenshots/*
 
+#recordings
+*.rec
+
 #compilergarbage
 *.exp
 *.bat
