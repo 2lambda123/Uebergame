@@ -42,6 +42,7 @@ new SimGroup(MissionGroup) {
       moonElevation = "45";
       castShadows = "1";
       brightness = "1";
+      flareType = "SunFlareExample3";
       flareScale = "1";
       nightColor = "0.0196078 0.0117647 0.109804 1";
       nightFogColor = "0.0196078 0.0117647 0.109804 1";
@@ -8761,7 +8762,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
    };
-   new SimGroup(levelborders) {
+   new SimGroup(levelBorders) {
       canSave = "1";
       canSaveDynamicFields = "1";
 
@@ -8857,7 +8858,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -8881,7 +8882,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -8905,7 +8906,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -8929,7 +8930,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -8953,7 +8954,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -8977,7 +8978,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -9001,7 +9002,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -9025,7 +9026,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";

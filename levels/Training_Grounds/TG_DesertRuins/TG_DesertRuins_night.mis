@@ -8755,13 +8755,13 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -66.25 0";
-         rotation = "-0.0203374 -0.0203374 -0.999586 90.0223";
+         rotation = "-0.0203374 -0.0203374 -0.999586 90.0222";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
       };
    };
-   new SimGroup(levelborders) {
+   new SimGroup(levelBorders) {
       canSave = "1";
       canSaveDynamicFields = "1";
 
@@ -10509,7 +10509,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10533,7 +10533,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10557,7 +10557,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10581,7 +10581,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10605,7 +10605,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10616,7 +10616,7 @@ new SimGroup(MissionGroup) {
          coneInsideAngle = "360";
          coneOutsideAngle = "360";
          coneOutsideVolume = "1";
-         position = "-282.273 -257.471 -15";
+         position = "-282.273 -257.471 60";
          rotation = "1 0 0 0";
          scale = "320 320 320";
          canSave = "1";
@@ -10629,7 +10629,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10640,7 +10640,7 @@ new SimGroup(MissionGroup) {
          coneInsideAngle = "360";
          coneOutsideAngle = "360";
          coneOutsideVolume = "1";
-         position = "-282.273 268.102 -15";
+         position = "-282.273 268.102 60";
          rotation = "1 0 0 0";
          scale = "320 320 320";
          canSave = "1";
@@ -10653,7 +10653,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10664,7 +10664,7 @@ new SimGroup(MissionGroup) {
          coneInsideAngle = "360";
          coneOutsideAngle = "360";
          coneOutsideVolume = "1";
-         position = "264.731 268.102 -15";
+         position = "264.731 268.102 60";
          rotation = "1 0 0 0";
          scale = "320 320 320";
          canSave = "1";
@@ -10677,7 +10677,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.6";
+         volume = "0.5";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -10688,7 +10688,7 @@ new SimGroup(MissionGroup) {
          coneInsideAngle = "360";
          coneOutsideAngle = "360";
          coneOutsideVolume = "1";
-         position = "264.731 -302.984 -15";
+         position = "264.731 -302.984 60";
          rotation = "1 0 0 0";
          scale = "320 320 320";
          canSave = "1";

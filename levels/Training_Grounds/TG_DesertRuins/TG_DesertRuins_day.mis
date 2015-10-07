@@ -42,6 +42,7 @@ new SimGroup(MissionGroup) {
       moonElevation = "45";
       castShadows = "1";
       brightness = "1";
+      flareType = "SunFlareExample2";
       flareScale = "1";
       nightColor = "0.0196078 0.0117647 0.109804 1";
       nightFogColor = "0.0196078 0.0117647 0.109804 1";
@@ -8761,7 +8762,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
    };
-   new SimGroup(levelborders) {
+   new SimGroup(levelBorders) {
       canSave = "1";
       canSaveDynamicFields = "1";
 
