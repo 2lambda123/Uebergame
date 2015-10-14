@@ -1648,6 +1648,7 @@ new SimGroup(MissionGroup) {
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
+      updateBasetex = "0";
       position = "32 32 -512";
       rotation = "1 0 0 0";
       canSave = "1";
@@ -2805,7 +2806,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.0888";
+         rotation = "-0.140172 0.140328 0.980133 91.0889";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4305,7 +4306,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4329,7 +4330,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4353,7 +4354,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4377,7 +4378,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4401,7 +4402,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4425,7 +4426,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.3";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -6963,7 +6964,7 @@ new SimGroup(MissionGroup) {
             isAIControlled = "0";
             dataBlock = "LurkerClip";
             position = "192.899 74.8117 1.00428";
-            rotation = "0 0 -1 20.4348";
+            rotation = "0 0 -1 20.4347";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -7535,7 +7536,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "206.556 136.76 1.22844";
-            rotation = "0 0 1 24.4149";
+            rotation = "0 0 1 24.4148";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -7588,7 +7589,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "196.974 176.438 1.32999";
-            rotation = "0 0 1 24.4148";
+            rotation = "0 0 1 24.4147";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";

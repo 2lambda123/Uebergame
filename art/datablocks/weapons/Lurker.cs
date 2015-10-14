@@ -360,7 +360,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    projectileSpread = "0.005";
 
    altProjectile = GrenadeLauncherProjectile;
-   altProjectileSpread = "0.02";
+   altProjectileSpread = "0.01";
 
    casing = BulletShell;
    shellExitDir        = "1.0 0.3 1.0";
@@ -642,7 +642,7 @@ datablock ShapeBaseImageData(LurkerGrenadeLauncherImage)
 
    projectile = GrenadeLauncherProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.02";
+   projectileSpread = "0.01";
 
    // Weapon lights up while firing
    lightType = "WeaponFireLight";

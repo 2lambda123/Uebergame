@@ -80,6 +80,7 @@ new SimGroup(MissionGroup) {
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
+      updateBasetex = "0";
       position = "-512 -512 -512";
       rotation = "1 0 0 0";
       canSave = "1";
@@ -8863,7 +8864,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "60";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -8887,7 +8888,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "60";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -8911,7 +8912,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "60";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -8935,7 +8936,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "60";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -8959,7 +8960,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "180";
+         referenceDistance = "128";
          maxDistance = "320";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -8983,7 +8984,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "180";
+         referenceDistance = "128";
          maxDistance = "320";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -9007,7 +9008,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "180";
+         referenceDistance = "128";
          maxDistance = "320";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -9031,7 +9032,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "180";
+         referenceDistance = "128";
          maxDistance = "320";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
