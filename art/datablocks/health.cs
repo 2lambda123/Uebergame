@@ -60,6 +60,6 @@ datablock ItemData(Medpack_medium)
 
    // Dynamic properties defined by the scripts
    pickupName = "a small health kit";
-   repairAmount = 30;
-   repairInstant = 20;
+   repairAmount = 50;
+   repairInstant = 30;
 };

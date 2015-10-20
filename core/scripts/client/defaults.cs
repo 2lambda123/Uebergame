@@ -387,7 +387,7 @@ new SimGroup( LightingQualityGroup )
       caseSensitive = true;
       
       key["$pref::lightManager"] = "Basic Lighting";
-      key["$pref::Shadows::disable"] = false;
+      key["$pref::Shadows::disable"] = true;
       key["$pref::Shadows::textureScalar"] = 0.5;
       key["$pref::Shadows::filterMode"] = "None";     
    };

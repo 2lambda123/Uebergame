@@ -47,7 +47,7 @@ function showPlayerList(%val)
       PlayerListGui.toggle();
 }
 
-moveMap.bind( keyboard, F2, showPlayerList );
+moveMap.bind( keyboard, tab, showPlayerList );
 
 function hideHUDs(%val)
 {
@@ -69,7 +69,7 @@ function doScreenShotHudless(%val)
       canvas.setContent(PlayGui);
 }
 
-moveMap.bind(keyboard, "f6", doScreenShotHudless);
+moveMap.bind(keyboard, "alt f5", doScreenShotHudless);
 
 //------------------------------------------------------------------------------
 // Movement Keys
@@ -461,7 +461,7 @@ function toggleCamera(%val)
 }
 
 moveMap.bind( keyboard, v, toggleFreeLook ); // v for vanity
-moveMap.bind(keyboard, tab, toggleFirstPerson );
+moveMap.bind(keyboard, F3, toggleFirstPerson );
 //moveMap.bind(keyboard, "alt c", toggleCamera);
 
 //moveMap.bind( gamepad, btn_start, toggleCamera );
@@ -586,8 +586,8 @@ function stopRecordingDemo( %val )
       stopDemoRecord();
 }
 
-moveMap.bind( keyboard, F4, startRecordingDemo );
-moveMap.bind( keyboard, F4, stopRecordingDemo );
+moveMap.bind( keyboard, "alt F6", startRecordingDemo );
+moveMap.bind( keyboard, "alt F7", stopRecordingDemo );
 
 
 //------------------------------------------------------------------------------
@@ -615,7 +615,7 @@ function bringUpOptions(%val)
       Canvas.pushDialog(OptionsDlg);
 }
 
-GlobalActionMap.bind(keyboard, "f8", bringUpOptions);
+GlobalActionMap.bind(keyboard, "F8", bringUpOptions);
 
 
 //------------------------------------------------------------------------------
@@ -631,12 +631,12 @@ function showMetrics(%val)
       metrics("fps gfx shadow sfx terrain groundcover forest net");
 }
 
-GlobalActionMap.bind(keyboard, "F7", showMetrics);
+GlobalActionMap.bind(keyboard, "F2", showMetrics);
 
 //------------------------------------------------------------------------------
 //
-// Start profiler by pressing ctrl f3
-// ctrl f3 - starts profile that will dump to console and file
+// Start profiler by pressing ctrl f4
+// ctrl f4 - starts profile that will dump to console and file
 //
 function doProfile(%val)
 {
@@ -657,13 +657,13 @@ function doProfile(%val)
    }
 }
 
-GlobalActionMap.bind(keyboard, "ctrl F3", doProfile);
+GlobalActionMap.bind(keyboard, "ctrl F4", doProfile);
 
 //------------------------------------------------------------------------------
 // Misc.
 //------------------------------------------------------------------------------
 
-GlobalActionMap.bind(keyboard, "F12", toggleConsole);
+GlobalActionMap.bind(keyboard, "F9", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 GlobalActionMap.bindCmd(keyboard, "F1", "", "contextHelp();");
