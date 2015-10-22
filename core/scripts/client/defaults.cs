@@ -27,6 +27,7 @@
 $pref::debug::consoleSpam = "1";
 $pref::debug::FPV = "1";
 $pref::debug::showFramerate = "1";
+$pref::decalMgr::enabled = "1";
 $pref::enablePostEffects = "1";
 $pref::HostMultiPlayer = "1";
 $pref::Server::EnableAI = "1";
@@ -65,7 +66,7 @@ $sceneLighting::cacheLighting = 1;
 
 $pref::Video::displayDevice = "D3D9";
 $pref::Video::disableVerticalSync = 0;
-$pref::Video::mode = "1024 768 false 32 60 4";
+$pref::Video::mode = "1024 768 false 32 60 1";
 $pref::Video::defaultFenceCount = 0;
 $pref::Video::screenShotSession = 0;
 $pref::Video::screenShotFormat = "PNG";
@@ -87,7 +88,7 @@ $pref::Video::disablePixSpecular = false;
 $pref::Video::disableCubemapping = false;
 
 ///
-$pref::Video::disableParallaxMapping = false;
+$pref::Video::disableParallaxMapping = true;
 
 $pref::Video::Gamma = 1.0;
 
@@ -112,10 +113,10 @@ $pref::lightManager = "Advanced Lighting";
 $pref::LightManager::Enable = "1";
 $pref::LightManager::Enable::AA = "1";
 $pref::LightManager::Enable::DOF = "1";
-$pref::LightManager::Enable::HDR = "1";
+$pref::LightManager::Enable::HDR = "0";
 $pref::LightManager::Enable::LightRay = "1";
 $pref::LightManager::Enable::LightRays = "1";
-$pref::LightManager::Enable::SSAO = "1";
+$pref::LightManager::Enable::SSAO = "0";
 $pref::LightManager::sgAtlasMaxDynamicLights = "64";
 $pref::LightManager::sgDynamicShadowDetailSize = "0";
 $pref::LightManager::sgDynamicShadowQuality = "0";
@@ -180,7 +181,7 @@ $pref::SFX::bitrate = 32;
 /// The overall system volume at startup.  Note that 
 /// you can only scale volume down, volume does not
 /// get louder than 1.
-$pref::SFX::masterVolume = 0.8;
+$pref::SFX::masterVolume = 1.0;
 
 /// The startup sound channel volumes.  These are 
 /// used to control the overall volume of different 
@@ -246,10 +247,10 @@ $pref::Shadows::disable = false;
 ///
 /// SoftShadowHighQuality 
 ///
-$pref::Shadows::filterMode = "SoftShadow";
+$pref::Shadows::filterMode = "SoftShadowHighQuality";
 
 ///
-$pref::Video::defaultAnisotropy = 1;
+$pref::Video::defaultAnisotropy = 0;
 
 /// Radius in meters around the camera that ForestItems are affected by wind.
 /// Note that a very large number with a large number of items is not cheap.
@@ -257,6 +258,9 @@ $pref::windEffectRadius = 25;
 
 /// AutoDetect graphics quality levels the next startup.
 $pref::Video::autoDetect = 1;
+
+/// smallestVisiblePixelSize stops rendering shapes smaller than this amount
+$pref::TS::smallestVisiblePixelSize = 4;
 
 //-----------------------------------------------------------------------------
 // Graphics Quality Groups

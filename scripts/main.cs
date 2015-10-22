@@ -127,11 +127,11 @@ function onExit()
    physicsDestroy();
       
    echo("Exporting client prefs");
-   export("$pref::*", "./client/prefs.cs", False);
+   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", False);
 
    echo("Exporting server prefs");
-   export("$Pref::Server::*", "./server/prefs.cs", False);
-   BanList::Export("./server/banlist.cs");
+   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", False);
+   BanList::Export(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs");
 
    Parent::onExit();
 }

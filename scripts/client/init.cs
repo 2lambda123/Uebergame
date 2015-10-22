@@ -112,8 +112,8 @@ function initClient()
    // Default player key bindings
    exec("./default.bind.cs");
 
-   if (isFile("./config.cs"))
-      exec("./config.cs");
+   if (isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" ) )
+      exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" );
 
    loadMaterials();
 
