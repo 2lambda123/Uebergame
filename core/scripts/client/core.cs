@@ -32,7 +32,7 @@ function initializeCore()
       
    // Core keybindings.
 //   GlobalActionMap.bind(keyboard, tilde, toggleConsole);
-   GlobalActionMap.bind(keyboard, "ctrl p", doScreenShot);
+   GlobalActionMap.bind(keyboard, "F5", doScreenShot);
    GlobalActionMap.bindcmd(keyboard, "alt enter", "Canvas.attemptFullscreenToggle();","");
    GlobalActionMap.bindcmd(keyboard, "alt k", "cls();",  "");
 //   GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
