@@ -34,8 +34,8 @@ exec( "core/scripts/server/defaults.cs" );
 // game execution if they exist.
 if ( $platform !$= "xenon" )
 {
-   if ( isFile( "./prefs.cs" ) )
-      exec( "./prefs.cs" );
+   if ( isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" ) )
+      exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" );
 }
 else
 {

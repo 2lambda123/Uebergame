@@ -38,7 +38,7 @@ new SimGroup(MissionGroup) {
       zOffset = "0";
       azimuth = "50";
       elevation = "-50";
-      moonAzimuth = "30";
+      moonAzimuth = "40";
       moonElevation = "45";
       castShadows = "1";
       brightness = "1";
@@ -79,6 +79,7 @@ new SimGroup(MissionGroup) {
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
+      updateBasetex = "0";
       position = "-512 -512 -512";
       rotation = "1 0 0 0";
       canSave = "1";
@@ -8755,7 +8756,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -66.25 0";
-         rotation = "-0.0203374 -0.0203374 -0.999586 90.0222";
+         rotation = "-0.0203374 -0.0203374 -0.999586 90.0221";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -10514,7 +10515,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "50";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -10538,7 +10539,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "50";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -10562,7 +10563,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "50";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -10586,7 +10587,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "50";
+         referenceDistance = "40";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";

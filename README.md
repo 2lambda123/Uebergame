@@ -1,4 +1,4 @@
-Übergame v0.02
+Übergame v1.03
 ===============
 
 Übergame is a free open source, realism like, multi-purpose,
@@ -14,12 +14,13 @@ For Binaries download the latest version or go to
 http://www.duion.com/games/uebergame/playtesting
 for nightly builds if available, or compile them yourself using the engine Repoistory.
 
-Engine Repository:
 
-Torque 3D
+Source Code:
 ===============
 
-Engine-source directory: https://github.com/Duion/Torque3D
+Game source directory: https://github.com/Duion/Uebergame
+
+Engine source directory: https://github.com/Duion/Torque3D
 
 
 License:
