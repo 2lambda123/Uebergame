@@ -52,9 +52,23 @@ $Pref::Server::Password = "";
 $Pref::Server::AdminPassword = "";
 
 // Misc server settings.
-$Pref::Server::MaxPlayers = 16;
-$Pref::Server::TimeLimit = 20;               // In minutes
-$Pref::Server::KickBanTime = 300;            // specified in seconds
-$Pref::Server::BanTime = 1800;               // specified in seconds
+$Pref::Server::Name = "Uebergame server";
+$Pref::Server::Info = "This is an Uebergame server.";
+$Pref::Server::MaxPlayers = 10;
+$pref::Game::Duration = 900;                 // specified in seconds
+$pref::Game::EndGameScore = 20;
+$pref::Game::EndGamePause = 5;               // specified in seconds
+$pref::Game::AllowCycling = 1;
+
+$pref::Server::EnableAI = 0;
 $Pref::Server::FloodProtectionEnabled = 1;
 $Pref::Server::MaxChatLen = 120;
+$Pref::Server::BanTime = 1800;               // specified in seconds
+$Pref::Server::KickBanTime = 300;            // specified in seconds
+
+$Pref::Server::TimeLimit = 0;               // In minutes //unused?!
+
+
+
+
+

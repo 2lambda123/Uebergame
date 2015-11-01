@@ -30,7 +30,6 @@ $pref::debug::showFramerate = "1";
 $pref::decalMgr::enabled = "1";
 $pref::enablePostEffects = "1";
 $pref::HostMultiPlayer = "1";
-$pref::Server::EnableAI = "1";
 
 $pref::imposter::canShadow = "1";
 $pref::enableBadWordFilter = "1";
@@ -53,7 +52,7 @@ $pref::Net::PacketSize = "450";
 $pref::HudMessageLogSize = 40;
 $pref::ChatHudLength = 1;
 
-$pref::Input::LinkMouseSensitivity = 1;
+$pref::Input::LinkMouseSensitivity = 0.4;
 // DInput keyboard, mouse, and joystick prefs
 $pref::Input::KeyboardEnabled = 1;
 $pref::Input::MouseEnabled = 1;

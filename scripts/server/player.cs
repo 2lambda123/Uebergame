@@ -1,6 +1,5 @@
 //-----------------------------------------------------------------------------
 // Copyright (c) 2012 GarageGames, LLC
-// Copyright (c) 2014 Christian Femmer aka Duion
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to
@@ -353,9 +352,9 @@ function PlayerData::onDisabled(%this, %obj, %state)
    {
       %amount = %obj.getInventory(%item.image.ammo);
       
-      if (!%item.image.clip)
-         warn("No clip exists to throw for item ", %item);
-      if(%amount)
+//      if (!%item.image.clip)
+//         warn("No clip exists to throw for item ", %item); //duion #rewrite
+//      if(%amount)
          %obj.throw(%item.image.clip, 1);
    }
 

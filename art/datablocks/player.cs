@@ -548,15 +548,15 @@ datablock PlayerData(DefaultPlayerData)
    maxBackwardSpeed = "3";
    maxSideSpeed = "3";
 
-   sprintForce = "2160";
+   sprintForce = "1500";
    sprintEnergyDrain = "0.512";
    minSprintEnergy = "0";
-   maxSprintForwardSpeed = "7";
+   maxSprintForwardSpeed = "8";
    maxSprintBackwardSpeed = "4";
    maxSprintSideSpeed = "5";
-   sprintStrafeScale = 0.25;
-   sprintYawScale = "0.12";
-   sprintPitchScale = "0.12";
+   sprintStrafeScale = "0.5";
+   sprintYawScale = "0.5";
+   sprintPitchScale = "0.5";
    sprintCanJump = true;
 
    crouchForce = 405;
@@ -568,20 +568,20 @@ datablock PlayerData(DefaultPlayerData)
    maxUnderwaterBackwardSpeed = "1";
    maxUnderwaterSideSpeed = "1";
 
-   jumpForce = "600";
+   jumpForce = "720";
    jumpEnergyDrain = "10";
    minJumpEnergy = "15";
-   jumpDelay = "4";
+   jumpDelay = "3";
    airControl = "0.3";
 
    fallingSpeedThreshold = "-4";
 
-   landSequenceTime = "0";
-   transitionToLand = false;
-   recoverDelay = "0";
-   recoverRunForceScale = 0;
+   landSequenceTime = "1.5";
+   transitionToLand = "1";
+   recoverDelay = "32";
+   recoverRunForceScale = "0.75";
 
-   minImpactSpeed = 10;
+   minImpactSpeed = "10";
    minLateralImpactSpeed = 20;
    speedDamageScale = 3;
 
@@ -602,7 +602,7 @@ datablock PlayerData(DefaultPlayerData)
    decalOffset = 0.25;
 
    footPuffEmitter = "LightPuffEmitter";
-   footPuffNumParts = 10;
+   footPuffNumParts = "5";
    footPuffRadius = "0.25";
 
    dustEmitter = "LightPuffEmitter";
@@ -681,7 +681,7 @@ datablock PlayerData(DefaultPlayerData)
    maxInv[LurkerClip] = 6;
 
    maxInv[LurkerGrenadeLauncher] = 1;
-   maxInv[LurkerGrenadeAmmo] = 8;
+   maxInv[LurkerGrenadeAmmo] = 12;
 
    maxInv[Ryder] = 1;
    maxInv[RyderClip] = 6;
@@ -705,4 +705,13 @@ datablock PlayerData(DefaultPlayerData)
    firstPersonShadows = "1";
    jumpTowardsNormal = "1";
    shadowSize = "512";
+   maxInvDeployableTurret = "1";
+   maxInvProxMine = "4";
+   maxInvLurkerGrenadeLauncher = "1";
+   maxInvRyder = "1";
+   maxInvLurker = "1";
+   maxInvProxMineAmmo = "4";
+   maxInvRyderClip = "6";
+   maxInvLurkerClip = "6";
+   maxInvLurkerGrenadeAmmo = "12";
 };

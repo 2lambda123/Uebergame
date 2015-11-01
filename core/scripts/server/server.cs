@@ -162,7 +162,7 @@ function destroyServer()
    
    // Save any server settings
    echo( "Exporting server prefs..." );
-   export( "$Pref::Server::*", "~/prefs.cs", false );
+   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", False);
 
    // Increase the server session number.  This is used to make sure we're
    // working with the server session we think we are.
@@ -174,8 +174,8 @@ function resetServerDefaults()
 {
    echo( "Resetting server defaults..." );
    
-   exec( "~/defaults.cs" );
-   exec( "~/prefs.cs" );
+   exec( "./defaults.cs" );
+   exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" );
 
    // Reload the current level
    loadMission( $Server::MissionFile );
