@@ -903,7 +903,7 @@ datablock ProjectileData(GrenadeLauncherProjectile)
    velInheritFactor = 0.2;
 
    armingDelay = 500;
-   lifetime = 10000;
+   lifetime = 15000;
    fadeDelay = 4500;
 
    bounceElasticity = 0.2;

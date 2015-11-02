@@ -59,7 +59,7 @@ datablock DecalData(bulletHoleDecal)
 datablock DecalData(BloodDecalData)  
 {  
    Material = "DECAL_blood_splatter_01";  
-   size = "0.5";
+   size = "1";
    lifeSpan = "100000";
    randomize = "1";
    texRows = "2";

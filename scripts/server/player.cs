@@ -40,6 +40,7 @@ $Drowning::DamagePerTick = 10;
 
 function checkUnderwater(%obj)
 {
+   if (!isObject(%obj)) return;  //prevent console spam, returns when object ID is not valid
    if (%obj.getState() $= "Dead")
    {
       // If we get here and the player is dead we should hide the breath meter
@@ -269,10 +270,16 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
       return;
 	  
-  //do decals 
-   %Decalposition = VectorAdd(getRandom(-1, 1) SPC getRandom(-1, 1) SPC "0", %obj.getPosition());   
-   %normal = "1.0 1.0 1.0";  
-   %decalObj = decalManagerAddDecal(%Decalposition, %normal, getRandom(360), getRandom(0, 2), bloodDecalData, false);  
+   //do decals 
+   %Decalposition = VectorAdd(getRandom()*2-1 SPC getRandom()*2-1 SPC getRandom()*2-1, %obj.getWorldBoxCenter());
+   %normal[0] = "0.0 0.0 1.0";
+   %normal[1] = "0.0 1.0 0.0";
+   %normal[2] = "1.0 0.0 0.0";
+   %normal[3] = "0.0 0.0 -1.0";
+   %normal[4] = "0.0 -1.0 0.0";
+   %normal[5] = "-1.0 0.0 0.0";
+   for (%i=0;%i<6;%i++)
+   %decalObj = decalManagerAddDecal(%Decalposition, %normal[%i], getRandom(360),  getRandom()*3, bloodDecalData, false);   
    //do decals  
    %particles = new ParticleEmitterNode()   
    {  
