@@ -9,11 +9,11 @@ new SimGroup(MissionGroup) {
       visibleDistance = "5000";
       visibleGhostDistance = "0";
       decalBias = "0.0015";
-      fogColor = "0.317647 0.411765 0.541176 1";
-      fogDensity = "0.0015";
+      fogColor = "0.262745 0.333333 0.431373 1";
+      fogDensity = "0.015";
       fogDensityOffset = "10";
       fogAtmosphereHeight = "0";
-      canvasClearColor = "25 34 48 255";
+      canvasClearColor = "14 18 22 255";
       ambientLightBlendPhase = "1";
       ambientLightBlendCurve = "0 0 -1 -1";
       advancedLightmapSupport = "0";
@@ -21,9 +21,9 @@ new SimGroup(MissionGroup) {
       soundDistanceModel = "Linear";
       canSave = "1";
       canSaveDynamicFields = "1";
-         desc0 = "Training Grounds - Fields by day";
+         desc0 = "Training Grounds - Fields by dawn";
          enabled = "1";
-         levelName = "TG_Fields_day";
+         levelName = "TG_Fields_dawn";
    };
    new SimGroup(PlayerDropPoints) {
       canSave = "1";
@@ -1562,23 +1562,23 @@ new SimGroup(MissionGroup) {
       };
    };
    new ScatterSky(Himmel) {
-      skyBrightness = "15";
-      sunSize = "1";
+      skyBrightness = "20";
+      sunSize = "0.7";
       colorizeAmount = "1";
-      colorize = "0.00784314 0.352941 0.996078 1";
+      colorize = "0.380392 0.592157 0.992157 1";
       rayleighScattering = "0.0035";
-      sunScale = "0.780392 0.768628 0.643137 1";
-      ambientScale = "0.705882 0.705882 0.705882 1";
-      fogScale = "1 1 1 1";
+      sunScale = "0.760784 0.611765 0.223529 1";
+      ambientScale = "0.490196 0.415686 0.301961 1";
+      fogScale = "0.647059 0.627451 0.564706 1";
       exposure = "1";
       zOffset = "0";
-      azimuth = "80";
-      elevation = "45";
+      azimuth = "140";
+      elevation = "15";
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
       brightness = "1";
-      flareType = "SunFlareExample";
+      flareType = "SunFlareExample3";
       flareScale = "1";
       nightColor = "0.0196078 0.0117647 0.109804 1";
       nightFogColor = "0.0196078 0.0117647 0.109804 1";
@@ -1616,13 +1616,13 @@ new SimGroup(MissionGroup) {
       layerEnabled[0] = "1";
       layerEnabled[1] = "0";
       layerEnabled[2] = "0";
-      texture[0] = "art/clouds/clouds_mixed_01_bright.dds";
+      texture[0] = "art/clouds/clouds_dawn_01.dds";
       texture[1] = "art/clouds/cloud2";
       texture[2] = "art/clouds/cloud3";
       texScale[0] = "1";
       texScale[1] = "1";
       texScale[2] = "1";
-      texDirection[0] = "1 0";
+      texDirection[0] = "0 1";
       texDirection[1] = "1 0";
       texDirection[2] = "1 0";
       texSpeed[0] = "0.001";
@@ -2806,7 +2806,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.089";
+         rotation = "-0.140172 0.140328 0.980133 91.0896";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4306,7 +4306,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "0.25";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4330,7 +4330,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "0.25";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4354,7 +4354,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "0.25";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4378,7 +4378,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "0.25";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4402,7 +4402,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "0.25";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4426,7 +4426,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "0.25";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";

@@ -10,10 +10,10 @@ new SimGroup(MissionGroup) {
       visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.317647 0.411765 0.541176 1";
-      fogDensity = "0.0015";
-      fogDensityOffset = "10";
+      fogDensity = "0.05";
+      fogDensityOffset = "5";
       fogAtmosphereHeight = "0";
-      canvasClearColor = "25 34 48 255";
+      canvasClearColor = "27 27 27 255";
       ambientLightBlendPhase = "1";
       ambientLightBlendCurve = "0 0 -1 -1";
       advancedLightmapSupport = "0";
@@ -21,9 +21,9 @@ new SimGroup(MissionGroup) {
       soundDistanceModel = "Linear";
       canSave = "1";
       canSaveDynamicFields = "1";
-         desc0 = "Training Grounds - Fields by day";
+         desc0 = "Training Grounds - Fields by rain";
          enabled = "1";
-         levelName = "TG_Fields_day";
+         levelName = "TG_Fields_rain";
    };
    new SimGroup(PlayerDropPoints) {
       canSave = "1";
@@ -1564,29 +1564,28 @@ new SimGroup(MissionGroup) {
    new ScatterSky(Himmel) {
       skyBrightness = "15";
       sunSize = "1";
-      colorizeAmount = "1";
-      colorize = "0.00784314 0.352941 0.996078 1";
+      colorizeAmount = "0";
+      colorize = "0.992157 0.992157 0.996078 1";
       rayleighScattering = "0.0035";
-      sunScale = "0.780392 0.768628 0.643137 1";
-      ambientScale = "0.705882 0.705882 0.705882 1";
-      fogScale = "1 1 1 1";
+      sunScale = "0.368627 0.360784 0.329412 1";
+      ambientScale = "0.870588 0.858824 0.780392 1";
+      fogScale = "0.509804 0.568627 0.607843 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "80";
-      elevation = "45";
+      elevation = "50";
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
-      brightness = "1";
-      flareType = "SunFlareExample";
+      brightness = "0.2";
       flareScale = "1";
-      nightColor = "0.0196078 0.0117647 0.109804 1";
-      nightFogColor = "0.0196078 0.0117647 0.109804 1";
-      moonEnabled = "1";
+      nightColor = "0.517647 0.517647 0.513726 1";
+      nightFogColor = "0.301961 0.34902 0.435294 1";
+      moonEnabled = "0";
       moonMat = "Moon_Glow_Mat";
       moonScale = "0.2";
-      moonLightColor = "0.192157 0.192157 0.192157 1";
-      useNightCubemap = "1";
+      moonLightColor = "0.188235 0.164706 0.121569 1";
+      useNightCubemap = "0";
       nightCubemap = "NightCubemap";
       attenuationRatio = "0 1 1";
       shadowType = "PSSM";
@@ -1616,22 +1615,22 @@ new SimGroup(MissionGroup) {
       layerEnabled[0] = "1";
       layerEnabled[1] = "0";
       layerEnabled[2] = "0";
-      texture[0] = "art/clouds/clouds_mixed_01_bright.dds";
+      texture[0] = "art/clouds/clouds_grey_01.dds";
       texture[1] = "art/clouds/cloud2";
       texture[2] = "art/clouds/cloud3";
       texScale[0] = "1";
       texScale[1] = "1";
       texScale[2] = "1";
-      texDirection[0] = "1 0";
+      texDirection[0] = "0.5 1";
       texDirection[1] = "1 0";
       texDirection[2] = "1 0";
-      texSpeed[0] = "0.001";
+      texSpeed[0] = "0.003";
       texSpeed[1] = "0.001";
       texSpeed[2] = "0.0003";
       texOffset[0] = "0.5 0.5";
       texOffset[1] = "0.5 0.5";
       texOffset[2] = "0.5 0.5";
-      height[0] = "4";
+      height[0] = "6";
       height[1] = "3";
       height[2] = "2";
       position = "498.335 674.745 11.2664";
@@ -2806,7 +2805,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.089";
+         rotation = "-0.140172 0.140328 0.980133 91.0893";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4090,6 +4089,41 @@ new SimGroup(MissionGroup) {
       turbulenceFrequency = "2";
       hasMount = "0";
    };
+   new Precipitation(regen) {
+      numDrops = "2048";
+      boxWidth = "64";
+      boxHeight = "32";
+      dropSize = "0.1";
+      splashSize = "0.08";
+      splashMS = "250";
+      animateSplashes = "1";
+      dropAnimateMS = "0";
+      fadeDist = "0";
+      fadeDistEnd = "0";
+      useTrueBillboards = "0";
+      useLighting = "0";
+      glowIntensity = "0 0 0 0";
+      reflect = "0";
+      rotateWithCamVel = "1";
+      doCollision = "1";
+      hitPlayers = "1";
+      hitVehicles = "0";
+      followCam = "1";
+      useWind = "1";
+      minSpeed = "1.5";
+      maxSpeed = "2";
+      minMass = "3";
+      maxMass = "4";
+      useTurbulence = "1";
+      maxTurbulence = "0.1";
+      turbulenceSpeed = "0.2";
+      dataBlock = "HeavyRain";
+      position = "483 418 -17";
+      rotation = "1 0 0 0";
+      scale = "1 1 1";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+   };
    new SimGroup(streetbarriers) {
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -4300,18 +4334,18 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/amb.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.3";
+         volume = "1";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "10";
+         referenceDistance = "20";
          maxDistance = "50";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -4324,7 +4358,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/rain/rain_forest_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4335,7 +4369,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "10";
+         referenceDistance = "20";
          maxDistance = "50";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -4348,7 +4382,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/rain/rain_forest_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4359,7 +4393,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "15";
+         referenceDistance = "30";
          maxDistance = "85";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -4372,7 +4406,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/rain/rain_forest_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4383,7 +4417,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "20";
+         referenceDistance = "30";
          maxDistance = "100";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -4396,7 +4430,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/rain/rain_forest_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4407,7 +4441,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "30";
+         referenceDistance = "45";
          maxDistance = "120";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";
@@ -4420,7 +4454,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/rain/rain_forest_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4431,7 +4465,7 @@ new SimGroup(MissionGroup) {
          fadeInTime = "0";
          fadeOutTime = "0";
          is3D = "1";
-         referenceDistance = "30";
+         referenceDistance = "45";
          maxDistance = "120";
          scatterDistance = "0 0 0";
          coneInsideAngle = "360";

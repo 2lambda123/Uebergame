@@ -34,13 +34,12 @@ datablock SFXProfile(HeavyRainSound)
 
 datablock PrecipitationData(HeavyRain)
 {
-   soundProfile = "HeavyRainSound";
 
    dropTexture = "art/environment/precipitation/rain";
    splashTexture = "art/environment/precipitation/water_splash";
    dropSize = 0.35;
    splashSize = 0.1;
-   useTrueBillboards = false;
+   useTrueBillboards = 0;
    splashMS = 500;
 };
 // ----------------------------------------------------------------------------

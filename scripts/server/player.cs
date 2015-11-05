@@ -268,30 +268,7 @@ function PlayerData::onImpact(%this, %obj, %collidedObject, %vec, %vecLen)
 function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %damageType)
 {
    if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
-      return;
-	  
-   //do decals 
-   %Decalposition = VectorAdd(getRandom()*2-1 SPC getRandom()*2-1 SPC getRandom()*2-1, %obj.getWorldBoxCenter());
-   %normal[0] = "0.0 0.0 1.0";
-   %normal[1] = "0.0 1.0 0.0";
-   %normal[2] = "1.0 0.0 0.0";
-   %normal[3] = "0.0 0.0 -1.0";
-   %normal[4] = "0.0 -1.0 0.0";
-   %normal[5] = "-1.0 0.0 0.0";
-   for (%i=0;%i<6;%i++)
-   %decalObj = decalManagerAddDecal(%Decalposition, %normal[%i], getRandom(360),  getRandom()*3, bloodDecalData, false);   
-   //do decals  
-   %particles = new ParticleEmitterNode()   
-   {  
-      position = %position;  
-      rotation = "1 0 0 0";  
-      scale = "1 1 1";  
-      dataBlock = "SmokeEmitterNode";  
-      emitter = "bloodBulletDirtSprayEmitter";  
-      velocity = "1";  
-   };  
-   MissionCleanup.add(%particles);  
-   %particles.schedule(1000, "delete");	  
+      return;	  
 
    %location = %obj.getDamageLocation(%position);//"Body";
    %bodyPart = getWord(%location, 0);
@@ -305,6 +282,53 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
       case "legs":
          %damage = %damage/1.6; // about two third damage for legs
    }
+   
+   //blood decals:
+   %normal[0] = "0.0 0.0 1.0";
+   %abNormal[0] = "2.0 2.0 0.0";
+   %normal[1] = "0.0 1.0 0.0";
+   %abNormal[1] = "2.0 0.0 2.0";
+   %normal[2] = "1.0 0.0 0.0";
+   %abNormal[2] = "0.0 2.0 2.0";
+   %normal[3] = "0.0 0.0 -1.0";
+   %abNormal[3] = "2.0 2.0 0.0";
+   %normal[4] = "0.0 -1.0 0.0";
+   %abNormal[4] = "2.0 0.0 2.0";
+   %normal[5] = "-1.0 0.0 0.0";
+   %abNormal[5] = "0.0 2.0 2.0";
+   
+   %centerpoint = %obj.getWorldBoxCenter();
+   for (%i=0;%i<6;%i++)
+   {
+       	%normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood splatters
+		%targetPoint = VectorAdd(%centerpoint,%normalScaled);
+		%mask = $TypeMasks::StaticObjectType | $TypeMasks::TerrainObjectType;
+		%hitObject = ContainerRayCast(%centerpoint, %targetPoint, %mask, %obj);
+        
+        if (%hitObject)
+        {
+            %splatterPoint = getWords(%hitObject,1,3);
+			%splatterNorm = getWords(%hitObject,4,6);
+            %splatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
+			SPC getRandom()*getword(%abNormal[%i],1)-getword(%abNormal[%i],1)/2 SPC getRandom()*getword(%abNormal[%i],2)-getword(%abNormal[%i],2)/2;            
+            %Decalposition = VectorAdd(%splatterPoint, %splatterVary);
+            %decalObj = decalManagerAddDecal(%Decalposition, %splatterNorm, 0, getRandom()*1.5 + %damage/33 , bloodDecalData, false); 
+			//getRandom 0-1.5 + damage / 33 = decal size
+        }
+   }
+      
+   %particles = new ParticleEmitterNode()   
+   {  
+      position = %position;  
+      rotation = "1 0 0 0";  
+      scale = "1 1 1";  
+      dataBlock = "SmokeEmitterNode";  
+      emitter = "bloodBulletDirtSprayEmitter";  
+      velocity = "1";  
+   };  
+   MissionCleanup.add(%particles);  
+   %particles.schedule(1000, "delete");
+   //blood decals and particles finished
    
    %obj.applyDamage(%damage);
 

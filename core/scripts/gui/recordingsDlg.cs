@@ -29,7 +29,7 @@ function recordingsDlg::onWake()
 {
    RecordingsDlgList.clear();
    %i = 0;
-   %filespec = $currentMod @ "/recordings/*.rec";
+   %filespec = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/recordings/*.rec";
    echo(%filespec);
    for(%file = findFirstFile(%filespec); %file !$= ""; %file = findNextFile(%filespec)) 
       RecordingsDlgList.addRow(%i++, fileBase(%file));
@@ -44,7 +44,7 @@ function StartSelectedDemo()
    %sel = RecordingsDlgList.getSelectedId();
    %rowText = RecordingsDlgList.getRowTextById(%sel);
 
-   %file = $currentMod @ "/recordings/" @ getField(%rowText, 0) @ ".rec";
+   %file = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/recordings/" @ getField(%rowText, 0) @ ".rec";
 
    new GameConnection(ServerConnection);
    RootGroup.add(ServerConnection);
@@ -86,7 +86,7 @@ function startDemoRecord()
       if(%num < 100)
          %num = "0" @ %num;
 
-      %file = $currentMod @ "/recordings/demo" @ %num @ ".rec";
+      %file = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/recordings/demo" @ %num @ ".rec";
       if(!isfile(%file))
          break;
    }

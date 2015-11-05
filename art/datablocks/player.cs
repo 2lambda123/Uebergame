@@ -575,10 +575,10 @@ datablock PlayerData(DefaultPlayerData)
 
    fallingSpeedThreshold = "-4";
 
-   landSequenceTime = "1.5";
+   landSequenceTime = "1.2";
    transitionToLand = "1";
    recoverDelay = "32";
-   recoverRunForceScale = "0.75";
+   recoverRunForceScale = "0.5";
 
    minImpactSpeed = "10";
    minLateralImpactSpeed = 20;

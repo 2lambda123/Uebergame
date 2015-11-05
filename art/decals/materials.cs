@@ -77,8 +77,8 @@ singleton Material(DECAL_blood_splatter_01)
    translucentBlendOp = LerpAlpha;
    translucentZWrite = true;
    mapTo = "DECAL_blood_splatter_01";
-   diffuseMap[0] = "art/decals/blood_splatter_01.png";
-   alphaTest = "1";
+   diffuseMap[0] = "art/decals/blood_splatter_01_a.png";
+   alphaTest = "0";
    alphaRef = "172";
    materialTag0 = "Decal";
    specular[0] = "0.494118 0.054902 0.117647 1";
@@ -86,5 +86,6 @@ singleton Material(DECAL_blood_splatter_01)
    specularPower[0] = "32";
    specular[1] = "1 1 1 1";
    diffuseColor[0] = "White";
+   castShadows = "0";
 };
 
