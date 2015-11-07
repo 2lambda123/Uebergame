@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 
 // Timeouts for corpse deletion.
-$CorpseTimeoutValue = 45 * 1000;
+$CorpseTimeoutValue = 10 * 1000;
 
 //----------------------------------------------------------------------------
 // Drowning script
@@ -282,8 +282,8 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
       case "legs":
          %damage = %damage/1.6; // about two third damage for legs
    }
-   
-   //blood decals:
+   /*
+   //blood decals, commented out until they work on clientside also
    %normal[0] = "0.0 0.0 1.0";
    %abNormal[0] = "2.0 2.0 0.0";
    %normal[1] = "0.0 1.0 0.0";
@@ -300,23 +300,25 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    %centerpoint = %obj.getWorldBoxCenter();
    for (%i=0;%i<6;%i++)
    {
-       	%normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood splatters
+       	%normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood spatters
 		%targetPoint = VectorAdd(%centerpoint,%normalScaled);
 		%mask = $TypeMasks::StaticObjectType | $TypeMasks::TerrainObjectType;
 		%hitObject = ContainerRayCast(%centerpoint, %targetPoint, %mask, %obj);
         
         if (%hitObject)
         {
-            %splatterPoint = getWords(%hitObject,1,3);
-			%splatterNorm = getWords(%hitObject,4,6);
-            %splatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
+            %spatterPoint = getWords(%hitObject,1,3);
+			%spatterNorm = getWords(%hitObject,4,6);
+			%spatterScaling = getRandom()*1.5 + %damage/30;
+            %spatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
 			SPC getRandom()*getword(%abNormal[%i],1)-getword(%abNormal[%i],1)/2 SPC getRandom()*getword(%abNormal[%i],2)-getword(%abNormal[%i],2)/2;            
-            %Decalposition = VectorAdd(%splatterPoint, %splatterVary);
-            %decalObj = decalManagerAddDecal(%Decalposition, %splatterNorm, 0, getRandom()*1.5 + %damage/33 , bloodDecalData, false); 
-			//getRandom 0-1.5 + damage / 33 = decal size
+            %Decalposition = VectorAdd(%spatterPoint, %spatterVary);
+			if (%spatterScaling > 9)
+			{ %spatterScaling = 7;}
+            %decalObj = decalManagerAddDecal(%Decalposition, %spatterNorm, 0, %spatterScaling , bloodDecalData, false); 
         }
    }
-      
+   */   
    %particles = new ParticleEmitterNode()   
    {  
       position = %position;  
@@ -399,7 +401,7 @@ function PlayerData::onDisabled(%this, %obj, %state)
    commandToClient(%obj.client, 'toggleVehicleMap', false);
 
    // Schedule corpse removal. Just keeping the place clean.
-   %obj.schedule($CorpseTimeoutValue - 1000, "startFade", 1000, 0, true);
+   %obj.schedule($CorpseTimeoutValue - 3000, "startFade", 3000, 0, true);
    %obj.schedule($CorpseTimeoutValue, "delete");
 }
 
@@ -478,7 +480,7 @@ function PlayerData::onStopSprintMotion(%this, %obj)
 
 function Player::kill(%this, %damageType)
 {
-   %this.damage(0, %this.getPosition(), 10000, %damageType);
+   %this.damage(0, %this.getPosition(), 170, %damageType);
 }
 
 //----------------------------------------------------------------------------

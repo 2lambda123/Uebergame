@@ -55,9 +55,9 @@ function PlayerListGui::update(%this, %clientId, %name, %isSuperAdmin, %isAdmin,
    // Build the row to display.  The name can have ML control tags, including
    // color and font.  Since we're not using an ML control here, we need to
    // strip them off.
-   %tag = %isSuperAdmin ? "[Super]" :
+   %tag = %isSuperAdmin ? "[Host]" :
       (%isAdmin ? "[Admin]" :
-      (%isAI ? "[Bot]" :
+      (%isAI ? "" :
       ""));
    %text = StripMLControlChars(%name) SPC %tag TAB %score TAB %kills TAB %deaths;
 

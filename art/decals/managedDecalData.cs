@@ -53,7 +53,7 @@ datablock DecalData(bulletHoleDecal)
    texCols = "2";
    screenStartRadius = "20";
    screenEndRadius = "5";
-   clippingAngle = "180";
+   clippingAngle = "45";
 };
 
 datablock DecalData(BloodDecalData)  

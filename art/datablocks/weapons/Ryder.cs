@@ -227,9 +227,9 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    // Weapon lights up while firing
    lightType = "WeaponFireLight";
    lightColor = "0.992126 0.968504 0.700787 1";
-   lightRadius = "4";
+   lightRadius = "3.5";
    lightDuration = "100";
-   lightBrightness = 2;
+   lightBrightness = 1.5;
 
    // Shake camera while firing.
    shakeCamera = true;

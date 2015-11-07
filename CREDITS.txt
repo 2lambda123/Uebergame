@@ -11,3 +11,4 @@ art/sound/impact_concrete_01.ogg -Yoyodaman234 https://www.freesound.org/people/
 art/sound/environment/wind/wind_storm_01.ogg  -asbestos bill  https://www.freesound.org/people/asbestos%20bill/sounds/181287/ -edited by Duion
 art/sound/environment/wind_forest_01.ogg -MrAuralization https://www.freesound.org/people/MrAuralization/sounds/243617/
 art/sound/environment/wind_forest_birds_01.ogg -bolland https://www.freesound.org/people/bolland/sounds/196005/
+art/sound/environment/rain/rain_forest_01.ogg -kvgarlic https://www.freesound.org/people/kvgarlic/sounds/196585/ -edited by Duion

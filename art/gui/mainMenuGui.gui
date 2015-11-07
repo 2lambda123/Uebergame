@@ -39,7 +39,7 @@
          isDecoy = "0";
    };
    new GuiTextCtrl(Version_Number) {
-      text = "Version: 0.02";
+      text = "Version 1.0.3.5";
       maxLength = "1024";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -232,9 +232,10 @@ function MainMenuGui::onWake(%this)
        isObject(%this-->ExitButton))
       %this-->ExitButton.setVisible(false);
 }
-
+/* commented out until version number problem is solved
 function MainMenuGui::onWake(%this)
 {
    %header = "Version" SPC getVersionString();
    Version_Number.setText(%header);
 }
+*/

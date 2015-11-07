@@ -16,6 +16,10 @@ screenshots/*
 *.exp
 *.bat
 
+#debuggarbage
+*.ilk
+*.pdb
+
 #console outpout
 console.log
 

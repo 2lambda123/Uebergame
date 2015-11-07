@@ -38,12 +38,19 @@ function Observer::onTrigger(%this,%obj,%trigger,%state)
          // Do something interesting.
 
       case "Corpse":
+	  
+	          if (!%obj.canResapwn)
+        {
+            error("wait for it...");
+            return;
+        }
+		
          // Fade out the corpse
          if (isObject(%obj.orbitObj))
          {
             cancelAll(%obj.orbitObj);
-            %obj.orbitObj.schedule(0, "startFade", 1000, 0, true);
-            %obj.orbitObj.schedule(1000, "delete");
+            %obj.orbitObj.schedule($CorpseTimeoutValue - 3000, "startFade", 3000, 0, true);
+            %obj.orbitObj.schedule($CorpseTimeoutValue, "delete");
          }
 
          // Viewing dead corpse, so we probably want to respawn.
@@ -53,6 +60,11 @@ function Observer::onTrigger(%this,%obj,%trigger,%state)
          // debug mode we like to switch to it.
          %this.setMode(%obj,"Observer");
    }
+}
+
+function Camera::unlockRespawn(%this)
+{
+    %this.canResapwn = true;
 }
 
 function Observer::setMode(%this,%obj,%mode,%arg1,%arg2,%arg3)
@@ -70,6 +82,9 @@ function Observer::setMode(%this,%obj,%mode,%arg1,%arg2,%arg3)
          %obj.setOrbitMode(%arg1, %transform, 0.5, 4.5, 4.5);
          %obj.orbitObj = %arg1;
 
+		 //lock respawn, unlock after x seconds
+         %obj.canResapwn = false;
+         %obj.schedule(1000,"unlockRespawn");
    }
    %obj.mode = %mode;
 }

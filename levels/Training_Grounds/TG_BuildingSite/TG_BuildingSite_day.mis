@@ -2795,6 +2795,37 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
+            position = "344.432 252.386 7.79352";
+            rotation = "-0 0 -1 0.387653";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "Medpack_medium";
+            position = "345.024 252.502 8.40396";
+            rotation = "0 0 1 40.738";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
             position = "399.486 299.806 7.79454";
             rotation = "0 0 1 180.366";
             scale = "1 1 1";
@@ -5019,7 +5050,7 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "ProxMine";
-            position = "397.216 282.419 12.2278";
+            position = "393.064 321.038 0.792347";
             rotation = "0 0 -1 70.7456";
             scale = "1 1 1";
             canSave = "1";
@@ -5039,7 +5070,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "397.331 281.808 11.5704";
+            position = "393.179 320.427 0.134947";
             rotation = "0 0 -1 90.4557";
             scale = "1 1 1";
             canSave = "1";
@@ -5245,8 +5276,8 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "391.644 321.347 11.5704";
-            rotation = "0 0 1 89.6359";
+            position = "390.119 303.199 7.7142";
+            rotation = "-0 0 -1 1.08063";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -5256,8 +5287,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "ProxMine";
-            position = "391.758 320.735 12.2278";
-            rotation = "0 0 1 109.346";
+            position = "390.729 303.321 8.3716";
+            rotation = "0 0 1 18.6292";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";

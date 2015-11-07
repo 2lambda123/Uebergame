@@ -679,7 +679,7 @@ function GameCore::onDeath(%game, %client, %sourceObject, %sourceClient, %damage
    %client.RefreshWeaponHud(0, "", "");
 
    // Clear out the name on the corpse
-   %client.player.setShapeName("");
+   //%client.player.setShapeName(""); // we don't use shapenames
 
    // Switch the client over to the death cam and unhook the player object.
    if (isObject(%client.camera) && isObject(%client.player))
