@@ -41,7 +41,7 @@ function Observer::onTrigger(%this,%obj,%trigger,%state)
 	  
 	          if (!%obj.canResapwn)
         {
-            error("wait for it...");
+            //error("wait for it...");
             return;
         }
 		
