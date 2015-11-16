@@ -25,7 +25,14 @@
 //--------------------------------------------------------------------------
 datablock SFXProfile(LurkerFireSound)
 {
-   filename = "art/sound/weapons/D_32P_01.wav";
+   filename = "art/sound/weapons/D_32P_01_loop.wav";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(LurkerFireStopSound)
+{
+   filename = "art/sound/weapons/D_32P_01_end.wav";
    description = AudioClose3D;
    preload = true;
 };
@@ -57,7 +64,7 @@ datablock SFXProfile(LurkerGrenadeFireSound)
    description = AudioClose3D;
    preload = true;
 };
-
+/*
 datablock SFXPlayList(LurkerFireSoundList)
 {
    // Use a looped description so the list playback will loop.
@@ -65,12 +72,27 @@ datablock SFXPlayList(LurkerFireSoundList)
 
    track[ 0 ] = LurkerFireSound;
 };
-
+*/
  datablock SFXProfile(BulletImpactSound)
 {
    filename = "art/sound/weapons/ricochet/bullet_ricochet_01";
    description = AudioClosest3D;
    preload = true;
+};
+datablock SFXPlayList(BulletImpactSoundList)
+{
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
+   track[0] = "BulletImpactSound";
+   pitchScaleVariance[0] = "-0.2 0.2";
+   track[1] = "BulletImpactSound";
+   pitchScaleVariance[1] = "-0.2 0.2";
+   track[2] = "BulletImpactSound";
+   pitchScaleVariance[2] = "-0.2 0.2";
+   track[3] = "BulletImpactSound";
+   pitchScaleVariance[3] = "-0.2 0.2";
 };
 
 // ----------------------------------------------------------------------------
@@ -80,28 +102,29 @@ datablock ParticleData(GunFireSmoke)
 {
    textureName          = "art/particles/smoke";
    dragCoefficient      = 0;
-   gravityCoefficient   = "-1";
+   gravityCoefficient   = "-0.803419";
    windCoefficient      = 0;
    inheritedVelFactor   = 0.0;
    constantAcceleration = 0.0;
-   lifetimeMS           = 500;
-   lifetimeVarianceMS   = 200;
+   lifetimeMS           = "500";
+   lifetimeVarianceMS   = "200";
    spinRandomMin = -180.0;
    spinRandomMax =  180.0;
    useInvAlpha   = true;
 
-   colors[0]     = "0.795276 0.795276 0.795276 0.692913";
-   colors[1]     = "0.866142 0.866142 0.866142 0.346457";
-   colors[2]     = "0.897638 0.834646 0.795276 0";
+   colors[0]     = "0.992126 0.992126 0.992126 0.353";
+   colors[1]     = "0.905512 0.905512 0.905512 0.216";
+   colors[2]     = "0.84252 0.84252 0.84252 0.34";
 
    sizes[0]      = "0.399805";
-   sizes[1]      = "1.19941";
-   sizes[2]      = "1.69993";
+   sizes[1]      = "1.09565";
+   sizes[2]      = "1.28487";
 
    times[0]      = 0.0;
-   times[1]      = "0.498039";
+   times[1]      = "0.494118";
    times[2]      = 1.0;
    animTexName = "art/particles/smoke";
+   colors[3] = "0.643137 0.643137 0.643137 0.34";
 };
 
 datablock ParticleEmitterData(GunFireSmokeEmitter)
@@ -112,19 +135,21 @@ datablock ParticleEmitterData(GunFireSmokeEmitter)
    velocityVariance = "0";
    thetaMin         = "0";
    thetaMax         = "0";
-   lifetimeMS       = 250;
+   lifetimeMS       = "250";
    particles = "GunFireSmoke";
    blendStyle = "NORMAL";
    softParticles = "0";
    originalName = "GunFireSmokeEmitter";
    alignParticles = "0";
    orientParticles = "0";
+   lifetimeVarianceMS = "0";
+   ambientFactor = "0.5";
 };
 
 datablock ParticleData(BulletDirtDust)
 {
    textureName          = "art/particles/impact";
-   dragCoefficient      = "0.997067";
+   dragCoefficient      = "0.99218";
    gravityCoefficient   = "-0.100122";
    windCoefficient      = 0;
    inheritedVelFactor   = 0.0;
@@ -135,18 +160,19 @@ datablock ParticleData(BulletDirtDust)
    spinRandomMax =  180.0;
    useInvAlpha   = true;
 
-   colors[0]     = "0.496063 0.393701 0.299213 0.685039";
-   colors[1]     = "0.685039 0.606299 0.527559 0.346457";
-   colors[2]     = "0.897638 0.84252 0.795276 0";
+   colors[0]     = "0.780392 0.694118 0.466667 0.502";
+   colors[1]     = "0.792157 0.717647 0.509804 0.349";
+   colors[2]     = "0.882353 0.882353 0.882353 0.241";
 
-   sizes[0]      = "0.997986";
-   sizes[1]      = "1.99902";
-   sizes[2]      = "2.49954";
+   sizes[0]      = "0.5";
+   sizes[1]      = "1.4985";
+   sizes[2]      = "1.5";
 
    times[0]      = 0.0;
    times[1]      = "0.494118";
    times[2]      = 1.0;
    animTexName = "art/particles/impact";
+   colors[3] = "0.647059 0.611765 0.568627 1";
 };
 
 datablock ParticleEmitterData(BulletDirtDustEmitter)
@@ -160,8 +186,9 @@ datablock ParticleEmitterData(BulletDirtDustEmitter)
    lifetimeMS       = "250";
    particles = "BulletDirtDust";
    blendStyle = "NORMAL";
-   ambientFactor = "0";
+   ambientFactor = "0.5";
    softParticles = "0";
+   softnessDistance = "1";
 };
 
 //-----------------------------------------------------------------------------
@@ -169,7 +196,7 @@ datablock ParticleEmitterData(BulletDirtDustEmitter)
 //-----------------------------------------------------------------------------
 datablock ExplosionData(BulletDirtExplosion)
 {
-   soundProfile = BulletImpactSound;
+   soundProfile = BulletImpactSoundList;
    lifeTimeMS = 65;
 
    // Volume particles
@@ -221,7 +248,7 @@ datablock ProjectileData( LurkerProjectile )
    impactForce         = 1;
 
    explosion           = BulletDirtExplosion;
-   decal               = BulletHoleDecal;
+   decal               = bulletHoleDecal;
 
    muzzleVelocity      = 300;
    velInheritFactor    = 1;
@@ -373,7 +400,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    lightColor = "0.992126 0.968504 0.708661 1";
    lightRadius = "3.5";
    lightDuration = "100";
-   lightBrightness = 1.5;
+   lightBrightness = 1;
 
    // Shake camera while firing.
    shakeCamera = true;
@@ -446,30 +473,29 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    // Fire the weapon. Calls the fire script which does
    // the actual work.
    stateName[5]                     = "Fire";
-   stateTransitionGeneric0In[5]     = "SprintEnter";
+   stateTransitionGeneric0In[5]     = "FireStop";
    stateTransitionOnTimeout[5]      = "NewRound";
+   stateTransitionOnTriggerUp[5]    = "FireStop";
    stateTimeoutValue[5]             = 0.11;
    stateFire[5]                     = true;
    stateRecoil[5]                   = "";
    stateAllowImageChange[5]         = false;
-   stateSequence[5]                 = "fire";
+   stateSequence[5]                 = "Fire";
    stateScaleAnimation[5]           = false;
    stateSequenceNeverTransition[5]  = true;
    stateSequenceRandomFlash[5]      = true;        // use muzzle flash sequence
    stateScript[5]                   = "onFire";
-   stateSound[5]                    = LurkerFireSoundList;
+   stateSound[5]                    = LurkerFireSound;
    stateEmitter[5]                  = GunFireSmokeEmitter;
    stateEmitterTime[5]              = 0.025;
+   stateTransitionOnNoAmmo[5]       = "FireStop";
+   stateEjectShell[5]               = true;
 
    // Put another round into the chamber if one is available
    stateName[6]                     = "NewRound";
-   stateTransitionGeneric0In[6]     = "SprintEnter";
-   stateTransitionOnNoAmmo[6]       = "NoAmmo";
-   stateTransitionOnTimeout[6]      = "Ready";
-   stateWaitForTimeout[6]           = "0";
-   stateTimeoutValue[6]             = 0.05;
-   stateAllowImageChange[6]         = false;
-   stateEjectShell[6]               = true;
+   stateTransitionOnTimeout[6]      = "Fire";
+   stateWaitForTimeout[6]           = false;
+   stateTimeoutValue[6]             = 0.02;
 
    // No ammo in the weapon, just idle until something
    // shows up. Play the dry fire sound if the trigger is
@@ -556,6 +582,16 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
+   
+   // Fire Stop
+   stateName[14]                     = "FireStop";  
+   stateScript[14]                   = "onFireStop";  
+   stateSound[14]                    = LurkerFireStopSound;  
+   stateTimeoutValue[14]             = 0.1;  
+   stateWaitForTimeout[14]           = true;  
+   stateTransitionOnTimeout[14]      = "Ready";    
+   stateTransitionOnTriggerDown[14]  = "Fire";  
+   stateTransitionOnNoAmmo[14]       = "NoAmmo";  
 };
 
 //--------------------------------------------------------------------------
@@ -647,9 +683,9 @@ datablock ShapeBaseImageData(LurkerGrenadeLauncherImage)
    // Weapon lights up while firing
    lightType = "WeaponFireLight";
    lightColor = "0.992126 0.968504 0.708661 1";
-   lightRadius = "4";
+   lightRadius = "3.5";
    lightDuration = "100";
-   lightBrightness = 2;
+   lightBrightness = 1;
 
    // Shake camera while firing.
    shakeCamera = true;

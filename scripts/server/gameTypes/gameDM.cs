@@ -54,7 +54,7 @@ function DeathMatchGame::initGameVars(%game)
    // Leave $Game::defaultPlayerClass and $Game::defaultPlayerDataBlock as empty strings ("")
    // to spawn a the $Game::defaultCameraClass as the control object.
    $Game::defaultPlayerClass = "Player";
-   $Game::defaultPlayerDataBlock = "DefaultPlayerData";
+   $Game::defaultPlayerDataBlock = "TorqueSoldierPlayerData";
    $Game::defaultPlayerSpawnGroups = "PlayerSpawnPoints PlayerDropPoints";
 
    //-----------------------------------------------------------------------------

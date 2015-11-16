@@ -277,12 +277,12 @@ moveMap.bind( gamepad, thumblx, "D", "-0.23 0.23", gamePadMoveX );
 moveMap.bind( gamepad, thumbly, "D", "-0.23 0.23", gamePadMoveY );
 
 moveMap.bind( gamepad, btn_a, jump );
-moveMap.bindCmd( gamepad, btn_back, "disconnect();", "" );
+moveMap.bind( gamepad, btn_back, showPlayerList );
 
-moveMap.bindCmd(gamepad, dpadl, "toggleLightColorViz();", "");
-moveMap.bindCmd(gamepad, dpadu, "toggleDepthViz();", "");
-moveMap.bindCmd(gamepad, dpadd, "toggleNormalsViz();", "");
-moveMap.bindCmd(gamepad, dpadr, "toggleLightSpecularViz();", "");
+moveMap.bind( gamepad, dpadl, nextWeapon);
+moveMap.bind( gamepad, dpadu, prevWeapon);
+moveMap.bindCmd( gamepad, dpadd, "r", "commandToServer('reloadWeapon');", "");
+moveMap.bind( gamepad, dpadr, doSprint);
 
 // ----------------------------------------------------------------------------
 // Stance/pose
@@ -489,6 +489,10 @@ moveMap.bindCmd(keyboard, "2", "commandToServer('use',\"Lurker\");", "");
 moveMap.bindCmd(keyboard, "3", "commandToServer('use',\"LurkerGrenadeLauncher\");", "");
 moveMap.bindCmd(keyboard, "4", "commandToServer('use',\"ProxMine\");", "");
 moveMap.bindCmd(keyboard, "5", "commandToServer('use',\"DeployableTurret\");", "");
+moveMap.bindCmd(keyboard, "6", "commandToServer('use',\"PaintballMarkerBlue\");", "");
+moveMap.bindCmd(keyboard, "7", "commandToServer('use',\"PaintballMarkerRed\");", "");
+moveMap.bindCmd(keyboard, "8", "commandToServer('use',\"PaintballMarkerGreen\");", "");
+moveMap.bindCmd(keyboard, "9", "commandToServer('use',\"PaintballMarkerYellow\");", "");
 
 moveMap.bindCmd(keyboard, "r", "commandToServer('reloadWeapon');", "");
 

@@ -60,6 +60,8 @@ datablock ParticleEmitterData(SmokeEmitter)
    thetaMax         = 90.0;
 
    particles        = Smoke;
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleEmitterNodeData(SmokeEmitterNode)
@@ -293,6 +295,7 @@ datablock ParticleData(bloodBulletDirtSpray)
        thetaMax = "180";
        orientParticles = "1";
        particles = "bloodBulletDirtSpray";
+       ambientFactor = "0.5";
        blendStyle = "NORMAL";
        softParticles = "0";
          

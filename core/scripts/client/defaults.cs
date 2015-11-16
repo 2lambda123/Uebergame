@@ -259,7 +259,7 @@ $pref::windEffectRadius = 25;
 $pref::Video::autoDetect = 1;
 
 /// smallestVisiblePixelSize stops rendering shapes smaller than this amount
-$pref::TS::smallestVisiblePixelSize = 4;
+$pref::TS::smallestVisiblePixelSize = 2;
 
 //-----------------------------------------------------------------------------
 // Graphics Quality Groups

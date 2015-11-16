@@ -638,6 +638,17 @@ function GameCore::loadOut(%game, %player)
    %player.setInventory(DeployableTurret, 0); //%player.maxInventory(DeployableTurret)
    %player.addToWeaponCycle(DeployableTurret);
    
+   %player.setInventory(PaintballMarkerBlue, 1);
+   %player.setInventory(PaintballMarkerRed, 1);
+   %player.setInventory(PaintballMarkerGreen, 1);
+   %player.setInventory(PaintballMarkerYellow, 1);
+   %player.setInventory(PaintballClip, 10 );
+   %player.setInventory(PaintballAmmo, %player.maxInventory(PaintballAmmo));
+   %player.addToWeaponCycle(PaintballMarkerBlue);
+   %player.addToWeaponCycle(PaintballMarkerRed);
+   %player.addToWeaponCycle(PaintballMarkerGreen);
+   %player.addToWeaponCycle(PaintballMarkerYellow);
+   
    if (%player.getDatablock().mainWeapon.image !$= "")
    {
       %player.mountImage(%player.getDatablock().mainWeapon.image, 0);

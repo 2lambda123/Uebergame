@@ -1,22 +1,19 @@
 ## Uebergame repository ignore list
 
+#cached dts
+*.cached.dts
+
 #shaders cache
 shaders/procedural/*
 
 #fonts cache
 core/fonts/*
 
-#screenshots
-screenshots/*
-
-#recordings
-*.rec
-
-#compilergarbage
+#compiler garbage
 *.exp
 *.bat
 
-#debuggarbage
+#debug garbage
 *.ilk
 *.pdb
 

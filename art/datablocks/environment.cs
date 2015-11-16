@@ -48,7 +48,7 @@ datablock PrecipitationData(HeavyRain)
 
 datablock SFXProfile(SandstormSound)
 {
-   filename = "art/sound/wind/wind_01.ogg";
+   filename = "art/sound/wind/wind_storm_01.ogg";
    description = AudioLoop2d;
 };
 

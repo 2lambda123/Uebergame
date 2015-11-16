@@ -51,6 +51,10 @@ exec("./weapons/Lurker.cs");
 exec("./weapons/Ryder.cs");
 exec("./weapons/ProxMine.cs");
 exec("./weapons/Turret.cs");
+exec("./weapons/PaintballMarkerBlue.cs");
+exec("./weapons/PaintballMarkerRed.cs");
+exec("./weapons/PaintballMarkerGreen.cs");
+exec("./weapons/PaintballMarkerYellow.cs");
 
 exec("./teleporter.cs");
 

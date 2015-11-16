@@ -24,35 +24,69 @@
 // Sounds
 //--------------------------------------------------------------------------
 
-datablock SFXProfile(RyderFireSound)
-{
-   filename = "art/sound/weapons/V_22P_01.wav";
-   description = AudioClose3D;
-   preload = true;
-};
-
-datablock SFXProfile(RyderReloadSound)
-{
-   filename = "art/sound/weapons/wpn_ryder_reload";
-   description = AudioClose3D;
-   preload = true;
-};
-
-datablock SFXProfile(RyderSwitchinSound)
-{
-   filename = "art/sound/weapons/wpn_ryder_switchin";
-   description = AudioClose3D;
-   preload = true;
-};
-
 // ----------------------------------------------------------------------------
 // Particles
 // ----------------------------------------------------------------------------
+datablock ParticleData(PaintDustYellow)
+{
+   textureName          = "art/particles/impactDrops.png";
+   dragCoefficient      = "0.957967";
+   gravityCoefficient   = "0.197803";
+   windCoefficient      = 0;
+   inheritedVelFactor   = "0";
+   constantAcceleration = "0";
+   lifetimeMS           = "200";
+   lifetimeVarianceMS   = "100";
+   spinRandomMin = -180.0;
+   spinRandomMax =  180.0;
+   useInvAlpha   = true;
 
+   colors[0]     = "0.72549 0.72549 0.00392157 1";
+   colors[1]     = "0.866667 0.784314 0.00784314 1";
+   colors[2]     = "0.988235 0.941177 0.00784314 1";
+
+   sizes[0]      = "0.399805";
+   sizes[1]      = "0.698895";
+   sizes[2]      = "1.0987";
+
+   times[0]      = 0.0;
+   times[1]      = "0.494118";
+   times[2]      = 1.0;
+   animTexName = "art/particles/impactDrops.png";
+   colors[3] = "0.996078 0.992157 0.992157 1";
+};
+
+datablock ParticleEmitterData(PaintExplosionYellowEmitter)
+{
+   ejectionPeriodMS = 20;
+   periodVarianceMS = 10;
+   ejectionVelocity = "1";
+   velocityVariance = 1.0;
+   thetaMin         = 0.0;
+   thetaMax         = 180.0;
+   lifetimeMS       = 250;
+   particles = "PaintDustYellow";
+   blendStyle = "NORMAL";
+   ambientFactor = "0.66";
+};
 //-----------------------------------------------------------------------------
 // Explosion
 //-----------------------------------------------------------------------------
+datablock ExplosionData(PaintExplosionYellow)
+{
+   soundProfile = PaintballImpactSoundList;
+   lifeTimeMS = 65;
 
+   // Volume particles
+   particleEmitter = PaintExplosionYellowEmitter;
+   particleDensity = 4;
+   particleRadius = 0.3;
+
+   // Point emission
+   emitter[0] = BulletDirtSprayEmitter;
+   emitter[1] = BulletDirtSprayEmitter;
+   emitter[2] = BulletDirtRocksEmitter;
+};
 //--------------------------------------------------------------------------
 // Shell ejected during reload.
 //-----------------------------------------------------------------------------
@@ -60,98 +94,50 @@ datablock SFXProfile(RyderSwitchinSound)
 //-----------------------------------------------------------------------------
 // Projectile Object
 //-----------------------------------------------------------------------------
-datablock LightDescription( RyderProjectileLightDesc )
+datablock ProjectileData( PaintballProjectileYellow )
 {
-   color  = "0.0 0.5 0.7";
-   range = 3.0;
-};
+   projectileShapeName = "art/shapes/weapons/paintball/paintball_yellow.dae";
 
-datablock ProjectileData( RyderProjectile )
-{
-   projectileShapeName = "";
-
-   directDamage        = 20;
+   directDamage        = 200;
    radiusDamage        = 0;
    damageRadius        = 0.5;
    areaImpulse         = 0.5;
    impactForce         = 1;
 
-   explosion           = BulletDirtExplosion;
-   decal               = BulletHoleDecal;
+   explosion           = PaintExplosionYellow;
+   decal               = yellowPaintSplatterDecal;
 
-   muzzleVelocity      = 300;
+   muzzleVelocity      = 33;
    velInheritFactor    = 1;
 
    armingDelay         = 0;
-   lifetime            = 1488;
-   fadeDelay           = 1472;
+   lifetime            = 15000;
+   fadeDelay           = 0;
    bounceElasticity    = 0;
    bounceFriction      = 0;
    isBallistic         = true;
-   gravityMod          = 0.75;
+   gravityMod          = 0.66;
 };
 
-function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
+function PaintballProjectileYellow::onCollision(%this,%obj,%col,%fade,%pos,%normal)
 {
    // Apply impact force from the projectile.
    
    // Apply damage to the object all shape base objects
-   // a random value between 0 and the directDamage gets picked and a fixed damage added
    if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,getRandom(%this.directDamage)+20,"RyderProjectile");
+      %col.damage(%obj,%pos,%this.directDamage,"PaintballProjectileYellow");
 }
 
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------
-datablock ItemData(RyderClip)
-{
-   // Mission editor category
-   category = "AmmoClip";
-
-   // Add the Ammo namespace as a parent.  The ammo namespace provides
-   // common ammo related functions and hooks into the inventory system.
-   className = "AmmoClip";
-
-   // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.DAE";
-   mass = 5;
-   elasticity = 0.2;
-   friction = 0.6;
-
-   // Dynamic properties defined by the scripts
-   pickUpName = "Ryder clip";
-   count = 1;
-   maxInventory = 10;
-};
-
-datablock ItemData(RyderAmmo)
-{
-   // Mission editor category
-   category = "Ammo";
-
-   // Add the Ammo namespace as a parent.  The ammo namespace provides
-   // common ammo related functions and hooks into the inventory system.
-   className = "Ammo";
-
-   // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
-   mass = 1;
-   elasticity = 0.2;
-   friction = 0.6;
-
-   // Dynamic properties defined by the scripts
-   pickUpName = "Ryder bullet";
-   maxInventory = 8;
-   clip = RyderClip;
-};
 
 //--------------------------------------------------------------------------
 // Weapon Item.  This is the item that exists in the world, i.e. when it's
 // been dropped, thrown or is acting as re-spawnable item.  When the weapon
 // is mounted onto a shape, the SoldierWeaponImage is used.
 //-----------------------------------------------------------------------------
-datablock ItemData(Ryder)
+datablock ItemData(PaintballMarkerYellow)
 {
    // Mission editor category
    category = "Weapon";
@@ -170,15 +156,13 @@ datablock ItemData(Ryder)
    PreviewImage = 'ryder.png';
 
    // Dynamic properties defined by the scripts
-   pickUpName = "Ryder pistol";
-   description = "Ryder";
-   image = RyderWeaponImage;
+   pickUpName = "A yellow PaintballMarker weapon";
+   description = "PaintballMarkerYellow";
+   image = PaintballMarkerYellowWeaponImage;
    reticle = "crossHair";
-   ZoomReticle = "crossHair";
 };
 
-
-datablock ShapeBaseImageData(RyderWeaponImage)
+datablock ShapeBaseImageData(PaintballMarkerYellowWeaponImage)
 {
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
@@ -207,34 +191,18 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    className = "WeaponImage";
 
    // Projectiles and Ammo.
-   item = Ryder;
-   ammo = RyderAmmo;
-   clip = RyderClip;
+   item = PaintballMarkerYellow;
+   ammo = PaintballAmmo;
+   clip = PaintballClip;
 
-   projectile = RyderProjectile;
+   projectile = PaintballProjectileYellow;
    projectileType = Projectile;
-   projectileSpread = "0.002";
-
-   altProjectile = GrenadeLauncherProjectile;
-   altProjectileSpread = "0.02";
-
-   casing = BulletShell;
-   shellExitDir        = "1.0 0.3 1.0";
-   shellExitOffset     = "0.15 -0.56 -0.1";
-   shellExitVariance   = 15.0;
-   shellVelocity       = 3.0;
-
-   // Weapon lights up while firing
-   lightType = "WeaponFireLight";
-   lightColor = "0.992126 0.968504 0.700787 1";
-   lightRadius = "3.5";
-   lightDuration = "100";
-   lightBrightness = 1;
+   projectileSpread = "0.008";
 
    // Shake camera while firing.
    shakeCamera = true;
    camShakeFreq = "2 2 2";
-   camShakeAmp = "5 5 5";
+   camShakeAmp = "2 2 2";
    camShakeDuration = "0.5";
    camShakeRadius = "1.2";
 
@@ -257,62 +225,67 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
-   stateTimeoutValue[1]             = 1.0;
+   stateTimeoutValue[1]             = 0.5;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = RyderSwitchinSound;
+   stateSound[1]                    = LurkerSwitchinSound;
 
    // Ready to fire, just waiting for the trigger
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";
    stateTransitionOnMotion[2]       = "ReadyMotion";
+   stateTransitionOnTimeout[2]      = "ReadyFidget";
+   stateTimeoutValue[2]             = 10;
+   stateWaitForTimeout[2]           = false;
    stateScaleAnimation[2]           = false;
    stateScaleAnimationFP[2]         = false;
    stateTransitionOnNoAmmo[2]       = "NoAmmo";
    stateTransitionOnTriggerDown[2]  = "Fire";
    stateSequence[2]                 = "idle";
 
-   // Ready to fire with player moving
-   stateName[3]                     = "ReadyMotion";
+   // Same as Ready state but plays a fidget sequence
+   stateName[3]                     = "ReadyFidget";
    stateTransitionGeneric0In[3]     = "SprintEnter";
-   stateTransitionOnNoMotion[3]     = "Ready";
+   stateTransitionOnMotion[3]       = "ReadyMotion";
+   stateTransitionOnTimeout[3]      = "Ready";
+   stateTimeoutValue[3]             = 6;
    stateWaitForTimeout[3]           = false;
-   stateScaleAnimation[3]           = false;
-   stateScaleAnimationFP[3]         = false;
-   stateSequenceTransitionIn[3]     = true;
-   stateSequenceTransitionOut[3]    = true;
    stateTransitionOnNoAmmo[3]       = "NoAmmo";
    stateTransitionOnTriggerDown[3]  = "Fire";
-   stateSequence[3]                 = "run";
+   stateSequence[3]                 = "idle_fidget1";
+   //stateSound[3]                    = LurkerIdleSound;
+
+   // Ready to fire with player moving
+   stateName[4]                     = "ReadyMotion";
+   stateTransitionGeneric0In[4]     = "SprintEnter";
+   stateTransitionOnNoMotion[4]     = "Ready";
+   stateWaitForTimeout[4]           = false;
+   stateScaleAnimation[4]           = false;
+   stateScaleAnimationFP[4]         = false;
+   stateSequenceTransitionIn[4]     = true;
+   stateSequenceTransitionOut[4]    = true;
+   stateTransitionOnNoAmmo[4]       = "NoAmmo";
+   stateTransitionOnTriggerDown[4]  = "Fire";
+   stateSequence[4]                 = "run";
 
    // Fire the weapon. Calls the fire script which does
    // the actual work.
-   stateName[4]                     = "Fire";
-   stateTransitionGeneric0In[4]     = "SprintEnter";
-   stateTransitionOnTimeout[4]      = "WaitForRelease";
-   stateTimeoutValue[4]             = 0.23;
-   stateWaitForTimeout[4]           = true;
-   stateFire[4]                     = true;
-   stateRecoil[4]                   = "";
-   stateAllowImageChange[4]         = false;
-   stateSequence[4]                 = "fire";
-   stateScaleAnimation[4]           = true;
-   stateSequenceNeverTransition[4]  = true;
-   stateSequenceRandomFlash[4]      = true;        // use muzzle flash sequence
-   stateScript[4]                   = "onFire";
-   stateEmitter[4]                  = GunFireSmokeEmitter;
-   stateEmitterTime[4]              = 0.025;
-   stateEjectShell[4]               = true;
-   stateSound[4]                    = RyderFireSound;
-
-   // Wait for the player to release the trigger
-   stateName[5]                     = "WaitForRelease";
+   stateName[5]                     = "Fire";
    stateTransitionGeneric0In[5]     = "SprintEnter";
-   stateTransitionOnTriggerUp[5]    = "NewRound";
-   stateTimeoutValue[5]             = 0.05;
-   stateWaitForTimeout[5]           = true;
+   stateTransitionOnTimeout[5]      = "NewRound";
+   stateTimeoutValue[5]             = 0.15;
+   stateFire[5]                     = true;
+   stateRecoil[5]                   = "";
    stateAllowImageChange[5]         = false;
+   stateSequence[5]                 = "Fire";
+   stateScaleAnimation[5]           = false;
+   stateSequenceNeverTransition[5]  = true;
+   stateSequenceRandomFlash[5]      = false;        // use muzzle flash sequence
+   stateScript[5]                   = "onFire";
+   stateSound[5]                    = PaintballMarkerFireSoundList;
+   stateEmitter[5]                  = PaintballMarkerSmokeEmitter;
+   stateEmitterTime[5]              = 0.025;
 
-   // Put another round in the chamber
+   // Put another round into the chamber if one is available
    stateName[6]                     = "NewRound";
    stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
@@ -330,10 +303,10 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTransitionOnAmmo[7]         = "ReloadClip";
    stateTimeoutValue[7]             = 0.1;   // Slight pause to allow script to run when trigger is still held down from Fire state
    stateScript[7]                   = "onClipEmpty";
-   stateTransitionOnTriggerDown[7]  = "DryFire";
    stateSequence[7]                 = "idle";
    stateScaleAnimation[7]           = false;
    stateScaleAnimationFP[7]         = false;
+   stateTransitionOnTriggerDown[7]  = "DryFire";
    
    stateName[8]                     = "NoAmmoMotion";
    stateTransitionGeneric0In[8]     = "SprintEnter";
@@ -343,8 +316,8 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateScaleAnimationFP[8]         = false;
    stateSequenceTransitionIn[8]     = true;
    stateSequenceTransitionOut[8]    = true;
-   stateTransitionOnAmmo[8]         = "ReloadClip";
    stateTransitionOnTriggerDown[8]  = "DryFire";
+   stateTransitionOnAmmo[8]         = "ReloadClip";
    stateSequence[8]                 = "run";
 
    // No ammo dry fire
@@ -355,20 +328,21 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTimeoutValue[9]             = 0.7;
    stateTransitionOnTimeout[9]      = "NoAmmo";
    stateScript[9]                   = "onDryFire";
+   stateSound[9]                    = MachineGunDryFire;
 
-   // Play the reload clip animation
+   // Play the reload clip animation //with fix for reload animation bug
    stateName[10]                     = "ReloadClip";
    stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "Ready";
    stateWaitForTimeout[10]           = true;
-   stateTimeoutValue[10]             = 2.5;
+   stateTimeoutValue[10]             = 3.0;
    stateReload[10]                   = true;
    stateSequence[10]                 = "reload";
    stateShapeSequence[10]            = "Reload";
    stateScaleShapeSequence[10]       = true;
    stateScaleAnimation[10]           = true;
    stateScaleAnimationFP[10]         = false;
-   stateSound[10]                    = RyderReloadSound;
+   stateSound[10]                    = LurkerReloadSound;
 
    // Start Sprinting
    stateName[11]                    = "SprintEnter";
@@ -400,9 +374,9 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.2;
+   stateTimeoutValue[13]            = 0.3;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
-   stateSequence[13]                = "sprint";
+   stateSequence[13]                = "sprint"; 
 };

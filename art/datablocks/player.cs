@@ -27,14 +27,14 @@
 datablock SFXProfile(DeathCrySound)
 {
    fileName = "art/sound/orc_death";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(PainCrySound)
 {
    fileName = "art/sound/orc_pain";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
@@ -43,49 +43,83 @@ datablock SFXProfile(PainCrySound)
 datablock SFXProfile(FootLightSoftSound)
 {
    filename    = "art/sound/lgtStep_mono_01";
-   description = AudioClosest3d;
+   description = AudioClosest3D;
    preload = true;
+};
+datablock SFXPlayList(FootLightSoftSoundList)
+{
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
+   track[0] = "FootLightSoftSound";
+   track[1] = "FootLightSoftSound";
+   track[2] = "FootLightSoftSound";
+   track[3] = "FootLightSoftSound";
+   pitchScaleVariance[0] = "-0.1 0.2";
+   volumeScaleVariance[0] = "-0.2 0";
+   pitchScaleVariance[1] = "-0.1 0.2";
+   volumeScaleVariance[1] = "-0.2 0";
+   pitchScaleVariance[2] = "-0.1 0.2";
+   volumeScaleVariance[2] = "-0.2 0";
+   pitchScaleVariance[3] = "-0.1 0.2";
+   volumeScaleVariance[3] = "-0.2 0";
 };
 
 datablock SFXProfile(FootLightHardSound)
 {
    filename    = "art/sound/hvystep_ mono_01";
-   description = AudioClose3d;
+   description = AudioClosest3D;
    preload = true;
+};
+datablock SFXPlayList(FootLightHardSoundList)
+{
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
+   track[0] = "FootLightHardSound";
+   track[1] = "FootLightHardSound";
+   track[2] = "FootLightHardSound";
+   track[3] = "FootLightHardSound";
+   pitchScaleVariance[0] = "-0.2 0.2";
+   pitchScaleVariance[1] = "-0.2 0.2";
+   pitchScaleVariance[2] = "-0.2 0.2";
+   pitchScaleVariance[3] = "-0.2 0.2";
 };
 
 datablock SFXProfile(FootLightMetalSound)
 {
    filename    = "art/sound/metalstep_mono_01";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightSnowSound)
 {
    filename    = "art/sound/snowstep_mono_01";
-   description = AudioClosest3d;
+   description = AudioClosest3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightShallowSplashSound)
 {
    filename    = "art/sound/waterstep_mono_01";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightWadingSound)
 {
    filename    = "art/sound/waterstep_mono_01";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightUnderwaterSound)
 {
    filename    = "art/sound/waterstep_mono_01";
-   description = AudioClosest3d;
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -94,14 +128,14 @@ datablock SFXProfile(FootLightUnderwaterSound)
 datablock SFXProfile(ImpactLightSoftSound)
 {
    filename    = "art/sound/orc_death";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(ImpactLightHardSound)
 {
    filename    = "art/sound/impact_concrete_01";
-   description = AudioClose3d;
+   description = AudioClose3D;
    preload = true;
 };
 
@@ -146,6 +180,8 @@ datablock ParticleEmitterData(PlayerSplashMistEmitter)
    overrideAdvance = false;
    lifetimeMS       = 250;
    particles = "PlayerSplashMist";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 
@@ -183,6 +219,8 @@ datablock ParticleEmitterData(PlayerBubbleEmitter)
    phiVariance      = 360;
    overrideAdvance = false;
    particles = "PlayerBubbleParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleData(PlayerFoamParticle)
@@ -221,6 +259,8 @@ datablock ParticleEmitterData(PlayerFoamEmitter)
    phiVariance      = 360;
    overrideAdvance = false;
    particles = "PlayerFoamParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 
@@ -258,6 +298,8 @@ datablock ParticleEmitterData( PlayerFoamDropletsEmitter )
    overrideAdvance = false;
    orientParticles  = true;
    particles = "PlayerFoamDropletsParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleData( PlayerWakeParticle )
@@ -350,6 +392,8 @@ datablock ParticleEmitterData( PlayerSplashEmitter )
    orientParticles  = true;
    lifetimeMS       = 100;
    particles = "PlayerSplashParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock SplashData(PlayerSplash)
@@ -385,23 +429,26 @@ datablock SplashData(PlayerSplash)
 
 datablock ParticleData(LightPuff)
 {
-   dragCoefficient      = 2.0;
-   gravityCoefficient   = 0.02;
-   inheritedVelFactor   = 0.6;
+   dragCoefficient      = "1.99902";
+   gravityCoefficient   = "0.0170946";
+   inheritedVelFactor   = "0.598826";
    constantAcceleration = 0.0;
    lifetimeMS           = 800;
    lifetimeVarianceMS   = 100;
    useInvAlpha          = true;
    spinRandomMin        = -35.0;
    spinRandomMax        = 35.0;
-   colors[0]     = "1.0 1.0 1.0 1.0";
-   colors[1]     = "1.0 1.0 1.0 0.0";
-   sizes[0]      = 0.1;
-   sizes[1]      = 0.8;
-   times[0]      = 0.3;
+   colors[0]     = "0.854902 0.854902 0.854902 1";
+   colors[1]     = "0.815686 0.803922 0.745098 0";
+   sizes[0]      = "0.0976622";
+   sizes[1]      = "0.799609";
+   times[0]      = "0";
    times[1]      = 1.0;
    times[2] = 1.0;
    textureName = "art/particles/dustParticle.png";
+   animTexName = "art/particles/dustParticle.png";
+   colors[2] = "0.835294 0.835294 0.835294 1";
+   colors[3] = "0.898039 0.898039 0.898039 1";
 };
 
 datablock ParticleEmitterData(LightPuffEmitter)
@@ -418,6 +465,8 @@ datablock ParticleEmitterData(LightPuffEmitter)
    overrideAdvance = false;
    useEmitterColors = true;
    particles = "LightPuff";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 //----------------------------------------------------------------------------
@@ -426,8 +475,8 @@ datablock ParticleEmitterData(LightPuffEmitter)
 
 datablock ParticleData(LiftoffDust)
 {
-   dragCoefficient      = 1.0;
-   gravityCoefficient   = -0.01;
+   dragCoefficient      = "0.997067";
+   gravityCoefficient   = "-0.01221";
    inheritedVelFactor   = 0.0;
    constantAcceleration = 0.0;
    lifetimeMS           = 1000;
@@ -435,10 +484,18 @@ datablock ParticleData(LiftoffDust)
    useInvAlpha          = true;
    spinRandomMin        = -90.0;
    spinRandomMax        = 500.0;
-   colors[0]     = "1.0 1.0 1.0 1.0";
-   sizes[0]      = 1.0;
-   times[0]      = 1.0;
+   colors[0]     = "0.780392 0.74902 0.65098 1";
+   sizes[0]      = "0.997986";
+   times[0]      = "0";
    textureName = "art/particles/dustParticle";
+   animTexName = "art/particles/dustParticle";
+   colors[1] = "0.878431 0.870588 0.835294 1";
+   colors[2] = "0.784314 0.784314 0.784314 1";
+   sizes[1] = "0.997986";
+   sizes[2] = "0.997986";
+   sizes[3] = "0.997986";
+   times[1] = "0.329412";
+   times[2] = "0.658824";
 };
 
 datablock ParticleEmitterData(LiftoffDustEmitter)
@@ -455,6 +512,8 @@ datablock ParticleEmitterData(LiftoffDustEmitter)
    overrideAdvance = false;
    useEmitterColors = true;
    particles = "LiftoffDust";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 //----------------------------------------------------------------------------
@@ -525,8 +584,8 @@ datablock PlayerData(DefaultPlayerData)
    
    throwForce = 25;
 
-   minLookAngle = "-1.4";
-   maxLookAngle = "1.4";
+   minLookAngle = "-1.5";
+   maxLookAngle = "1.5";
    maxFreelookAngle = 3.0;
 
    mass = "100";
@@ -563,6 +622,7 @@ datablock PlayerData(DefaultPlayerData)
    maxCrouchBackwardSpeed = "1";
    maxCrouchSideSpeed = "1.5";
 
+   swimForce = "4320";
    maxUnderwaterForwardSpeed = "1.5";
    maxUnderwaterBackwardSpeed = "1";
    maxUnderwaterSideSpeed = "1";
@@ -639,8 +699,8 @@ datablock PlayerData(DefaultPlayerData)
    //NOTE:  some sounds commented out until wav's are available
 
    // Footstep Sounds
-   FootSoftSound        = FootLightSoftSound;
-   FootHardSound        = FootLightHardSound;
+   FootSoftSound        = FootLightSoftSoundList;
+   FootHardSound        = FootLightHardSoundList;
    FootMetalSound       = FootLightMetalSound;
    FootSnowSound        = FootLightSnowSound;
    FootShallowSound     = FootLightShallowSplashSound;
@@ -674,24 +734,9 @@ datablock PlayerData(DefaultPlayerData)
    DecalData = "PlayerFootprint";
 
    // Allowable Inventory Items
-   mainWeapon = Lurker;
-
-   maxInv[Lurker] = 1;
-   maxInv[LurkerClip] = 6;
-
-   maxInv[LurkerGrenadeLauncher] = 1;
-   maxInv[LurkerGrenadeAmmo] = 12;
-
-   maxInv[Ryder] = 1;
-   maxInv[RyderClip] = 6;
-
-   maxInv[ProxMine] = 4;
-   maxInv[ProxMineAmmo] = 4;
-
-   maxInv[DeployableTurret] = 1;
 
    // available skins (see materials.cs in model folder)
-   availableSkins =  "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
+
    //maxInvDeployableTurret = "0";
    //maxInvRyder = "1";
    //maxInvLurkerGrenadeLauncher = "1";
@@ -700,17 +745,8 @@ datablock PlayerData(DefaultPlayerData)
    //maxInvProxMine = "0";
    //maxInvLurkerGrenadeAmmo = "0";
    //maxInvLurkerClip = "2";
-   swimForce = "4320";
+
    firstPersonShadows = "1";
    jumpTowardsNormal = "1";
    shadowSize = "512";
-   maxInvDeployableTurret = "1";
-   maxInvProxMine = "4";
-   maxInvLurkerGrenadeLauncher = "1";
-   maxInvRyder = "1";
-   maxInvLurker = "1";
-   maxInvProxMineAmmo = "4";
-   maxInvRyderClip = "6";
-   maxInvLurkerClip = "6";
-   maxInvLurkerGrenadeAmmo = "12";
 };

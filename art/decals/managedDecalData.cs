@@ -64,7 +64,59 @@ datablock DecalData(BloodDecalData)
    randomize = "1";
    texRows = "2";
    texCols = "2";
-   clippingAngle = "45";
+   clippingAngle = "89";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+}; 
+
+datablock DecalData(redPaintSplatterDecal)  
+{  
+   Material = "DECAL_paint_splatter_01_red";  
+   size = "1";
+   lifeSpan = "100000";
+   randomize = "1";
+   texRows = "4";
+   texCols = "4";
+   clippingAngle = "89";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+};
+
+datablock DecalData(bluePaintSplatterDecal)  
+{  
+   Material = "DECAL_paint_splatter_01_blue";  
+   size = "1";
+   lifeSpan = "100000";
+   randomize = "1";
+   texRows = "4";
+   texCols = "4";
+   clippingAngle = "89";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+}; 
+
+datablock DecalData(greenPaintSplatterDecal)  
+{  
+   Material = "DECAL_paint_splatter_01_green";  
+   size = "1";
+   lifeSpan = "100000";
+   randomize = "1";
+   texRows = "4";
+   texCols = "4";
+   clippingAngle = "89";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+}; 
+
+datablock DecalData(yellowPaintSplatterDecal)  
+{  
+   Material = "DECAL_paint_splatter_01_yellow";  
+   size = "1";
+   lifeSpan = "100000";
+   randomize = "1";
+   texRows = "4";
+   texCols = "4";
+   clippingAngle = "89";
    screenStartRadius = "200";
    screenEndRadius = "100";  
 }; 

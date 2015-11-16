@@ -62,6 +62,8 @@ datablock ParticleEmitterData(RocketDebrisTrailEmitter)
    phiVariance = 360;
    ejectionoffset = 0.0;//0.3;
    particles = "RocketDebrisTrailParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock DebrisData(RocketDebris)
@@ -133,6 +135,8 @@ datablock ParticleEmitterData(RocketSplashMistEmitter)
    overrideAdvance = false;
    lifetimeMS = 250;
    particles = "RocketSplashMist";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleData(RocketSplashParticle)
@@ -172,6 +176,8 @@ datablock ParticleEmitterData(RocketSplashEmitter)
    orientOnVelocity = true;
    lifetimeMS = 100;
    particles = "RocketSplashParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleData(RocketSplashRingParticle)
@@ -200,6 +206,8 @@ datablock ParticleData(RocketSplashRingParticle)
    times[0] = 0.0;
    times[1] = 0.5;
    times[2] = 1.0;
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleEmitterData(RocketSplashRingEmitter)
