@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(WheelBackDae)
 {
-   baseShape = "./wheelBack.DAE";
+   baseShape = "./wheelBack.dts";
    lodType = "TrailingNumber";
    neverImport = "null	EnvironmentAmbientLight";
    matNamePrefix = "";

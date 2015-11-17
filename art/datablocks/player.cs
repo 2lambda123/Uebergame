@@ -26,14 +26,14 @@
 
 datablock SFXProfile(DeathCrySound)
 {
-   fileName = "art/sound/orc_death";
+   fileName = "art/sound/player/pain/orc_death";
    description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(PainCrySound)
 {
-   fileName = "art/sound/orc_pain";
+   fileName = "art/sound/player/pain/orc_pain";
    description = AudioClose3D;
    preload = true;
 };
@@ -42,7 +42,7 @@ datablock SFXProfile(PainCrySound)
 
 datablock SFXProfile(FootLightSoftSound)
 {
-   filename    = "art/sound/lgtStep_mono_01";
+   filename    = "art/sound/footsteps/lgtStep_mono_01";
    description = AudioClosest3D;
    preload = true;
 };
@@ -68,7 +68,7 @@ datablock SFXPlayList(FootLightSoftSoundList)
 
 datablock SFXProfile(FootLightHardSound)
 {
-   filename    = "art/sound/hvystep_ mono_01";
+   filename    = "art/sound/footsteps/hvystep_ mono_01";
    description = AudioClosest3D;
    preload = true;
 };
@@ -90,35 +90,35 @@ datablock SFXPlayList(FootLightHardSoundList)
 
 datablock SFXProfile(FootLightMetalSound)
 {
-   filename    = "art/sound/metalstep_mono_01";
+   filename    = "art/sound/footsteps/metalstep_mono_01";
    description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightSnowSound)
 {
-   filename    = "art/sound/snowstep_mono_01";
+   filename    = "art/sound/footsteps/snowstep_mono_01";
    description = AudioClosest3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightShallowSplashSound)
 {
-   filename    = "art/sound/waterstep_mono_01";
+   filename    = "art/sound/footsteps/waterstep_mono_01";
    description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightWadingSound)
 {
-   filename    = "art/sound/waterstep_mono_01";
+   filename    = "art/sound/footsteps/waterstep_mono_01";
    description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(FootLightUnderwaterSound)
 {
-   filename    = "art/sound/waterstep_mono_01";
+   filename    = "art/sound/footsteps/waterstep_mono_01";
    description = AudioClosest3D;
    preload = true;
 };
@@ -134,7 +134,7 @@ datablock SFXProfile(ImpactLightSoftSound)
 
 datablock SFXProfile(ImpactLightHardSound)
 {
-   filename    = "art/sound/impact_concrete_01";
+   filename    = "art/sound/impacts/impact_concrete_01";
    description = AudioClose3D;
    preload = true;
 };
@@ -570,7 +570,7 @@ datablock PlayerData(DefaultPlayerData)
 
    // First person arms
    imageAnimPrefixFP = "soldier";
-   shapeNameFP[0] = "art/shapes/actors/Soldier/FP/FP_SoldierArms.DAE";
+   shapeNameFP[0] = "art/shapes/actors/Soldier/FP/FP_SoldierArms.dts";
 
    canObserve = 1;
    cmdCategory = "Clients";

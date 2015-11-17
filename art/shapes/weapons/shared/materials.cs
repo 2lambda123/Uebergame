@@ -1,4 +1,4 @@
-//--- RifleShell.DAE MATERIALS BEGIN ---
+//--- RifleShell.dts MATERIALS BEGIN ---
 singleton Material(RifleShell_RifleShell)
 {
 	mapTo = "RifleShell";
@@ -36,7 +36,7 @@ singleton Material(RifleShell_ColorEffectR88G88B225_material)
 	materialTag0 = "Weapon";
 };
 
-//--- RifleShell.DAE MATERIALS END ---
+//--- RifleShell.dts MATERIALS END ---
 
 singleton Material(tracer_01)
 {

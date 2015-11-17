@@ -49,12 +49,14 @@ singleton Material(DECAL_RocketEXP)
 
 singleton Material(DECAL_bulletHole)
 {
-   baseTex[0] = "art/decals/Bullet Holes/BulletHole_Walls.dds";
-
-   vertColor[0] = true;
    translucent = true;
    translucentBlendOp = LerpAlpha;
    translucentZWrite = true;
+   mapTo = "bullet_hole_01.dds";
+   diffuseMap[0] = "art/decals/bulletHoles/bullet_hole_01.dds";
+   materialTag0 = "decal";
+   castShadows = "0";
+   showFootprints = "0";
 };
 
 singleton Material(DECAL_defaultblobshadow)
@@ -75,7 +77,7 @@ singleton Material(DECAL_blood_splatter_01)
    translucentBlendOp = LerpAlpha;
    translucentZWrite = true;
    mapTo = "DECAL_blood_splatter_01";
-   diffuseMap[0] = "art/decals/blood_splatter_01_a.png";
+   diffuseMap[0] = "art/decals/blood_splatter_01.png";
    alphaTest = "0";
    alphaRef = "172";
    materialTag0 = "Decal";

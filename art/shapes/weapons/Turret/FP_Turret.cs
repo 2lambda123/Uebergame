@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(FP_TurretDAE)
 {
-   baseShape = "./FP_Turret.DAE";
+   baseShape = "./FP_Turret.dts";
    neverImport = "EnvironmentAmbientLight	null";
    loadLights = "0";
    lodType = "TrailingNumber";

@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(TP_ProxMineDAE)
 {
-   baseShape = "./TP_ProxMine.DAE";
+   baseShape = "./TP_ProxMine.dts";
    lodType = "TrailingNumber";
    loadLights = "0";
 };

@@ -96,7 +96,7 @@ datablock ExplosionData(PaintExplosionYellow)
 //-----------------------------------------------------------------------------
 datablock ProjectileData( PaintballProjectileYellow )
 {
-   projectileShapeName = "art/shapes/weapons/paintball/paintball_yellow.dae";
+   projectileShapeName = "art/shapes/weapons/paintball/paintball_yellow.dts";
 
    directDamage        = 200;
    radiusDamage        = 0;
@@ -148,7 +148,7 @@ datablock ItemData(PaintballMarkerYellow)
    className = "Weapon";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -165,8 +165,8 @@ datablock ItemData(PaintballMarkerYellow)
 datablock ShapeBaseImageData(PaintballMarkerYellowWeaponImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
-   shapeFileFP = "art/shapes/weapons/Ryder/FP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
+   shapeFileFP = "art/shapes/weapons/Ryder/FP_Ryder.dts";
    emap = true;
 
    imageAnimPrefix = "Pistol";

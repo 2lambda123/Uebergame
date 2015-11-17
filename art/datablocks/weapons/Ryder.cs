@@ -114,7 +114,7 @@ datablock ItemData(RyderClip)
    className = "AmmoClip";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.dts";
    mass = 5;
    elasticity = 0.2;
    friction = 0.6;
@@ -135,7 +135,7 @@ datablock ItemData(RyderAmmo)
    className = "Ammo";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -162,7 +162,7 @@ datablock ItemData(Ryder)
    className = "Weapon";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -181,8 +181,8 @@ datablock ItemData(Ryder)
 datablock ShapeBaseImageData(RyderWeaponImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
-   shapeFileFP = "art/shapes/weapons/Ryder/FP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
+   shapeFileFP = "art/shapes/weapons/Ryder/FP_Ryder.dts";
    emap = true;
 
    imageAnimPrefix = "Pistol";

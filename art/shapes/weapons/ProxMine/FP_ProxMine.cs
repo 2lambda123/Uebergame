@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(FP_ProxMineDAE)
 {
-   baseShape = "./FP_ProxMine.DAE";
+   baseShape = "./FP_ProxMine.dts";
    loadLights = "0";
 };
 

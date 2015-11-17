@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(FP_RyderDAE)
 {
-   baseShape = "./FP_Ryder.DAE";
+   baseShape = "./FP_Ryder.dts";
    loadLights = "0";
    lodType = "TrailingNumber";
 };

@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(CheetahDAE)
 {
-   baseShape = "./Cheetah_Body.DAE";
+   baseShape = "./Cheetah_Body.dts";
    loadLights = "0";
    lodType = "TrailingNumber";
    neverImport = "null  EnvironmentAmbientLight";

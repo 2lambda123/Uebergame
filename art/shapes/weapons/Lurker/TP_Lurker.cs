@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(TP_LurkerDAE)
 {
-   baseShape = "./TP_Lurker.DAE";
+   baseShape = "./TP_Lurker.dts";
    forceUpdateMaterials = "0";
    loadLights = "0";
    lodType = "TrailingNumber";

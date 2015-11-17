@@ -196,8 +196,8 @@ datablock ShapeBaseImageData(WeaponTemplateImage)
    // FP refers to first person specific features
    
    // Defines what art file to use.
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
-   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
+   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.dts";
    
    // Whether or not to enable environment mapping
    //emap                           = true;

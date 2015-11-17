@@ -4300,7 +4300,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/forest/wind_forest_birds_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4324,7 +4324,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/forest/wind_forest_birds_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4348,7 +4348,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/forest/wind_forest_birds_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4372,7 +4372,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/forest/wind_forest_birds_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4396,7 +4396,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/forest/wind_forest_birds_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";
@@ -4420,7 +4420,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new SFXEmitter() {
-         fileName = "art/sound/environment/wind_forest_birds_01.ogg";
+         fileName = "art/sound/environment/forest/wind_forest_birds_01.ogg";
          playOnAdd = "1";
          useTrackDescriptionOnly = "0";
          isLooping = "1";

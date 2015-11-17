@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(PlayerAnim_ProxMine_Crouch_RootDAE)
 {
-   baseShape = "./PlayerAnim_ProxMine_Crouch_Root.dae";
+   baseShape = "./PlayerAnim_ProxMine_Crouch_Root.dts";
    neverImport = "EnvironmentAmbientLight";
    loadLights = "0";
 };

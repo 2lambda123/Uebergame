@@ -21,29 +21,29 @@
 //-----------------------------------------------------------------------------
 
    // BEGIN: Turret Sequences
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Back.dae Back", "Turret_Back", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Root.dae Crouch_Root", "Turret_Crouch_Root", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Backward.dae Crouch_Backward", "Turret_Crouch_Backward", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Forward.dae Crouch_Forward", "Turret_Crouch_Forward", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Side.dae Crouch_Side", "Turret_Crouch_Side", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Death1.dae Death1", "Turret_Death1", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Death2.dae Death2", "Turret_Death2", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Fall.dae Fall", "Turret_Fall", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Run.dae Run", "Turret_Run", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Jump.dae Jump", "Turret_Jump", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Land.dae Land", "Turret_Land", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Look.dae Look", "Turret_Look", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Head.dae Head", "Turret_Head", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Recoil.dae Recoil", "Turret_Recoil", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Fire_Release.dae Fire_Release", "Turret_Fire_Release", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Root.dae Root", "Turret_Root", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Side.dae Side", "Turret_Side", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Sitting.dae Sitting", "Turret_Sitting", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Backward.dae Swim_Backward", "Turret_Swim_Backward", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Forward.dae Swim_Forward", "Turret_Swim_Forward", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Root.dae Swim_Root", "Turret_Swim_Root", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Left.dae Swim_Left", "Turret_Swim_Left", 0, -1);
-   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Right.dae Swim_Right", "Turret_Swim_Right", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Back.dts Back", "Turret_Back", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Root.dts Crouch_Root", "Turret_Crouch_Root", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Backward.dts Crouch_Backward", "Turret_Crouch_Backward", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Forward.dts Crouch_Forward", "Turret_Crouch_Forward", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Crouch_Side.dts Crouch_Side", "Turret_Crouch_Side", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Death1.dts Death1", "Turret_Death1", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Death2.dts Death2", "Turret_Death2", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Fall.dts Fall", "Turret_Fall", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Run.dts Run", "Turret_Run", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Jump.dts Jump", "Turret_Jump", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Land.dts Land", "Turret_Land", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Look.dts Look", "Turret_Look", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Head.dts Head", "Turret_Head", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Recoil.dts Recoil", "Turret_Recoil", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Fire_Release.dts Fire_Release", "Turret_Fire_Release", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Root.dts Root", "Turret_Root", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Side.dts Side", "Turret_Side", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Sitting.dts Sitting", "Turret_Sitting", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Backward.dts Swim_Backward", "Turret_Swim_Backward", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Forward.dts Swim_Forward", "Turret_Swim_Forward", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Root.dts Swim_Root", "Turret_Swim_Root", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Left.dts Swim_Left", "Turret_Swim_Left", 0, -1);
+   %this.addSequence( "art/shapes/weapons/Turret/PlayerAnims/PlayerAnim_Turret_Swim_Right.dts Swim_Right", "Turret_Swim_Right", 0, -1);
    
    %this.setSequenceCyclic( "Turret_Back", true);
    %this.setSequenceCyclic( "Turret_Crouch_Backward", true);

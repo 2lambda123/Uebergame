@@ -5,12 +5,10 @@ art/sound:
 
 art/sound/environment/night/night_crickets_01.ogg  -icuttv  https://www.freesound.org/people/icuttv/sounds/181362/  -edited by Duion
 art/sound/environment/wind/wind_basic_01.ogg  -klangfabrik  https://www.freesound.org/people/klangfabrik/sounds/26714/  -edited by Duion
-art/sound/weapons/pistol_heavy_default.ogg  -Kodack  https://www.freesound.org/people/Kodack/sounds/253736/  -edited by Duion
-art/sound/weapons/machine_gun_heavy_default.ogg -Jon285 https://www.freesound.org/people/Jon285/sounds/49513/  -edited by Duion
 art/sound/impact_concrete_01.ogg -Yoyodaman234 https://www.freesound.org/people/Yoyodaman234/sounds/166508/ -edited by Duion
 art/sound/environment/wind/wind_storm_01.ogg  -asbestos bill  https://www.freesound.org/people/asbestos%20bill/sounds/181287/ -edited by Duion
-art/sound/environment/wind_forest_01.ogg -MrAuralization https://www.freesound.org/people/MrAuralization/sounds/243617/
-art/sound/environment/wind_forest_birds_01.ogg -bolland https://www.freesound.org/people/bolland/sounds/196005/
+art/sound/environment/forest/wind_forest_01.ogg -MrAuralization https://www.freesound.org/people/MrAuralization/sounds/243617/
+art/sound/environment/forest/wind_forest_birds_01.ogg -bolland https://www.freesound.org/people/bolland/sounds/196005/
 art/sound/environment/rain/rain_forest_01.ogg -kvgarlic https://www.freesound.org/people/kvgarlic/sounds/196585/ -edited by Duion
 art/sound/weapons/paintball/paintball_impact_1.wav -rombart https://www.freesound.org/people/rombart/sounds/186747/ -edited by Duion
 art/sound/weapons/paintball/paintball_impact_2.wav remix of 1 and 3 -by Duion

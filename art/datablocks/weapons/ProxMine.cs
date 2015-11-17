@@ -51,7 +51,7 @@ datablock ItemData(ProxMineAmmo)
    className = "ProxyMine";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.DAE";
+   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -65,7 +65,7 @@ datablock ProximityMineData(ProxMine)
 {
    // ShapeBaseData fields
    category = "Weapon";
-   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.DAE";
+   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.dts";
    explosion = GrenadeLauncherExplosion;
 
    // ItemData fields
@@ -106,8 +106,8 @@ datablock ProximityMineData(ProxMine)
 datablock ShapeBaseImageData( ProxMineImage )
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.DAE";
-   shapeFileFP = "art/shapes/weapons/ProxMine/FP_ProxMine.DAE";
+   shapeFile = "art/shapes/weapons/ProxMine/TP_ProxMine.dts";
+   shapeFileFP = "art/shapes/weapons/ProxMine/FP_ProxMine.dts";
 
    imageAnimPrefix = "ProxMine";
    imageAnimPrefixFP = "ProxMine";

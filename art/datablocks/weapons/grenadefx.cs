@@ -97,7 +97,7 @@ datablock ParticleEmitterData(GrenadeDebrisFireEmitter)
 
 datablock DebrisData(GrenadeDebris)
 {
-   shapeFile = "art/shapes/weapons/Grenade/grenadeDebris.dae";
+   shapeFile = "art/shapes/weapons/Grenade/grenadeDebris.dts";
    emitters[0] = GrenadeDebrisFireEmitter;
    elasticity = 0.4;
    friction = 0.25;

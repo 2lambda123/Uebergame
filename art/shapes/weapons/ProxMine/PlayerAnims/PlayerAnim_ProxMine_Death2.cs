@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(PlayerAnim_ProxMine_Death2DAE)
 {
-   baseShape = "./PlayerAnim_ProxMine_Death2.dae";
+   baseShape = "./PlayerAnim_ProxMine_Death2.dts";
    neverImport = "EnvironmentAmbientLight";
    loadLights = "0";
 };

@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(Turret_HeadDAE)
 {
-   baseShape = "./Turret_Head.DAE";
+   baseShape = "./Turret_Head.dts";
    loadLights = "0";
 };
 

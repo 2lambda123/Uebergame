@@ -42,7 +42,7 @@ datablock SFXProfile(WeaponPickupSound)
 
 datablock SFXProfile(AmmoPickupSound)
 {
-   filename = "art/sound/weapons/Ammo_pickup";
+   filename = "art/sound/weapons/Weapon_pickup";
    description = AudioClose3d;
    preload = true;
 };

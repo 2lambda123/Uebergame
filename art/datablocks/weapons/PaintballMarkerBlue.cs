@@ -38,8 +38,8 @@ datablock SFXPlayList(PaintballMarkerFireSoundList)
    track[0] = "PaintballMarkerFireSound1";
    track[1] = "PaintballMarkerFireSound1";
    track[2] = "PaintballMarkerFireSound1";
-   pitchScaleVariance[0] = "-0.1 0.1";
-   pitchScaleVariance[1] = "-0.1 0.1";
+   pitchScaleVariance[0] = "0 0.1";
+   pitchScaleVariance[1] = "0 0.1";
    pitchScaleVariance[2] = "-0.1 0.1";
 };
 
@@ -201,7 +201,7 @@ datablock ExplosionData(PaintExplosionBlue)
 //-----------------------------------------------------------------------------
 datablock ProjectileData( PaintballProjectileBlue )
 {
-   projectileShapeName = "art/shapes/weapons/paintball/paintball_blue.dae";
+   projectileShapeName = "art/shapes/weapons/paintball/paintball_blue.dts";
 
    directDamage        = 200;
    radiusDamage        = 0;
@@ -246,7 +246,7 @@ datablock ItemData(PaintballClip)
    className = "AmmoClip";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.dts";
    mass = 5;
    elasticity = 0.2;
    friction = 0.6;
@@ -267,7 +267,7 @@ datablock ItemData(PaintballAmmo)
    className = "Ammo";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/paintball/paintball_blue.dae";
+   shapeFile = "art/shapes/weapons/paintball/paintball_blue.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -294,7 +294,7 @@ datablock ItemData(PaintballMarkerBlue)
    className = "Weapon";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -311,8 +311,8 @@ datablock ItemData(PaintballMarkerBlue)
 datablock ShapeBaseImageData(PaintballMarkerBlueWeaponImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.DAE";
-   shapeFileFP = "art/shapes/weapons/Ryder/FP_Ryder.DAE";
+   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
+   shapeFileFP = "art/shapes/weapons/Ryder/FP_Ryder.dts";
    emap = true;
 
    imageAnimPrefix = "Pistol";

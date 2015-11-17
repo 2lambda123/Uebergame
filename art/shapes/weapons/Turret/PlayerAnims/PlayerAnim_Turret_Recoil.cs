@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(PlayerAnim_Turret_RecoilDAE)
 {
-   baseShape = "./PlayerAnim_Turret_Recoil.dae";
+   baseShape = "./PlayerAnim_Turret_Recoil.dts";
    neverImport = "EnvironmentAmbientLight";
    loadLights = "0";
 };

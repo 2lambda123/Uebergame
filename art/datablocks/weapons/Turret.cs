@@ -130,7 +130,7 @@ datablock ItemData(AITurretAmmo)
    className = "Ammo";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Turret/Turret_Legs.DAE";
+   shapeFile = "art/shapes/weapons/Turret/Turret_Legs.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -154,7 +154,7 @@ datablock ItemData(AITurretHead)
    className = "Weapon";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Turret/Turret_Head.DAE";
+   shapeFile = "art/shapes/weapons/Turret/Turret_Head.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -169,7 +169,7 @@ datablock ItemData(AITurretHead)
 datablock ShapeBaseImageData(AITurretHeadImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Turret/Turret_Head.DAE";
+   shapeFile = "art/shapes/weapons/Turret/Turret_Head.dts";
    emap = true;
 
    // Specify mount point
@@ -306,7 +306,7 @@ datablock ShapeBaseImageData(AITurretHeadImage)
 datablock AITurretShapeData(AITurret)
 {
    category = "Turrets";
-   shapeFile = "art/shapes/weapons/Turret/Turret_Legs.DAE";
+   shapeFile = "art/shapes/weapons/Turret/Turret_Legs.dts";
 
    maxDamage = 70;
    destroyedLevel = 70;
@@ -424,8 +424,8 @@ datablock AITurretShapeData(DeployableTurret : AITurret)
 datablock ShapeBaseImageData(DeployableTurretImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Turret/TP_Turret.DAE";
-   shapeFileFP = "art/shapes/weapons/Turret/FP_Turret.DAE";
+   shapeFile = "art/shapes/weapons/Turret/TP_Turret.dts";
+   shapeFileFP = "art/shapes/weapons/Turret/FP_Turret.dts";
    emap = true;
 
    imageAnimPrefix = "Turret";

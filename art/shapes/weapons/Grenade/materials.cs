@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//--- grenade.dae MATERIALS BEGIN ---
+//--- grenade.dts MATERIALS BEGIN ---
 singleton Material(grenade_grenade)
 {
 	mapTo = "grenade";
@@ -40,7 +40,7 @@ singleton Material(grenade_grenade)
 	materialTag0 = "Weapon";
 };
 
-//--- grenade.dae MATERIALS END ---
+//--- grenade.dts MATERIALS END ---
 
 
 singleton Material(debri_debris)

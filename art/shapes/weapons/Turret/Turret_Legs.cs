@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(Turret_LegsDAE)
 {
-   baseShape = "./Turret_Legs.DAE";
+   baseShape = "./Turret_Legs.dts";
    loadLights = "0";
    lodType = "DetectDTS";
 };

@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(PlayerAnim_Lurker_Swim_BackwardDAE)
 {
-   baseShape = "./PlayerAnim_Lurker_Swim_Backward.dae";
+   baseShape = "./PlayerAnim_Lurker_Swim_Backward.dts";
    neverImport = "EnvironmentAmbientLight";
    loadLights = "0";
 };

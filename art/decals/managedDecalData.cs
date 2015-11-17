@@ -46,7 +46,7 @@ datablock DecalData(ScorchRXDecal)
 datablock DecalData(bulletHoleDecal)
 {
    Material = "DECAL_bulletHole";
-   size = "0.35";
+   size = "0.2";
    lifeSpan = "100000";
    randomize = "1";
    texRows = "2";

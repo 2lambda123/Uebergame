@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(TP_RyderDae)
 {
-   baseShape = "./TP_Ryder.DAE";
+   baseShape = "./TP_Ryder.dts";
    forceUpdateMaterials = "0";
    loadLights = "0";
    lodType = "TrailingNumber";

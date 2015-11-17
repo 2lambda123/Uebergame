@@ -29,7 +29,7 @@
 
 datablock SFXProfile(ThrowSnd)
 {
-   filename = "art/sound/throw";
+   filename = "art/sound/player/throw";
    description = AudioClose3d;
    preload = false;
 };

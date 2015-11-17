@@ -32,7 +32,7 @@
 //-----------------------------------------------------------------------------
 datablock SFXProfile(HealthUseSound)
 {
-   filename = "art/sound/health_mono_01";
+   filename = "art/sound/items/health_mono_01";
    description = AudioClose3d;
    preload = true;
 };
@@ -52,7 +52,7 @@ datablock ItemData(Medpack_medium)
    className = "HealthPatch";
 
    // Basic Item properties
-   shapeFile = "art/shapes/items/health/medpack_01.dae";
+   shapeFile = "art/shapes/items/health/medpack_01.dts";
    mass = 2;
    friction = 1;
    elasticity = 0.3;

@@ -215,7 +215,7 @@ datablock ExplosionData(BulletDirtExplosion)
 //-----------------------------------------------------------------------------
 datablock DebrisData(BulletShell)
 {
-   shapeFile = "art/shapes/weapons/shared/RifleShell.dae";
+   shapeFile = "art/shapes/weapons/shared/RifleShell.dts";
    lifetime = 30.0;
    minSpinSpeed = 300.0;
    maxSpinSpeed = 400.0;
@@ -285,7 +285,7 @@ datablock ItemData(LurkerClip)
    className = "AmmoClip";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.dts";
    mass = 5;
    elasticity = 0.2;
    friction = 0.6;
@@ -306,7 +306,7 @@ datablock ItemData(LurkerAmmo)
    className = "Ammo";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -333,7 +333,7 @@ datablock ItemData(Lurker)
    className = "Weapon";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -352,8 +352,8 @@ datablock ItemData(Lurker)
 datablock ShapeBaseImageData(LurkerWeaponImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
-   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
+   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.dts";
    emap = true;
 
    imageAnimPrefix = "Rifle";
@@ -629,7 +629,7 @@ datablock ItemData(LurkerGrenadeLauncher)
    className = "Weapon";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
    mass = 1;
    elasticity = 0.2;
    friction = 0.6;
@@ -647,8 +647,8 @@ datablock ItemData(LurkerGrenadeLauncher)
 datablock ShapeBaseImageData(LurkerGrenadeLauncherImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.DAE";
-   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.DAE";
+   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
+   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.dts";
    emap = true;
 
    imageAnimPrefix = "Rifle";

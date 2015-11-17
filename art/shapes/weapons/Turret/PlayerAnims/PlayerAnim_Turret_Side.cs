@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(PlayerAnim_Turret_SideDAE)
 {
-   baseShape = "./PlayerAnim_Turret_Side.dae";
+   baseShape = "./PlayerAnim_Turret_Side.dts";
    neverImport = "EnvironmentAmbientLight";
    loadLights = "0";
 };

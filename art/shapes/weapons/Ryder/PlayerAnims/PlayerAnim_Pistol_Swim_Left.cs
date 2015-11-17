@@ -22,7 +22,7 @@
 
 singleton TSShapeConstructor(PlayerAnim_Pistol_Swim_LeftDAE)
 {
-   baseShape = "./PlayerAnim_Pistol_Swim_Left.DAE";
+   baseShape = "./PlayerAnim_Pistol_Swim_Left.dts";
    neverImport = "EnvironmentAmbientLight";
    loadLights = "0";
 };
