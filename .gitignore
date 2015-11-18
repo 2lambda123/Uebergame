@@ -1,7 +1,7 @@
 ## Uebergame repository ignore list
 
 #cached dts
-#*.cached.dts
+*.cached.dts
 
 #shaders cache
 shaders/procedural/*

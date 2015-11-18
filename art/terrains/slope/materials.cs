@@ -27,11 +27,11 @@ new TerrainMaterial()
 
 singleton Material(TerrainFX_ter_slope_rubble_01_side)    
 {    
-   mapTo = "ter_slope_rubble_01_B";    
+   mapTo = "ter_slope_rubble_01_B_side";    
    footstepSoundId = "1";    
    terrainMaterials = "1";    
    ShowDust = "0";    
-   showFootprints = "1";   
+   showFootprints = "0";   
    materialTag0 = "Terrain_Slope";    
    specularPower[0] = "1";  
    impactSoundId = "0";
@@ -39,7 +39,7 @@ singleton Material(TerrainFX_ter_slope_rubble_01_side)
 
 new TerrainMaterial()
 {
-   diffuseMap = "art/terrains/slope/ter_slope_rubble_01_B";
+   diffuseMap = "art/terrains/slope/ter_slope_rubble_01_B_side";
    diffuseSize = "200";
    detailMap = "art/terrains/slope/ter_slope_rubble_01_D";
    detailSize = "5";

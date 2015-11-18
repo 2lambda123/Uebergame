@@ -281,7 +281,7 @@ moveMap.bind( gamepad, btn_back, showPlayerList );
 
 moveMap.bind( gamepad, dpadl, nextWeapon);
 moveMap.bind( gamepad, dpadu, prevWeapon);
-moveMap.bindCmd( gamepad, dpadd, "r", "commandToServer('reloadWeapon');", "");
+moveMap.bindCmd( gamepad, dpadd, "commandToServer('reloadWeapon');", "");
 moveMap.bind( gamepad, dpadr, doSprint);
 
 // ----------------------------------------------------------------------------
