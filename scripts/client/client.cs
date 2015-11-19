@@ -185,3 +185,11 @@ function clientCmdsendSkinName()
 {
    commandToServer('takeSkinName',$pref::Player::Skin);
 }
+
+// ----------------------------------------------------------------------------
+// splatter Support
+// ----------------------------------------------------------------------------
+function clientCMDSpatter(%Decalposition, %splatterNorm, %splatterScaling)
+{
+    decalManagerAddDecal(%Decalposition, %splatterNorm, 0, %splatterScaling, bloodDecalData, false);
+}

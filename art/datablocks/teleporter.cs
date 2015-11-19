@@ -28,7 +28,7 @@
 // teleporter after an object has teleported.
 datablock SFXProfile(TeleportEntrance)  
 {  
-   fileName = "art/sound/orc_pain"; 
+   fileName = "art/sound/player/pain/orc_pain"; 
    description = AudioDefault3D;  
    preload = true;
 }; 
@@ -36,7 +36,7 @@ datablock SFXProfile(TeleportEntrance)
 // The 2D sound played by the client after a teleport.
 datablock SFXProfile(TeleportSound)  
 {  
-   fileName = "art/sound/orc_death"; 
+   fileName = "art/sound/player/pain/orc_death"; 
    description = Audio2D;  
    preload = true;  
 };

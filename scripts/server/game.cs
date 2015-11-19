@@ -117,7 +117,7 @@ function onCycleExec()
    endMission();
    $Game::Schedule = schedule($Game::EndGamePause * 1000, 0, "onCyclePauseEnd");
 }
-
+/* // old linear cycle mode, needs to be added later as $pref variable option inside the in-game menu
 function onCyclePauseEnd()
 {
    $Game::Cycling = false;
@@ -142,6 +142,32 @@ function onCyclePauseEnd()
    if( %file $= "" )
       %file = findFirstFile( %search );
 
+   loadMission(%file);
+}
+*/
+
+// random map cycle function
+function onCyclePauseEnd()
+{
+   $Game::Cycling = false;
+
+   // Just cycle through the missions for now.
+
+   %search = $Server::MissionFileSpec;
+   %oldMissionFile = makeRelativePath( $Server::MissionFile );
+   
+    if(!isObject($MapList))
+    {
+        $MapList = new arrayobject();
+        %i=0;
+        		for( %file = findFirstFile( %search, true ); %file !$= ""; %file = findNextFile( %search ) )
+        {
+            $MapList.add(%file,%i);
+            %i++;            
+        }
+    }
+    
+   %file = $MapList.getKey(getRandom($MapList.count()-1));
    loadMission(%file);
 }
 

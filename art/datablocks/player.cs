@@ -124,14 +124,14 @@ datablock SFXProfile(FootLightUnderwaterSound)
 };
 
 //----------------------------------------------------------------------------
-
+/* broken
 datablock SFXProfile(ImpactLightSoftSound)
 {
-   filename    = "art/sound/orc_death";
+   filename    = "art/sound/player/pain/orc_death";
    description = AudioClose3D;
    preload = true;
 };
-
+*/
 datablock SFXProfile(ImpactLightHardSound)
 {
    filename    = "art/sound/impacts/impact_concrete_01";

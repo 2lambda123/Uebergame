@@ -376,7 +376,7 @@ function MaterialEditorGui::updatePreviewObject(%this)
 				
 		case "cube":
          matEd_quickPreview_Popup.selected = %newModel;
-         matEd_previewObjectView.setModel("tools/materialeditor/gui/cubePreview.dts");
+         matEd_previewObjectView.setModel("tools/materialeditor/gui/cubepreview.dts");
          matEd_previewObjectView.setOrbitDistance(5);
 				
 		case "pyramid":

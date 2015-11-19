@@ -43,14 +43,14 @@ datablock SFXProfile(LurkerReloadSound)
    description = AudioClose3D;
    preload = true;
 };
-
+/* unused
 datablock SFXProfile(LurkerIdleSound)
 {
    filename = "art/sound/weapons/wpn_lurker_idle";
    description = AudioClose3D;
    preload = true;
 };
-
+*/
 datablock SFXProfile(LurkerSwitchinSound)
 {
    filename = "art/sound/weapons/wpn_lurker_switchin";

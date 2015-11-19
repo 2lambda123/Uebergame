@@ -1232,7 +1232,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1252,7 +1252,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1272,7 +1272,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1292,7 +1292,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1312,7 +1312,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1332,7 +1332,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1352,7 +1352,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1372,7 +1372,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1392,7 +1392,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1412,7 +1412,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1432,7 +1432,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1452,7 +1452,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1472,7 +1472,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1492,7 +1492,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1512,7 +1512,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1532,7 +1532,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1552,7 +1552,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1572,7 +1572,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_4m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_4m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1592,7 +1592,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_4m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_4m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1612,7 +1612,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1632,7 +1632,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1652,7 +1652,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1672,7 +1672,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1692,7 +1692,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1712,7 +1712,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1732,7 +1732,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1752,7 +1752,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1772,7 +1772,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1792,7 +1792,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1812,7 +1812,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1832,7 +1832,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1852,7 +1852,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1872,7 +1872,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1892,7 +1892,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1912,7 +1912,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1932,7 +1932,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1952,7 +1952,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1972,7 +1972,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1992,7 +1992,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2012,7 +2012,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2032,7 +2032,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2052,7 +2052,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2072,7 +2072,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2092,7 +2092,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2112,7 +2112,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2132,7 +2132,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2152,7 +2152,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2172,7 +2172,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2192,7 +2192,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2212,7 +2212,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2232,7 +2232,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2252,7 +2252,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2272,7 +2272,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2292,7 +2292,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2312,7 +2312,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2332,7 +2332,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2352,7 +2352,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2372,7 +2372,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2392,7 +2392,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2412,7 +2412,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2432,7 +2432,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2452,7 +2452,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2472,7 +2472,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2492,7 +2492,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2512,7 +2512,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2532,7 +2532,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2552,7 +2552,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2572,7 +2572,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2592,7 +2592,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2612,7 +2612,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2632,7 +2632,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2652,7 +2652,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2672,7 +2672,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2692,7 +2692,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2712,7 +2712,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2732,7 +2732,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2752,7 +2752,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2772,7 +2772,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2792,7 +2792,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2812,7 +2812,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2832,7 +2832,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2852,7 +2852,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2872,7 +2872,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2892,7 +2892,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2912,7 +2912,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2932,7 +2932,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2952,7 +2952,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2972,7 +2972,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2992,7 +2992,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3012,7 +3012,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3032,7 +3032,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3052,7 +3052,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3072,7 +3072,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3092,7 +3092,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3112,7 +3112,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3132,7 +3132,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3152,7 +3152,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3172,7 +3172,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3192,7 +3192,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3212,7 +3212,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3232,7 +3232,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3252,7 +3252,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3272,7 +3272,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3292,7 +3292,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3312,7 +3312,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3332,7 +3332,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3352,7 +3352,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3372,7 +3372,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3392,7 +3392,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3412,7 +3412,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3432,7 +3432,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3452,7 +3452,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_corner_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3472,7 +3472,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3492,7 +3492,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3512,7 +3512,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3532,7 +3532,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dae";
+         shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3561,7 +3561,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3581,7 +3581,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3601,7 +3601,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3621,7 +3621,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3641,7 +3641,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3661,7 +3661,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3681,7 +3681,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3701,7 +3701,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3721,7 +3721,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3741,7 +3741,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3761,7 +3761,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3781,7 +3781,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3806,7 +3806,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3826,7 +3826,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3846,7 +3846,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3866,7 +3866,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3886,7 +3886,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3906,7 +3906,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3926,7 +3926,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3946,7 +3946,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3966,7 +3966,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3986,7 +3986,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4006,7 +4006,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4026,7 +4026,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4046,7 +4046,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4066,7 +4066,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4086,7 +4086,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4106,7 +4106,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4126,7 +4126,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4146,7 +4146,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4166,7 +4166,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4186,7 +4186,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4206,7 +4206,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4226,7 +4226,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4246,7 +4246,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4271,7 +4271,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4291,7 +4291,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4311,7 +4311,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4331,7 +4331,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4351,7 +4351,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4371,7 +4371,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4391,7 +4391,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4411,7 +4411,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4431,7 +4431,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4451,7 +4451,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4471,7 +4471,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4496,7 +4496,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4516,7 +4516,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4536,7 +4536,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4556,7 +4556,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4576,7 +4576,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4596,7 +4596,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4616,7 +4616,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4636,7 +4636,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4656,7 +4656,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4676,7 +4676,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4696,7 +4696,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4716,7 +4716,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4736,7 +4736,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4756,7 +4756,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4776,7 +4776,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4796,7 +4796,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4816,7 +4816,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4836,7 +4836,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4856,7 +4856,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4876,7 +4876,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4896,7 +4896,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4916,7 +4916,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4936,7 +4936,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4956,7 +4956,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4976,7 +4976,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5001,7 +5001,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_pavement_01/ruined_pavement_01_8m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5021,7 +5021,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5041,7 +5041,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5061,7 +5061,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5081,7 +5081,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5101,7 +5101,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5121,7 +5121,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5141,7 +5141,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5161,7 +5161,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5181,7 +5181,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5201,7 +5201,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5221,7 +5221,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5241,7 +5241,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5261,7 +5261,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5281,7 +5281,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5306,7 +5306,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5326,7 +5326,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5346,7 +5346,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5366,7 +5366,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5386,7 +5386,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5406,7 +5406,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5426,7 +5426,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5446,7 +5446,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5466,7 +5466,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5486,7 +5486,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5506,7 +5506,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5526,7 +5526,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5546,7 +5546,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5566,7 +5566,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5586,7 +5586,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5606,7 +5606,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5626,7 +5626,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5646,7 +5646,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5666,7 +5666,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5686,7 +5686,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5711,7 +5711,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5731,7 +5731,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5751,7 +5751,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5771,7 +5771,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5791,7 +5791,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5811,7 +5811,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5831,7 +5831,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5851,7 +5851,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5871,7 +5871,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5891,7 +5891,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5911,7 +5911,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5931,7 +5931,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5951,7 +5951,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5971,7 +5971,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5991,7 +5991,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6011,7 +6011,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6031,7 +6031,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6051,7 +6051,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6071,7 +6071,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6091,7 +6091,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6111,7 +6111,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6131,7 +6131,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6151,7 +6151,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6171,7 +6171,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6191,7 +6191,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6211,7 +6211,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6231,7 +6231,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6251,7 +6251,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6271,7 +6271,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6291,7 +6291,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6311,7 +6311,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6331,7 +6331,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6351,7 +6351,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6371,7 +6371,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6391,7 +6391,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6411,7 +6411,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6436,7 +6436,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6456,7 +6456,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6476,7 +6476,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6496,7 +6496,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6516,7 +6516,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6536,7 +6536,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6556,7 +6556,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6576,7 +6576,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6596,7 +6596,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6616,7 +6616,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6636,7 +6636,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6656,7 +6656,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6676,7 +6676,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6696,7 +6696,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6716,7 +6716,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6736,7 +6736,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6756,7 +6756,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6776,7 +6776,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6801,7 +6801,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6821,7 +6821,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6841,7 +6841,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6861,7 +6861,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6881,7 +6881,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6901,7 +6901,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6921,7 +6921,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6941,7 +6941,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6966,7 +6966,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -6986,7 +6986,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7006,7 +7006,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7026,7 +7026,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7046,7 +7046,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7066,7 +7066,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7086,7 +7086,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7106,7 +7106,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7126,7 +7126,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7146,7 +7146,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7166,7 +7166,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7186,7 +7186,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7206,7 +7206,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7226,7 +7226,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7246,7 +7246,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7266,7 +7266,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7286,7 +7286,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7311,7 +7311,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7331,7 +7331,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7351,7 +7351,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7371,7 +7371,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7391,7 +7391,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7411,7 +7411,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7431,7 +7431,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7451,7 +7451,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7471,7 +7471,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7491,7 +7491,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7511,7 +7511,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7531,7 +7531,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7551,7 +7551,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7571,7 +7571,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7591,7 +7591,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7616,7 +7616,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7636,7 +7636,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7656,7 +7656,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7676,7 +7676,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7696,7 +7696,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7716,7 +7716,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7736,7 +7736,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7756,7 +7756,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7776,7 +7776,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7796,7 +7796,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_rise_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7816,7 +7816,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7836,7 +7836,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7856,7 +7856,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7876,7 +7876,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_window_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7896,7 +7896,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7916,7 +7916,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7936,7 +7936,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_door_a.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7956,7 +7956,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_straight_4m_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7976,7 +7976,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -7996,7 +7996,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_pillar_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -8016,7 +8016,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_c.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -8036,7 +8036,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dae";
+            shapeName = "art/shapes/modules/ruins/ruined_housewalls_01/ruined_housewall_01_corner_4x4_b.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -8062,7 +8062,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8082,7 +8082,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8102,7 +8102,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8122,7 +8122,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8142,7 +8142,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8162,7 +8162,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8182,7 +8182,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8202,7 +8202,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8222,7 +8222,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8242,7 +8242,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8262,7 +8262,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8282,7 +8282,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8302,7 +8302,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8322,7 +8322,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8342,7 +8342,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8362,7 +8362,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8382,7 +8382,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8402,7 +8402,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8422,7 +8422,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8442,7 +8442,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8462,7 +8462,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8482,7 +8482,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8502,7 +8502,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8522,7 +8522,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8542,7 +8542,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8562,7 +8562,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8582,7 +8582,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8602,7 +8602,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8622,7 +8622,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8642,7 +8642,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8662,7 +8662,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8682,7 +8682,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8702,7 +8702,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8722,7 +8722,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8742,7 +8742,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dae";
+         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a_lit.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8767,7 +8767,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8787,7 +8787,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8807,7 +8807,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8827,7 +8827,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -10848,7 +10848,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -10879,7 +10879,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -10910,7 +10910,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -10941,7 +10941,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -10972,7 +10972,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11003,7 +11003,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11034,7 +11034,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11065,7 +11065,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11096,7 +11096,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11127,7 +11127,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11158,7 +11158,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11189,7 +11189,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11220,7 +11220,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11256,7 +11256,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11298,7 +11298,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11340,7 +11340,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11382,7 +11382,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11424,7 +11424,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11466,7 +11466,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11524,7 +11524,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11555,7 +11555,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11575,7 +11575,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11617,7 +11617,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11637,7 +11637,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11679,7 +11679,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11704,7 +11704,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11812,7 +11812,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11876,7 +11876,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -11940,7 +11940,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";

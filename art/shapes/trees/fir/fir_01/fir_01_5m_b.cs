@@ -1,7 +1,7 @@
 
 singleton TSShapeConstructor(Fir_01_5m_bDae)
 {
-   baseShape = "./fir_01_5m_b.dae";
+   baseShape = "./fir_01_5m_b.dts";
 };
 
 function Fir_01_5m_bDae::onLoad(%this)

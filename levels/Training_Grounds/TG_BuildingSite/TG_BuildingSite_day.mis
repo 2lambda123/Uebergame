@@ -115,7 +115,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new TSStatic() {
-      shapeName = "levels/Training_Grounds/TG_BuildingSite/TG_BuildingSite.dae";
+      shapeName = "levels/Training_Grounds/TG_BuildingSite/TG_BuildingSite.dts";
       playAmbient = "1";
       meshCulling = "0";
       originSort = "0";
@@ -1776,7 +1776,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1796,7 +1796,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1816,7 +1816,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1836,7 +1836,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1856,7 +1856,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1876,7 +1876,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1896,7 +1896,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1916,7 +1916,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1936,7 +1936,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1956,7 +1956,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1976,7 +1976,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1996,7 +1996,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2016,7 +2016,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2036,7 +2036,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2056,7 +2056,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2076,7 +2076,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2096,7 +2096,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2116,7 +2116,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2136,7 +2136,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2156,7 +2156,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2176,7 +2176,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2196,7 +2196,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2216,7 +2216,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2236,7 +2236,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dae";
+         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2309,7 +2309,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2329,7 +2329,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2393,7 +2393,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2457,7 +2457,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2521,7 +2521,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2585,7 +2585,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2649,7 +2649,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2713,7 +2713,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2782,7 +2782,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2813,7 +2813,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2855,7 +2855,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2886,7 +2886,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2917,7 +2917,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2948,7 +2948,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -2979,7 +2979,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3010,7 +3010,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3041,7 +3041,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3061,7 +3061,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3092,7 +3092,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3123,7 +3123,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3165,7 +3165,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3196,7 +3196,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3227,7 +3227,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3258,7 +3258,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3289,7 +3289,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3320,7 +3320,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3345,7 +3345,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3398,7 +3398,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3451,7 +3451,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3504,7 +3504,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3557,7 +3557,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3610,7 +3610,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3663,7 +3663,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3716,7 +3716,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3769,7 +3769,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3822,7 +3822,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3875,7 +3875,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -3928,7 +3928,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4014,7 +4014,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4067,7 +4067,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4120,7 +4120,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4145,7 +4145,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
 
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4209,7 +4209,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4273,7 +4273,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4337,7 +4337,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4401,7 +4401,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4465,7 +4465,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4529,7 +4529,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4593,7 +4593,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4657,7 +4657,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4721,7 +4721,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4785,7 +4785,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4849,7 +4849,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4913,7 +4913,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -4977,7 +4977,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5057,7 +5057,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5077,7 +5077,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5108,7 +5108,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5139,7 +5139,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5170,7 +5170,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5201,7 +5201,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5243,7 +5243,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5263,7 +5263,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5294,7 +5294,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5325,7 +5325,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5356,7 +5356,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5387,7 +5387,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5418,7 +5418,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5449,7 +5449,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5480,7 +5480,7 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
          new TSStatic() {
-            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dae";
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
             meshCulling = "0";
             originSort = "0";
@@ -5517,7 +5517,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -5537,7 +5537,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -5557,7 +5557,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -5577,7 +5577,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dae";
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -5604,7 +5604,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.4";
+      volume = "0.3";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";
@@ -5628,7 +5628,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.4";
+      volume = "0.3";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";
@@ -5652,7 +5652,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.4";
+      volume = "0.3";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";
@@ -5676,7 +5676,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.4";
+      volume = "0.3";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";
@@ -5700,7 +5700,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.4";
+      volume = "0.3";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";
@@ -5724,7 +5724,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.4";
+      volume = "0.3";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";

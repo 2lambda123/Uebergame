@@ -56,7 +56,7 @@ datablock DecalData(bulletHoleDecal)
    clippingAngle = "45";
 };
 
-datablock DecalData(BloodDecalData)  
+datablock DecalData(bloodDecalData)  
 {  
    Material = "DECAL_blood_splatter_01";  
    size = "1";

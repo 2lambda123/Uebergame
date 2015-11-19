@@ -35,10 +35,10 @@ EditorSettings.setDefaultValue(  "orthoShowGrid",           "1" );
 EditorSettings.setDefaultValue(  "currentEditor",           "WorldEditorInspectorPlugin" );
 EditorSettings.setDefaultValue(  "newLevelFile",            "tools/levels/BlankRoom.mis" );
 
-if( isFile( "C:/Program Files/Torsion/Torsion.exe" ) )
-   EditorSettings.setDefaultValue(  "torsionPath",          "C:/Program Files/Torsion/Torsion.exe" );
-else if( isFile( "C:/Program Files (x86)/Torsion/Torsion.exe" ) )
-   EditorSettings.setDefaultValue(  "torsionPath",          "C:/Program Files (x86)/Torsion/Torsion.exe" );
+if( isFile( "C:/Program Files/Torsion/torsion.exe" ) )
+   EditorSettings.setDefaultValue(  "torsionPath",          "C:/Program Files/Torsion/torsion.exe" );
+else if( isFile( "C:/Program Files (x86)/Torsion/torsion.exe" ) )
+   EditorSettings.setDefaultValue(  "torsionPath",          "C:/Program Files (x86)/Torsion/torsion.exe" );
 else
    EditorSettings.setDefaultValue(  "torsionPath",          "" );
 

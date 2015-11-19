@@ -282,8 +282,10 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
       case "legs":
          %damage = %damage/1.6; // about two third damage for legs
    }
-   /*
+   
    //blood decals, commented out until they work on clientside also
+   %centerpoint = %obj.getWorldBoxCenter();
+   
    %normal[0] = "0.0 0.0 1.0";
    %abNormal[0] = "2.0 2.0 0.0";
    %normal[1] = "0.0 1.0 0.0";
@@ -297,28 +299,35 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    %normal[5] = "-1.0 0.0 0.0";
    %abNormal[5] = "0.0 2.0 2.0";
    
-   %centerpoint = %obj.getWorldBoxCenter();
+   %clientCount = ClientGroup.getCount();
    for (%i=0;%i<6;%i++)
    {
-       	%normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood spatters
+       	%normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood splatters
 		%targetPoint = VectorAdd(%centerpoint,%normalScaled);
 		%mask = $TypeMasks::StaticObjectType | $TypeMasks::TerrainObjectType;
 		%hitObject = ContainerRayCast(%centerpoint, %targetPoint, %mask, %obj);
         
         if (%hitObject)
         {
-            %spatterPoint = getWords(%hitObject,1,3);
-			%spatterNorm = getWords(%hitObject,4,6);
-			%spatterScaling = getRandom()*1.5 + %damage/30;
-            %spatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
+            %splatterPoint = getWords(%hitObject,1,3);
+			%splatterNorm = getWords(%hitObject,4,6);
+			%splatterScaling = getRandom()*1.5 + %damage/30;
+            %splatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
 			SPC getRandom()*getword(%abNormal[%i],1)-getword(%abNormal[%i],1)/2 SPC getRandom()*getword(%abNormal[%i],2)-getword(%abNormal[%i],2)/2;            
-            %Decalposition = VectorAdd(%spatterPoint, %spatterVary);
-			if (%spatterScaling > 9)
-			{ %spatterScaling = 7;}
-            %decalObj = decalManagerAddDecal(%Decalposition, %spatterNorm, 0, %spatterScaling , bloodDecalData, false); 
+            %Decalposition = VectorAdd(%splatterPoint, %splatterVary);
+			if (%splatterScaling > 8)
+			{ %splatterScaling = 8;} 
+			   
+			for (%clientIndex = 0; %clientIndex < %clientCount; %clientIndex++)
+            {
+                %client = ClientGroup.getObject(%clientIndex);
+                %ghostIndex = %client.getGhostID(%obj);
+       
+                commandToClient(%client,'Spatter', %Decalposition, %splatterNorm, %splatterScaling);
+            }
         }
    }
-   */   
+      
    %particles = new ParticleEmitterNode()   
    {  
       position = %position;  

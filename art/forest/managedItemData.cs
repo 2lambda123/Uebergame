@@ -28,7 +28,7 @@
 datablock TSForestItemData(fir_01_15m_a)
 {
    internalName = "fir_01_15m_a";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_a.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_a.dts";
    windScale = "1";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -39,7 +39,7 @@ datablock TSForestItemData(fir_01_15m_a)
 datablock TSForestItemData(fir_01_15m_b)
 {
    internalName = "fir_01_15m_b";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_b.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_b.dts";
    windScale = "1";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -50,7 +50,7 @@ datablock TSForestItemData(fir_01_15m_b)
 datablock TSForestItemData(fir_01_15m_c)
 {
    internalName = "fir_01_15m_c";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_c.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_15m_c.dts";
    windScale = "1";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -61,7 +61,7 @@ datablock TSForestItemData(fir_01_15m_c)
 datablock TSForestItemData(fir_01_10m_b)
 {
    internalName = "fir_01_10m_b";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_10m_b.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_10m_b.dts";
    windScale = "0.75";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -73,7 +73,7 @@ datablock TSForestItemData(fir_01_10m_b)
 datablock TSForestItemData(fir_01_10m_a)
 {
    internalName = "fir_01_10m_a";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_10m_a.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_10m_a.dts";
    windScale = "0.75";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -85,7 +85,7 @@ datablock TSForestItemData(fir_01_10m_a)
 datablock TSForestItemData(fir_01_5m_b)
 {
    internalName = "fir_01_5m_b";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_5m_b.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_5m_b.dts";
    windScale = "0.5";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -96,7 +96,7 @@ datablock TSForestItemData(fir_01_5m_b)
 datablock TSForestItemData(fir_01_5m_a)
 {
    internalName = "fir_01_5m_a";
-   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_5m_a.dae";
+   shapeFile = "art/shapes/trees/fir/fir_01/fir_01_5m_a.dts";
    windScale = "0.5";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
@@ -108,7 +108,7 @@ datablock TSForestItemData(fir_01_5m_a)
 datablock TSForestItemData(fern_01_a)
 {
    internalName = "fern_01_a";
-   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_a.dae";
+   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_a.dts";
    radius = "0.2";
    windScale = "1";
    trunkBendScale = "0.05";
@@ -120,7 +120,7 @@ datablock TSForestItemData(fern_01_a)
 datablock TSForestItemData(fern_01_c)
 {
    internalName = "fern_01_c";
-   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_c.dae";
+   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_c.dts";
    radius = "0.2";
    windScale = "1";
    trunkBendScale = "0.05";
@@ -132,7 +132,7 @@ datablock TSForestItemData(fern_01_c)
 datablock TSForestItemData(fern_01_b)
 {
    internalName = "fern_01_b";
-   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_b.dae";
+   shapeFile = "art/shapes/plants/ferns/fern_01/fern_01_b.dts";
    radius = "0.2";
    windScale = "1";
    trunkBendScale = "0.05";
