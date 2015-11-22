@@ -246,24 +246,25 @@ datablock ParticleEmitterNodeData(TorchFireEmitterNode)
 
 datablock ParticleData(bloodBulletDirtSpray)
 {
-   dragCoefficient = "0.5";
-   gravityCoefficient = "0.5";
+   dragCoefficient = "0.498534";
+   gravityCoefficient = "0.495727";
    constantAcceleration = "-1";
    lifetimeMS = "300";
-   lifetimeVarianceMS = "300";
+   lifetimeVarianceMS = "250";
    spinRandomMin = "-120";
    spinRandomMax = "120";
    useInvAlpha = "1";
    textureName = "art/particles/blood_particle_01";
    animTexName = "art/particles/blood_particle_01";
-   colors[0] = "0.582677 0 0.00787402 1";
+   colors[0] = "0.574803 0 0.00787402 1";
    colors[1] = "0.992126 0 0.00787402 1";
    colors[2] = "0.322835 0 0.00787402 0.291339";
-   sizes[0] = "0.1";
-   sizes[1] = "0.5";
-   times[1] = "0.5";
+   sizes[0] = "0.0976622";
+   sizes[1] = "0.497467";
+   times[1] = "0.498039";
    times[2] = "1";
-   inheritedVelFactor = "0.3";
+   inheritedVelFactor = "0.299413";
+   sizes[2] = "0.997986";
 };
 
     datablock ParticleEmitterData(bloodBulletDirtSprayEmitter)  

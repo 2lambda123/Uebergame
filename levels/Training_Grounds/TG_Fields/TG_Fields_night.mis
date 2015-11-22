@@ -2805,7 +2805,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.0895";
+         rotation = "-0.140172 0.140328 0.980133 91.0896";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4298,6 +4298,30 @@ new SimGroup(MissionGroup) {
       canSave = "1";
       canSaveDynamicFields = "1";
 
+      new SFXEmitter() {
+         fileName = "art/sound/environment/wind/wind_basic_01.ogg";
+         playOnAdd = "1";
+         useTrackDescriptionOnly = "0";
+         isLooping = "1";
+         isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
+         volume = "0.05";
+         pitch = "1";
+         fadeInTime = "0";
+         fadeOutTime = "0";
+         is3D = "0";
+         referenceDistance = "1";
+         maxDistance = "100";
+         scatterDistance = "0 0 0";
+         coneInsideAngle = "360";
+         coneOutsideAngle = "360";
+         coneOutsideVolume = "1";
+         position = "221.453 223.96 -6.56936";
+         rotation = "1 0 0 0";
+         scale = "100 100 100";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
       new SFXEmitter() {
          fileName = "art/sound/environment/night/night_crickets_01.ogg";
          playOnAdd = "1";
@@ -7680,30 +7704,6 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
          };
       };
-   };
-   new SFXEmitter() {
-      fileName = "art/sound/environment/wind/wind_basic_01.ogg";
-      playOnAdd = "1";
-      useTrackDescriptionOnly = "0";
-      isLooping = "1";
-      isStreaming = "0";
-      sourceGroup = "AudioChannelEffects";
-      volume = "0.15";
-      pitch = "1";
-      fadeInTime = "0";
-      fadeOutTime = "0";
-      is3D = "0";
-      referenceDistance = "1";
-      maxDistance = "100";
-      scatterDistance = "0 0 0";
-      coneInsideAngle = "360";
-      coneOutsideAngle = "360";
-      coneOutsideVolume = "1";
-      position = "221.453 223.96 -6.56936";
-      rotation = "1 0 0 0";
-      scale = "100 100 100";
-      canSave = "1";
-      canSaveDynamicFields = "1";
    };
 };
 //--- OBJECT WRITE END ---

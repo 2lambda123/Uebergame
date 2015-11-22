@@ -5750,7 +5750,7 @@ new SimGroup(MissionGroup) {
       isLooping = "1";
       isStreaming = "0";
       sourceGroup = "AudioChannelEffects";
-      volume = "0.2";
+      volume = "0.03";
       pitch = "1";
       fadeInTime = "0";
       fadeOutTime = "0";
