@@ -41,7 +41,7 @@ singleton Material(DefaultRoadMaterialOther)
    materialTag0 = "RoadAndPath";
 };
 
-singleton Material(road_asphalt_small_01)
+singleton Material(Mat_road_asphalt_small_01)
 {
    mapTo = "road_asphalt_small_01";
    diffuseMap[0] = "art/roads/road_asphalt_small_01_D.dds";
@@ -58,7 +58,7 @@ singleton Material(road_asphalt_small_01)
    impactSoundId = "0";
 };
 
-singleton Material(road_asphalt_stripes_01)
+singleton Material(Mat_road_asphalt_stripes_01)
 {
    mapTo = "road_asphalt_stripes_01";
    diffuseMap[0] = "art/roads/road_asphalt_stripes_01_D.dds";

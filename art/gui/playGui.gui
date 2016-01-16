@@ -291,7 +291,7 @@
       canSaveDynamicFields = "0";
 
       new GuiTextCtrl(AmmoAmount) {
-         text = "Ammo: 8/9";
+         text = "Ammo: 30/0";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -314,7 +314,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl(PreviewImage) {
-         bitmap = "art/gui/weaponHud/ryder.png";
+         bitmap = "art/gui/weaponHud/lurker.png";
          wrap = "0";
          position = "11 12";
          extent = "72 32";

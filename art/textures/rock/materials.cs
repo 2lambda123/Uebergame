@@ -1,4 +1,4 @@
-singleton Material(rock_main)
+singleton Material(Mat_rock_main)
 {
    mapTo = "base_rock_main";
    materialTag0 = "rock";
@@ -16,7 +16,7 @@ singleton Material(rock_main)
    accuDirection[0] = "-1";
 };
 
-singleton Material(spotted_01_rock_main : rock_main)
+singleton Material(Mat_spotted_01_rock_main : Mat_rock_main)
 {
    mapTo = "spotted_01_rock_main";
    materialTag0 = "rock";
@@ -34,7 +34,7 @@ singleton Material(spotted_01_rock_main : rock_main)
    accuDirection[0] = "-1";
 };
 
-singleton Material(rough_02_rock_main : rock_main)
+singleton Material(Mat_rough_02_rock_main : Mat_rock_main)
 {
    mapTo = "rough_02_rock_main";
    materialTag0 = "rock";
@@ -52,7 +52,7 @@ singleton Material(rough_02_rock_main : rock_main)
    accuDirection[0] = "-1";
 };
 
-singleton Material(rugged_01_rock_main : rock_main)
+singleton Material(Mat_rugged_01_rock_main : Mat_rock_main)
 {
    mapTo = "rugged_01_rock_main";
    materialTag0 = "rock";
@@ -70,7 +70,7 @@ singleton Material(rugged_01_rock_main : rock_main)
    accuDirection[0] = "-1";
 };
 
-singleton Material(shale_01_rock_main : rock_main)
+singleton Material(Mat_shale_01_rock_main : Mat_rock_main)
 {
    mapTo = "shale_01_rock_main";
    materialTag0 = "rock";

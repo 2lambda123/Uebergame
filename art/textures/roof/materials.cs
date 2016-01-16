@@ -1,4 +1,4 @@
-singleton Material(roof_tar_01)
+singleton Material(Mat_roof_tar_01)
 {
    mapTo = "roof_tar_01";
    materialTag0 = "roof";
@@ -15,7 +15,7 @@ singleton Material(roof_tar_01)
    footstepSoundId = "0";
 };
 
-singleton Material(roof_tiles_01)
+singleton Material(Mat_roof_tiles_01)
 {
    mapTo = "roof_tiles_01";
    materialTag0 = "roof";
@@ -32,7 +32,7 @@ singleton Material(roof_tiles_01)
    footstepSoundId = "0";
 };
 
-singleton Material(roof_tiles_02)
+singleton Material(Mat_roof_tiles_02)
 {
    mapTo = "roof_tiles_02";
    materialTag0 = "roof";
@@ -49,7 +49,7 @@ singleton Material(roof_tiles_02)
    footstepSoundId = "0";
 };
 
-singleton Material(roof_tiles_03)
+singleton Material(Mat_roof_tiles_03)
 {
    mapTo = "roof_tiles_03";
    materialTag0 = "roof";

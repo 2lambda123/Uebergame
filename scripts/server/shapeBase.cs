@@ -82,7 +82,7 @@ function ShapeBase::setDamageDt(%this, %damageAmount, %damageType)
    if (%this.getState() !$= "Dead")
    {
       %this.damage(0, "0 0 0", %damageAmount, %damageType);
-      %this.damageSchedule = %this.schedule(50, "setDamageDt", %damageAmount, %damageType);
+      %this.damageSchedule = %this.schedule(1000, "setDamageDt", %damageAmount, %damageType);
    }
    else
       %this.damageSchedule = "";

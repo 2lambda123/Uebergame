@@ -1,4 +1,4 @@
-singleton Material(camo_net_01)
+singleton Material(Mat_camo_net_01)
 {
    mapTo = "camo_net_01";
    materialTag0 = "camo";

@@ -134,7 +134,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new DecalRoad() {
-      Material = "road_asphalt_stripes_01";
+      Material = "Mat_road_asphalt_stripes_01";
       textureLength = "10";
       breakAngle = "3";
       renderPriority = "10";
@@ -151,7 +151,7 @@ new SimGroup(MissionGroup) {
       Node = "230.258789 571.505127 0.000000 12.000000";
    };
    new GroundCover(grass1) {
-      Material = "groundcover_grass_02_low";
+      Material = "Mat_groundcover_grass_02_low";
       radius = "75";
       dissolveRadius = "75";
       reflectScale = "0.25";
@@ -292,7 +292,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new GroundCover(grass2) {
-      Material = "groundcover_grass_01_dry";
+      Material = "Mat_groundcover_grass_01_dry";
       radius = "100";
       dissolveRadius = "100";
       reflectScale = "0.25";
@@ -1775,7 +1775,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1795,7 +1795,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1815,7 +1815,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1835,7 +1835,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1855,7 +1855,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1875,7 +1875,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1895,7 +1895,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1915,7 +1915,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1935,7 +1935,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1955,7 +1955,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1975,7 +1975,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1995,7 +1995,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2015,7 +2015,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2035,7 +2035,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2055,7 +2055,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2075,7 +2075,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2095,7 +2095,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2115,7 +2115,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2135,7 +2135,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2155,7 +2155,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2175,7 +2175,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2195,7 +2195,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2215,7 +2215,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2235,7 +2235,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2263,13 +2263,22 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
 
-         new Item() {
-            static = "1";
-            rotate = "0";
-            isAIControlled = "0";
-            dataBlock = "LurkerGrenadeAmmo";
-            position = "395.703 304.608 0.851949";
-            rotation = "0 0 1 202.053";
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "393.247 302.53 0.2316";
+            rotation = "-0 0 -1 88.5062";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -2279,8 +2288,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "LurkerGrenadeAmmo";
-            position = "395.81 304.607 0.851949";
-            rotation = "0 0 1 202.053";
+            position = "393.251 302.96 0.854999";
+            rotation = "0 0 -1 67.0831";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -2290,8 +2299,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "LurkerGrenadeAmmo";
-            position = "395.923 304.606 0.851949";
-            rotation = "0 0 1 202.053";
+            position = "393.254 303.071 0.854999";
+            rotation = "0 0 -1 67.0831";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -2301,8 +2310,19 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "LurkerGrenadeAmmo";
-            position = "396.035 304.605 0.851949";
-            rotation = "0 0 1 202.053";
+            position = "393.256 303.184 0.854999";
+            rotation = "0 0 -1 67.0831";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "393.26 303.292 0.854999";
+            rotation = "0 0 -1 67.0831";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -2321,8 +2341,372 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "396.465 304.606 0.228549";
-            rotation = "0 0 1 180.63";
+            position = "358.088 254.519 0.238818";
+            rotation = "0 0 1 181.89";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "357.658 254.526 0.862218";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "357.547 254.53 0.862218";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "357.434 254.533 0.862218";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "357.326 254.537 0.862218";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "379.089 293.535 0.0755976";
+            rotation = "0 0 1 91.5324";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "379.084 293.105 0.698997";
+            rotation = "0 0 1 112.955";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "379.081 292.994 0.698997";
+            rotation = "0 0 1 112.955";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "379.079 292.881 0.698997";
+            rotation = "0 0 1 112.955";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "379.075 292.773 0.698997";
+            rotation = "0 0 1 112.955";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "370.804 281.928 0.0876079";
+            rotation = "0 0 1 181.89";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "370.374 281.935 0.711007";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "370.263 281.939 0.711007";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "370.15 281.942 0.711007";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "370.042 281.946 0.711007";
+            rotation = "0 0 1 203.313";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "346.025 336.207 3.81851";
+            rotation = "1 0 0 0";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "346.455 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "346.567 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "346.68 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "346.787 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "404.259 336.207 3.81851";
+            rotation = "1 0 0 0";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "404.689 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "404.801 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "404.914 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "405.021 336.214 4.44191";
+            rotation = "0 0 1 21.4232";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "393.233 300.056 0.851949";
+            rotation = "0 0 -1 68.1945";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "393.232 299.949 0.851949";
+            rotation = "0 0 -1 68.1945";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "393.232 299.836 0.851949";
+            rotation = "0 0 -1 68.1945";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "393.231 299.724 0.851949";
+            rotation = "0 0 -1 68.1945";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "393.234 299.294 0.228549";
+            rotation = "-0 0 -1 89.6175";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -2780,6 +3164,99 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
 
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "398.539 290.375 0.194641";
+            rotation = "0 0 1 180.336";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "Medpack_medium";
+            position = "397.946 290.266 0.805081";
+            rotation = "0 0 1 221.462";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "366.916 284.723 0.0804407";
+            rotation = "-0 0 -1 87.5805";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "Medpack_medium";
+            position = "366.83 285.321 0.690881";
+            rotation = "0 0 -1 46.4547";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "376.432 281.928 0.102385";
+            rotation = "0 0 1 181.955";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "Medpack_medium";
+            position = "375.835 281.838 0.712825";
+            rotation = "0 0 1 223.081";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
          new TSStatic() {
             shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
@@ -3357,6 +3834,218 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
+            position = "348.203 336.181 3.80199";
+            rotation = "0 0 1 0.176939";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "348.612 336.197 4.40142";
+            rotation = "0 0 1 209.096";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "348.824 336.195 4.40141";
+            rotation = "0 0 1 219.783";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "349.004 336.194 4.40141";
+            rotation = "0 0 1 206.083";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "401.688 336.181 3.80199";
+            rotation = "0 0 1 0.176939";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "402.097 336.197 4.40142";
+            rotation = "0 0 1 209.096";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "402.309 336.195 4.40141";
+            rotation = "0 0 1 219.783";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "402.489 336.194 4.40141";
+            rotation = "0 0 1 206.083";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "401.662 281.673 0.197176";
+            rotation = "0 0 -1 90.6033";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "401.641 282.082 0.796605";
+            rotation = "0 0 1 118.309";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "401.64 282.294 0.796596";
+            rotation = "0 0 1 128.996";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "401.639 282.474 0.796596";
+            rotation = "0 0 1 115.296";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "375.213 296.254 0.0943545";
+            rotation = "0 0 1 1.00793";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "375.621 296.264 0.693785";
+            rotation = "0 0 1 209.92";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "375.834 296.259 0.693774";
+            rotation = "0 0 1 220.607";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "376.014 296.255 0.693774";
+            rotation = "0 0 1 206.907";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
             position = "391.71 288.314 11.6133";
             rotation = "0 0 1 92.7205";
             scale = "1 1 1";
@@ -3424,7 +4113,6 @@ new SimGroup(MissionGroup) {
             position = "355.92 318.672 8.39943";
             rotation = "0 0 1 27.5256";
             scale = "1 1 1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "1";
          };
@@ -3436,7 +4124,6 @@ new SimGroup(MissionGroup) {
             position = "355.708 318.668 8.39942";
             rotation = "0 0 1 38.2125";
             scale = "1 1 1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "1";
          };
@@ -3448,7 +4135,6 @@ new SimGroup(MissionGroup) {
             position = "355.528 318.664 8.39942";
             rotation = "0 0 1 24.5126";
             scale = "1 1 1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "1";
          };
@@ -4093,7 +4779,7 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "LurkerClip";
-            position = "401.912 263.114 0.609783";
+            position = "401.64 261.584 0.821957";
             rotation = "0 0 1 111.344";
             scale = "1 1 1";
             canSave = "1";
@@ -4104,7 +4790,7 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "LurkerClip";
-            position = "401.885 263.325 0.609773";
+            position = "401.613 261.795 0.821947";
             rotation = "0 0 1 122.03";
             scale = "1 1 1";
             canSave = "1";
@@ -4115,7 +4801,7 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "LurkerClip";
-            position = "401.862 263.503 0.609773";
+            position = "401.59 261.973 0.821947";
             rotation = "0 0 1 108.331";
             scale = "1 1 1";
             canSave = "1";
@@ -4135,7 +4821,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "401.983 262.711 0.0103533";
+            position = "401.711 261.181 0.222528";
             rotation = "0 0 -1 97.5691";
             scale = "1 1 1";
             canSave = "1";
@@ -4146,6 +4832,70 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
 
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "369.532 296.175 0.100743";
+            rotation = "0 0 1 1.50034";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "RyderClip";
+            position = "369.905 296.19 0.697083";
+            rotation = "0 0 -1 39.3207";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "RyderClip";
+            position = "370.072 296.186 0.697083";
+            rotation = "0 0 -1 30.9677";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "RyderClip";
+            position = "370.23 296.181 0.697083";
+            rotation = "0 0 -1 41.3317";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "RyderClip";
+            position = "370.368 296.178 0.697083";
+            rotation = "0 0 -1 34.7836";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
          new TSStatic() {
             shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
@@ -4352,8 +5102,8 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "386.813 313.37 3.99897";
-            rotation = "0 0 1 175.565";
+            position = "391.585 318.677 3.99897";
+            rotation = "0 0 1 87.7616";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4363,8 +5113,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "386.443 313.317 4.59531";
-            rotation = "0 0 1 134.744";
+            position = "391.623 318.305 4.59531";
+            rotation = "0 0 1 46.9406";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4374,8 +5124,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "386.277 313.304 4.59531";
-            rotation = "0 0 1 143.097";
+            position = "391.63 318.139 4.59531";
+            rotation = "0 0 1 55.2936";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4385,8 +5135,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "386.12 313.292 4.59531";
-            rotation = "0 0 1 132.733";
+            position = "391.636 317.982 4.59531";
+            rotation = "0 0 1 44.9295";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4396,8 +5146,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "385.982 313.281 4.59531";
-            rotation = "0 0 1 139.281";
+            position = "391.642 317.843 4.59531";
+            rotation = "0 0 1 51.4776";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4480,8 +5230,8 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "393.239 299.368 0.251483";
-            rotation = "0 0 -1 90.1369";
+            position = "397.206 312.169 0.2222";
+            rotation = "0 0 1 1.32999";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4491,8 +5241,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "393.214 299.741 0.847824";
-            rotation = "0 0 1 229.042";
+            position = "397.58 312.184 0.818541";
+            rotation = "0 0 -1 39.4901";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4502,8 +5252,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "393.214 299.908 0.847824";
-            rotation = "0 0 1 237.395";
+            position = "397.747 312.18 0.818541";
+            rotation = "0 0 -1 31.1372";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4513,8 +5263,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "393.213 300.065 0.847824";
-            rotation = "0 0 1 227.031";
+            position = "397.904 312.177 0.818541";
+            rotation = "0 0 -1 41.5011";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4524,8 +5274,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "393.213 300.204 0.847824";
-            rotation = "0 0 1 233.579";
+            position = "398.043 312.173 0.818541";
+            rotation = "0 0 -1 34.9532";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4608,8 +5358,8 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "386.813 313.437 7.80906";
-            rotation = "0 0 1 175.565";
+            position = "391.697 319.825 7.80906";
+            rotation = "0 0 1 92.4572";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4619,8 +5369,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "386.443 313.384 8.4054";
-            rotation = "0 0 1 134.744";
+            position = "391.706 319.451 8.4054";
+            rotation = "0 0 1 51.6362";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4630,8 +5380,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "386.277 313.371 8.4054";
-            rotation = "0 0 1 143.097";
+            position = "391.699 319.285 8.4054";
+            rotation = "0 0 1 59.9892";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4641,8 +5391,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "386.12 313.359 8.4054";
-            rotation = "0 0 1 132.733";
+            position = "391.692 319.127 8.4054";
+            rotation = "0 0 1 49.6252";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -4652,8 +5402,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "RyderClip";
-            position = "385.982 313.348 8.4054";
-            rotation = "0 0 1 139.281";
+            position = "391.686 318.989 8.4054";
+            rotation = "0 0 1 56.1732";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -5047,6 +5797,68 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
 
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "379.098 285.777 0.08593";
+            rotation = "0 0 1 91.8061";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "ProxMine";
+            position = "379.189 285.16 0.743329";
+            rotation = "0 0 1 111.516";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "0";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "366.947 292.339 0.0786581";
+            rotation = "-0 0 -1 89.9479";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "ProxMine";
+            position = "366.837 292.952 0.736057";
+            rotation = "0 0 -1 70.238";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
          new Item() {
             static = "1";
             rotate = "0";
@@ -5371,8 +6183,8 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "390.765 266.696 4.01647";
-            rotation = "0 0 1 90.6137";
+            position = "383.201 263.393 4.01647";
+            rotation = "-0 0 -1 87.6784";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -5382,8 +6194,8 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "ProxMine";
-            position = "390.869 266.081 4.67388";
-            rotation = "0 0 1 110.324";
+            position = "383.116 264.011 4.67388";
+            rotation = "0 0 -1 67.968";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -5508,6 +6320,55 @@ new SimGroup(MissionGroup) {
             dataBlock = "ProxMine";
             position = "363.044 254.339 8.47639";
             rotation = "0 0 1 112.258";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+      };
+      new SimGroup(miscitems) {
+         canSave = "1";
+         canSaveDynamicFields = "1";
+
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "RyderClip";
+            position = "364.559 253.202 4.01091";
+            rotation = "0 0 1 46.2742";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "364.564 252.706 3.99699";
+            rotation = "0 0 -1 59.2563";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "364.523 251.674 4.01279";
+            rotation = "0 0 1 23.7009";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "364.635 251.67 4.01279";
+            rotation = "0 0 1 23.7009";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";

@@ -1,4 +1,4 @@
-singleton Material(plaster_dirty_01)
+singleton Material(Mat_plaster_dirty_01)
 {
    mapTo = "plaster_dirty_01";
    materialTag0 = "plaster";
@@ -15,7 +15,7 @@ singleton Material(plaster_dirty_01)
    footstepSoundId = "0";
 };
 
-singleton Material(plaster_plain_01)
+singleton Material(Mat_plaster_plain_01)
 {
    mapTo = "plaster_plain_01";
    materialTag0 = "plaster";
@@ -32,7 +32,7 @@ singleton Material(plaster_plain_01)
    footstepSoundId = "0";
 };
 
-singleton Material(plaster_sprinkled_01)
+singleton Material(Mat_plaster_sprinkled_01)
 {
    mapTo = "plaster_sprinkled_01";
    materialTag0 = "plaster";
@@ -49,7 +49,7 @@ singleton Material(plaster_sprinkled_01)
    footstepSoundId = "0";
 };
 
-singleton Material(plaster_stucco_01)
+singleton Material(Mat_plaster_stucco_01)
 {
    mapTo = "plaster_stucco_01";
    materialTag0 = "plaster";
@@ -66,7 +66,7 @@ singleton Material(plaster_stucco_01)
    footstepSoundId = "0";
 };
 
-singleton Material(plaster_decay_01)
+singleton Material(Mat_plaster_decay_01)
 {
    mapTo = "plaster_decay_01";
    materialTag0 = "plaster";

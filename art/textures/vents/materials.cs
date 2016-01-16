@@ -1,4 +1,4 @@
-singleton Material(vent_louver_01)
+singleton Material(Mat_vent_louver_01)
 {
    mapTo = "vent_louver_01";
    materialTag0 = "vent";
@@ -15,7 +15,7 @@ singleton Material(vent_louver_01)
    footstepSoundId = "0";
 };
 
-singleton Material(vent_louver_02)
+singleton Material(Mat_vent_louver_02)
 {
    mapTo = "vent_louver_02";
    materialTag0 = "vent";

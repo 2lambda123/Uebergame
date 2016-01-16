@@ -37,19 +37,3 @@ singleton Material(RifleShell_ColorEffectR88G88B225_material)
 };
 
 //--- RifleShell.dts MATERIALS END ---
-
-singleton Material(tracer_01)
-{
-   mapTo = "tracer_01";
-   diffuseColor[0] = "0.996078 0.996078 0.996078 1";
-   specular[0] = "0.5 0.5 0.5 1";
-   specularPower[0] = "50";
-   doubleSided = "1";
-   translucent = "1";
-   diffuseMap[0] = "art/shapes/weapons/shared/tracer_01_light.png";
-   glow[0] = "1";
-   alphaRef = "0";
-   subSurfaceRolloff[0] = "2";
-   emissive[0] = "1";
-   materialTag0 = "Miscellaneous";
-};

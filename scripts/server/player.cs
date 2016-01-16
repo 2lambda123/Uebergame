@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 
 // Timeouts for corpse deletion.
-$CorpseTimeoutValue = 10 * 1000;
+$CorpseTimeoutValue = 20 * 1000;
 
 //----------------------------------------------------------------------------
 // Drowning script
@@ -264,26 +264,27 @@ function PlayerData::onImpact(%this, %obj, %collidedObject, %vec, %vecLen)
 }
 
 //----------------------------------------------------------------------------
+function DamageTypeCollision(%obj, %damage, %damageType, %position){
 
-function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %damageType)
-{
-   if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
+      switch$ (%damageType){
+       
+      case "Suicide":
+          return;
+             
+      case "Drowning":
+         return;
+         
+      case "Paint":
+         return;
+		 
+	  case "MissionAreaDamage":
       return;	  
 
-   %location = %obj.getDamageLocation(%position);//"Body";
-   %bodyPart = getWord(%location, 0);
-   %region = getWord(%location, 1);
-   //echo(%obj @" \c4% DAMAGELOCATION:  bodyPart = "@ %bodyPart @" || REGION = "@ %region);
-   switch$ (%bodyPart)
-   {
-      case "head":
-         %damage = %damage*2.5; // 2,5 times the damage for a headshot
-      case "torso":
-      case "legs":
-         %damage = %damage/1.6; // about two third damage for legs
+      default:
+         // Process all other damage types
+                   
    }
    
-   //blood decals, commented out until they work on clientside also
    %centerpoint = %obj.getWorldBoxCenter();
    
    %normal[0] = "0.0 0.0 1.0";
@@ -339,7 +340,27 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    };  
    MissionCleanup.add(%particles);  
    %particles.schedule(1000, "delete");
-   //blood decals and particles finished
+}
+ 
+function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %damageType)
+{
+   if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
+      return;    
+ 
+   %location = %obj.getDamageLocation(%position);//"Body";
+   %bodyPart = getWord(%location, 0);
+   %region = getWord(%location, 1);
+   //echo(%obj @" \c4% DAMAGELOCATION:  bodyPart = "@ %bodyPart @" || REGION = "@ %region);
+   switch$ (%bodyPart)
+   {
+      case "head":
+         %damage = %damage*2.5; // 2,5 times the damage for a headshot
+      case "torso":
+      case "legs":
+         %damage = %damage/1.6; // about two third damage for legs
+   }
+   
+        DamageTypeCollision(%obj, %damage, %damageType, %position);
    
    %obj.applyDamage(%damage);
 
@@ -353,7 +374,7 @@ function PlayerData::damage(%this, %obj, %sourceObject, %position, %damage, %dam
    if (isObject(%client))
    {
       // Determine damage direction
-      if (%damageType !$= "Suicide"&& %damageType !$= "Drowning")//prevent Damage Direction indicator while drowning
+      if (%damageType !$= "Suicide"&& %damageType !$= "Drowning" && %damageType !$= "MissionAreaDamage")//prevent Damage Direction indicator while drowning
          %obj.setDamageDirection(%sourceObject, %position);
 
       if (%obj.getState() $= "Dead")
@@ -409,6 +430,9 @@ function PlayerData::onDisabled(%this, %obj, %state)
    // Disable any vehicle map
    commandToClient(%obj.client, 'toggleVehicleMap', false);
 
+   // Remove warning Gui in case the player was outside the mission area when he died
+   Canvas.popDialog (missionAreaWarningHud);
+
    // Schedule corpse removal. Just keeping the place clean.
    %obj.schedule($CorpseTimeoutValue - 3000, "startFade", 3000, 0, true);
    %obj.schedule($CorpseTimeoutValue, "delete");
@@ -421,10 +445,13 @@ function PlayerData::onLeaveMissionArea(%this, %obj)
    //echo("\c4Leaving Mission Area at POS:"@ %obj.getPosition());
 
    // Inform the client
-   %obj.client.onLeaveMissionArea();
+   //%obj.client.onLeaveMissionArea();
+
+   Canvas.pushDialog (missionAreaWarningHud);
 
    // Damage over time and kill the coward!
-   //%obj.setDamageDt(0.2, "MissionAreaDamage");
+   %obj.sheduleMissionAreaDamage = %obj.schedule ( 10000, setDamageDt, 15.0, "MissionAreaDamage");
+
 }
 
 function PlayerData::onEnterMissionArea(%this, %obj)
@@ -432,12 +459,19 @@ function PlayerData::onEnterMissionArea(%this, %obj)
    //echo("\c4Entering Mission Area at POS:"@ %obj.getPosition());
 
    // Inform the client
-   %obj.client.onEnterMissionArea();
+   //%obj.client.onEnterMissionArea();
+
+   Canvas.popDialog (missionAreaWarningHud);
 
    // Stop the punishment
-   //%obj.clearDamageDt();
+   cancel(%obj.sheduleMissionAreaDamage);
+   %obj.clearDamageDt(); 
 }
 
+function sendMsgClientKilled_MissionAreaDamage(%msgType, %client, %sourceClient, %damLoc)
+{
+   messageAll(%msgType, '%1 got killed while trying to flee', %client.playerName);// Customized kill message
+}
 //-----------------------------------------------------------------------------
 
 function PlayerData::onEnterLiquid(%this, %obj, %coverage, %type)
@@ -489,7 +523,7 @@ function PlayerData::onStopSprintMotion(%this, %obj)
 
 function Player::kill(%this, %damageType)
 {
-   %this.damage(0, %this.getPosition(), 170, %damageType);
+   %this.damage(0, %this.getPosition(), 10000, %damageType);
 }
 
 //----------------------------------------------------------------------------

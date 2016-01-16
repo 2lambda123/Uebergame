@@ -95,7 +95,7 @@ singleton GuiControlProfile ("ChatHudScrollProfile")
    opaque = false;
    borderThickness = 0;
    borderColor = "0 255 0";
-   bitmap = "core/art/gui/images/scrollBar";
+   bitmap = "art/core/gui/images/scrollBar";
    hasBitmapArray = true;
 };
 
@@ -108,7 +108,7 @@ singleton GuiControlProfile ("HudScrollProfile")
    opaque = false;
    border = true;
    borderColor = "0 255 0";
-   bitmap = "core/art/gui/images/scrollBar";
+   bitmap = "art/core/gui/images/scrollBar";
    hasBitmapArray = true;
 };
 
@@ -123,7 +123,7 @@ singleton GuiControlProfile ("HudTextProfile")
 
 singleton GuiControlProfile ("ChatHudBorderProfile")
 {
-   bitmap = "core/art/gui/images/chatHudBorderArray";
+   bitmap = "art/core/gui/images/chatHudBorderArray";
    hasBitmapArray = true;
    opaque = false;
 };

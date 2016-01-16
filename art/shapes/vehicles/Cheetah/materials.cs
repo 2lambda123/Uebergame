@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-singleton Material(Cheetah_Main)
+singleton Material(Mat_Cheetah_Main)
 {
    mapTo = "Cheetah_Main";
    diffuseMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_D";
@@ -31,7 +31,7 @@ singleton Material(Cheetah_Main)
    specularMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_S";
 };
 
-singleton Material(Cheetah_TailLights)
+singleton Material(Mat_Cheetah_TailLights)
 {
    mapTo = "Cheetah_TailLights";
    diffuseColor[0] = "0.588235 0 0 1";
@@ -42,7 +42,7 @@ singleton Material(Cheetah_TailLights)
    emissive[0] = "1";
 };
 
-singleton Material(Cheetah_MuzzleFlash)
+singleton Material(Mat_Cheetah_MuzzleFlash)
 {
    mapTo = "Cheetah_MuzzleFlash";
    diffuseMap[0] = "art/shapes/vehicles/Cheetah/Cheetah_MuzzleFlash_D";
@@ -55,7 +55,7 @@ singleton Material(Cheetah_MuzzleFlash)
    translucent = "1";
 };
 
-singleton Material(Cheetah_Collider)
+singleton Material(Mat_Cheetah_Collider)
 {
    mapTo = "Collider";
    diffuseColor[0] = "1 0 0 0.75";

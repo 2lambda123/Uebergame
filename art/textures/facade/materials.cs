@@ -1,4 +1,4 @@
-singleton Material(facade_slabs_01)
+singleton Material(Mat_facade_slabs_01)
 {
    mapTo = "facade_slabs_01";
    materialTag0 = "facade";
@@ -15,7 +15,7 @@ singleton Material(facade_slabs_01)
    footstepSoundId = "0";
 };
 
-singleton Material(facade_wood_01)
+singleton Material(Mat_facade_wood_01)
 {
    mapTo = "facade_wood_01";
    materialTag0 = "facade";

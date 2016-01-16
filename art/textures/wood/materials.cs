@@ -1,4 +1,4 @@
-singleton Material(wood_chipboard_01)
+singleton Material(Mat_wood_chipboard_01)
 {
    mapTo = "wood_chip_01";
    materialTag0 = "wood";
@@ -15,7 +15,7 @@ singleton Material(wood_chipboard_01)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_chipboard_02)
+singleton Material(Mat_wood_chipboard_02)
 {
    mapTo = "wood_chip_02";
    materialTag0 = "wood";
@@ -32,7 +32,7 @@ singleton Material(wood_chipboard_02)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_dirty_01)
+singleton Material(Mat_wood_dirty_01)
 {
    mapTo = "wood_dirty_01";
    materialTag0 = "wood";
@@ -49,7 +49,7 @@ singleton Material(wood_dirty_01)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_dirty_02)
+singleton Material(Mat_wood_dirty_02)
 {
    mapTo = "wood_dirty_02";
    materialTag0 = "wood";
@@ -66,7 +66,7 @@ singleton Material(wood_dirty_02)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_laminate_01)
+singleton Material(Mat_wood_laminate_01)
 {
    mapTo = "wood_laminat_01";
    materialTag0 = "wood";
@@ -83,7 +83,7 @@ singleton Material(wood_laminate_01)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_planks_01)
+singleton Material(Mat_wood_planks_01)
 {
    mapTo = "wood_planks_01";
    materialTag0 = "wood";
@@ -100,7 +100,7 @@ singleton Material(wood_planks_01)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_planks_02)
+singleton Material(Mat_wood_planks_02)
 {
    mapTo = "wood_planks_02";
    materialTag0 = "wood";
@@ -117,7 +117,7 @@ singleton Material(wood_planks_02)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_planks_03)
+singleton Material(Mat_wood_planks_03)
 {
    mapTo = "wood_planks_03";
    materialTag0 = "wood";
@@ -134,7 +134,7 @@ singleton Material(wood_planks_03)
    footstepSoundId = "0";
 };
 
-singleton Material(wood_planks_04)
+singleton Material(Mat_wood_planks_04)
 {
    mapTo = "wood_planks_04";
    materialTag0 = "wood";

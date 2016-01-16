@@ -24,7 +24,7 @@
 // Undercity Materials
 //--------------------------------------------
 
-singleton Material(ucityHealthKit)
+singleton Material(Mat_ucityHealthKit)
 {
    mapTo = "healthkit";
    diffuseMap[0] = "healthkit_d";

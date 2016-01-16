@@ -1,4 +1,4 @@
-singleton Material(pavement_blocks_01)
+singleton Material(Mat_pavement_blocks_01)
 {
    mapTo = "pavement_blocks_01";
    materialTag0 = "pavement";
@@ -15,7 +15,7 @@ singleton Material(pavement_blocks_01)
    footstepSoundId = "0";
 };
 
-singleton Material(pavement_regular_01)
+singleton Material(Mat_pavement_regular_01)
 {
    mapTo = "pavement_regular_01";
    materialTag0 = "pavement";
@@ -32,7 +32,7 @@ singleton Material(pavement_regular_01)
    footstepSoundId = "0";
 };
 
-singleton Material(pavement_slabs_01)
+singleton Material(Mat_pavement_slabs_01)
 {
    mapTo = "pavement_slabs_01";
    materialTag0 = "pavement";
@@ -49,7 +49,7 @@ singleton Material(pavement_slabs_01)
    footstepSoundId = "0";
 };
 
-singleton Material(pavement_slabs_02)
+singleton Material(Mat_pavement_slabs_02)
 {
    mapTo = "pavement_slabs_02";
    materialTag0 = "pavement";
@@ -66,7 +66,7 @@ singleton Material(pavement_slabs_02)
    footstepSoundId = "0";
 };
 
-singleton Material(pavement_slabs_03)
+singleton Material(Mat_pavement_slabs_03)
 {
    mapTo = "pavement_slabs_03";
    materialTag0 = "pavement";

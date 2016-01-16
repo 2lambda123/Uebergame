@@ -1,5 +1,5 @@
 
-singleton Material(fir_01_branch)
+singleton Material(Mat_fir_01_branch)
 {
    mapTo = "fir_01_branch";
    diffuseColor[0] = "1 1 1 1";
@@ -19,7 +19,7 @@ singleton Material(fir_01_branch)
    materialTag0 = "Miscellaneous";
 };
 
-singleton Material(fir_01_bark)
+singleton Material(Mat_fir_01_bark)
 {
    mapTo = "fir_01_bark";
    diffuseColor[0] = "1 1 1 1";

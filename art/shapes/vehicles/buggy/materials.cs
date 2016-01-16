@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-new Material(buggy)
+new Material(Mat_buggy)
 {
    diffuseMap[0] = "buggy";
    translucent = false;

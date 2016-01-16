@@ -1,4 +1,4 @@
-singleton Material(asphalt_decay_01)
+singleton Material(Mat_asphalt_decay_01)
 {
    mapTo = "asphalt_decay_01";
    materialTag0 = "asphalt";
@@ -17,7 +17,7 @@ singleton Material(asphalt_decay_01)
    impactSoundId = "1";
 };
 
-singleton Material(asphalt_floor_01)
+singleton Material(Mat_asphalt_floor_01)
 {
    mapTo = "asphalt_floor_01";
    materialTag0 = "asphalt";
@@ -35,7 +35,7 @@ singleton Material(asphalt_floor_01)
    footstepSoundId = "0";
 };
 
-singleton Material(asphalt_street_03)
+singleton Material(Mat_asphalt_street_03)
 {
    mapTo = "asphalt_street_03";
    materialTag0 = "asphalt";

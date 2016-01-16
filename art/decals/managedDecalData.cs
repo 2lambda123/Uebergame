@@ -43,7 +43,7 @@ datablock DecalData(ScorchRXDecal)
    screenEndRadius = "100";
 };
 
-datablock DecalData(bulletHoleDecal)
+datablock DecalData(BulletHoleDecal)
 {
    Material = "DECAL_bulletHole";
    size = "0.2";

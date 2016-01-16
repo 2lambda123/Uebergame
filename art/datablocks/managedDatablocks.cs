@@ -25,25 +25,8 @@
 
 datablock PlayerData(TorqueSoldierPlayerData : DefaultPlayerData)
 {
-   // available skins (see materials.cs in model folder)
    availableSkins =  "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
-
-   mainWeapon = Lurker;
- 
-   maxInv[Lurker] = 1;
-   maxInv[LurkerClip] = 6;
-
-   maxInv[LurkerGrenadeLauncher] = 1;
-   maxInv[LurkerGrenadeAmmo] = 12;
-
-   maxInv[Ryder] = 1;
-   maxInv[RyderClip] = 6;
-
-   maxInv[ProxMine] = 4;
-   maxInv[ProxMineAmmo] = 4;
-
-   maxInv[DeployableTurret] = 1;
-/*
+   mainWeapon = "Lurker";
    maxInvDeployableTurret = "1";
    maxInvProxMine = "4";
    maxInvLurkerGrenadeLauncher = "1";
@@ -53,18 +36,20 @@ datablock PlayerData(TorqueSoldierPlayerData : DefaultPlayerData)
    maxInvRyderClip = "6";
    maxInvLurkerClip = "6";
    maxInvLurkerGrenadeAmmo = "12";
-   */
 };
 
 datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
 {
-// available skins (see materials.cs in model folder)
-   availableSkins =  "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
-   
-   mainWeapon = "PaintballMarkerBlue";
-   maxInv[PaintballMarkerBlue] = 1;
-   maxInv[PaintballMarkerRed] = 1;
-   maxInv[PaintballMarkerGreen] = 1;
-   maxInv[PaintballMarkerYellow] = 1;
-   maxInv[PaintballClip] = 6;  
+   shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
+   shapeNameFP[0] = "";
+   availableSkins =  "base blue red green yellow";
+   boundingBox = "0.75 0.75 1.8";
+   crouchBoundingBox = "0.75 0.75 1.3";
+   mainWeapon = "PaintballMarkerBlue";  
+   renderFirstPerson = "1";
+   maxInvPaintballClip = "5";
+   maxInvPaintballMarkerRed = "1";
+   maxInvPaintballMarkerYellow = "1";
+   maxInvPaintballMarkerBlue = "1";
+   maxInvPaintballMarkerGreen = "1";
 };

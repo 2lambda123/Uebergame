@@ -752,7 +752,7 @@ vehicleMap.bind(keyboard, space, brake);
 vehicleMap.bindCmd(keyboard, "l", "brakeLights();", "");
 vehicleMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 vehicleMap.bind( keyboard, v, toggleFreeLook ); // v for vanity
-//vehicleMap.bind(keyboard, tab, toggleFirstPerson );
+vehicleMap.bind(keyboard, F3, toggleFirstPerson );
 vehicleMap.bind(keyboard, "alt c", toggleCamera);
 // bind the left thumbstick for steering
 vehicleMap.bind( gamepad, thumblx, "D", "-0.23 0.23", gamepadYaw );

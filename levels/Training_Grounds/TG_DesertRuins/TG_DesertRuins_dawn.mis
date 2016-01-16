@@ -115,7 +115,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new GroundCover(drygrass01) {
-      Material = "groundcover_grass_01_dry";
+      Material = "Mat_groundcover_grass_01_dry";
       radius = "80";
       dissolveRadius = "70";
       reflectScale = "0.25";
@@ -257,7 +257,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new GroundCover(weed) {
-      Material = "groundcover_Weed01";
+      Material = "Mat_groundcover_Weed01";
       radius = "100";
       dissolveRadius = "80";
       reflectScale = "0.25";
@@ -398,7 +398,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new GroundCover(smallgrass) {
-      Material = "groundcover_J_Grass02";
+      Material = "Mat_groundcover_J_Grass02";
       radius = "50";
       dissolveRadius = "40";
       reflectScale = "0.25";
@@ -984,7 +984,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "19.461 -51.925 0.75";
+         position = "19.3258 -51.925 0.75";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -7101,7 +7101,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "6.6052 -77.7108 -0.714344";
-            rotation = "-0.0843795 0.0843795 -0.992855 90.4126";
+            rotation = "-0.0843795 0.0843795 -0.992855 90.413";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -8063,7 +8063,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8083,7 +8083,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8103,7 +8103,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8123,7 +8123,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8143,7 +8143,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8163,7 +8163,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8183,7 +8183,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8203,7 +8203,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8223,7 +8223,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8243,7 +8243,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8263,7 +8263,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8283,7 +8283,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8303,7 +8303,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8323,7 +8323,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8343,7 +8343,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8363,7 +8363,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8383,7 +8383,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8403,7 +8403,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8423,7 +8423,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8443,7 +8443,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8463,7 +8463,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8483,7 +8483,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8503,7 +8503,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8523,7 +8523,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8543,7 +8543,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8563,7 +8563,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8583,7 +8583,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8603,7 +8603,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8623,7 +8623,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8643,7 +8643,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8663,7 +8663,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8683,7 +8683,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8703,7 +8703,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8723,7 +8723,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -8743,7 +8743,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/lights/streetlights/streetlamp_01/streetlamp_01_ruined_a.dts";
+         shapeName = "./shapes/desert_ruins_streetlamp_a.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -9365,7 +9365,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "47.4479 -3.89035 0.145843";
+            position = "49.0093 -11.7153 0.145843";
             rotation = "0 0 1 173.562";
             scale = "1 1 1";
             canSave = "1";
@@ -9376,7 +9376,7 @@ new SimGroup(MissionGroup) {
             rotate = "0";
             isAIControlled = "0";
             dataBlock = "Medpack_medium";
-            position = "46.8197 -4.08107 0.755198";
+            position = "48.3811 -11.906 0.755198";
             rotation = "0 0 1 157.26";
             scale = "1 1 1";
             canSave = "1";
@@ -9814,6 +9814,48 @@ new SimGroup(MissionGroup) {
             canSave = "1";
             canSaveDynamicFields = "1";
          };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "66.2136 -27.2799 0.793075";
+            rotation = "0 0 -1 87.5203";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerClip";
+            position = "66.2336 -28.1621 0.81906";
+            rotation = "0 0 -1 62.9547";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "1";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "66.2941 -28.3977 0.189837";
+            rotation = "0 0 -1 90.5387";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
          new TSStatic() {
             shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
@@ -10027,6 +10069,68 @@ new SimGroup(MissionGroup) {
             canSave = "1";
             canSaveDynamicFields = "1";
          };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "ProxMine";
+            position = "57.7492 -53.1356 0.692686";
+            rotation = "0 0 1 22.0216";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "1";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "57.9578 -53.407 0.0283612";
+            rotation = "-0 0 -1 89.6389";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "1";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "-21.6288 -24.9987 0.129025";
+            rotation = "-0 0 -1 89.6389";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "ProxMine";
+            position = "-21.8374 -24.7273 0.79335";
+            rotation = "0 0 1 22.0216";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
          new TSStatic() {
             shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";
@@ -10052,6 +10156,134 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
 
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "-21.6668 -55.304 0.774291";
+            rotation = "0 0 -1 90.4513";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "-21.6658 -55.4363 0.774291";
+            rotation = "0 0 -1 90.4513";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "-21.6647 -55.569 0.774291";
+            rotation = "0 0 -1 90.4513";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "-21.6636 -55.7078 0.774291";
+            rotation = "0 0 -1 90.4513";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "1";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "-21.6393 -56.1275 0.114748";
+            rotation = "-0 0 -1 89.7457";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "44.9755 2.59531 0.6634";
+            rotation = "1 0 0 0";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "45.1143 2.59531 0.6634";
+            rotation = "1 0 0 0";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "45.247 2.59531 0.6634";
+            rotation = "1 0 0 0";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new Item() {
+            static = "1";
+            rotate = "0";
+            isAIControlled = "0";
+            dataBlock = "LurkerGrenadeAmmo";
+            position = "45.3793 2.59531 0.6634";
+            rotation = "1 0 0 0";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+         new TSStatic() {
+            shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
+            playAmbient = "1";
+            meshCulling = "0";
+            originSort = "0";
+            collisionType = "Collision Mesh";
+            decalType = "Visible Mesh";
+            allowPlayerStep = "1";
+            alphaFadeEnable = "0";
+            alphaFadeStart = "100";
+            alphaFadeEnd = "150";
+            alphaFadeInverse = "0";
+            renderNormals = "0";
+            forceDetail = "-1";
+            position = "44.5556 2.57431 0.00385723";
+            rotation = "0 0 1 0.70554";
+            scale = "1 1 1";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
          new TSStatic() {
             shapeName = "art/shapes/storage/crates/weapons/weaponcrate_old_01.dts";
             playAmbient = "1";

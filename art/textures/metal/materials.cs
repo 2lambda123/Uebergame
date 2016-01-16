@@ -1,4 +1,4 @@
-singleton Material(metal_bare_01)
+singleton Material(Mat_metal_bare_01)
 {
    mapTo = "metal_bare_01";
    materialTag0 = "metal";
@@ -15,7 +15,7 @@ singleton Material(metal_bare_01)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_corrugated_01)
+singleton Material(Mat_metal_corrugated_01)
 {
    mapTo = "metal_corrug_01";
    materialTag0 = "metal";
@@ -32,7 +32,7 @@ singleton Material(metal_corrugated_01)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_floor_01)
+singleton Material(Mat_metal_floor_01)
 {
    mapTo = "metal_floor_01";
    materialTag0 = "metal";
@@ -49,7 +49,7 @@ singleton Material(metal_floor_01)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_panels_01)
+singleton Material(Mat_metal_panels_01)
 {
    mapTo = "metal_panels_01";
    materialTag0 = "metal";
@@ -66,7 +66,7 @@ singleton Material(metal_panels_01)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_panels_02)
+singleton Material(Mat_metal_panels_02)
 {
    mapTo = "metal_panels_02";
    materialTag0 = "metal";
@@ -83,7 +83,7 @@ singleton Material(metal_panels_02)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_rusted_01)
+singleton Material(Mat_metal_rusted_01)
 {
    mapTo = "metal_rusted_01";
    materialTag0 = "metal";
@@ -100,7 +100,7 @@ singleton Material(metal_rusted_01)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_rusted_02)
+singleton Material(Mat_metal_rusted_02)
 {
    mapTo = "metal_rusted_02";
    materialTag0 = "metal";
@@ -117,7 +117,7 @@ singleton Material(metal_rusted_02)
    footstepSoundId = "0";
 };
 
-singleton Material(metal_stripes_01)
+singleton Material(Mat_metal_stripes_01)
 {
    mapTo = "metal_stripe_01";
    materialTag0 = "metal";

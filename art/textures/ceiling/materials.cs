@@ -1,4 +1,4 @@
-singleton Material(ceiling_bare_01)
+singleton Material(Mat_ceiling_bare_01)
 {
    mapTo = "ceiling_bare_01";
    materialTag0 = "ceiling";

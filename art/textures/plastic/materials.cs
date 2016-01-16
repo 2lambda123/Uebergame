@@ -1,4 +1,4 @@
-singleton Material(plastic_nubs_01)
+singleton Material(Mat_plastic_nubs_01)
 {
    mapTo = "plastic_nubs_01";
    materialTag0 = "plastic";

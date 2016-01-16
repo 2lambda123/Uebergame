@@ -1,4 +1,4 @@
-singleton Material(concrete_cracks_01)
+singleton Material(Mat_concrete_cracks_01)
 {
    mapTo = "concrete_cracks_01";
    materialTag0 = "concrete";
@@ -16,7 +16,7 @@ singleton Material(concrete_cracks_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_dirty_01)
+singleton Material(Mat_concrete_dirty_01)
 {
    mapTo = "concrete_dirty_01";
    materialTag0 = "concrete";
@@ -37,7 +37,7 @@ singleton Material(concrete_dirty_01)
    terrainMaterials = "1";
 };
 
-singleton Material(concrete_mossy_01)
+singleton Material(Mat_concrete_mossy_01)
 {
    mapTo = "concrete_mossy_01";
    materialTag0 = "concrete";
@@ -54,7 +54,7 @@ singleton Material(concrete_mossy_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_panels_01)
+singleton Material(Mat_concrete_panels_01)
 {
    mapTo = "concrete_panels_01";
    materialTag0 = "concrete";
@@ -71,7 +71,7 @@ singleton Material(concrete_panels_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_pebble_01)
+singleton Material(Mat_concrete_pebble_01)
 {
    mapTo = "concrete_pebble_01";
    materialTag0 = "concrete";
@@ -89,7 +89,7 @@ singleton Material(concrete_pebble_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_pebble_02)
+singleton Material(Mat_concrete_pebble_02)
 {
    mapTo = "concrete_pebble_02";
    materialTag0 = "concrete";
@@ -106,7 +106,7 @@ singleton Material(concrete_pebble_02)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_plaster_01)
+singleton Material(Mat_concrete_plaster_01)
 {
    mapTo = "concrete_plaster_01";
    materialTag0 = "concrete";
@@ -123,7 +123,7 @@ singleton Material(concrete_plaster_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_rough_01)
+singleton Material(Mat_concrete_rough_01)
 {
    mapTo = "concrete_rough_01";
    materialTag0 = "concrete";
@@ -140,7 +140,7 @@ singleton Material(concrete_rough_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_plain_02)
+singleton Material(Mat_concrete_plain_02)
 {
    mapTo = "concrete_plain_02";
    materialTag0 = "concrete";
@@ -157,7 +157,7 @@ singleton Material(concrete_plain_02)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_plain_03)
+singleton Material(Mat_concrete_plain_03)
 {
    mapTo = "concrete_plain_03";
    materialTag0 = "concrete";
@@ -174,7 +174,7 @@ singleton Material(concrete_plain_03)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_stripes_01)
+singleton Material(Mat_concrete_stripes_01)
 {
    mapTo = "concrete_stripes_01";
    materialTag0 = "concrete";
@@ -191,7 +191,7 @@ singleton Material(concrete_stripes_01)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_stripes_02)
+singleton Material(Mat_concrete_stripes_02)
 {
    mapTo = "concrete_stripes_02";
    materialTag0 = "concrete";
@@ -208,7 +208,7 @@ singleton Material(concrete_stripes_02)
    footstepSoundId = "0";
 };
 
-singleton Material(concrete_stripes_03)
+singleton Material(Mat_concrete_stripes_03)
 {
    mapTo = "concrete_stripes_03";
    materialTag0 = "concrete";

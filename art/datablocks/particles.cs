@@ -261,10 +261,11 @@ datablock ParticleData(bloodBulletDirtSpray)
    colors[2] = "0.322835 0 0.00787402 0.291339";
    sizes[0] = "0.0976622";
    sizes[1] = "0.497467";
-   times[1] = "0.498039";
+   sizes[2] = "1";
+   times[0] = "0.498039";
+   times[1] = "1";
    times[2] = "1";
    inheritedVelFactor = "0.299413";
-   sizes[2] = "0.997986";
 };
 
     datablock ParticleEmitterData(bloodBulletDirtSprayEmitter)  

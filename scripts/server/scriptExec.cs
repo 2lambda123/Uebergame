@@ -56,4 +56,4 @@ exec("./turret.cs");
 // Load our gametypes
 exec("./gameTypes/gameCore.cs"); // This is the 'core' of the gametype functionality.
 exec("./gameTypes/gameDM.cs"); // Overrides GameCore with DeathMatch functionality.
-exec("./gameTypes/gamePaintballDM.cs"); //comment this out to deactivate paintball
+//exec("./gameTypes/gamePaintballDM.cs"); //comment this out to deactivate paintball

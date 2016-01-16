@@ -1,4 +1,4 @@
-singleton Material(light_white_01)
+singleton Material(Mat_light_white_01)
 {
    mapTo = "light_white_01";
    materialTag0 = "light";

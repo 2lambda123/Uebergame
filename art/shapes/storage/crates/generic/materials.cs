@@ -1,5 +1,5 @@
 
-singleton Material(generic_crate_01_b)
+singleton Material(Mat_generic_crate_01_b)
 {
    mapTo = "generic_crate_01_b";
    diffuseMap[0] = "art/shapes/storage/crates/generic/generic_crate_01_b_D.dds";
@@ -11,7 +11,7 @@ singleton Material(generic_crate_01_b)
    materialTag0 = "Miscellaneous";
 };
 
-singleton Material(generic_crate_01_a)
+singleton Material(Mat_generic_crate_01_a)
 {
    mapTo = "generic_crate_01_a";
    diffuseMap[0] = "art/shapes/storage/crates/generic/generic_crate_01_a_D.dds";

@@ -1,4 +1,4 @@
-singleton Material(marble_blotchy_01)
+singleton Material(Mat_marble_blotchy_01)
 {
    mapTo = "marble_blotchy_01";
    materialTag0 = "marble";

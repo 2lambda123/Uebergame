@@ -179,13 +179,14 @@ function onCyclePauseEnd()
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-
+/* //wo don't need this at the moment since we have a warning Gui now when leaving mission area
 function GameConnection::onLeaveMissionArea(%this)
 {
    // The control objects invoke this method when they
    // move out of the mission area.
 
    messageClient(%this, 'MsgClientJoin', '\c2Now leaving the mission area!');
+   
 }
 
 function GameConnection::onEnterMissionArea(%this)
@@ -194,8 +195,9 @@ function GameConnection::onEnterMissionArea(%this)
    // move back into the mission area.
 
    messageClient(%this, 'MsgClientJoin', '\c2Now entering the mission area.');
+      
 }
-
+*/
 //-----------------------------------------------------------------------------
 
 function GameConnection::onDeath(%this, %sourceObject, %sourceClient, %damageType, %damLoc)

@@ -81,8 +81,8 @@ datablock ProximityMineData(ProxMine)
 
    autoTriggerDelay = 0;
    triggerOnOwner = true;
-   triggerRadius = 2.0;
-   triggerDelay = 1;
+   triggerRadius = 1.8;
+   triggerDelay = 1.1;
    triggerSound = MineTriggeredSound;
 
    explosionOffset = 0.1;

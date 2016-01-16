@@ -232,10 +232,9 @@ function MainMenuGui::onWake(%this)
        isObject(%this-->ExitButton))
       %this-->ExitButton.setVisible(false);
 }
-/* commented out until version number problem is solved
+
 function MainMenuGui::onWake(%this)
 {
    %header = "Version" SPC getVersionString();
    Version_Number.setText(%header);
 }
-*/

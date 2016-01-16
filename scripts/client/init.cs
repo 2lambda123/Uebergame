@@ -77,6 +77,7 @@ function initClient()
    exec("art/gui/chatHud.gui");
    exec("art/gui/playerList.gui");
    exec("art/gui/hudlessGui.gui");
+   exec("art/gui/missionAreaWarningHud.gui");
 
    // Load up the shell GUIs
    exec("art/gui/mainMenuGui.gui");

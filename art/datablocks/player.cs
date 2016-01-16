@@ -360,21 +360,23 @@ datablock ParticleEmitterData( PlayerWakeEmitter )
 
 datablock ParticleData( PlayerSplashParticle )
 {
-   dragCoefficient      = 1;
-   gravityCoefficient   = 0.2;
-   inheritedVelFactor   = 0.2;
-   constantAcceleration = -0.0;
+   dragCoefficient      = "0.997067";
+   gravityCoefficient   = "0.197803";
+   inheritedVelFactor   = "0.199609";
+   constantAcceleration = "0";
    lifetimeMS           = 600;
    lifetimeVarianceMS   = 0;
-   colors[0]     = "0.7 0.8 1.0 1.0";
-   colors[1]     = "0.7 0.8 1.0 0.5";
-   colors[2]     = "0.7 0.8 1.0 0.0";
-   sizes[0]      = 0.5;
-   sizes[1]      = 0.5;
-   sizes[2]      = 0.5;
+   colors[0]     = "0.692913 0.795276 1 1";
+   colors[1]     = "0.692913 0.795276 1 0.496063";
+   colors[2]     = "0.692913 0.795276 1 0";
+   sizes[0]      = "0.497467";
+   sizes[1]      = "0.497467";
+   sizes[2]      = "0.497467";
    times[0]      = 0.0;
-   times[1]      = 0.5;
+   times[1]      = "0.498039";
    times[2]      = 1.0;
+   textureName = "art/particles/splash.png";
+   animTexName = "art/particles/splash.png";
 };
 
 datablock ParticleEmitterData( PlayerSplashEmitter )

@@ -1,4 +1,4 @@
-singleton Material(door_garage_01)
+singleton Material(Mat_door_garage_01)
 {
    mapTo = "door_garage_01";
    materialTag0 = "door";
@@ -16,7 +16,7 @@ singleton Material(door_garage_01)
    footstepSoundId = "0";
 };
 
-singleton Material(door_warehouse_02)
+singleton Material(Mat_door_warehouse_02)
 {
    mapTo = "door_warehouse_02";
    materialTag0 = "door";

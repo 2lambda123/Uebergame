@@ -1,4 +1,4 @@
-singleton Material(wallpaper_odd_01)
+singleton Material(Mat_wallpaper_odd_01)
 {
    mapTo = "wallpaper_odd_01";
    materialTag0 = "wallpaper";

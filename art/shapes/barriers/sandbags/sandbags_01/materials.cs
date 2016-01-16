@@ -1,5 +1,5 @@
 
-singleton Material(sandbag_01)
+singleton Material(Mat_sandbag_01)
 {
    mapTo = "sandbag_01";
    diffuseColor[0] = "0.8 0.8 0.8 1";

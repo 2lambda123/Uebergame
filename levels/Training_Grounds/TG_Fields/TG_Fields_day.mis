@@ -1655,7 +1655,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new DecalRoad() {
-      Material = "road_asphalt_stripes_01";
+      Material = "Mat_road_asphalt_stripes_01";
       textureLength = "10";
       breakAngle = "3";
       renderPriority = "20";
@@ -1671,7 +1671,7 @@ new SimGroup(MissionGroup) {
       Node = "217.031296 32.299290 0.000000 10.000000";
    };
    new DecalRoad() {
-      Material = "road_asphalt_small_01";
+      Material = "Mat_road_asphalt_small_01";
       textureLength = "5";
       breakAngle = "3";
       renderPriority = "5";
@@ -1688,7 +1688,7 @@ new SimGroup(MissionGroup) {
       Node = "32.233624 154.057465 0.000000 5.000000";
    };
    new DecalRoad() {
-      Material = "road_asphalt_small_01";
+      Material = "Mat_road_asphalt_small_01";
       textureLength = "5";
       breakAngle = "3";
       renderPriority = "5";
@@ -1707,7 +1707,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1727,7 +1727,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1747,7 +1747,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1767,7 +1767,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1787,7 +1787,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1807,7 +1807,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1827,7 +1827,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1847,7 +1847,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1867,7 +1867,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1887,7 +1887,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1907,7 +1907,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_orange.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_orange.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1927,7 +1927,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_orange.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_orange.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1947,7 +1947,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_orange.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_orange.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1967,7 +1967,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_orange.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_orange.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -1987,7 +1987,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2007,7 +2007,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -2027,7 +2027,7 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/urban/poles/road_pole_01_white.dts";
+         shapeName = "art/shapes/barriers/poles/road_pole_01_white.dts";
          playAmbient = "1";
          meshCulling = "0";
          originSort = "0";
@@ -3473,7 +3473,7 @@ new SimGroup(MissionGroup) {
       };
    };
    new GroundCover(grass02low) {
-      Material = "groundcover_grass_02_low";
+      Material = "Mat_groundcover_grass_02_low";
       radius = "30";
       dissolveRadius = "25";
       reflectScale = "0.25";
@@ -3614,7 +3614,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new GroundCover(grass02low_2) {
-      Material = "groundcover_grass_02_low";
+      Material = "Mat_groundcover_grass_02_low";
       radius = "100";
       dissolveRadius = "100";
       reflectScale = "0.25";
@@ -3755,7 +3755,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new GroundCover(grass01) {
-      Material = "groundcover_grass_01_dry";
+      Material = "Mat_groundcover_grass_01_dry";
       radius = "120";
       dissolveRadius = "100";
       reflectScale = "0.25";

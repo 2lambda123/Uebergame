@@ -1,4 +1,4 @@
-singleton Material(bricks_classic_01)
+singleton Material(Mat_bricks_classic_01)
 {
    mapTo = "bricks_classic_01";
    materialTag0 = "bricks";
@@ -15,7 +15,7 @@ singleton Material(bricks_classic_01)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_classic_02)
+singleton Material(Mat_bricks_classic_02)
 {
    mapTo = "bricks_classic_02";
    materialTag0 = "bricks";
@@ -33,7 +33,7 @@ singleton Material(bricks_classic_02)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_cinder_01)
+singleton Material(Mat_bricks_cinder_01)
 {
    mapTo = "bricks_cinder_01";
    materialTag0 = "bricks";
@@ -50,7 +50,7 @@ singleton Material(bricks_cinder_01)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_clean_01)
+singleton Material(Mat_bricks_clean_01)
 {
    mapTo = "bricks_clean_01";
    materialTag0 = "bricks";
@@ -67,7 +67,7 @@ singleton Material(bricks_clean_01)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_clean_02)
+singleton Material(Mat_bricks_clean_02)
 {
    mapTo = "bricks_clean_02";
    materialTag0 = "bricks";
@@ -85,7 +85,7 @@ singleton Material(bricks_clean_02)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_decay_01)
+singleton Material(Mat_bricks_decay_01)
 {
    mapTo = "bricks_decay_01";
    materialTag0 = "bricks";
@@ -103,7 +103,7 @@ singleton Material(bricks_decay_01)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_decay_01)
+singleton Material(Mat_bricks_decay_01)
 {
    mapTo = "bricks_decay_01";
    materialTag0 = "bricks";
@@ -120,7 +120,7 @@ singleton Material(bricks_decay_01)
    footstepSoundId = "0";
 };
 
-singleton Material(bricks_facade_01)
+singleton Material(Mat_bricks_facade_01)
 {
    mapTo = "bricks_facade_01";
    materialTag0 = "bricks";

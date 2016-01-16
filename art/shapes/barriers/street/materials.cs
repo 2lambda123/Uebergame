@@ -1,5 +1,5 @@
 
-singleton Material(street_barrier_01_a_street_barrier_01)
+singleton Material(Mat_street_barrier_01)
 {
    mapTo = "street_barrier_01";
    diffuseMap[0] = "art/shapes/barriers/street/street_barrier_01_diffuse.dds";

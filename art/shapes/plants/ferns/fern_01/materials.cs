@@ -1,5 +1,5 @@
 
-singleton Material(fern_01)
+singleton Material(Mat_fern_01)
 {
    mapTo = "fern_01";
    diffuseColor[0] = "1 1 1 1";

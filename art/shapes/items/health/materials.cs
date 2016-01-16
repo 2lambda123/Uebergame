@@ -1,4 +1,4 @@
-singleton Material(medpack_01)
+singleton Material(Mat_medpack_01)
 {
    mapTo = "medpack_01";
    diffuseColor[0] = "0.64 0.64 0.64 1";

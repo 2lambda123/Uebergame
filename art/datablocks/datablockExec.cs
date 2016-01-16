@@ -45,6 +45,7 @@ exec("./health.cs");
 exec("./weapon.cs");
 exec("./weapons/grenadefx.cs");
 exec("./weapons/rocketfx.cs");
+exec("./weapons/bulletImpact.cs");
 
 // Load the weapon datablocks
 exec("./weapons/Lurker.cs");
