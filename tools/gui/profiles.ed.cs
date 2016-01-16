@@ -138,7 +138,7 @@ new GuiControlProfile( ToolsGuiGroupBorderProfile )
    border = false;
    opaque = false;
    hasBitmapArray = true;
-   bitmap = "./images/group-border";
+   bitmap = "art/core/gui/images/group-border";
    category = "Tools";
 };
 
@@ -148,7 +148,7 @@ new GuiControlProfile( ToolsGuiTabBorderProfile )
    border = false;
    opaque = false;
    hasBitmapArray = true;
-   bitmap = "./images/tab-border";
+   bitmap = "art/core/gui/images/tab-border";
    category = "Tools";
 };
 
@@ -220,7 +220,7 @@ new GuiControlProfile (ToolsGuiWindowProfile)
 if( !isObject( ToolsGuiToolbarWindowProfile ) )
 new GuiControlProfile(ToolsGuiToolbarWindowProfile : ToolsGuiWindowProfile)
 {
-      bitmap = "./images/toolbar-window";
+      bitmap = "art/core/gui/images/toolbar-window";
       text = "";
       category = "Tools";
 }; 
@@ -381,7 +381,7 @@ new GuiControlProfile( ToolsGuiNumericTextEditProfile : ToolsGuiTextEditProfile 
 if( !isObject( ToolsGuiNumericDropSliderTextProfile ) )
 new GuiControlProfile( ToolsGuiNumericDropSliderTextProfile : ToolsGuiTextEditProfile )
 {
-   bitmap = "./images/textEditSliderBox";
+   bitmap = "art/core/gui/images/textEditSliderBox";
    category = "Tools";
 };
 
@@ -390,7 +390,7 @@ new GuiControlProfile( ToolsGuiRLProgressBitmapProfile )
 {
    border = false;
    hasBitmapArray = true;
-   bitmap = "./images/rl-loadingbar";
+   bitmap = "art/core/gui/images/rl-loadingbar";
    category = "Tools";
 };
 

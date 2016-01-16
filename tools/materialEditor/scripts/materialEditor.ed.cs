@@ -1946,7 +1946,7 @@ function MaterialEditorGui::createNewMaterial( %this )
    %material = getUniqueName( "newMaterial" );
    new Material(%material) 
    {
-      diffuseMap[0] = "core/art/warnmat";
+      diffuseMap[0] = "art/core/warnmat";
       mapTo = "unmapped_mat";
       parentGroup = RootGroup;
    };
@@ -1977,7 +1977,7 @@ function MaterialEditorGui::deleteMaterial( %this )
       %toMaterial = getUniqueName( "newMaterial" );
       new Material(%toMaterial) 
       {
-         diffuseMap[0] = "core/art/warnmat";
+         diffuseMap[0] = "art/core/warnmat";
          mapTo = "unmapped_mat";
          parentGroup = RootGroup;
       };
@@ -1995,7 +1995,7 @@ function MaterialEditorGui::deleteMaterial( %this )
          %toMaterial = getUniqueName( "newMaterial" );
          new Material(%toMaterial) 
          {
-            diffuseMap[0] = "core/art/warnmat";
+            diffuseMap[0] = "art/core/warnmat";
             mapTo = "unmapped_mat";
             parentGroup = RootGroup;
          };    
@@ -2010,7 +2010,7 @@ function MaterialEditorGui::deleteMaterial( %this )
    %newMaterial = getUniqueName( "newMaterial" );
    new Material(%newMaterial) 
    {
-      diffuseMap[0] = "core/art/warnmat";
+      diffuseMap[0] = "art/core/warnmat";
       mapTo = "unmapped_mat";
       parentGroup = RootGroup;
    };

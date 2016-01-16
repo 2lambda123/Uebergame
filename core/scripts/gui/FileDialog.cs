@@ -254,7 +254,7 @@ function PlatformFileDialog::addDir( %this, %dir )
    %item = %this.getNewItem();
    %item.setText( %dir );
    %item.isDir = true;
-   %item.iconBitmap = "core/art/gui/images/folder";
+   %item.iconBitmap = "art/core/gui/images/folder";
    %item.textLocation = "left";
    %item.iconLocation = "left";
    %item.textMargin = 24;

@@ -112,8 +112,8 @@ singleton CustomMaterial( UnderwaterMat )
    // This is to allow different WaterObject instances
    // to use this same material but override these textures
    // per instance.   
-   //sampler["bumpMap"] = "core/art/water/noise02";
-   //sampler["foamMap"] = "core/art/water/foam";
+   //sampler["bumpMap"] = "art/core/water/noise02";
+   //sampler["foamMap"] = "art/core/water/foam";
 
    sampler["prepassTex"] = "#prepass";
    sampler["refractBuff"] = "$backbuff";   
@@ -168,7 +168,7 @@ singleton CustomMaterial( WaterBasicMat )
    // This is to allow different WaterObject instances
    // to use this same material but override these textures
    // per instance.     
-   //sampler["bumpMap"] = "core/art/water/noise02";
+   //sampler["bumpMap"] = "art/core/water/noise02";
    //sampler["skyMap"] = "$cubemap";   
    
    //sampler["prepassTex"] = "#prepass";
@@ -196,7 +196,7 @@ singleton CustomMaterial( UnderwaterBasicMat )
    // This is to allow different WaterObject instances
    // to use this same material but override these textures
    // per instance.  
-   //sampler["bumpMap"] = "core/art/water/noise02";
+   //sampler["bumpMap"] = "art/core/water/noise02";
    //samplers["skyMap"] = "$cubemap";  
 
    //sampler["prepassTex"] = "#prepass";

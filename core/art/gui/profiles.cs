@@ -102,7 +102,7 @@ new GuiControlProfile( GuiGroupBorderProfile )
    border = false;
    opaque = false;
    hasBitmapArray = true;
-   bitmap = "./images/group-border";
+   bitmap = "art/core/gui/images/group-border";
    category = "Core";
 };
 
@@ -112,7 +112,7 @@ new GuiControlProfile( GuiTabBorderProfile )
    border = false;
    opaque = false;
    hasBitmapArray = true;
-   bitmap = "./images/tab-border";
+   bitmap = "art/core/gui/images/tab-border";
    category = "Core";
 };
 
@@ -164,7 +164,7 @@ new GuiControlProfile (GuiWindowProfile)
    bevelColorHL = "255 255 255";
    bevelColorLL = "0 0 0";
    text = "untitled";
-   bitmap = "core/art/gui/images/window";
+   bitmap = "art/core/gui/images/window";
    textOffset = "8 4";
    hasBitmapArray = true;
    justify = "left";
@@ -288,7 +288,7 @@ if( !isObject( GuiTextEditProfile ) )
 new GuiControlProfile( GuiTextEditProfile )
 {
    opaque = true;
-   bitmap = "core/art/gui/images/textEdit";
+   bitmap = "art/core/gui/images/textEdit";
    hasBitmapArray = true; 
    border = -2; // fix to display textEdit img
    //borderWidth = "1";  // fix to display textEdit img
@@ -329,7 +329,7 @@ new GuiControlProfile( GuiProgressBitmapProfile )
 {
    border = false;
    hasBitmapArray = true;
-   bitmap = "./images/loadingbar";
+   bitmap = "art/core/gui/images/loadingbar";
    category = "Core";
 };
 
@@ -344,7 +344,7 @@ new GuiControlProfile( GuiProgressTextProfile )
 };
 
 if( !isObject( GuiButtonProfile ) )
-new GuiControlProfile( GuiMenuButtonProfile )
+new GuiControlProfile( GuiButtonProfile )
 {
    opaque = true;
    border = "1";
@@ -414,7 +414,7 @@ new GuiControlProfile( GuiButtonTabProfile )
    fixedExtent = 0;
    justify = "center";
    canKeyFocus = false;
-   bitmap = "core/art/gui/images/buttontab";
+   bitmap = "art/core/gui/images/buttontab";
    category = "Core";
    fillColor = "72 72 72 255";
    fillColorHL = "116 116 116 255";
@@ -443,7 +443,7 @@ new GuiControlProfile( GuiCheckBoxProfile )
 	fontColorNA = "128 128 128 255";
    fixedExtent = 1;
    justify = "left";
-   bitmap = "core/art/gui/images/checkbox";
+   bitmap = "art/core/gui/images/checkbox";
    hasBitmapArray = true;
    category = "Core";
    fillColorHL = "128 128 128 255";
@@ -469,7 +469,7 @@ new GuiControlProfile( GuiScrollProfile )
    fontColorHL = "255 255 255 255";
    //borderColor = GuiDefaultProfile.borderColor;
    border = "1";
-   bitmap = "core/art/gui/images/scrollBar";
+   bitmap = "art/core/gui/images/scrollBar";
    hasBitmapArray = true;
    category = "Core";
    fontColors[0] = "180 180 180 255";
@@ -492,14 +492,14 @@ new GuiControlProfile( GuiOverlayProfile )
 if( !isObject( GuiSliderProfile ) )
 new GuiControlProfile( GuiSliderProfile )
 {
-   bitmap = "./images/slider";
+   bitmap = "art/core/gui/images/slider";
    category = "Core";
 };
 
 if( !isObject( GuiSliderBoxProfile ) )
 new GuiControlProfile( GuiSliderBoxProfile )
 {
-   bitmap = "./images/slider-w-box";
+   bitmap = "art/core/gui/images/slider-w-box";
    category = "Core";
 };
 
@@ -517,7 +517,7 @@ new GuiControlProfile( GuiPopupMenuItemBorder : GuiButtonProfile )
    fontColorNA = "24 24 24 255";
    justify = "center";
    canKeyFocus = false;
-   bitmap = "core/art/gui/images/button";
+   bitmap = "art/core/gui/images/button";
    category = "Core";
    borderColor = "128 128 128 255";
    fontColors[0] = "196 196 196 255";
@@ -561,7 +561,7 @@ new GuiControlProfile( GuiTabBookProfile : GuiDefaultProfile )
    border = 0;
    borderThickness = "1";
    fixedExtent = 1;
-   bitmap = "core/art/gui/images/tab";
+   bitmap = "art/core/gui/images/tab";
    hasBitmapArray = "0";
    profileForChildren = GuiPopupMenuItemBorder;
    fillColor = "21 21 21 255";
@@ -595,7 +595,7 @@ if( !isObject( GuiPopUpMenuProfile ) )
 new GuiControlProfile( GuiPopUpMenuProfile : GuiPopUpMenuDefault )
 {
    textOffset         = "6 4";
-   bitmap             = "core/art/gui/images/dropDown";
+   bitmap             = "art/core/gui/images/dropDown";
    hasBitmapArray     = true;
    border             = "0";
    profileForChildren = GuiPopUpMenuDefault;
@@ -630,7 +630,7 @@ new GuiControlProfile( GuiTabBookProfile )
    fontType = "Arial";
    fontSize = 14;
    justify = "center";
-   bitmap = "./images/tab";
+   bitmap = "art/core/gui/images/tab";
    tabWidth = 64;
    tabHeight = 24;
    tabPosition = "Top";
@@ -647,7 +647,7 @@ new GuiControlProfile( GuiTabPageProfile : GuiDefaultProfile )
    fontType = "Arial";
    fontSize = 10;
    justify = "center";
-   bitmap = "core/art/gui/images/tab";
+   bitmap = "art/core/gui/images/tab";
    opaque = false;
    fillColor = "21 21 21 255";
    category = "Core";
