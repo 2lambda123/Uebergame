@@ -177,7 +177,7 @@
                         sinkAllKeyEvents = "0";
                         password = "0";
                         passwordMask = "*";
-                        text = "tools/levels/BlankRoom.mis";
+                        text = "tools/levels/Construct.mis";
                         maxLength = "1024";
                         margin = "0 0 0 0";
                         padding = "0 0 0 0";

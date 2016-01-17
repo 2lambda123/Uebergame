@@ -21,5 +21,7 @@ If you want to do a bug report, create a copy of it, since it gets overwritten t
 
 <font:Arial Bold:16>Developer features
 <font:Arial:16>Some features are intended for developers only, so they require some more experience to use.
-This applies to the World Editor (F11) and the GUI Editor (F10) which are used to create levels and modifications for the game.
-The Console (F9) and the Metrics (F2) are for debugging.
+"F2" opens the metrics display, which shows you how fast the game runs in frames per second, "alt F2" opens the ueber-metrics display with much more information.
+"F9" opens the games console, it is used for debugging.
+"F11" opens the WorldEditor, which is used to create levels for the game as well as the ability to modify some game functions,
+but you better do that with a copied version of your gamefolder, otherwise you may break your game.

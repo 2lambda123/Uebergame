@@ -98,7 +98,7 @@ function RyderProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
    // Apply damage to the object all shape base objects
    // a random value between 0 and the directDamage gets picked and a fixed damage added
    if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,getRandom(%this.directDamage)+20,"RyderProjectile");
+      %col.damage(%obj,%pos,getRandom(%this.directDamage)+22,"RyderProjectile");
 }
 
 //-----------------------------------------------------------------------------

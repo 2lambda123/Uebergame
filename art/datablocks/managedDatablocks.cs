@@ -44,10 +44,10 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    shapeNameFP[0] = "";
    availableSkins =  "base blue red green yellow";
    boundingBox = "0.75 0.75 1.8";
-   crouchBoundingBox = "0.75 0.75 1.3";
+   crouchBoundingBox = "0.75 0.75 1.25";
    mainWeapon = "PaintballMarkerBlue";  
    renderFirstPerson = "1";
-   maxInvPaintballClip = "5";
+   maxInvPaintballClip = "10";
    maxInvPaintballMarkerRed = "1";
    maxInvPaintballMarkerYellow = "1";
    maxInvPaintballMarkerBlue = "1";

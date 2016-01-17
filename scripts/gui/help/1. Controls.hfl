@@ -26,13 +26,16 @@ Pagedown		Scroll down messages
 
 <font:Arial Bold:16>Other functions<font:Arial:16>
 
-n		Net graph, shows ping etc
-alt enter		Fullscreen
+ctrl n		Net graph, shows ping etc
+alt enter   Fullscreen
+alt h       Hides the HUD (also hides exit menu, so put back on, if you want to exit)
+v           Vanity, enables free look in third person
 
 ESC		Exit menu
 
 F1		Help menu
-F2		Show FPS and more
+F2		Show metrics (FPS)
+alt F2  Show ueber-metrics (FPS+much more)
 F3		Third Person
 F5		Screenshot
 alt F5		Screenshot without HUD
@@ -40,7 +43,6 @@ alt F6		start recording Demo
 alt F7		stop recording Demo
 F8		Options menu
 F9		Console
-F10		GUI Editor
 F11		World Editor
 
 

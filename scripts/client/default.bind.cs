@@ -632,10 +632,17 @@ GlobalActionMap.bind(keyboard, "F8", bringUpOptions);
 function showMetrics(%val)
 {
    if(%val)
+      metrics("fps");
+}
+
+function showUeberMetrics(%val)
+{
+   if(%val)
       metrics("fps gfx shadow sfx terrain groundcover forest net");
 }
 
 GlobalActionMap.bind(keyboard, "F2", showMetrics);
+GlobalActionMap.bind(keyboard, "alt F2", showUeberMetrics);
 
 //------------------------------------------------------------------------------
 //
@@ -671,7 +678,7 @@ GlobalActionMap.bind(keyboard, "F9", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 GlobalActionMap.bindCmd(keyboard, "F1", "", "contextHelp();");
-moveMap.bindCmd(keyboard, "n", "toggleNetGraph();", "");
+moveMap.bindCmd(keyboard, "ctrl n", "toggleNetGraph();", "");
 
 // ----------------------------------------------------------------------------
 // Useful vehicle stuff

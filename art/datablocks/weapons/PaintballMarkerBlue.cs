@@ -247,7 +247,7 @@ datablock ItemData(PaintballClip)
 
    // Basic Item properties
    shapeFile = "art/shapes/weapons/paintball/paintball_marker_01_clip.dts";
-   mass = 5;
+   mass = 8;
    elasticity = 0.2;
    friction = 0.6;
 
@@ -274,7 +274,7 @@ datablock ItemData(PaintballAmmo)
 
    // Dynamic properties defined by the scripts
    pickUpName = "Paintball Ammo";
-   maxInventory = 100;
+   maxInventory = 70;
    clip = PaintballClip;
 };
 

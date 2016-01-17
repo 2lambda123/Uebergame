@@ -414,11 +414,11 @@ function PlayerData::onDisabled(%this, %obj, %state)
    if (isObject(%item))
    {
       %amount = %obj.getInventory(%item.image.ammo);
-      
+
 //      if (!%item.image.clip)
 //         warn("No clip exists to throw for item ", %item); //duion #rewrite
-//      if(%amount)
-         %obj.throw(%item.image.clip, 1);
+         if(%amount)
+         %obj.throw(%item.image.clip, 2);
    }
 
    %obj.playDeathCry();
