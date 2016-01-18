@@ -77,11 +77,9 @@ datablock ParticleData(CheetahTireParticle)
    sizes[0]             = "0.997986";
    sizes[1]             = "3.99805";
    sizes[2]             = "1.0";
-   sizes[3]             = "1.0";
    times[0]             = "0.0";
    times[1]             = "1";
    times[2]             = "1";
-   times[3]             = "1";
 };
 
 datablock ParticleEmitterData(CheetahTireEmitter)

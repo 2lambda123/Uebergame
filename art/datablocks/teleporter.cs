@@ -54,11 +54,10 @@ datablock ParticleData(TeleporterFlash : DefaultParticle)
    colors[0] = "0.678431 0.686275 0.913726 0.207";
    colors[1] = "0 0.543307 1 0.759";
    colors[2] = "0.0472441 0.181102 0.92126 0.838";
-   colors[3] = "0.141732 0.0393701 0.944882 0";
    sizes[0] = "0";
    sizes[1] = "0";
    sizes[2] = "4";
-   sizes[3] = "0.1";
+   times[0] = "0";   
    times[1] = "0.166667";
    times[2] = "0.666667";
    lifetimeVarianceMS = "0";
@@ -88,17 +87,18 @@ datablock ParticleData(TeleporterParticles)
    colors[0]     = "0.0980392 0.788235 0.92549 1";
    colors[1]     = "0.0627451 0.478431 0.952941 1";
    colors[2]     = "0.0509804 0.690196 0.964706 1";
+   colors[3]     = "0.694118 0.843137 0.945098 0";
    sizes[0]      = "1";
    sizes[1]      = "1";
    sizes[2]      = "1";
+   sizes[3]      = "1";
    times[0]      = 0.0;
    times[1]      = "0.415686";
    times[2]      = "0.74902";
+   times[3]      = "1";
    animTexName = "art/particles/Streak.png";
    inheritedVelFactor = "0.0998043";
    constantAcceleration = "-2";
-   colors[3] = "0.694118 0.843137 0.945098 0";
-   sizes[3] = "1";
 };
 
 // Particle Emitter to be played when a teleport occours.

@@ -49,11 +49,10 @@ datablock ParticleData(PaintDustGreen)
    sizes[1]      = "0.698895";
    sizes[2]      = "1.0987";
 
-   times[0]      = 0.0;
+   times[0]      = "0.1";
    times[1]      = "0.494118";
-   times[2]      = 1.0;
+   times[2]      = "1.0";
    animTexName = "art/particles/impactDrops.png";
-   colors[3] = "0.996078 0.992157 0.992157 1";
 };
 
 datablock ParticleEmitterData(PaintExplosionGreenEmitter)

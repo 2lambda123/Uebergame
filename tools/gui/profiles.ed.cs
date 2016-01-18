@@ -220,7 +220,7 @@ new GuiControlProfile (ToolsGuiWindowProfile)
 if( !isObject( ToolsGuiToolbarWindowProfile ) )
 new GuiControlProfile(ToolsGuiToolbarWindowProfile : ToolsGuiWindowProfile)
 {
-      bitmap = "art/core/gui/images/toolbar-window";
+      bitmap = "tools/gui/images/toolbar-window";
       text = "";
       category = "Tools";
 }; 

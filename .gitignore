@@ -23,6 +23,7 @@ console.log
 #binaries
 *.exe
 *.dll
+Uebergame
 
 #settings
 tools/settings.xml

@@ -68,7 +68,7 @@ datablock ParticleData(TireParticle)
    colors[3] = "0.278431 0.207843 0.113725 0.137";
    times[1] = "0.329412";
    times[2] = "0.658824";
-   
+   times[3] = "0.858824"; 
 };
 
 datablock ParticleEmitterData(TireEmitter)

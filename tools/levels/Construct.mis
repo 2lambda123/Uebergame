@@ -26,7 +26,7 @@ new SimGroup(MissionGroup) {
          levelName = "Construct";
    };
    new SkyBox(theSky) {
-      Material = "BlankWhite";
+      Material = "Mat_BlankWhite";
       drawBottom = "1";
       fogBandHeight = "0";
       position = "0 0 0";
@@ -94,7 +94,7 @@ new SimGroup(MissionGroup) {
       squareSize = "128";
       scaleU = "12";
       scaleV = "12";
-      Material = "BlankWhite";
+      Material = "Mat_BlankWhite";
       canSave = "1";
       canSaveDynamicFields = "1";
          enabled = "1";

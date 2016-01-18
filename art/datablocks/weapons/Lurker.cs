@@ -104,7 +104,6 @@ datablock ParticleData(GunFireSmoke)
    times[1]      = "0.494118";
    times[2]      = 1.0;
    animTexName = "art/particles/smoke";
-   colors[3] = "0.643137 0.643137 0.643137 0.34";
 };
 
 datablock ParticleEmitterData(GunFireSmokeEmitter)
@@ -152,7 +151,6 @@ datablock ParticleData(BulletDirtDust)
    times[1]      = "0.494118";
    times[2]      = 1.0;
    animTexName = "art/particles/impact";
-   colors[3] = "0.647059 0.611765 0.568627 1";
 };
 
 datablock ParticleEmitterData(BulletDirtDustEmitter)

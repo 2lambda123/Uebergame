@@ -24,6 +24,13 @@
 // loaded on both clients & dedicated servers.  If the server mod
 // is not loaded on a client, then the master must be defined. 
 // $pref::Master[0] = "2:master.garagegames.com:28002";
+$pref::TSShapeConstructor::CapsuleShapePath = "art/core/shapes/unit_capsule.dts";
+$pref::TSShapeConstructor::CubeShapePath = "art/core/shapes/unit_cube.dts";
+$pref::TSShapeConstructor::SphereShapePath = "art/core/shapes/unit_sphere.dts";
+$pref::Video::missingTexturePath = "art/core/missingTexture";
+$pref::Video::unavailableTexturePath = "art/core/unavailable";
+$pref::Video::warningTexturePath = "art/core/warnmat";
+
 $pref::debug::consoleSpam = "1";
 $pref::debug::FPV = "1";
 $pref::debug::showFramerate = "1";

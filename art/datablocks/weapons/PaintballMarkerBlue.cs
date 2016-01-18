@@ -100,18 +100,18 @@ datablock ParticleData(PaintballMarkerSmoke)
    colors[0]     = "0.996078 0.996078 0.996078 0.556";
    colors[1]     = "0.905882 0.905882 0.905882 0.456";
    colors[2]     = "0.8 0.8 0.8 0.307";
+   colors[3]     = "0.996078 0.996078 0.996078 0.245";
 
    sizes[0]      = "0.35";
    sizes[1]      = "0.595129";
    sizes[2]      = "0.9";
+   sizes[3]      = "1.2";
 
    times[0]      = "0.208333";
    times[1]      = "0.395833";
    times[2]      = "0.645833";
+   times[3]      = "0.9375";
    animTexName = "art/particles/smoke";
-   colors[3] = "0.996078 0.996078 0.996078 0.245";
-   sizes[3] = "1.2";
-   times[3] = "0.9375";
 };
 
 datablock ParticleEmitterData(PaintballMarkerSmokeEmitter)
@@ -154,11 +154,10 @@ datablock ParticleData(PaintDustBlue)
    sizes[1]      = "0.7";
    sizes[2]      = "1.1";
 
-   times[0]      = 0.0;
+   times[0]      = "0.1";
    times[1]      = "0.494118";
-   times[2]      = 1.0;
+   times[2]      = "1.0";
    animTexName = "art/particles/impactDrops.png";
-   colors[3] = "0.996078 0.992157 0.992157 1";
 };
 
 datablock ParticleEmitterData(PaintExplosionBlueEmitter)

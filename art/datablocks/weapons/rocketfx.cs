@@ -47,7 +47,6 @@ datablock ParticleData(RocketDebrisTrailParticle)
    times[1] = 0.498039;
    times[2] = 1.0;
    animTexName = "art/particles/impact";
-   times[3] = "1";
 };
 
 datablock ParticleEmitterData(RocketDebrisTrailEmitter)
@@ -277,7 +276,6 @@ datablock ParticleData(RocketExpFire)
    sizes[2] = "3.99805";
    times[1] = "0.392157";
    times[2] = "1";
-   times[3] = "1";
 };
 
 datablock ParticleEmitterData(RocketExpFireEmitter)
@@ -307,7 +305,6 @@ datablock ParticleData(RocketExpFireball)
    sizes[2] = "2.99701";
    times[1] = "0.498039";
    times[2] = "1";
-   times[3] = "1";
    gravityCoefficient = "-1";
 };
 
@@ -342,7 +339,6 @@ datablock ParticleData(RocketExpSmoke)
    sizes[2] = "7.99915";
    times[1] = "0.494118";
    times[2] = "1";
-   times[3] = "1";
 };
 
 datablock ParticleEmitterData(RocketExpSmokeEmitter)
@@ -371,7 +367,6 @@ datablock ParticleData(RocketExpSparks)
    times[0] = "0";
    times[1] = "0.34902";
    times[2] = "1";
-   times[3] = "1";
 };
 
 datablock ParticleEmitterData(RocketExpSparksEmitter)
@@ -406,9 +401,9 @@ datablock ParticleData(RocketExpSubFireParticles)
    sizes[0] = "0.997986";
    sizes[1] = "1.99902";
    sizes[2] = "2.99701";
+   times[0] = "0.198039";
    times[1] = "0.498039";
    times[2] = "1";
-   times[3] = "1";
 };
 
 datablock ParticleEmitterData(RocketExpSubFireEmitter)
@@ -438,9 +433,9 @@ datablock ParticleData(RocketExpSubSmoke)
    sizes[0] = "1.99902";
    sizes[1] = "3.99805";
    sizes[2] = "7.99915";
+   times[0] = "0.1";
    times[1] = "0.4";
    times[2] = "1";
-   times[3] = "1";
 };
 
 datablock ParticleEmitterData(RocketExpSubSmokeEmitter)

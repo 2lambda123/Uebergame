@@ -442,15 +442,16 @@ datablock ParticleData(LightPuff)
    spinRandomMax        = 35.0;
    colors[0]     = "0.854902 0.854902 0.854902 1";
    colors[1]     = "0.815686 0.803922 0.745098 0";
+   colors[2]     = "0.835294 0.835294 0.835294 1";
    sizes[0]      = "0.0976622";
    sizes[1]      = "0.799609";
+   sizes[2]      = "1";
    times[0]      = "0";
    times[1]      = 1.0;
-   times[2] = 1.0;
+   times[2]      = 1.0;
    textureName = "art/particles/dustParticle.png";
    animTexName = "art/particles/dustParticle.png";
-   colors[2] = "0.835294 0.835294 0.835294 1";
-   colors[3] = "0.898039 0.898039 0.898039 1";
+
 };
 
 datablock ParticleEmitterData(LightPuffEmitter)
@@ -487,17 +488,16 @@ datablock ParticleData(LiftoffDust)
    spinRandomMin        = -90.0;
    spinRandomMax        = 500.0;
    colors[0]     = "0.780392 0.74902 0.65098 1";
+   colors[1]     = "0.878431 0.870588 0.835294 1";
+   colors[2]     = "0.784314 0.784314 0.784314 1";
    sizes[0]      = "0.997986";
+   sizes[1]      = "0.997986";
+   sizes[2]      = "0.997986";
    times[0]      = "0";
+   times[1]      = "0.329412";
+   times[2]      = "0.658824";
    textureName = "art/particles/dustParticle";
    animTexName = "art/particles/dustParticle";
-   colors[1] = "0.878431 0.870588 0.835294 1";
-   colors[2] = "0.784314 0.784314 0.784314 1";
-   sizes[1] = "0.997986";
-   sizes[2] = "0.997986";
-   sizes[3] = "0.997986";
-   times[1] = "0.329412";
-   times[2] = "0.658824";
 };
 
 datablock ParticleEmitterData(LiftoffDustEmitter)

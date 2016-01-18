@@ -262,9 +262,9 @@ datablock ParticleData(bloodBulletDirtSpray)
    sizes[0] = "0.0976622";
    sizes[1] = "0.497467";
    sizes[2] = "1";
-   times[0] = "0.498039";
-   times[1] = "1";
-   times[2] = "1";
+   times[0] = 0.5;
+   times[1] = 0.9;
+   times[2] = 1;
    inheritedVelFactor = "0.299413";
 };
 
@@ -287,7 +287,7 @@ datablock ParticleData(bloodBulletDirtSpray)
        sizes[2]      = "1.19636";  
       
        times[0]      = 0.0;  
-       times[1]      = "0.494118";  
+       times[1]      = 0.5;  
        times[2]      = 1.0;  
        constantAcceleration = "-3";
        ejectionPeriodMS = "15";

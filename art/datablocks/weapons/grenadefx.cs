@@ -68,15 +68,16 @@ datablock ParticleData(GrenadeDebrisFireParticle)
    colors[0] = "1 0.590551 0.188976 0.0944882";
    colors[1] = "0.677165 0.590551 0.511811 0.496063";
    colors[2] = "0.645669 0.645669 0.645669 0";
+   colors[3] = "1 1 1 0.407";
    sizes[0] = 0.2;
    sizes[1] = 0.5;
    sizes[2] = 0.2;
+   sizes[3] = "0.5";
    times[0] = 0.0;
    times[1] = 0.494118;
    times[2] = 1.0;
+   times[3] = 1.0;
    animTexName = "art/particles/impact";
-   colors[3] = "1 1 1 0.407";
-   sizes[3] = "0.5";
 };
 
 datablock ParticleEmitterData(GrenadeDebrisFireEmitter)
@@ -312,17 +313,17 @@ datablock ParticleData(GrenadeExpFire)
    colors[0] = "0.886275 0.854902 0.733333 0.795276";
    colors[1] = "0.356863 0.34902 0.321569 0.266";
    colors[2] = "0.0235294 0.0235294 0.0235294 0.207";
+   colors[3] = "0 0 0 0";
    sizes[0] = 1;//2;
    sizes[1] = 5;
    sizes[2] = 7;//0.5;
+   sizes[3] = "10";
    times[0] = 0.0;
    times[1] = 0.25;
    times[2] = 0.5;
-   animTexName = "art/particles/fireball.png";
    times[3] = "1";
+   animTexName = "art/particles/fireball.png";
    dragCoefficient = "1.99902";
-   sizes[3] = "10";
-   colors[3] = "0 0 0 0";
 };
 
 datablock ParticleEmitterData(GrenadeExpFireEmitter)
@@ -354,15 +355,16 @@ datablock ParticleData(GrenadeExpDust)
    colors[0] = "0.992126 0.992126 0.992126 0.96063";
    colors[1] = "0.11811 0.11811 0.11811 0.929134";
    colors[2] = "0.00392157 0.00392157 0.00392157 0.362205";
+   colors[3] = "0.996078 0.996078 0.996078 0";
    sizes[0] = 1.59922;
    sizes[1] = 4.99603;
    sizes[2] = 9.99817;
+   sizes[3] = "15";
    times[0] = 0.0;
    times[1] = 0.494118;
    times[2] = 1.0;
+   times[3] = 1.0;
    animTexName = "art/particles/smoke.png";
-   colors[3] = "0.996078 0.996078 0.996078 0";
-   sizes[3] = "15";
 };
 
 datablock ParticleEmitterData(GrenadeExpDustEmitter)
@@ -481,8 +483,8 @@ datablock ParticleData(GrenadeExpSmoke)
    times[0] = 0;
    times[1] = 0.498039;
    times[2] = 1;
-   animTexName = "art/particles/smoke";
    times[3] = "1";
+   animTexName = "art/particles/smoke";
 };
 
 datablock ParticleEmitterData(GrenadeExpSmokeEmitter)
@@ -568,7 +570,6 @@ datablock ParticleData(GLWaterExpDust)
 
    times[0] = 0.0;
    times[1] = 1.0;
-   times[2] = 1.0;
 };
 
 datablock ParticleEmitterData(GLWaterExpDustEmitter)
