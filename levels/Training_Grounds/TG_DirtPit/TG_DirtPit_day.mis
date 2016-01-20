@@ -147,7 +147,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "195.234 175.828 0.12738";
+         position = "195.671 175.622 0.43107";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -327,7 +327,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "141.49 212.291 1.38757";
+         position = "141.499 212.394 1.38757";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -363,7 +363,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "146.121 230.389 1.38757";
+         position = "146.385 230.637 1.38757";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -543,7 +543,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "213.551 230.987 1.38757";
+         position = "214.19 231.847 1.4919";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -2641,7 +2641,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "196.088 199.662 0.152294";
-         rotation = "-0.90227 -0.303413 0.30635 95.4336";
+         rotation = "-0.90227 -0.303413 0.30635 95.4337";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -2701,7 +2701,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "157.867 198.949 -0.627831";
-         rotation = "0.986165 -0.103945 0.129132 80.1427";
+         rotation = "0.986165 -0.103945 0.129132 80.1428";
          scale = "1.26476 1.28864 1.37413";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -5028,7 +5028,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "200.522 239.583 0.651882";
-         rotation = "0.0333559 -0.0550458 0.997927 79.7504";
+         rotation = "0.0333559 -0.0550458 0.997927 79.7505";
          scale = "1 1 1.04733";
          canSave = "1";
          canSaveDynamicFields = "1";

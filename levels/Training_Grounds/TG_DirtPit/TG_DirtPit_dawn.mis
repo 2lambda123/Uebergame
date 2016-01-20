@@ -147,7 +147,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "195.234 175.828 0.12738";
+         position = "195.671 175.622 0.43107";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -327,7 +327,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "141.49 212.291 1.38757";
+         position = "141.499 212.394 1.38757";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -363,7 +363,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "146.121 230.389 1.38757";
+         position = "146.385 230.637 1.38757";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -543,7 +543,7 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "213.551 230.987 1.38757";
+         position = "214.19 231.847 1.4919";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
