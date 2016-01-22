@@ -28,7 +28,7 @@
       noCursor = "1";
 
    new GuiBitmapCtrl(centerPrintDlg) {
-      bitmap = "art/gui/images/hudfill.png";
+      bitmap = "art/gui/hudfill.png";
       wrap = "0";
       position = "237 374";
       extent = "550 20";
@@ -66,7 +66,7 @@
       };
    };
    new GuiBitmapCtrl(bottomPrintDlg) {
-      bitmap = "art/gui/images/hudfill.png";
+      bitmap = "art/gui/hudfill.png";
       wrap = "0";
       position = "237 719";
       extent = "550 20";
@@ -276,8 +276,8 @@
       };
    };
    new GuiControl(WeaponHUD) {
-      position = "754 708";
-      extent = "272 58";
+      position = "802 708";
+      extent = "224 58";
       minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "top";
@@ -290,8 +290,25 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
+      new GuiBitmapCtrl() {
+         bitmap = "art/gui/hudfill.png";
+         wrap = "0";
+         position = "0 0";
+         extent = "224 58";
+         minExtent = "8 8";
+         horizSizing = "width";
+         vertSizing = "height";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
       new GuiTextCtrl(AmmoAmount) {
-         text = "Ammo: 30/0";
+         text = "Ammo: 8/16";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -299,8 +316,8 @@
          anchorBottom = "0";
          anchorLeft = "0";
          anchorRight = "0";
-         position = "108 -8";
-         extent = "320 74";
+         position = "8 -8";
+         extent = "306 74";
          minExtent = "8 8";
          horizSizing = "left";
          vertSizing = "top";
@@ -314,9 +331,9 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl(PreviewImage) {
-         bitmap = "art/gui/weaponHud/lurker.png";
+         bitmap = "art/gui/weaponHud/ryder.png";
          wrap = "0";
-         position = "11 12";
+         position = "148 12";
          extent = "72 32";
          minExtent = "8 2";
          horizSizing = "right";
@@ -330,42 +347,8 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01.png";
-         wrap = "0";
-         position = "0 0";
-         extent = "96 56";
-         minExtent = "8 8";
-         horizSizing = "width";
-         vertSizing = "height";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01.png";
-         wrap = "0";
-         position = "89 0";
-         extent = "180 56";
-         minExtent = "8 8";
-         horizSizing = "width";
-         vertSizing = "height";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
    };
-   new GuiControl(EnergyBars) {
+   new GuiControl(EnergyHUD) {
       position = "0 680";
       extent = "320 88";
       minExtent = "8 2";
@@ -380,24 +363,21 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiHealthTextHud() {
-         fillColor = "0 0 0 0.75";
-         frameColor = "1 1 1 1";
-         textColor = "0.0313726 0.996078 0.00784314 1";
-         warningColor = "1 0 0 1";
+      new GuiHealthBarHud() {
+         fillColor = "0 0 0 0.5";
+         frameColor = "0.5 0.5 0.5 1";
+         damageFillColor = "0.35 0.75 0.25 1";
+         pulseRate = "5";
+         pulseThreshold = "0.25";
          showFill = "1";
-         showFrame = "0";
-         showTrueValue = "0";
-         showEnergy = "0";
-         warnThreshold = "50";
-         pulseThreshold = "25";
-         pulseRate = "0";
-         position = "50 45";
-         extent = "36 30";
+         showFrame = "1";
+         displayEnergy = "1";
+         position = "40 32";
+         extent = "256 16";
          minExtent = "8 2";
          horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "ChatHudMessageProfile";
+         vertSizing = "top";
+         profile = "GuiDefaultProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
@@ -406,10 +386,33 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiBitmapCtrl() {
+      new GuiHealthBarHud() {
+         fillColor = "0 0 0 0.5";
+         frameColor = "0.5 0.5 0.5 1";
+         damageFillColor = "0.65 0.25 0.25 1";
+         pulseRate = "5";
+         pulseThreshold = "0.3";
+         showFill = "1";
+         showFrame = "1";
+         displayEnergy = "0";
+         position = "40 60";
+         extent = "256 16";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "top";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiBitmapCtrl(GuiHealthHudIcon) {
          bitmap = "art/gui/playGui/red_cross.png";
          wrap = "0";
-         position = "13 48";
+         position = "8 56";
          extent = "24 24";
          minExtent = "8 2";
          horizSizing = "right";
@@ -423,146 +426,41 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiHealthBarHud() {
-         fillColor = "0 0 0 0.5";
-         frameColor = "0.0666667 0.0313726 0.027451 1";
-         damageFillColor = "0.721569 0.00392157 0.137255 0.6";
-         pulseRate = "0";
-         pulseThreshold = "0.3";
-         showFill = "1";
-         showFrame = "0";
-         displayEnergy = "0";
-         position = "95 46";
-         extent = "212 30";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiHealthBarHud() {
-         fillColor = "0 0 0 0.5";
-         frameColor = "0.0666667 0.0313726 0.027451 1";
-         damageFillColor = "0.00392157 0.741176 0.207843 0.6";
-         pulseRate = "0";
-         pulseThreshold = "0.3";
-         showFill = "1";
-         showFrame = "0";
-         displayEnergy = "1";
-         position = "48 10";
-         extent = "212 30";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01.png";
-         wrap = "0";
-         position = "36 4";
-         extent = "240 42";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01_short.png";
-         wrap = "0";
-         position = "3 4";
-         extent = "44 44";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01_short.png";
-         wrap = "0";
-         position = "3 38";
-         extent = "44 44";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01.png";
-         wrap = "0";
-         position = "83 38";
-         extent = "240 44";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/playGui/bar_tube_01_short.png";
-         wrap = "0";
-         position = "39 38";
-         extent = "56 44";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl() {
+      new GuiBitmapCtrl(GuiStaminaHudIcon) {
          bitmap = "art/gui/playGui/running_man.png";
          wrap = "0";
-         position = "8 13";
+         position = "5 27";
          extent = "30 26";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "top";
          profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiHealthTextHud() {
+         fillColor = "0 0 0 0";
+         frameColor = "1 1 1 1";
+         textColor = "1 1 1 0";
+         warningColor = "0.996078 0.266667 0.384314 1";
+         showFill = "1";
+         showFrame = "0";
+         showTrueValue = "0";
+         showEnergy = "0";
+         warnThreshold = "100";
+         pulseThreshold = "30";
+         pulseRate = "5";
+         position = "269 60";
+         extent = "27 18";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ChatHudMessageProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";

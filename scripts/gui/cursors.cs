@@ -20,20 +20,21 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-datablock MissionMarkerData(WayPointMarker)
+if($platform $= "macos")
 {
-   category = "Misc";
-   shapeFile = "art/core/shapes/octahedron.dts";
-};
-
-datablock MissionMarkerData(SpawnSphereMarker)
+   new GuiCursor(DefaultCursor)
+   {
+      hotSpot = "4 4";
+      renderOffset = "0 0";
+      bitmapName = "art/gui/macCursor";
+   };
+} 
+else 
 {
-   category = "Misc";
-   shapeFile = "art/core/shapes/octahedron.dts";
-};
-
-datablock MissionMarkerData(CameraBookmarkMarker)
-{
-   category = "Misc";
-   shapeFile = "art/core/shapes/camera.dts";
-};
+   new GuiCursor(DefaultCursor)
+   {
+      hotSpot = "1 1";
+      renderOffset = "0 0";
+      bitmapName = "art/gui/defaultCursor";
+   };
+}

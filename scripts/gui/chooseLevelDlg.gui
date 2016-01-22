@@ -48,7 +48,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl() {
-         bitmap = "art/gui/images/no-preview";
+         bitmap = "art/gui/no-preview";
          wrap = "0";
          position = "119 136";
          extent = "400 300";
@@ -160,7 +160,7 @@
          canSaveDynamicFields = "0";
 
          new GuiBitmapButtonCtrl() {
-            bitmap = "art/gui/images/no-preview";
+            bitmap = "art/gui/no-preview";
             bitmapMode = "Stretched";
             autoFitExtents = "0";
             useModifiers = "0";
@@ -370,7 +370,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapButtonCtrl() {
-         bitmap = "art/gui/images/previous-button";
+         bitmap = "art/gui/previous-button";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";
@@ -397,7 +397,7 @@
             wrap = "0";
       };
       new GuiBitmapButtonCtrl() {
-         bitmap = "art/gui/images/next-button";
+         bitmap = "art/gui/next-button";
          bitmapMode = "Stretched";
          autoFitExtents = "0";
          useModifiers = "0";

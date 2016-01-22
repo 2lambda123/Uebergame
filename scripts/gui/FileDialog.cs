@@ -1,4 +1,4 @@
-exec("./FileDialog.gui");
+exec("scripts/gui/FileDialog.gui");
 
 function PlatformFileDialog::buildFilters(%this)
 {
@@ -254,7 +254,7 @@ function PlatformFileDialog::addDir( %this, %dir )
    %item = %this.getNewItem();
    %item.setText( %dir );
    %item.isDir = true;
-   %item.iconBitmap = "art/core/gui/images/folder";
+   %item.iconBitmap = "art/gui/folder";
    %item.textLocation = "left";
    %item.iconLocation = "left";
    %item.textMargin = 24;

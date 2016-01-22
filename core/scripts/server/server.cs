@@ -33,7 +33,7 @@ function initBaseServer()
    exec("./kickban.cs");
    exec("./game.cs");
    exec("./spawn.cs");
-   exec("./camera.cs");
+   exec("scripts/server/camera.cs"); //merge//remove core
    exec("./centerPrint.cs");
 }
 
@@ -121,7 +121,7 @@ function createServer(%serverType, %level)
    new SimGroup(ServerGroup);
 
    // Load up any core datablocks
-   exec("core/art/datablocks/datablockExec.cs");
+   exec("scripts/datablocks/coredatablockExec.cs");
 
    // Let the game initialize some things now that the
    // the server has been created

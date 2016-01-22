@@ -20,31 +20,20 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-function GuiTreeViewCtrl::onDefineIcons( %this )
+datablock MissionMarkerData(WayPointMarker)
 {
-   %icons = "art/core/gui/images/treeview/default:" @
-            "art/core/gui/images/treeview/simgroup:" @
-            "art/core/gui/images/treeview/simgroup_closed:" @
-            "art/core/gui/images/treeview/simgroup_selected:" @
-            "art/core/gui/images/treeview/simgroup_selected_closed:" @      
-            "art/core/gui/images/treeview/hidden:" @      
-            "art/core/gui/images/treeview/shll_icon_passworded_hi:" @
-            "art/core/gui/images/treeview/shll_icon_passworded:" @      
-            "art/core/gui/images/treeview/default";
-              
-   %this.buildIconTable(%icons);   
-}
+   category = "Misc";
+   shapeFile = "art/editor/octahedron.dts";
+};
 
-function GuiTreeViewCtrl::handleRenameObject( %this, %name, %obj )
+datablock MissionMarkerData(SpawnSphereMarker)
 {
-   %inspector = GuiInspector::findByObject( %obj );
-   
-   if( isObject( %inspector ) )   
-   {
-      %field = ( %this.renameInternal ) ? "internalName" : "name";      
-      %inspector.setObjectField( %field, %name );
-      return true;
-   }
-   
-   return false;   
-}
+   category = "Misc";
+   shapeFile = "art/editor/octahedron.dts";
+};
+
+datablock MissionMarkerData(CameraBookmarkMarker)
+{
+   category = "Misc";
+   shapeFile = "art/editor/camera.dts";
+};

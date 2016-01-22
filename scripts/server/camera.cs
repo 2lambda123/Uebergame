@@ -88,3 +88,22 @@ function Observer::setMode(%this,%obj,%mode,%arg1,%arg2,%arg3)
    }
    %obj.mode = %mode;
 }
+
+
+//-----------------------------------------------------------------------------
+// Camera methods
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+
+function Camera::onAdd(%this,%obj)
+{
+   // Default start mode
+   %this.setMode(%this.mode);
+}
+
+function Camera::setMode(%this,%mode,%arg1,%arg2,%arg3)
+{
+   // Punt this one over to our datablock
+   %this.getDatablock().setMode(%this,%mode,%arg1,%arg2,%arg3);
+}

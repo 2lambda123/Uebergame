@@ -1946,7 +1946,7 @@ function MaterialEditorGui::createNewMaterial( %this )
    %material = getUniqueName( "newMaterial" );
    new Material(%material) 
    {
-      diffuseMap[0] = "art/core/warnmat";
+      diffuseMap[0] = "art/editor/warnmat";
       mapTo = "unmapped_mat";
       parentGroup = RootGroup;
    };
@@ -1977,7 +1977,7 @@ function MaterialEditorGui::deleteMaterial( %this )
       %toMaterial = getUniqueName( "newMaterial" );
       new Material(%toMaterial) 
       {
-         diffuseMap[0] = "art/core/warnmat";
+         diffuseMap[0] = "art/editor/warnmat";
          mapTo = "unmapped_mat";
          parentGroup = RootGroup;
       };
@@ -1995,7 +1995,7 @@ function MaterialEditorGui::deleteMaterial( %this )
          %toMaterial = getUniqueName( "newMaterial" );
          new Material(%toMaterial) 
          {
-            diffuseMap[0] = "art/core/warnmat";
+            diffuseMap[0] = "art/editor/warnmat";
             mapTo = "unmapped_mat";
             parentGroup = RootGroup;
          };    
@@ -2010,7 +2010,7 @@ function MaterialEditorGui::deleteMaterial( %this )
    %newMaterial = getUniqueName( "newMaterial" );
    new Material(%newMaterial) 
    {
-      diffuseMap[0] = "art/core/warnmat";
+      diffuseMap[0] = "art/editor/warnmat";
       mapTo = "unmapped_mat";
       parentGroup = RootGroup;
    };
@@ -2270,3 +2270,7 @@ function MaterialEditorGui::updateAccuCheckbox(%this, %value)
    MaterialEditorGui.updateActiveMaterial("accuEnabled[" @ MaterialEditorGui.currentLayer @ "]", %value);   
    MaterialEditorGui.guiSync( materialEd_previewMaterial );
 }
+
+singleton Material(_mat6)
+{
+};

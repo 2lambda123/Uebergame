@@ -62,8 +62,8 @@ function initClient()
 
    // These should be game specific GuiProfiles.  Custom profiles are saved out
    // from the Gui Editor.  Either of these may override any that already exist.
-   exec("art/gui/defaultGameProfiles.cs");
-   exec("art/gui/customProfiles.cs"); 
+   exec("scripts/gui/defaultGameProfiles.cs");
+   exec("scripts/gui/customProfiles.cs"); 
    
    // The common module provides basic client functionality
    initBaseClient();
@@ -72,29 +72,29 @@ function initClient()
    configureCanvas();
 
    // Load up the Game GUIs
-   exec("art/gui/defaultGameProfiles.cs");
-   exec("art/gui/playGui.gui");
-   exec("art/gui/chatHud.gui");
-   exec("art/gui/playerList.gui");
-   exec("art/gui/hudlessGui.gui");
-   exec("art/gui/missionAreaWarningHud.gui");
+   exec("scripts/gui/defaultGameProfiles.cs");
+   exec("scripts/gui/playGui.gui");
+   exec("scripts/gui/chatHud.gui");
+   exec("scripts/gui/playerList.gui");
+   exec("scripts/gui/hudlessGui.gui");
+   exec("scripts/gui/missionAreaWarningHud.gui");
 
    // Load up the shell GUIs
-   exec("art/gui/mainMenuGui.gui");
-   exec("art/gui/joinServerDlg.gui");
-   exec("art/gui/endGameGui.gui");
-   exec("art/gui/exitGameGui.gui");
-   exec("art/gui/chooseLevelDlg.gui");
-   exec("art/gui/loadingGui.gui");
-   exec("art/gui/optionsDlg.gui");
-   exec("art/gui/remapDlg.gui");
-   exec("art/gui/extrasDlg.gui");
-   exec("art/gui/helpDlg.gui");
+   exec("scripts/gui/mainMenuGui.gui");
+   exec("scripts/gui/joinServerDlg.gui");
+   exec("scripts/gui/endGameGui.gui");
+   exec("scripts/gui/exitGameGui.gui");
+   exec("scripts/gui/chooseLevelDlg.gui");
+   exec("scripts/gui/loadingGui.gui");
+   exec("scripts/gui/optionsDlg.gui");
+   exec("scripts/gui/remapDlg.gui");
+   exec("scripts/gui/extrasDlg.gui");
+   exec("scripts/gui/helpDlg.gui");
    
    // Gui scripts
-   exec("./playerList.cs");
-   exec("./chatHud.cs");
-   exec("./messageHud.cs");
+   exec("scripts/gui/playerList.cs");
+   exec("scripts/gui/chatHud.cs");
+   exec("scripts/gui/messageHud.cs");
    exec("scripts/gui/playGui.cs");
    exec("scripts/gui/chooseLevelDlg.cs");
    exec("scripts/gui/loadingGui.cs");

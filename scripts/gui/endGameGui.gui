@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiChunkedBitmapCtrl(EndGameGui) {
-   bitmap = "art/gui/images/background";
+   bitmap = "art/gui/background";
    useVariable = "0";
    tile = "0";
    position = "0 0";

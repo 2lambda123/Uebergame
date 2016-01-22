@@ -46,8 +46,8 @@ function initializeCore()
    exec("./persistenceManagerTest.cs");
 
    // Content.
-   exec("~/art/gui/profiles.cs");
-   exec("~/scripts/gui/cursors.cs");
+   exec("scripts/gui/profiles.cs");
+   exec("scripts/gui/cursors.cs");
    
    exec( "./audioEnvironments.cs" );
    exec( "./audioDescriptions.cs" );
@@ -70,17 +70,17 @@ function initializeCore()
    startFileChangeNotifications();
       
    // Core Guis.
-   exec("~/art/gui/console.gui");
-   exec("~/art/gui/consoleVarDlg.gui");
-   exec("~/art/gui/netGraphGui.gui");
-   exec("~/art/gui/RecordingsDlg.gui");
-   exec("~/art/gui/guiMusicPlayer.gui");
+   exec("scripts/gui/console.gui");
+   exec("scripts/gui/consoleVarDlg.gui");
+   exec("scripts/gui/netGraphGui.gui");
+   exec("scripts/gui/RecordingsDlg.gui");
+   exec("scripts/gui/guiMusicPlayer.gui");
 
 	
    // Gui Helper Scripts.
-   exec("~/scripts/gui/help.cs");
-   exec("~/scripts/gui/recordingsDlg.cs");
-   exec("~/scripts/gui/guiMusicPlayer.cs");
+   exec("scripts/gui/help.cs");
+   exec("scripts/gui/recordingsDlg.cs");
+   exec("scripts/gui/guiMusicPlayer.cs");
 
    // Random Scripts.
    exec("~/scripts/client/screenshot.cs");

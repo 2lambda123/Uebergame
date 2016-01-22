@@ -34,16 +34,6 @@ singleton Material(OctahedronMat)
    colorMultiply[0] = "0 1 0 1";
 };
 
-singleton Material(SimpleConeMat)
-{
-   mapTo = "blue";
-
-   diffuseMap[0] = "blue";
-   translucent = "0";
-   emissive = "1";
-   castShadows = "0";
-};
-
 //--- camera.dts MATERIALS BEGIN ---
 singleton Material(CameraMat)
 {
@@ -120,42 +110,17 @@ singleton Material(noshapetext_noshape_mat)
 
 //--- noshapetext.dae MATERIALS END ---
 
-//--- portal MATERIALS BEGIN ---
-
-singleton Material(portal5_portal_top)
+singleton Material( Mat_BlankWhite )
 {
-   mapTo = "portal_top";
-
-	diffuseMap[0] = "top";
-   normalMap[0]  = "top-normal";
-
-   diffuseColor[0] = "0.4 0.4 0.4 1";
-	specular[0] = "0.5 0.5 0.5 1";
-	specularPower[0] = 2;
-	pixelSpecular[0] = false;
-	emissive[0] = true;
-
-	doubleSided = false;
-	translucent = false;
-	translucentBlendOp = "None";
+   diffuseMap[0] = "art/editor/white";
+   mapTo = "white";
+   materialTag0 = "Miscellaneous";
+   specularPower[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   impactSoundId = "0";
 };
 
-singleton Material(portal5_portal_lightray)
+singleton Material( Mat_Empty )
 {
-   mapTo = "portal_lightray";
-
-	diffuseMap[0] = "lightray";
-
-	diffuseColor[0] = "0.4 0.4 0.4 0.64462";
-	specular[0] = "0.5 0.5 0.5 1";
-	specularPower[0] = 2;
-	pixelSpecular[0] = false;
-	emissive[0] = true;
-
-	doubleSided = 1;
-	translucent = true;
-	translucentBlendOp = "AddAlpha";
-   castShadows = "0";
 };
-//--- portal MATERIALS END ---
-

@@ -132,7 +132,7 @@
             Visible = "1";
             tooltipprofile = "ToolsGuiToolTipProfile";
             hovertime = "1000";
-            bitmap = "art/core/gui/images/separator-v";
+            bitmap = "art/gui/separator-v";
             wrap = "0";
          };
          new GuiTextCtrl() {

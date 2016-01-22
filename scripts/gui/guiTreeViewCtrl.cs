@@ -20,47 +20,31 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-datablock ParticleData(DefaultParticle)
+function GuiTreeViewCtrl::onDefineIcons( %this )
 {
-   textureName = "art/core/defaultParticle";
-   dragCoefficient = 0.498534;
-   gravityCoefficient = 0;
-   inheritedVelFactor = 0.499022;
-   constantAcceleration = 0.0;
-   lifetimeMS = 1313;
-   lifetimeVarianceMS = 500;
-   useInvAlpha = true;
-   spinRandomMin = -360;
-   spinRandomMax = 360;
-   spinSpeed = 1;
+   %icons = "art/gui/treeview/default:" @
+            "art/gui/treeview/simgroup:" @
+            "art/gui/treeview/simgroup_closed:" @
+            "art/gui/treeview/simgroup_selected:" @
+            "art/gui/treeview/simgroup_selected_closed:" @      
+            "art/gui/treeview/hidden:" @      
+            "art/gui/treeview/shll_icon_passworded_hi:" @
+            "art/gui/treeview/shll_icon_passworded:" @      
+            "art/gui/treeview/default";
+              
+   %this.buildIconTable(%icons);   
+}
 
-   colors[0] = "0.992126 0.00787402 0.0314961 1";
-   colors[1] = "1 0.834646 0 0.645669";
-   colors[2] = "1 0.299213 0 0.330709";
-   colors[3] = "0.732283 1 0 0";
-   
-   sizes[0] = 0;
-   sizes[1] = 0.497467;
-   sizes[2] = 0.73857;
-   sizes[3] = 0.997986;
-   
-   times[0] = 0.0;
-   times[1] = 0.247059;
-   times[2] = 0.494118;
-   times[3] = 1;
-   
-   animTexName = "art/core/defaultParticle";
-};
-
-datablock ParticleEmitterData(DefaultEmitter)
+function GuiTreeViewCtrl::handleRenameObject( %this, %name, %obj )
 {
-   ejectionPeriodMS = "50";
-   ejectionVelocity = "1";
-   velocityVariance = "0";
-   ejectionOffset = "0.2";
-   thetaMax = "40";
-   particles = "DefaultParticle";
-   blendStyle = "ADDITIVE";
-   softParticles = "0";
-   softnessDistance = "1";
-};
+   %inspector = GuiInspector::findByObject( %obj );
+   
+   if( isObject( %inspector ) )   
+   {
+      %field = ( %this.renameInternal ) ? "internalName" : "name";      
+      %inspector.setObjectField( %field, %name );
+      return true;
+   }
+   
+   return false;   
+}

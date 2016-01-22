@@ -54,9 +54,9 @@ function onServerCreated()
    %datablockFiles.add( "art/particles/managedParticleData.cs" );
    %datablockFiles.add( "art/particles/managedParticleEmitterData.cs" );
    %datablockFiles.add( "art/decals/managedDecalData.cs" );
-   %datablockFiles.add( "art/datablocks/managedDatablocks.cs" );
+   %datablockFiles.add( "scripts/datablocks/managedDatablocks.cs" );
    %datablockFiles.add( "art/forest/managedItemData.cs" );
-   %datablockFiles.add( "art/datablocks/datablockExec.cs" );   
+   %datablockFiles.add( "scripts/datablocks/datablockExec.cs" );   
    loadDatablockFiles( %datablockFiles, true );
 
    // Run the other gameplay scripts in this folder

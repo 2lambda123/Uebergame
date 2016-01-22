@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 
 // load gui used to display various metric outputs
-exec("~/art/gui/FrameOverlayGui.gui");
+exec("scripts/gui/FrameOverlayGui.gui");
 
 // Note:  To implement your own metrics overlay 
 // just add a function with a name in the form 

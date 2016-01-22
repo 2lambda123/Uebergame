@@ -133,7 +133,7 @@ function clientCmdRefreshWeaponHUD(%amount, %preview, %ret, %zoomRet, %amountInC
       {
          ZoomReticle.setBitmap("art/gui/weaponHud/"@ detag(%zoomRet));
       }
-   }
+   } 
 }
 
 // ----------------------------------------------------------------------------

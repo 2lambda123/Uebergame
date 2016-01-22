@@ -581,7 +581,7 @@ datablock PlayerData(DefaultPlayerData)
    cameraMinFov = "5";
    cameraMaxFov = "75";
 
-   debrisShapeName = "art/shapes/actors/common/debris_player.dts";
+   debrisShapeName = "art/shapes/weapons/Grenade/grenadeDebris.dts";
    debris = playerDebris;
    
    throwForce = 25;

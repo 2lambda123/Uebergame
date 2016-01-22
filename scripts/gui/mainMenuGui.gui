@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiChunkedBitmapCtrl(MainMenuGui) {
-   bitmap = "art/gui/images/space_background_big.dds";
+   bitmap = "art/gui/space_background_big.dds";
    useVariable = "0";
    tile = "1";
    position = "0 0";
@@ -20,7 +20,7 @@
       isDecoy = "0";
 
    new GuiBitmapCtrl(MainMenuAppLogo) {
-      bitmap = "art/gui/images/uebergame-logo.png";
+      bitmap = "art/gui/uebergame-logo.png";
       wrap = "0";
       position = "-16 644";
       extent = "432 128";

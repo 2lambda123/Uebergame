@@ -391,7 +391,7 @@
          canSaveDynamicFields = "0";
 
          new GuiBitmapCtrl() {
-            bitmap = "art/gui/images/hudfill.png";
+            bitmap = "art/gui/hudfill.png";
             wrap = "0";
             position = "-16 -5";
             extent = "133 43";

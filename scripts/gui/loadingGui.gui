@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiChunkedBitmapCtrl(LoadingGui) {
-   bitmap = "art/gui/images/space_background_big.dds";
+   bitmap = "art/gui/space_background_big.dds";
    useVariable = "0";
    tile = "0";
    position = "0 0";
@@ -35,7 +35,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl(LoadingLogo) {
-         bitmap = "art/gui/images/uebergame-logo.png";
+         bitmap = "art/gui/uebergame-logo.png";
          wrap = "0";
          position = "-7 -4";
          extent = "512 174";
