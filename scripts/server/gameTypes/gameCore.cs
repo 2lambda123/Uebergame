@@ -106,7 +106,7 @@ function GameCore::onRemove(%game)
 // ----------------------------------------------------------------------------
 
 // The GameCore package overides functions loadMissionStage2(), endMission(),
-// and function resetMission() from "core/scripts/server/missionLoad.cs" in
+// and function resetMission() from "scripts/server/missionLoad.cs" in
 // order to create our Game object, which allows our gameType functionality to
 // be initiated.
 
@@ -243,7 +243,7 @@ package GameCore
    }
 
    // We also need to override function GameConnection::onConnect() from
-   // "core/scripts/server/clientConnection.cs" in order to initialize, reset,
+   // "scripts/server/clientConnection.cs" in order to initialize, reset,
    // and pass some client scoring variables to playerList.gui -- the scoreHUD.
 
    function GameConnection::onConnect(%client, %name)//, %skin)
@@ -506,7 +506,7 @@ function GameCore::onClientEnterGame(%game, %client)
 
    // Find a spawn point for the camera
    // This function currently relies on some helper functions defined in
-   // core/scripts/server/spawn.cs. For custom spawn behaviors one can either
+   // scripts/server/spawn.cs. For custom spawn behaviors one can either
    // override the properties on the SpawnSphere's or directly override the
    // functions themselves.
    %cameraSpawnPoint = pickCameraSpawnPoint($Game::DefaultCameraSpawnGroups);
@@ -600,7 +600,7 @@ function GameCore::preparePlayer(%game, %client)
 
    // Find a spawn point for the player
    // This function currently relies on some helper functions defined in
-   // core/scripts/spawn.cs. For custom spawn behaviors one can either
+   // scripts/spawn.cs. For custom spawn behaviors one can either
    // override the properties on the SpawnSphere's or directly override the
    // functions themselves.
    %playerSpawnPoint = pickPlayerSpawnPoint($Game::DefaultPlayerSpawnGroups);

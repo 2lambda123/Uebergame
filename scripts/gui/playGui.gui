@@ -308,7 +308,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(AmmoAmount) {
-         text = "Ammo: 8/16";
+         text = "Ammo: 30/0";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -331,7 +331,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiBitmapCtrl(PreviewImage) {
-         bitmap = "art/gui/weaponHud/ryder.png";
+         bitmap = "art/gui/weaponHud/lurker.png";
          wrap = "0";
          position = "148 12";
          extent = "72 32";
@@ -372,7 +372,7 @@
          showFill = "1";
          showFrame = "1";
          displayEnergy = "1";
-         position = "40 32";
+         position = "12 32";
          extent = "256 16";
          minExtent = "8 2";
          horizSizing = "right";
@@ -395,42 +395,8 @@
          showFill = "1";
          showFrame = "1";
          displayEnergy = "0";
-         position = "40 60";
+         position = "12 60";
          extent = "256 16";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl(GuiHealthHudIcon) {
-         bitmap = "art/gui/playGui/red_cross.png";
-         wrap = "0";
-         position = "8 56";
-         extent = "24 24";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
-      new GuiBitmapCtrl(GuiStaminaHudIcon) {
-         bitmap = "art/gui/playGui/running_man.png";
-         wrap = "0";
-         position = "5 27";
-         extent = "30 26";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "top";

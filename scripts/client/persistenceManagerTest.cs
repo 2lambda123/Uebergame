@@ -132,7 +132,7 @@ function TestPManager::testNewObject(%doNotSave)
    };
 
    // Flag it as dirty
-   TestPManager.setDirty(AudioNew, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(AudioNew, "scripts/client/audio.cs");
 
    // Test adding a new unnamed object
    %obj = new SFXDescription()
@@ -143,12 +143,12 @@ function TestPManager::testNewObject(%doNotSave)
    };
 
    // Flag it as dirty
-   TestPManager.setDirty(%obj, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(%obj, "scripts/client/audio.cs");
 
    // Test adding an "empty" object
    new SFXDescription(AudioEmpty);
 
-   TestPManager.setDirty(AudioEmpty, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(AudioEmpty, "scripts/client/audio.cs");
 
    // Unless %doNotSave is set (by a batch/combo test)
    // then go ahead and save now
@@ -185,7 +185,7 @@ function TestPManager::testNewGroup(%doNotSave)
    };
 
    // Flag this as dirty
-   TestPManager.setDirty(TestGroup, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(TestGroup, "scripts/client/audio.cs");
 
    // Test adding a new unnamed SimGroup
    %group = new SimGroup()
@@ -213,7 +213,7 @@ function TestPManager::testNewGroup(%doNotSave)
    };
 
    // Flag this as dirty
-   TestPManager.setDirty(%group, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(%group, "scripts/client/audio.cs");
 
    // Test adding a new unnamed SimSet
    %set = new SimSet()
@@ -241,7 +241,7 @@ function TestPManager::testNewGroup(%doNotSave)
    };
 
    // Flag this as dirty
-   TestPManager.setDirty(%set, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(%set, "scripts/client/audio.cs");
 
    // Unless %doNotSave is set (by a batch/combo test)
    // then go ahead and save now
@@ -277,7 +277,7 @@ function TestPManager::testMoveObject(%doNotSave)
    };
 
    // Flag this as dirty
-   TestPManager.setDirty(MoveGroup1, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(MoveGroup1, "scripts/client/audio.cs");
 
    new SimGroup(MoveGroup2)
    {
@@ -293,7 +293,7 @@ function TestPManager::testMoveObject(%doNotSave)
    };
 
    // Flag this as dirty
-   TestPManager.setDirty(MoveGroup2, "core/scripts/client/audio.cs");
+   TestPManager.setDirty(MoveGroup2, "scripts/client/audio.cs");
 
    // Unless %doNotSave is set (by a batch/combo test)
    // then go ahead and save now

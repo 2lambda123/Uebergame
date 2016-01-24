@@ -27,7 +27,7 @@ $appName = "Uebergame";
 $defaultGame = "scripts";
 
 // Set profile directory
-$Pref::Video::ProfilePath = "core/profile";
+$Pref::Video::ProfilePath = "scripts/client/profile";
 
 function createCanvas(%windowTitle)
 {
@@ -69,7 +69,7 @@ function isScriptFile(%path)
 
 //------------------------------------------------------------------------------
 // Process command line arguments
-exec("core/parseArgs.cs");
+exec("scripts/parseArgs.cs");
 
 $isDedicated = false;
 $dirCount = 2;
@@ -81,7 +81,7 @@ if (isToolBuild())
 
 
 // Parse the executable arguments with the standard
-// function from core/main.cs
+// function from scripts/main.cs
 defaultParseArgs();
 
 

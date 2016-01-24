@@ -48,7 +48,7 @@ function DeathMatchGame::initGameVars(%game)
    // SpawnSphere or it defaults back to the values set here. This also controls
    // which SimGroups to attempt to select the spawn sphere's from by walking down
    // the list of SpawnGroups till it finds a valid spawn object.
-   // These override the values set in core/scripts/server/spawn.cs
+   // These override the values set in scripts/server/spawn.cs
    //-----------------------------------------------------------------------------
    
    // Leave $Game::defaultPlayerClass and $Game::defaultPlayerDataBlock as empty strings ("")
@@ -62,7 +62,7 @@ function DeathMatchGame::initGameVars(%game)
    // SpawnSphere or it defaults back to the values set here. This also controls
    // which SimGroups to attempt to select the spawn sphere's from by walking down
    // the list of SpawnGroups till it finds a valid spawn object.
-   // These override the values set in core/scripts/server/spawn.cs
+   // These override the values set in scripts/server/spawn.cs
    //-----------------------------------------------------------------------------
    $Game::defaultCameraClass = "Camera";
    $Game::defaultCameraDataBlock = "Observer";

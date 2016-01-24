@@ -20,15 +20,38 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// First we execute the core default preferences.
-exec( "core/scripts/server/defaults.cs" );
+$Pref::Server::ConnectionError =
+   "You likely do not have the correct version of the game installed or "@
+   "you are missing some of the related art and levels. "@
+   "Please contact the server administrator and try to solve the issue.";
 
+// The network port is also defined by the client, this value 
+// overrides pref::net::port for dedicated servers
+$Pref::Server::Port = 28000;
 
-// Now add your own game specific server preferences as
-// well as any overloaded core defaults here.
+// If the password is set, clients must provide it in order
+// to connect to the server
+$Pref::Server::Password = "";
 
+// Password for admin clients
+$Pref::Server::AdminPassword = "";
 
+// Misc server settings.
+$Pref::Server::Name = "Uebergame server";
+$Pref::Server::Info = "This is an Uebergame server.";
+$Pref::Server::MaxPlayers = 10;
+$pref::Game::Duration = 900;                 // specified in seconds
+$pref::Game::EndGameScore = 20;
+$pref::Game::EndGamePause = 5;               // specified in seconds
+$pref::Game::AllowCycling = 1;
 
+$pref::Server::EnableAI = 0;
+$Pref::Server::FloodProtectionEnabled = 1;
+$Pref::Server::MaxChatLen = 120;
+$Pref::Server::BanTime = 1800;               // specified in seconds
+$Pref::Server::KickBanTime = 300;            // specified in seconds
+
+$Pref::Server::TimeLimit = 0;               // In minutes //unused?!
 
 // Finally load the preferences saved from the last
 // game execution if they exist.

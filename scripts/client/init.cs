@@ -108,7 +108,7 @@ function initClient()
    exec("./serverConnection.cs");
 
    // Load useful Materials
-   exec("./shaders.cs");
+   //exec("./shaders.cs"); //already executed in core.cs
 
    // Default player key bindings
    exec("./default.bind.cs");

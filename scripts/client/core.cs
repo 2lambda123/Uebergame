@@ -40,22 +40,22 @@ function initializeCore()
    
    
    // Very basic functions used by everyone.
-   exec("./audio.cs");
-   exec("./canvas.cs");
-   exec("./cursor.cs");
-   exec("./persistenceManagerTest.cs");
+   exec("scripts/client/audio.cs");
+   exec("scripts/client/canvas.cs");
+   exec("scripts/client/cursor.cs");
+   exec("scripts/client/persistenceManagerTest.cs");
 
    // Content.
    exec("scripts/gui/profiles.cs");
    exec("scripts/gui/cursors.cs");
    
-   exec( "./audioEnvironments.cs" );
-   exec( "./audioDescriptions.cs" );
-   exec( "./audioStates.cs" );
-   exec( "./audioAmbiences.cs" );
+   exec( "scripts/client/audioEnvironments.cs" );
+   exec( "scripts/client/audioDescriptions.cs" );
+   exec( "scripts/client/audioStates.cs" );
+   exec( "scripts/client/audioAmbiences.cs" );
 
    // Input devices
-   exec("~/scripts/client/oculusVR.cs");
+   exec("scripts/client/oculusVR.cs");
 
    // Seed the random number generator.
    setRandomSeed();
@@ -83,38 +83,38 @@ function initializeCore()
    exec("scripts/gui/guiMusicPlayer.cs");
 
    // Random Scripts.
-   exec("~/scripts/client/screenshot.cs");
-   exec("~/scripts/client/scriptDoc.cs");
+   exec("scripts/client/screenshot.cs");
+   exec("scripts/client/scriptDoc.cs");
    //exec("~/scripts/client/keybindings.cs");
-   exec("~/scripts/client/helperfuncs.cs");
-   exec("~/scripts/client/commands.cs");
+   exec("scripts/client/helperfuncs.cs");
+   exec("scripts/client/commands.cs");
    
    // Client scripts
-   exec("~/scripts/client/devHelpers.cs");
-   exec("~/scripts/client/metrics.cs");
-   exec("~/scripts/client/centerPrint.cs");
+   exec("scripts/client/devHelpers.cs");
+   exec("scripts/client/metrics.cs");
+   exec("scripts/client/centerPrint.cs");
    
    // Materials and Shaders for rendering various object types
    loadCoreMaterials();
 
-   exec("~/scripts/client/commonMaterialData.cs");
-   exec("~/scripts/client/shaders.cs");
-   exec("~/scripts/client/materials.cs");
-   exec("~/scripts/client/terrainBlock.cs");
-   exec("~/scripts/client/water.cs");
-   exec("~/scripts/client/imposter.cs");
-   exec("~/scripts/client/scatterSky.cs");
-   exec("~/scripts/client/clouds.cs");
+   exec("scripts/client/commonMaterialData.cs");
+   exec("scripts/client/shaders.cs");
+   exec("scripts/client/materials.cs");
+   exec("scripts/client/terrainBlock.cs");
+   exec("scripts/client/water.cs");
+   exec("scripts/client/imposter.cs");
+   exec("scripts/client/scatterSky.cs");
+   exec("scripts/client/clouds.cs");
    
    // Initialize all core post effects.   
-   exec("~/scripts/client/postFx.cs");
+   exec("scripts/client/postFx.cs");
    initPostEffects();
    
    // Initialize the post effect manager.
-   exec("~/scripts/client/postFx/postFXManager.gui");
-   exec("~/scripts/client/postFx/postFXManager.gui.cs");
-   exec("~/scripts/client/postFx/postFXManager.gui.settings.cs");
-   exec("~/scripts/client/postFx/postFXManager.persistance.cs");
+   exec("scripts/client/postFx/postFXManager.gui");
+   exec("scripts/client/postFx/postFXManager.gui.cs");
+   exec("scripts/client/postFx/postFXManager.gui.settings.cs");
+   exec("scripts/client/postFx/postFXManager.persistance.cs");
    
    PostFXManager.settingsApplyDefaultPreset();  // Get the default preset settings   
    
@@ -193,6 +193,7 @@ function handleEscape()
 //-----------------------------------------------------------------------------
 // loadMaterials - load all materials.cs files
 //-----------------------------------------------------------------------------
+/*
 function loadCoreMaterials()
 {
    // Load any materials files for which we only have DSOs.
@@ -223,7 +224,7 @@ function reloadCoreMaterials()
    loadCoreMaterials();
    reInitMaterials();
 }
-
+*/ //core removed
 //-----------------------------------------------------------------------------
 // loadMaterials - load all materials.cs files
 //-----------------------------------------------------------------------------

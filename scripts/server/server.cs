@@ -23,18 +23,18 @@
 function initBaseServer()
 {
    // Base server functionality
-   exec("./audio.cs");
-   exec("./message.cs");
-   exec("./commands.cs");
-   exec("./levelInfo.cs");
-   exec("./missionLoad.cs");
-   exec("./missionDownload.cs");
-   exec("./clientConnection.cs");
-   exec("./kickban.cs");
-   exec("./game.cs");
-   exec("./spawn.cs");
+   exec("scripts/server/audio.cs");
+   exec("scripts/server/message.cs");
+   exec("scripts/server/commands.cs"); //merge//remove core
+   exec("scripts/server/levelInfo.cs");
+   exec("scripts/server/missionLoad.cs");
+   exec("scripts/server/missionDownload.cs");
+   exec("scripts/server/clientConnection.cs");
+   exec("scripts/server/kickban.cs");
+   exec("scripts/server/game.cs");
+   exec("scripts/server/spawn.cs");
    exec("scripts/server/camera.cs"); //merge//remove core
-   exec("./centerPrint.cs");
+   exec("scripts/server/centerPrint.cs");
 }
 
 /// Attempt to find an open port to initialize the server with
@@ -174,7 +174,7 @@ function resetServerDefaults()
 {
    echo( "Resetting server defaults..." );
    
-   exec( "./defaults.cs" );
+   exec( "scripts/server/defaults.cs" ); //merge //remove core
    exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" );
 
    // Reload the current level

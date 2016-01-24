@@ -124,7 +124,7 @@ function sfxStartup()
          $pref::SFX::autoDetect = 1;
          
          warn( "Xbox360 is auto-detecting available sound providers..." ); 
-         warn( "   - You may wish to alter this functionality before release (core/scripts/client/audio.cs)" );
+         warn( "   - You may wish to alter this functionality before release (scripts/client/audio.cs)" );
       }
    }
 

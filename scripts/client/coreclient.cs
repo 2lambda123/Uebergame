@@ -23,12 +23,12 @@
 function initBaseClient()
 {
    // Base client functionality
-   exec( "./message.cs" );
-   exec( "./mission.cs" );
-   exec( "./missionDownload.cs" );
-   exec( "./actionMap.cs" );
-   exec( "./renderManager.cs" );
-   exec( "./lighting.cs" );
+   exec( "scripts/client/message.cs" );
+   exec( "scripts/client/mission.cs" );
+   exec( "scripts/client/missionDownload.cs" );
+   exec( "scripts/client/actionMap.cs" );
+   exec( "scripts/client/renderManager.cs" );
+   exec( "scripts/client/lighting.cs" );
    
    initRenderManager();
    initLightingSystems();   
