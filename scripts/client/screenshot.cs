@@ -55,22 +55,37 @@ function formatSessionNumber(%number)
 // Records a movie file from the Canvas content using the specified fps.
 // Possible encoder values are "PNG" and "THEORA" (default).
 //---------------------------------------------------------------------------------------------
-function recordMovie(%movieName, %fps, %encoder)
+$MovieEncodeActive = false;
+function makeMovie(%movieName, %fps, %encoder)
 {
    // If the canvas doesn't exist yet, setup a flag so it'll 
    // start capturing as soon as it's created
    if (!isObject(Canvas))   
       return;
    
+   if ( $pref::Video::movieSession $= "" )
+      $pref::Video::movieSession = 0;
+            
+   if ( $pref::Video::movieSession > 999 )
+      $pref::Video::movieSession = 1;
+
+   if ( %fps $= "" )
+      %fps = 30;
+
    if (%encoder $= "") 
       %encoder = "THEORA";   
+
+   %movieName = "movie_" @ $Client::MissionName @ formatSessionNumber($pref::Video::screenShotSession);
+
    %resolution = Canvas.getVideoMode();
    startVideoCapture(Canvas, %movieName, %encoder, %fps); 
+   $MovieEncodeActive = true;
 }
 
 function stopMovie()
 {
    stopVideoCapture();
+   $MovieEncodeActive = false;
 }
 
 /// This is bound in initializeCommon() to take

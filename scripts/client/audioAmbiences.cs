@@ -43,3 +43,15 @@ singleton SFXAmbience( AudioAmbienceUnderwater )
    environment = AudioEnvUnderwater;
    states[ 0 ] = AudioLocationUnderwater;
 };
+
+singleton SFXAmbience( AudioAmbienceForest )
+{
+   environment = AudioEnvForest;
+   states[ 0 ] = AudioLocationOutside;
+};
+
+singleton SFXAmbience( AudioAmbienceCave )
+{
+   environment = AudioEnvCave;
+   states[ 0 ] = AudioLocationInside;
+};

@@ -22,20 +22,89 @@
 
 //-----------------------------------------------------------------------------
 
-function kick(%client)
+function kick( %client, %admin )
 {
    messageAll( 'MsgAdminForce', '\c2The Admin has kicked %1.', %client.playerName);
 
    if (!%client.isAIControlled())
       BanList::add(%client.guid, %client.getAddress(), $Pref::Server::KickBanTime);
-   %client.delete("You have been kicked from this server");
+
+   %client.delete( $AdminCl.nameBase @ " has kicked you from this server." );
 }
 
-function ban(%client)
+function ban( %client, %admin )
 {
-   messageAll('MsgAdminForce', '\c2The Admin has banned %1.', %client.playerName);
+   if ( %admin )
+      messageAll('MsgAdminForce', '\c2%1 has banned %2.', $AdminCl.playerName, %client.playerName);
+   else
+      messageAll( 'MsgVotePassed', '\c2%1 was banned by vote.', %client.playerName );
 
    if (!%client.isAIControlled())
       BanList::add(%client.guid, %client.getAddress(), $Pref::Server::BanTime);
-   %client.delete("You have been banned from this server");
+
+   %client.addToServerBanList();
+   %client.delete( $AdminCl.nameBase @ " has banned you from this server." );
+}
+
+function GameConnection::addToServerBanList( %client, %guid )
+{
+   if ( $Banned::GuidCount $= "" )
+      $Banned::GuidCount = 0;
+
+   // Lets make sure this id is not allready in the array
+   %found = false;
+   for ( %i = 0; %i < $Banned::GuidCount; %i++ )
+   {
+      if ( $Banned::Guid[%i] $= %guid )
+      {
+         %found = true;
+         break;
+      }
+   }
+
+   // Didn't find it, add to the next free slot.
+   if ( !%found )
+      $Banned::Guid[$Banned::GuidCount++] = %client.guid;
+}
+
+function GameConnection::removeFromServerBanList( %client, %guid )
+{
+   if ( $Banned::GuidCount $= "" )
+      $Banned::GuidCount = 0;
+
+   %count = 0;
+   for ( %i = 0; %i < $Banned::GuidCount; %i++ )
+   {
+      if ( $Banned::Guid[%i] !$= %guid )
+         %Temp[%count++] = %guid;
+   }
+
+   for( %j = 0; %j < %count; %j++ )
+      $Banned::Guid[%j] = %Temp[%j];
+
+   $Banned::GuidCount = %count;
+}
+
+function GameConnection::isOnServerBanList( %client, %guid )
+{
+   if ( $Banned::GuidCount $= "" )
+      $Banned::GuidCount = 0;
+
+   %found = false;
+   for ( %i = 0; %i < $Banned::GuidCount; %i++ )
+   {
+      if ( $Banned::Guid[%i] $= %guid )
+      {
+         %found = true;
+         break;
+      }
+   }
+
+   return( %found );
+}
+
+function exportBanList()
+{
+   echo("Exporting server ip banlist");
+   export("$Banned::*", (GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs"), false);
 }

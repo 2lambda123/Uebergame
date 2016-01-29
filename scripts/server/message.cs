@@ -26,6 +26,7 @@
 
 function messageClient(%client, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13)
 {
+   //if ( !%client.isAiControlled() )
    commandToClient(%client, 'ServerMessage', %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13);
 }
 
@@ -145,6 +146,9 @@ function chatMessageTeam( %sender, %team, %msgString, %a1, %a2, %a3, %a4, %a5, %
 	   if ( %obj.team == %sender.team )
 	      chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
 	}
+
+   if($pref::Server::EchoChat && !$pref::Server::TournamentMode)
+      echo( "SAYTEAM: " @ %sender.nameBase @ ": ", %a2 );
 }
 
 function chatMessageAll( %sender, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 )
@@ -167,5 +171,111 @@ function chatMessageAll( %sender, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7,
 	         chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
 	   }
 	}
+   if($pref::Server::EchoChat)
+      echo( "SAYGLOBAL: " @ %sender.nameBase @ ": ", %a2 );
 }
 
+//-----------------------------------------------------------------------------
+// Server chat message handlers
+//-----------------------------------------------------------------------------
+
+function serverCmdTeamMessageSent(%client, %text)
+{
+   if ( %client.isGagged ) // Check for admin gag
+      return;
+
+   // We created a filter via scripting
+   // Allow admins to control language on server
+   if ( $pref::Server::BadWordFilter )
+      %text = filterChat( %text );
+
+   if ( strstr(%text, "\n") != -1 ) //Disallow \n chat spam
+   {
+      //%text = stripchars(%text, "\n");
+      messageClient(%client, 'MsgSpam', '\c2Newline characters are not allowed in chat.');
+      echo(%client.nameBase @ " tried to spam the server with new lines on teamchat channel.");
+
+      // Mute the offender
+      %client.spamMessageCount = $SPAM_MESSAGE_THRESHOLD;
+
+      return;
+   }
+
+   if ( strlen(%text) >= $pref::Server::MaxChatLen )
+      %text = getSubStr( %text, 0, $pref::Server::MaxChatLen );
+
+   // server/message.cs
+   chatMessageTeam(%client, %client.team, '\c6%1:\c3 %2', %client.playerName, %text);
+}
+
+function serverCmdMessageSent(%client, %text)
+{
+   if ( %client.isGagged ) // Check for admin gag
+      return;
+
+   // We created a filter via scripting
+   // Allow admins to control language on server
+   if ( $pref::Server::BadWordFilter )
+      %text = filterChat( %text );
+
+   if ( strstr(%text, "\n") != -1 ) // Disallow \n chat spam
+   {
+      //%text = stripchars(%text, "\n");
+      messageClient(%client, 'MsgSpam', '\c2Newline characters are not allowed in chat.');
+      echo(%client.nameBase @ " tried to spam the server with new lines on global channel.");
+
+      // Mute the offender
+      %client.spamMessageCount = $SPAM_MESSAGE_THRESHOLD;
+	
+      return;
+   }
+
+   if ( strlen(%text) >= $pref::Server::MaxChatLen )
+      %text = getSubStr( %text, 0, $pref::Server::MaxChatLen );
+
+   // server/message.cs
+   chatMessageAll(%client, '\c6%1:\c4 %2', %client.playerName, %text);
+}
+
+function serverCmdPrivateMessageSent(%client, %target, %text)
+{
+   // Client side:
+   //commandToServer('PrivateMessageSent', %target, %text);
+
+   // We want this client to be able to talk to admins regardless of gag status
+   if ( ( %text $= "" ) || spamAlert( %client ) )
+      return;
+
+   if ( $pref::Server::BadWordFilter )
+      %text = filterChat( %text );
+
+   if( strstr(%text, "\n") != -1 ) // Disallow \n chat spam
+   {
+      //%text = stripchars(%text, "\n");
+      messageClient(%client, 'MsgSpam', '\c2Newline characters are not allowed in chat.');
+      echo(%client.nameBase @ " tried to spam the server with new lines on global channel.");	
+      return;
+   }
+   if ( strlen(%text) >= $pref::Server::MaxChatLen )
+      %text = getSubStr( %text, 0, $pref::Server::MaxChatLen );
+
+   chatMessageClient( %target, %client, %client.voiceTag, %client.voicePitch, '\c5Message from %1: \c3%2', %client.playerName, %text);
+   //messageClient(%target, 'MsgPrivate', '\c5Message from %1: \c3%2', %client.playerName, %text);
+}
+
+//-----------------------------------------------------------------------------
+// Bad language filter
+//-----------------------------------------------------------------------------
+
+function filterChat(%string)
+{
+   // Looks like They added this to TGE 1.5
+   // Lets take advantage..
+   if ( containsBadWords( %string ) )
+      return( filterString( %string, "-" ) );
+   else
+      return( %string );
+}
+
+// Bad words are stored in a file so the admin can add or remove from the list
+exec(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/badWordList.cs");

@@ -45,8 +45,8 @@
 function clientCmdMissionStartPhase1(%seq, %missionName, %musicTrack)
 {
    // These need to come after the cls.
-   echo ("*** New Mission: " @ %missionName);
-   echo ("*** Phase 1: Download Datablocks & Targets");
+   echo ("<>>>> New Mission: " @ %missionName @ " <<<<>");
+   echo ("<>>>> Phase 1: Download Datablocks & Targets <<<<>");
    onMissionDownloadPhase1(%missionName, %musicTrack);
    commandToServer('MissionStartPhase1Ack', %seq);
 }
@@ -60,11 +60,11 @@ function onDataBlockObjectReceived(%index, %total)
 // Phase 2
 //----------------------------------------------------------------------------
 
-function clientCmdMissionStartPhase2(%seq,%missionName)
+function clientCmdMissionStartPhase2(%seq, %missionFile)
 {
    onPhase1Complete();
-   echo ("*** Phase 2: Download Ghost Objects");
-   onMissionDownloadPhase2(%missionName);
+   echo ("<>>>> Phase 2: Download Ghost Objects <<<<>");
+   onMissionDownloadPhase2(%missionFile);
    commandToServer('MissionStartPhase2Ack', %seq, $pref::Player:PlayerDB);
 }
 
@@ -84,27 +84,29 @@ function onGhostAlwaysObjectReceived()
 // Phase 3
 //----------------------------------------------------------------------------
 
-function clientCmdMissionStartPhase3(%seq,%missionName)
+function clientCmdMissionStartPhase3(%seq, %missionFile)
 {
    onPhase2Complete();
    StartClientReplication();
    StartFoliageReplication();
    
    // Load the static mission decals.
-   decalManagerLoad( %missionName @ ".decals" );
+   decalManagerLoad( %missionFile @ ".decals" );
    
-   echo ("*** Phase 3: Mission Lighting");
+   echo ("<>>>> Phase 3: Mission Lighting <<<<>");
    $MSeq = %seq;
-   $Client::MissionFile = %missionName;
+   $Client::MissionFile = %missionFile;
 
    // Need to light the mission before we are ready.
    // The sceneLightingComplete function will complete the handshake 
    // once the scene lighting is done.
+   //if (lightScene("sceneLightingComplete", "forceWritable"))
+   //if (lightScene("sceneLightingComplete", "forceAlways"))
    if (lightScene("sceneLightingComplete", ""))
    {
-      echo("Lighting mission....");
+      echo("<>>>> Lighting mission <<<<>");
       schedule(1, 0, "updateLightingProgress");
-      onMissionDownloadPhase3(%missionName);
+      onMissionDownloadPhase3(%missionFile);
       $lightingMission = true;
    }
 }
@@ -118,7 +120,7 @@ function updateLightingProgress()
 
 function sceneLightingComplete()
 {
-   echo("Mission lighting done");
+   echo("<>>>> Mission lighting done <<<<>");
    onPhase3Complete();
    
    // The is also the end of the mission load cycle.
@@ -134,7 +136,7 @@ function connect(%server)
 {
    %conn = new GameConnection(ServerConnection);
    RootGroup.add(ServerConnection);
-   %conn.setConnectArgs($pref::Player::Name);
+   %conn.setConnectArgs( getField($pref::Player, 0), getField($pref::Player, 1));
    %conn.setJoinPassword($Client::Password);
    %conn.connect(%server);
 }
@@ -151,118 +153,155 @@ function connect(%server)
 
 function onMissionDownloadPhase1(%missionName, %musicTrack)
 {   
+   %path = "levels/" @ fileBase( %missionName ) @ $PostFXManager::fileExtension;
+   %found = 0;
+   for( %file = findFirstFile( %path ); %file !$= ""; %file = findNextFile( %path ) )
+   {
+      //echo("--------> FILE:" SPC %file SPC "<--------");
+      if ( isScriptFile( %file ) )
+      {
+         %found = 1;
+         postFXManager::loadPresetHandler( %file );
+         break;
+      }
+   }
+
+   if( !%found )
+      PostFXManager::settingsApplyDefaultPreset();
+
+/*
    // Load the post effect presets for this mission.
    %path = "levels/" @ fileBase( %missionName ) @ $PostFXManager::fileExtension;
    if ( isScriptFile( %path ) )
       postFXManager::loadPresetHandler( %path ); 
    else
       PostFXManager::settingsApplyDefaultPreset();
+*/
                
    // Close and clear the message hud (in case it's open)
    if ( isObject( MessageHud ) )
       MessageHud.close();
 
    // Reset the loading progress controls:
-   if ( !isObject( LoadingProgress ) )
-      return;
-	  
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue(0);
-   LoadingProgressTxt.setValue("LOADING DATABLOCKS");
+      LoadingProgress.setValue("LOADING DATABLOCKS");
    Canvas.repaint();
+}
+
+   if ( %musicTrack !$= "" )
+      clientCmdPlayMusic(%musicTrack);
+   else
+      clientCmdStopMusic();
 }
 
 function onPhase1Progress(%progress)
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
-      
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue(%progress);
    Canvas.repaint(33);
+}
 }
 
 function onPhase1Complete()
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
-	  
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue( 1 );
    Canvas.repaint();
+}
 }
 
 //----------------------------------------------------------------------------
 // Phase 2
 //----------------------------------------------------------------------------
 
-function onMissionDownloadPhase2()
+function onMissionDownloadPhase2(%missionFile)
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
+   // Clear the console
+   if(!$pref::Console::NoClear)
+      cls();
       
+   // Reset the loading progress controls:
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue(0);
-   LoadingProgressTxt.setValue("LOADING OBJECTS");
+      LoadingProgress.setText("LOADING OBJECTS");
    Canvas.repaint();
+}
 }
 
 function onPhase2Progress(%progress)
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
-        
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue(%progress);
    Canvas.repaint(33);
+}
 }
 
 function onPhase2Complete()
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
+   // Make the clients next selection the last values stored or last loadout selected.
+   if( $pref::Player::CurrentLoadout !$= "" )
+      commandToServer( 'setClientLoadout', addTaggedString($pref::Player::CurrentLoadout) );
+   else
+      commandToServer( 'setClientLoadout', addTaggedString($pref::Player::Loadout[$pref::Player::SelectedLoadout]) );
+
+   // Send selected vehicle
+   commandToServer('SelectVehicle', addTaggedString($pref::Player::SelectedVehicle));
 	  
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue( 1 );
    Canvas.repaint();
+}   
 }   
 
 function onFileChunkReceived(%fileName, %ofs, %size)
 {
-   if ( !isObject( LoadingProgress ) )
-      return;     
-
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue(%ofs / %size);
-   LoadingProgressTxt.setValue("Downloading " @ %fileName @ "...");
+      LoadingProgress.setText("Downloading " @ %fileName @ "...");
+   }
 }
 
 //----------------------------------------------------------------------------
 // Phase 3
 //----------------------------------------------------------------------------
 
-function onMissionDownloadPhase3()
+function onMissionDownloadPhase3(%missionFile)
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
-      
+   if ( isObject( LoadingProgress ) )
+{
    LoadingProgress.setValue(0);
-   LoadingProgressTxt.setValue("LIGHTING MISSION");
+      LoadingProgress.setText("LIGHTING MISSION");
    Canvas.repaint();
+}
 }
 
 function onPhase3Progress(%progress)
 {
-   if ( !isObject( LoadingProgress ) )
-      return;
-	  
+   if ( isObject( LoadingProgress ) )
+   {
    LoadingProgress.setValue(%progress);
    Canvas.repaint(33);
+}
 }
 
 function onPhase3Complete()
 {
    $lightingMission = false;
 
-   if ( !isObject( LoadingProgress ) )
-      return;
-	  
-   LoadingProgressTxt.setValue("STARTING MISSION");
+   if ( isObject( LoadingProgress ) )
+   {
+      LoadingProgress.setValue("STARTING MISSION");
    LoadingProgress.setValue( 1 );
    Canvas.repaint();
+}
 }
 
 //----------------------------------------------------------------------------
@@ -273,61 +312,7 @@ function onMissionDownloadComplete()
 {
    // Client will shortly be dropped into the game, so this is
    // good place for any last minute gui cleanup.
+   if ( isObject( ArmoryDlg ) )
+      clientCmdClearArmoryHud(0);
 }
 
-
-//------------------------------------------------------------------------------
-// Before downloading a mission, the server transmits the mission
-// information through these messages.
-//------------------------------------------------------------------------------
-
-addMessageCallback( 'MsgLoadInfo', handleLoadInfoMessage );
-addMessageCallback( 'MsgLoadDescripition', handleLoadDescriptionMessage );
-addMessageCallback( 'MsgLoadInfoDone', handleLoadInfoDoneMessage );
-addMessageCallback( 'MsgLoadFailed', handleLoadFailedMessage );
-
-//------------------------------------------------------------------------------
-
-function handleLoadInfoMessage( %msgType, %msgString, %mapName ) 
-{
-   // Make sure the LoadingGUI is displayed
-   if (Canvas.getContent() != LoadingGui.getId())
-   {
-      loadLoadingGui("LOADING MISSION FILE");
-   }
-   
-	// Clear all of the loading info lines:
-	for( %line = 0; %line < LoadingGui.qLineCount; %line++ )
-		LoadingGui.qLine[%line] = "";
-	LoadingGui.qLineCount = 0;
-}
-
-//------------------------------------------------------------------------------
-
-function handleLoadDescriptionMessage( %msgType, %msgString, %line )
-{
-	LoadingGui.qLine[LoadingGui.qLineCount] = %line;
-	LoadingGui.qLineCount++;
-
-   // Gather up all the previous lines, append the current one
-   // and stuff it into the control
-	%text = "<spush><font:Arial:16>";
-	
-	for( %line = 0; %line < LoadingGui.qLineCount - 1; %line++ )
-		%text = %text @ LoadingGui.qLine[%line] @ " ";
-   %text = %text @ LoadingGui.qLine[%line] @ "<spop>";
-}
-
-//------------------------------------------------------------------------------
-
-function handleLoadInfoDoneMessage( %msgType, %msgString )
-{
-   // This will get called after the last description line is sent.
-}
-
-//------------------------------------------------------------------------------
-
-function handleLoadFailedMessage( %msgType, %msgString )
-{
-   MessageBoxOK( "Mission Load Failed", %msgString NL "Press OK to return to the Main Menu", "disconnect();" );
-}

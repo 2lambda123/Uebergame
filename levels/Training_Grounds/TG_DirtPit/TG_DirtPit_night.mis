@@ -24,6 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Grounds - Dirt Pit Arena by night";
          enabled = "1";
          levelName = "TG_DirtPit_night";
+		 MissionTypes = "DM TDM";
    };
    new SimGroup(PlayerDropPoints) {
       canSave = "1";

@@ -20,6 +20,21 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// List of master servers to query, each one is tried in order
+// until one responds
+$Pref::Server::RegionMask = 2;
+$pref::Master[0] = "2:88.198.65.149:28002";
+
+// Information about the server
+$Pref::Server::Name = "Uebergame server";
+$Pref::Server::Info = "This is an Uebergame server.";
+
+// Text to appear on loading screen
+// Multiple lines possible just add more varibles
+$pref::Server::Message0 = "Server Information";
+$pref::Server::Message1 = "Welcome to the Ubergame server!";
+$pref::Server::Message2 = "Treat others with respect.";
+
 $Pref::Server::ConnectionError =
    "You likely do not have the correct version of the game installed or "@
    "you are missing some of the related art and levels. "@
@@ -33,34 +48,44 @@ $Pref::Server::Port = 28000;
 // to connect to the server
 $Pref::Server::Password = "";
 
+$pref::Server::Dedicated = 0;
 // Password for admin clients
-$Pref::Server::AdminPassword = "";
+$Pref::Server::AdminPassword = "changeme";
+$pref::Server::SuperAdminPassword = "changemetoo";
+
+// outdated settings, needs checking
+
+//$pref::Game::Duration = 900;                 // specified in seconds
+//$pref::Game::EndGameScore = 20;
+//$pref::Game::EndGamePause = 5;               // specified in seconds
+//$pref::Game::AllowCycling = 1;
+//$pref::Server::EnableAI = 0;
 
 // Misc server settings.
-$Pref::Server::Name = "Uebergame server";
-$Pref::Server::Info = "This is an Uebergame server.";
-$Pref::Server::MaxPlayers = 10;
-$pref::Game::Duration = 900;                 // specified in seconds
-$pref::Game::EndGameScore = 20;
-$pref::Game::EndGamePause = 5;               // specified in seconds
-$pref::Game::AllowCycling = 1;
-
-$pref::Server::EnableAI = 0;
+$pref::Server::BadWordFilter = 1;
+$pref::Server::AiCount = 0;
+$pref::Server::BaseSacking = 1;
+$pref::Server::ConnectLog = 0;
+$pref::Server::MissionFile = "levels/TG_DesertRuins/TG_DesertRuins_day.mis";
+$pref::Server::ConnLogPath = "logs";
+$pref::Server::MissionType = "DM";
+$Pref::Server::MaxPlayers = 16;
+$Pref::Server::TimeLimit = 30;               // In minutes //needs fixing
+$Pref::Server::KickBanTime = 300;            // specified in seconds
+$Pref::Server::BanTime = 1800;               // specified in seconds
 $Pref::Server::FloodProtectionEnabled = 1;
 $Pref::Server::MaxChatLen = 120;
-$Pref::Server::BanTime = 1800;               // specified in seconds
-$Pref::Server::KickBanTime = 300;            // specified in seconds
-
-$Pref::Server::TimeLimit = 0;               // In minutes //unused?!
-
-// Finally load the preferences saved from the last
-// game execution if they exist.
-if ( $platform !$= "xenon" )
-{
-   if ( isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" ) )
-      exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" );
-}
-else
-{
-   echo( "Not loading server prefs.cs on Xbox360" );
-}
+$pref::Server::teamName[0] = "FFA";
+$pref::Server::teamName[1] = "Blue Team";
+$pref::Server::teamName[2] = "Red Team";
+$pref::Server::warmupTime = 30;
+$pref::Server::FriendlyFire = 1;
+$pref::Server::TournamentMode = 0;
+$pref::Server::DisallowVoteAdmin = 1;
+$pref::Server::DisallowVoteMission = 0;
+$pref::Server::DisallowVoteSkipMission = 0;
+$pref::Server::DisallowVoteFriendlyFire = 1;
+$pref::Server::DisallowVoteBaseSacking = 0;
+$pref::Server::DisallowVoteServerMode = 0;
+$pref::Server::DisallowVoteStartMatch = 0;
+$pref::Server::DisallowVoteTimeLimit = 0;

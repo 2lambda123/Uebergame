@@ -26,3 +26,161 @@ function clientCmdSyncEditorGui()
    if (isObject(EditorGui))
       EditorGui.syncCameraGui();
 }
+
+//----------------------------------------------------------------------------
+// Game start / end events sent from the server
+//----------------------------------------------------------------------------
+
+function clientCmdGameStart(%seq)
+{
+   PlayerListGui.zeroScores();
+}
+
+function clientCmdGameEnd(%seq)
+{
+   // Stop local activity... the game will be destroyed on the server
+   sfxStopAll();
+   
+   if ((!EditorIsActive() && !GuiEditorIsActive()))
+   {
+      // Copy the current scores from the player list into the
+      // end game gui (bit of a hack for now).
+   EndGameGuiListLabel.clear();
+   %header = "NAME" TAB "TEAM" TAB "SCORE";
+   EndGameGuiListLabel.addRow(0, %header);
+   EndGameGuiListLabel.setSelectedRow(0);
+
+      EndGameGuiList.clear();
+      for (%i = 0; %i < PlayerListGuiList.rowCount(); %i++)
+      {
+      //error("PlayerListGuiList.rowCount loop at: " @ %i);
+         %text = PlayerListGuiList.getRowText(%i);
+         %id = PlayerListGuiList.getRowId(%i);
+         EndGameGuiList.addRow(%id, %text);
+      }
+   EndGameGuiList.sortNumerical(2, false);
+
+      // Display the end-game screen
+      Canvas.setContent(EndGameGui);
+   }
+}
+//-----------------------------------------------------------------------------
+// Damage Direction Indicator
+//-----------------------------------------------------------------------------
+
+function clientCmdSetDamageDirection(%direction)
+{
+   eval("%ctrl = DamageHUD-->damage_" @ %direction @ ";");
+   if (isObject(%ctrl))
+   {
+      // Show the indicator, and schedule an event to hide it again
+      cancelAll(%ctrl);
+      %ctrl.setVisible(true);
+      %ctrl.schedule(500, setVisible, false);
+   }
+}
+
+//-----------------------------------------------------------------------------
+// Show/Hide specific gui elements
+
+// Default to Spectator mode
+$HudMode = "Spectator";
+
+function clientCmdSetHudMode(%mode)
+{
+   $HudMode = detag( %mode );
+
+   echo("\c2clientCmdSetHudMode(" SPC $HudMode SPC ")");
+
+   // only update key maps if playGui is current content (default.bind.cs)
+   if( Canvas.getContent() == PlayGui.getId() )
+      tge.updateKeyMaps();
+
+   // Kill all of the huds
+   ClusterHud.setVisible(false);
+   HudClock.setVisible(false);
+   clientCmdHideReticle();
+   clientDeploySensorOff();
+   objectiveHud.setVisible(false);
+   //HudRadar.setVisible(false);
+
+   switch$( $HudMode )
+   {
+      case "Spectator":
+         HudClock.setVisible(true);
+
+      case "HudTest":
+         ClusterHud.setVisible(true);
+         HudClock.setVisible(true);
+         clientCmdShowReticle();
+         objectiveHud.setVisible(true);
+         mainVoteHud.setVisible(true);
+         LagIcon.setVisible(true);
+         toggleNetGraph(1);
+         metrics("fps");
+
+      case "Play":
+         ClusterHud.setVisible(true);
+         HudClock.setVisible(true);
+         clientCmdShowReticle();
+         objectiveHud.setVisible(true);
+         //HudRadar.setVisible(true);
+         if(voteHud.voting)
+            mainVoteHud.setVisible(1);
+         else
+            mainVoteHud.setVisible(0);
+
+      case "Corpse":
+         HudClock.setVisible(true);
+         objectiveHud.setVisible(true);
+         if(voteHud.voting)
+            mainVoteHud.setVisible(1);
+         else
+            mainVoteHud.setVisible(0);
+
+      case "Pilot":
+         ClusterHud.setVisible(true);
+         HudClock.setVisible(true);
+         clientCmdShowReticle();
+         objectiveHud.setVisible(true);
+         //HudRadar.setVisible(true);
+         if(voteHud.voting)
+            mainVoteHud.setVisible(1);
+         else
+            mainVoteHud.setVisible(0);
+
+      default:
+         HudClock.setVisible(true);
+         clientCmdShowReticle();
+         objectiveHud.setVisible(true);
+         //HudRadar.setVisible(true);
+         if(voteHud.voting)
+            mainVoteHud.setVisible(1);
+         else
+            mainVoteHud.setVisible(0);
+   }
+}
+//-----------------------------------------------------------------------------
+// Show/Hide reticle
+
+function clientCmdHideReticle()
+{
+   reticle.setVisible(false);
+   $ZoomOn = false;
+   toggleZoomFOV();
+   zoomReticle.setVisible(false);
+}
+
+function clientCmdShowReticle()
+{
+   reticle.setVisible(true);
+}
+
+function clientCmdDoZoomReticle(%val)
+{
+   if( %val )
+   {
+      zoomReticle.setVisible(true);
+   }
+}
+

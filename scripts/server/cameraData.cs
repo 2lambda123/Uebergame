@@ -21,10 +21,15 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// Demo Pathed AIPlayer.
+// Define a datablock class to use for our observer camera
 //-----------------------------------------------------------------------------
 
-datablock PlayerData(DemoPlayer : DefaultPlayerData)
+datablock CameraData(Observer)
 {
-   shootingDelay = 2000;
+   mode = "Observer";
+};
+
+datablock CameraData(Spectator)
+{
+   mode = "SpectatorFly";
 };

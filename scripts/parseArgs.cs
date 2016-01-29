@@ -252,38 +252,6 @@ function defaultParseArgs()
             else
                error("Error: Missing Command Line argument. Usage: -jDebug <journal_name>");
 
-         //--------------------
-         case "-level":
-            $argUsed[$i]++;
-            if ($hasNextArg)
-            {
-               %hasExt = strpos($nextArg, ".mis");
-               if(%hasExt == -1)
-               {
-                  $levelToLoad = $nextArg @ " ";
-                  
-                  for(%i = $i + 2; %i < $Game::argc; %i++)
-                  {
-                     %arg = $Game::argv[%i];
-                     %hasExt = strpos(%arg, ".mis");
-                     
-                     if(%hasExt == -1)
-                     {
-                        $levelToLoad = $levelToLoad @ %arg @ " ";
-                     } else
-                     {
-                        $levelToLoad = $levelToLoad @ %arg;
-                        break;
-                     }
-                  }
-               } else
-               $levelToLoad = $nextArg;
-               $argUsed[$i+1]++;
-               $i++;
-            }
-            else
-               error("Error: Missing Command Line argument. Usage: -level <level file name (no path), with or without extension>");
-
          //-------------------
          case "-worldeditor":
             $startWorldEditor = true;

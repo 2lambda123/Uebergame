@@ -20,205 +20,43 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-function StartLevel( %mission, %hostingType )
+function ChooseLevelDlg::onWake(%this)
 {
-   if( %mission $= "" )
-   {
-      %id = CL_levelList.getSelectedId();
-      %mission = getField(CL_levelList.getRowTextById(%id), 1);
-   }
+   buildMissionTypePopup(CL_LevelType);
 
-   if (%hostingType !$= "")
+   // Select the saved-off prefs:
+   if ( $pref::Server::MissionType !$= "" )
    {
-      %serverType = %hostingType;
+      // Find the last selected type:
+      for ( %type = 0; %type < $HostTypeCount; %type++ )
+      {
+         if($HostTypeName[%type] $= $pref::Server::MissionType)
+            break;
+      }
+
+      if ( %type != $HostTypeCount )
+      {
+         CL_LevelType.setSelected(%type);
+         CL_LevelType.onSelect(%type, "");
+         if ( $pref::Server::MissionFile !$= "" )
+         {
+            // Find the last selected mission:
+            for(%index = 0; %index < $HostMissionCount[%type]; %index++)
+            {
+               if($HostMissionFile[$HostMission[%type, %index]] $= $pref::Server::MissionFile)
+                  break;
+            }
+
+            if(%index != $HostMissionCount[%type])
+               CL_LevelList.setSelectedById($HostMission[%type, %index]);
+         }
+      }
    }
    else
    {
-      if ($pref::HostMultiPlayer)
-         %serverType = "MultiPlayer";
-      else
-         %serverType = "SinglePlayer";
+      CL_LevelType.setSelected(0);
+      CL_LevelType.onSelect(0, "");
    }
-
-   // Show the loading screen immediately.
-   if ( isObject( LoadingGui ) )
-   {
-      Canvas.setContent("LoadingGui");
-      LoadingProgress.setValue(1);
-      LoadingProgressTxt.setValue("LOADING MISSION FILE");
-      Canvas.repaint();
-   }
-
-   createAndConnectToLocalServer( %serverType, %mission );
-}
-
-
-//----------------------------------------
-function ChooseLevelDlg::onWake( %this )
-{
-   CL_levelList.clear();
-   ChooseLevelWindow->SmallPreviews.clear();
-   
-   %i = 0;
-   for(%file = findFirstFile($Server::MissionFileSpec); %file !$= ""; %file = findNextFile($Server::MissionFileSpec))
-   {
-      // Skip our new level/mission if we arent choosing a level
-      // to launch in the editor.
-      if ( !%this.launchInEditor )
-      {
-         if (strstr(%file, "newMission.mis") > -1)
-            continue;      
-         if (strstr(%file, "newLevel.mis") > -1)
-            continue;
-      }
-      
-      %this.addMissionFile( %file );
-   }
-   
-   // Also add the new level mission as defined in the world editor settings
-   // if we are choosing a level to launch in the editor.
-   if ( %this.launchInEditor )
-   {
-      %file = EditorSettings.value( "WorldEditor/newLevelFile" );
-      if ( %file !$= "" )
-         %this.addMissionFile( %file );
-   }
-
-   // Sort our list
-   CL_levelList.sort(0);
-
-   // Set the first row as the selected row
-   CL_levelList.setSelectedRow(0);
-
-   for (%i = 0; %i < CL_levelList.rowCount(); %i++)
-   {
-      %preview = new GuiBitmapButtonCtrl() {
-         internalName = "SmallPreview" @ %i;
-         Extent = "108 81";
-         bitmap = "art/gui/no-preview";
-         command = "ChooseLevelWindow.previewSelected(ChooseLevelWindow->SmallPreviews->SmallPreview" @ %i @ ");";
-      };
-
-      ChooseLevelWindow->SmallPreviews.add(%preview);
-
-      // Set this small preview visible
-      if (%i >= 5)
-         %preview.setVisible(false);
-
-      // Set the level index
-      %preview.levelIndex = %i;
-
-      // Get the name
-      %name = getField(CL_levelList.getRowText(%i), 0);
-
-      %preview.levelName = %name;
-
-      %file = getField(CL_levelList.getRowText(%i), 1);
-
-      // Find the preview image
-      %levelPreview = filePath(%file) @ "/" @ fileBase(%file) @ "_preview";
-
-      // Test against all of the different image formats
-      // This should probably be moved into an engine function
-      if (isFile(%levelPreview @ ".png") ||
-          isFile(%levelPreview @ ".jpg") ||
-          isFile(%levelPreview @ ".bmp") ||
-          isFile(%levelPreview @ ".gif") ||
-          isFile(%levelPreview @ ".jng") ||
-          isFile(%levelPreview @ ".mng") ||
-          isFile(%levelPreview @ ".tga"))
-      {
-         %preview.setBitmap(%levelPreview);
-      }
-
-      // Get the description
-      %desc = getField(CL_levelList.getRowText(%i), 2);
-
-      %preview.levelDesc = %desc;
-   }
-
-   ChooseLevelWindow->SmallPreviews.firstVisible = -1;
-   ChooseLevelWindow->SmallPreviews.lastVisible = -1;
-
-   if (ChooseLevelWindow->SmallPreviews.getCount() > 0)
-   {
-      ChooseLevelWindow->SmallPreviews.firstVisible = 0;
-
-      if (ChooseLevelWindow->SmallPreviews.getCount() < 6)
-         ChooseLevelWindow->SmallPreviews.lastVisible = ChooseLevelWindow->SmallPreviews.getCount() - 1;
-      else
-         ChooseLevelWindow->SmallPreviews.lastVisible = 4;
-   }
-
-   if (ChooseLevelWindow->SmallPreviews.getCount() > 0)
-      ChooseLevelWindow.previewSelected(ChooseLevelWindow->SmallPreviews.getObject(0));
-
-   // If we have 5 or less previews then hide our next/previous buttons
-   // and resize to fill their positions
-   if (ChooseLevelWindow->SmallPreviews.getCount() < 6)
-   {
-      ChooseLevelWindow->PreviousSmallPreviews.setVisible(false);
-      ChooseLevelWindow->NextSmallPreviews.setVisible(false);
-
-      %previewPos = ChooseLevelWindow->SmallPreviews.getPosition();
-      %previousPos = ChooseLevelWindow->PreviousSmallPreviews.getPosition();
-
-      %previewPosX = getWord(%previousPos, 0);
-      %previewPosY = getWord(%previewPos,  1);
-
-      ChooseLevelWindow->SmallPreviews.setPosition(%previewPosX, %previewPosY);
-
-      ChooseLevelWindow->SmallPreviews.colSpacing = 10;//((getWord(NextSmallPreviews.getPosition(), 0)+11)-getWord(PreviousSmallPreviews.getPosition(), 0))/4;
-      ChooseLevelWindow->SmallPreviews.refresh();
-   }
-
-   if (ChooseLevelWindow->SmallPreviews.getCount() <= 1)
-   {
-      // Hide the small previews
-      ChooseLevelWindow->SmallPreviews.setVisible(false);
-
-      // Shrink the ChooseLevelWindow so that we don't have a large blank space
-      %extentX = getWord(ChooseLevelWindow.getExtent(), 0);
-      %extentY = getWord(ChooseLevelWindow->SmallPreviews.getPosition(), 1);
-
-      ChooseLevelWIndow.setExtent(%extentX, %extentY);
-   }
-   else
-   {
-      // Make sure the small previews are visible
-      ChooseLevelWindow->SmallPreviews.setVisible(true);
-
-      %extentX = getWord(ChooseLevelWindow.getExtent(), 0);
-      
-      %extentY = getWord(ChooseLevelWindow->SmallPreviews.getPosition(), 1);
-      %extentY = %extentY + getWord(ChooseLevelWindow->SmallPreviews.getExtent(), 1);
-      %extentY = %extentY + 9;
-
-      ChooseLevelWIndow.setExtent(%extentX, %extentY);
-   }
-}
-
-function ChooseLevelDlg::addMissionFile( %this, %file )
-{
-   %levelName = fileBase(%file);
-   %levelDesc = "A Torque level";
-
-   %LevelInfoObject = getLevelInfo(%file);
-
-   if (%LevelInfoObject != 0)
-   {
-      if(%LevelInfoObject.levelName !$= "")
-         %levelName = %LevelInfoObject.levelName;
-      else if(%LevelInfoObject.name !$= "")
-         %levelName = %LevelInfoObject.name;
-
-      if (%LevelInfoObject.desc0 !$= "")
-         %levelDesc = %LevelInfoObject.desc0;
-         
-      %LevelInfoObject.delete();
-   }
-
-   CL_levelList.addRow( CL_levelList.rowCount(), %levelName TAB %file TAB %levelDesc );
 }
 
 function ChooseLevelDlg::onSleep( %this )
@@ -228,123 +66,160 @@ function ChooseLevelDlg::onSleep( %this )
    %this.launchInEditor = false;
 }
 
-function ChooseLevelWindow::previewSelected(%this, %preview)
+function buildMissionTypePopup(%popup)
 {
-   // Set the selected level
-   if (isObject(%preview) && %preview.levelIndex !$= "")
-      CL_levelList.setSelectedRow(%preview.levelIndex);
-   else
-      CL_levelList.setSelectedRow(-1);
+   %popup.clear();
+   for(%type = 0; %type < $HostTypeCount; %type++)
+      %popup.add($HostTypeDisplayName[%type], %type);
 
-   // Set the large preview image
-   if (isObject(%preview) && %preview.bitmap !$= "")
-      %this->CurrentPreview.setBitmap(%preview.bitmap);
-   else
-      %this->CurrentPreview.setBitmap("art/gui/no-preview");
-
-   // Set the current level name
-   if (isObject(%preview) && %preview.levelName !$= "")
-      %this->LevelName.setText(%preview.levelName);
-   else
-      %this->LevelName.setText("Level");
-
-   // Set the current level description
-   if (isObject(%preview) && %preview.levelDesc !$= "")
-      %this->LevelDescription.setText(%preview.levelDesc);
-   else
-      %this->LevelDescription.setText("A Torque Level");
+   %popup.sort();
 }
 
-function ChooseLevelWindow::previousPreviews(%this)
+// Do this onMouseUp not via Command which occurs onMouseDown so we do
+
+// not have a lingering mouseUp event lingering in the ether.
+
+function ChooseLevelDlgGoBtn::onMouseUp( %this )
+
 {
-   %prevHiddenIdx = %this->SmallPreviews.firstVisible - 1;
 
-   if (%prevHiddenIdx < 0)
+   // So we can't fire the button when loading is in progress.
+
+   if ( isObject( ServerGroup ) )
+
       return;
 
-   %lastVisibleIdx = %this->SmallPreviews.lastVisible;
+   %id = CL_LevelList.getSelectedId();
+   %mission = $HostMissionFile[%id];
 
-   if (%lastVisibleIdx >= %this->SmallPreviews.getCount())
-      return;
+   // Launch the chosen level with the editor open?
 
-   %prevHiddenObj  = %this->SmallPreviews.getObject(%prevHiddenIdx);
-   %lastVisibleObj = %this->SmallPreviews.getObject(%lastVisibleIdx);
+   if ( ChooseLevelDlg.launchInEditor )
 
-   if (isObject(%prevHiddenObj) && isObject(%lastVisibleObj))
    {
-      %this->SmallPreviews.firstVisible--;
-      %this->SmallPreviews.lastVisible--;
 
-      %prevHiddenObj.setVisible(true);
-      %lastVisibleObj.setVisible(false);
+      activatePackage( "BootEditor" );
+
+      ChooseLevelDlg.launchInEditor = false;
+ 
+     StartLevel( %mission, "SinglePlayer" );
+
    }
-}
 
-function ChooseLevelWindow::nextPreviews(%this)
-{
-   %firstVisibleIdx = %this->SmallPreviews.firstVisible;
+   else
 
-   if (%firstVisibleIdx < 0)
-      return;
-
-   %firstHiddenIdx = %this->SmallPreviews.lastVisible + 1;
-
-   if (%firstHiddenIdx >= %this->SmallPreviews.getCount())
-      return;
-
-   %firstVisibleObj = %this->SmallPreviews.getObject(%firstVisibleIdx);
-   %firstHiddenObj  = %this->SmallPreviews.getObject(%firstHiddenIdx);
-
-   if (isObject(%firstVisibleObj) && isObject(%firstHiddenObj))
    {
-      %this->SmallPreviews.firstVisible++;
-      %this->SmallPreviews.lastVisible++;
 
-      %firstVisibleObj.setVisible(false);
-      %firstHiddenObj.setVisible(true);
-   }
+      StartLevel( %mission, "" );
+ 
+  }
+
 }
 
-//----------------------------------------
-function getLevelInfo( %missionFile ) 
+function StartLevel(%mission, %serverType)
 {
-   %file = new FileObject();
-   
-   %LevelInfoObject = "";
-   
-   if ( %file.openForRead( %missionFile ) ) {
-		%inInfoBlock = false;
-		
-		while ( !%file.isEOF() ) {
-			%line = %file.readLine();
-			%line = trim( %line );
-			
-			if( %line $= "new ScriptObject(LevelInfo) {" )
-				%inInfoBlock = true;
-         else if( %line $= "new LevelInfo(theLevelInfo) {" )
-				%inInfoBlock = true;
-			else if( %inInfoBlock && %line $= "};" ) {
-				%inInfoBlock = false;
-				%LevelInfoObject = %LevelInfoObject @ %line; 
-				break;
-			}
-			
-			if( %inInfoBlock )
-			   %LevelInfoObject = %LevelInfoObject @ %line @ " "; 	
-		}
-		
-		%file.close();
-	}
-   %file.delete();
+   if( %mission $= "" )
+   {
+      %id = CL_LevelList.getSelectedId();
+      %mission = $HostMissionFile[%id];
+   }
 
-	if( %LevelInfoObject !$= "" )
-	{
-	   %LevelInfoObject = "%LevelInfoObject = " @ %LevelInfoObject;
-	   eval( %LevelInfoObject );
+   if ( %serverType $= "" )
+   {
+      if( $pref::Server::Multiplayer )
+         %serverType = "MultiPlayer";
+      else
+         %serverType = "SinglePlayer";
+   }
 
-      return %LevelInfoObject;
-	}
-	
-	// Didn't find our LevelInfo
-   return 0; 
+   //LogEcho("CL_StartLevel selected id:" SPC %id SPC "Mission:" SPC %mission);
+
+   if ( $Pref::Server::Password !$= "" )
+      $Client::Password = $Pref::Server::Password;
+
+   // Show the loading screen immediately.
+   if ( isObject( LoadingGui ) )
+   {
+      Canvas.setContent("LoadingGui");
+      LoadingProgress.setValue(1);
+      LoadingProgress.setValue("LOADING LEVEL FILE");
+      Canvas.repaint();
+   }
+
+   createAndConnectToLocalServer( %serverType, %mission, $pref::Server::MissionType );
+}
+
+function CL_LevelList::onSelect(%this, %row)
+{
+   //LogEcho("CL_LevelList::onSelect( "@%this.getName()@", "@%row@" )");
+   // Get the mission file, this includes path information.
+   %mission = $HostMissionFile[%this.getSelectedId()];
+
+   // Find the preview image
+   %levelPreview = filePath(%mission) @ "/" @ fileBase(%mission) @ "_preview";
+
+   // Test against all of the different image formats
+   // This should probably be moved into an engine function
+   if (isFile(%levelPreview @ ".png") ||
+       isFile(%levelPreview @ ".jpg") ||
+       isFile(%levelPreview @ ".dds"))
+   {
+      CL_Preview.setBitmap( %levelPreview );
+   }
+   else
+   {
+      CL_Preview.setBitmap( "levels/load_mission.jpg" );
+   }
+/*
+   // Set the preview bitmap which is the mission name.jpg
+   %image = filePath(%mission) @ "/load_" @ fileBase(%mission) @ ".jpg";
+   if ( isFile( %image ) )
+      CL_Preview.setBitmap( %image );
+   else
+      CL_Preview.setBitmap( "levels/load_mission.jpg" );
+*/
+   // Extract mission description from the mission file and stuff into a global array.
+   %this.getMissionInfo(%mission);
+
+   CL_Description.setText("");
+   %text = "<color:ffffff><shadowcolor:000000><shadow:1:1><font:Arial Bold:12>";
+   for(%line = 0; %line < $SMInfoLineCount; %line++)
+      CL_Description.addtext( %text @ $SMInfoLine[%line] @ "\n\n", true );
+}
+
+function CL_LevelType::onSelect(%this, %id, %text)
+{
+   //LogEcho("CL_LevelType::onSelect( "@%this.getName()@", "@%id@", "@%text@" )");
+   // Fill the mission list:
+   CL_LevelList.clear();
+   %lastAdded = 0;
+   for(%i = 0; %i < $HostMissionCount[%id]; %i++)
+   {
+      %misId = $HostMission[%id, %i];
+      CL_LevelList.addRow(%misId, $HostMissionName[%misId]);
+      %lastAdded = %misId;
+   }
+   CL_LevelList.sort(0);
+   CL_LevelList.sortNumerical(1, false);
+
+   // Select the last mission added:
+   CL_LevelList.setSelectedById(%lastAdded);
+   $pref::Server::MissionType = $HostTypeName[%id];
+}
+
+function CL_LevelList::getMissionInfo(%this, %mission)
+{
+   //LogEcho("CL_LevelList::getMissionInfo(" SPC %this.getName() @", "@ %mission SPC ")");
+
+   // Clear out the old
+   for ( %i = 0; %i < %SMInfoLineCount; %i++ )
+      $SMInfoLine[%i] = "";
+
+   $SMInfoLineCount = 0;
+
+   for( %line = 0; $HostMissionDesc[%mission, %line] !$= ""; %line++ )
+   {
+      $SMInfoLine[$SMInfoLineCount] = $HostMissionDesc[%mission, %line];
+      $SMInfoLineCount++;
+   }
 }

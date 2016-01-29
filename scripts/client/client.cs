@@ -35,161 +35,60 @@ function SADSetPassword(%password)
    commandToServer('SADSetPassword', %password);
 }
 
+function resetClientDefaults()
+{
+   echo( "Resetting client defaults..." );
+   // Override client prefs with defaults.
+   exec( "./defaults.cs" );
+   echo( "Client reset complete. Quiting.." );
+   schedule(2000, 0, "quit");
+}
+
 //----------------------------------------------------------------------------
 // Misc server commands
 //----------------------------------------------------------------------------
 
-function clientCmdSyncClock(%time)
+function GameConnection::prepDemoRecord(%this)
 {
-   // Time update from the server, this is only sent at the start of a mission
-   // or when a client joins a game in progress.
-}
-
-//-----------------------------------------------------------------------------
-// Damage Direction Indicator
-//-----------------------------------------------------------------------------
-
-function clientCmdSetDamageDirection(%direction)
-{
-   eval("%ctrl = DamageHUD-->damage_" @ %direction @ ";");
-   if (isObject(%ctrl))
+   %this.demoChatLines = HudMessageVector.getNumLines();
+   for ( %i = 0; %i < %this.demoChatLines; %i++ )
    {
-      // Show the indicator, and schedule an event to hide it again
-      cancelAll(%ctrl);
-      %ctrl.setVisible(true);
-      %ctrl.schedule(500, setVisible, false);
+      %this.demoChatText[%i] = HudMessageVector.getLineText(%i);
+      %this.demoChatTag[%i] = HudMessageVector.getLineTag(%i);
+      echo("Chat line " @ %i @ ": " @ %this.demoChatText[%i]);
    }
 }
 
-//-----------------------------------------------------------------------------
-// Teleporter visual effect
-//-----------------------------------------------------------------------------
-
-function clientCmdPlayTeleportEffect(%position, %effectDataBlock)
+function GameConnection::prepDemoPlayback(%this)
 {
-   if (isObject(%effectDataBlock))
-   {
-      new Explosion()
-      {
-         position = %position;
-         dataBlock = %effectDataBlock;
-      };
-   }
+   for ( %i = 0; %i < %this.demoChatLines; %i++ )
+      HudMessageVector.pushBackLine(%this.demoChatText[%i], %this.demoChatTag[%i]);
+   Canvas.setContent(PlayGui);
 }
 
-// ----------------------------------------------------------------------------
-// WeaponHUD
-// ----------------------------------------------------------------------------
-
-// Update the Ammo Counter with current ammo, if not any then hide the counter.
-function clientCmdSetAmmoAmountHud(%amount, %amountInClips)
+/// A helper function which will return the ghosted client object
+/// from a server object when connected to a local server.
+function serverToClientObject( %serverObject )
 {
-   if (!%amount)
-      AmmoAmount.setVisible(false);
-   else
-   {
-      AmmoAmount.setVisible(true);
-      AmmoAmount.setText("Ammo: " @ %amount @ "/" @ %amountInClips);
-   }
+   assert( isObject( LocalClientConnection ), "serverToClientObject() - No local client connection found!" );
+   assert( isObject( ServerConnection ), "serverToClientObject() - No server connection found!" );      
+         
+   %ghostId = LocalClientConnection.getGhostId( %serverObject );
+   if ( %ghostId == -1 )
+      return 0;
+                
+   return ServerConnection.resolveGhostID( %ghostId );   
 }
 
-// Here we update the Weapon Preview image & reticle for each weapon.  We also
-// update the Ammo Counter (just so we don't have to call it separately).
-// Passing an empty parameter ("") hides the HUD component.
+//----------------------------------------------------------------------------
+// Debug commands
+//----------------------------------------------------------------------------
 
-function clientCmdRefreshWeaponHUD(%amount, %preview, %ret, %zoomRet, %amountInClips)
+function netSimulateLag( %msDelay, %packetLossPercent )
 {
-   if (!%amount)
-      AmmoAmount.setVisible(false);
-   else
-   {
-      AmmoAmount.setVisible(true);
-      AmmoAmount.setText("Ammo: " @ %amount @ "/" @ %amountInClips);
-   }
-
-   if (%preview $= "")
-      WeaponHUD.setVisible(false);//PreviewImage.setVisible(false);
-   else
-   {
-      WeaponHUD.setVisible(true);//PreviewImage.setVisible(true);
-      PreviewImage.setbitmap("art/gui/weaponHud/"@ detag(%preview));
-   }
-
-   if (%ret $= "")
-      Reticle.setVisible(false);
-   else
-   {
-      Reticle.setVisible(true);
-      Reticle.setbitmap("art/gui/weaponHud/"@ detag(%ret));
-   }
-
-   if (isObject(ZoomReticle))
-   {
-      if (%zoomRet $= "")
-      {
-         ZoomReticle.setBitmap("");
-      }
-      else
-      {
-         ZoomReticle.setBitmap("art/gui/weaponHud/"@ detag(%zoomRet));
-      }
-   } 
+   if ( %packetLossPercent $= "" )
+      %packetLossPercent = 0;
+                  
+   commandToServer( 'NetSimulateLag', %msDelay, %packetLossPercent );
 }
 
-// ----------------------------------------------------------------------------
-// Vehicle Support
-// ----------------------------------------------------------------------------
-
-function clientCmdtoggleVehicleMap(%toggle)
-{
-   if(%toggle)
-   {
-      moveMap.pop();
-	  // clear movement
-	  $mvForwardAction = 0;
-	  $mvBackwardAction = 0;
-      vehicleMap.push();
-   }
-   else
-   {
-      vehicleMap.pop();
-      moveMap.push();
-   }
-}
-
-// ----------------------------------------------------------------------------
-// Turret Support
-// ----------------------------------------------------------------------------
-
-// Call by the Turret class when a player mounts or unmounts it.
-// %turret = The turret that was mounted
-// %player = The player doing the mounting
-// %mounted = True if the turret was mounted, false if it was unmounted
-function turretMountCallback(%turret, %player, %mounted)
-{
-   //echo ( "\c4turretMountCallback -> " @ %mounted );
-
-   if (%mounted)
-   {
-      // Push the action map
-      turretMap.push();
-   }
-   else
-   {
-      // Pop the action map
-      turretMap.pop();
-   }
-}
-
-function clientCmdsendSkinName()
-{
-   commandToServer('takeSkinName',$pref::Player::Skin);
-}
-
-// ----------------------------------------------------------------------------
-// splatter Support
-// ----------------------------------------------------------------------------
-function clientCMDSpatter(%Decalposition, %splatterNorm, %splatterScaling)
-{
-    decalManagerAddDecal(%Decalposition, %splatterNorm, 0, %splatterScaling, bloodDecalData, false);
-}

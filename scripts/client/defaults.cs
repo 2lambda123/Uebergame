@@ -20,6 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+
 // The master server is declared with the server defaults, which is
 // loaded on both clients & dedicated servers.  If the server mod
 // is not loaded on a client, then the master must be defined. 
@@ -31,12 +32,17 @@ $pref::Video::missingTexturePath = "art/editor/missingTexture";
 $pref::Video::unavailableTexturePath = "art/editor/unavailable";
 $pref::Video::warningTexturePath = "art/editor/warnmat";
 
+// Now add your own game specific client preferences as
+// well as any overloaded core defaults here.
+
+$pref::LogEchoEnabled = 0;
+
 $pref::debug::consoleSpam = "1";
 $pref::debug::FPV = "1";
 $pref::debug::showFramerate = "1";
 $pref::decalMgr::enabled = "1";
 $pref::enablePostEffects = "1";
-$pref::HostMultiPlayer = "1";
+$pref::Server::Multiplayer = "1";
 
 $pref::imposter::canShadow = "1";
 $pref::enableBadWordFilter = "1";
@@ -45,10 +51,15 @@ $pref::SFX::distanceModel = "logarithmic";
 $pref::SFX::dopplerFactor = "0.75";
 $pref::SFX::rolloffFactor = "0.25";
 
-$pref::Player::Name = "Player";
+$pref::Player = "Player\tBase";
 $pref::Player::Skin = "base";
 $pref::Player::defaultFov = 75;
 $pref::Player::zoomSpeed = 1;
+$pref::Player::FriendlyColor = "0.000000 1.000000 0.000000 1.000000";
+$pref::Player::EnemyColor = "1.000000 0.000000 0.000000 1.000000";
+$pref::Player::SelectedVehicle = "Cheetah";
+
+$pref::Audio::BackgroundMusic = 1;
 
 $pref::Net::LagThreshold = 400;
 $pref::Net::Port = 28000;
@@ -656,20 +667,4 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
    }
    
    return "Graphics quality settings have been auto detected.";
-}
-
-// Now add your own game specific client preferences as
-// well as any overloaded core defaults here.
-$PhysXLogWarnings = false;
-
-// Finally load the preferences saved from the last
-// game execution if they exist.
-if ( $platform !$= "xenon" )
-{
-   if ( isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" ) )
-      exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" );
-}
-else
-{
-   echo( "Not loading client prefs.cs on Xbox360" );
 }

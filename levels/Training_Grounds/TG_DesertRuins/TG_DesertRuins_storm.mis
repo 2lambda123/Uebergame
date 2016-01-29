@@ -24,6 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Level in the desert ruins, while in a sandstorm";
          enabled = "1";
          levelName = "TG_DesertRuins_storm";
+		 MissionTypes = "DM TDM";
    };
    new ScatterSky(Sky) {
       skyBrightness = "30";

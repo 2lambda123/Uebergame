@@ -37,3 +37,50 @@ datablock MissionMarkerData(CameraBookmarkMarker)
    category = "Misc";
    shapeFile = "art/editor/camera.dts";
 };
+
+datablock MissionMarkerData(FlagMarker)
+{
+   category = "Objectives";
+   shapeFile = "art/editor/octahedron.dts";
+};
+
+datablock MissionMarkerData(VehicleMarker)
+{
+   category = "Misc";
+   shapeFile = "art/editor/octahedron.dts";
+};
+
+//------------------------------------------------------------------------------
+// - serveral marker types may share MissionMarker datablock type
+function MissionMarkerData::create(%block)
+{
+   switch$(%block)
+   {
+      case "WayPointMarker":
+         %obj = new WayPoint() {
+            dataBlock = %block;
+            name = "Waypoint";
+            team = 0;
+         };
+         return(%obj);
+
+      case "SpawnSphereMarker":
+         %obj = new SpawnSphere() {
+            datablock = %block;
+         };
+         return(%obj);
+
+      case "FlagMarker":
+         %obj = new MissionMarker() {
+            datablock = %block;
+         };
+         return(%obj);
+
+      case "VehicleMarker":
+         %obj = new MissionMarker() {
+            datablock = %block;
+         };
+         return(%obj);
+   }
+   return(-1);
+}

@@ -20,6 +20,44 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// Timeouts for corpse deletion.
+$CorpseTimeoutValue = 10 * 1000;
+$InvincibleTime = 8;
+
+// Damage Rate for entering Liquid
+$DamageLava       = 0.01;
+$DamageHotLava    = 0.01;
+$DamageCrustyLava = 0.01;
+
+// Death Animations
+$PlayerDeathAnim::TorsoFrontFallForward = 1;
+$PlayerDeathAnim::TorsoFrontFallBack = 2;
+$PlayerDeathAnim::TorsoBackFallForward = 3;
+$PlayerDeathAnim::TorsoLeftSpinDeath = 4;
+$PlayerDeathAnim::TorsoRightSpinDeath = 5;
+$PlayerDeathAnim::LegsLeftGimp = 6;
+$PlayerDeathAnim::LegsRightGimp = 7;
+$PlayerDeathAnim::TorsoBackFallForward = 8;
+$PlayerDeathAnim::HeadFrontDirect = 9;
+$PlayerDeathAnim::HeadBackFallForward = 10;
+$PlayerDeathAnim::ExplosionBlowBack = 11;
+
+//$player::jumpTrigger = 2;
+//$player::crouchTrigger = 3;
+//$player::proneTrigger = 4;
+//$player::sprintTrigger = 5;
+//$player::jumpJetTrigger = 1;
+//$player::imageTrigger0 = 0;
+//$player::imageTrigger1 = 1;
+//$player::maxImpulseVelocity = 
+//$player::maxPredictionTicks = 
+//$player::minWarpTicks = 
+//$player::maxWarpTicks = 
+//$player::renderCollision = 
+//$player::renderMyItems = 
+//$player::renderMyPlayer =
+//$Player::Gravity =
+
 //----------------------------------------------------------------------------
 // Player Audio Profiles
 //----------------------------------------------------------------------------
@@ -36,6 +74,30 @@ datablock SFXProfile(PainCrySound)
    fileName = "art/sound/player/pain/orc_pain";
    description = AudioClose3D;
    preload = true;
+};
+
+datablock SFXProfile(PainCrySound1)
+{
+   fileName = "art/sound/player/pain/orc_pain";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(PainCrySound2)
+{
+   fileName = "art/sound/player/pain/orc_pain";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXPlayList(PainCrySoundList)
+{
+   // Use a looped description so the list playback will loop.
+   description = AudioClosest3D;
+
+   track[ 0 ] = PainCrySound0;
+   track[ 1 ] = PainCrySound1;
+   track[ 2 ] = PainCrySound2;
 };
 
 //----------------------------------------------------------------------------
@@ -559,10 +621,11 @@ datablock DebrisData( PlayerDebris )
 // This is our default player datablock that all others will derive from.
 // ----------------------------------------------------------------------------
 
-datablock PlayerData(DefaultPlayerData)
+datablock PlayerData(DefaultSoldier : ArmorDamageScale)
 {
+   className = Armor;
+	
    renderFirstPerson = false;
-
    computeCRC = false;
 
    // Third person shape
@@ -604,6 +667,7 @@ datablock PlayerData(DefaultPlayerData)
    runForce = "3240";
    runEnergyDrain = "0.136";
    minRunEnergy = "10";
+   // value * 2.48 = kph
    maxForwardSpeed = "4";
    maxBackwardSpeed = "3";
    maxSideSpeed = "3";
@@ -737,18 +801,24 @@ datablock PlayerData(DefaultPlayerData)
 
    // Allowable Inventory Items
 
-   // available skins (see materials.cs in model folder)
+   maxWeapons = 2;
+   maxSpecials = 1;
+   maxGrenades = 1;
+   maxMines = 1;
 
-   //maxInvDeployableTurret = "0";
-   //maxInvRyder = "1";
-   //maxInvLurkerGrenadeLauncher = "1";
-   //maxInvRyderClip = "2";
-   //maxInvLurker = "1";
-   //maxInvProxMine = "0";
-   //maxInvLurkerGrenadeAmmo = "0";
-   //maxInvLurkerClip = "2";
+   // Radius damage
+   canImpulse = true;
+
+   // Used by AI
+   MoveSpeed = 0.5;          // You could call this the AI's throttle 1 = 100% throttle.
+   MoveTolerance = 1;        // Distance from target position that is accepted as "reached"
 
    firstPersonShadows = "1";
    jumpTowardsNormal = "1";
    shadowSize = "512";
 };
+
+//-----------------------------------------------------------------------------
+// SMS
+//            |Datablock|     |$SMS::ArmorName|     |Index|
+SmsInv.AddArmor( DefaultSoldier, "Soldier", 0 );

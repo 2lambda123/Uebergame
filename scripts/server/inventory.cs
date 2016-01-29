@@ -20,293 +20,544 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// This inventory system is totally scripted, no C++ code involved.
-// It uses object datablock names to track inventory and is generally
-// object type, or class, agnostic.  In other words, it will inventory
-// any kind of ShapeBase object, though the throw method does assume
-// that the objects are small enough to throw :)
-//
-// For a ShapeBase object to support inventory, it must have an array
-// of inventory max values:
-//    %this.maxInv[GunAmmo] = 100;
-//    %this.maxInv[SpeedGun] = 1;
-// where the names "SpeedGun" and "GunAmmo" are datablocks.
-//
-// For objects to be inventoriable, they must provide a set of inventory
-// callback methods, mainly:
-//    onUse
-//    onThrow
-//    onPickup
-//
-// Example methods are given further down.  The item.cs file also contains
-// example inventory items.
-
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-// Inventory server commands
-//-----------------------------------------------------------------------------
-
-function serverCmdUse(%client, %data)
+function serverCmdShowArmoryHud(%client)
 {
-   %client.getControlObject().use(%data);
+   //LogEcho("serverCmdShowArmoryHud(" SPC %client.nameBase @", "@ %hud SPC ")");
+
+   commandToClient( %client, 'OpenArmoryHud' );
+   %client.numFavsCount = 0;
+   SmsInv.updateArmoryHud( %client );
 }
 
-//-----------------------------------------------------------------------------
-// ShapeBase inventory support
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-
-function ShapeBase::use(%this, %data)
+function serverCmdHideArmoryHud(%client)
 {
-   // Use an object in the inventory.
+   commandToClient( %client, 'CloseArmoryHud' );
+}
 
-   // Need to prevent weapon changing when zooming, but only shapes
-   // that have a connection.
-   %conn = %this.getControllingClient();
-   if (%conn)
+function SMS::updateArmoryHud(%this, %client)
+{
+   %armorList = %client.loadout[0];
+
+   %armor = $NameToData[%armorList];
+
+   if ( %client.lastArmor !$= %armor )
    {
-      %defaultFov = %conn.getControlCameraDefaultFov();
-      %fov = %conn.getControlCameraFov();
-      if (%fov != %defaultFov)
-         return false;
+      %client.lastArmor = %armor;
+      for ( %z = 0; %z < %client.lastNumFavs; %z++ )
+         commandToClient( %client, 'RemoveArmoryLine', %z );
+
+      %setLastNum = true;
    }
 
-   if (%this.getInventory(%data) > 0)
-      return %data.onUse(%this);
+   // Get the current mission type so we can check for banned inventory.
+   %cmt = $Server::MissionType;
 
-   return false;
-}
-
-function ShapeBase::throw(%this, %data, %amount)
-{
-   // Throw objects from inventory. The onThrow method is
-   // responsible for decrementing the inventory.
-
-   if (%this.getInventory(%data) > 0)
+   for ( %i = 0; %i < $SMS::MaxArmors; %i++ )
    {
-      %obj = %data.onThrow(%this, %amount);
-      if (%obj)
+      if ( $SMS::ArmorName[%i] !$= %client.loadout[0] )  
       {
-         %this.throwObject(%obj);
-         serverPlay3D(ThrowSnd, %this.getTransform());
-         return true;
+         %armorList = %armorList TAB $SMS::ArmorName[%i];
       }
    }
-   return false;
-}
 
-function ShapeBase::pickup(%this, %obj, %amount)
-{
-   // This method is called to pickup an object and add it to the inventory.
-   // The datablock onPickup method is actually responsible for doing all the
-   // work, including incrementing the inventory.
-
-   %data = %obj.getDatablock();
-
-   // Try and pickup the max if no value was specified
-   if (%amount $= "")
-      %amount = %this.maxInventory(%data) - %this.getInventory(%data);
-
-   // The datablock does the work...
-   if (%amount < 0)
-      %amount = 0;
-   if (%amount)
-      return %data.onPickup(%obj, %this, %amount);
-   return false;
-}
-
-//-----------------------------------------------------------------------------
-
-function ShapeBase::hasInventory(%this, %data)
-{
-   return (%this.inv[%data] > 0);
-}
-
-function ShapeBase::hasAmmo(%this, %weapon)
-{
-   if (%weapon.image.ammo $= "")
-      return(true);
-   else
-      return(%this.getInventory(%weapon.image.ammo) > 0);
-}
-
-function ShapeBase::maxInventory(%this, %data)
-{
-   if (%data.isField("clip"))
+   //-----------------------------------------------------------------------------
+   // Create Weapon List
+   for ( %y = 0; %y < $SMS::MaxWeapons; %y++ )
    {
-      // Use the clip system which uses the maxInventory
-      // field on the ammo itself.
-      return %data.maxInventory;
-   }
-   else
-   {
-      // Use the ammo pool system which uses the maxInv[]
-      // array on the object's datablock.
-      // If there is no limit defined, we assume 0
-      return %this.getDatablock().maxInv[%data.getName()];
-   }
-}
+      %notFound = true;
+      for ( %i = 0; %i < getFieldCount( %client.weaponIndex ); %i++ )
+      {
+         %WInv = $NameToData[$SMS::WeaponName[%y]];
+         if ( ( $SMS::WeaponName[%y] $= %client.loadout[getField( %client.weaponIndex, %i )] ) || !%armor.maxInv[%WInv] )  
+         {
+            %notFound = false;
+            break;
+         }
+      }
 
-function ShapeBase::incInventory(%this, %data, %amount)
-{
-   // Increment the inventory by the given amount.  The return value
-   // is the amount actually added, which may be less than the
-   // requested amount due to inventory restrictions.
-
-   %max = %this.maxInventory(%data);
-   %total = %this.inv[%data.getName()];
-   if (%total < %max)
-   {
-      if (%total + %amount > %max)
-         %amount = %max - %total;
-      %this.setInventory(%data, %total + %amount);
-      return %amount;
-   }
-   return 0;
-}
-
-function ShapeBase::decInventory(%this, %data, %amount)
-{
-   // Decrement the inventory by the given amount. The return value
-   // is the amount actually removed.
-
-   %total = %this.inv[%data.getName()];
-   if (%total > 0)
-   {
-      if (%total < %amount)
-         %amount = %total;
-      %this.setInventory(%data, %total - %amount);
-      return %amount;
-   }
-   return 0;
-}
-
-//-----------------------------------------------------------------------------
-
-function ShapeBase::getInventory(%this, %data)
-{
-   // Return the current inventory amount
-   return %this.inv[%data.getName()];
-}
-
-function ShapeBase::setInventory(%this, %data, %value)
-{
-   // Set the inventory amount for this datablock and invoke inventory
-   // callbacks.  All changes to inventory go through this single method.
-
-   // Impose inventory limits
-   if (%value < 0)
-      %value = 0;
-   else
-   {
-      %max = %this.maxInventory(%data);
-      if (%value > %max)
-         %value = %max;
+      // Dont show it in the list if it is banned by gametype, flagged or class cannot carry.
+      if ( !$GameBanList[%cmt, %WInv] && $SMS::ShowInInv[%WInv] && %armor.maxInv[%WInv] != 0 )
+      {
+         if ( %notFound && %weaponList $= "" )
+            %weaponList = $SMS::WeaponName[%y];
+         else if ( %notFound )
+            %weaponList = %weaponList TAB $SMS::WeaponName[%y];
+      }
    }
 
-   // Set the value and invoke object callbacks
-   %name = %data.getName();
-   if (%this.inv[%name] != %value)
+   //-----------------------------------------------------------------------------
+   // Create Special List
+   for ( %y = 0; %y < $SMS::MaxItems; %y++ )
    {
-      %this.inv[%name] = %value;
-      %data.onInventory(%this, %value);
-      %this.getDataBlock().onInventory(%data, %value);
+      %notFound = true;
+      for(%i = 0; %i < getFieldCount( %client.specialIndex ); %i++)
+      {
+         %SInv = $NameToData[$SMS::ItemName[%y]];
+         if ( ( $SMS::ItemName[%y] $= %client.loadout[getField( %client.specialIndex, %i )] ) || !%armor.maxInv[%SInv] )  
+         {
+            %notFound = false;
+            break;
+         }
+      }
+
+      if ( !$GameBanList[%cmt, %SInv] && %armor.maxInv[%SInv] != 0)
+      { 
+         if ( %notFound && %specialList $= "" )
+            %specialList = $SMS::ItemName[%y];
+         else if ( %notFound )
+            %specialList = %specialList TAB $SMS::ItemName[%y];
+      }
    }
-   return %value;
+
+   //-----------------------------------------------------------------------------
+   // Create Grenade List
+   for ( %i = 0; %i < $SMS::MaxGrenades; %i++ )
+   {
+      %notFound = true;
+      for(%j = 0; %j < getFieldCount( %client.grenadeIndex ); %j++)
+      {
+         %GInv = $NameToData[$SMS::GrenadeName[%i]];
+         if ( ( $SMS::GrenadeName[%i] $= %client.loadout[getField( %client.grenadeIndex, %j )] ) || !%armor.maxInv[%GInv] )  
+         {
+            %notFound = false;
+            break;
+         }
+      }
+
+      if ( !$GameBanList[%cmt, %GInv] && %armor.maxInv[%GInv] != 0)
+      { 
+         if ( %notFound && %grenadeList $= "" )
+            %grenadeList = $SMS::GrenadeName[%i];
+         else if ( %notFound )
+            %grenadeList = %grenadeList TAB $SMS::GrenadeName[%i];
+      }
+   }
+
+   // Don't add selectable armors
+   %client.numFavsCount++;
+   commandToClient( %client, 'SetArmoryLine', 0, "Class:", %armorList, armor, %client.numFavsCount );
+
+   %lineCount = 1;
+   //%lineCount = 0;
+   //-----------------------------------------------------------------------------
+   // Weapons
+   for ( %x = 0; %x < %armor.maxWeapons; %x++ )
+   {
+      %client.numFavsCount++;
+      if ( %x < getFieldCount( %client.weaponIndex ) )
+      {
+         %list = %client.loadout[getField( %client.weaponIndex, %x )];
+         if ( %list $= "Invalid" && %list !$= "Empty")
+         {
+            %client.loadout[%client.numFavs] = "Invalid";
+            %client.weaponIndex = %client.weaponIndex TAB %client.numFavs;
+         }   
+      }
+      else
+      {
+         %list = "Empty";
+         %client.loadout[%client.numFavs] = "Empty";
+         %client.weaponIndex = %client.weaponIndex TAB %client.numFavs;
+         %client.numFavs++;
+      }
+
+      if ( %list $= "Empty")
+         %list = %list TAB %weaponList;
+      else if ( %weaponList !$= "" )
+         %list = %list TAB %weaponList TAB "Empty";
+      else
+         %list = %list TAB "Empty";
+
+      commandToClient( %client, 'SetArmoryLine', %x + %lineCount, "Weapon Slot " @ %x + 1 @ ": ", %list, weapon, %client.numFavsCount );
+   }
+   %lineCount = %lineCount + %armor.maxWeapons;
+   %client.numFavsCount++;
+
+   //-----------------------------------------------------------------------------
+   // Specials
+   for( %x = 0; %x < %armor.maxSpecials; %x++ )
+   {
+      %client.numFavsCount++;
+      if ( %x < getFieldCount( %client.specialIndex ) )
+      {
+         %list = %client.loadout[getField( %client.specialIndex, %x )];
+         if (%list $= "Invalid")
+         {
+            %client.loadout[%client.numFavs] = "Invalid";
+            %client.specialIndex = %client.specialIndex TAB %client.numFavs;
+         }
+      }
+      else
+      {
+         %list = "Empty";
+         %client.loadout[%client.numFavs] = "Empty";
+         %client.specialIndex = %client.specialIndex TAB %client.numFavs;
+         %client.numFavs++;
+      }
+
+      //if ( %list !$= "Invalid" )
+      //{
+         if ( %list $= "Empty" )
+            %list = %list TAB %specialList;
+         else if ( %specialList !$= "" )
+            %list = %list TAB %specialList TAB "Empty";
+         else 
+            %list = %list TAB "Empty";
+      //}
+      commandToClient( %client, 'SetArmoryLine', %x + %lineCount, "Special " @ %x + 1 @ ": ", %list, special, %client.numFavsCount );
+   }
+   %lineCount = %lineCount + %armor.maxSpecials;
+
+   //-----------------------------------------------------------------------------
+   // Grenades
+   for( %x = 0; %x < %armor.maxGrenades; %x++ )
+   {
+      %client.numFavsCount++;
+      if ( %x < getFieldCount( %client.grenadeIndex ) )
+      {
+         %list = %client.loadout[getField( %client.grenadeIndex, %x )];
+         if (%list $= "Invalid")
+         {
+            %client.loadout[%client.numFavs] = "Invalid";
+            %client.grenadeIndex = %client.grenadeIndex TAB %client.numFavs;
+         }
+      }
+      else
+      {
+         %list = "Empty";
+         %client.loadout[%client.numFavs] = "Empty";
+         %client.grenadeIndex = %client.grenadeIndex TAB %client.numFavs;
+         %client.numFavs++;
+      }
+
+      //if ( %list !$= "Invalid" )
+      //{
+         if ( %list $= "Empty" )
+            %list = %list TAB %grenadeList;
+         else if ( %grenadeList !$= "" )
+            %list = %list TAB %grenadeList TAB "Empty";
+         else 
+            %list = %list TAB "Empty";
+      //}
+      commandToClient( %client, 'SetArmoryLine', %x + %lineCount, "Grenade " @ %x + 1 @ ": ", %list, grenade, %client.numFavsCount );
+   }
+
+   if ( %setLastNum )
+      %client.lastNumFavs = %client.numFavs;
+
+   return( %client.numFavs );
 }
 
-//-----------------------------------------------------------------------------
-
-function ShapeBase::clearInventory(%this)
+//------------------------------------------------------------------------------
+function serverCmdSetClientLoadout(%client, %list)
 {
-   // To be filled in...
+   %list = deTag( %list );
+
+   //LogEcho("serverCmdSetClientLoadout(" SPC %client.nameBase @", "@ %list SPC ")");
+   // Make sure there is a favortite else use a default
+   if ( %list $= "" )
+      %list = "armor\tSoldier";
+
+   //%armorList = %client.gender SPC %client.race;
+   //%armor = $NameToData[%armorList];
+
+   %validList = SmsInv.validateInventory( %client, %list );
+   %client.loadout[0] = getField( %validList, 1 );
+   %armor = $NameToData[%client.loadout[0]];
+   %weaponCount = 0;
+   %specialCount = 0;
+   %grenadeCount = 0;
+   %count = 1;
+   %client.weaponIndex = "";
+   %client.specialIndex = "";
+   %client.grenadeIndex = "";
+
+   for ( %i = 1; %i < getFieldCount( %validList ); %i++ )
+   {
+      %setItem = false;
+      switch$ ( getField(%validList, %i-1 ) )
+      {
+         case Weapon:
+            if ( %weaponCount < %armor.maxWeapons )
+            {
+               if ( !%weaponCount )
+                  %client.weaponIndex = %count;
+               else
+                  %client.weaponIndex = %client.weaponIndex TAB %count;
+
+               %weaponCount++;
+               %setItem = true;   
+            } 
+
+         case Special:
+            if ( %specialCount < %armor.maxSpecials )
+            {
+               if ( !%specialCount )
+                  %client.specialIndex = %count;
+               else
+                  %client.specialIndex = %client.specialIndex TAB %count;
+
+               %specialCount++;
+               %setItem = true;
+            }
+
+         case Grenade:
+            if ( %grenadeCount < %armor.maxGrenades )
+            {
+               if ( !%grenadeCount )
+                  %client.grenadeIndex = %count;
+               else
+                  %client.grenadeIndex = %client.grenadeIndex TAB %count;
+
+               %grenadeCount++;
+               %setItem = true;
+            }
+      }
+      if ( %setItem )
+      {
+         %client.loadout[%count] = getField( %validList, %i );
+         %count++;
+      }
+   }
+   %client.numFavs = %count;
+   %client.numFavsCount = 0;
+   SmsInv.updateArmoryHud( %client );
 }
 
-//-----------------------------------------------------------------------------
-
-function ShapeBase::throwObject(%this, %obj)
+function SMS::validateInventory(%this, %client, %text)
 {
-   // Throw the given object in the direction the shape is looking.
-   // The force value is hardcoded according to the current default
-   // object mass and mission gravity (20m/s^2).
+   //LogEcho("SMS::validateInventory(" SPC %this @", "@ %client.nameBase @", "@ %text SPC ")");
+   %cmt = $Server::MissionType;
 
-   %throwForce = %this.getDataBlock().throwForce;
-   if (!%throwForce)
-   %throwForce = 20;
+   //%armorList = %client.gender SPC %client.race;
+   //%armor = $NameToData[%armorList];
 
-   // Start with the shape's eye vector...
-   %eye = %this.getEyeVector();
-   %vec = vectorScale(%eye, %throwForce);
+   %list = getField( %text, 0 );
+   %armorName = getField( %text, 1 );
+   %list = %list TAB %armorName;
+   %armor = $NameToData[%armorName];
 
-   // Add a vertical component to give the object a better arc
-   %verticalForce = %throwForce / 2;
-   %dot = vectorDot("0 0 1", %eye);
-   if (%dot < 0)
-      %dot = -%dot;
-   %vec = vectorAdd(%vec, vectorScale("0 0 "@%verticalForce, 1 - %dot));
+   %weaponIndex = 0;
+   //for ( %i = 1; %i < getFieldCount( %text ); %i++ )
+   for ( %i = 3; %i < getFieldCount( %text ); %i = %i + 2 )
+   {
+      %inv = $NameToData[getField(%text, %i)];
 
-   // Add the shape's velocity
-   %vec = vectorAdd(%vec, %this.getVelocity());
-
-   // Set the object's position and initial velocity
-   %pos = getBoxCenter(%this.getWorldBox());
-   %obj.setTransform(%pos);
-   %obj.applyImpulse(%pos, %vec);
-
-   // Since the object is thrown from the center of the shape,
-   // the object needs to avoid colliding with it's thrower.
-   %obj.setCollisionTimeout(%this);
+      if((( %armor.maxInv[%inv] && !($GameBanList[%cmt, %inv])) || getField( %text, %i ) $= "Empty" || getField( %text, %i ) $= "Invalid") 
+         && (($InvTotalCount[getField( %text, %i - 1 )] - $BanCount[getField( %text, %i - 1 )]) > 0))
+      {
+         %list = %list TAB getField( %text, %i - 1 ) TAB getField( %text, %i );
+      }
+      else if( $GameBanList[%cmt, %inv] || %inv $= "Empty" || %inv $= "")
+      {
+         %list = %list TAB getField( %text, %i - 1 ) TAB "Invalid";
+      } 
+   }
+   //echo("validlist:" SPC %list);
+   return( %list );
 }
 
-//-----------------------------------------------------------------------------
-// Callback hooks invoked by the inventory system
-//-----------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------
-// ShapeBase object callbacks invoked by the inventory system
-
-function ShapeBase::onInventory(%this, %data, %value)
+function SMS::SetDefaultInventory(%this, %client)
 {
-   // Invoked on ShapeBase objects whenever their inventory changes
-   // for the given datablock.
+   // Initial loading of last selected loadout
+   if ( !%client.isAiControlled() )
+      commandToClient( %client, 'InitLoadFavorite' );
 }
 
-//-----------------------------------------------------------------------------
-// ShapeBase datablock callback invoked by the inventory system.
-
-function ShapeBaseData::onUse(%this, %user)
+function SMS::CreateInvBanCount(%this)
 {
-   // Invoked when the object uses this datablock, should return
-   // true if the item was used.
+   //LogEcho("SMS::CreateInvBanCount(" SPC $Server::MissionType SPC ")");
+   $BanCount["Weapon"] = 0;
+   $BanCount["Special"] = 0;
+   $BanCount["Grenade"] = 0;
+   $BanCount["Mine"] = 0;
 
-   return false;
+   for(%i = 0; %i < $SMS::MaxWeapons; %i++)
+   {
+      if($GameBanList[$Server::MissionType, $NameToData[$SMS::WeaponName[%i]]])
+         $BanCount["Weapon"]++;
+   }
+   $InvTotalCount["Weapon"] = %i;
+
+   for(%i = 0; %i < $SMS::MaxItems; %i++)
+   {
+      if($GameBanList[$Server::MissionType, $NameToData[$SMS::ItemName[%i]]])
+         $BanCount["Special"]++;
+   }
+   $InvTotalCount["Special"] = %i;
+
+   for(%i = 0; %i < $SMS::MaxGrenades; %i++)
+   {
+      if($GameBanList[$Server::MissionType, $NameToData[$SMS::GrenadeName[%i]]])
+         $BanCount["Grenade"]++;
+   }
+   $InvTotalCount["Grenade"] = %i;
+
+   for(%i = 0; %i < $SMS::MaxMines; %i++)
+   {
+      if($GameBanList[$Server::MissionType, $NameToData[$SMS::MineName[%i]]])
+         $BanCount["Mine"]++;
+   }
+   $InvTotalCount["Mine"] = %i;
 }
 
-function ShapeBaseData::onThrow(%this, %user, %amount)
+function SMS::ProcessLoadout(%this, %client)
 {
-   // Invoked when the object is thrown.  This method should
-   // construct and return the actual mission object to be
-   // physically thrown.  This method is also responsible for
-   // decrementing the user's inventory.
+   //LogEcho("SMS::ProcessLoadout(" SPC %this @", "@ %client.nameBase SPC ")");
+   %player = %client.player;
+   if ( !isObject( %player ) )
+      return;
 
-   return 0;
+   %player.clearInventory();
+
+   %weapCount = 0;
+   // Now give them the stuff thats not listed in the armory (flagged).
+   // These are default weapons. Inventory restrictions will keep it clean
+   for ( %i = 0; %i < $SMS::MaxWeapons; %i++ )
+   {
+      %default = $SMS::Weapon[%i];
+
+      // Filter out what isnt flagged..
+      if ( $SMS::ShowInInv[%default] == 0 )
+      {
+         %player.incInventory( %default, 1 );
+
+         if ( %default.image.clip !$= "" )
+            %player.incInventory( %default.image.clip, %player.maxInventory( %default.image.clip ) );
+
+         if ( %default.image.ammo !$= "" )
+            %player.incInventory( %default.image.ammo, %player.maxInventory( %default.image.ammo ) );
+      }
+      // We dont want these counting against maxWeapons or we will hit the ceiling instantly.
+   }
+
+   for ( %i = 0; %i < getFieldCount( %client.weaponIndex ); %i++ )
+   {
+      %WInv = $NameToData[%client.loadout[getField( %client.weaponIndex, %i )]];
+      if(%WInv !$= "")
+      {
+         // increment weapon count if current armor can hold this weapon
+         if ( %player.incInventory( %WInv, 1 ) > 0 )
+         {
+            %weapCount++;
+
+            if ( %WInv.image.clip !$= "" )
+               %player.incInventory( %WInv.image.clip, %player.maxInventory( %WInv.image.clip ) );
+
+            if ( %WInv.image.ammo !$= "" )
+               %player.incInventory( %WInv.image.ammo, %player.maxInventory( %WInv.image.ammo ) );
+         }
+      }
+
+      if( %weapCount >= %player.getDatablock().maxWeapons )
+         break;
+   }
+
+   //echo("Weapon Count:" SPC %weapCount);
+   %player.weaponCount = %weapCount;
+
+   //-----------------------------------------------------------------------------
+   // Specials
+   %specCount = 0;
+   for ( %i = 0; %i < getFieldCount( %client.specialIndex ); %i++ )
+   {
+      %SInv = $NameToData[%client.loadout[getField( %client.specialIndex, %i )]];
+      if(%SInv !$= "")
+      {
+         //warn("Trying to give player" SPC %SInv SPC "Special");
+         // increment special count if current armor can hold this special
+         if ( %player.incInventory( %SInv, %player.maxInventory(%SInv) ) > 0 )
+            %specCount++;
+         else
+            warn("Player cannot have" SPC %SInv SPC "Special");
+      }
+
+      if( %specCount >= %player.getDatablock().maxSpecials )
+         break;
+   }
+
+   // Make sure the hud is empty
+   if ( %specCount <= 0 )
+      messageClient(%player.client, 'MsgSpecialCnt', "", 'Special', '0' );
+
+   %player.specialCount = %specCount;
+
+   //-----------------------------------------------------------------------------
+   // Grenades
+   %grenCount = 0;
+   for ( %i = 0; %i < getFieldCount( %client.grenadeIndex ); %i++ )
+   {
+      %GInv = $NameToData[%client.loadout[getField( %client.grenadeIndex, %i )]];
+      if(%GInv !$= "")
+      {
+         // increment grenade count if current armor can hold this grenade
+         if ( %player.incInventory( %GInv, %player.maxInventory(%GInv) ) > 0 )
+         {
+            //%player.lastGrenade = %GInv;
+            %player.incInventory( %GInv.image.ammo, %player.maxInventory( %GInv.image.ammo ) );
+            %grenCount++;
+         }
+      }
+
+      if( %grenCount >= %player.getDatablock().maxGrenades )
+         break;
+   }
+
+   // Make sure the hud is empty
+   if ( %grenCount <= 0 )
+      messageClient(%player.client, 'MsgGrenadeCnt', "", 'Grenade', 0 );
+
+   %player.grenadeCount = %grenCount;
 }
 
-function ShapeBaseData::onPickup(%this, %obj, %user, %amount)
+function SMS::ReplenishLoadoutAmmo(%this, %player)
 {
-   // Invoked when the user attempts to pickup this datablock object.
-   // The %amount argument is the space in the user's inventory for
-   // this type of datablock.  This method is responsible for
-   // incrementing the user's inventory is something is addded.
-   // Should return true if something was added to the inventory.
+   // Get the weapons the player has
+   for(%i = 0; %i < %player.weaponSlotCount; %i++)
+   {
+      %weapon = %player.weaponSlot[%i];
+      // See if the weapon needs mags
+      if ( %weapon.image.clip !$= "" )
+         %player.incInventory( %weapon.image.clip, %player.maxInventory( %weapon.image.clip ) );
 
-   return false;
+      // See if the weapon needs ammo
+      if ( %weapon.image.ammo !$= "" )
+         %player.incInventory( %weapon.image.ammo, %player.maxInventory( %weapon.image.ammo ) );
+   }
+
+   // Grenades
+   %grenade = (%player.getMountedImage($GrenadeSlot) == 0 ) ? "" : %player.getMountedImage($GrenadeSlot);
+   if ( %grenade.ammo !$= "" )
+      %player.incInventory( %grenade.ammo, %player.maxInventory( %grenade.ammo ) );
+
+   //if ( %grenade !$= "" )
+   //   %player.incInventory( %grenade, %player.getDataBlock().maxInv[%grenade] );
 }
 
-function ShapeBaseData::onInventory(%this, %user, %value)
+function listInventoryArrays()
 {
-   // Invoked whenever an user's inventory total changes for
-   // this datablock.
+   //Weapons
+   for( %i = 0; %i < $SMS::MaxWeapons; %i++ )
+      echo($SMS::Weapon[%i]);
+
+   // Ammo
+   for( %i = 0; %i < $SMS::MaxAmmos; %i++ )
+      echo($SMS::AmmoName[%i]);
+
+   // Ammo Clips
+   for( %i = 0; %i < $SMS::MaxClips; %i++ )
+      echo($SMS::Clip[%i]);
+
+   // Specials
+   for( %i = 0; %i < $SMS::MaxItems; %i++ )
+      echo($SMS::ItemName[%i]);
+
+   // Grenades
+   for( %i = 0; %i < $SMS::MaxGrenades; %i++ )
+      echo($SMS::GrenadeName[%i]);
+
+   // Mines
+   for( %i = 0; %i < $SMS::MaxMines; %i++ )
+      echo($SMS::MineName[%i]);
 }
+

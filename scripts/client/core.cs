@@ -24,38 +24,26 @@
 // initializeCore
 // Initializes core game functionality.
 //---------------------------------------------------------------------------------------------
-function initializeCore()
+function Torque::initializeCore(%this)
 {
    // Not Reentrant
    if( $coreInitialized == true )
       return;
       
-   // Core keybindings.
-//   GlobalActionMap.bind(keyboard, tilde, toggleConsole);
-   GlobalActionMap.bind(keyboard, "F5", doScreenShot);
-   GlobalActionMap.bindcmd(keyboard, "alt enter", "Canvas.attemptFullscreenToggle();","");
-   GlobalActionMap.bindcmd(keyboard, "alt k", "cls();",  "");
-//   GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
-   
-   
-   
    // Very basic functions used by everyone.
-   exec("scripts/client/audio.cs");
-   exec("scripts/client/canvas.cs");
-   exec("scripts/client/cursor.cs");
-   exec("scripts/client/persistenceManagerTest.cs");
-
-   // Content.
-   exec("scripts/gui/profiles.cs");
-   exec("scripts/gui/cursors.cs");
+   exec("./audio.cs");
+   exec("./canvas.cs");
+   exec("./gui/cursors.cs");
+   exec("./cursor.cs");
+   exec("./persistenceManagerTest.cs");
    
-   exec( "scripts/client/audioEnvironments.cs" );
-   exec( "scripts/client/audioDescriptions.cs" );
-   exec( "scripts/client/audioStates.cs" );
-   exec( "scripts/client/audioAmbiences.cs" );
+   exec( "./audioEnvironments.cs" );
+   exec( "./audioDescriptions.cs" );
+   exec( "./audioStates.cs" );
+   exec( "./audioAmbiences.cs" );
 
    // Input devices
-   exec("scripts/client/oculusVR.cs");
+   exec("./oculusVR.cs");
 
    // Seed the random number generator.
    setRandomSeed();
@@ -75,7 +63,6 @@ function initializeCore()
    exec("scripts/gui/netGraphGui.gui");
    exec("scripts/gui/RecordingsDlg.gui");
    exec("scripts/gui/guiMusicPlayer.gui");
-
 	
    // Gui Helper Scripts.
    exec("scripts/gui/help.cs");
@@ -83,46 +70,40 @@ function initializeCore()
    exec("scripts/gui/guiMusicPlayer.cs");
 
    // Random Scripts.
-   exec("scripts/client/screenshot.cs");
-   exec("scripts/client/scriptDoc.cs");
-   //exec("~/scripts/client/keybindings.cs");
-   exec("scripts/client/helperfuncs.cs");
-   exec("scripts/client/commands.cs");
+   exec("./screenshot.cs");
+   exec("./scriptDoc.cs");
+   exec("./helperfuncs.cs");
+   exec("./commands.cs");
    
    // Client scripts
-   exec("scripts/client/devHelpers.cs");
-   exec("scripts/client/metrics.cs");
-   exec("scripts/client/centerPrint.cs");
-   
+   exec("./devHelpers.cs");
+   exec("./metrics.cs");
+   exec("./centerPrint.cs");
+
    // Materials and Shaders for rendering various object types
    loadCoreMaterials();
 
-   exec("scripts/client/commonMaterialData.cs");
-   exec("scripts/client/shaders.cs");
-   exec("scripts/client/materials.cs");
-   exec("scripts/client/terrainBlock.cs");
-   exec("scripts/client/water.cs");
-   exec("scripts/client/imposter.cs");
-   exec("scripts/client/scatterSky.cs");
-   exec("scripts/client/clouds.cs");
+   exec("./commonMaterialData.cs");
+   exec("./shaders.cs");
+   exec("./materials.cs");
+   exec("./terrainBlock.cs");
+   exec("./water.cs");
+   exec("./imposter.cs");
+   exec("./scatterSky.cs");
+   exec("./clouds.cs");
    
    // Initialize all core post effects.   
-   exec("scripts/client/postFx.cs");
+   exec("./postFx.cs");
    initPostEffects();
    
    // Initialize the post effect manager.
-   exec("scripts/client/postFx/postFXManager.gui");
-   exec("scripts/client/postFx/postFXManager.gui.cs");
-   exec("scripts/client/postFx/postFXManager.gui.settings.cs");
-   exec("scripts/client/postFx/postFXManager.persistance.cs");
+   exec("./postFx/postFXManager.gui");
+   exec("./postFx/postFXManager.gui.cs");
+   exec("./postFx/postFXManager.gui.settings.cs");
+   exec("./postFx/postFXManager.persistance.cs");
    
    PostFXManager.settingsApplyDefaultPreset();  // Get the default preset settings   
    
-   // Set a default cursor.
-   Canvas.setCursor(DefaultCursor);
-   
-   loadKeybindings();
-
    $coreInitialized = true;
 }
 
@@ -193,14 +174,13 @@ function handleEscape()
 //-----------------------------------------------------------------------------
 // loadMaterials - load all materials.cs files
 //-----------------------------------------------------------------------------
-/*
 function loadCoreMaterials()
 {
    // Load any materials files for which we only have DSOs.
 
-   for( %file = findFirstFile( "core/materials.cs.dso" );
+   for( %file = findFirstFile( "scripts/materials.cs.dso" );
         %file !$= "";
-        %file = findNextFile( "core/materials.cs.dso" ))
+        %file = findNextFile( "scripts/materials.cs.dso" ))
    {
       // Only execute, if we don't have the source file.
       %csFileName = getSubStr( %file, 0, strlen( %file ) - 4 );
@@ -210,9 +190,9 @@ function loadCoreMaterials()
 
    // Load all source material files.
 
-   for( %file = findFirstFile( "core/materials.cs" );
+   for( %file = findFirstFile( "scripts/materials.cs" );
         %file !$= "";
-        %file = findNextFile( "core/materials.cs" ))
+        %file = findNextFile( "scripts/materials.cs" ))
    {
       exec( %file );
    }
@@ -224,7 +204,7 @@ function reloadCoreMaterials()
    loadCoreMaterials();
    reInitMaterials();
 }
-*/ //core removed
+
 //-----------------------------------------------------------------------------
 // loadMaterials - load all materials.cs files
 //-----------------------------------------------------------------------------
@@ -279,4 +259,27 @@ function reloadMaterials()
    reloadTextures();
    loadMaterials();
    reInitMaterials();
+}
+
+// From Martin "Founder" Hoover.
+// http://www.garagegames.com/my/home/view.profile.php?qid=5055
+function cropXDecimals(%num, %count)
+{
+   %length = strlen(%num);
+   %dot = 0;
+   for ( %i = 0; %i < %length; %i++ )
+   {
+      if ( getSubStr( %num, %i, 1 ) $= "." )
+      {
+         %dot = %i;
+         break;
+      }
+   }
+
+   if ( %dot > 0 )
+      %final = getSubStr( %num, 0, %dot + %count );
+   else
+      %final = %num;
+
+   return %final;
 }

@@ -98,13 +98,18 @@ function loadFileText( %file)
 {
    %fo = new FileObject();
    %fo.openForRead(%file);
+   if ( !%fo.openForRead( %file ) )
+      return;
+
    %text = "";
    while(!%fo.isEOF())
    {
       %text = %text @ %fo.readLine();
-      if (!%fo.isEOF()) %text = %text @ "\n";
+      if (!%fo.isEOF())
+         %text = %text @ "\n";
    }
 
+   %fo.close();
    %fo.delete();
    return %text;
 }
@@ -252,7 +257,7 @@ function parseMissionGroupForIds( %className, %childGroup )
       if( (%currentGroup).getObject(%i).getClassName() $= "SimGroup" )
          %classIds = %classIds @ parseMissionGroupForIds( %className, (%currentGroup).getObject(%i).getId());
    } 
-   return trim( %classIds );
+   return %classIds;
 }
 
 //------------------------------------------------------------------------------

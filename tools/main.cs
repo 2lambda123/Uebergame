@@ -46,9 +46,9 @@ package Tools
    }
    
    // Start-up.
-   function onStart()
+   function Torque::onStart(%this)
    {
-      Parent::onStart();            
+      Parent::onStart(%this);      
       
       new Settings(EditorSettings) { file = "tools/settings.xml"; };
       EditorSettings.read();
@@ -226,5 +226,5 @@ function Tools::LoadResources( %path )
 //-----------------------------------------------------------------------------
 // Activate Package.
 //-----------------------------------------------------------------------------
-activatePackage(Tools);
+//activatePackage(Tools);
 

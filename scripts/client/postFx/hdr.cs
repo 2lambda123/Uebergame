@@ -71,7 +71,7 @@ $HDRPostFX::gaussStdDev = 0.8;
 /// The 1x255 color correction ramp texture used
 /// by both the HDR shader and the GammaPostFx shader
 /// for doing full screen color correction. 
-$HDRPostFX::colorCorrectionRamp = "core/scripts/client/postFx/null_color_ramp.png";
+$HDRPostFX::colorCorrectionRamp = "scripts/client/postFx/null_color_ramp.png";
 
 
 singleton ShaderData( HDR_BrightPassShader )

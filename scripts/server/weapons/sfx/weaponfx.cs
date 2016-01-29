@@ -20,11 +20,38 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-// Define a datablock class to use for our observer camera
-//-----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+// Now for the profiles - these are the usable sounds
+// ----------------------------------------------------------------------------
 
-datablock CameraData(Observer)
+datablock SFXProfile(ThrowSnd)
 {
-   mode = "Observer";
+   filename = "art/sound/player/throw";
+   description = AudioClose3d;
+   preload = false;
+};
+
+// ----------------------------------------------------------------------------
+// Audio profiles
+// ----------------------------------------------------------------------------
+
+datablock SFXProfile(WeaponUseSound)
+{
+   filename = "art/sound/weapons/Weapon_switch";
+   description = AudioClose3d;
+   preload = true;
+};
+
+datablock SFXProfile(WeaponPickupSound)
+{
+   filename = "art/sound/weapons/Weapon_pickup";
+   description = AudioClose3d;
+   preload = true;
+};
+
+datablock SFXProfile(AmmoPickupSound)
+{
+   filename = "art/sound/weapons/Weapon_pickup";
+   description = AudioClose3d;
+   preload = true;
 };

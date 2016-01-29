@@ -57,6 +57,111 @@ $displayHelp = false;
 //saveJournal("editorOnFileQuitCrash.jrn");
 //playJournal("editorOnFileQuitCrash.jrn", false);
 
+// --------------------------------------------------------------------
+// Packages Bug fix Package
+// From Martin "Founder" Hoover.
+// http://www.garagegames.com/community/forums/viewthread/19617/1#comment-151672
+
+
+$TotalNumberOfPackages = 0;
+package PackageFix
+{
+   // Fixes bug whereby parent functions are lost when packages are deactivated.
+   function isActivePackage(%package)
+   {
+      for(%i = 0; %i < $TotalNumberOfPackages; %i++)
+      {
+         if($Package[%i] $= %package)
+         {
+            return true;
+            break;
+         }
+      }
+      return false;
+   }
+
+   function activatePackage(%this)
+   {
+      // This package name is allready active, so lets not activate it again.
+      if(isActivePackage(%this))
+      {
+         error(%this SPC "is a currently active package. activatePackage() failed.");
+         return;
+      }
+      Parent::ActivatePackage(%this);
+
+      if($TotalNumberOfPackages $= "")
+         $TotalNumberOfPackages = 0;
+
+      $Package[$TotalNumberOfPackages] = %this;
+      $TotalNumberOfPackages++;
+   }
+
+   function deactivatePackage(%this)
+   {
+      if(!isActivePackage(%this))
+      {
+         error(%this SPC "is not an active package. deactivatePackage() failed.");
+         return;
+      }
+      %count = 0;
+      %counter = 0;
+      //find the index number of the package to deactivate
+      for(%i = 0; %i < $TotalNumberOfPackages; %i++)
+      {
+         if($Package[%i] $= %this)
+            %breakpoint = %i;
+      }
+      for(%j = 0; %j < $TotalNumberOfPackages; %j++)
+      {
+         if(%j < %breakpoint)
+         {
+            //go ahead and assign temp array, save code
+            %tempPackage[%count] = $Package[%j];
+            %count++;
+         }
+         else if(%j > %breakpoint)
+         {
+            %reactivate[%counter] = $Package[%j];
+            $Package[%j] = "";
+            %counter++;
+         }
+      }
+      //deactivate all the packagess from the last to the current one
+      for(%k = (%counter - 1); %k > -1; %k--)
+         Parent::DeactivatePackage(%reactivate[%k]);
+
+      //deactivate the package that started all this
+      Parent::DeactivatePackage(%this);
+
+      //don't forget this
+      $TotalNumberOfPackages = %breakpoint;
+
+      //reactivate all those other packages
+      for(%l = 0; %l < %counter; %l++)
+      ActivatePackage(%reactivate[%l]);
+   }
+
+   function listPackages()
+   {
+      echo("----------------------------------------");
+      echo("Activated Packages:");
+      for(%i = 0; %i < $TotalNumberOfPackages; %i++)
+         echo($Package[%i]);
+
+      echo("----------------------------------------");
+   }
+};
+activatePackage(PackageFix);
+
+//------------------------------------------------------------------------------
+// This is our main game object, we use this so mod packages can be
+// deactivated without loss of parent functions.
+new ScriptObject(tge)
+{
+   class = Torque;
+};
+
 //------------------------------------------------------------------------------
 // Check if a script file exists, compiled or not.
 function isScriptFile(%path)
@@ -81,7 +186,7 @@ if (isToolBuild())
 
 
 // Parse the executable arguments with the standard
-// function from scripts/main.cs
+// function from scripts/parseArgs.cs
 defaultParseArgs();
 
 
@@ -101,7 +206,7 @@ if($dirCount == 0) {
 // The displayHelp, onStart, onExit and parseArgs function are overriden
 // by mod packages to get hooked into initialization and cleanup.
 
-function onStart()
+function Torque::onStart(%this)
 {
    // Default startup function
 }
@@ -112,7 +217,7 @@ function onExit()
    // invoked at the end of this file.
 }
 
-function parseArgs()
+function Torque::parseArgs(%this)
 {
    // Here for mod override, the arguments have already
    // been parsed.
@@ -138,7 +243,6 @@ function compileFiles(%pattern)
 
    $Scripts::OverrideDSOPath  = %saveDSO;
    $Scripts::ignoreDSOs       = %saveIgnore;
-   
 }
 
 if($compileAll)
@@ -161,14 +265,17 @@ if($compileTools)
    quit();
 }
 
-package Help {
-   function onExit() {
+package help
+{
+   function onExit()
+   {
       // Override onExit when displaying help
    }
 };
 
-function displayHelp() {
-   activatePackage(Help);
+function Torque::displayHelp(%this)
+{
+   activatePackage(help);
 
       // Notes on logmode: console logging is written to console.log.
       // -log 0 disables console logging.
@@ -178,7 +285,7 @@ function displayHelp() {
       // the logfile when the application shuts down.  (default)
 
    error(
-      "Torque Demo command line options:\n"@
+      "Main command line options:\n"@
       "  -log <logmode>         Logging behavior; see main.cs comments for details\n"@
       "  -game <game_name>      Reset list of mods to only contain <game_name>\n"@
       "  <game_name>            Works like the -game argument\n"@
@@ -207,47 +314,52 @@ if( !$logModeSpecified )
 nextToken($userDirs, currentMod, ";");
 
 // Execute startup scripts for each mod, starting at base and working up
-function loadDir(%dir)
+function Torque::loadDir(%this, %dir)
 {
    pushback($userDirs, %dir, ";");
 
    if (isScriptFile(%dir @ "/main.cs"))
    exec(%dir @ "/main.cs");
+
+   if ( isPackage( %dir ) )
+      activatePackage( %dir );
 }
 
 echo("--------- Loading DIRS ---------");
-function loadDirs(%dirPath)
+function Torque::loadDirs(%this, %dirPath)
 {
    %dirPath = nextToken(%dirPath, token, ";");
    if (%dirPath !$= "")
-      loadDirs(%dirPath);
+      %this.loadDirs(%dirPath);
+
+   echo("Loading Directory:" SPC %dirPath);
 
    if(exec(%token @ "/main.cs") != true)
    {
       error("Error: Unable to find specified directory: " @ %token );
-      $dirCount--;
    }
+
+   // Activate the directories package if any (This will not activate the core directory)
+   if ( isPackage( %token ) )
+      activatePackage( %token );
 }
-loadDirs($userDirs);
+tge.loadDirs($userDirs);
 echo("");
 
-if($dirCount == 0) {
-   enableWinConsole(true);
-   error("Error: Unable to load any specified directories");
-   quit();
-}
 // Parse the command line arguments
 echo("--------- Parsing Arguments ---------");
-parseArgs();
+tge.parseArgs();
 
 // Either display the help message or startup the app.
-if ($displayHelp) {
+if ($displayHelp)
+{
    enableWinConsole(true);
-   displayHelp();
+   tge.displayHelp();
    quit();
 }
-else {
-   onStart();
+else
+{
+   tge.onStart();
    echo("Engine initialized...");
 
    if( !$isDedicated )
@@ -262,7 +374,7 @@ else {
    // Auto-load on the 360
    if( $platform $= "xenon" )
    {
-      %mission = "levels/Empty Terrain.mis";
+      %mission = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day.mis";
       
       echo("Xbox360 Autoloading level: '" @ %mission @ "'");
       
@@ -272,21 +384,25 @@ else {
       else
          %serverType = "SinglePlayer";
 
-      createAndConnectToLocalServer( %serverType, %mission );
+	  createAndConnectToLocalServer(%serverType, %mission, $pref::Server::MissionType);
    }
 }
 
 // Display an error message for unused arguments
-for ($i = 1; $i < $Game::argc; $i++)  {
+for ($i = 1; $i < $Game::argc; $i++)
+{
    if (!$argUsed[$i])
       error("Error: Unknown command line argument: " @ $Game::argv[$i]);
 }
 
 // Automatically start up the appropriate eidtor, if any
-if ($startWorldEditor) {
+if ($startWorldEditor)
+{
    Canvas.setCursor("DefaultCursor");
    Canvas.setContent(EditorChooseLevelGui);
-} else if ($startGUIEditor) {
+}
+else if ($startGUIEditor)
+{
    Canvas.setCursor("DefaultCursor");
    Canvas.setContent(EditorChooseGUI);
 }

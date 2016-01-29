@@ -2526,7 +2526,7 @@
                sinkAllKeyEvents = "0";
                password = "0";
                passwordMask = "*";
-               text = "core/scripts/client/postFx/null_color_ramp.png";
+               text = "scripts/client/postFx/null_color_ramp.png";
                maxLength = "1024";
                margin = "0 0 0 0";
                padding = "0 0 0 0";

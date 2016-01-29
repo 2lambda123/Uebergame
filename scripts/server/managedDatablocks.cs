@@ -23,8 +23,9 @@
 // This is the default save location for any Datablocks created in the
 // Datablock Editor (this script is executed from onServerCreated())
 
-datablock PlayerData(TorqueSoldierPlayerData : DefaultPlayerData)
+datablock PlayerData(TorqueSoldierPlayerData : DefaultSoldier)
 {
+   className = TorqueSoldier;
    availableSkins =  "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
    mainWeapon = "Lurker";
    maxInvDeployableTurret = "1";
@@ -37,9 +38,12 @@ datablock PlayerData(TorqueSoldierPlayerData : DefaultPlayerData)
    maxInvLurkerClip = "6";
    maxInvLurkerGrenadeAmmo = "12";
 };
+   //SMS          ( Datablock, $SMS::ArmorName, Index)
+   SmsInv.AddArmor( TorqueSoldierPlayerData, "Soldier", 1 );
 
-datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
-{
+datablock PlayerData(PaintballPlayerData : DefaultSoldier)
+{  
+   className = PaintballPlayer;
    shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
    shapeNameFP[0] = "";
    availableSkins =  "base blue red green yellow";
@@ -53,3 +57,5 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    maxInvPaintballMarkerBlue = "1";
    maxInvPaintballMarkerGreen = "1";
 };
+   //SMS          ( Datablock, $SMS::ArmorName, Index)
+   SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 2 );

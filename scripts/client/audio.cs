@@ -453,3 +453,37 @@ function sfxResume( %pauseSet )
    // to clear his own if he passed one.
    %pauseSet.clear();
 }
+
+//--------------------------------------------------------------------------
+
+new ScriptObject(MusicPlayer)
+{
+   class = audioLooper;
+   repeat = true;
+};
+
+function audioLooper::playTrack(%this, %trackName)
+{
+   %this.musicHandle = sfxCreateSource(%trackName);
+   %this.musicHandle.play();
+}
+
+function audioLooper::stop(%this)
+{
+   if( %this.musicHandle !$="" )
+      %this.musicHandle.stop();
+}
+
+function clientCmdPlayMusic(%trackname)
+{
+   if( %trackname !$= "" && $pref::Audio::BackgroundMusic )
+   {
+      MusicPlayer.stop(); // Make sure we kill the previous if any
+      MusicPlayer.playTrack( %trackName );
+   }
+}
+
+function clientCmdStopMusic()
+{
+   MusicPlayer.stop();
+}

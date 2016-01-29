@@ -56,7 +56,7 @@ function clientEndMission()
    physicsStopSimulation( "client" );
 
    // Stop game audio effects channels.
-   
+   MusicPlayer.stop();
    AudioChannelEffects.stop();
    
    // Delete all the decals.
@@ -141,5 +141,5 @@ function loadLevel( %missionNameOrFile )
    }
 
    // Prepare and launch the server.
-   return createAndConnectToLocalServer( "SinglePlayer", %missionFile );
+   return createAndConnectToLocalServer( "SinglePlayer", %missionFile, $pref::Server::MissionType);
 }

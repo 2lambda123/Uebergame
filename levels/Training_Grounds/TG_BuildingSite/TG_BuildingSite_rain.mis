@@ -24,6 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Grounds - Building Site by rain";
          enabled = "1";
          levelName = "TG_BuildingSite_rain";
+		 MissionTypes = "DM TDM";
    };
    new ScatterSky(Himmel) {
       skyBrightness = "10";

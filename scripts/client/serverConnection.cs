@@ -106,14 +106,14 @@ function GameConnection::onConnectionAccepted(%this)
 function GameConnection::onConnectionTimedOut(%this)
 {
    // Called when an established connection times out
-   disconnectedCleanup();
+   tge.disconnectedCleanup();
    MessageBoxOK( "TIMED OUT", "The server connection has timed out.");
 }
 
 function GameConnection::onConnectionDropped(%this, %msg)
 {
    // Established connection was dropped by the server
-   disconnectedCleanup();
+   tge.disconnectedCleanup();
    MessageBoxOK( "DISCONNECT", "The server has dropped the connection: " @ %msg);
 }
 
@@ -122,7 +122,7 @@ function GameConnection::onConnectionError(%this, %msg)
    // General connection error, usually raised by ghosted objects
    // initialization problems, such as missing files.  We'll display
    // the server's connection error message.
-   disconnectedCleanup();
+   tge.disconnectedCleanup();
    MessageBoxOK( "DISCONNECT", $ServerConnectionErrorMessage @ " (" @ %msg @ ")" );
 }
 
@@ -161,13 +161,13 @@ function GameConnection::onConnectRequestRejected( %this, %msg )
       default:
          %error = "Connection error.  Please try another server.  Error code: (" @ %msg @ ")";
    }
-   disconnectedCleanup();
+   tge.disconnectedCleanup();
    MessageBoxOK( "REJECTED", %error);
 }
 
 function GameConnection::onConnectRequestTimedOut(%this)
 {
-   disconnectedCleanup();
+   tge.disconnectedCleanup();
    MessageBoxOK( "TIMED OUT", "Your connection to the server timed out." );
 }
 
@@ -186,13 +186,13 @@ function disconnect()
    if (isObject(ServerConnection))
       ServerConnection.delete();
       
-   disconnectedCleanup();
+   tge.disconnectedCleanup();
 
    // Call destroyServer in case we're hosting
-   destroyServer();
+   tge.destroyServer();
 }
 
-function disconnectedCleanup()
+function Torque::disconnectedCleanup(%this)
 {
    // End mission, if it's running.
    
@@ -211,6 +211,10 @@ function disconnectedCleanup()
    //
    LagIcon.setVisible(false);
    PlayerListGui.clear();
+
+   // ZOD: Delete the player list group
+   if ( isObject( PlayerListGroup ) )
+      PlayerListGroup.delete();
    
    // Clear all print messages
    clientCmdclearBottomPrint();
