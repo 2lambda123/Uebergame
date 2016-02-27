@@ -29,17 +29,74 @@ $TurretShape::RespawnTime = 30 * 1000;
 // fades out and is deleted.
 $TurretShape::DestroyedFadeDelay = 5 * 1000;
 
+datablock SFXProfile(TargetAquiredSound)
+{
+   filename = "";
+   description = AudioClose3D;
+   preload = false;
+};
+
+datablock SFXProfile(TargetLostSound)
+{
+   filename = "";
+   description = AudioClose3D;
+   preload = false;
+};
+
+datablock SFXProfile(TurretDestroyed)
+{
+   filename = "";
+   description = AudioClose3D;
+   preload = false;
+};
+
+datablock SFXProfile(TurretThrown)
+{
+   filename = "";
+   description = AudioClose3D;
+   preload = false;
+};
+
+datablock SFXProfile(TurretFireSound)
+{
+   filename = "art/sound/turret/wpn_turret_fire";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(TurretActivatedSound)
+{
+   filename = "art/sound/turret/wpn_turret_deploy";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(TurretScanningSound)
+{
+   filename = "art/sound/turret/wpn_turret_scan";
+   description = AudioCloseLoop3D;
+   preload = true;
+};
+
+datablock SFXProfile(TurretSwitchinSound)
+{
+   filename = "art/sound/turret/wpn_turret_switchin";
+   description = AudioClose3D;
+   preload = true;
+};
+
 // ----------------------------------------------------------------------------
 // TurretShapeData
 // ----------------------------------------------------------------------------
 
 function TurretShapeData::onAdd(%this, %obj)
 {
-   %obj.setRechargeRate(%this.rechargeRate);
-   %obj.setEnergyLevel(%this.MaxEnergy);
-   %obj.setRepairRate(0);
+   echo( "TurretShapeData::onAdd(" SPC %this.getName() @", "@ %obj.getClassName() SPC ")" );
+   %obj.setRechargeRate( %this.rechargeRate );
+   %obj.setEnergyLevel( %this.MaxEnergy );
+   %obj.setRepairRate( %this.repairRate );
 
-   if (%obj.mountable || %obj.mountable $= "")
+   if ( %obj.mountable || %obj.mountable $= "" )
       %this.isMountable(%obj, true);
    else
       %this.isMountable(%obj, false);
@@ -52,17 +109,18 @@ function TurretShapeData::onAdd(%this, %obj)
    {
       // Handle inventory
       %obj.incInventory(%this.weapon[%i], 1);
-      %obj.incInventory(%this.weaponAmmo[%i], %this.weaponAmmoAmount[%i]);
+      if ( %this.weaponAmmo[%i] !$= "" ) // Might be energy based image
+         %obj.incInventory(%this.weaponAmmo[%i], %this.weaponAmmoAmount[%i]);
       
       // Mount the image
       %obj.mountImage(%this.weapon[%i].image, %i, %this.startLoaded);
       %obj.setImageGenericTrigger(%i, 0, false); // Used to indicate the turret is destroyed
    }
 
-   if (%this.enterSequence !$= "")
+   if ( %this.enterSequence !$= "" )
    {
       %obj.entranceThread = 0;
-      %obj.playThread(%obj.entranceThread, %this.enterSequence);
+      %obj.playThread( %obj.entranceThread, %this.enterSequence );
       %obj.pauseThread(%obj.entranceThread);
    }
    else
@@ -73,7 +131,7 @@ function TurretShapeData::onAdd(%this, %obj)
 
 function TurretShapeData::onRemove(%this, %obj)
 {
-   //echo("\c4TurretShapeData::onRemove("@ %this.getName() @", "@ %obj.getClassName() @")");
+   //echo( "TurretShapeData::onRemove(" SPC %this.getName() @", "@ %obj.getClassName() SPC ")" );
 
    // if there are passengers/driver, kick them out
    for(%i = 0; %i < %this.numMountPoints; %i++)
@@ -84,6 +142,9 @@ function TurretShapeData::onRemove(%this, %obj)
          %passenger.getDataBlock().doDismount(%passenger, true);
       }
    }
+
+   if ( %obj.lastPilot.lastVehicle == %obj )
+      %obj.lastPilot.lastVehicle = "";
 }
 
 // This is on MissionGroup so it doesn't happen when the mission has ended
@@ -108,61 +169,146 @@ function MissionGroup::respawnTurret(%this, %datablock, %className, %transform, 
 // This method is called by weapons fire
 function TurretShapeData::damage(%this, %turret, %sourceObject, %position, %damage, %damageType)
 {
-   //echo("\TurretShapeData::damage(" @ %turret @ ", "@ %sourceObject @ ", " @ %position @ ", "@ %damage @ ", "@ %damageType @ ")");
+   echo("TurretShapeData::damage(" SPC %turret @", "@ %sourceObject @", "@ %position @", "@ %damage @", "@ %damageType SPC ")" );
 
-   if (%turret.getState() $= "Dead")
+   if ( %turret.getState() $= "Dead" || %this.isInvincible )
       return;
 
-   %turret.applyDamage(%damage);
+   if ( isObject( %sourceObject ) )
+      %turret.lastDamagedBy = %sourceObject;
+   else
+      %turret.lastDamagedBy = 0;
 
-   // Update the numerical Health HUD
-   %mountedObject = %turret.getObjectMount();
-   if (%mountedObject)
-      %mountedObject.updateHealth();
+   %turret.damageTimeMS = GetSimTime();
 
-   // Kill any occupants
-   if (%turret.getState() $= "Dead")
+   if ( %this.isShielded )
+      %amount = %turret.imposeShield(%position, %damage, %damageType);
+
+   // Cap the amount of damage applied if same team
+   if ( !$FriendlyFire && !%this.deployedObject )
    {
-      for (%i = 0; %i < %this.numMountPoints; %i++)
+      if ( isObject( %sourceObject ) )
       {
-         %player = %turret.getMountNodeObject(%i);
-         if (%player != 0)
-            %player.killWithSource(%sourceObject, "InsideTurret");
+         if ( %sourceObject.team == %turret.team )
+         {
+            %curDamage = %turret.getDamageLevel();
+            %availableDamage = %this.disabledLevel - %curDamage - 0.05;
+            if ( %amount > %availableDamage )
+               %amount = %availableDamage;
+         }
       }
    }
+
+   %damageScale = %this.damageScale[%damageType];
+   if ( %damageScale !$= "" )
+      %amount *= %damageScale;
+
+   // apply damage
+   if ( %amount > 0 )
+      %turret.applyDamage( %amount );
+
+   // Update the numerical Health HUD
+   //%mountedObject = %turret.getObjectMount();
+   //if (%mountedObject)
+   //   %mountedObject.updateHealth();
 }
 
 function TurretShapeData::onDamage(%this, %obj, %delta)
 {
+   echo( "TurretShapeData::onDamage(" SPC %this.getName() @", "@ %obj.getClassName() @", "@ %delta SPC ")" );
    // This method is invoked by the ShapeBase code whenever the
    // object's damage level changes.
+
+   %damage = %obj.getDamageLevel();
+   if ( %damage >= %this.destroyedLevel )
+   {
+      if ( %obj.getDamageState() !$= "Destroyed" )
+      {
+         %obj.setDamageState(Destroyed);
+
+         // Let the game object have a shot at doing something with this information..
+         // We put this here so we have some time before the vehicle is deleted.
+         if ( isObject( %obj.lastDamagedBy ) && isObject( Game ) )
+            Game.turretDestroyed( %obj, %obj.lastDamagedBy );
+
+         // if object has an explosion damage radius associated with it, apply explosion damage
+         if ( %this.damageRadius )
+            radiusDamage(%obj, %obj, %obj.getWorldBoxCenter(), %this.damageRadius, %this.radiusDamage, %this.radiusDamageType, %this.areaImpulse);
+
+         %obj.setDamageLevel(%this.maxDamage);
+      }
+   }
+   else if ( %damage >= %this.disabledLevel )
+   {
+      if ( %obj.getDamageState() !$= "Disabled" )
+         %obj.setDamageState(Disabled);
+   }
+   else
+   {
+      // Lets add some sound to this, grab the sound profile from the datablock
+      if ( %this.damageSound !$= "" )
+         ServerPlay3D(%this.damageSound, %obj.getTransform());
+
+      if ( %obj.getDamageState() !$= "Enabled" )
+         %obj.setDamageState(Enabled);
+   }
 }
 
 function TurretShapeData::onDestroyed(%this, %obj, %lastState)
 {
+   echo( "TurretShapeData::onDestroyed(" SPC %this.getName() @", "@ %obj.getClassName() @", "@ %lastState SPC ")" );
    // This method is invoked by the ShapeBase code whenever the
    // object's damage state changes.
 
-   // Fade out the destroyed object.  Then schedule a return.
-   %obj.startFade(1000, $TurretShape::DestroyedFadeDelay, true);
-   %obj.schedule($TurretShape::DestroyedFadeDelay + 1000, "delete");
-
-   if (%obj.doRespawn())
+   // Kill any occupants
+   if ( %turret.getState() $= "Dead" )
    {
-      MissionGroup.schedule($TurretShape::RespawnTime, "respawnTurret", %this, %obj.getClassName(), %obj.getTransform(), true, true);
+      for (%i = 0; %i < %this.numMountPoints; %i++)
+      {
+         %flingee = %turret.getMountNodeObject(%i);
+         if ( %flingee.isMemberOfClass("Player") )
+         {
+            %flingee.getDataBlock().doDismount( %flingee, true );
+            %xVel = 150.0 - (getRandom() * 300.0);
+            %yVel = 150.0 - (getRandom() * 300.0);
+            %zVel = (getRandom() * 50.0) + 50.0;
+            %flingVel = %xVel @ " " @ %yVel @ " " @ %zVel;
+            %flingee.applyImpulse( %flingee.getTransform(), %flingVel );
+            %flingee.damage( %turret, %turret.getPosition(), 0.4, $DamageType::Crash );
+         }
+      }
+   }
+
+   if ( %this.deployedObject )
+   {
+      $TeamDeployedCount[%obj.team, %this.getName()]--;
+      %obj.startFade(1000, $TurretShape::DestroyedFadeDelay, true);
+      %obj.schedule($TurretShape::DestroyedFadeDelay + 1000, "delete");
    }
 }
 
 function TurretShapeData::onDisabled(%this, %obj, %lastState)
 {
+   echo( "TurretShapeData::onDisabled(" SPC %this.getName() @", "@ %obj.getClassName() @", "@ %lastState SPC ")" );
    // This method is invoked by the ShapeBase code whenever the
    // object's damage state changes.
+   if ( %turret.getClassName() $= "AITurretShape" )
+      %turret.deactivateTurret();
+
+   %turret.setRechargeRate(0.0);
+   %turret.setEnergyLevel(0.0);
 }
 
 function TurretShapeData::onEnabled(%this, %obj, %lastState)
 {
+   echo( "TurretShapeData::onEnabled" SPC %this.getName() @", "@ %obj.getClassName() @", "@ %lastState SPC ")" );
    // This method is invoked by the ShapeBase code whenever the
    // object's damage state changes.
+   if ( %turret.getClassName() $= "AITurretShape" )
+      %turret.activateTurret();
+
+   %turret.setRechargeRate( %this.rechargeRate );
+   %turret.setEnergyLevel( %this.MaxEnergy );
 }
 
 // ----------------------------------------------------------------------------
@@ -221,8 +367,39 @@ function TurretShapeData::setMountTurret(%this, %turret, %player)
          %turret.mountObject(%player, %node);
          //%player.playAudio(0, MountVehicleSound);
          %player.mVehicle = %turret;
+         %this.playerMounted( %turret, %player, %node );
       }
    }
+}
+
+function TurretShapeData::playerMounted(%data, %turret, %player, %node)
+{
+   //echo("\c2TurretShapeData::playerMounted(" SPC %data.getName() @ ", " @ %turret @ ", " @ %player @ ", " @ %node SPC ")");
+
+   if ( %player.lastVehicle.lastPilot == %player && %player.lastVehicle != %turret )
+   {
+      %player.lastVehicle.lastPilot = "";
+   }
+
+   if ( %vehicle.lastPilot !$= "" && %turret.lastPilot.lastVehicle == %turret )
+      %turret.lastPilot.lastVehicle = "";
+            
+   %turret.lastPilot = %player;
+   %player.lastVehicle = %turret;
+
+   // update spectators who are following this guy...
+   if( %player.client.observeCount > 0 )
+      resetSpectatorFollow( %player.client, false );
+}
+
+function TurretShapeData::playerDismounted(%data, %turret, %player, %node)
+{
+   //echo("\c2TurretShapeData::playerDismounted(" SPC %data.getName() @ ", " @ %turret @ ", " @ %player @ ", " @ %node SPC ")");
+
+   %player.unmount();
+
+   if( %player.client.observeCount > 0 )
+      resetSpectatorFollow( %player.client, true );
 }
 
 function TurretShapeData::findEmptySeat(%this, %turret, %player)
@@ -256,7 +433,7 @@ function TurretShapeData::onMount(%this, %turret, %player, %node)
 {
    //echo("\c4TurretShapeData::onMount("@ %this.getName() @", "@ %turret @", "@ %player.client.nameBase @")");
 
-   %player.client.RefreshVehicleHud(%turret, %this.reticle, %this.zoomReticle);
+   //%player.client.RefreshVehicleHud(%turret, %this.reticle, %this.zoomReticle);
    //%player.client.UpdateVehicleHealth(%turret);
 }
 
@@ -264,7 +441,7 @@ function TurretShapeData::onUnmount(%this, %turret, %player, %node)
 {
    //echo("\c4TurretShapeData::onUnmount(" @ %this.getName() @ ", " @ %turret @ ", " @ %player.client.nameBase @ ")");
 
-   %player.client.RefreshVehicleHud(0, "", "");
+   //%player.client.RefreshVehicleHud(0, "", "");
 }
 
 // ----------------------------------------------------------------------------
@@ -274,219 +451,161 @@ function TurretShapeData::onUnmount(%this, %turret, %player, %node)
 // This method is called by weapons fire
 function TurretShape::damage(%this, %sourceObject, %position, %damage, %damageType)
 {
-   //echo("\TurretShape::damage(" @ %this @ ", "@ %sourceObject @ ", " @ %position @ ", "@ %damage @ ", "@ %damageType @ ")");
+   echo("TurretShape::damage(" @ %this @ ", "@ %sourceObject @ ", " @ %position @ ", "@ %damage @ ", "@ %damageType @ ")");
 
    %this.getDataBlock().damage(%this, %sourceObject, %position, %damage, %damageType);
 }
 
-// ----------------------------------------------------------------------------
-// TurretDamage
-// ----------------------------------------------------------------------------
-
-// Customized kill message for deaths caused by turrets
-function sendMsgClientKilled_TurretDamage( %msgType, %client, %sourceClient, %damLoc )
+//-----------------------------------------------------------------------------
+// AI Turret
+//-----------------------------------------------------------------------------
+function AITurretShapeData::onNewDatablock(%this, %turret)
 {
-   if ( %sourceClient $= "" )             // editor placed turret
-      messageAll( %msgType, '%1 was shot down by a turret!', %client.playerName );
-   else if ( %sourceClient == %client )   // own mine
-      messageAll( %msgType, '%1 kill by his own turret!', %client.playerName );
-   else                                   // enemy placed mine
-      messageAll( %msgType, '%1 was killed by a turret of %2!', %client.playerName, %sourceClient.playerName );
+   LogEcho("\c2AITurretShapeData::onNewDatablock(" SPC %this.getName() @ ", " @ %turret.getClassName() SPC ")");
 }
 
-// ----------------------------------------------------------------------------
-// AITurretShapeData
-// ----------------------------------------------------------------------------
-
-function AITurretShapeData::onAdd(%this, %obj)
+function AITurretShapeData::onAdd(%this, %turret)
 {
-   Parent::onAdd(%this, %obj);
+   LogEcho("\c2AITurretShapeData::onAdd(" SPC %this.getName() @", "@ %turret.getClassName() SPC ")" );
 
-   %obj.mountable = false;
-}
+   %turret.setRechargeRate( %this.rechargeRate );
+   %turret.setEnergyLevel( %this.maxEnergy );
+   %turret.setRepairRate(0);
+   %this.isMountable( %turret, false );
 
-// Player has thrown a deployable turret.  This copies from ItemData::onThrow()
-function AITurretShapeData::onThrow(%this, %user, %amount)
-{
-   // Remove the object from the inventory
-   if (%amount $= "")
-      %amount = 1;
-   if (%this.maxInventory !$= "")
-      if (%amount > %this.maxInventory)
-         %amount = %this.maxInventory;
-   if (!%amount)
-      return 0;
-   %user.decInventory(%this,%amount);
+   if ( %this.nameTag !$= "" )
+      %turret.setShapeName( %this.nameTag );
 
-   // Construct the actual object in the world, and add it to
-   // the mission group so it's cleaned up when the mission is
-   // done.  The turret's rotation matches the player's.
-   %rot = %user.getEulerRotation();
-   %obj = new AITurretShape()
+   // Mount weapons
+   for ( %i = 0; %i < %this.numWeaponMountPoints; %i++ )
    {
-      datablock = %this;
-      rotation = "0 0 1 " @ getWord(%rot, 2);
-      count = 1;
-      sourceObject = %user;
-      client = %user.client;
-      isAiControlled = true;
-   };
-   MissionGroup.add(%obj);
-   
-   // Let the turret know that we're a firend
-   %obj.addToIgnoreList(%user);
-
-   // We need to add this turret to a list on the client so that if we die,
-   // the turret will still ignore our player.
-   %client = %user.client;
-   if (%client)
-   {
-      if (!%client.ownedTurrets)
-      {
-         %client.ownedTurrets = new SimSet();
-      }
+      // Handle inventory
+      %turret.incInventory( %this.weapon[%i], 1 );
+      if ( %this.weaponAmmo[%i] !$= "" ) // Might be energy based image
+         %turret.incInventory( %this.weaponAmmo[%i], %this.weaponAmmoAmount[%i] );
       
-      // Go through the client's owned turret list.  Make sure we're
-      // a friend of every turret and every turret is a friend of ours.
-      // Commence hugging!
-      for (%i=0; %i<%client.ownedTurrets.getCount(); %i++)
-      {
-         %turret = %client.ownedTurrets.getObject(%i);
-         %turret.addToIgnoreList(%obj);
-         %obj.addToIgnoreList(%turret);
-      }
-      
-      // Add ourselves to the client's owned list.
-      %client.ownedTurrets.add(%obj);
+      // Mount the image
+      %turret.mountImage( %this.weapon[%i].image, %i, %this.startLoaded );
+      %turret.setImageGenericTrigger( %i, 0, false ); // Used to indicate the turret is destroyed
    }
-   
-   return %obj;
 }
 
 function AITurretShapeData::onDestroyed(%this, %turret, %lastState)
 {
    // This method is invoked by the ShapeBase code whenever the
    // object's damage state changes.
+   LogEcho("\c2AITurretShapeData::onDestroyed(" SPC %this.getName() @", "@ %turret.getClassName() @", "@ %lastState SPC ")" );
 
-   %turret.playAudio(0, TurretDestroyed);
-   %turret.setAllGunsFiring(false);
+   %turret.playAudio( 0, TurretDestroyed );
+   %turret.setAllGunsFiring( false );
+   %turret.stopScanForTargets();
    %turret.resetTarget();
    %turret.setTurretState( "Destroyed", true );
 
+   if ( isEventPending( %turret.thinkSchedule ) )
+      cancel( %turret.thinkSchedule );
+
    // Set the weapons to destoryed
-   for(%i = 0; %i < %this.numWeaponMountPoints; %i++)
+   for ( %i = 0; %i < %this.numWeaponMountPoints; %i++ )
    {
-      %turret.setImageGenericTrigger(%i, 0, true);
+      %turret.setImageGenericTrigger( %i, 0, true );
    }
 
-   Parent::onDestroyed(%this, %turret, %lastState);
+   if ( %this.deployedObject )
+   {
+      $TeamDeployedCount[%turret.team, %this.getName()]--;
+      %turret.startFade( 1000, $TurretShape::DestroyedFadeDelay, true );
+      %turret.schedule( $TurretShape::DestroyedFadeDelay + 1000, "delete" );
+   }
 }
 
-function AITurretShapeData::OnScanning(%this, %turret)
+function AITurretShapeData::onScanning(%this, %turret)
 {
-   //echo("AITurretShapeData::OnScanning: " SPC %this SPC %turret);
+   if ( %turret.getDamageState() $= "Destroyed" )
+      return;
+
+   //LogEcho("\c2AITurretShapeData::onScanning(" SPC %this.getName() @", "@ %turret.getClassName() SPC ")" );
 
    %turret.startScanForTargets();
    %turret.playAudio(0, TurretScanningSound);
 }
 
-function AITurretShapeData::OnTarget(%this, %turret)
+function AITurretShapeData::onTarget(%this, %turret)
 {
-   //echo("AITurretShapeData::OnTarget: " SPC %this SPC %turret);
+   %target =  %turret.getTarget();
+   %targName = isObject( %target.client ) ? %target.client.nameBase : %target.nameBase;
+   LogEcho("\c2AITurretShapeData::onTarget(" SPC deTag(%this.nameTag) @", "@ %targName SPC ")" );
 
    %turret.startTrackingTarget();
-   %turret.playAudio(0, TargetAquiredSound);
+   //%turret.playAudio(0, TargetAquiredSound);
 }
 
-function AITurretShapeData::OnNoTarget(%this, %turret)
+function AITurretShapeData::onNoTarget(%this, %turret)
 {
-   //echo("AITurretShapeData::OnNoTarget: " SPC %this SPC %turret);
+   LogEcho("\c2AITurretShapeData::onNoTarget(" SPC %this.getName() @", "@ %turret.hasTarget() SPC ")" );
 
    %turret.setAllGunsFiring(false);
    %turret.recenterTurret();
-   %turret.playAudio(0, TargetLostSound);
+   //%turret.playAudio(0, TargetLostSound);
 }
 
-function AITurretShapeData::OnFiring(%this, %turret)
+function AITurretShapeData::onFiring(%this, %turret)
 {
-   //echo("AITurretShapeData::OnFiring: " SPC %this SPC %turret);
+   %target =  %turret.getTarget();
+   %targName = isObject( %target.client ) ? %target.client.nameBase : %target.nameBase;
+   LogEcho("\c2AITurretShapeData::onFiring(" SPC %this.getName() @", "@ %targName SPC ")" );
 
    %turret.setAllGunsFiring(true);
 }
 
-function AITurretShapeData::OnThrown(%this, %turret)
+function AITurretShapeData::onThrown(%this, %turret)
 {
-   //echo("AITurretShapeData::OnThrown: " SPC %this SPC %turret);
+   //LogEcho("\c2AITurretShapeData::onThrown(" SPC %this.getName() @", "@ %turret.getClassName() SPC ")" );
 
-   %turret.playAudio(0, TurretThrown);
+   //%turret.playAudio(0, TurretThrown);
 }
 
-function AITurretShapeData::OnDeploy(%this, %turret)
+function AITurretShapeData::onDeploy(%this, %turret)
 {
-   //echo("AITurretShapeData::OnDeploy: " SPC %this SPC %turret);
+   //LogEcho("\c2AITurretShapeData::onDeploy(" SPC %this.getName() @", "@ %turret.getClassName() SPC ")" );
 
    // Set the weapons to loaded
    for(%i = 0; %i < %this.numWeaponMountPoints; %i++)
    {
       %turret.setImageLoaded(%i, true);
    }
-   
-   %turret.playAudio(0, TurretActivatedSound);
+
+   //> ZOD: Testing
+   //%turret.thinkSchedule = %turret.schedule( 2000, "scanForTargets" );
+
+   //%turret.playAudio(0, TurretActivatedSound);
 }
 
-
-// ----------------------------------------------------------------------------
-// Player deployable turret
-// ----------------------------------------------------------------------------
-
-// Cannot use the Weapon class for deployable turrets as it is already tied
-// to ItemData.
-
-function DeployableTurretWeapon::onUse(%this, %obj)
+function TurretShape::scanForTargets(%turret)
 {
-   Weapon::onUse(%this, %obj);
-}
+   //warn("AITurretShapeData::scanForTargets(" SPC deTag( %turret.getDataBlock().nameTag ) SPC ")");
 
-function DeployableTurretWeapon::onPickup(%this, %obj, %shape, %amount)
-{
-   Weapon::onPickup(%this, %obj, %shape, %amount);
-}
+   if ( isEventPending( %turret.thinkSchedule ) )
+      cancel( %turret.thinkSchedule );
 
-function DeployableTurretWeapon::onInventory(%this, %obj, %amount)
-{
-   if (%obj.client !$= "" && !%obj.isAiControlled)
+   if ( %turret.getDamageState() $= "Destroyed" )
+      return;
+
+   %turPos = %turret.getPosition();
+   %reference = %data.maxScanDistance;
+
+   // Create an array of potential targets filtering non desirables..
+   InitContainerRadiusSearch( %turPos, %reference, ( $TypeMasks::PlayerObjectType | $TypeMasks::VehicleObjectType ) );
+   while ( ( %target = containerSearchNext() ) != 0 )
    {
-      %obj.client.setAmmoAmountHud( 1, %amount );
+      if ( %target.getDamageState() !$= "Enabled" || %target.team == %turret.team ||
+           %target.isCloaked() || !%target.isMemberOfClass( "Player" ) )
+      {
+         %turret.addToIgnoreList( %target );
+         continue;
+      }
+      %turret.addToTargetList( %target ); //< ZOD: Added to engine code
    }
 
-   // Cycle weapons if we are out of ammo
-   if ( !%amount && ( %slot = %obj.getMountSlot( %this.image ) ) != -1 )
-      %obj.cycleWeapon( "prev" );
-}
-
-function DeployableTurretWeaponImage::onMount(%this, %obj, %slot)
-{
-   // The turret doesn't use ammo from a player's perspective.
-   %obj.setImageAmmo(%slot, true);
-   %numTurrets = %obj.getInventory(%this.item);
-   
-   if (%obj.client !$= "" && !%obj.isAiControlled)
-      %obj.client.RefreshWeaponHud( 1, %this.item.previewImage, %this.item.reticle, %this.item.zoomReticle, %numTurrets);
-}
-
-function DeployableTurretWeaponImage::onUnmount(%this, %obj, %slot)
-{
-   if (%obj.client !$= "" && !%obj.isAiControlled)
-      %obj.client.RefreshWeaponHud(0, "", "");
-}
-
-function DeployableTurretWeaponImage::onFire(%this, %obj, %slot)
-{
-   //echo("\DeployableTurretWeaponImage::onFire( "@%this.getName()@", "@%obj.client.nameBase@", "@%slot@" )");
-
-   // To fire a deployable turret is to throw it.  Schedule the throw
-   // so that it doesn't happen during this ShapeBaseImageData's state machine.
-   // If we throw the last one then we end up unmounting while the state machine
-   // is still being processed.
-   %obj.schedule(0, "throw", %this.item);
+   %turret.thinkSchedule = %turret.schedule( 500, "scanForTargets" );
 }

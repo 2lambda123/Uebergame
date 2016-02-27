@@ -99,114 +99,6 @@ $DamageText[$DamageCount] = "Shape Charge";
 $DamageType::Turret = $DamageCount++;
 $DamageText[$DamageCount] = "Turret";
 
-//-------------------------------------------------------------------------- Vehicle weapons
-
-
-//----------------------------------------------------------------------------
-// Vehicle scales
-
-datablock SimDataBlock(TalonDamageScale)
-{
-   shieldDamageScale[$DamageType::Default] = 1.0;
-   shieldDamageScale[$DamageType::Impact] = 1.1;
-   shieldDamageScale[$DamageType::Ground] = 1.0;
-   shieldDamageScale[$DamageType::Crash] = 1.0;
-   shieldDamageScale[$DamageType::OutOfBounds] = 1.0;
-   shieldDamageScale[$DamageType::Lava] = 1.0;
-   shieldDamageScale[$DamageType::Water] = 1.0;
-   shieldDamageScale[$DamageType::Lightning] = 10.0;
-   shieldDamageScale[$DamageType::VehicleSpawn] = 1.0;
-   shieldDamageScale[$DamageType::Explosion] = 3.0;
-   shieldDamageScale[$DamageType::Suicide] = 1.0;
-
-   shieldDamageScale[$DamageType::Melee] = 1.0;
-   shieldDamageScale[$DamageType::Pistol] = 1.75;
-   shieldDamageScale[$DamageType::Sniper] = 1.75;
-   shieldDamageScale[$DamageType::Rifle] = 1.0;
-   shieldDamageScale[$DamageType::Shotgun] = 1.75;
-   shieldDamageScale[$DamageType::GrenadeLauncher] = 1.2;
-   shieldDamageScale[$DamageType::Rocket] = 1.5;
-
-   shieldDamageScale[$DamageType::Grenade] = 1.0;
-   shieldDamageScale[$DamageType::Mine] = 3.0;
-   shieldDamageScale[$DamageType::ShapeCharge] = 3.5;
-
-   damageScale[$DamageType::Default] = 1.0;
-   damageScale[$DamageType::Impact] = 1.1;
-   damageScale[$DamageType::Ground] = 1.0;
-   damageScale[$DamageType::Crash] = 1.0;
-   damageScale[$DamageType::OutOfBounds] = 1.0;
-   damageScale[$DamageType::Lava] = 1.0;
-   damageScale[$DamageType::Water] = 1.0;
-   damageScale[$DamageType::Lightning] = 10.0;
-   damageScale[$DamageType::VehicleSpawn] = 1.0;
-   damageScale[$DamageType::Explosion] = 2.0;
-   damageScale[$DamageType::Suicide] = 1.0;
-
-   damageScale[$DamageType::Melee] = 0.5;
-   damageScale[$DamageType::Pistol] = 1.0;
-   damageScale[$DamageType::Sniper] = 1.0;
-   damageScale[$DamageType::Rifle] = 1.0;
-   damageScale[$DamageType::Shotgun] = 1.0;
-   damageScale[$DamageType::GrenadeLauncher] = 0.75;
-   damageScale[$DamageType::Rocket] = 1.0;
-
-   damageScale[$DamageType::Grenade] = 0.75;
-   damageScale[$DamageType::Mine] = 4.0;
-   damageScale[$DamageType::ShapeCharge] = 3.5;
-};
-
-datablock SimDataBlock(GravatronDamageScale)
-{
-   shieldDamageScale[$DamageType::Default] = 1.0;
-   shieldDamageScale[$DamageType::Impact] = 1.25;
-   shieldDamageScale[$DamageType::Ground] = 1.0;
-   shieldDamageScale[$DamageType::Crash] = 1.0;
-   shieldDamageScale[$DamageType::OutOfBounds] = 1.0;
-   shieldDamageScale[$DamageType::Lava] = 1.0;
-   shieldDamageScale[$DamageType::Water] = 1.0;
-   shieldDamageScale[$DamageType::Lightning] = 5.0;
-   shieldDamageScale[$DamageType::VehicleSpawn] = 1.0;
-   shieldDamageScale[$DamageType::Explosion] = 2.0;
-   shieldDamageScale[$DamageType::Suicide] = 1.0;
-
-   shieldDamageScale[$DamageType::Melee] = 1.0;
-   shieldDamageScale[$DamageType::Pistol] = 1.5;
-   shieldDamageScale[$DamageType::Sniper] = 2.0;
-   shieldDamageScale[$DamageType::Rifle] = 2.0;
-   shieldDamageScale[$DamageType::Shotgun] = 2.5;
-   shieldDamageScale[$DamageType::GrenadeLauncher] = 2.0;
-   shieldDamageScale[$DamageType::Rocket] = 2.25;
-
-   shieldDamageScale[$DamageType::Grenade] = 2.0;
-   shieldDamageScale[$DamageType::Mine] = 4.0;
-   shieldDamageScale[$DamageType::ShapeCharge] = 3.0;
-
-   damageScale[$DamageType::Default] = 1.0;
-   damageScale[$DamageType::Impact] = 1.25;
-   damageScale[$DamageType::Ground] = 1.0;
-   damageScale[$DamageType::Crash] = 1.0;
-   damageScale[$DamageType::OutOfBounds] = 1.0;
-   damageScale[$DamageType::Lava] = 1.0;
-   damageScale[$DamageType::Water] = 1.0;
-   damageScale[$DamageType::Lightning] = 5.0;
-   damageScale[$DamageType::VehicleSpawn] = 1.0;
-   damageScale[$DamageType::Explosion] = 1.0;
-   damageScale[$DamageType::Suicide] = 1.0;
-
-   damageScale[$DamageType::Melee] = 0.5;
-   damageScale[$DamageType::Pistol] = 1.5;
-   damageScale[$DamageType::Sniper] = 1.2;
-   damageScale[$DamageType::Rifle] = 1.5;
-   damageScale[$DamageType::Shotgun] = 1.2;
-   damageScale[$DamageType::GrenadeLauncher] = 1.0;
-   damageScale[$DamageType::Rocket] = 1.0;
-
-   damageScale[$DamageType::Grenade] = 1.0;
-   damageScale[$DamageType::Mine] = 4.0;
-   damageScale[$DamageType::ShapeCharge] = 2.2;
-};
-
 //----------------------------------------------------------------------------
 // TURRET DAMAGE PROFILES
 //----------------------------------------------------------------------------
@@ -333,13 +225,13 @@ datablock SimDataBlock(ArmorDamageScale)
    damageScale[$DamageType::Lightning] = 1.0;
    damageScale[$DamageType::VehicleSpawn] = 1.0;
    damageScale[$DamageType::Explosion] = 1.0;
-   damageScale[$DamageType::Suicide] = 1.0;
+   damageScale[$DamageType::Suicide] = 2.0;
 
    damageScale[$DamageType::Melee] = 1.0;
    damageScale[$DamageType::Pistol] = 1.0;
    damageScale[$DamageType::Rifle] = 1.0;
    damageScale[$DamageType::Sniper] = 1.0;
-   damageScale[$DamageType::Shotgun] = 1.2;
+   damageScale[$DamageType::Shotgun] = 1.0;
    damageScale[$DamageType::GrenadeLauncher] = 1.0;
    damageScale[$DamageType::Rocket] = 1.0;
 

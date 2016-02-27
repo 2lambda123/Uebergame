@@ -20,7 +20,6 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
 /// Returns true if the current quality settings equal
 /// this graphics quality level.
 function GraphicsQualityLevel::isCurrent( %this )
@@ -131,8 +130,55 @@ function OptionsDlg::setPane(%this, %pane)
    %this._updateApplyState();
 }
 
+// New replacment for above
+function Opt_Tabs::onTabSelected(%this, %tab)
+{
+   //echo("Opt_Tabs::onTabSelected(" SPC %this.getName() @", "@ %tab SPC ")");
+   optionsDlg.pane = %tab;
+   
+   if( %tab $="Controls" )
+      OptionsDlg.fillRemapList();
+}
+
 function OptionsDlg::onWake(%this)
 {
+   Opt_Tabs.selectPage(Player);
+
+   // Player Pane
+   OptPlayerNameInput.setValue(getField($pref::Player, 0));
+   OP_FovSlider.setValue( $pref::Player::Fov );
+   OptPlayerSkinMenu.init();
+
+   // KeyMaps and Mouse Pane
+
+   // Initialize the Control Options controls:
+   OptBindListMenu.init();
+
+   MouseXSlider.setValue( moveMap.getScale( mouse, xaxis ) / 2 );
+   MouseYSlider.setValue( moveMap.getScale( mouse, yaxis ) / 2 );
+   InvertMouseTgl.setValue( moveMap.isInverted( mouse, yaxis ) );
+
+   MouseZActionMenu.clear();
+   MouseZActionMenu.add( "Nothing", 1 );
+   MouseZActionMenu.add( "Cycle Weapon", 2 );
+   MouseZActionMenu.add( "Next Weapon Only", 3 );
+   MouseZActionMenu.add( "Cycle Zoom Level", 4 );
+
+   %bind = moveMap.getCommand( "mouse", "zaxis" );
+   %selId = 1;
+   switch$ ( %bind )
+   {
+      case "cycleWeaponAxis":
+         %selId = 2;
+      case "cycleNextWeaponOnly":
+         %selId = 3;
+      case "setZoomFOV":
+         %selId = 4;
+   }
+   MouseZActionMenu.setSelected( %selId );
+
+   //------------------------------------------
+
    if ( isFunction("getWebDeployment") && getWebDeployment() )
    {
       // Cannot enable full screen under web deployment
@@ -145,25 +191,13 @@ function OptionsDlg::onWake(%this)
    }
    %this-->OptGraphicsVSyncToggle.setStateOn( !$pref::Video::disableVerticalSync );
    
-   
-   //%this-->Tgl_1.setStateOn( $pref::Interior::VertexLighting );
-   %this-->Tgl_2.setStateOn( $pref::Water::disableTrueReflections );
-   %this-->Tgl_3.setStateOn( $pref::Video::disablePixSpecular );
-   %this-->Tgl_4.setStateOn( $pref::Video::disableParallaxMapping );
-   %this-->Tgl_5.setStateOn( $pref::Video::disableNormalMapping );
-   %this-->Tgl_6.setStateOn( $pref::Video::disableCubemapping );
-   %this-->Tgl_7.setStateOn( $pref::Decals::enabled );
-   %this-->Tgl_8.setStateOn( $pref::Shadows::disable );
-   %this-->Tgl_9.setStateOn( $pref::enablePostEffects );
-   
-   //%this-->Tgl_10.setStateOn( $pref::LightManager::Enable::AA );
+   %this-->Tgl_10.setStateOn( $pref::LightManager::Enable::Vignette );
    %this-->Tgl_11.setStateOn( $pref::LightManager::Enable::HDR );
    %this-->Tgl_12.setStateOn( $pref::LightManager::Enable::SSAO );
    %this-->Tgl_13.setStateOn( $pref::LightManager::Enable::LightRay );
    %this-->Tgl_14.setStateOn( $pref::LightManager::Enable::DOF );
    
-   //%this-->Tgl_DisplayMaster.setStateOn($pref::Net::DisplayOnMaster);
-
+   %this-->Tgl_DisplayMaster.setStateOn($pref::Net::DisplayOnMaster);
 
    OptionsDlg.initResMenu();
    %resSelId = OptionsDlg-->OptGraphicsResolutionMenu.findText( _makePrettyResString( $pref::Video::mode ) );
@@ -178,17 +212,16 @@ function OptionsDlg::onWake(%this)
       OptGraphicsDriverMenu.add(getField(%buffer, %i), %i);
 
    %selId = OptGraphicsDriverMenu.findText( getDisplayDeviceInformation() );
-	if ( %selId == -1 )
-		OptGraphicsDriverMenu.setFirstSelected();
+   if ( %selId == -1 )
+      OptGraphicsDriverMenu.setFirstSelected();
    else
-	   OptGraphicsDriverMenu.setSelected( %selId );
+      OptGraphicsDriverMenu.setSelected( %selId );
 
    // Setup the graphics quality dropdown menus.
    %this-->OptMeshQualityPopup.init( MeshQualityGroup );
    %this-->OptTextureQualityPopup.init( TextureQualityGroup );
    %this-->OptLightingQualityPopup.init( LightingQualityGroup );
    %this-->OptShaderQualityPopup.init( ShaderQualityGroup );
-   %this-->OptEffectQualityPopup.init( EffectQualityGroup );
 
    // Setup the anisotropic filtering menu.
    %ansioCtrl = %this-->OptAnisotropicPopup;
@@ -205,6 +238,7 @@ function OptionsDlg::onWake(%this)
    // %refreshMenu.add("Auto", 60);
    %refreshMenu.add("60", 60);
    %refreshMenu.add("75", 75);
+   %refreshMenu.add("120", 120);
    %refreshMenu.setSelected( getWord( $pref::Video::mode, $WORD::REFRESH ) );
    
    // Audio
@@ -231,10 +265,12 @@ function OptionsDlg::onWake(%this)
    OptAudioProviderList.sort();
 
    %selId = OptAudioProviderList.findText($pref::SFX::provider);
-	if ( %selId == -1 )
-		OptAudioProviderList.setFirstSelected();
+   if ( %selId == -1 )
+      OptAudioProviderList.setFirstSelected();
    else
-	   OptAudioProviderList.setSelected( %selId );
+      OptAudioProviderList.setSelected( %selId );
+
+   OptAudioUpdate();
 	   
    // Populate the Anti-aliasing popup.
    %aaMenu = %this-->OptAAQualityPopup;
@@ -248,35 +284,75 @@ function OptionsDlg::onWake(%this)
    OptMouseSensitivity.value = $pref::Input::LinkMouseSensitivity;
       
    // Set the graphics pane to start.
-   %this-->OptGraphicsButton.performClick();
+   //%this-->OptGraphicsButton.performClick();
 }
 
 function OptionsDlg::onSleep(%this)
 {
+   // Mouse
+   %xSens = MouseXSlider.getValue() * 2;
+   %ySens = MouseYSlider.getValue() * 2;
+   moveMap.bind( mouse, xaxis, "S", %xSens, "yaw" );
+   %yFlags = InvertMouseTgl.getValue() ? "SI" : "S";
+   moveMap.bind( mouse, yaxis, %yFlags, %ySens, "pitch" );
+
    // write out the control config into the rw/config.cs file
-   moveMap.save( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" );
+   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
+   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+}
+
+function OptionsDlg::saveSettings(%this)
+{
+   switch$ (%this.pane)
+   {
+      case "Player":
+	  
+         OptPlayerNameInput.setField();
+         %playerName = OptPlayerNameInput.getValue();
+         %skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
+         $pref::Player = %playerName TAB %skin;
+
+      case "Network":
+
+      case "Audio":
+
+      case "Controls":
+         switch ( MouseZActionMenu.getSelected() )
+         {
+            case 2:
+               moveMap.bind( mouse, zaxis, cycleWeaponAxis );
+            case 3:
+               moveMap.bind( mouse, zaxis, cycleNextWeaponOnly );
+            case 4:
+               moveMap.bind( mouse, zaxis, setZoomFOV );
+            default:
+               moveMap.unbind( mouse, zaxis );
+         }
+   }
 }
 
 function OptGraphicsDriverMenu::onSelect( %this, %id, %text )
 {
-	// Attempt to keep the same resolution settings:
-	%resMenu = OptionsDlg-->OptGraphicsResolutionMenu;	
+   // Attempt to keep the same resolution settings:
+   %resMenu = OptionsDlg-->OptGraphicsResolutionMenu;	
    %currRes = %resMenu.getText();
    
    // If its empty the use the current.
    if ( %currRes $= "" )
       %currRes = _makePrettyResString( Canvas.getVideoMode() );
                   
-	// Fill the resolution list.
-	optionsDlg.initResMenu();
+   // Fill the resolution list.
+   optionsDlg.initResMenu();
 
-	// Try to select the previous settings:
-	%selId = %resMenu.findText( %currRes );
-	if ( %selId == -1 )	
-	   %selId = 0;	   
+   // Try to select the previous settings:
+   %selId = %resMenu.findText( %currRes );
+   if ( %selId == -1 )	
+      %selId = 0;
+	   
    %resMenu.setSelected( %selId );
 	
-	OptionsDlg._updateApplyState();
+   OptionsDlg._updateApplyState();
 }
 
 function _makePrettyResString( %resString )
@@ -343,17 +419,18 @@ function OptionsDlg::initResMenu( %this )
 
 function OptionsDlg::applyGraphics( %this, %testNeedApply )
 {
-	%newAdapter    = OptGraphicsDriverMenu.getText();
-	%numAdapters   = GFXInit::getAdapterCount();
-	%newDevice     = $pref::Video::displayDevice;
+   %newAdapter    = OptGraphicsDriverMenu.getText();
+   %numAdapters   = GFXInit::getAdapterCount();
+   %newDevice     = $pref::Video::displayDevice;
 							
-	for( %i = 0; %i < %numAdapters; %i ++ )
-	   if( GFXInit::getAdapterName( %i ) $= %newAdapter )
-	   {
-	      %newDevice = GFXInit::getAdapterType( %i );
-	      break;
-	   }
-	   
+   for( %i = 0; %i < %numAdapters; %i ++ )
+   {
+      if( GFXInit::getAdapterName( %i ) $= %newAdapter )
+      {
+         %newDevice = GFXInit::getAdapterType( %i );
+         break;
+      }
+   }
    // Change the device.
    if ( %newDevice !$= $pref::Video::displayDevice )
    {
@@ -374,13 +451,14 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
    }
    else
    {
-	   %newRes = getWords( Canvas.getMode( %this-->OptGraphicsResolutionMenu.getSelected() ), $WORD::RES_X, $WORD::RES_Y ); 
+      %newRes = getWords( Canvas.getMode( %this-->OptGraphicsResolutionMenu.getSelected() ), $WORD::RES_X, $WORD::RES_Y ); 
    }
-	%newBpp        = 32; // ... its not 1997 anymore.
-	%newFullScreen = %this-->OptGraphicsFullscreenToggle.getValue() ? "true" : "false";
-	%newRefresh    = %this-->OptRefreshSelectMenu.getSelected();
-	%newVsync = !%this-->OptGraphicsVSyncToggle.getValue();	
-	%newFSAA = %this-->OptAAQualityPopup.getSelected();
+
+   %newBpp        = 32; // ... its not 1997 anymore.
+   %newFullScreen = %this-->OptGraphicsFullscreenToggle.getValue() ? "true" : "false";
+   %newRefresh    = %this-->OptRefreshSelectMenu.getSelected();
+   %newVsync = !%this-->OptGraphicsVSyncToggle.getValue();	
+   %newFSAA = %this-->OptAAQualityPopup.getSelected();
 
    // Under web deployment we can't be full screen.
    if ( isFunction("getWebDeployment") && getWebDeployment() )
@@ -388,26 +466,24 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
       %newFullScreen = false;
    }
    else if ( %newFullScreen $= "false" )
-	{
+   {
       // If we're in windowed mode switch the fullscreen check
       // if the resolution is bigger than the desktop.
       %deskRes    = getDesktopResolution();      
       %deskResX   = getWord(%deskRes, $WORD::RES_X);
       %deskResY   = getWord(%deskRes, $WORD::RES_Y);
-	   if (  getWord( %newRes, $WORD::RES_X ) > %deskResX || 
-	         getWord( %newRes, $WORD::RES_Y ) > %deskResY )
+      if ( getWord( %newRes, $WORD::RES_X ) > %deskResX || getWord( %newRes, $WORD::RES_Y ) > %deskResY )
       {
          %newFullScreen = "true";
          %this-->OptGraphicsFullscreenToggle.setStateOn( true );
       }
-	}
+   }
 
    // Build the final mode string.
-	%newMode = %newRes SPC %newFullScreen SPC %newBpp SPC %newRefresh SPC %newFSAA;
+   %newMode = %newRes SPC %newFullScreen SPC %newBpp SPC %newRefresh SPC %newFSAA;
 	
    // Change the video mode.   
-   if (  %newMode !$= $pref::Video::mode || 
-         %newVsync != $pref::Video::disableVerticalSync )
+   if (  %newMode !$= $pref::Video::mode || %newVsync != $pref::Video::disableVerticalSync )
    {
       if ( %testNeedApply )
          return true;
@@ -416,13 +492,12 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
       $pref::Video::disableVerticalSync = %newVsync;      
       configureCanvas();
    }
-   
+
    // Test and apply the graphics settings.
    if ( %this-->OptMeshQualityPopup.apply( MeshQualityGroup, %testNeedApply ) ) return true;            
-   if ( %this-->OptTextureQualityPopup.apply( TextureQualityGroup, %testNeedApply ) ) return true;                       
+   if ( %this-->OptTextureQualityPopup.apply( TextureQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptLightingQualityPopup.apply( LightingQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptShaderQualityPopup.apply( ShaderQualityGroup, %testNeedApply ) ) return true;   
-   if ( %this-->OptEffectQualityPopup.apply( EffectQualityGroup, %testNeedApply ) ) return true;   
 
    // Check the anisotropic filtering.   
    %level = %this-->OptAnisotropicPopup.getSelected();
@@ -464,11 +539,16 @@ function OptionsDlg::_autoDetectQuality( %this )
    }
 }
 
+//------------------------------------------------------------------------------
+// Keymaps
+
 function restoreDefaultMappings()
 {
    moveMap.delete();
-   exec( "scripts/client/default.bind.cs" );
-   optionsDlg.fillRemapList();
+   spectatorMap.delete();
+   vehicleMap.delete();
+   exec( "~/client/default.bind.cs" );
+   OptionsDlg.fillRemapList();
 }
 
 function getMapDisplayName( %device, %action )
@@ -486,8 +566,8 @@ function getMapDisplayName( %device, %action )
 			%instance = getSubStr( %object, strlen( "button" ), 1000 );
 			return( %mods @ "mouse" @ ( %instance + 1 ) );
 		}
-		else
-			error( "Mouse input object other than button passed to getDisplayMapName!" );
+		//else
+		//	error( "Mouse input object other than button passed to getDisplayMapName!" );
 	}
 	else if ( strstr( %device, "joystick" ) != -1 )
 	{
@@ -522,20 +602,52 @@ function getMapDisplayName( %device, %action )
             }
             return( %mods @ %object );
          }
-         else
-            error( "Unsupported Joystick input object passed to getDisplayMapName!" );
+         //else
+         //   error( "Unsupported Joystick input object passed to getDisplayMapName!" );
       }
 	}
 		
 	return( "??" );		
 }
 
+function OptBindListMenu::init(%this)
+{
+   %selId = %this.getSelected();
+   %this.clear();
+   %this.add( "Main", 0 );
+   %this.add( "Spectator", 1 );
+   %this.add( "Vehicle", 2 );
+   %this.setSelected( %selId );
+   %this.onSelect( %selId, %this.getTextById( %selId ) );
+}
+
+function OptBindListMenu::onSelect( %this, %id, %text )
+{
+   OptControlsPane.group = %text;
+   OptionsDlg.fillRemapList();
+}
+
 function buildFullMapString( %index )
 {
-   %name       = $RemapName[%index];
-   %cmd        = $RemapCmd[%index];
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %actionMap  = spectatorMap;
+         %name       = $SpecRemapName[%index];
+         %cmd        = $SpecRemapCmd[%index];
 
-   %temp = moveMap.getBinding( %cmd );
+      case "Vehicle":
+         %actionMap  = vehicleMap;
+         %name       = $VehRemapName[%index];
+         %cmd        = $VehRemapCmd[%index];
+
+      default:
+         %actionMap  = moveMap;
+         %name       = $RemapName[%index];
+         %cmd        = $RemapCmd[%index];
+   }
+
+   %temp = %actionMap.getBinding( %cmd );
    if ( %temp $= "" )
       return %name TAB "";
 
@@ -552,55 +664,122 @@ function buildFullMapString( %index )
       %mapString = %mapString @ getMapDisplayName( %device, %object );
    }
 
-   return %name TAB %mapString; 
+   return( %name TAB %mapString ); 
 }
 
 function OptionsDlg::fillRemapList( %this )
 {
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %count = $SpecRemapCount;
+      case "Vehicle":
+         %count = $VehRemapCount;
+      default:
+         %count = $RemapCount;
+   }
+
    %remapList = %this-->OptRemapList;
-   
-	%remapList.clear();
-   for ( %i = 0; %i < $RemapCount; %i++ )
+
+   %remapList.clear();
+   for ( %i = 0; %i < %count; %i++ )
       %remapList.addRow( %i, buildFullMapString( %i ) );
 }
 
 function OptionsDlg::doRemap( %this )
 {
    %remapList = %this-->OptRemapList;
-   
-	%selId = %remapList.getSelectedId();
-   %name = $RemapName[%selId];
+   %selId = %remapList.getSelectedId();
 
-	RemapDlg-->OptRemapText.setValue( "Re-bind \"" @ %name @ "\" to..." );
-	OptRemapInputCtrl.index = %selId;
-	Canvas.pushDialog( RemapDlg );
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %name = $SpecRemapName[%selId];
+      case "Vehicle":
+         %name = $VehRemapName[%selId];
+      default:
+         %name = $RemapName[%selId];
+   }
+
+   //RemapDlg-->OptRemapText.setValue( "Re-bind \"" @ %name @ "\" to..." );
+   RemapDlg-->OptRemapText.addtext("Re-bind \"" @ %name @ "\""
+                        @ "\n\nPressing backspace will clear the current key map for that control."
+                        @ "\n\nPressing escape will return you to the control menu without changing anything.");
+
+   OptRemapInputCtrl.index = %selId;
+   Canvas.pushDialog( RemapDlg );
 }
 
 function redoMapping( %device, %action, %cmd, %oldIndex, %newIndex )
 {
-	//%actionMap.bind( %device, %action, $RemapCmd[%newIndex] );
-	moveMap.bind( %device, %action, %cmd );
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %actionMap = spectatorMap;
+
+      case "Vehicle":
+         %actionMap = vehicleMap;
+
+      default:
+         %actionMap = moveMap;
+   }
+
+   //%actionMap.bind( %device, %action, $RemapCmd[%newIndex] );
+   %actionMap.bind( %device, %action, %cmd );
 	
    %remapList = %this-->OptRemapList;
-	%remapList.setRowById( %oldIndex, buildFullMapString( %oldIndex ) );
-	%remapList.setRowById( %newIndex, buildFullMapString( %newIndex ) );
+   %remapList.setRowById( %oldIndex, buildFullMapString( %oldIndex ) );
+   %remapList.setRowById( %newIndex, buildFullMapString( %newIndex ) );
+
+   OptionsDlg.fillRemapList();
 }
 
 function findRemapCmdIndex( %command )
 {
-	for ( %i = 0; %i < $RemapCount; %i++ )
-	{
-		if ( %command $= $RemapCmd[%i] )
-			return( %i );			
-	}
-	return( -1 );	
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         for ( %i = 0; %i < $SpecRemapCount; %i++ )
+         {
+            if ( %command $= $SpecRemapCmd[%i] )
+               return( %i );
+         }
+
+      case "Vehicle":
+         for ( %i = 0; %i < $VehRemapCount; %i++ )
+         {
+            if ( %command $= $VehRemapCmd[%i] )
+               return( %i );
+         }
+
+      default:
+         for ( %i = 0; %i < $RemapCount; %i++ )
+         {
+            if ( %command $= $RemapCmd[%i] )
+            return( %i );			
+         }
+   }
+
+   return( -1 );	
 }
 
 /// This unbinds actions beyond %count associated to the
 /// particular moveMap %commmand.
 function unbindExtraActions( %command, %count )
 {
-   %temp = moveMap.getBinding( %command );
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %actionMap = spectatorMap;
+
+      case "Vehicle":
+         %actionMap = vehicleMap;
+
+      default:
+         %actionMap = moveMap;
+   }
+
+   %temp = %actionMap.getBinding( %command );
    if ( %temp $= "" )
       return;
 
@@ -610,7 +789,7 @@ function unbindExtraActions( %command, %count )
       %device = getField( %temp, %i + 0 );
       %action = getField( %temp, %i + 1 );
       
-      moveMap.unbind( %device, %action );
+      %actionMap.unbind( %device, %action );
    }
 }
 
@@ -618,6 +797,28 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
 {
    //error( "** onInputEvent called - device = " @ %device @ ", action = " @ %action @ " **" );
    Canvas.popDialog( RemapDlg );
+
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %actionMap = spectatorMap;
+         %cmd = $SpecRemapCmd[%this.index];
+         %name = $SpecRemapName[%this.index];
+
+      case "Vehicle":
+         %actionMap = vehicleMap;
+         %cmd = $VehRemapCmd[%this.index];
+         %name = $VehRemapName[%this.index];
+
+      default:
+         %actionMap = moveMap;
+         %cmd  = $RemapCmd[%this.index];
+         %name = $RemapName[%this.index];
+   }
+
+   //%actionMap = moveMap;
+   //%cmd  = $RemapCmd[%this.index];
+   //%name = $RemapName[%this.index];
 
    // Test for the reserved keystrokes:
    if ( %device $= "keyboard" )
@@ -628,24 +829,38 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
          // Do nothing...
          return;
       }
-   }
+      // Taken from this resource by OneST8
+      // http://www.garagegames.com/index.php?sec=mg&mod=resource&page=view&qid=7311
+      if ( %action $= "backspace" ) // clear the current binding.
+      {
+         //get the current binding, device and action
+         %bind = %actionMap.getBinding( %cmd );
+         %device = getWord( %bind, 0 );
+         %action = getWord( %bind, 1 );
 
-   %cmd  = $RemapCmd[%this.index];
-   %name = $RemapName[%this.index];
+         //remove the binding
+         unbindExtraActions( %cmd, 1 );
+         %actionMap.unbind( %device, %action );
+
+         //refresh the options dialog to reflect the change
+         optionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
+         return;
+      }
+   }
 
    // Grab the friendly display name for this action
    // which we'll use when prompting the user below.
    %mapName = getMapDisplayName( %device, %action );
    
    // Get the current command this action is mapped to.
-   %prevMap = moveMap.getCommand( %device, %action );
+   %prevMap = %actionMap.getCommand( %device, %action );
 
    // If nothing was mapped to the previous command 
    // mapping then it's easy... just bind it.
    if ( %prevMap $= "" )
    {
       unbindExtraActions( %cmd, 1 );
-      moveMap.bind( %device, %action, %cmd );
+      %actionMap.bind( %device, %action, %cmd );
       optionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
       return;
    }
@@ -656,7 +871,7 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
    if ( %prevMap $= %cmd )
    {
       unbindExtraActions( %cmd, 0 );
-      moveMap.bind( %device, %action, %cmd );
+      %actionMap.bind( %device, %action, %cmd );
       optionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
       return;   
    }
@@ -679,13 +894,67 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
    
    // Warn that we're about to remove the old mapping and
    // replace it with another.
-   %prevCmdName = $RemapName[%prevMapIndex];
+   switch$ ( OptControlsPane.group )
+   {
+      case "Spectator":
+         %prevCmdName = $SpecRemapName[%prevMapIndex];
+      case "Vehicle":
+         %prevCmdName = $VehRemapName[%prevMapIndex];
+      default:
+         %prevCmdName = $RemapName[%prevMapIndex];
+   }
+
    MessageBoxYesNo( "Warning",
       "\"" @ %mapName @ "\" is already bound to \""
       @ %prevCmdName @ "\"!\nDo you wish to replace this mapping?",
        %callback, "" );
 }
 
+//------------------------------------------
+// Mouse
+
+function MouseXSlider::sync( %this )
+{
+   %thisValue = %this.getValue();
+   MouseXText.setValue( "(" @ getSubStr( %thisValue, 0, 4 ) @ ")" );
+   if ( $pref::Input::LinkMouseSensitivity )
+   {
+      if ( MouseYSlider.getValue() != %thisValue )
+         MouseYSlider.setValue( %thisValue );
+   }
+}
+
+function MouseYSlider::sync( %this )
+{
+   %thisValue = %this.getValue();
+   MouseYText.setValue( "(" @ getSubStr( %thisValue, 0, 4 ) @ ")" );
+   if ( $pref::Input::LinkMouseSensitivity )
+   {
+      if ( MouseXSlider.getValue() != %thisValue )
+         MouseXSlider.setValue( %thisValue );
+   }
+}
+
+function toggleInvertYAxis()
+{
+   // Catch the case where this is toggled in-game while in a vehicle:
+   if ( isObject( vehicleMap ) )
+   {
+      %bind = vehicleMap.getBinding( pitch );
+      if ( %bind !$= "" )
+      {
+         %device = getField( %bind, 0 );
+         %action = getField( %bind, 1 );
+         %flags = $pref::Vehicle::InvertYAxis ? "SDI" : "SD";
+         %deadZone = vehicleMap.getDeadZone( %device, %action );
+         %scale = vehicleMap.getScale( %device, %action );
+         vehicleMap.bind( %device, %action, %flags, %deadZone, %scale, pitch );
+      }
+   }
+}
+
+//------------------------------------------------------------------------------
+// Audio
 $AudioTestHandle = 0;
 // Description to use for playing the volume test sound.  This isn't
 // played with the description of the channel that has its volume changed
@@ -754,7 +1023,9 @@ function OptAudioProviderList::onSelect( %this, %id, %text )
    if ( %selId == -1 )
       OptAudioDeviceList.setFirstSelected();
    else
-   OptAudioDeviceList.setSelected( %selId );
+      OptAudioDeviceList.setSelected( %selId );
+
+   OptAudioUpdate();
 }
 
 function OptAudioDeviceList::onSelect( %this, %id, %text )
@@ -764,67 +1035,69 @@ function OptAudioDeviceList::onSelect( %this, %id, %text )
       return;
       
    $pref::SFX::device = %text;
-   
+
    if ( !sfxCreateDevice(  $pref::SFX::provider, 
                            $pref::SFX::device, 
                            $pref::SFX::useHardware,
                            -1 ) )                              
       error( "Unable to create SFX device: " @ $pref::SFX::provider 
                                              SPC $pref::SFX::device 
-                                             SPC $pref::SFX::useHardware );                                             
+                                             SPC $pref::SFX::useHardware );
 }
 
-function OptMouseSetSensitivity(%value)  
+function OptMouseSetSensitivity(%value)
 {  
-   $pref::Input::LinkMouseSensitivity = %value;  
+   $pref::Input::LinkMouseSensitivity = %value;
 }  
 
-
-
-//-----------------------------------------------------------------------------
-function Tgl_9::onAction(%this)
+/*
+function OptAudioHardwareToggle::onClick(%this)
 {
-   if ( %this.getValue() )
+   if (!sfxCreateDevice($pref::SFX::provider, $pref::SFX::device, $pref::SFX::useHardware, -1))
+      error("Unable to create SFX device: " @ $pref::SFX::provider SPC $pref::SFX::device SPC $pref::SFX::useHardware);
+}
+*/
+
+function OptAudioUpdate()
+{
+   // set the driver text
+   OptAudioInfo.setText("");
+   %text = sfxGetDeviceInfo();
+
+   %count = getFieldCount( %text );
+   for( %i=0; %i < %count; %i++ )
    {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:PostFX Enabled" );
-      }
-      
-      PostFXManager.settingsSetEnabled(true);
-      $pref::LightManager::Enable = "1";
-   }
-   else
-   {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:PostFX Disabled" );
-      }
-      
-      PostFXManager.settingsSetEnabled(false);
-      $pref::LightManager::Enable = "0";
+      %line = getField( %text, %i );
+      OptAudioInfo.addtext(%line @ "\n", true);
    }
 }
-/*
+
+//-----------------------------------------------------------------------------
+
 function Tgl_10::onAction(%this)
 {
    if ( %this.getValue() )
    {
-      echo( "LightManager:MLAA Enabled" );
-      //PostFXManager.settingsEffectSetEnabled("MLAA", true);
-      MLAAPostFX.enable();
-      $pref::LightManager::Enable::MLAA = "1";
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:Vignette Enabled" );
+      }
+      
+      HDRPostFX.enable();
+      $pref::LightManager::Enable::Vignette = "1";
    }
    else
    {
-      echo( "LightManager:MLAA Disabled" );
-      //PostFXManager.settingsEffectSetEnabled("MLAA", false);
-      MLAAPostFX.disable();
-      $pref::LightManager::Enable::MLAA = "0";
+      if($pref::debug::consoleSpam)
+      {
+         echo( "LightManager:Vignette Disabled" );
+      }
+      
+      HDRPostFX.disable();
+      $pref::LightManager::Enable::Vignette = "0";
    }
-   //OptionsDlg._updateApplyState();
 }
-*/
+
 function Tgl_11::onAction(%this)
 {
    if ( %this.getValue() )
@@ -897,32 +1170,61 @@ function Tgl_13::onAction(%this)
    }
 }
 
-//exec("scripts/gui/optionsDlg.cs")
-//skin selctor code
-$playerSkinlList= "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
-function playerSkinSelector::onWake(%this)
+//------------------------------------------------------------------------------
+// Player Pane
+
+function OptPlayerNameInput::setField(%this)
 {
-   playerSkinSelector.clear();
-   if($playerSkinlList !$= "")
-   {
-      %n=getWordCount($playerSkinlList);
-      for(%i=0;%i<%n;%i++)
-      {
-         %extractedRaceName=getWord($playerSkinlList,%i);
-         playerSkinSelector.add(%extractedRaceName, %i);
-      }
-      playerSkinSelector.setSelected(0); 
-   } 
+   // called when you type in text input field
+   //%value = %this.getValue();
+   //%this.setValue(%value);
 }
 
-function playerSkinSelector::applyRace() // playerSkinSelector.applyRace(); 
+function OptPlayerSkinMenu::init(%this)
 {
-   %selectedRace = playerSkinSelector.getText();
-   if(%selectedRace !$= "") 
+   PlayerPreview.setSkin( getField($pref::Player, 1) );
+   PlayerPreview.setMountSkin( "Lurker_D" );
+
+   %this.clear();
+   %list = "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
+
+   %count = getFieldCount( %list );
+   for( %i=0; %i < %count; %i++ )
    {
-      $pref::Player::Skin=%selectedRace;
-      //echo(%selectedRace); 
-      
+      %skin = getField( %list, %i );
+      %this.add( %skin, %i );
+   }
+
+   %selId = %this.findText( getField( $pref::Player, 1) );
+
+   if( %selId != -1 )
+   {
+      %this.setSelected( %selId );
+      %this.onSelect( %selId, %this.getTextById( %selId ) );
    }
 }
 
+function OptPlayerSkinMenu::onSelect(%this, %id, %text)
+{
+   // Only select if it was the mouse that called this
+   if(%text $= "")
+      return( false );
+
+   OptPlayerNameInput.setField();
+   %playerName = OptPlayerNameInput.getValue();
+   $pref::Player = %playerName TAB %text;
+
+   PlayerPreview.setSkin( %text );
+   PlayerPreview.setMountSkin( "Lurker_D" );
+   //PlayerPreview.setSeq( "Celebrate_01" );
+}
+
+function updateFieldOfView()
+{
+   %value = OP_FovSlider.getValue();
+   //warn("updateFieldOfView" SPC mFloor(%value));
+   $pref::Player::Fov = mFloor( %value );
+
+   if ( Canvas.getContent() == PlayGui.getId() )
+      setFov( mFloor( %value ) );
+}

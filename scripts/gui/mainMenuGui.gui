@@ -20,7 +20,7 @@
       isDecoy = "0";
 
    new GuiBitmapCtrl(MainMenuAppLogo) {
-      bitmap = "art/gui/images/uebergame-logo.png";
+      bitmap = "art/gui/uebergame-logo.png";
       wrap = "0";
       position = "-16 644";
       extent = "432 128";
@@ -47,8 +47,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "804 736";
-      extent = "220 32";
+      position = "864 730";
+      extent = "147 32";
       minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "top";
@@ -224,17 +224,3 @@
    };
 };
 //--- OBJECT WRITE END ---
-
-function MainMenuGui::onWake(%this)
-{
-   if (isFunction("getWebDeployment") &&
-       getWebDeployment() &&
-       isObject(%this-->ExitButton))
-      %this-->ExitButton.setVisible(false);
-}
-
-function MainMenuGui::onWake(%this)
-{
-   %header = "Version" SPC getVersionString();
-   Version_Number.setText(%header);
-}

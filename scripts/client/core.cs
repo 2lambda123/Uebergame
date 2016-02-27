@@ -29,11 +29,11 @@ function Torque::initializeCore(%this)
    // Not Reentrant
    if( $coreInitialized == true )
       return;
-      
+
    // Very basic functions used by everyone.
    exec("./audio.cs");
    exec("./canvas.cs");
-   exec("./gui/cursors.cs");
+   exec("scripts/gui/cursors.cs");
    exec("./cursor.cs");
    exec("./persistenceManagerTest.cs");
    
@@ -61,13 +61,12 @@ function Torque::initializeCore(%this)
    exec("scripts/gui/console.gui");
    exec("scripts/gui/consoleVarDlg.gui");
    exec("scripts/gui/netGraphGui.gui");
-   exec("scripts/gui/RecordingsDlg.gui");
-   exec("scripts/gui/guiMusicPlayer.gui");
-	
+   
    // Gui Helper Scripts.
-   exec("scripts/gui/help.cs");
-   exec("scripts/gui/recordingsDlg.cs");
-   exec("scripts/gui/guiMusicPlayer.cs");
+   exec("scripts/gui/helpDlg.cs");
+   exec("scripts/gui/console.cs");
+   exec("scripts/gui/consoleVarDlg.cs");
+   exec("scripts/gui/netGraphGui.cs");
 
    // Random Scripts.
    exec("./screenshot.cs");
@@ -103,7 +102,7 @@ function Torque::initializeCore(%this)
    exec("./postFx/postFXManager.persistance.cs");
    
    PostFXManager.settingsApplyDefaultPreset();  // Get the default preset settings   
-   
+
    $coreInitialized = true;
 }
 
@@ -119,28 +118,8 @@ function shutdownCore()
    sfxShutdown();
 }
 
-//---------------------------------------------------------------------------------------------
-// dumpKeybindings
-// Saves of all keybindings.
-//---------------------------------------------------------------------------------------------
-function dumpKeybindings()
-{
-   // Loop through all the binds.
-   for (%i = 0; %i < $keybindCount; %i++)
-   {
-      // If we haven't dealt with this map yet...
-      if (isObject($keybindMap[%i]))
-      {
-         // Save and delete.
-         $keybindMap[%i].save(getPrefsPath("bind.cs"), %i == 0 ? false : true);
-         $keybindMap[%i].delete();
-      }
-   }
-}
-
 function handleEscape()
 {
-
    if (isObject(EditorGui))
    {
       if (Canvas.getContent() == EditorGui.getId())

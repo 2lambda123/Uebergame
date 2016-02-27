@@ -1,0 +1,120 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(IpJoinDlg) {
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "640 480";
+   MinExtent = "8 8";
+   Visible = "1";
+      helpTag = "0";
+
+   new GuiWindowCtrl() {
+      Profile = "GuiWindowProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "300 175";
+      MinExtent = "8 8";
+      Visible = "1";
+      text = "Join Server By IP Address";
+      maxLength = "255";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      MinSize = "50 50";
+      closeCommand = "Canvas.popDialog(aboutDlg);";
+         helpTag = "0";
+
+      new GuiTextCtrl() {
+         Profile = "GuiTextProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "30 50";
+         Extent = "67 18";
+         MinExtent = "33 18";
+         Visible = "1";
+         text = "Enter IP : Port:";
+         maxLength = "255";
+      };
+      new GuiTextEditCtrl(IP_AddressEdit) {
+         Profile = "GuiTextEditProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "113 47";
+         Extent = "150 20";
+         MinExtent = "150 20";
+         Visible = "1";
+         Command = "IP_AddressEdit.setField();";
+         maxLength = "255";
+         historySize = "0";
+         password = "0";
+         tabComplete = "0";
+         sinkAllKeyEvents = "0";
+         password = "0";
+         passwordMask = "*";
+      };
+      new GuiTextCtrl() {
+         Profile = "GuiTextProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "17 84";
+         Extent = "81 18";
+         MinExtent = "53 18";
+         Visible = "1";
+         text = "Enter Password:";
+         maxLength = "255";
+      };
+      new GuiTextEditCtrl(JS_Password) {
+         Profile = "GuiTextEditProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "113 84";
+         Extent = "150 20";
+         MinExtent = "150 20";
+         Visible = "1";
+         Variable = "$Client::Password";
+         maxLength = "255";
+         historySize = "0";
+         password = "0";
+         tabComplete = "0";
+         sinkAllKeyEvents = "0";
+         password = "0";
+         passwordMask = "*";
+      };
+      new GuiButtonCtrl() {
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "169 130";
+         Extent = "100 20";
+         MinExtent = "8 8";
+         Visible = "1";
+         Command = "IP_AddressEdit.processEnter();Canvas.popDialog(IpJoinDlg);";
+         text = "JOIN";
+         groupNum = "-1";
+         buttonType = "PushButton";
+            helpTag = "0";
+      };
+      new GuiButtonCtrl() {
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "32 130";
+         Extent = "100 20";
+         MinExtent = "8 8";
+         Visible = "1";
+         Command = "Canvas.popDialog(IpJoinDlg);";
+         text = "CLOSE";
+         groupNum = "-1";
+         buttonType = "PushButton";
+            helpTag = "0";
+      };
+   };
+};
+//--- OBJECT WRITE END ---
+
+

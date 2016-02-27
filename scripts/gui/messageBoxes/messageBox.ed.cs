@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-if($GameCanvas == OculusCanvas)
+//if($GameCanvas == OculusCanvas)
    $GameCanvas = Canvas;
 
 // Cleanup Dialog created by 'core'

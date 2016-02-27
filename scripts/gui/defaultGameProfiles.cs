@@ -25,6 +25,14 @@
 //GuiMenuButtonProfile.soundButtonOver = "AudioButtonOver";
 //GuiMenuButtonProfile.soundButtonDown = "AudioButtonDown";
 
+$Gui::DefaultFont = "Arial";
+$Gui::DefaultFontBold = "Arial Bold";
+$Gui::DefaultFontSize = "14";
+$Gui::CustomFont = "CRYSTAL";
+$Gui::CustomFontSize = "18"; // 12, 18, 24, 36, 48, 60, 72
+$Gui::ColorAlly = "0 255 0";
+$Gui::ColorEnemy = "255 0 0";
+
 //-----------------------------------------------------------------------------
 // Chat Hud profiles
 
@@ -47,6 +55,19 @@ singleton GuiControlProfile (ChatHudEditProfile)
    canKeyFocus = true;
 };
 
+singleton GuiControlProfile(GuiBevelLoweredProfile)
+{
+   opaque = true;
+   bevelColorHL = "200 200 200";
+   bevelColorLL = "64 64 64";
+
+   fillColor = "105 105 105 128";
+   border = true;
+   borderColor = "0 0 0 80";
+   bitmap = "art/gui/osxScroll";
+   hasBitmapArray = true;
+};
+
 singleton GuiControlProfile (ChatHudTextProfile)
 {
    opaque = false;
@@ -64,129 +85,188 @@ singleton GuiControlProfile (ChatHudTextProfile)
    tab = true;
    canKeyFocus = true;
 };
-
+/*
 singleton GuiControlProfile ("ChatHudMessageProfile")
 {
    fontType = "Arial";
-   fontSize = "18";
-   fontColor = "255 255 255 255";      // default color (death msgs, scoring, inventory)
-   fontColors[1] = "255 255 255 255";   // client join/drop, tournament mode
-   fontColors[2] = "255 255 255 255"; // gameplay, admin/voting, pack/deployable
-   fontColors[3] = "255 255 255 255";   // team chat, spam protection message, client tasks
-   fontColors[4] = "255 255 255 255";  // global chat
-   fontColors[5] = "255 255 255 255";  // used in single player game
+   fontSize = 16;
+   fontColor = "44 172 181";      // default color (death msgs, scoring, inventory)
+   fontColors[1] = "4 235 105";   // client join/drop, tournament mode
+   fontColors[2] = "219 200 128"; // gameplay, admin/voting, pack/deployable
+   fontColors[3] = "77 253 95";   // team chat, spam protection message, client tasks
+   fontColors[4] = "40 231 240";  // global chat
+   fontColors[5] = "200 200 50 200";  // used in single player game
    // WARNING! Colors 6-9 are reserved for name coloring
    autoSizeWidth = true;
    autoSizeHeight = true;
-   fontColors[0] = "255 255 255 255";
-   fontColorHL = "255 255 255 255";
-   fontColorNA = "255 255 255 255";
-   fontColorSEL = "255 255 255 255";
-   fontColorLink = "255 255 255 255";
-   fontColorLinkHL = "255 255 255 255";
-   bevelColorHL = "255 0 255 255";
-   fontColors[6] = "255 0 255 255";
-   fontColors[7] = "255 0 255 255";
-   bevelColorLL = "Magenta";
 };
-
-singleton GuiControlProfile ("ChatHudScrollProfile")
+*/
+singleton GuiControlProfile(ChatHudMessageProfile)
 {
-   opaque = false;
-   borderThickness = 0;
-   borderColor = "0 255 0";
-   bitmap = "art/gui/scrollBar";
-   hasBitmapArray = true;
+   fontType = $Gui::DefaultFontBold;
+   fontSize = 14;
+   fontColor = "240 248 255"; // default color (death msgs, scoring, inventory)
+   fontColors[1] = "127 255 212";   // client join/drop, tournament mode
+   fontColors[2] = "240 230 140"; // gameplay, admin/voting, pack/deployable
+
+   fontColors[3] = $Gui::ColorAlly; //"255 255 255"; // team chat, spam protection message, client tasks
+
+   fontColors[4] = $Gui::ColorEnemy; //"255 255 0";  // global chat
+
+   fontColors[5] = "200 200 50"; // used in single player game
+
+   // WARNING! Colors 6-9 are reserved for name coloring
+   fontColors[6] = "200 200 200"; // Player name color
+   fontColors[7] = "220 220 20"; // Tag color
+   fontColors[8] = "0 206 209"; // Smurf color
+   fontColors[9] = "186 0 255"; // Bot name color
+
+   autoSizeWidth = true;
+   autoSizeHeight = true;
 };
-
-
-//-----------------------------------------------------------------------------
-// Core Hud profiles
 
 singleton GuiControlProfile ("HudScrollProfile")
 {
    opaque = false;
-   border = true;
-   borderColor = "0 255 0";
+   borderThickness = 0;
+   borderColor = "128 0 0";
    bitmap = "art/gui/scrollBar";
    hasBitmapArray = true;
 };
 
-singleton GuiControlProfile ("HudTextProfile")
+singleton GuiControlProfile ("HudBorderProfile")
 {
-   opaque = false;
-   fillColor = "128 128 128";
-   fontColor = "0 255 0";
-   border = true;
-   borderColor = "0 255 0";
-};
-
-singleton GuiControlProfile ("ChatHudBorderProfile")
-{
-   bitmap = "art/gui/chatHudBorderArray";
+   bitmap = "art/gui/borderArray";
    hasBitmapArray = true;
    opaque = false;
 };
 
+singleton GuiControlProfile(GuiShapeNameProfile)
+{
+   fontType = $Gui::DefaultFont;
+   fontSize = $Gui::DefaultFontSize;
+};
 
 //-----------------------------------------------------------------------------
-// Center and bottom print
 
-singleton GuiControlProfile ("CenterPrintProfile")
-{
-   opaque = false;
-   fillColor = "128 128 128";
-   fontColor = "0 255 0";
-   border = true;
-   borderColor = "0 255 0";
-};
-
-singleton GuiControlProfile ("CenterPrintTextProfile")
-{
-   opaque = false;
-   fontType = "Arial";
-   fontSize = 12;
-   fontColor = "0 255 0";
-};
-
-// -----------------------------------------------------------------------------
-// HUD text
-// -----------------------------------------------------------------------------
-
-singleton GuiControlProfile (HudTextNormalProfile)
-{
-   opaque = false;
-   fontType = "Arial";
-   fontSize = "16";
-   fontColor = "210 210 210 255";
-   fontColors[0] = "210 210 210 255";
-};
-
-singleton GuiControlProfile (HudTextItalicProfile : HudTextNormalProfile)
-{
-   fontType = "ArialItalic";
-   fontSize = "26";
-   fontColors[0] = "200 200 200 255";
-   fontColor = "200 200 200 255";
-};
-
-singleton GuiControlProfile (HudTextBoldProfile : HudTextNormalProfile)
-{
-   fontType = "ArialBold";
-   fontSize = "16";
-   fontColors[0] = "210 210 210 255";
-   fontColor = "210 210 210 255";
-};
-
-// -----------------------------------------------------------------------------
-// Numerical health text
-// -----------------------------------------------------------------------------
-
-singleton GuiControlProfile (NumericHealthProfile)
+singleton GuiControlProfile(GuiTextNoKeyEditProfile)
 {
    opaque = true;
-   justify = "center";
-   fontType = "ArialBold";
-   fontSize = 32;
+   fillColor = "255 255 255";
+   fillColorHL = "128 128 128";
+   border = 3;
+   borderThickness = 2;
+   borderColor = "0 0 0";
+   fontColor = "0 0 0";
+   fontColorHL = "255 255 255";
+   fontColorNA = "128 128 128";
+   textOffset = "0 2";
+   autoSizeWidth = false;
+   autoSizeHeight = true;
+   tab = false;
+   canKeyFocus = true;
+};
+
+// -----------------------------------------------------------------------------
+// Load Screen
+// -----------------------------------------------------------------------------
+
+singleton GuiControlProfile(GuiLoadPaneProfile)
+{
+   opaque = true;
+   bevelColorHL = "255 255 128";
+   bevelColorLL = "105 105 128";
+
+   fillColor = "128 0 0 200";
+};
+
+//-----------------------------------------------------------------------------
+// Score Hud profiles
+
+singleton GuiControlProfile(GameOverHeaderProfile)
+{
+   opaque = false;
+   fontType = $Gui::CustomFont;
+   fontSize = 24;
    fontColor = "255 255 255";
+   justify = "center";
+};
+
+singleton GuiControlProfile(ScoreHeaderTextProfile)
+{
+   opaque = false;
+   fontType = $Gui::CustomFont;
+   fontSize = 24;
+   fontColor = "255 255 255";
+   justify = "center";
+};
+
+singleton GuiControlProfile(TeamScoreTextLProfile : GuiTextProfile)
+{
+   fontType = $Gui::CustomFont;
+   fontSize = 18;
+   fontColor = "255 255 255";
+   fontColorHL = "255 100 100";
+   fillColorHL = "200 200 200";
+   justify = "left";
+};
+
+singleton GuiControlProfile(TeamScoreTextRProfile : GuiTextProfile)
+{
+   fontType = $Gui::CustomFont;
+   fontSize = 18;
+   fontColor = "255 255 255";
+   fontColorHL = "255 100 100";
+   fillColorHL = "200 200 200";
+   justify = "right";
+};
+
+singleton GuiControlProfile(BloodStreakProfile)
+{
+   opaque = false;
+   fillColor = "128 0 0";
+};
+
+//-----------------------------------------------------------------------------
+// Objective Hud profiles
+
+//Bottom
+singleton GuiControlProfile(ObjTextLeftProfile)
+{
+   fontType = $Gui::DefaultFontBold;
+   fontSize = $Gui::DefaultFontSize;
+   fontColor = $Gui::ColorEnemy;
+   justify = "left";
+};
+// Bottom
+singleton GuiControlProfile(ObjTextCenterProfile : ObjTextLeftProfile)
+{
+   justify = "center";
+};
+//Top
+singleton GuiControlProfile(ObjTextTeamLeftProfile : ObjTextLeftProfile)
+{
+   fontColor = $Gui::ColorAlly;
+   justify = "left";
+};
+//Top
+singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
+{
+   fontColor = $Gui::ColorAlly;  
+   justify = "center";
+};
+
+//-----------------------------------------------------------------------------
+// Name coloring for optionsDlg
+
+singleton GuiControlProfile(FriendNameTextProfile : GuiTextProfile)
+{
+   fontColor = $Gui::ColorAlly;
+   justify = "center";
+};
+
+singleton GuiControlProfile(EnemyNameTextProfile : GuiTextProfile)
+{
+   fontColor = $Gui::ColorEnemy;
+   justify = "center";
 };

@@ -35,7 +35,7 @@ function GameConnection::onConnectRequest( %client, %netAddress, %name, %skin )
    if ( %client.isOnServerBanList( %guid ) )
    {
       return "CR_YOUAREBANNED";
-   } 
+   }
 
    if(($Server::PlayerCount + $Server::BotCount) >= $pref::Server::MaxPlayers)
       return "CR_SERVERFULL";

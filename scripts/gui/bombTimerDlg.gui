@@ -1,0 +1,57 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(BombTimerDlg) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "640 480";
+   visible = "1";
+      initialized = "0";
+
+   new GuiWindowCtrl() {
+      Profile = "GuiWindowProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "250 100";
+      MinExtent = "8 2";
+      Visible = "1";
+      text = "Choose a detonation time";
+      maxLength = "255";
+      resizeWidth = "1";
+      resizeHeight = "1";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      MinSize = "250 100";
+      closeCommand = "Canvas.popDialog(BombTimerDlg);";
+
+      new GuiPopUpMenuCtrl(BombTimerMenu) {
+         Profile = "GuiPopUpMenuProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "23 31";
+         Extent = "200 25";
+         MinExtent = "200 25";
+         Visible = "1";
+         maxLength = "255";
+         maxPopupHeight = "200";
+      };
+      new GuiButtonCtrl() {
+         Profile = "GuiButtonProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "73 68";
+         Extent = "100 20";
+         MinExtent = "100 20";
+         Visible = "1";
+         command = "BombTimerDlg.sendTime();";
+         text = "ARM";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

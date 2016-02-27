@@ -51,7 +51,7 @@ function ProjectileData::onRemove(%data, %proj)
 }
 
 // Support function which applies damage to objects within the radius of
-// some effect, usually an explosion.  This function will also optionally
+// some effect, usually an explosion.  This function will also optionally 
 // apply an impulse to each object.
 function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %damageType, %impulse)
 {
@@ -59,14 +59,14 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
    // Use the container system to iterate through all the objects
    // within our explosion radius.  We'll apply damage to all ShapeBase
    // objects.
-   InitContainerRadiusSearch(%position, %radius, $TypeMasks::ShapeBaseObjectType);
+   InitContainerRadiusSearch( %position, %radius, $TypeMasks::ShapeBaseObjectType );
 
    // Create an array of targets to damage and or impulse
    %count = 0;
    %halfRadius = %radius / 2;
    %sourceBlock = %source.getDataBlock(); // Used further down
 
-   while ((%targetObject = containerSearchNext()) != 0)
+   while( ( %targetObject = containerSearchNext() ) != 0 )
    {
       // Certain explosions need to ignore the source. Filter them out right away.
       if ( %targetObject == %sourceParent && %damageType $= "Vehicle Explosion" )
@@ -77,8 +77,8 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
       // that will block an explosion.  If the object is totally blocked,
       // then no damage is applied.
       %coverage = calcExplosionCoverage(%position, %targetObject, $TypeMasks::InteriorObjectType |
-                                        $TypeMasks::TerrainObjectType |
-                                        $TypeMasks::VehicleObjectType);
+                                                                  $TypeMasks::TerrainObjectType |
+                                                                  $TypeMasks::VehicleObjectType);
 
 
       if ( %coverage <= 0 )
@@ -92,7 +92,7 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
       // Calculate a distance scale for the damage and the impulse.
       // Full damage is applied to anything less than half the radius away,
       // linear scale from there.
-      %distScale = (%dist < %halfRadius)? 1.0 : 1.0 - ((%dist - %halfRadius) / %halfRadius);
+      %distScale = (%dist < %halfRadius) ? 1.0 : 1.0 - ((%dist - %halfRadius) / %halfRadius);
       //%amount = (1.0 - (%dist / %radius)) * %coverage * %damage;
       //error("Amount:" SPC %amount);
 
@@ -131,7 +131,7 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
 
    // Loop through our target array and apply the damage etc.
    for( %i = 0; %i < %count; %i++)
-      {
+   {
       %targetObject = %target[%i];
       if ( isObject( %targetObject ) )
       {

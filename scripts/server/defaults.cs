@@ -32,8 +32,8 @@ $Pref::Server::Info = "This is an Uebergame server.";
 // Text to appear on loading screen
 // Multiple lines possible just add more varibles
 $pref::Server::Message0 = "Server Information";
-$pref::Server::Message1 = "Welcome to the Ubergame server!";
-$pref::Server::Message2 = "Treat others with respect.";
+$pref::Server::Message1 = "Welcome to the Uebergame server!";
+$pref::Server::Message2 = "Let the game begin.";
 
 $Pref::Server::ConnectionError =
    "You likely do not have the correct version of the game installed or "@
@@ -49,6 +49,7 @@ $Pref::Server::Port = 28000;
 $Pref::Server::Password = "";
 
 $pref::Server::Dedicated = 0;
+
 // Password for admin clients
 $Pref::Server::AdminPassword = "changeme";
 $pref::Server::SuperAdminPassword = "changemetoo";
@@ -75,10 +76,10 @@ $Pref::Server::KickBanTime = 300;            // specified in seconds
 $Pref::Server::BanTime = 1800;               // specified in seconds
 $Pref::Server::FloodProtectionEnabled = 1;
 $Pref::Server::MaxChatLen = 120;
-$pref::Server::teamName[0] = "FFA";
+$pref::Server::teamName[0] = "Purgatory";
 $pref::Server::teamName[1] = "Blue Team";
 $pref::Server::teamName[2] = "Red Team";
-$pref::Server::warmupTime = 30;
+$pref::Server::warmupTime = 5;
 $pref::Server::FriendlyFire = 1;
 $pref::Server::TournamentMode = 0;
 $pref::Server::DisallowVoteAdmin = 1;

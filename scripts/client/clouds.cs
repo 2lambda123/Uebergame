@@ -31,9 +31,9 @@ singleton ShaderData( CloudLayerShader )
    
    OGLVertexShaderFile = "shaders/common/gl/cloudLayerV.glsl";
    OGLPixelShaderFile = "shaders/common/gl/cloudLayerP.glsl";
-      
+
    samplerNames[0] = "$normalHeightMap";
-      
+
    pixVersion = 2.0;   
 };
 

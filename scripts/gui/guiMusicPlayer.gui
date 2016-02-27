@@ -24,7 +24,7 @@
       canMinimize = "1";
       canMaximize = "1";
       canCollapse = "0";
-      closeCommand = "toggleMusicPlayer();";
+      closeCommand = "Canvas.popDialog(GuiMusicPlayer);";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -32,9 +32,9 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "253 196";
-      extent = "518 377";
-      minExtent = "192 192";
+      position = "192 144";
+      extent = "640 480";
+      minExtent = "256 256";
       horizSizing = "center";
       vertSizing = "center";
       profile = "GuiWindowProfile";
@@ -118,7 +118,7 @@
             fitParentWidth = "1";
             colorBullet = "1";
             position = "1 1";
-            extent = "488 848";
+            extent = "488 2";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";

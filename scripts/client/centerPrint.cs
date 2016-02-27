@@ -24,9 +24,9 @@ $centerPrintActive = 0;
 $bottomPrintActive = 0;
 
 // Selectable window sizes
-$CenterPrintSizes[1] = 20;
-$CenterPrintSizes[2] = 36;
-$CenterPrintSizes[3] = 56;
+$CenterPrintSizes[1] = 46;
+$CenterPrintSizes[2] = 66;
+$CenterPrintSizes[3] = 86;
 
 // time is specified in seconds
 function clientCmdCenterPrint( %message, %time, %size )
@@ -70,12 +70,12 @@ function clientCmdBottomPrint( %message, %time, %size )
 
 function BottomPrintText::onResize(%this, %width, %height)
 {
-   %this.position = "0 0";
+   %this.position = "0 12";
 }
 
 function CenterPrintText::onResize(%this, %width, %height)
 {
-   %this.position = "0 0";
+   %this.position = "0 12";
 }
 
 //-------------------------------------------------------------------------------------------------------

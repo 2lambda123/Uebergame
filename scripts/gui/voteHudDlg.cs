@@ -1,0 +1,4 @@
+function voteHud::onWake(%this)
+{
+
+}

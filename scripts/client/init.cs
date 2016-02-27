@@ -99,8 +99,9 @@ function Torque::initClient(%this)
    // Client scripts
    exec("./serverConnection.cs");
    exec("./callbacks.cs");
-   exec("scripts/gui/chatHud.cs");
-   exec("scripts/gui/messageHud.cs");
+   exec("./playerList.cs");
+   exec("~/gui/chatHud.cs");
+   exec("./messageHud.cs");
 
    initRenderManager();
    initLightingSystems();
@@ -108,46 +109,67 @@ function Torque::initClient(%this)
    // Use our prefs to configure our Canvas/Window
    configureCanvas();
 
-   // Load up the Game GUIs
-   exec("scripts/gui/adminDlg.gui");
-   exec("scripts/gui/armoryHud.gui");
-   exec("scripts/gui/defaultGameProfiles.cs");
-   exec("scripts/gui/playGui.gui");
-   exec("scripts/gui/chatHud.gui");
-   exec("scripts/gui/playerList.gui");
-   exec("scripts/gui/hudlessGui.gui");
-   exec("scripts/gui/missionAreaWarningHud.gui");
-
-   // Load up the shell GUIs
-   exec("scripts/gui/mainMenuGui.gui");
-   exec("scripts/gui/joinServerDlg.gui");
-   exec("scripts/gui/endGameGui.gui");
-   exec("scripts/gui/exitGameGui.gui");
-   exec("scripts/gui/chooseLevelDlg.gui");
-   exec("scripts/gui/loadingGui.gui");
-   exec("scripts/gui/optionsDlg.gui");
-   exec("scripts/gui/remapDlg.gui");
-   exec("scripts/gui/extrasDlg.gui");
-   exec("scripts/gui/helpDlg.gui");
-   
-   // Gui scripts
-   exec("scripts/gui/adminDlg.cs");
-   exec("scripts/gui/armoryHud.cs");
-   exec("scripts/gui/playerList.cs");
-   exec("scripts/gui/chatHud.cs");
-   exec("scripts/gui/messageHud.cs");
-   exec("scripts/gui/playGui.cs");
-   exec("scripts/gui/chooseLevelDlg.cs");
-   exec("scripts/gui/loadingGui.cs");
-   exec("scripts/gui/optionsDlg.cs");
-   exec("scripts/gui/helpDlg.cs");
-
-   // Client scripts
-   exec("./client.cs");
-   exec("./missionDownload.cs");
-   exec("./serverConnection.cs");
-
    loadMaterials();
+   
+   // Load up the shell GUIs
+   exec("~/gui/StartupGui.gui");
+   exec("~/gui/mainMenuGui.gui");
+   exec("~/gui/exitGameGui.gui");
+   exec("~/gui/chooseLevelDlg.gui");
+   exec("~/gui/serverOptionsDlg.gui");
+   exec("~/gui/joinServerDlg.gui");
+   exec("~/gui/ipJoinDlg.gui");
+   exec("~/gui/optionsDlg.gui");
+   exec("~/gui/loadingGui.gui");
+   exec("~/gui/remapDlg.gui");
+   exec("~/gui/endGameGui.gui");
+   exec("~/gui/endGameGui.cs");
+   exec("~/gui/extrasDlg.gui");
+   exec("~/gui/helpDlg.gui");
+
+   // Load up the Game GUI
+   exec("~/gui/playGui.gui");
+   exec("~/gui/hudlessGui.gui");
+   exec("~/gui/hudlessGui.cs");   // For screen shots
+   exec("~/gui/chatHud.gui");
+   exec("~/gui/messageHud.gui");
+   exec("~/gui/scoreHud.gui");
+   exec("~/gui/voteHudDlg.gui");
+   exec("~/gui/voteHudDlg.cs");
+   //exec("~/gui/clusterHud.gui"); // moved into play.gui
+   exec("~/gui/quickChatHud.gui");
+   exec("~/gui/adminDlg.gui");
+   exec("~/gui/armoryHud.gui");
+   exec("~/gui/vehicleHud.gui");
+   exec("~/gui/bombTimerDlg.gui");
+   exec("~/gui/fireTeamHud.gui");
+   exec("~/gui/missionAreaWarningHud.gui");
+   exec("scripts/gui/recordingsDlg.gui");
+   exec("scripts/gui/guiMusicPlayer.gui");
+   exec("scripts/gui/guiVideoPlayer.gui");
+
+   // Gui scripts
+   //exec("~/gui/startupGui.cs");
+   exec("~/gui/mainMenuGui.cs");
+   exec("~/gui/recordingsDlg.cs");
+   exec("~/gui/chooseLevelDlg.cs");
+   exec("~/gui/serverOptionsDlg.cs");
+   exec("~/gui/joinServerDlg.cs");
+   exec("~/gui/optionsDlg.cs");
+   exec("~/gui/loadingGui.cs");
+   exec("~/gui/playGui.cs");
+   exec("~/gui/adminDlg.cs");
+   exec("~/gui/clusterHud.cs");
+   exec("~/gui/quickChatHud.cs");
+   exec("~/gui/objectiveHud.cs");
+   exec("~/gui/scoreHud.cs");
+   exec("~/gui/armoryHud.cs");
+   exec("~/gui/bombTimerDlg.cs");
+   exec("~/gui/vehicleHud.cs");
+   exec("~/gui/fireTeamHud.cs");
+   exec("scripts/gui/recordingsDlg.cs");
+   exec("scripts/gui/guiMusicPlayer.cs");
+   exec("scripts/gui/guiVideoPlayer.cs");
 
    // Really shouldn't be starting the networking unless we are
    // going to connect to a remote server, or host a multi-player
@@ -156,10 +178,10 @@ function Torque::initClient(%this)
 
    // Copy saved script prefs into C++ code.
    setDefaultFov( $pref::Player::defaultFov );
-   setZoomSpeed( $pref::Player::zoomSpeed );
+   setZoomSpeed(500);
 
-   //if( isScriptFile( expandFilename("./audioData.cs") ) )
-   //   exec( "./audioData.cs" );
+   if( isScriptFile( expandFilename("./audioData.cs") ) )
+      exec( "./audioData.cs" );
 
    // Start up the main menu... this is separated out into a
    // method for easier mod override.

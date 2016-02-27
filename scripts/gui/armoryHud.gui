@@ -16,7 +16,7 @@
    childGui = Armory_Root;
 
    new GuiBitmapCtrl(Armory_Root) {
-      bitmap = "art/gui/hudfill01";
+      bitmap = "art/gui/hudfill";
       wrap = "0";
       position = "320 120";
       extent = "640 480";

@@ -388,11 +388,7 @@ datablock ItemData(DefaultWeapon)
    maxVelocity = 20;
    dynamicType = $TypeMasks::ItemObjectType;
 
-   lightOnlyStatic = false;
-   lightType = ConstantLight; // NoLight, ConstantLight, PulsingLight
-   lightColor = "0 0 1 1";
-   lightRadius = 10;
-   lightTime = 1000;
+   lightType = "NoLight";
 
    simpleServerCollision = true;
 
@@ -421,11 +417,7 @@ datablock ItemData(DefaultClip)
 
    simpleServerCollision = true;
 
-   lightOnlyStatic = false;
-   lightType = ConstantLight; // NoLight, ConstantLight, PulsingLight
-   lightColor = "0 1 0 1";
-   lightRadius = 10;
-   lightTime = 1000;
+   lightType = "NoLight";
 
    pickUpName = 'Magazine';
    pickupSound = WeaponPickupSound;
@@ -452,11 +444,7 @@ datablock ItemData(DefaultAmmo)
 
    simpleServerCollision = true;
 
-   lightOnlyStatic = false;
-   lightType = ConstantLight; // NoLight, ConstantLight, PulsingLight
-   lightColor = "1 1 0 1";
-   lightRadius = 10;
-   lightTime = 1000;
+   lightType = "NoLight";
 
    pickUpName = 'Ammo';
    pickupSound = WeaponPickupSound;
@@ -467,7 +455,7 @@ datablock ItemData(DefaultAmmo)
 
 $RandomItemsAdded = 0;
 
-// ZOD: example - placeRandomItem(HealthPatch, 50, 10, 2000, "0 0 100");
+// ZOD: example - placeRandomItem(Medpack_medium, 50, 10, 2000, "0 0 100");
 function placeRandomItem(%data, %num, %spacing, %radius, %startPos)
 {
    if(%spacing $= "" || %spacing == -1)

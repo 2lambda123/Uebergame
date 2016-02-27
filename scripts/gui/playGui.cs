@@ -20,15 +20,10 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-// PlayGui is the main TSControl through which the game is viewed.
-// The PlayGui also contains the hud controls.
-//-----------------------------------------------------------------------------
-
 function PlayGui::onWake(%this)
 {
    // Turn off any shell sounds...
-   // sfxStop( ... );
+   // alxStop( ... );
 
    $enableDirectInput = "1";
    activateDirectInput();
@@ -38,25 +33,50 @@ function PlayGui::onWake(%this)
    {
       Canvas.pushDialog( MainChatHud );
       chatHud.attach(HudMessageVector);
-   }      
-   
-   // just update the action map here
-   moveMap.push();
+   }
 
-   // hack city - these controls are floating around and need to be clamped
-   if ( isFunction( "refreshCenterTextCtrl" ) )
-      schedule(0, 0, "refreshCenterTextCtrl");
-   if ( isFunction( "refreshBottomTextCtrl" ) )
-      schedule(0, 0, "refreshBottomTextCtrl");
+   // Add the cluster and objective huds.
+   // Adding keeps them in the foreground in case we are zoomed.
+   %this.add(ClusterHud);
+
+   // Add the FireTeam hud
+   %this.add(FireTeamHud);
+
+   // just update the action maps here
+   tge.updateKeyMaps();
+
+   // hack city - some controls are floating around and need to be clamped
+   %this.schedule( 0, "refreshElements" );
 }
 
 function PlayGui::onSleep(%this)
 {
-   if ( isObject( MainChatHud ) )
-      Canvas.popDialog( MainChatHud );
-   
    // pop the keymaps
-   moveMap.pop();
+   if (isObject(moveMap))
+      moveMap.pop();
+
+   if (isObject(spectatorBlockMap))
+      spectatorBlockMap.pop();
+
+   if (isObject(spectatorMap))
+      spectatorMap.pop();
+
+   if (isObject(vehicleMap))
+      vehicleMap.pop();
+
+   if (isObject(passengerKeys))
+   {
+      passengerKeys.pop();
+      passengerKeys.delete();
+   }
+
+   if (isObject(hudMap))
+   {
+      hudMap.pop();
+      hudMap.delete();
+   }
+
+   //chatHud.detach(HudMessageVector);
 }
 
 function PlayGui::clearHud( %this )
@@ -69,12 +89,61 @@ function PlayGui::clearHud( %this )
 
 //-----------------------------------------------------------------------------
 
-function refreshBottomTextCtrl()
+function PlayGui::refreshElements(%this)
 {
+   // Find center
+   %cX = getWord( PlayGui.getGlobalCenter(), 0 );
+   %cY = getWord( PlayGui.getGlobalCenter(), 1 );
+   //echo( "PLAYGUI CENTER:" SPC %cX SPC %cY );
+
+   %rX = getWord( reticle.getExtent(), 0 ) * 0.5;
+   %rY = getWord( reticle.getExtent(), 1 ) * 0.5;
+   //echo( "RETICLE HALF EXTENT:" SPC %rX SPC %rY );
+
+   %subX = %cX - %rX;
+   %subY = %cY - $rY;
+   //echo( "NEW RETICLE POSITION:" SPC %subX SPC %subY );
+   //reticle.setPosition( %subX, %subY );
+
+
+   //%x = ( getWord( Canvas.getVideoMode(), 0 ) * 0.5 );
+   //%y = ( getWord( Canvas.getVideoMode(), 1 ) * 0.5 );
+   //echo( "CANVAS CENTER:" SPC %x SPC %y );
+
+   zoomReticle.setPosition( 0, 0 );
+   zoomReticle.extent = getWord(Canvas.getVideoMode(), 0) SPC getWord(Canvas.getVideoMode(), 1);
    BottomPrintText.position = "0 0";
+   CenterPrintText.position = "0 0";
+   //HudRadar.position = "10 10";
+   //LagIcon.position = "10 165";
 }
 
-function refreshCenterTextCtrl()
-{
-   CenterPrintText.position = "0 0";
+function PlayGui::onMouseUp(%this){ }
+function PlayGui::onMouseDown(%this){ }
+function PlayGui::onMouseMove(%this){ }
+function PlayGui::onMouseDragged(%this){ }
+function PlayGui::onMouseEnter(%this){ }
+function PlayGui::onMouseLeave(%this){ }
+
+function PlayGui::onMouseWheelUp(%this){ }
+function PlayGui::onMouseWheelDown(%this){ }
+function PlayGui::onRightMouseDown(%this){ }
+function PlayGui::onRightMouseUp(%this){ }
+function PlayGui::onRightMouseDragged(%this){ }
+function PlayGui::onMiddleMouseDown(%this){ }
+function PlayGui::onMiddleMouseUp(%this){ }
+function PlayGui::onMiddleMouseDragged(%this){ }
+/*
+function PlayGui::onRightMouseDown(%this, %pos, %start, %ray)
+{   
+   if( Canvas.isCursorOn() )
+      Canvas.cursorOff();
+   else
+      Canvas.cursorOn();
+
+   if( Canvas.isCursorShown() )
+      Canvas.hideCursor();
+   else
+      Canvas.showCursor();
 }
+*/

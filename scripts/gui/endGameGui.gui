@@ -1,11 +1,11 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiChunkedBitmapCtrl(EndGameGui) {
-   bitmap = "art/gui/background";
+   bitmap = $MainGuiBackground;
    useVariable = "0";
    tile = "0";
    position = "0 0";
-   extent = "1024 768";
-   minExtent = "8 8";
+   extent = "1280 720";
+   minExtent = "800 600";
    horizSizing = "width";
    vertSizing = "height";
    profile = "GuiDefaultProfile";
@@ -16,15 +16,72 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      helpTag = "0";
 
-   new GuiControl() {
-      position = "192 144";
-      extent = "640 480";
-      minExtent = "8 8";
+   new GuiBitmapCtrl() {
+      bitmap = "art/gui/top_border";
+      wrap = "0";
+      position = "0 0";
+      extent = "1280 90";
+      minExtent = "8 2";
+      horizSizing = "width";
+      vertSizing = "bottom";
+      profile = "GuiDefaultProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiTextCtrl(GameOverText) {
+      text = "Game Over";
+      maxLength = "1024";
+      docking = "None";
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "0";
+      anchorBottom = "0";
+      anchorLeft = "0";
+      anchorRight = "0";
+      position = "0 24";
+      extent = "1290 64";
+      minExtent = "8 2";
       horizSizing = "center";
-      vertSizing = "center";
-      profile = "GuiWindowProfile";
+      vertSizing = "bottom";
+      profile = "GuiHeaderTextProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiBitmapCtrl() {
+      bitmap = "art/gui/btm_border";
+      wrap = "0";
+      position = "0 630";
+      extent = "1280 90";
+      minExtent = "8 2";
+      horizSizing = "width";
+      vertSizing = "top";
+      profile = "GuiDefaultProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiControl() {
+      position = "200 110";
+      extent = "880 500";
+      minExtent = "8 8";
+      horizSizing = "width";
+      vertSizing = "height";
+      profile = "GuiFrameSetProfile";
       visible = "1";
       active = "1";
       tooltipProfile = "GuiToolTipProfile";
@@ -33,21 +90,16 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiTextCtrl() {
-         text = "Game Over - Final Scores:";
-         maxLength = "255";
-         margin = "0 0 0 0";
-         padding = "0 0 0 0";
-         anchorTop = "1";
-         anchorBottom = "0";
-         anchorLeft = "1";
-         anchorRight = "0";
-         position = "187 15";
-         extent = "277 28";
-         minExtent = "8 8";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "GuiMediumTextProfile";
+      new GuiTextListCtrl(EndGameGuiListLabel) {
+         columns = "0 300 600";
+         fitParentWidth = "0";
+         clipColumnText = "0";
+         position = "36 28";
+         extent = "820 8";
+         minExtent = "616 8";
+         horizSizing = "width";
+         vertSizing = "top";
+         profile = "GuiDefaultProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
@@ -59,8 +111,8 @@
       new GuiScrollCtrl() {
          willFirstRespond = "1";
          hScrollBar = "alwaysOff";
-         vScrollBar = "dynamic";
-         lockHorizScroll = "1";
+         vScrollBar = "alwaysOn";
+         lockHorizScroll = "0";
          lockVertScroll = "0";
          constantThumbHeight = "0";
          childMargin = "0 0";
@@ -71,12 +123,12 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "38 51";
-         extent = "569 409";
+         position = "32 43";
+         extent = "820 257";
          minExtent = "8 8";
-         horizSizing = "width";
-         vertSizing = "height";
-         profile = "GuiScrollProfile";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "HudScrollProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
@@ -86,11 +138,11 @@
          canSaveDynamicFields = "0";
 
          new GuiTextListCtrl(EndGameGuiList) {
-            columns = "0 256";
+            columns = "0 300 600";
             fitParentWidth = "1";
             clipColumnText = "0";
-            position = "1 1";
-            extent = "567 166";
+            position = "0 0";
+            extent = "807 8";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -104,6 +156,105 @@
             canSaveDynamicFields = "0";
          };
       };
+   };
+   new GuiScrollCtrl(EndGameChatScroller) {
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      lockHorizScroll = "1";
+      lockVertScroll = "0";
+      constantThumbHeight = "0";
+      childMargin = "2 2";
+      mouseWheelScrollSpeed = "-1";
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "0";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "0 634";
+      extent = "1280 62";
+      minExtent = "8 8";
+      horizSizing = "relative";
+      vertSizing = "bottom";
+      profile = "HudScrollProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+
+      new GuiMessageVectorCtrl(EndGameChatCtrl) {
+         lineSpacing = "0";
+         lineContinuedIndex = "10";
+         allowedMatches[1] = "tgeserver";
+         matchColor = "0 0 255 255";
+         maxColorIndex = "9";
+         position = "2 2";
+         extent = "1276 14";
+         minExtent = "12 12";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "ChatHudMessageProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiDefaultProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+   };
+   new GuiTextEditCtrl(EndGameChatInput) {
+      historySize = "10";
+      tabComplete = "0";
+      sinkAllKeyEvents = "0";
+      password = "0";
+      passwordMask = "*";
+      maxLength = "255";
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "290 700";
+      extent = "700 18";
+      minExtent = "8 8";
+      horizSizing = "center";
+      vertSizing = "bottom";
+      profile = "GuiTextEditProfile";
+      visible = "1";
+      active = "1";
+      altCommand = "commandToServer(\'messageSent\', trim($ThisControl.getValue())); $ThisControl.setValue(\"\");";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
+   new GuiButtonCtrl() {
+      text = "DISCONNECT";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "1169 5";
+      extent = "100 15";
+      minExtent = "8 8";
+      horizSizing = "left";
+      vertSizing = "bottom";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "disconnect();";
+      accelerator = "escape";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
    };
 };
 //--- OBJECT WRITE END ---

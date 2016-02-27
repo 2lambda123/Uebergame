@@ -23,13 +23,15 @@
 //-----------------------------------------------------------------------------
 // Global Non-remapable binds
 //-----------------------------------------------------------------------------
+GlobalActionMap.bindCmd(keyboard, "F1", "", "contextHelp();");
 //GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 GlobalActionMap.bind(keyboard, "F9", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
+
 //GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
-GlobalActionMap.bind(keyboard, "F2", showMetrics);
-GlobalActionMap.bind(keyboard, "alt F2", showUeberMetrics);
+GlobalActionMap.bind(keyboard, "F4", showMetrics);
+GlobalActionMap.bind(keyboard, "ctrl F4", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "alt F6", startRecordingDemo );
 GlobalActionMap.bind( keyboard, "alt F7", stopRecordingDemo );
 //GlobalActionMap.bind( keyboard, "F9", toggleDemoRecording );
@@ -99,7 +101,6 @@ function ActionMap::clearBind(%this, %command)
 //------------------------------------------------------------------------------
 // Command functions
 //------------------------------------------------------------------------------
-
 
 function escapeFromGame()
 {
@@ -446,7 +447,7 @@ if($Player::CurrentFOV $= "")
 // toggle is hit it simply divides the CurrentFOV by 2 once again.  If the
 // FOV is reduced below a certain threshold then it resets to equal half of the
 // DefaultFOV value.  This gives us 4 zoom levels to cycle through.
-/*
+
 function toggleZoomFOV(%val)
 {
    if ( %val )
@@ -469,7 +470,7 @@ function resetCurrentFOV()
 {
    $Player::CurrentFOV = ServerConnection.getControlCameraDefaultFov() / 2;
 }
-*/
+
 function turnOffZoom()
 {
    ServerConnection.zoomed = false;
@@ -493,8 +494,8 @@ function toggleZoom(%val)
       ServerConnection.zoomed = true;
       setFov($Player::CurrentFOV);
 
-      //zoomReticle.setBitmap( "art/gui/zoomHair12.png" );
-      zoomReticle.setBitmap( "art/gui/bino.png" );
+      //zoomReticle.setBitmap( "art/gui/weaponHud/zoomHair12.png" );
+      zoomReticle.setBitmap( "art/gui/weaponHud/bino.png" );
       reticle.setVisible(false);
       zoomReticle.setVisible(true);
 
@@ -933,8 +934,8 @@ moveMap.bind( keyboard, "right", turnRight );
 moveMap.bind( keyboard, "home", panUp );
 moveMap.bind( keyboard, "end", panDown );
 moveMap.bind( keyboard, "space", jump );
-moveMap.bind( keyboard, "c", doCrouch );
-moveMap.bind( keyboard, "f", doProne );
+moveMap.bind( keyboard, "lcontrol", doCrouch );
+moveMap.bind( keyboard, "x", doProne );
 moveMap.bind( keyboard, "lshift", doSprint );
 moveMap.bind( keyboard, "e", mouseJet );
 //-----------------------------------------------------------------------------
@@ -970,7 +971,7 @@ moveMap.bind( keyboard, "m", autoMountVehicle );
 // Camera and View
 //moveMap.bind( mouse, button1, toggleZoom );
 moveMap.bind( mouse, button1, toggleIronSights );
-//moveMap.bind( keyboard, "z", toggleZoomFOV );
+moveMap.bind( keyboard, "z", toggleZoomFOV );
 moveMap.bind( keyboard, "v", toggleFreeLook );
 moveMap.bind( keyboard, "F3", toggleFirstPerson );
 //moveMap.bind( keyboard,"F6", toggleCamera );
@@ -986,15 +987,15 @@ moveMap.bind( keyboard, "ctrl f", throwFlag );
 
 //-----------------------------------------------------------------------------
 // Huds
-moveMap.bind( keyboard, "tab", showPlayerList );
-moveMap.bind( keyboard, "F2", showScoreBoard );
+moveMap.bind( keyboard, "F2", showPlayerList );
+moveMap.bind( keyboard, "tab", showScoreBoard );
 moveMap.bind( keyboard, "u", toggleMessageHud );
 moveMap.bind( keyboard, "y", teamMessageHud );
 moveMap.bind( keyboard, "o", fireTeamMessageHud );
 moveMap.bind( keyboard, "pageUp", pageMessageHudUp );
 moveMap.bind( keyboard, "pageDown", pageMessageHudDown );
 moveMap.bind( keyboard, "p", resizeMessageHud );
-moveMap.bind( keyboard, "v", toggleQuickChatHud );
+moveMap.bind( keyboard, "c", toggleQuickChatHud );
 moveMap.bind( keyboard, "F8", bringUpOptions );
 moveMap.bind( keyboard, "insert", voteYes );
 moveMap.bind( keyboard, "delete", voteNo );
@@ -1004,8 +1005,8 @@ moveMap.bind( keyboard, "-", cycleLoadoutPrev );
 moveMap.bind( keyboard, "ctrl n", toggleNetGraph );
 moveMap.bind( keyboard, "/", toggleVehicleHud );
 //moveMap.bind( keyboard, "F8", toggleOverheadMap );
-moveMap.bind( keyboard, "F3", toggleMusicPlayer );
-moveMap.bind(keyboard, "ctrl h", hideHUDs);
+moveMap.bind( keyboard, "F6", toggleMusicPlayer );
+moveMap.bind(keyboard, "alt h", hideHUDs);
 
 moveMap.bind( gamepad, thumbrx, "D", "-0.23 0.23", gamepadYaw );
 moveMap.bind( gamepad, thumbry, "D", "-0.23 0.23", gamepadPitch );
@@ -1022,8 +1023,8 @@ moveMap.bind( gamepad, dpadr, doSprint);
 
 moveMap.bind( gamepad, triggerr, gamepadFire );
 moveMap.bind( gamepad, triggerl, gamepadAltTrigger );
-//moveMap.bind( gamepad, btn_b, toggleZoomFOV );
-//moveMap.bind( gamepad, btn_back, toggleCamera );
+moveMap.bind( gamepad, btn_b, toggleZoomFOV );
+moveMap.bind( gamepad, btn_back, toggleCamera );
 
 //------------------------------------------------------------------------------
 // Spectator actionmap
@@ -1149,7 +1150,7 @@ function Torque::updateKeyMaps(%this)
          spectatorBlockMap.blockBind( moveMap, mouseJet );
          spectatorBlockMap.blockBind( moveMap, toggleQuickChatHud );
          spectatorBlockMap.blockBind( moveMap, toggleZoom );
-         //spectatorBlockMap.blockBind( moveMap, setZoomFOV );
+         spectatorBlockMap.blockBind( moveMap, setZoomFOV );
          spectatorBlockMap.blockBind( moveMap, toggleIronSights );
          spectatorBlockMap.push();
          spectatorMap.push();

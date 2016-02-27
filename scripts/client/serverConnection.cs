@@ -38,7 +38,6 @@ function handleConnectionErrorMessage(%msgType, %msgString, %msgError)
    $ServerConnectionErrorMessage = %msgError;
 }
 
-
 //----------------------------------------------------------------------------
 // GameConnection client callbacks
 //----------------------------------------------------------------------------
@@ -54,9 +53,7 @@ function GameConnection::initialControlSet(%this)
    if (!isToolBuild() || !Editor::checkActiveLoadDone())
    {
       if (Canvas.getContent() != PlayGui.getId())
-      {
          Canvas.setContent(PlayGui);
-      }
    }
 }
 
@@ -77,30 +74,21 @@ function GameConnection::setLagIcon(%this, %state)
    LagIcon.setVisible(%state $= "true");
 }
 
-function GameConnection::onFlash(%this, %state)
-{
-   if (isObject(FlashFx))
-   {
-      if (%state)
-      {
-         FlashFx.enable();
-      }
-      else
-      {
-         FlashFx.disable();
-      }
-   }
-}
-
 // Called on the new connection object after connect() succeeds.
 function GameConnection::onConnectionAccepted(%this)
 {
-   // Called on the new connection object after connect() succeeds.
-   LagIcon.setVisible(false);
-   
-   // Startup the physics world on the client before any
+   // Startup the physX world on the client before any
    // datablocks and objects are ghosted over.
    physicsInitWorld( "client" );   
+}
+
+function GameConnection::onConnectionError(%this, %msg)
+{
+   // General connection error, usually raised by ghosted objects
+   // initialization problems, such as missing files.  We'll display
+   // the server's connection error message.
+   tge.disconnectedCleanup();
+   MessageBoxOK( "DISCONNECT", $ServerConnectionErrorMessage @ " (" @ %msg @ ")" );
 }
 
 function GameConnection::onConnectionTimedOut(%this)
@@ -116,16 +104,6 @@ function GameConnection::onConnectionDropped(%this, %msg)
    tge.disconnectedCleanup();
    MessageBoxOK( "DISCONNECT", "The server has dropped the connection: " @ %msg);
 }
-
-function GameConnection::onConnectionError(%this, %msg)
-{
-   // General connection error, usually raised by ghosted objects
-   // initialization problems, such as missing files.  We'll display
-   // the server's connection error message.
-   tge.disconnectedCleanup();
-   MessageBoxOK( "DISCONNECT", $ServerConnectionErrorMessage @ " (" @ %msg @ ")" );
-}
-
 
 //----------------------------------------------------------------------------
 // Connection Failed Events
@@ -171,7 +149,6 @@ function GameConnection::onConnectRequestTimedOut(%this)
    MessageBoxOK( "TIMED OUT", "Your connection to the server timed out." );
 }
 
-
 //-----------------------------------------------------------------------------
 // Disconnect
 //-----------------------------------------------------------------------------
@@ -194,8 +171,10 @@ function disconnect()
 
 function Torque::disconnectedCleanup(%this)
 {
+   // Clear misc script stuff
+   HudMessageVector.clear();
+
    // End mission, if it's running.
-   
    if( $Client::missionRunning )
       clientEndMission();
       
@@ -204,18 +183,13 @@ function Torque::disconnectedCleanup(%this)
    
    $lightingMission = false;
    $sceneLighting::terminateLighting = true;
-   
-   // Clear misc script stuff
-   HudMessageVector.clear();
-   
-   //
-   LagIcon.setVisible(false);
+
    PlayerListGui.clear();
 
    // ZOD: Delete the player list group
    if ( isObject( PlayerListGroup ) )
       PlayerListGroup.delete();
-   
+
    // Clear all print messages
    clientCmdclearBottomPrint();
    clientCmdClearCenterPrint();

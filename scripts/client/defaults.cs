@@ -20,11 +20,11 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
 // The master server is declared with the server defaults, which is
 // loaded on both clients & dedicated servers.  If the server mod
 // is not loaded on a client, then the master must be defined. 
 // $pref::Master[0] = "2:master.garagegames.com:28002";
+
 $pref::TSShapeConstructor::CapsuleShapePath = "art/editor/unit_capsule.dts";
 $pref::TSShapeConstructor::CubeShapePath = "art/editor/unit_cube.dts";
 $pref::TSShapeConstructor::SphereShapePath = "art/editor/unit_sphere.dts";
@@ -51,12 +51,8 @@ $pref::SFX::distanceModel = "logarithmic";
 $pref::SFX::dopplerFactor = "0.75";
 $pref::SFX::rolloffFactor = "0.25";
 
-$pref::Player = "Player\tBase";
-$pref::Player::Skin = "base";
-$pref::Player::defaultFov = 75;
-$pref::Player::zoomSpeed = 1;
-$pref::Player::FriendlyColor = "0.000000 1.000000 0.000000 1.000000";
-$pref::Player::EnemyColor = "1.000000 0.000000 0.000000 1.000000";
+$pref::Player = "Player\tbase";
+$pref::Player::defaultFov = 90;
 $pref::Player::SelectedVehicle = "Cheetah";
 
 $pref::Audio::BackgroundMusic = 1;
@@ -134,6 +130,7 @@ $pref::LightManager::Enable::HDR = "0";
 $pref::LightManager::Enable::LightRay = "1";
 $pref::LightManager::Enable::LightRays = "1";
 $pref::LightManager::Enable::SSAO = "0";
+$pref::LightManager::Enable::Vignette = "1";
 $pref::LightManager::sgAtlasMaxDynamicLights = "64";
 $pref::LightManager::sgDynamicShadowDetailSize = "0";
 $pref::LightManager::sgDynamicShadowQuality = "0";
@@ -295,8 +292,6 @@ if ( isObject( LightingQualityGroup ) )
    LightingQualityGroup.delete();
 if ( isObject( ShaderQualityGroup ) )
    ShaderQualityGroup.delete();
-if ( isObject( EffectQualityGroup ) )
-   EffectQualityGroup.delete();
  
 new SimGroup( MeshQualityGroup )
 { 
@@ -503,100 +498,6 @@ new SimGroup( ShaderQualityGroup )
    };   
 };
 
-
-
-//mp
-// need to add particle optimizations here...
-new SimGroup( EffectQualityGroup )
-{
-   new ArrayObject( [Lowest] )
-   {
-      class = "GraphicsQualityLevel";
-      caseSensitive = true;
-      
-      key["$pref::LightManager::Enable::SSAO"] = false;
-      key["$pref::LightManager::Enable::LightRay"] = false;
-      key["$pref::LightManager::Enable::AA"] = false;
-      key["$pref::LightManager::Enable::HDR"] = false;
-   };
-   
-   new ArrayObject( [Low] )
-   {
-      class = "GraphicsQualityLevel";
-      caseSensitive = true;
-      
-      key["$pref::LightManager::Enable::SSAO"] = false;
-      key["$pref::LightManager::Enable::LightRay"] = false;
-      key["$pref::LightManager::Enable::AA"] = true;
-      key["$pref::LightManager::Enable::HDR"] = false;
-   };
-   
-   new ArrayObject( [Normal] )
-   {
-      class = "GraphicsQualityLevel";
-      caseSensitive = true;
-      
-      key["$pref::LightManager::Enable::SSAO"] = false;
-      key["$pref::LightManager::Enable::LightRay"] = true;
-      key["$pref::LightManager::Enable::AA"] = true;   
-      key["$pref::LightManager::Enable::HDR"] = false;   
-   };
-   
-   new ArrayObject( [High] )
-   {
-      class = "GraphicsQualityLevel";
-      caseSensitive = true;
-      
-      key["$pref::LightManager::Enable::SSAO"] = true;
-      key["$pref::LightManager::Enable::LightRay"] = true;
-      key["$pref::LightManager::Enable::AA"] = true;     
-      key["$pref::LightManager::Enable::HDR"] = false;          
-   };   
-   new ArrayObject( [Highest] )
-   {
-      class = "GraphicsQualityLevel";
-      caseSensitive = true;
-      
-      key["$pref::LightManager::Enable::SSAO"] = true;
-      key["$pref::LightManager::Enable::LightRay"] = true;
-      key["$pref::LightManager::Enable::AA"] = true;     
-      key["$pref::LightManager::Enable::HDR"] = true;          
-   };  
-};
-
-function EffectQualityGroup::onApply( %this, %level )
-{
-   // Set the light manager.  This should do nothing 
-   // if its already set or if its not compatible. 
-     
-   /*
-      if($pref::LightManager::Enable::AA)
-         MLAAPostFX.enable();
-      else
-         MLAAPostFX.disable();
-   */
-   
-      if($pref::LightManager::Enable::SSAO)
-         SSAOPostFX.enable();
-      else
-         SSAOPostFX.disable();
-         
-      if($pref::LightManager::Enable::LightRay)
-         LightRayPostFX.enable();
-      else
-         LightRayPostFX.disable();
-         
-      if($pref::LightManager::Enable::HDR)
-         HDRPostFX.enable();
-      else
-         HDRPostFX.disable();
-      
-      if($pref::LightManager::Enable::DOF)
-         DOFPostFX.enable();
-      else
-         DOFPostFX.disable();
-
-}
 function GraphicsQualityAutodetect()
 {
    $pref::Video::autoDetect = false;
@@ -624,7 +525,6 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
          ShaderQualityGroup-->Low.apply();   
-         EffectQualityGroup-->Low.apply(); 
       }
       else
       {
@@ -632,7 +532,6 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
          ShaderQualityGroup-->Lowest.apply();   
-         EffectQualityGroup-->Lowest.apply();  
       }
    }   
    else
@@ -643,7 +542,6 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->High.apply();
          LightingQualityGroup-->High.apply();
          ShaderQualityGroup-->High.apply();
-         EffectQualityGroup-->Highest.apply();
       }
       else if ( %videoMem > 400 || %videoMem == 0 )
       {
@@ -651,7 +549,6 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Normal.apply();
          LightingQualityGroup-->Normal.apply();
          ShaderQualityGroup-->Normal.apply();
-         EffectQualityGroup-->Normal.apply();
          
          if ( %videoMem == 0 )
             return "Torque was unable to detect available video memory. Applying 'Normal' quality.";
@@ -662,7 +559,6 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Low.apply();
          LightingQualityGroup-->Low.apply();
          ShaderQualityGroup-->Low.apply();
-         EffectQualityGroup-->Low.apply();
       }
    }
    

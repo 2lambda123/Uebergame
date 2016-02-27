@@ -53,7 +53,6 @@ singleton ShaderData( OffscreenParticleCompositeShaderData )
    
    pixVersion = 2.0;
 };
-
 //-----------------------------------------------------------------------------
 // Planar Reflection
 //-----------------------------------------------------------------------------

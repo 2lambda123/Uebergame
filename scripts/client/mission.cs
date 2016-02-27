@@ -141,5 +141,5 @@ function loadLevel( %missionNameOrFile )
    }
 
    // Prepare and launch the server.
-   return createAndConnectToLocalServer( "SinglePlayer", %missionFile, $pref::Server::MissionType);
+   return createAndConnectToLocalServer("SinglePlayer", %missionFile, $pref::Server::MissionType);
 }

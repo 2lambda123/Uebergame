@@ -41,7 +41,7 @@ function serverCmdDoMelee(%client)
 
    // Tiring
    %player.setEnergyLevel( %player.getEnergyLevel() - 15 );
-   %player.setActionThread("ProxMine_Fire"); // Rigged DAE model
+   %player.setActionThread("ProxMine_Fire"); // Rigged.dts model
 
    // Library.cs
    %scan = %player.doRaycast( 2, $TypeMasks::ShapeBaseObjectType );

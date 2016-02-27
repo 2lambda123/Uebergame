@@ -10,7 +10,8 @@
 	setFirstResponder = "True";
 	modal = "false";
 	helpTag = "0";
-   noCursor = true;
+    noCursor = true;
+
 	new GuiConsoleTextCtrl(TextOverlayControl) {
 		profile = "GuiConsoleTextProfile";
 		horizSizing = "right";
@@ -23,8 +24,6 @@
 		modal = "True";
 		helpTag = "0";
 		expression = "10";
-		command = "Canvas.popDialog(FrameOverlayGui);";
-		accelerator = "escape";
 	};
 };
 //--- OBJECT WRITE END ---

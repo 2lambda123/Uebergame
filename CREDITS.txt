@@ -14,5 +14,6 @@ art/sound/weapons/paintball/paintball_impact_1.wav -rombart https://www.freesoun
 art/sound/weapons/paintball/paintball_impact_2.wav remix of 1 and 3 -by Duion
 art/sound/weapons/paintball/paintball_impact_3.wav -minian89 https://www.freesound.org/people/minian89/sounds/195955/ -edited by Duion
 art/sound/weapons/paintball/paintball_shot_1.wav -fabianofa https://www.freesound.org/people/fabianofa/sounds/98188/ -edited by Duion
+art/sounds/weapons/grenades/smokeGrenade.ogg -univ_lyon3 https://www.freesound.org/people/univ_lyon3/sounds/201848/ -edited by Duion
 
-
+art/sound/deploy_error.wav -Isaac200000 https://www.freesound.org/people/Isaac200000/sounds/188013/

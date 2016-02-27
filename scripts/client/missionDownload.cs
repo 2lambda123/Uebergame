@@ -21,13 +21,6 @@
 //-----------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------
-// Mission Loading & Mission Info
-// The mission loading server handshaking is handled by the
-// scripts/client/missingLoading.cs.  This portion handles the interface
-// with the game GUI.
-//----------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------
 // Mission Loading
 // Server download handshaking.  This produces a number of onPhaseX
 // calls so the game scripts can update the game's GUI.
@@ -89,10 +82,10 @@ function clientCmdMissionStartPhase3(%seq, %missionFile)
    onPhase2Complete();
    StartClientReplication();
    StartFoliageReplication();
-   
+
    // Load the static mission decals.
    decalManagerLoad( %missionFile @ ".decals" );
-   
+
    echo ("<>>>> Phase 3: Mission Lighting <<<<>");
    $MSeq = %seq;
    $Client::MissionFile = %missionFile;
@@ -122,7 +115,7 @@ function sceneLightingComplete()
 {
    echo("<>>>> Mission lighting done <<<<>");
    onPhase3Complete();
-   
+
    // The is also the end of the mission load cycle.
    onMissionDownloadComplete();
    commandToServer('MissionStartPhase3Ack', $MSeq);
@@ -140,179 +133,3 @@ function connect(%server)
    %conn.setJoinPassword($Client::Password);
    %conn.connect(%server);
 }
-
-//----------------------------------------------------------------------------
-// Loading Phases:
-// Phase 1: Download Datablocks
-// Phase 2: Download Ghost Objects
-// Phase 3: Scene Lighting
-
-//----------------------------------------------------------------------------
-// Phase 1
-//----------------------------------------------------------------------------
-
-function onMissionDownloadPhase1(%missionName, %musicTrack)
-{   
-   %path = "levels/" @ fileBase( %missionName ) @ $PostFXManager::fileExtension;
-   %found = 0;
-   for( %file = findFirstFile( %path ); %file !$= ""; %file = findNextFile( %path ) )
-   {
-      //echo("--------> FILE:" SPC %file SPC "<--------");
-      if ( isScriptFile( %file ) )
-      {
-         %found = 1;
-         postFXManager::loadPresetHandler( %file );
-         break;
-      }
-   }
-
-   if( !%found )
-      PostFXManager::settingsApplyDefaultPreset();
-
-/*
-   // Load the post effect presets for this mission.
-   %path = "levels/" @ fileBase( %missionName ) @ $PostFXManager::fileExtension;
-   if ( isScriptFile( %path ) )
-      postFXManager::loadPresetHandler( %path ); 
-   else
-      PostFXManager::settingsApplyDefaultPreset();
-*/
-               
-   // Close and clear the message hud (in case it's open)
-   if ( isObject( MessageHud ) )
-      MessageHud.close();
-
-   // Reset the loading progress controls:
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue(0);
-      LoadingProgress.setValue("LOADING DATABLOCKS");
-   Canvas.repaint();
-}
-
-   if ( %musicTrack !$= "" )
-      clientCmdPlayMusic(%musicTrack);
-   else
-      clientCmdStopMusic();
-}
-
-function onPhase1Progress(%progress)
-{
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue(%progress);
-   Canvas.repaint(33);
-}
-}
-
-function onPhase1Complete()
-{
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue( 1 );
-   Canvas.repaint();
-}
-}
-
-//----------------------------------------------------------------------------
-// Phase 2
-//----------------------------------------------------------------------------
-
-function onMissionDownloadPhase2(%missionFile)
-{
-   // Clear the console
-   if(!$pref::Console::NoClear)
-      cls();
-      
-   // Reset the loading progress controls:
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue(0);
-      LoadingProgress.setText("LOADING OBJECTS");
-   Canvas.repaint();
-}
-}
-
-function onPhase2Progress(%progress)
-{
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue(%progress);
-   Canvas.repaint(33);
-}
-}
-
-function onPhase2Complete()
-{
-   // Make the clients next selection the last values stored or last loadout selected.
-   if( $pref::Player::CurrentLoadout !$= "" )
-      commandToServer( 'setClientLoadout', addTaggedString($pref::Player::CurrentLoadout) );
-   else
-      commandToServer( 'setClientLoadout', addTaggedString($pref::Player::Loadout[$pref::Player::SelectedLoadout]) );
-
-   // Send selected vehicle
-   commandToServer('SelectVehicle', addTaggedString($pref::Player::SelectedVehicle));
-	  
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue( 1 );
-   Canvas.repaint();
-}   
-}   
-
-function onFileChunkReceived(%fileName, %ofs, %size)
-{
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue(%ofs / %size);
-      LoadingProgress.setText("Downloading " @ %fileName @ "...");
-   }
-}
-
-//----------------------------------------------------------------------------
-// Phase 3
-//----------------------------------------------------------------------------
-
-function onMissionDownloadPhase3(%missionFile)
-{
-   if ( isObject( LoadingProgress ) )
-{
-   LoadingProgress.setValue(0);
-      LoadingProgress.setText("LIGHTING MISSION");
-   Canvas.repaint();
-}
-}
-
-function onPhase3Progress(%progress)
-{
-   if ( isObject( LoadingProgress ) )
-   {
-   LoadingProgress.setValue(%progress);
-   Canvas.repaint(33);
-}
-}
-
-function onPhase3Complete()
-{
-   $lightingMission = false;
-
-   if ( isObject( LoadingProgress ) )
-   {
-      LoadingProgress.setValue("STARTING MISSION");
-   LoadingProgress.setValue( 1 );
-   Canvas.repaint();
-}
-}
-
-//----------------------------------------------------------------------------
-// Mission loading done!
-//----------------------------------------------------------------------------
-
-function onMissionDownloadComplete()
-{
-   // Client will shortly be dropped into the game, so this is
-   // good place for any last minute gui cleanup.
-   if ( isObject( ArmoryDlg ) )
-      clientCmdClearArmoryHud(0);
-}
-

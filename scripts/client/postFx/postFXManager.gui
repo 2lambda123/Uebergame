@@ -1689,7 +1689,7 @@
             canSave = "1";
             canSaveDynamicFields = "0";
 
-            new GuiSliderCtrl(ppOptionsLightRaysBrightScalar) {
+           new GuiSliderCtrl(ppOptionsLightRaysBrightScalar) {
                range = "0 5";
                ticks = "1000";
                snap = "0";
@@ -1707,7 +1707,7 @@
                isContainer = "0";
                canSave = "1";
                canSaveDynamicFields = "0";
-            };
+            };			
             new GuiTextCtrl(ppOptionsLightRaysBrightnessScalarLabel) {
                text = "Brightness";
                maxLength = "1024";

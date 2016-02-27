@@ -528,7 +528,7 @@ function AIPlayer::testBot()
    MissionCleanup.add(%player);
    %player.setTeamId(%player.team);
    %player.setShapeName(getRandomBotName());
-   %player.setSkinName("Base");
+   %player.setSkinName("base");
    %player.setTransform(Game.pickSpawnPoint(%player.team));
    %player.setRechargeRate(%player.getDataBlock().rechargeRate);
    %player.setEnergyLevel(%player.getDataBlock().maxEnergy);

@@ -278,7 +278,7 @@ function setUpFavPrefs()
       if($pref::Player::LoadoutName[%i] $= "")
          $pref::Player::LoadoutName[%i] = "Loadout " @ %i + 1;
       if($pref::Player::Loadout[%i] $= "")
-         $pref::Player::Loadout[%i] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
+         $pref::Player::Loadout[%i] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
    }
    if($pref::Player::FavCurrentList $= "")
       $pref::Player::FavCurrentList = 0;
@@ -350,7 +350,7 @@ function loadLoadout( %index, %echo )
    {
       // Update the Edit Name field:
       LoadoutInput.setValue( $pref::Player::LoadoutName[%index] );
-      SaveLoadout.setActive(strlen(stripTrailingSpaces($pref::Player::LoadoutName[%index])) >= 3);
+      SaveLoadout.setActive(strlen(trim($pref::Player::LoadoutName[%index])) >= 3);
    }
 
    if ( %echo )
@@ -365,7 +365,7 @@ function LoadoutInput::setField(%this)
    // called when you type in text input field
    %name = %this.getValue();
    %this.setValue(%name);
-   SaveLoadout.setActive(strlen(stripTrailingSpaces(%name)) >= 3);
+   SaveLoadout.setActive(strlen(trim(%name)) >= 3);
 }
 
 function ArmoryDlg::saveLoadout(%this)
@@ -394,8 +394,8 @@ function ArmoryDlg::saveLoadout(%this)
       }
 
       $pref::Player::Loadout[$pref::Player::SelectedLoadout] = %list;
-      echo("exporting pref::* to Prefs.cs");
-      export("$pref::*", "prefs/Prefs.cs", False);
+      echo("exporting pref::* to client.config.cs");
+      export("$pref::*", ( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" ), False);
    }
    // Clear the text input field and disable send button
    SaveLoadout.setActive(0);

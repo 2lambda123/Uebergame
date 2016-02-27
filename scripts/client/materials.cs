@@ -27,6 +27,7 @@ singleton Material( WarningMaterial )
    translucent = false;
 };
 
+
 singleton CubemapData( WarnMatCubeMap )
 {
    cubeFace[0] = "art/editor/warnMat";

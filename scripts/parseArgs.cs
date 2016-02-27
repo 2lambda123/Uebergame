@@ -90,7 +90,8 @@ function defaultParseArgs()
             {
                // Append the mod to the end of the current list
                $userDirs = strreplace($userDirs, $nextArg, "");
-               $userDirs = pushFront($userDirs, $nextArg, ";");
+               //$userDirs = pushFront($userDirs, $nextArg, ";");
+               $userDirs = pushBack($userDirs, $nextArg, ";");
                $argUsed[$i+1]++;
                $i++;
                $dirCount++;

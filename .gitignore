@@ -3,6 +3,10 @@
 #cached dts
 *.cached.dts
 
+#generated imposters
+*.imposter.dds
+*.imposter_normals.dds
+
 #shaders cache
 shaders/procedural/*
 

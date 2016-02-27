@@ -20,6 +20,9 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// Not required as there is nothing to load
+//tge.loadDir("core");
+
 // Constants for referencing video resolution preferences
 $WORD::RES_X = 0;
 $WORD::RES_Y = 1;
@@ -27,6 +30,9 @@ $WORD::FULLSCREEN = 2;
 $WORD::BITDEPTH = 3;
 $WORD::REFRESH = 4;
 $WORD::AA = 5;
+
+// Debugging
+$GameBase::boundingBox = false;
 
 //---------------------------------------------------------------------------------------------
 // CorePackage
@@ -43,7 +49,7 @@ function Torque::onStart(%this)
    echo("\n--------- Starting "@ $appName @" ---------");
 
    Parent::onStart(%this);
-   
+
    // Load up default settings
    exec( "./gui/profiles.cs" );
    exec( "./client/defaults.cs" );
@@ -112,9 +118,17 @@ function onExit()
    // Destroy the physics plugin.
    physicsDestroy();
 
+   echo("Exporting client control configuration");
+   if (isObject(moveMap))
+   {
+   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
+   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+   }
+   
    echo("Exporting client prefs");
    export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", False);
-
+	  
    echo("Exporting server prefs");
    export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", False);
 

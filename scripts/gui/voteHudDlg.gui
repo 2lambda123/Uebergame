@@ -1,0 +1,70 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(mainVoteHud) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "8 8";
+   visible = "1";
+      noCursor = "1";
+
+   new GuiBitmapCtrl(voteHud) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "relative";
+      vertSizing = "relative";
+      position = "2 100";
+      extent = "114 40";
+      minExtent = "8 8";
+      visible = "1";
+      bitmap = "art/gui/hudfill";
+      wrap = "0";
+         opacity = "0.9";
+
+      new GuiTextCtrl(yesVoteText) {
+         profile = "GuiTxtWhtProfile";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         position = "5 1";
+         extent = "60 18";
+         minExtent = "60 18";
+         visible = "1";
+         text = "Yes votes:";
+         maxLength = "255";
+      };
+      new GuiTextCtrl(voteHudYes) {
+         profile = "GuiTxtWhtProfile";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         position = "75 1";
+         extent = "34 18";
+         minExtent = "34 18";
+         visible = "1";
+         text = "32";
+         maxLength = "255";
+      };
+      new GuiTextCtrl(noVoteText) {
+         profile = "GuiTxtWhtProfile";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         position = "5 20";
+         extent = "60 18";
+         minExtent = "60 18";
+         visible = "1";
+         text = "No votes:";
+         maxLength = "255";
+      };
+      new GuiTextCtrl(voteHudNo) {
+         profile = "GuiTxtWhtProfile";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         position = "75 20";
+         extent = "34 18";
+         minExtent = "34 18";
+         visible = "1";
+         text = "32";
+         maxLength = "255";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

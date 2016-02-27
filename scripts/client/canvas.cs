@@ -29,7 +29,7 @@ $canvasCreated = false;
 function configureCanvas()
 {
    // Setup a good default if we don't have one already.
-   if ($pref::Video::mode $= "")
+   if ( $pref::Video::mode $= "" )
       $pref::Video::mode = "1024 768 false 32 60 0";
 
    %resX = getWord($pref::Video::mode, $WORD::RES_X);

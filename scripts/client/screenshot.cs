@@ -60,9 +60,9 @@ function makeMovie(%movieName, %fps, %encoder)
 {
    // If the canvas doesn't exist yet, setup a flag so it'll 
    // start capturing as soon as it's created
-   if (!isObject(Canvas))   
+   if ( !isObject( Canvas ) )   
       return;
-   
+
    if ( $pref::Video::movieSession $= "" )
       $pref::Video::movieSession = 0;
             
@@ -72,13 +72,13 @@ function makeMovie(%movieName, %fps, %encoder)
    if ( %fps $= "" )
       %fps = 30;
 
-   if (%encoder $= "") 
-      %encoder = "THEORA";   
+   if ( %encoder $= "" ) 
+      %encoder = "THEORA";
 
    %movieName = "movie_" @ $Client::MissionName @ formatSessionNumber($pref::Video::screenShotSession);
 
    %resolution = Canvas.getVideoMode();
-   startVideoCapture(Canvas, %movieName, %encoder, %fps); 
+   startVideoCapture(Canvas, %movieName, %encoder, %fps);
    $MovieEncodeActive = true;
 }
 
@@ -93,10 +93,10 @@ function stopMovie()
 function doScreenShot( %val )
 {
    // This can be bound, so skip key up events.
-   if ( %val == 0 )
-      return;      
-      
-   _screenShot( 1 );
+   if (%val)
+   {
+      _screenShot( 1 );
+   }
 }
 
 /// A counter for screen shots used by _screenShot().
@@ -124,7 +124,7 @@ function _screenShot( %tiles, %overlap )
    if (  ( $pref::Video::screenShotFormat $= "JPEG" ) ||
          ( $pref::video::screenShotFormat $= "JPG" ) )         
       screenShot( %name, "JPEG", %tiles, %overlap );      
-   else   
+   else
       screenShot( %name, "PNG", %tiles, %overlap );
 }
 

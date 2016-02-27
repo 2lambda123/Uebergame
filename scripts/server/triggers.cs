@@ -82,7 +82,7 @@ function SimGroup::onTriggerTick(%this, %triggerId)
       %this.getObject(%i).onTriggerTick(%triggerId);
 }
 
-function DefaultTrigger::onEnterTrigger(%this,%trigger,%obj)
+function DefaultTrigger::onEnterTrigger(%this, %trigger, %obj)
 {
    // This method is called whenever an object enters the %trigger
    // area, the object is passed as %obj.  The default onEnterTrigger
@@ -91,7 +91,7 @@ function DefaultTrigger::onEnterTrigger(%this,%trigger,%obj)
    Parent::onEnterTrigger(%this, %trigger, %obj);
 }
 
-function DefaultTrigger::onLeaveTrigger(%this,%trigger,%obj)
+function DefaultTrigger::onLeaveTrigger(%this, %trigger, %obj)
 {
    // This method is called whenever an object leaves the %trigger
    // area, the object is passed as %obj.  The default onLeaveTrigger
@@ -100,7 +100,7 @@ function DefaultTrigger::onLeaveTrigger(%this,%trigger,%obj)
    Parent::onLeaveTrigger(%this, %trigger, %obj);
 }
 
-function DefaultTrigger::onTickTrigger(%this,%trigger)
+function DefaultTrigger::onTickTrigger(%this, %trigger)
 {
    // This method is called every tickPerioMS, as long as any
    // objects intersect the trigger. The default onTriggerTick

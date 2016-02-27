@@ -1,0 +1,57 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(QuickChatMenuHud) {
+   position = "0 0";
+   extent = "1024 768";
+   minExtent = "8 2";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   profile = "GuiDefaultProfile";
+   visible = "1";
+   active = "1";
+   tooltipProfile = "GuiToolTipProfile";
+   hovertime = "1000";
+   isContainer = "1";
+   canSave = "1";
+   canSaveDynamicFields = "1";
+      helpTag = "0";
+      noCursor = "1";
+
+   new GuiBitmapCtrl(QuickChatBase) {
+      bitmap = "art/gui/hudfill";
+      wrap = "0";
+      position = "10 256";
+      extent = "125 105";
+      minExtent = "8 8";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      profile = "CenterPrintProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+
+      new GuiMLTextCtrl(QCMenuText) {
+         lineSpacing = "2";
+         allowColorChars = "1";
+         maxChars = "-1";
+         useURLMouseCursor = "0";
+         position = "5 5";
+         extent = "125 98";
+         minExtent = "8 8";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "GuiMLTextProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

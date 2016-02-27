@@ -26,7 +26,7 @@
 // Prerequisites.
 
 if( !isObject( GuiMusicPlayer ) )
-   exec( "scripts/gui/guiMusicPlayer.gui" );
+   exec( "./guiMusicPlayer.gui" );
 
 //---------------------------------------------------------------------------------------------
 // Preferences.
@@ -45,6 +45,7 @@ singleton SFXDescription( GuiMusicPlayerStream : AudioMusic2D )
    isStreaming = true;
    is3D = false;
 };
+
 singleton SFXDescription( GuiMusicPlayerLoopingStream : AudioMusic2D )
 {
    volume = 1.0;
@@ -56,17 +57,20 @@ singleton SFXDescription( GuiMusicPlayerLoopingStream : AudioMusic2D )
 //---------------------------------------------------------------------------------------------
 // Functions.
 
-function toggleMusicPlayer()
-{   
-   if( !GuiMusicPlayer.isAwake() )
+function toggleMusicPlayer(%val)
+{
+   if ( %val )
    {
-      GuiMusicPlayer.setExtent( Canvas.getExtent() );
-      GuiMusicPlayer.setPosition( 0, 0 );
-      
-      Canvas.pushDialog( GuiMusicPlayer );
+      if( !GuiMusicPlayer.isAwake() )
+      {
+         GuiMusicPlayer.setExtent( Canvas.getExtent() );
+         GuiMusicPlayer.setPosition( 0, 0 );
+
+         Canvas.pushDialog( GuiMusicPlayer );
+      }
+      else
+         Canvas.popDialog( GuiMusicPlayer );
    }
-   else
-      Canvas.popDialog( GuiMusicPlayer );
 }
 
 //---------------------------------------------------------------------------------------------
@@ -80,9 +84,7 @@ function GuiMusicPlayer_onSFXSourceStatusChange( %id, %status )
 
 function GuiMusicPlayerClass::play( %this )
 {
-   if( %this.status $= "Stopped"
-       || %this.status $= "Paused"
-       || %this.status $= "" )
+   if( %this.status $= "Stopped" || %this.status $= "Paused" || %this.status $= "" )
    {
       %isPlaying = true;
       if( %this.status $= "Paused" && isObject( %this.sfxSource ) )
@@ -137,8 +139,7 @@ function GuiMusicPlayerClass::play( %this )
 
 function GuiMusicPlayerClass::stop( %this )
 {
-   if( %this.status $= "Playing"
-       || %this.status $= "Paused" )
+   if( %this.status $= "Playing" || %this.status $= "Paused" )
    {
       if( isObject( %this.sfxSource ) )
          %this.sfxSource.stop( 0 ); // Stop immediately.
@@ -174,25 +175,38 @@ function GuiMusicPlayerClass::pause( %this )
 
 function GuiMusicPlayerClass::seek( %this, %playtime )
 {
-   if( ( %this.status $= "Playing"
-         || %this.status $= "Paused" )
-       && isObject( %this.sfxSource ) )
+   if( ( %this.status $= "Playing" || %this.status $= "Paused" ) && isObject( %this.sfxSource ) )
       %this.sfxSource.setPosition( %playtime );
 }
 
 function GuiMusicPlayer::onWake( %this )
 {
    GuiMusicPlayerMusicList.load();
+
+   if ( isObject( hudMap ) )
+   {
+      hudMap.pop();
+      hudMap.delete();
+   }
+   new ActionMap( hudMap );
+   hudMap.blockBind( moveMap, bringUpOptions );
+   hudMap.blockBind( moveMap, toggleTeamChoose );
+   hudMap.blockBind( moveMap, showScoreBoard );
+   hudMap.push();
+}
+
+function GuiMusicPlayer::onSleep(%this)
+{
+   // Make sure the proper key maps are pushed
+   tge.updateKeyMaps();
 }
 
 function GuiMusicPlayerMusicListClass::load( %this )
 {
    // Remove all the files currently in the list.
-   
    %this.clearItems();
    
    // Find the file matching pattern we should use.
-   
    %filePattern = $pref::GuiMusicPlayer::filePattern;
    %sfxProvider = getWord( sfxGetDeviceInfo(), 0 );
    %filePatternVarName = "$pref::GuiMusicPlayer::filePattern" @ %sfxProvider;
@@ -200,11 +214,12 @@ function GuiMusicPlayerMusicListClass::load( %this )
       eval( "%filePattern = " @ %filePatternVarName @ ";" );
       
    // Find all files matching the pattern.
-      
-   for( %file = findFirstFileMultiExpr( %filePattern );
-        %file !$= "";
-        %file = findNextFileMultiExpr( %filePattern ) )
+   %search = "art/music/"@%filePattern;
+   for( %file = findFirstFileMultiExpr( %search ); %file !$= ""; %file = findNextFileMultiExpr( %search ) )
       %this.addItem( makeRelativePath( %file, getMainDotCsDir() ) );
+
+//   for( %file = findFirstFileMultiExpr( %filePattern ); %file !$= ""; %file = findNextFileMultiExpr( %filePattern ) )
+//      %this.addItem( makeRelativePath( %file, getMainDotCsDir() ) );
 }
 
 function GuiMusicPlayerMusicList::onDoubleClick( %this )
@@ -228,12 +243,10 @@ function GuiMusicPlayerScrubberClass::setup( %this, %totalPlaytime )
 
 function GuiMusicPlayerScrubberClass::update( %this )
 {   
-   if( GuiMusicPlayer.status $= "Playing"
-       && !%this.isBeingDragged )
+   if( GuiMusicPlayer.status $= "Playing" && !%this.isBeingDragged )
       %this.setValue( GuiMusicPlayer.sfxSource.getPosition() );
 
-   if( GuiMusicPlayer.status $= "Playing"
-       || GuiMusicPlayer.status $= "Paused" )
+   if( GuiMusicPlayer.status $= "Playing" || GuiMusicPlayer.status $= "Paused" )
       %this.schedule( 5, "update" );
 }
 

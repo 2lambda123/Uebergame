@@ -378,8 +378,7 @@ else
       
       echo("Xbox360 Autoloading level: '" @ %mission @ "'");
       
-      
-      if ($pref::HostMultiPlayer)
+      if ($pref::Server::Multiplayer)
          %serverType = "MultiPlayer";
       else
          %serverType = "SinglePlayer";

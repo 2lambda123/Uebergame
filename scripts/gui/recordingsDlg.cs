@@ -95,7 +95,7 @@ function startDemoRecord()
 
    $DemoFileName = %file;
 
-   ChatHud.AddLine( "\c4Recording to file [\c2" @ $DemoFileName @ "\cr].");
+   ChatHud.AddLine( "\c4Recording to file \c2[" @ $DemoFileName @ "\cr]");
 
    ServerConnection.prepDemoRecord();
    ServerConnection.startRecording($DemoFileName);
@@ -104,7 +104,7 @@ function startDemoRecord()
    if(!ServerConnection.isDemoRecording())
    {
       deleteFile($DemoFileName);
-      ChatHud.AddLine( "\c3 *** Failed to record to file [\c2" @ $DemoFileName @ "\cr].");
+      ChatHud.AddLine( "\c3 *** Failed to record to file \c2[" @ $DemoFileName @ "\cr]");
       $DemoFileName = "";
    }
 }
@@ -114,7 +114,7 @@ function stopDemoRecord()
    // make sure we are recording
    if(ServerConnection.isDemoRecording())
    {
-      ChatHud.AddLine( "\c4Recording file [\c2" @ $DemoFileName @ "\cr] finished.");
+      ChatHud.AddLine( "\c4Recording file \c2[" @ $DemoFileName @ "\cr] \c4finished.");
       ServerConnection.stopRecording();
    }
 }

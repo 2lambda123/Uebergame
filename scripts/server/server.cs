@@ -52,7 +52,7 @@ function Torque::initServer(%this)
    exec("./kickban.cs");
    exec("./camera.cs");
    exec("./centerPrint.cs");
-   exec("./library/library.cs");
+   exec("./library.cs");
 }
 
 //-----------------------------------------------------------------------------
@@ -183,74 +183,108 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 
    // GameStartTime is the sim time the game started. Used to calculate game elapsed time.
    $Game::StartTime = 0;
-   
+
    exec("./antispam.cs");
+   exec("./fireTeam.cs");
    exec("./damageTypes.cs");
    exec("./shapeBase.cs");
    exec("./cameraData.cs");
+   exec("./deployables.cs");
+   exec("./power.cs");
    
    // Create the server physics world.
    physicsInitWorld( "server" );
-   
+
    // Load SMS Utilities  -Yardik-
    echo("<>>>> LOADING SMS <<<<>");
    exec("./sms.cs");
 
-   // Exec server scripts
-   
-   exec("./camera.cs");
-   exec("./triggers.cs");
-   exec("./shapeBase.cs");
-   exec("./items/item.cs");
-   exec("./items/health.cs");
-   exec("./weapons/projectile.cs");
-   exec("./radiusDamage.cs");
-   exec("./teleporter.cs");
-   exec("./weapons/weapon.cs");
-   exec("./weapons/proximityMine.cs");
-   exec("./player.cs");
-   exec("./aiClient.cs");
-   exec("./aiPlayer.cs");
-   exec("./vehicles/vehicle.cs");
-   exec("./vehicles/vehicleWheeled.cs");
-   exec("./vehicles/cheetah.cs");
-   exec("./weapons/turret.cs");
-   
-   
-   // Exec Datablocks
-   exec("./cameraData.cs");
-   exec("./markers.cs");
-   exec("./defaultparticle.cs");
-   
-   exec("./lights.cs");
-   exec("./particles.cs");
-   exec("./environment.cs");
-   exec("./rigidShape.cs");
-   exec("./items/healthData.cs");
-   exec("./weapons/sfx/weaponfx.cs");
-   exec("./weapons/sfx/grenadefx.cs");
-   exec("./weapons/sfx/weapons/rocketfx.cs");
-   exec("./weapons/sfx/weapons/bulletImpact.cs");
-   exec("./weapons/default/Lurker.cs");
-   exec("./weapons/default/Ryder.cs");
-   exec("./weapons/default/ProxMine.cs");
-   exec("./weapons/default/Turret.cs");
-   exec("./weapons/paintball/PaintballMarkerBlue.cs");
-   exec("./weapons/paintball/PaintballMarkerRed.cs");
-   exec("./weapons/paintball/PaintballMarkerGreen.cs");
-   exec("./weapons/paintball/PaintballMarkerYellow.cs");
-   exec("./playerData.cs");
-   exec("./aiPlayer.cs");
-   exec("./vehicles/defaultCar.cs");
-   exec("./vehicles/cheetahCar.cs");
-
-   %datablockFiles = new ArrayObject();
+   // Load up any objects or datablocks
+      %datablockFiles = new ArrayObject();
    %datablockFiles.add( "art/particles/managedParticleData.cs" );
    %datablockFiles.add( "art/particles/managedParticleEmitterData.cs" );
    %datablockFiles.add( "art/decals/managedDecalData.cs" );
-   %datablockFiles.add( "scripts/server/managedDatablocks.cs" );
-   %datablockFiles.add( "art/forest/managedItemData.cs" );   
+   %datablockFiles.add( "art/datablocks/managedDatablocks.cs" );
+   %datablockFiles.add( "art/forest/managedItemData.cs" );
+   %datablockFiles.add( "art/datablocks/datablockExec.cs" );   
    loadDatablockFiles( %datablockFiles, true );
+   
+   exec("./audioProfiles.cs");
+   exec("./defaultEmitters.cs");
+   exec("./explosions/smallExplosion.cs");
+   exec("./explosions/mediumExplosion.cs");
+   exec("./explosions/largeExplosion.cs");
+   exec("./explosions/bulletExplosion.cs");
+   exec("./explosions/grenadeExplosion.cs");
+   exec("./explosions/mineExplosion.cs");
+
+   exec("./markers.cs");
+   exec("./triggers.cs");
+   exec("./player.cs");
+   exec("./aiClient.cs");
+   exec("./aiPlayer.cs");
+   exec("./environment.cs");
+   exec("./lights.cs");
+
+   // Static Shapes
+   exec("./staticshapes/staticShape.cs");
+//   exec("./staticshapes/crates.cs");
+//   exec("./staticshapes/doors.cs");
+   exec("./staticshapes/flagstand.cs");
+
+   // Rigid Shapes
+//   exec("./rigidshapes/rigidShape.cs");
+//   exec("./rigidshapes/crates.cs"); // Uses some player particle data
+//   exec("./rigidshapes/boulder.cs");
+//   exec("./rigidshapes/barrels.cs");
+
+   // items - Must be loaded before weapons, holds defaults
+   exec("./items/item.cs");
+   exec("./items/ammoBox.cs");
+   exec("./items/healthPatch.cs");
+   exec("./items/healthKit.cs");
+   exec("./items/armoryCrate.cs");
+   exec("./items/flag.cs");
+
+   exec("./grenades/grenade.cs");
+   exec("./grenades/smokeGrenade.cs");
+   exec("./grenades/tripMine.cs");
+   exec("./grenades/timeBomb.cs");
+
+   // Turrets
+   exec("./weapons/turret.cs");
+   exec("./weapons/sentryTurret.cs");
+
+   //weapons
+   exec("./weapon.cs");
+   exec("./radiusDamage.cs");
+   exec("./weapons/ryder.cs");
+   exec("./weapons/lurker.cs");
+   exec("./weapons/shotgun.cs");
+   exec("./weapons/sniperRifle.cs");
+   exec("./weapons/grenadeLauncher.cs");
+   //exec("./weapons/rocketLauncher.cs"); //needs model and fix
+   exec("./weapons/PaintballMarkerBlue.cs");
+   exec("./weapons/PaintballMarkerRed.cs");
+   exec("./weapons/PaintballMarkerGreen.cs");
+   exec("./weapons/PaintballMarkerYellow.cs");
+	  
+   exec("./weapons/proximityMine.cs");
+   //exec("./weapons/deployedTurret.cs");
+
+   exec("./specials/munitionsPack.cs");
+   exec("./specials/firstAidPack.cs");
+   exec("./specials/turretPack.cs");
+   exec("./specials/shapeCharge.cs");
+   //exec("./specials/vehiclePack.cs"); //needs proper vehicle first
+   //exec("./specials/platform.cs"); //fix it
+
+   // Vehicles
+   exec("./vehicles/vehicle.cs");
+   exec("./vehicles/vehicleEffects.cs");
+   exec("./vehicles/cheetahCar.cs"); // Load first, the rest of the vehicle use it's sound DB's for now
+//   exec("./vehicles/talonFighter.cs");
+//   exec("./vehicles/gravatron.cs");
 
    // Init the SMS functions -Yardik-
    SmsInv.SetupMaxWeapons();
@@ -261,15 +295,16 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    SmsInv.SetupMaxMines();
 
    exec("./inventory.cs");
-   // Game files
-   exec("./gameTypes/CoreGame.cs"); // Parent to all, want this loaded first
 
-   %search = "./gameTypes/*Game.cs";
+   // Game files
+   exec("./gametypes/CoreGame.cs"); // Parent to all, want this loaded first
+
+   %search = "./gametypes/*Game.cs";
    for(%file = findFirstFile(%search); %file !$= ""; %file = findNextFile(%search))
    {
      %type = fileBase(%file);
      if(%type !$= CoreGame)
-        exec("./gameTypes/" @ %type @ ".cs");
+        exec("./gametypes/" @ %type @ ".cs");
    }
 
    // Mission scripting support. Auto-execute files - Temporary until I figure out how to just exe the mapscript in the proper dir itself

@@ -20,6 +20,1059 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// Timeouts for corpse deletion.
+$CorpseTimeoutValue = 10 * 1000;
+$InvincibleTime = 3 * 1000;
+
+// Damage Rate for entering Liquid
+$DamageLava       = 0.01;
+$DamageHotLava    = 0.01;
+$DamageCrustyLava = 0.01;
+
+// Death Animations
+$PlayerDeathAnim::Death1 = 1;
+$PlayerDeathAnim::Death2 = 2;
+//$PlayerDeathAnim::TorsoBackFallForward = 3;
+//$PlayerDeathAnim::TorsoLeftSpinDeath = 4;
+//$PlayerDeathAnim::TorsoRightSpinDeath = 5;
+//$PlayerDeathAnim::LegsLeftGimp = 6;
+//$PlayerDeathAnim::LegsRightGimp = 7;
+//$PlayerDeathAnim::TorsoBackFallForward = 8;
+//$PlayerDeathAnim::HeadFrontDirect = 9;
+//$PlayerDeathAnim::HeadBackFallForward = 10;
+//$PlayerDeathAnim::ExplosionBlowBack = 11;
+
+//$player::jumpTrigger = 2;
+//$player::crouchTrigger = 3;
+//$player::proneTrigger = 4;
+//$player::sprintTrigger = 5;
+//$player::jumpJetTrigger = 1;
+//$player::imageTrigger0 = 0;
+//$player::imageTrigger1 = 1;
+//$player::maxImpulseVelocity = 
+//$player::maxPredictionTicks = 
+//$player::minWarpTicks = 
+//$player::maxWarpTicks = 
+//$player::renderCollision = 
+//$player::renderMyItems = 
+//$player::renderMyPlayer =
+//$Player::Gravity =
+
+//----------------------------------------------------------------------------
+// Player Audio Profiles
+//----------------------------------------------------------------------------
+
+datablock SFXProfile(DeathCrySound)
+{
+   fileName = "art/sound/player/pain/orc_death";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(PainCrySound)
+{
+   fileName = "art/sound/player/pain/orc_pain";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(PainCrySound1)
+{
+   fileName = "art/sound/player/pain/orc_pain";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(PainCrySound2)
+{
+   fileName = "art/sound/player/pain/orc_pain";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXPlayList(PainCrySoundList)
+{
+   // Use a looped description so the list playback will loop.
+   description = AudioClosest3D;
+
+   track[ 0 ] = PainCrySound0;
+   track[ 1 ] = PainCrySound1;
+   track[ 2 ] = PainCrySound2;
+};
+
+//----------------------------------------------------------------------------
+
+datablock SFXProfile(FootLightSoftSound)
+{
+   filename    = "art/sound/footsteps/lgtStep_mono_01";
+   description = AudioClosest3D;
+   preload = true;
+};
+datablock SFXPlayList(FootLightSoftSoundList)
+{
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
+   track[0] = "FootLightSoftSound";
+   track[1] = "FootLightSoftSound";
+   track[2] = "FootLightSoftSound";
+   track[3] = "FootLightSoftSound";
+   pitchScaleVariance[0] = "-0.1 0.2";
+   volumeScaleVariance[0] = "-0.2 0";
+   pitchScaleVariance[1] = "-0.1 0.2";
+   volumeScaleVariance[1] = "-0.2 0";
+   pitchScaleVariance[2] = "-0.1 0.2";
+   volumeScaleVariance[2] = "-0.2 0";
+   pitchScaleVariance[3] = "-0.1 0.2";
+   volumeScaleVariance[3] = "-0.2 0";
+};
+
+datablock SFXProfile(FootLightHardSound)
+{
+   filename    = "art/sound/footsteps/hvystep_ mono_01";
+   description = AudioClosest3D;
+   preload = true;
+};
+datablock SFXPlayList(FootLightHardSoundList)
+{
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
+   track[0] = "FootLightHardSound";
+   track[1] = "FootLightHardSound";
+   track[2] = "FootLightHardSound";
+   track[3] = "FootLightHardSound";
+   pitchScaleVariance[0] = "-0.2 0.2";
+   pitchScaleVariance[1] = "-0.2 0.2";
+   pitchScaleVariance[2] = "-0.2 0.2";
+   pitchScaleVariance[3] = "-0.2 0.2";
+};
+
+datablock SFXProfile(FootLightMetalSound)
+{
+   filename    = "art/sound/footsteps/metalstep_mono_01";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(FootLightSnowSound)
+{
+   filename    = "art/sound/footsteps/snowstep_mono_01";
+   description = AudioClosest3D;
+   preload = true;
+};
+
+datablock SFXProfile(FootLightShallowSplashSound)
+{
+   filename    = "art/sound/footsteps/waterstep_mono_01";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(FootLightWadingSound)
+{
+   filename    = "art/sound/footsteps/waterstep_mono_01";
+   description = AudioClose3D;
+   preload = true;
+};
+
+datablock SFXProfile(FootLightUnderwaterSound)
+{
+   filename    = "art/sound/footsteps/waterstep_mono_01";
+   description = AudioClosest3D;
+   preload = true;
+};
+
+//----------------------------------------------------------------------------
+/* broken
+datablock SFXProfile(ImpactLightSoftSound)
+{
+   filename    = "art/sound/player/pain/orc_death";
+   description = AudioClose3D;
+   preload = true;
+};
+*/
+datablock SFXProfile(ImpactLightHardSound)
+{
+   filename    = "art/sound/impacts/impact_concrete_01";
+   description = AudioClose3D;
+   preload = true;
+};
+
+//----------------------------------------------------------------------------
+// Splash
+//----------------------------------------------------------------------------
+
+datablock ParticleData(PlayerSplashMist)
+{
+   dragCoefficient      = 2.0;
+   gravityCoefficient   = -0.05;
+   inheritedVelFactor   = 0.0;
+   constantAcceleration = 0.0;
+   lifetimeMS           = 400;
+   lifetimeVarianceMS   = 100;
+   useInvAlpha          = false;
+   spinRandomMin        = -90.0;
+   spinRandomMax        = 500.0;
+   textureName          = "art/shapes/actors/common/splash";
+   colors[0]     = "0.7 0.8 1.0 1.0";
+   colors[1]     = "0.7 0.8 1.0 0.5";
+   colors[2]     = "0.7 0.8 1.0 0.0";
+   sizes[0]      = 0.5;
+   sizes[1]      = 0.5;
+   sizes[2]      = 0.8;
+   times[0]      = 0.0;
+   times[1]      = 0.5;
+   times[2]      = 1.0;
+};
+
+datablock ParticleEmitterData(PlayerSplashMistEmitter)
+{
+   ejectionPeriodMS = 5;
+   periodVarianceMS = 0;
+   ejectionVelocity = 3.0;
+   velocityVariance = 2.0;
+   ejectionOffset   = 0.0;
+   thetaMin         = 85;
+   thetaMax         = 85;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   lifetimeMS       = 250;
+   particles = "PlayerSplashMist";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+
+datablock ParticleData(PlayerBubbleParticle)
+{
+   dragCoefficient      = 0.0;
+   gravityCoefficient   = -0.50;
+   inheritedVelFactor   = 0.0;
+   constantAcceleration = 0.0;
+   lifetimeMS           = 400;
+   lifetimeVarianceMS   = 100;
+   useInvAlpha          = false;
+   textureName          = "art/shapes/actors/common/splash";
+   colors[0]     = "0.7 0.8 1.0 0.4";
+   colors[1]     = "0.7 0.8 1.0 0.4";
+   colors[2]     = "0.7 0.8 1.0 0.0";
+   sizes[0]      = 0.1;
+   sizes[1]      = 0.3;
+   sizes[2]      = 0.3;
+   times[0]      = 0.0;
+   times[1]      = 0.5;
+   times[2]      = 1.0;
+};
+
+datablock ParticleEmitterData(PlayerBubbleEmitter)
+{
+   ejectionPeriodMS = 1;
+   periodVarianceMS = 0;
+   ejectionVelocity = 2.0;
+   ejectionOffset   = 0.5;
+   velocityVariance = 0.5;
+   thetaMin         = 0;
+   thetaMax         = 80;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   particles = "PlayerBubbleParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+datablock ParticleData(PlayerFoamParticle)
+{
+   dragCoefficient      = 2.0;
+   gravityCoefficient   = -0.05;
+   inheritedVelFactor   = 0.1;
+   constantAcceleration = 0.0;
+   lifetimeMS           = 600;
+   lifetimeVarianceMS   = 100;
+   useInvAlpha          = false;
+   spinRandomMin        = -90.0;
+   spinRandomMax        = 500.0;
+   textureName          = "art/particles/millsplash01";
+   colors[0]     = "0.7 0.8 1.0 0.20";
+   colors[1]     = "0.7 0.8 1.0 0.20";
+   colors[2]     = "0.7 0.8 1.0 0.00";
+   sizes[0]      = 0.2;
+   sizes[1]      = 0.4;
+   sizes[2]      = 1.6;
+   times[0]      = 0.0;
+   times[1]      = 0.5;
+   times[2]      = 1.0;
+};
+
+datablock ParticleEmitterData(PlayerFoamEmitter)
+{
+   ejectionPeriodMS = 10;
+   periodVarianceMS = 0;
+   ejectionVelocity = 3.0;
+   velocityVariance = 1.0;
+   ejectionOffset   = 0.0;
+   thetaMin         = 85;
+   thetaMax         = 85;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   particles = "PlayerFoamParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+
+datablock ParticleData( PlayerFoamDropletsParticle )
+{
+   dragCoefficient      = 1;
+   gravityCoefficient   = 0.2;
+   inheritedVelFactor   = 0.2;
+   constantAcceleration = -0.0;
+   lifetimeMS           = 600;
+   lifetimeVarianceMS   = 0;
+   textureName          = "art/shapes/actors/common/splash";
+   colors[0]     = "0.7 0.8 1.0 1.0";
+   colors[1]     = "0.7 0.8 1.0 0.5";
+   colors[2]     = "0.7 0.8 1.0 0.0";
+   sizes[0]      = 0.8;
+   sizes[1]      = 0.3;
+   sizes[2]      = 0.0;
+   times[0]      = 0.0;
+   times[1]      = 0.5;
+   times[2]      = 1.0;
+};
+
+datablock ParticleEmitterData( PlayerFoamDropletsEmitter )
+{
+   ejectionPeriodMS = 7;
+   periodVarianceMS = 0;
+   ejectionVelocity = 2;
+   velocityVariance = 1.0;
+   ejectionOffset   = 0.0;
+   thetaMin         = 60;
+   thetaMax         = 80;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   orientParticles  = true;
+   particles = "PlayerFoamDropletsParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+datablock ParticleData( PlayerWakeParticle )
+{
+   textureName          = "art/particles/wake";
+   dragCoefficient     = "0.0";
+   gravityCoefficient   = "0.0";
+   inheritedVelFactor   = "0.0";
+   lifetimeMS           = "2500";
+   lifetimeVarianceMS   = "200";
+   windCoefficient = "0.0";
+   useInvAlpha = "1";
+   spinRandomMin = "30.0";
+   spinRandomMax = "30.0";
+
+   animateTexture = true;
+   framesPerSec = 1;
+   animTexTiling = "2 1";
+   animTexFrames = "0 1";
+
+   colors[0]     = "1 1 1 0.1";
+   colors[1]     = "1 1 1 0.7";
+   colors[2]     = "1 1 1 0.3";
+   colors[3]     = "0.5 0.5 0.5 0";
+
+   sizes[0]      = "1.0";
+   sizes[1]      = "2.0";
+   sizes[2]      = "3.0";
+   sizes[3]      = "3.5";
+
+   times[0]      = "0.0";
+   times[1]      = "0.25";
+   times[2]      = "0.5";
+   times[3]      = "1.0";
+};
+
+datablock ParticleEmitterData( PlayerWakeEmitter )
+{
+   ejectionPeriodMS = "200";
+   periodVarianceMS = "10";
+
+   ejectionVelocity = "0";
+   velocityVariance = "0";
+
+   ejectionOffset   = "0";
+
+   thetaMin         = "89";
+   thetaMax         = "90";
+
+   phiReferenceVel  = "0";
+   phiVariance      = "1";
+
+   alignParticles = "1";
+   alignDirection = "0 0 1";
+
+   particles = "PlayerWakeParticle";
+};
+
+datablock ParticleData( PlayerSplashParticle )
+{
+   dragCoefficient      = "0.997067";
+   gravityCoefficient   = "0.197803";
+   inheritedVelFactor   = "0.199609";
+   constantAcceleration = "0";
+   lifetimeMS           = 600;
+   lifetimeVarianceMS   = 0;
+   colors[0]     = "0.692913 0.795276 1 1";
+   colors[1]     = "0.692913 0.795276 1 0.496063";
+   colors[2]     = "0.692913 0.795276 1 0";
+   sizes[0]      = "0.497467";
+   sizes[1]      = "0.497467";
+   sizes[2]      = "0.497467";
+   times[0]      = 0.0;
+   times[1]      = "0.498039";
+   times[2]      = 1.0;
+   textureName = "art/particles/splash.png";
+   animTexName = "art/particles/splash.png";
+};
+
+datablock ParticleEmitterData( PlayerSplashEmitter )
+{
+   ejectionPeriodMS = 1;
+   periodVarianceMS = 0;
+   ejectionVelocity = 3;
+   velocityVariance = 1.0;
+   ejectionOffset   = 0.0;
+   thetaMin         = 60;
+   thetaMax         = 80;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   orientParticles  = true;
+   lifetimeMS       = 100;
+   particles = "PlayerSplashParticle";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+datablock SplashData(PlayerSplash)
+{
+   numSegments = 15;
+   ejectionFreq = 15;
+   ejectionAngle = 40;
+   ringLifetime = 0.5;
+   lifetimeMS = 300;
+   velocity = 4.0;
+   startRadius = 0.0;
+   acceleration = -3.0;
+   texWrap = 5.0;
+
+   texture = "art/particles/millsplash01";
+
+   emitter[0] = PlayerSplashEmitter;
+   emitter[1] = PlayerSplashMistEmitter;
+
+   colors[0] = "0.7 0.8 1.0 0.0";
+   colors[1] = "0.7 0.8 1.0 0.3";
+   colors[2] = "0.7 0.8 1.0 0.7";
+   colors[3] = "0.7 0.8 1.0 0.0";
+   times[0] = 0.0;
+   times[1] = 0.4;
+   times[2] = 0.8;
+   times[3] = 1.0;
+};
+
+//----------------------------------------------------------------------------
+// Foot puffs
+//----------------------------------------------------------------------------
+
+datablock ParticleData(LightPuff)
+{
+   dragCoefficient      = "1.99902";
+   gravityCoefficient   = "0.0170946";
+   inheritedVelFactor   = "0.598826";
+   constantAcceleration = 0.0;
+   lifetimeMS           = 800;
+   lifetimeVarianceMS   = 100;
+   useInvAlpha          = true;
+   spinRandomMin        = -35.0;
+   spinRandomMax        = 35.0;
+   colors[0]     = "0.854902 0.854902 0.854902 1";
+   colors[1]     = "0.815686 0.803922 0.745098 0";
+   colors[2]     = "0.835294 0.835294 0.835294 1";
+   sizes[0]      = "0.0976622";
+   sizes[1]      = "0.799609";
+   sizes[2]      = "1";
+   times[0]      = "0";
+   times[1]      = 1.0;
+   times[2]      = 1.0;
+   textureName = "art/particles/dustParticle.png";
+   animTexName = "art/particles/dustParticle.png";
+
+};
+
+datablock ParticleEmitterData(LightPuffEmitter)
+{
+   ejectionPeriodMS = 35;
+   periodVarianceMS = 10;
+   ejectionVelocity = 0.2;
+   velocityVariance = 0.1;
+   ejectionOffset   = 0.0;
+   thetaMin         = 20;
+   thetaMax         = 60;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   useEmitterColors = true;
+   particles = "LightPuff";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+//----------------------------------------------------------------------------
+// Liftoff dust
+//----------------------------------------------------------------------------
+
+datablock ParticleData(LiftoffDust)
+{
+   dragCoefficient      = "0.997067";
+   gravityCoefficient   = "-0.01221";
+   inheritedVelFactor   = 0.0;
+   constantAcceleration = 0.0;
+   lifetimeMS           = 1000;
+   lifetimeVarianceMS   = 100;
+   useInvAlpha          = true;
+   spinRandomMin        = -90.0;
+   spinRandomMax        = 500.0;
+   colors[0]     = "0.780392 0.74902 0.65098 1";
+   colors[1]     = "0.878431 0.870588 0.835294 1";
+   colors[2]     = "0.784314 0.784314 0.784314 1";
+   sizes[0]      = "0.997986";
+   sizes[1]      = "0.997986";
+   sizes[2]      = "0.997986";
+   times[0]      = "0";
+   times[1]      = "0.329412";
+   times[2]      = "0.658824";
+   textureName = "art/particles/dustParticle";
+   animTexName = "art/particles/dustParticle";
+};
+
+datablock ParticleEmitterData(LiftoffDustEmitter)
+{
+   ejectionPeriodMS = 5;
+   periodVarianceMS = 0;
+   ejectionVelocity = 2.0;
+   velocityVariance = 0.0;
+   ejectionOffset   = 0.0;
+   thetaMin         = 90;
+   thetaMax         = 90;
+   phiReferenceVel  = 0;
+   phiVariance      = 360;
+   overrideAdvance = false;
+   useEmitterColors = true;
+   particles = "LiftoffDust";
+   ambientFactor = "0.5";
+   blendStyle = "NORMAL";
+};
+
+//----------------------------------------------------------------------------
+// Jump Jets
+
+datablock ParticleData(JumpJetParticle)
+{
+   textureName = "art/particles/flameExplosion.png";
+   animTexName = "art/particles/flameExplosion.png";
+
+   dragCoefficient      = 0;
+   gravityCoefficient   = "0.998779";
+   inheritedVelFactor   = "0.199609";
+   constantAcceleration = 0;
+   lifetimeMS           = "150";
+   lifetimeVarianceMS   = 0;
+   useInvAlpha          = false;
+
+   colors[0] = "1 1 1 1";
+   colors[1] = "1 1 1 0.5";
+   colors[2] = "0 1 1 0";
+   colors[3] = "1 1 1 0";
+
+   sizes[0] = "0.5";
+   sizes[1] = "0.75";
+
+   times[0] = "0";
+   times[1] = "0.8";
+   times[2] = "1";
+   times[3] = "1";
+};
+
+datablock ParticleEmitterData(JumpJetEmitter)
+{
+   ejectionPeriodMS = "10";
+   periodVarianceMS = "2";
+   ejectionVelocity = "4";
+   velocityVariance = "0";
+   ejectionOffset   = 0.0;
+   thetaMin         = 0;
+   thetaMax         = 5;
+   phiReferenceVel  = 0;
+   phiVariance      = 90;
+   overrideAdvances = 0;
+   particles        = "JumpJetParticle";
+   blendStyle = "ADDITIVE";
+   softParticles = "1";
+};
+
+//----------------------------------------------------------------------------
+// Player explosion            
+
+datablock DebrisData( PlayerDebris )
+{
+   explodeOnMaxBounce = false;
+   explodeOnMaxBounce = false;
+   staticOnMaxBounce = false;
+   snapOnMaxBounce = false;
+
+   elasticity = 0.15;
+   friction = 0.5;
+
+   lifetime = 6.0;
+   lifetimeVariance = 0.0;
+
+   minSpinSpeed = 40;
+   maxSpinSpeed = 500;
+
+   numBounces = 3;
+   bounceVariance = 1;
+
+   gravModifier = 1.0;
+
+   fade = true;
+   useRadiusMass = true;
+   baseRadius = 1;
+
+   velocity = 5.0;
+   velocityVariance = 2.0;
+
+   terminalVelocity = 20;
+   ignoreWater = false;
+};
+
+datablock ParticleData(PlayerSkullsParticle)
+{
+   textureName = "art/particles/skull01.png";
+   dragCoefficient = 0.4;
+   gravityCoefficient = -0.5;
+   inheritedVelFactor = 1;
+   constantAcceleration = 0;
+   lifetimeMS = 1000;
+   lifetimeVarianceMS = 150;
+
+   colors[0] = "0.56 0.36 0.26 1.0";
+   colors[1] = "0.56 0.36 0.26 1.0";
+   colors[2] = "1.0 0.36 0.26 0.0";
+
+   sizes[0] = 0.5;
+   sizes[1] = 1.0;
+   sizes[2] = 1.5;
+
+   times[0] = 0.0;
+   times[1] = 0.5;
+   times[2] = 1.0;
+};
+
+datablock ParticleEmitterData(PlayerSkullsEmitter)
+{
+   ejectionOffset = 1;
+   ejectionPeriodMS = 100;
+   periodVarianceMS = 25;
+   ejectionVelocity = 2;
+   velocityVariance = 0.25;
+   thetaMax = 180;
+   phiReferenceVel = 0;
+   phiVariance = 360;
+   lifetimeMS = 250;
+   particles = "PlayerSkullsParticle";
+   blendStyle = "NORMAL";
+};
+
+datablock ParticleData(PlayerBloodParticle)
+{
+   textureName        = "art/particles/millsplash01.png";
+   dragCoeffiecient   = 105;
+   gravityCoefficient = "0";
+   inheritedVelFactor = "0.0234834";
+
+   constantAcceleration = -0.80;
+   
+   lifetimeMS         = "1000";
+   lifetimeVarianceMS = 0;
+
+   useInvAlpha   = true;
+   spinRandomMin = "-1";
+   spinRandomMax =  "0";
+
+   colors[0] = "1 0 0 0.496063";
+   colors[1] = "0.5 0 0 0.5";
+   colors[2] = "0.2 0 0 0.25";
+
+   sizes[0] = 1.0;
+   sizes[1] = "2";
+   sizes[2] = "3";
+
+   times[0] = 0.0;
+   times[1] = 0.2;
+   times[2] = 1.0;
+   spinSpeed = "0";
+   animTexName = "art/particles/millsplash01.png";
+   colors[3] = "0.15 0 0 0.5";
+};
+
+datablock ParticleEmitterData(PlayerBloodEmitter)
+{
+   ejectionPeriodMS = "6";
+   periodVarianceMS = 0;
+   ejectionVelocity = "4";
+   velocityVariance = 0.25;
+   thetaMin         = 0.0;
+   thetaMax         = 180.0;
+   lifetimeMS       = 250;
+   particles        = "PlayerBloodParticle";
+   blendStyle = "NORMAL";
+};
+
+datablock ExplosionData(PlayerExplosion)
+{
+   //soundProfile = GrenadeExplosionSound;
+   lifeTimeMS = 500; // Quick flash, short burn, and moderate dispersal
+
+   // Volume particles
+   particleEmitter = PlayerBloodEmitter;
+   particleDensity = 75;
+   particleRadius = 2.25;
+
+   // Point emission
+   emitter[0] = PlayerSkullsEmitter;
+   emitter[1] = PlayerSkullsEmitter;
+
+   shakeCamera = false;
+
+   // Dynamic light
+   lightStartRadius = 10;
+   lightEndRadius = 5;
+   lightStartColor = "0.5 0.0 1.0";
+   lightEndColor = "0.5 0.5 0.5";
+   lightStartBrightness = 5.0;
+   lightEndBrightness = 0.0;
+   lightNormalOffset = 2.0;
+};
+
+//----------------------------------------------------------------------------
+// Damage Impact
+
+datablock ParticleData(BloodSpillParticle)
+{
+   textureName = "art/particles/blood_droplets.png";
+   animTexName[0] = "art/particles/blood_droplets.png";
+
+   dragCoefficient = 1;
+   gravityCoefficient = 0.5;
+   windCoefficient = 1;
+   inheritedVelFactor = 0.5;
+   constantAcceleration = 0;
+   lifetimeMS = 1000;
+   lifetimeVarianceMS = 250;
+   spinRandomMin = -30.0;
+   spinRandomMax = 30.0;
+
+   colors[0] = "0.2 0 0 1";
+   colors[1] = "0.3 0.09 0.09 1";
+
+   sizes[0] = 0.5;
+   sizes[1] = 1.4;
+   sizes[1] = 0;
+   sizes[1] = 0;
+
+   times[0] = 0;
+   times[1] = 1.0;
+   times[2] = 1.0;
+   times[3] = 1.0;
+};
+
+datablock ParticleEmitterData(BloodSpillEmitter)
+{
+   ejectionOffset = 0;
+   ejectionPeriodMS = 5;
+   periodVarianceMS = 2;
+
+   ejectionVelocity = 3;
+   velocityVariance = 1;
+
+   thetaMin = 0.0;
+   thetaMax = 22;
+
+   phiReferenceVel = 0;
+   phiVariance = 90;
+
+   overrideAdvance = 0;
+   orientOnVelocity = 1;
+
+   lifetimeMS = 100;
+   particles = "BloodSpillParticle";
+   softnessDistance = "10";
+   orientParticles = "0";
+   blendStyle = "ADDITIVE";
+   alignParticles = "1";
+   alignDirection = "1 0 0";
+   softParticles = "1";
+};
+
+//----------------------------------------------------------------------------
+
+datablock DecalData(PlayerFootprint)
+{
+   size = "0.35";
+   material = CommonPlayerFootprint;
+   lifeSpan = "16000";
+   fadeTime = "16000";
+   textureCoordCount = "0";
+};
+
+// ----------------------------------------------------------------------------
+// This is our default player datablock that all others will derive from.
+// ----------------------------------------------------------------------------
+
+datablock PlayerData(DefaultSoldier : ArmorDamageScale)
+{
+   className = Armor;
+   cmdCategory = "Clients";
+
+   // Third person shape
+   imageAnimPrefix = "soldier";
+   shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
+   allowImageStateAnimation = true;
+
+   // First person arms
+   imageAnimPrefixFP = "soldier";
+   shapeNameFP[0] = "art/shapes/actors/Soldier/FP/FP_SoldierArms.dts";
+   // available skins (see materials.cs in model folder)
+   availableSkins =  "base	olive	urban	desert	swamp	water	blue	red	green	yellow";
+   computeCRC = false;
+   emap = true;
+   renderFirstPerson = false;
+   firstPersonShadows = true;
+   cloakTexture = "art/particles/cloakTexture.png";
+
+   canObserve = 1;
+   cameraMaxDist = 3;
+   cameraMinDist = 0.2;
+   cameraDefaultFov = "90";
+   cameraMinFov = "5";
+   cameraMaxFov = "120";
+
+   explosion = PlayerExplosion;
+   debrisShapeName = "art/shapes/weapons/grenade/grenadeDebris.dts";
+   debris = playerDebris;
+   
+   throwForce = 30;
+
+   minLookAngle = "-1.5";
+   maxLookAngle = "1.5";
+   maxFreelookAngle = 3.0;
+
+   mass = "100";
+   drag = "1.3";
+   maxdrag = 0.4;
+   density = "1.1";
+   maxDamage = 100;
+   isInvincible = false;
+   renderWhenDestroyed = true;
+   maxEnergy =  "100";
+   repairRate = "0.016";
+   energyPerDamagePoint = 75;
+   inheritEnergyFromMount = 0;
+   rechargeRate = 0.256;
+
+   runForce = "3240";
+   runEnergyDrain = "0.136";
+   minRunEnergy = "0";
+   // value * 2.48 = kph
+   maxForwardSpeed = "4";
+   maxBackwardSpeed = "3";
+   maxSideSpeed = "3";
+
+   sprintForce = "1500";
+   sprintEnergyDrain = "0.512";
+   minSprintEnergy = "1";
+   maxSprintForwardSpeed = "8";
+   maxSprintBackwardSpeed = "4";
+   maxSprintSideSpeed = "5";
+   sprintStrafeScale = "0.5";
+   sprintYawScale = "0.5";
+   sprintPitchScale = "0.5";
+   sprintCanJump = true;
+
+   crouchForce = 405;
+   maxCrouchForwardSpeed = "2";
+   maxCrouchBackwardSpeed = "1";
+   maxCrouchSideSpeed = "1.5";
+
+   proneForce = 405;
+   maxProneForwardSpeed = 3.0;
+   maxProneBackwardSpeed = 1.5;
+   maxProneSideSpeed = 1.5;
+
+   swimForce = "4320";
+   maxUnderwaterForwardSpeed = "1.5";
+   maxUnderwaterBackwardSpeed = "1";
+   maxUnderwaterSideSpeed = "1";
+
+   jumpForce = "720";
+   jumpEnergyDrain = "10";
+   minJumpEnergy = "15";
+   jumpDelay = "3";
+   airControl = "0.3";
+
+   jetJumpForce = 140;
+   jetJumpEnergyDrain = 0.8;    //< Energy per jump
+   jetMinJumpEnergy = 3;
+   jetMinJumpSpeed = 5;
+   jetMaxJumpSpeed = 20;
+   jetJumpSurfaceAngle = 80;   //< Angle vertical degrees
+   airControl = 0.25;
+   jetEmitter = JumpJetEmitter;
+   jetEmitterNumParts = 2;
+   jetEmitterRadius = 0.25;
+
+   fallingSpeedThreshold = "-4";
+   landSequenceTime = "1.2";
+   transitionToLand = "1";
+   recoverDelay = "32";
+   recoverRunForceScale = "0.5";
+
+   minImpactSpeed = "10";
+   minLateralImpactSpeed = 20;
+   speedDamageScale = 3;
+
+   boundingBox = "0.65 0.75 1.85";
+   crouchBoundingBox = "0.65 0.75 1.25";
+   proneBoundingBox = "1 2.3 1";
+   swimBoundingBox = "1 2 2";
+
+   // Damage location details
+   boxHeadPercentage       = 0.83;
+   boxTorsoPercentage      = 0.49;
+   boxHeadLeftPercentage         = 0.30;
+   boxHeadRightPercentage        = 0.60;
+   boxHeadBackPercentage         = 0.30;
+   boxHeadFrontPercentage        = 0.60;
+
+   // Foot Prints
+   footPuffEmitter = "LightPuffEmitter";
+   footPuffNumParts = "5";
+   footPuffRadius = "0.25";
+   DecalData = "PlayerFootprint";
+   decalOffset = 0.25;
+   dustEmitter = "LightPuffEmitter";
+
+   splash = PlayerSplash;
+   splashVelocity = 4.0;
+   splashAngle = 67.0;
+   splashFreqMod = 300.0;
+   splashVelEpsilon = 0.60;
+   bubbleEmitTime = 0.4;
+   splashEmitter[0] = PlayerWakeEmitter;
+   splashEmitter[1] = PlayerFoamEmitter;
+   splashEmitter[2] = PlayerBubbleEmitter;
+   mediumSplashSoundVelocity = 10.0;
+   hardSplashSoundVelocity = 20.0;
+   exitSplashSoundVelocity = 5.0;
+   footstepSplashHeight = 0.35;
+
+   // Controls over slope of runnable/jumpable surfaces
+   runSurfaceAngle  = 38;
+   jumpSurfaceAngle = "80";
+   maxStepHeight = 0.35;  //two meters
+   minJumpSpeed = 20;
+   maxJumpSpeed = 30;
+
+   horizMaxSpeed = 68;
+   horizResistSpeed = 33;
+   horizResistFactor = 0.35;
+
+   upMaxSpeed = 80;
+   upResistSpeed = 25;
+   upResistFactor = 0.3;
+
+
+
+   //NOTE:  some sounds commented out until wav's are available
+
+   // Footstep Sounds
+   FootSoftSound        = FootLightSoftSoundList;
+   FootHardSound        = FootLightHardSoundList;
+   FootMetalSound       = FootLightMetalSound;
+   FootSnowSound        = FootLightSnowSound;
+   FootShallowSound     = FootLightShallowSplashSound;
+   FootWadingSound      = FootLightWadingSound;
+   FootUnderwaterSound  = FootLightUnderwaterSound;
+
+   //FootBubblesSound     = FootLightBubblesSound;
+   //movingBubblesSound   = ArmorMoveBubblesSound;
+   //waterBreathSound     = WaterBreathMaleSound;
+
+   impactSoftSound      = ImpactLightSoftSound;
+   impactHardSound      = ImpactLightHardSound;
+   //impactMetalSound     = ImpactLightMetalSound;
+   //impactSnowSound      = ImpactLightSnowSound;
+
+   //impactWaterEasy      = ImpactLightWaterEasySound;
+   //impactWaterMedium    = ImpactLightWaterMediumSound;
+   //impactWaterHard      = ImpactLightWaterHardSound;
+
+   //JetJumpSound         = PlayerJumpJetSound;
+
+   groundImpactMinSpeed    = "4.1";
+   groundImpactShakeFreq   = "3 3 3";
+   groundImpactShakeAmp    = "1.0 1.0 1.0";
+   groundImpactShakeDuration = "1";
+   groundImpactShakeFalloff = 10.0;
+
+   //exitingWater         = ExitingWaterLightSound;
+
+   observeParameters = "0.5 4.5 4.5";
+
+   pickupRadius = 1;
+
+
+   // Allowable Inventory Items
+
+   maxWeapons = 1;
+   maxSpecials = 1;
+   maxGrenades = 1;
+   maxMines = 1;
+
+   // Radius damage
+   canImpulse = true;
+
+   // Used by AI
+   MoveSpeed = 0.5;          // You could call this the AI's throttle 1 = 100% throttle.
+   MoveTolerance = 1;        // Distance from target position that is accepted as "reached"
+
+
+   jumpTowardsNormal = "1";
+   shadowSize = "512";
+};
+
+//-----------------------------------------------------------------------------
+// SMS
+//            |Datablock|     |$SMS::ArmorName|     |Index|
+SmsInv.AddArmor( DefaultSoldier, "Soldier", 0 );
+
 //----------------------------------------------------------------------------
 // Drowning script
 //----------------------------------------------------------------------------
@@ -113,7 +1166,7 @@ function Armor::onAdd(%this, %obj)
    // Default dynamic armor stats
    %obj.setEnergyLevel( %this.maxEnergy );
    %obj.setRechargeRate( %this.rechargeRate );
-   %obj.setRepairRate(0);
+   %obj.setRepairRate( %this.repairRate );
 
    // If the player's client has some owned turrets, make sure we let them
    // know that we're a friend too.
@@ -426,9 +1479,9 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
             }
         }
    }
-      
+      /*
    %particles = new ParticleEmitterNode()   
-   {  
+{
       position = %position;  
       rotation = "1 0 0 0";  
       scale = "1 1 1";  
@@ -437,14 +1490,14 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
       velocity = "1";  
    };  
    MissionCleanup.add(%particles);  
-   %particles.schedule(1000, "delete");
+   %particles.schedule(1000, "delete"); */
 }
 
 //----------------------------------------------------------------------------
 
 function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
 {
-   LogEcho("Armor::damage(" SPC %this.getName() @", "@ %obj.getClassname() @", "@ %source.getClassname() @", "@ %position @", "@ %damage @", "@ $DamageText[%damageType] SPC ")");
+   LogEcho("Armor::damage(" SPC %this.getName() @", "@ %obj.getClassname() @", "@ %source.getClassname() @", "@ %position @", "@ %amount @", "@ $DamageText[%damageType] SPC ")");
 
    // The source is either the object that produced the damage or the objects owner
    if ( !isObject( %obj ) || %obj.invincible || %obj.getState() $= "Dead" )
@@ -491,25 +1544,26 @@ function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
             return;
       }
    }
-   // locational damage modifier start
+   
    if ( %obj.isShielded && %obj.scriptKilled $= "" )
-      %amount = %obj.imposeShield( %position, %amount, %damageType ); // Resides in shapeBase.cs
+      %damage = %obj.imposeShield( %position, %damage, %damageType ); // Resides in shapeBase.cs
 
    %damageScale = %this.damageScale[%damageType];
    if ( %damageScale !$= "" )
-      %amount *= %damageScale;
-  
+      %damage *= %damageScale;
+   
+   // locational damage modifier start
       if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
       return;    
  
    %location = %obj.getDamageLocation(%position);//"Body";
    %bodyPart = getWord(%location, 0);
    %region = getWord(%location, 1);
-   echo(%obj @" \c4% DAMAGELOCATION:  bodyPart = "@ %bodyPart @" || REGION = "@ %region);
+   //echo(%obj @" \c4% DAMAGELOCATION:  bodyPart = "@ %bodyPart @" || REGION = "@ %region);
    switch$ (%bodyPart)
    {
       case "head":
-         %damage = %damage*2.5; // 2,5 times the damage for a headshot
+         %damage = %damage*2; // 2 times the damage for a headshot
       case "torso":
       case "legs":
          %damage = %damage/1.6; // about two third damage for legs
@@ -625,8 +1679,8 @@ function Armor::onDisabled(%this, %player, %state)
    %player.playDeathAnimation();
    %player.setDamageFlash(0.70);
 
-   //if( isObject( %player ) ) //we have no shape names atm
-   //   %player.setShapeName("");
+   if( isObject( %player ) )
+      %player.setShapeName("");
 
    // Clear some possible goings on
    %player.setRepairRate(0);
@@ -674,10 +1728,10 @@ function Armor::onDisabled(%this, %player, %state)
    }
 
    // Remove warning Gui in case the player was outside the mission area when he died
-   Canvas.popDialog (missionAreaWarningHud);
+   //Canvas.popDialog (missionAreaWarningHud); //broken
    
    // Schedule corpse fade out
-   %obj.schedule($CorpseTimeoutValue - 3000, "startFade", 3000, 0, true);
+   %player.schedule( $CorpseTimeoutValue - 3000, "startFade", 3000, 0, true );
 
    // Schedule corpse removal.  Just keeping the place clean.
    %player.schedule( $CorpseTimeoutValue, "delete" );
@@ -715,12 +1769,12 @@ function Armor::onLeaveMissionArea(%this, %obj)
    %obj.outOfBounds = true;
 
    // Hand it off to the game object
-   //Game.onLeaveMissionArea(%obj);
+   Game.onLeaveMissionArea(%obj);
    
-   Canvas.pushDialog (missionAreaWarningHud);
+   //Canvas.pushDialog (missionAreaWarningHud); //broken
 
-   // Damage over time and kill the coward!
-   %obj.sheduleMissionAreaDamage = %obj.schedule ( 10000, setDamageDt, 15.0, "MissionAreaDamage");
+   // Damage over time and kill the coward! //broken
+   //%obj.sheduleMissionAreaDamage = %obj.schedule ( 10000, setDamageDt, 15.0, "MissionAreaDamage");
 }
 
 function Armor::onEnterMissionArea(%this, %obj)
@@ -732,13 +1786,13 @@ function Armor::onEnterMissionArea(%this, %obj)
    %obj.outOfBounds = false;
 
    // Hand it off to the game object
-   //Game.onEnterMissionArea(%obj);
+   Game.onEnterMissionArea(%obj);
    
-   Canvas.popDialog (missionAreaWarningHud);
+   //Canvas.popDialog (missionAreaWarningHud); //broken
 
-   // Stop the punishment
-   cancel(%obj.sheduleMissionAreaDamage);
-   %obj.clearDamageDt(); 
+   // Stop the punishment //broken
+   //cancel(%obj.sheduleMissionAreaDamage);
+   //%obj.clearDamageDt(); 
 }
 
 //-----------------------------------------------------------------------------
@@ -928,6 +1982,11 @@ function Player::setRespawnCloakOff(%player)
 function Player::setInvincible(%player, %val)
 {
    %player.invincible = %val;
+}
+
+function Player::setInvincibleOff(%player)
+{
+   %player.invincible = false;
 }
 
 //----------------------------------------------------------------------------
@@ -1168,4 +2227,3 @@ function Player::progressMeter(%this, %time, %text)
       }
    }
 }
-

@@ -1,0 +1,111 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(vehicleHud) {
+   Profile = "GuiModelessDialogProfile";
+   HorizSizing = "width";
+   VertSizing = "height";
+   position = "0 0";
+   Extent = "640 480";
+   MinExtent = "8 8";
+   Visible = "1";
+      helpTag = "0";
+      childGui = "Vehicle_Root";
+      configured = "0";
+
+   new GuiBitmapBorderCtrl() {
+      Profile = "HudBorderProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "129 136";
+      Extent = "542 328";
+      MinExtent = "48 92";
+      Visible = "1";
+         tile = "0";
+         useVariable = "0";
+
+      new GuiBitmapCtrl(Vehicle_Root) {
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "8 9";
+         Extent = "525 310";
+         MinExtent = "16 18";
+         Visible = "1";
+         bitmap = "art/gui/hudfill";
+         wrap = "0";
+            helpTag = "0";
+
+         new GuiTextCtrl() {
+            Profile = "ScoreHeaderTextProfile";
+            HorizSizing = "center";
+            VertSizing = "bottom";
+            position = "87 7";
+            Extent = "350 40";
+            MinExtent = "350 40";
+            Visible = "1";
+            text = "VECHICLE SELECTION";
+            maxLength = "255";
+         };
+         new GuiTextCtrl(VehicleCount) {
+            Profile = "GuiTxtCenterWhtProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "43 71";
+            Extent = "100 20";
+            MinExtent = "100 20";
+            Visible = "1";
+            text = "0 Remaining";
+            maxLength = "255";
+         };
+         new GuiPopUpMenuCtrl(VehiclesMenu) {
+            Profile = "GuiPopUpMenuProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "19 106";
+            Extent = "150 20";
+            MinExtent = "8 8";
+            Visible = "1";
+            maxLength = "255";
+            maxPopupHeight = "220";
+         };
+         new GuiButtonCtrl(VehicleSpawn) {
+            Profile = "GuiButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "19 156";
+            Extent = "150 20";
+            MinExtent = "8 8";
+            Visible = "0";
+            Command = "createVehicle(\"1\");Canvas.popDialog(vehicleHud);";
+            text = "CREATE";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         new GuiButtonCtrl() {
+            Profile = "GuiButtonProfile";
+            HorizSizing = "center";
+            VertSizing = "top";
+            position = "187 275";
+            Extent = "150 20";
+            MinExtent = "8 8";
+            Visible = "1";
+            Command = "Canvas.popDialog(vehicleHud);";
+            text = "CLOSE SCREEN";
+            groupNum = "-1";
+            buttonType = "PushButton";
+               helpTag = "0";
+         };
+         new GuiBitmapCtrl(VehiclePreview) {
+            Profile = "GuiWindowProfile";
+            HorizSizing = "relative";
+            VertSizing = "relative";
+            position = "197 68";
+            Extent = "297 184";
+            MinExtent = "297 184";
+            Visible = "1";
+            bitmap = "~/data/textures/ui/GarageGames";
+            wrap = "0";
+         };
+      };
+   };
+};
+//--- OBJECT WRITE END ---

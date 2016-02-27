@@ -27,7 +27,7 @@
 function messageClient(%client, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13)
 {
    //if ( !%client.isAiControlled() )
-   commandToClient(%client, 'ServerMessage', %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13);
+      commandToClient(%client, 'ServerMessage', %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13);
 }
 
 function messageTeam(%team, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13)
@@ -36,8 +36,8 @@ function messageTeam(%team, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, 
    for(%cl= 0; %cl < %count; %cl++)
    {
       %recipient = ClientGroup.getObject(%cl);
-	  if(%recipient.team == %team)
-	      messageClient(%recipient, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13);
+	if(%recipient.team == %team)
+	   messageClient(%recipient, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13);
    }
 }
 
@@ -75,7 +75,6 @@ function messageAllExcept(%client, %team, %msgtype, %msgString, %a1, %a2, %a3, %
          messageClient(%recipient, %msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10, %a11, %a12, %a13);
    }
 }
-
 
 //---------------------------------------------------------------------------
 // Server side client chat'n
@@ -123,29 +122,28 @@ function spamAlert(%client)
    return(false);
 }
 
-
 //---------------------------------------------------------------------------
 
 function chatMessageClient( %client, %sender, %voiceTag, %voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 )
 {
-	//see if the client has muted the sender
-	if ( !%client.muted[%sender] )
-	   commandToClient( %client, 'ChatMessage', %sender, %voiceTag, %voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
+   //see if the client has muted the sender
+   if ( !%client.muted[%sender] )
+      commandToClient( %client, 'ChatMessage', %sender, %voiceTag, %voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
 }
 
 function chatMessageTeam( %sender, %team, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 )
 {
-	if ( ( %msgString $= "" ) || spamAlert( %sender ) )
-	   return;
+   if ( ( %msgString $= "" ) || spamAlert( %sender ) )
+      return;
 	
-	%count = ClientGroup.getCount();
+   %count = ClientGroup.getCount();
 	
-	for ( %i = 0; %i < %count; %i++ )
-	{
-	   %obj = ClientGroup.getObject( %i );
-	   if ( %obj.team == %sender.team )
-	      chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
-	}
+   for ( %i = 0; %i < %count; %i++ )
+   {
+      %obj = ClientGroup.getObject( %i );
+      if ( %obj.team == %sender.team )
+         chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
+   }
 
    if($pref::Server::EchoChat && !$pref::Server::TournamentMode)
       echo( "SAYTEAM: " @ %sender.nameBase @ ": ", %a2 );
@@ -153,24 +151,24 @@ function chatMessageTeam( %sender, %team, %msgString, %a1, %a2, %a3, %a4, %a5, %
 
 function chatMessageAll( %sender, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 )
 {
-	if ( ( %msgString $= "" ) || spamAlert( %sender ) )
-	   return;
+   if ( ( %msgString $= "" ) || spamAlert( %sender ) )
+	return;
 	   
-	%count = ClientGroup.getCount();
+   %count = ClientGroup.getCount();
 	
-	for ( %i = 0; %i < %count; %i++ )
-	{
-	   %obj = ClientGroup.getObject( %i );
+   for ( %i = 0; %i < %count; %i++ )
+   {
+      %obj = ClientGroup.getObject( %i );
 	   
-	   if(%sender.team != 0)
+	if(%sender.team != 0)
+	   chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
+	else
+	{
+	   // message sender is an observer -- only send message to other observers
+	   if(%obj.team == %sender.team)
 	      chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
-	   else
-	   {
-	      // message sender is an observer -- only send message to other observers
-	      if(%obj.team == %sender.team)
-	         chatMessageClient( %obj, %sender, %sender.voiceTag, %sender.voicePitch, %msgString, %a1, %a2, %a3, %a4, %a5, %a6, %a7, %a8, %a9, %a10 );
-	   }
 	}
+   }
    if($pref::Server::EchoChat)
       echo( "SAYGLOBAL: " @ %sender.nameBase @ ": ", %a2 );
 }

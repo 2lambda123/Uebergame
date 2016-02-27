@@ -61,7 +61,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "10 27";
-         extent = "128 400";
+         extent = "128 441";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "height";
@@ -79,7 +79,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "1 1";
-            extent = "126 16";
+            extent = "126 64";
             minExtent = "8 8";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -128,7 +128,7 @@
             maxChars = "-1";
             useURLMouseCursor = "0";
             position = "1 1";
-            extent = "446 112";
+            extent = "446 639";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "bottom";
@@ -141,26 +141,6 @@
             canSave = "1";
             canSaveDynamicFields = "0";
          };
-      };
-      new GuiButtonCtrl() {
-         text = "CLOSE";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "8 434";
-         extent = "128 36";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiButtonProfile";
-         visible = "1";
-         active = "1";
-         command = "Canvas.popDialog(HelpDlg);";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
       };
    };
 };

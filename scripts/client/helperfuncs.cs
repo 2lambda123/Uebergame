@@ -94,7 +94,7 @@ function fieldPos(%text, %field, %start)
 // returns the text in a file with "\n" at the end of each line
 //--------------------------------------------------------------------------
 
-function loadFileText( %file)
+function loadFileText(%file)
 {
    %fo = new FileObject();
    %fo.openForRead(%file);

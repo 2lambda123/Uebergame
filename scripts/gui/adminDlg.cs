@@ -483,7 +483,7 @@ function ESC_CmdInput::setField(%this)
    %value = %this.getValue();
    %this.setValue(%value);
    $AdminInput = %value;
-   ESC_SendBtn.setActive(strlen(stripTrailingSpaces(%value)) >= 1);
+   ESC_SendBtn.setActive(strlen(trim(%value)) >= 1);
 }
 
 function ESC_CmdInput::processEnter(%this)

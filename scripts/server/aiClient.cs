@@ -837,7 +837,7 @@ function AIClient::findHealth(%client)
    InitContainerRadiusSearch( %client.player.GetBoxCenter(), $Bot::DetectionDistance, $TypeMasks::ItemObjectType );
    while ((%tgt = containerSearchNext()) != 0)
    {
-      if ( %tgt.getDataBlock().getName() $= "HealthPatch" )
+      if ( %tgt.getDataBlock().getName() $= "Medpack_medium" )
       {
          //if( %client.isTargetInView( %tgt, "120" ) )
          //{

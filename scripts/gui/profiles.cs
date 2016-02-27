@@ -210,6 +210,9 @@ new GuiControlProfile (GuiTextProfile)
    fontColorLink = "160 72 64 255";
    fontColorLinkHL = "196 116 108 255";
    fontSize = "16";
+   fontType = "Arial Bold";
+   fontColors[8] = "Magenta";
+   cursorColor = "0 0 0 255";
 };
 
 if( !isObject( GuiTextRightProfile ) )
@@ -240,8 +243,9 @@ new GuiControlProfile( GuiMediumTextProfile : GuiTextProfile )
 if( !isObject( GuiBigTextProfile ) )
 new GuiControlProfile( GuiBigTextProfile : GuiTextProfile )
 {
-   fontSize = 36;
+   fontSize = "24";
    category = "Core";
+   fontType = "Arial";
 };
 
 if( !isObject( GuiMLTextProfile ) )

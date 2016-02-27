@@ -44,7 +44,7 @@ singleton ShaderData( PFX_CausticsShader )
    samplerNames[0] = "$prepassTex";
    samplerNames[1] = "$causticsTex0";
    samplerNames[2] = "$causticsTex1";
-      
+   
    pixVersion = 3.0;
 };
 

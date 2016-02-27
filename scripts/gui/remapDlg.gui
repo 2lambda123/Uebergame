@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(RemapDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1280 720";
    minExtent = "8 8";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -25,14 +25,15 @@
       canMaximize = "1";
       canCollapse = "0";
       edgeSnap = "1";
+      docking = "None";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
       anchorTop = "1";
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "390 352";
-      extent = "243 64";
+      position = "515 260";
+      extent = "250 200";
       minExtent = "8 8";
       horizSizing = "center";
       vertSizing = "center";
@@ -45,17 +46,14 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiTextCtrl() {
-         text = "Re-bind control to...";
-         maxLength = "255";
-         margin = "0 0 0 0";
-         padding = "0 0 0 0";
-         anchorTop = "1";
-         anchorBottom = "0";
-         anchorLeft = "1";
-         anchorRight = "0";
+      new GuiMLTextCtrl(OptRemapText) {
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "Re-bind control";
+         useURLMouseCursor = "0";
          position = "49 32";
-         extent = "144 20";
+         extent = "151 14";
          minExtent = "8 8";
          horizSizing = "width";
          vertSizing = "height";
@@ -71,8 +69,8 @@
       };
       new GuiInputCtrl(OptRemapInputCtrl) {
          lockMouse = "0";
-         position = "0 0";
-         extent = "64 64";
+         position = "18 72";
+         extent = "214 113";
          minExtent = "8 8";
          horizSizing = "center";
          vertSizing = "bottom";

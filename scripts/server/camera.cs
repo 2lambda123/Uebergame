@@ -100,16 +100,16 @@ function Spectator::setMode(%data, %obj, %mode, %targetObj)
 // Camera methods
 //-----------------------------------------------------------------------------
 
-function Camera::onAdd(%this,%obj)
+function Camera::onAdd(%this, %obj)
 {
    // Default start mode
    %this.setMode(%this.mode);
 }
 
-function Camera::setMode(%this,%mode,%arg1,%arg2,%arg3)
+function Camera::setMode(%this, %mode, %arg1, %arg2, %arg3)
 {
    // Punt this one over to our datablock
-   %this.getDatablock().setMode(%this,%mode,%arg1,%arg2,%arg3);
+   %this.getDatablock().setMode(%this, %mode, %arg1, %arg2, %arg3);
 }
 
 //-----------------------------------------------------------------------------

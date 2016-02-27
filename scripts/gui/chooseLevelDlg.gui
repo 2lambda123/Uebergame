@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ChooseLevelDlg) {
    position = "0 0";
-   extent = "1280 720";
+   extent = "1024 768";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -18,7 +18,7 @@
    new GuiWindowCtrl(ChooseLevelWindow) {
       text = "Host Mission";
       resizeWidth = "0";
-      resizeHeight = "0";
+      resizeHeight = "1";
       canMove = "1";
       canClose = "1";
       canMinimize = "0";
@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "320 120";
+      position = "192 144";
       extent = "640 480";
       minExtent = "8 2";
       horizSizing = "center";
@@ -46,33 +46,13 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiButtonCtrl() {
-         text = "BACK";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "14 430";
-         extent = "120 30";
-         minExtent = "8 8";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "GuiButtonProfile";
-         visible = "1";
-         active = "1";
-         command = "Canvas.popDialog(ChooseLevelDlg);";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
       new GuiButtonCtrl(ChooseLevelDlgGoBtn) {
          text = "LOAD LEVEL";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "1";
-         position = "154 430";
-         extent = "120 30";
+         position = "434 435";
+         extent = "192 36";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -90,7 +70,7 @@
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "0";
-         position = "322 385";
+         position = "286 336";
          extent = "120 25";
          minExtent = "8 8";
          horizSizing = "right";
@@ -106,12 +86,12 @@
          canSaveDynamicFields = "0";
       };
       new GuiButtonCtrl() {
-         text = "ADVANCED OPTIONS";
+         text = "Server Options";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "446 383";
-         extent = "156 30";
+         position = "286 254";
+         extent = "341 30";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -135,11 +115,11 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "15 28";
-         extent = "92 18";
+         extent = "120 18";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiTxtWhtProfile";
+         profile = "GuiTextProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
@@ -161,7 +141,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "446 303";
+         position = "432 301";
          extent = "156 25";
          minExtent = "127 23";
          horizSizing = "right";
@@ -184,12 +164,12 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "322 304";
-         extent = "78 18";
+         position = "286 304";
+         extent = "114 18";
          minExtent = "66 18";
          horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiTxtWhtProfile";
+         profile = "GuiTextProfile";
          visible = "1";
          active = "1";
          tooltipProfile = "GuiToolTipProfile";
@@ -213,11 +193,11 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "14 51";
-         extent = "260 360";
+         position = "9 48";
+         extent = "265 423";
          minExtent = "8 8";
          horizSizing = "right";
-         vertSizing = "bottom";
+         vertSizing = "height";
          profile = "GuiScrollProfile";
          visible = "1";
          active = "1";
@@ -232,7 +212,7 @@
             fitParentWidth = "1";
             clipColumnText = "1";
             position = "1 1";
-            extent = "245 64";
+            extent = "250 306";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -247,7 +227,7 @@
          };
       };
       new GuiBitmapCtrl(CL_Preview) {
-         bitmap = "levels/TG_DesertRuins/load_TG_DesertRuins_day";
+         bitmap = "levels/Training_Grounds/TG_Fields/TG_Fields_rain_preview";
          wrap = "0";
          position = "286 51";
          extent = "340 191";
@@ -273,7 +253,7 @@
             extent = "275 175";
             minExtent = "275 175";
             horizSizing = "relative";
-            vertSizing = "relative";
+            vertSizing = "bottom";
             profile = "GuiMLTextProfile";
             visible = "1";
             active = "1";
