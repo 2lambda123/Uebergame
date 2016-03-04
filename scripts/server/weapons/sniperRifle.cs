@@ -206,9 +206,10 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    // for first person rendering.
    mountPoint = 0;
    firstPerson = true;
-   useEyeNode = true;
+   useEyeNode = false;
    animateOnServer = true;
    cloakable = true;
+   eyeOffset = "0.025 -0.13 -0.095";
 
    // When firing from a point offset from the eye, muzzle correction
    // will adjust the muzzle vector to point to the eye LOS point.
@@ -227,7 +228,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
 
    projectile = SniperProjectile;
    projectileType = Projectile;
-   projectileSpread = 0;
+   projectileSpread = 0.001;
 
    //altProjectile = GrenadeLauncherProjectile;
    //altProjectileSpread = "0.02";
@@ -318,7 +319,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateName[5]                     = "Fire";
    stateTransitionGeneric0In[5]     = "SprintEnter";
    stateTransitionOnTimeout[5]      = "NewRound";
-   stateTimeoutValue[5]             = 0.5;
+   stateTimeoutValue[5]             = 0.25;
    stateFire[5]                     = true;
    stateRecoil[5]                   = "light_recoil";
    stateAllowImageChange[5]         = false;
@@ -336,8 +337,8 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
    stateTransitionOnTimeout[6]      = "Ready";
-   stateWaitForTimeout[6]           = "0";
-   stateTimeoutValue[6]             = 0.25;
+   stateWaitForTimeout[6]           = true;
+   stateTimeoutValue[6]             = 0.5;
    stateAllowImageChange[6]         = false;
    stateEjectShell[6]               = true;
 

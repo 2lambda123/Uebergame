@@ -213,9 +213,10 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    // for first person rendering.
    mountPoint = 0;
    firstPerson = true;
-   useEyeNode = true;
+   useEyeNode = false;
    animateOnServer = true;
    cloakable = true;
+   eyeOffset = "0.05 -0.11 -0.1";
 
    // When firing from a point offset from the eye, muzzle correction
    // will adjust the muzzle vector to point to the eye LOS point.
@@ -235,7 +236,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
 
    projectile = RyderProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.002";
+   projectileSpread = "0.012";
 
    //altProjectile = GrenadeLauncherProjectile;
    //altProjectileSpread = "0.02";
@@ -384,7 +385,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateScaleAnimation[10]           = true;
    stateScaleAnimationFP[10]         = false;
    stateSound[10]                    = RyderReloadSound;
-
+   
    // Start Sprinting
    stateName[11]                    = "SprintEnter";
    stateTransitionGeneric0Out[11]   = "SprintExit";
@@ -432,13 +433,17 @@ datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
    eyeOffset = "-0.19488 -0.3 0.049";
    eyeRotation = "0.405853 0 0.913938 3.80559";
 
+   projectileSpread = "0.005";
    parentImage = "RyderWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1] = 0.1;
+   stateTimeoutValue[1]             = 0.25;
+   stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";
+   //on exit iron sights it plays the "switch_in" animation from the "activate" state
+   //needs to be changed later, since that animation is long and ugly
 };
 
 //-----------------------------------------------------------------------------

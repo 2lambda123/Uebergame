@@ -136,8 +136,8 @@ function onPhase2Complete()
    else
       commandToServer( 'setClientLoadout', addTaggedString($pref::Player::Loadout[$pref::Player::SelectedLoadout]) );
 
-   // Send selected vehicle
-   commandToServer('SelectVehicle', addTaggedString($pref::Player::SelectedVehicle));
+   // Send selected vehicle //vehicles not ready yet
+   //commandToServer('SelectVehicle', addTaggedString($pref::Player::SelectedVehicle));
 
    if ( isObject( LoadingProgress ) )
    {

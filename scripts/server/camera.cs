@@ -65,7 +65,6 @@ function Observer::setMode(%this,%obj,%mode,%arg1,%arg2,%arg3)
    %obj.mode = %mode;
 }
 
-
 function Spectator::onTrigger(%data, %obj, %trigger, %state)
 {
    // state = 0 means that a trigger key was released
@@ -77,6 +76,10 @@ function Spectator::onTrigger(%data, %obj, %trigger, %state)
    if (%client == 0) // How'd this happen?!?!
       return;
 
+   //no respawn when in editor
+   if (EditorIsActive() || GuiEditorIsActive())
+      return;
+	  
    LogEcho("Spectator::onTrigger( " @ %data.getName() @ ", " @ %obj @ ", " @ %trigger @ ", " @ %state @ " )");
 
    // Hand it over to the game object

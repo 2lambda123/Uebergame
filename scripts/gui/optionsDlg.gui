@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Graphics";
+      pane = "Player";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "1";
+         selectedPage = "0";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -91,12 +91,11 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -160,7 +159,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "8 61";
+               position = "8 43";
                extent = "56 18";
                minExtent = "56 15";
                horizSizing = "relative";
@@ -179,7 +178,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "base";
+               text = "olive";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -187,7 +186,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "99 59";
+               position = "99 41";
                extent = "135 23";
                minExtent = "8 8";
                horizSizing = "relative";
@@ -203,7 +202,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "base";
+               skin = "olive";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -211,7 +210,7 @@
                lightColor = "1 1 1 1";
                lightAmbient = "0.5 0.5 0.5 1";
                lightDirection = "0 1 -1";
-               orbitDiststance = "2";
+               orbitDiststance = "1.53";
                minOrbitDiststance = "1";
                maxOrbitDiststance = "5";
                cameraSpeed = "0.01";
@@ -277,7 +276,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "292 11";
+               position = "241 10";
                extent = "87 18";
                minExtent = "56 18";
                horizSizing = "relative";
@@ -291,13 +290,47 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
+            new GuiBitmapCtrl() {
+               bitmap = "art/gui/hudfill.png";
+               wrap = "0";
+               position = "356 120";
+               extent = "256 256";
+               minExtent = "8 2";
+               horizSizing = "relative";
+               vertSizing = "relative";
+               profile = "GuiProgressProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiBitmapCtrl(OP_CrosshairPreview) {
+               bitmap = "art/gui/weaponHud/crossHair256.png";
+               wrap = "0";
+               position = "356 120";
+               extent = "256 256";
+               minExtent = "8 2";
+               horizSizing = "relative";
+               vertSizing = "relative";
+               profile = "GuiBigTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
             new GuiSliderCtrl(OP_FovSlider) {
                range = "60 120";
-               ticks = "5";
+               ticks = "11";
                snap = "1";
-               value = "60";
-               position = "388 10";
-               extent = "224 24";
+               value = "90";
+               position = "319 11";
+               extent = "300 24";
                minExtent = "8 2";
                horizSizing = "relative";
                vertSizing = "relative";
@@ -361,7 +394,7 @@
                groupNum = "-1";
                buttonType = "ToggleButton";
                useMouseEvents = "0";
-               position = "472 49";
+               position = "472 57";
                extent = "140 30";
                minExtent = "8 2";
                horizSizing = "relative";
@@ -373,6 +406,51 @@
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl() {
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "0 0";
+               extent = "64 64";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl() {
+               text = "60         70        80        90         100       110      120";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "319 36";
+               extent = "308 14";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -393,12 +471,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptGraphicsPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -501,7 +580,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1024 x 768  (4:3)";
+               text = "1440 x 900";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -553,7 +632,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "60";
+               text = "120";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -605,7 +684,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -635,7 +714,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -688,7 +767,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -764,7 +843,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -871,7 +950,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "16X";
+               text = "Off";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1157,7 +1236,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "4x";
+               text = "1x";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";

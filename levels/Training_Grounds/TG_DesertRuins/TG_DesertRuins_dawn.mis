@@ -539,10 +539,46 @@ new SimGroup(MissionGroup) {
       canSave = "1";
       canSaveDynamicFields = "1";
    };
-   new SimGroup(PlayerDropPoints) {
+   new SimGroup(ObserverDropPoints) {
       canSave = "1";
       canSaveDynamicFields = "1";
-         enabled = "1";
+         powerCount = "0";
+
+      new Camera() {
+         controlMode = "Fly";
+         newtonMode = "0";
+         newtonRotation = "0";
+         mass = "10";
+         drag = "2";
+         force = "500";
+         angularDrag = "2";
+         angularForce = "100";
+         speedMultiplier = "2";
+         brakeMultiplier = "2";
+         isAIControlled = "0";
+         dataBlock = "Spectator";
+         position = "54.2558 -66.9847 13.4913";
+         rotation = "0.347879 0.165239 -0.922863 54.4689";
+         scale = "1 1 1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+   };
+   new SimGroup(Teams) {
+      canSave = "1";
+      canSaveDynamicFields = "1";
+         powerCount = "1";
+         providesPower = "1";
+
+      new SimGroup(Team0) {
+         canSave = "1";
+         canSaveDynamicFields = "1";
+            powerCount = "1";
+
+         new SimGroup(SpawnSpheres0) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+               powerCount = "1";
 
       new SpawnSphere() {
          autoSpawn = "0";
@@ -1227,6 +1263,122 @@ new SimGroup(MissionGroup) {
             enabled = "1";
             homingCount = "0";
             lockCount = "0";
+      };
+   };
+      };
+      new SimGroup(Team1) {
+         canSave = "1";
+         canSaveDynamicFields = "1";
+            powerCount = "1";
+
+         new SimGroup(SpawnSpheres1) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+               powerCount = "1";
+
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "7";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "-28.5781 -5.19191 1.25027";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "7";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "-29.5457 -59.258 1.25027";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "7";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "-29.737 -35.1626 1.25027";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+         };
+      };
+      new SimGroup(Team2) {
+         canSave = "1";
+         canSaveDynamicFields = "1";
+            powerCount = "1";
+
+         new SimGroup(SpawnSpheres2) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+               powerCount = "1";
+
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "7";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "64.3802 -2.40357 1.45191";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "7";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "72.9532 -29.9374 1.45191";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "7";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "70.8387 -45.0807 1.45191";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+         };
       };
    };
    new SimGroup(ruined_pavement) {

@@ -238,9 +238,10 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    // for first person rendering.
    mountPoint = 0;
    firstPerson = true;
-   useEyeNode = true;
+   useEyeNode = false;
    animateOnServer = true;
    cloakable = true;
+   eyeOffset = "0.025 -0.13 -0.095";
 
    // When firing from a point offset from the eye, muzzle correction
    // will adjust the muzzle vector to point to the eye LOS point.

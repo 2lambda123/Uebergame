@@ -168,7 +168,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "2 2";
-            extent = "601 8";
+            extent = "598 8";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "height";

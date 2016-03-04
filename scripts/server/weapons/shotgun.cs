@@ -128,9 +128,10 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    // for first person rendering.
    mountPoint = 0;
    firstPerson = true;
-   useEyeNode = true;
+   useEyeNode = false;
    animateOnServer = true;
    cloakable = true;
+   eyeOffset = "0.025 -0.13 -0.115";
 
    // When firing from a point offset from the eye, muzzle correction
    // will adjust the muzzle vector to point to the eye LOS point.
@@ -155,7 +156,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
 
    projectile = ShotgunProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.02;
+   projectileSpread = 0.025;
    projectileNum = 8;
 
    altProjectile = GrenadeLauncherProjectile;
@@ -193,7 +194,8 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
-   stateTimeoutValue[1]             = 1.5;
+   stateTimeoutValue[1]             = 0.5;
+   stateWaitForTimeout[1]           = true;
    stateSequence[1]                 = "switch_in";
    stateSound[1]                    = ShotgunSwitchinSound;
 
@@ -367,14 +369,16 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    useEyeOffset = false;
    //eyeOffset = "-0.147 -0.225 0.025";
    //eyeOffset = "-0.16 -0.29 0.065";
-   eyeOffset = "-0.16 0.1 0.1";
+   eyeOffset = "-0.16 0 0.05";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
+   projectileSpread = 0.015;
    parentImage = "ShotgunWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1] = 0.1;
+   stateTimeoutValue[1]             = 0.5;
+   stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";
 };

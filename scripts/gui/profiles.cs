@@ -210,7 +210,7 @@ new GuiControlProfile (GuiTextProfile)
    fontColorLink = "160 72 64 255";
    fontColorLinkHL = "196 116 108 255";
    fontSize = "16";
-   fontType = "Arial Bold";
+   fontType = "Arial";
    fontColors[8] = "Magenta";
    cursorColor = "0 0 0 255";
 };

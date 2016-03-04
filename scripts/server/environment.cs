@@ -110,12 +110,13 @@ datablock PrecipitationData(Sandstorm)
 {
    soundProfile = "SandstormSound";
 
-   dropTexture = "art/environment/precipitation/stormcloud_01";
-   splashTexture = "art/environment/precipitation/sandstorm2";
+   dropTexture = "art/environment/precipitation/stormcloud_01.png";
    dropSize = 1;
    splashSize = 0;
-   useTrueBillboards = false;
-   splashMS = 250;
+   useTrueBillboards = 0;
+   splashMS = 0;
+   dropsPerSide = "1";
+   splashesPerSide = "0";
 };
 
 datablock PrecipitationData(dustspecks)

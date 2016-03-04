@@ -293,9 +293,10 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    // for first person rendering.
    mountPoint = 0;
    firstPerson = true;
-   useEyeNode = true;
+   useEyeNode = false;
    animateOnServer = true;
    cloakable = true;
+   eyeOffset = "0.025 -0.13 -0.095";
 
    // When firing from a point offset from the eye, muzzle correction
    // will adjust the muzzle vector to point to the eye LOS point.
@@ -320,7 +321,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
 
    projectile = LurkerProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.005";
+   projectileSpread = "0.016";
    projectileNum = 1;
 
    altProjectile = GrenadeLauncherProjectile;
@@ -530,16 +531,19 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    animateOnServer = false;
    useEyeOffset = false;
    //eyeOffset = "-0.147 -0.225 0.025";
-   eyeOffset = "-0.16 -0.29 0.065";
+   eyeOffset = "-0.16 -0.29 0.060";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
+   projectileSpread = "0.004";
    parentImage = "LurkerWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1] = 0.1;
+   stateTimeoutValue[1]             = 0.5;
+   stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";
+   stateTransitionOnTimeout[1]     = "Ready";
 };
 
 //-----------------------------------------------------------------------------

@@ -461,20 +461,20 @@ function toggleZoomFOV(%val)
          setFOV($Player::CurrentFOV);
       else
       {
-         setFov(ServerConnection.getControlCameraDefaultFov());
+         setFov($pref::Player::Fov);
       }
    }
 }
 
 function resetCurrentFOV()
 {
-   $Player::CurrentFOV = ServerConnection.getControlCameraDefaultFov() / 2;
+   $Player::CurrentFOV = ($pref::Player::Fov) / 2;
 }
 
 function turnOffZoom()
 {
    ServerConnection.zoomed = false;
-   setFov(ServerConnection.getControlCameraDefaultFov());
+   setFov($pref::Player::Fov);
 
    // Rather than just disable the DOF effect, we want to set it to the level's
    // preset values.
@@ -533,7 +533,7 @@ function toggleIronSights( %val )
    else
    {
       ServerConnection.zoomed = false;
-      setFov(ServerConnection.getControlCameraDefaultFov());
+      setFov($pref::Player::Fov);
       ppOptionsUpdateDOFSettings();
       commandToServer( 'UndoIronSights' );
       reticle.setVisible(true);
@@ -1003,8 +1003,8 @@ moveMap.bind( keyboard, "i", toggleArmoryDlg );
 moveMap.bind( keyboard, "=", cycleLoadoutNext );
 moveMap.bind( keyboard, "-", cycleLoadoutPrev );
 moveMap.bind( keyboard, "ctrl n", toggleNetGraph );
-moveMap.bind( keyboard, "/", toggleVehicleHud );
-//moveMap.bind( keyboard, "F8", toggleOverheadMap );
+//moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
+//moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???
 moveMap.bind( keyboard, "F6", toggleMusicPlayer );
 moveMap.bind(keyboard, "alt h", hideHUDs);
 

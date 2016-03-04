@@ -340,7 +340,7 @@ function LoadoutMenu::onSelect(%this, %id, %text)
    loadLoadout( %id, 1 );
 }
 
-function loadLoadout( %index, %echo )
+function loadLoadout( %index )
 {
    $pref::Player::SelectedLoadout = %index;
    %list = mFloor( %index / 20 );
@@ -352,9 +352,6 @@ function loadLoadout( %index, %echo )
       LoadoutInput.setValue( $pref::Player::LoadoutName[%index] );
       SaveLoadout.setActive(strlen(trim($pref::Player::LoadoutName[%index])) >= 3);
    }
-
-   if ( %echo )
-      onServerMessage( "Loadout: \c2\"" @ $pref::Player::LoadoutName[%index] @ "\" \c0selected." );
 
    //LogEcho("loadLoadout - Sending server inventory list:" SPC $pref::Player::Loadout[%index]);
    commandToServer( 'setClientLoadout', addTaggedString($pref::Player::Loadout[%index]) );

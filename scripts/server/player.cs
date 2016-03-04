@@ -1051,7 +1051,7 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
 
    // Allowable Inventory Items
 
-   maxWeapons = 1;
+   maxWeapons = 4;
    maxSpecials = 1;
    maxGrenades = 1;
    maxMines = 1;
@@ -1420,7 +1420,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
       switch$ (%damageType){
        
       case "Suicide":
-          return;
+         return;
              
       case "Drowning":
          return;
@@ -1429,7 +1429,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
          return;
 		 
 	  case "MissionAreaDamage":
-      return;	  
+         return;	  
 
       default:
          // Process all other damage types
@@ -1939,6 +1939,8 @@ function Armor::animationDone(%this, %obj)
 
 function Player::kill(%player, %damageType)
 {
+   %player.setInvincible( false );
+   
    warn("Player::kill(" SPC %player.client.nameBase @", "@ %damageType SPC ")");
    %player.scriptKilled = true;
 

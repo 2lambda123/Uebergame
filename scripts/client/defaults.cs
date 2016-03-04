@@ -53,7 +53,8 @@ $pref::SFX::rolloffFactor = "0.25";
 
 $pref::Player = "Player\tbase";
 $pref::Player::defaultFov = 90;
-$pref::Player::SelectedVehicle = "Cheetah";
+//$pref::Player::Fov = 90; //unused??
+//$pref::Player::SelectedVehicle = "Cheetah"; //vehicles not ready yet
 
 $pref::Audio::BackgroundMusic = 1;
 

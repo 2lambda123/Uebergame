@@ -27,6 +27,30 @@
       helpTag = "0";
       noCursor = "1";
 
+   new GuiCrossHairHud(zoomReticle) {
+      damageFillColor = "1 1 1 1";
+      damageFrameColor = "0 0 0 1";
+      damageRect = "100 6";
+      damageOffset = "0 50";
+      bitmap = "art/gui/weaponHud/zoomHair_filled";
+      wrap = "0";
+      position = "0 0";
+      extent = "1920 998";
+      minExtent = "640 480";
+      horizSizing = "width";
+      vertSizing = "height";
+      profile = "GuiDefaultProfile";
+      visible = "0";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+         textColor = "1.0 1.0 1.0 1.0";
+         textOffset = "0 45";
+   };
    new GuiBitmapCtrl(centerPrintDlg) {
       bitmap = "art/gui/hudfill01";
       wrap = "0";
@@ -347,30 +371,6 @@
          textColor = "1.0 1.0 1.0 1.0";
          textOffset = "0 45";
    };
-   new GuiCrossHairHud(zoomReticle) {
-      damageFillColor = "1 1 1 1";
-      damageFrameColor = "0 0 0 1";
-      damageRect = "100 6";
-      damageOffset = "0 50";
-      bitmap = "art/gui/weaponHud/zoomHair8";
-      wrap = "0";
-      position = "0 0";
-      extent = "1024 748";
-      minExtent = "640 480";
-      horizSizing = "center";
-      vertSizing = "center";
-      profile = "GuiDefaultProfile";
-      visible = "0";
-      active = "1";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "0";
-      hidden = "1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         textColor = "1.0 1.0 1.0 1.0";
-         textOffset = "0 45";
-   };
    new GuiBitmapCtrl(deploySensor) {
       bitmap = "art/gui/deploy_green";
       wrap = "0";
@@ -667,7 +667,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl(WeaponText) {
-            text = "Ryder pistol";
+            text = "Grenade Launcher";
             maxLength = "25";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
@@ -690,7 +690,7 @@
             canSaveDynamicFields = "0";
          };
          new GuiTextCtrl(AmmoAmount) {
-            text = "15/2";
+            text = "1/3";
             maxLength = "25";
             margin = "0 0 0 0";
             padding = "0 0 0 0";
