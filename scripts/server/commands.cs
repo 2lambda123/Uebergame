@@ -449,9 +449,10 @@ function serverCmdClientJoinTeam(%client, %team, %admin)
             else
             {
                if ( isObject( %client.player ) )
-                  %client.player.kill($DamageType::Default);
+                  //%client.player.kill($DamageType::ScriptDamage);
+			    %client.player.schedule(50,"delete"); //better solution
             }
-
+			
             Game.clientJoinTeam( %client, %team, %teamed );
             return true;
          }
@@ -533,7 +534,8 @@ function serverCmdForceClientToSpectator(%clientRequesting, %client)
       {
          // Always remove the player object
          if ( isObject( %client.player ) )
-            %client.player.kill($DamageType::Default);
+            //%client.player.kill($DamageType::ScriptDamage);
+		    %client.player.schedule(50,"delete"); //better solution
 
          Game.forceSpectator(%client, "adminForce");
       }
@@ -543,7 +545,8 @@ function serverCmdForceClientToSpectator(%clientRequesting, %client)
          {
             // Always remove the player object
             if ( isObject( %client.player ) )
-               %client.player.kill($DamageType::Default);
+               //%client.player.kill($DamageType::ScriptDamage);
+		       %client.player.schedule(50,"delete"); //better solution
 
             Game.forceSpectator( %client, "playerChoose" );
          }

@@ -268,8 +268,8 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionGeneric0In[7]     = "SprintEnter";
    stateTransitionOnNoAmmo[7]       = "NoAmmo";
    stateTransitionOnTimeout[7]      = "Ready";
-   stateWaitForTimeout[7]           = false;
-   stateTimeoutValue[7]             = 0.75;
+   stateWaitForTimeout[7]           = true;
+   stateTimeoutValue[7]             = 0.70;
    stateSequence[7]                 = "fire_alt";
    stateScaleAnimation[5]           = true;
    stateAllowImageChange[7]         = false;
@@ -317,6 +317,8 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionGeneric0In[11]     = "SprintEnter";
    stateTransitionOnTimeout[11]      = "Ready";
    stateWaitForTimeout[11]           = true;
+   stateScaleAnimation[11]           = false;
+   stateScaleAnimationFP[11]         = false;
    stateTimeoutValue[11]             = 3.0;
    stateReload[11]                   = true;
    stateSequence[11]                 = "reload";
@@ -381,6 +383,7 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";
+   stateTransitionOnTimeout[1]     = "Ready";
 };
 
 function ShotgunWeaponImage::onFire(%data, %obj, %slot)
@@ -460,6 +463,6 @@ SmsInv.AddWeapon(Shotgun, "Shotgun", 1);
 SmsInv.AllowClip("armor\tSoldier\t3");
 SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 3);
 
-SmsInv.AllowAmmo("armor\tSoldier\t8");
-SmsInv.AddAmmo(ShotgunAmmo, 8);
+SmsInv.AllowAmmo("armor\tSoldier\t2");
+SmsInv.AddAmmo(ShotgunAmmo, 2);
 

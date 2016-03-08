@@ -46,7 +46,7 @@ function PlayGui::onWake(%this)
    tge.updateKeyMaps();
 
    // hack city - some controls are floating around and need to be clamped
-   %this.schedule( 0, "refreshElements" );
+   %this.schedule( 50, "refreshElements" );
 }
 
 function PlayGui::onSleep(%this)

@@ -1280,13 +1280,13 @@ new SimGroup(MissionGroup) {
             new SpawnSphere() {
                autoSpawn = "0";
                spawnTransform = "0";
-               radius = "7";
+               radius = "5";
                sphereWeight = "1";
                indoorWeight = "1";
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "-28.5781 -5.19191 1.25027";
+               position = "-27.9695 -5.6631 1.25027";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -1295,13 +1295,13 @@ new SimGroup(MissionGroup) {
             new SpawnSphere() {
                autoSpawn = "0";
                spawnTransform = "0";
-               radius = "7";
+               radius = "5";
                sphereWeight = "1";
                indoorWeight = "1";
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "-29.5457 -59.258 1.25027";
+               position = "-29.1628 -64.9806 1.25027";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -1310,13 +1310,58 @@ new SimGroup(MissionGroup) {
             new SpawnSphere() {
                autoSpawn = "0";
                spawnTransform = "0";
-               radius = "7";
+               radius = "5";
                sphereWeight = "1";
                indoorWeight = "1";
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "-29.737 -35.1626 1.25027";
+               position = "-29.1628 -56.7605 1.25027";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "5";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "-28.7347 -34.6329 1.25027";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "5";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "-28.7347 -28.3614 1.25027";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "5";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "-28.7347 -44.0324 1.25027";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -1337,13 +1382,13 @@ new SimGroup(MissionGroup) {
             new SpawnSphere() {
                autoSpawn = "0";
                spawnTransform = "0";
-               radius = "7";
+               radius = "5";
                sphereWeight = "1";
                indoorWeight = "1";
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "64.3802 -2.40357 1.45191";
+               position = "63.9659 -7.76494 1.45191";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -1352,13 +1397,13 @@ new SimGroup(MissionGroup) {
             new SpawnSphere() {
                autoSpawn = "0";
                spawnTransform = "0";
-               radius = "7";
+               radius = "5";
                sphereWeight = "1";
                indoorWeight = "1";
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "72.9532 -29.9374 1.45191";
+               position = "63.9659 -0.383219 1.45191";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -1367,13 +1412,58 @@ new SimGroup(MissionGroup) {
             new SpawnSphere() {
                autoSpawn = "0";
                spawnTransform = "0";
-               radius = "7";
+               radius = "5";
                sphereWeight = "1";
                indoorWeight = "1";
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "70.8387 -45.0807 1.45191";
+               position = "67.7152 -37.2564 1.45191";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "5";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "71.8376 -28.3729 1.45191";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "5";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "71.393 -51.1936 1.45191";
+               rotation = "1 0 0 0";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new SpawnSphere() {
+               autoSpawn = "0";
+               spawnTransform = "0";
+               radius = "5";
+               sphereWeight = "1";
+               indoorWeight = "1";
+               outdoorWeight = "1";
+               isAIControlled = "0";
+               dataBlock = "SpawnSphereMarker";
+               position = "69.9973 -44.7383 1.45191";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -7267,7 +7357,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "6.6052 -77.7108 -0.714344";
-            rotation = "-0.0843795 0.0843795 -0.992855 90.4131";
+            rotation = "-0.0843795 0.0843795 -0.992855 90.4132";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";

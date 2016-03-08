@@ -777,13 +777,14 @@ function CoreGame::spawnPlayer(%game, %client, %respawn)
    %game.createPlayer(%client, %spawnPoint, %respawn);
 }
 
-function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn)
+function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 {
    LogEcho("\c4CoreGame::createPlayer(" SPC %game.class SPC %client.nameBase SPC %spawnPoint SPC ")");
    // The client should not have a player currently assigned. 
    // Assigning a new one could result in a player ghost.
    if( isObject(%client.player) && ( %client.player.getState() !$= "Dead" ) )
-      %client.player.kill( $DamageType::Default );
+      //%client.player.kill( $DamageType::ScriptDamage );
+      %client.player.schedule(50,"delete"); //better solution
 
    // clients and cameras can exist in team 0, but players should not
    // Force to a valid team
@@ -872,7 +873,13 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn)
    %player.setTeamId(%client.team);
    %player.setTransform(%spawnPoint);
    %player.setShapeName(%client.playerName);
-   %player.setSkinName( %client.skin );
+   
+   if ( %client.team == 0 )
+      %player.setSkinName( %client.skin );
+   if ( %client.team == 1 )
+      %player.setSkinName( "blue" );
+   if ( %client.team == 2 )
+      %player.setSkinName( "red" );
 
    %player.setRechargeRate(%player.getDataBlock().rechargeRate);
    %player.setEnergyLevel(%player.getDataBlock().maxEnergy);
@@ -1434,7 +1441,8 @@ function CoreGame::forceSpectator(%game, %client, %reason)
 
    // first kill this player
    if(%client.player)
-      %client.player.kill($DamageType::Default);
+      //%client.player.kill($DamageType::ScriptDamage);
+      %client.player.schedule(50,"delete"); //better solution
 
    //if(isEventPending(%client.respawnTimer))
    //   cancel(%client.respawnTimer);

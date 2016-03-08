@@ -937,7 +937,7 @@ moveMap.bind( keyboard, "space", jump );
 moveMap.bind( keyboard, "lcontrol", doCrouch );
 moveMap.bind( keyboard, "x", doProne );
 moveMap.bind( keyboard, "lshift", doSprint );
-moveMap.bind( keyboard, "e", mouseJet );
+//moveMap.bind( keyboard, "e", mouseJet ); //no jetpacking yet
 //-----------------------------------------------------------------------------
 // Weapons
 moveMap.bind( mouse, button0, mouseFire );

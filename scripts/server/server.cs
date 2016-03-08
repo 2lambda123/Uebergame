@@ -173,7 +173,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
       allowConnections(true);
 
       if ($pref::Net::DisplayOnMaster !$= "Never" )
-         schedule(0,0,startHeartbeat);
+         schedule( 50,0,startHeartbeat);
    }
 
    // Create the ServerGroup that will persist for the lifetime of the server.
@@ -250,6 +250,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./grenades/smokeGrenade.cs");
    exec("./grenades/tripMine.cs");
    exec("./grenades/timeBomb.cs");
+   exec("./grenades/shapeCharge.cs");
 
    // Turrets
    exec("./weapons/turret.cs");
@@ -263,7 +264,6 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./weapons/shotgun.cs");
    exec("./weapons/sniperRifle.cs");
    exec("./weapons/grenadeLauncher.cs");
-   //exec("./weapons/rocketLauncher.cs"); //needs model and fix
    exec("./weapons/PaintballMarkerBlue.cs");
    exec("./weapons/PaintballMarkerRed.cs");
    exec("./weapons/PaintballMarkerGreen.cs");
@@ -275,7 +275,6 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./specials/munitionsPack.cs");
    exec("./specials/firstAidPack.cs");
    exec("./specials/turretPack.cs");
-   exec("./specials/shapeCharge.cs");
    //exec("./specials/vehiclePack.cs"); //needs proper vehicle first
    //exec("./specials/platform.cs"); //fix it
 
@@ -283,8 +282,6 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./vehicles/vehicle.cs");
    exec("./vehicles/vehicleEffects.cs");
    exec("./vehicles/cheetahCar.cs"); // Load first, the rest of the vehicle use it's sound DB's for now
-//   exec("./vehicles/talonFighter.cs");
-//   exec("./vehicles/gravatron.cs");
 
    // Init the SMS functions -Yardik-
    SmsInv.SetupMaxWeapons();

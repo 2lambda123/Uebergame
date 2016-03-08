@@ -60,6 +60,9 @@ $DamageText[$DamageCount] = "Explosion";
 $DamageType::Suicide = $DamageCount++;
 $DamageText[$DamageCount] = "Suicide";
 
+$DamageType::ScriptDamage = $DamageCount++;
+$DamageText[$DamageCount] = "ScriptDamage";
+
 $DamageType::QuickSand = $DamageCount++;
 $DamageText[$DamageCount] = "QuickSand";
 
@@ -115,8 +118,9 @@ datablock SimDataBlock(TurretDamageScale)
    shieldDamageScale[$DamageType::Lightning] = 5.0;
    shieldDamageScale[$DamageType::VehicleSpawn] = 1.0;
    shieldDamageScale[$DamageType::Explosion] = 2.0;
-   shieldDamageScale[$DamageType::Suicide] = 1.0;
-
+   shieldDamageScale[$DamageType::Suicide] = 2.0;
+   shieldDamageScale[$DamageType::ScriptDamage] = 2.0;
+   
    shieldDamageScale[$DamageType::Melee] = 1.0;
    shieldDamageScale[$DamageType::Pistol] = 0.8;
    shieldDamageScale[$DamageType::Sniper] = 1.0;
@@ -139,7 +143,8 @@ datablock SimDataBlock(TurretDamageScale)
    damageScale[$DamageType::Lightning] = 5.0;
    damageScale[$DamageType::VehicleSpawn] = 1.0;
    damageScale[$DamageType::Explosion] = 1.0;
-   damageScale[$DamageType::Suicide] = 1.0;
+   damageScale[$DamageType::Suicide] = 2.0;
+   damageScale[$DamageType::ScriptDamage] = 2.0;
 
    damageScale[$DamageType::Melee] = 0.5;
    damageScale[$DamageType::Pistol] = 0.8;
@@ -170,7 +175,8 @@ datablock SimDataBlock(StaticShapeDamageScale)
    shieldDamageScale[$DamageType::Lightning] = 5.0;
    shieldDamageScale[$DamageType::VehicleSpawn] = 1.0;
    shieldDamageScale[$DamageType::Explosion] = 2.0;
-   shieldDamageScale[$DamageType::Suicide] = 1.0;
+   shieldDamageScale[$DamageType::Suicide] = 2.0;
+   shieldDamageScale[$DamageType::ScriptDamage] = 2.0;
 
    shieldDamageScale[$DamageType::Melee] = 1.0;
    shieldDamageScale[$DamageType::Pistol] = 0.8;
@@ -194,7 +200,8 @@ datablock SimDataBlock(StaticShapeDamageScale)
    damageScale[$DamageType::Lightning] = 5.0;
    damageScale[$DamageType::VehicleSpawn] = 1.0;
    damageScale[$DamageType::Explosion] = 1.0;
-   damageScale[$DamageType::Suicide] = 1.0;
+   damageScale[$DamageType::Suicide] = 2.0;
+   damageScale[$DamageType::ScriptDamage] = 2.0;
 
    damageScale[$DamageType::Melee] = 0.5;
    damageScale[$DamageType::Pistol] = 1.0;
@@ -226,6 +233,7 @@ datablock SimDataBlock(ArmorDamageScale)
    damageScale[$DamageType::VehicleSpawn] = 1.0;
    damageScale[$DamageType::Explosion] = 1.0;
    damageScale[$DamageType::Suicide] = 2.0;
+   damageScale[$DamageType::ScriptDamage] = 2.0;
 
    damageScale[$DamageType::Melee] = 1.0;
    damageScale[$DamageType::Pistol] = 1.0;

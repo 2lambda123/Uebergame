@@ -234,7 +234,7 @@ function AIPlayer::wait(%this, %time)
 
 function AIPlayer::done(%this,%time)
 {
-   %this.schedule(0, "delete");
+   %this.schedule( 50, "delete");
 }
 
 function AIPlayer::fire(%this,%bool)

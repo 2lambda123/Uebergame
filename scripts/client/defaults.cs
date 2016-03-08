@@ -37,7 +37,6 @@ $pref::Video::warningTexturePath = "art/editor/warnmat";
 
 $pref::LogEchoEnabled = 0;
 
-$pref::debug::consoleSpam = "1";
 $pref::debug::FPV = "1";
 $pref::debug::showFramerate = "1";
 $pref::decalMgr::enabled = "1";
@@ -53,7 +52,7 @@ $pref::SFX::rolloffFactor = "0.25";
 
 $pref::Player = "Player\tbase";
 $pref::Player::defaultFov = 90;
-//$pref::Player::Fov = 90; //unused??
+$pref::Player::Fov = 90;
 //$pref::Player::SelectedVehicle = "Cheetah"; //vehicles not ready yet
 
 $pref::Audio::BackgroundMusic = 1;
@@ -129,7 +128,6 @@ $pref::LightManager::Enable::AA = "1";
 $pref::LightManager::Enable::DOF = "1";
 $pref::LightManager::Enable::HDR = "0";
 $pref::LightManager::Enable::LightRay = "1";
-$pref::LightManager::Enable::LightRays = "1";
 $pref::LightManager::Enable::SSAO = "0";
 $pref::LightManager::Enable::Vignette = "1";
 $pref::LightManager::sgAtlasMaxDynamicLights = "64";
@@ -345,7 +343,6 @@ new SimGroup( MeshQualityGroup )
    };   
 };
 
-
 new SimGroup( TextureQualityGroup )
 {
    new ArrayObject( [Lowest] )
@@ -450,7 +447,6 @@ function LightingQualityGroup::onApply( %this, %level )
    setLightManager( $pref::lightManager );
 }
 
-
 // TODO: Reduce shader complexity of water and the scatter sky here!
 new SimGroup( ShaderQualityGroup )
 {
@@ -525,7 +521,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          MeshQualityGroup-->Lowest.apply();
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
-         ShaderQualityGroup-->Low.apply();   
+         ShaderQualityGroup-->Low.apply();    
       }
       else
       {

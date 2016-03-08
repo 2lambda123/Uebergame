@@ -936,18 +936,17 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    minJumpEnergy = "15";
    jumpDelay = "3";
    airControl = "0.3";
-
+/*
    jetJumpForce = 140;
    jetJumpEnergyDrain = 0.8;    //< Energy per jump
    jetMinJumpEnergy = 3;
    jetMinJumpSpeed = 5;
    jetMaxJumpSpeed = 20;
    jetJumpSurfaceAngle = 80;   //< Angle vertical degrees
-   airControl = 0.25;
    jetEmitter = JumpJetEmitter;
    jetEmitterNumParts = 2;
    jetEmitterRadius = 0.25;
-
+*/
    fallingSpeedThreshold = "-4";
    landSequenceTime = "1.2";
    transitionToLand = "1";
@@ -1377,7 +1376,7 @@ function Armor::onCollision(%this, %obj, %col)
                {
                   %gotSomething = 1;
                   %col.decInventory( $SMS::AmmoName[%i], %increase );
-                  messageClient(%obj.client, 'MsgItemPickup', '\c2You picked up %2 %1\s.', nameToID($SMS::AmmoName[%i]).pickUpName, %increase);
+                  messageClient(%obj.client, 'MsgItemPickup', "", nameToID($SMS::AmmoName[%i]).pickUpName, %increase);
                }
             }
          }
@@ -1392,7 +1391,7 @@ function Armor::onCollision(%this, %obj, %col)
                {
                   %gotSomething = 1;
                   %col.decInventory( $SMS::Clip[%i], %increase );
-                  messageClient(%obj.client, 'MsgItemPickup', '\c2You picked up %2 %1\s.', nameToID( $SMS::Clip[%i]).pickUpName, %increase);
+                  messageClient(%obj.client, 'MsgItemPickup', "", nameToID( $SMS::Clip[%i]).pickUpName, %increase);
                }
             }
          }
@@ -1429,7 +1428,10 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
          return;
 		 
 	  case "MissionAreaDamage":
-         return;	  
+         return;	
+
+      case "ScriptDamage":
+         return;		 
 
       default:
          // Process all other damage types
@@ -1583,7 +1585,7 @@ function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
       if ( isObject( %targetClient ) && !%targetClient.isAiControlled() )
       {
          // Determine damage direction and prevent it on certain damage types
-         if (%damageType !$= "Suicide"&& %damageType !$= "Drowning" && %damageType !$= "MissionAreaDamage")
+         if (%damageType !$= "Suicide"&& %damageType !$= "Drowning"&& %damageType !$= "MissionAreaDamage"&& %damageType !$= "ScriptDamage")
          %obj.setDamageDirection(%sourceObject, %position);
       }
    }

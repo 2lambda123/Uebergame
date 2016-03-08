@@ -150,7 +150,7 @@ function FlagImage::onActivate(%data, %obj, %slot)
 
    // We have to schedule image dismount to avoid engine crash.. this is very annoying
    // Function reside in shapebase.cs
-   %obj.schedule( 0, "dismountImage", %obj, %slot );
+   %obj.schedule( 50, "dismountImage", %obj, %slot );
 
    // Tell the game
    Game.onFlagDropped( %obj, %obj.holdingFlag );

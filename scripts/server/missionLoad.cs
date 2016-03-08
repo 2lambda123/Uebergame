@@ -316,7 +316,7 @@ function TSStatic::setupGameType(%this, %type)
       if(%allow $= %type)
          return;
 
-   %this.schedule(0, "delete");
+   %this.schedule( 50, "delete");
 }
 
 function Trigger::setupGameType(%this, %type)
@@ -328,7 +328,7 @@ function Trigger::setupGameType(%this, %type)
       if(%allow $= %type)
          return;
 
-   %this.schedule(0, "delete");
+   %this.schedule( 50, "delete");
 }
 
 function ParticleEmitterNode::setupGameType(%this, %type)
@@ -340,7 +340,7 @@ function ParticleEmitterNode::setupGameType(%this, %type)
       if(%allow $= %type)
          return;
 
-   %this.schedule(0, "delete");
+   %this.schedule( 50, "delete");
 }
 
 function SimGroup::initializeObjective(%this)

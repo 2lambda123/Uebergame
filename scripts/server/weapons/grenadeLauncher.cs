@@ -327,15 +327,15 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateName[4]                     = "Fire";
    stateTransitionGeneric0In[4]     = "SprintEnter";
    stateTransitionOnTimeout[4]      = "WaitForRelease";
-   stateTimeoutValue[4]             = 0.4;
+   stateTimeoutValue[4]             = 0.75;
    stateWaitForTimeout[4]           = true;
    stateFire[4]                     = true;
    stateRecoil[4]                   = LightRecoil;
    stateAllowImageChange[4]         = false;
-   stateSequence[4]                 = "fire";
+   stateSequence[4]                 = "idle";
    stateScaleAnimation[4]           = true;
    stateSequenceNeverTransition[4]  = true;
-   stateSequenceRandomFlash[4]      = true;        // use muzzle flash sequence
+   stateSequenceRandomFlash[4]      = false;        // use muzzle flash sequence
    stateScript[4]                   = "onFire";
    //stateEmitter[4]                  = RyderFireSmokeEmitter;
    //stateEmitterTime[4]              = 0.025;
@@ -399,6 +399,8 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "Ready";
    stateWaitForTimeout[10]           = true;
+   stateScaleAnimation[10]           = false;
+   stateScaleAnimationFP[10]         = false;
    stateTimeoutValue[10]             = 3.0;
    stateReload[10]                   = true;
    stateSequence[10]                 = "reload";

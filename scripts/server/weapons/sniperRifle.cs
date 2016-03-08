@@ -338,7 +338,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
    stateTransitionOnTimeout[6]      = "Ready";
    stateWaitForTimeout[6]           = true;
-   stateTimeoutValue[6]             = 0.5;
+   stateTimeoutValue[6]             = 0.45;
    stateAllowImageChange[6]         = false;
    stateEjectShell[6]               = true;
 
@@ -383,6 +383,8 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "Ready";
    stateWaitForTimeout[10]           = true;
+   stateScaleAnimation[10]           = false;
+   stateScaleAnimationFP[10]         = false;
    stateTimeoutValue[10]             = 3.0;
    stateReload[10]                   = true;
    stateSequence[10]                 = "reload";

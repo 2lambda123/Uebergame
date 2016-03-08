@@ -237,7 +237,7 @@ function TurretDeployableImage::onFire(%this, %obj, %slot)
    // so that it doesn't happen during this ShapeBaseImageData's state machine.
    // If we throw the last one then we end up unmounting while the state machine
    // is still being processed.
-   %obj.schedule( 0, "throwTurret", %this.deployed );
+   %obj.schedule( 50, "throwTurret", %this.deployed );
 }
 
 function ShapeBase::throwTurret( %this, %data )

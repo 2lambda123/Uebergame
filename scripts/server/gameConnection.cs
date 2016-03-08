@@ -135,7 +135,7 @@ function GameConnection::onConnect( %client, %name, %skin )
 
    // Inform the client we've joined up
    messageClient(%client,
-      'MsgClientJoin', '\c1Welcome to Horde Alpha %1.',
+      'MsgClientJoin', '\c1Welcome to Uebergame %1.',
       %client.playerName,
       %client,
       %client.guid,

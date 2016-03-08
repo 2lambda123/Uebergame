@@ -497,7 +497,7 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
    if ( %this-->OptMeshQualityPopup.apply( MeshQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptTextureQualityPopup.apply( TextureQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptLightingQualityPopup.apply( LightingQualityGroup, %testNeedApply ) ) return true;            
-   if ( %this-->OptShaderQualityPopup.apply( ShaderQualityGroup, %testNeedApply ) ) return true;   
+   if ( %this-->OptShaderQualityPopup.apply( ShaderQualityGroup, %testNeedApply ) ) return true;      
 
    // Check the anisotropic filtering.   
    %level = %this-->OptAnisotropicPopup.getSelected();
@@ -1077,23 +1077,13 @@ function OptAudioUpdate()
 function Tgl_10::onAction(%this)
 {
    if ( %this.getValue() )
-   {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:Vignette Enabled" );
-      }
-      
-      HDRPostFX.enable();
+   {     
+      VignettePostFX.enable();
       $pref::LightManager::Enable::Vignette = "1";
    }
    else
    {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:Vignette Disabled" );
-      }
-      
-      HDRPostFX.disable();
+      VignettePostFX.disable();
       $pref::LightManager::Enable::Vignette = "0";
    }
 }
@@ -1101,22 +1091,12 @@ function Tgl_10::onAction(%this)
 function Tgl_11::onAction(%this)
 {
    if ( %this.getValue() )
-   {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:HDR Enabled" );
-      }
-      
+   {    
       HDRPostFX.enable();
       $pref::LightManager::Enable::HDR = "1";
    }
    else
    {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:HDR Disabled" );
-      }
-      
       HDRPostFX.disable();
       $pref::LightManager::Enable::HDR = "0";
    }
@@ -1126,22 +1106,12 @@ function Tgl_12::onAction(%this)
 {
    if ( %this.getValue() )
    {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:SSAO Enabled" );
-      }
-      
-      SSAO2PostFX.enable();
+      SSAOPostFX.enable();
       $pref::LightManager::Enable::SSAO = "1";
    }
    else
-   {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:SSAO Disabled" );
-      }
-      
-      SSAO2PostFX.disable();
+   {    
+      SSAOPostFX.disable();
       $pref::LightManager::Enable::SSAO = "0";
    }
 }
@@ -1149,24 +1119,28 @@ function Tgl_12::onAction(%this)
 function Tgl_13::onAction(%this)
 {
    if ( %this.getValue() )
-   {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:LightRays Enabled" );
-      }
-      
+   {     
       LightRayPostFX.enable();
-      $pref::LightManager::Enable::LightRays = "1";
+      $pref::LightManager::Enable::LightRay = "1";
    }
    else
    {
-      if($pref::debug::consoleSpam)
-      {
-         echo( "LightManager:LightRays Disabled" );
-      }
-      
       LightRayPostFX.disable();
-      $pref::LightManager::Enable::LightRays = "0";
+      $pref::LightManager::Enable::LightRay = "0";
+   }
+}
+
+function Tgl_14::onAction(%this)
+{
+   if ( %this.getValue() )
+   {
+      DOFPostFX.enable();
+      $pref::LightManager::Enable::DOF = "1";
+   }
+   else
+   {
+      DOFPostFX.disable();
+      $pref::LightManager::Enable::DOF = "0";
    }
 }
 

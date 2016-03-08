@@ -316,16 +316,10 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    clip = LurkerClip;
    ironSight = LurkerIronSightImage;
 
-   usesEnergy = 0;
-   minEnergy = 0;
-
    projectile = LurkerProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.016";
+   projectileSpread = "0.02";
    projectileNum = 1;
-
-   altProjectile = GrenadeLauncherProjectile;
-   altProjectileSpread = "0.02";
 
    casing = BulletShell;
    shellExitDir        = "1.0 0.3 1.0";
@@ -469,6 +463,8 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "Ready";
    stateWaitForTimeout[10]           = true;
+   stateScaleAnimation[10]           = false;
+   stateScaleAnimationFP[10]         = false;
    stateTimeoutValue[10]             = 3.0;
    stateReload[10]                   = true;
    stateSequence[10]                 = "reload";
@@ -523,7 +519,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnNoAmmo[14]       = "NoAmmo";  
 };
 
-
 datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
 {
    firstPerson = false;
@@ -534,16 +529,16 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    eyeOffset = "-0.16 -0.29 0.060";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
-   projectileSpread = "0.004";
+   projectileSpread = "0.007";
    parentImage = "LurkerWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
    stateTimeoutValue[1]             = 0.5;
    stateWaitForTimeout[1]           = true;
-   stateSequence[1]     = "idle";
-   stateSound[1]        = "";
-   stateTransitionOnTimeout[1]     = "Ready";
+   stateSequence[1]                 = "idle";
+   stateSound[1]                    = "";
+   stateTransitionOnTimeout[1]      = "Ready";
 };
 
 //-----------------------------------------------------------------------------
@@ -555,5 +550,5 @@ SmsInv.AddWeapon(Lurker, "Lurker rifle", 1);
 SmsInv.AllowClip("armor\tSoldier\t3");
 SmsInv.AddClip(LurkerClip, "Lurker Clips", 3);
 
-SmsInv.AllowAmmo("armor\tSoldier\t30");
-SmsInv.AddAmmo(LurkerAmmo, 30);
+SmsInv.AllowAmmo("armor\tSoldier\t3");
+SmsInv.AddAmmo(LurkerAmmo, 3);

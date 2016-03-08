@@ -253,7 +253,7 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
                serverPlay3D( %data.pickupSound, %col.getTransform() );
 
             if ( isObject(%col.client) )
-               messageClient( %col.client, 'MsgItemPickup', '\c2You picked up a %1', %data.pickupName );
+               messageClient( %col.client, 'MsgItemPickup', "", %data.pickupName );
 
             if ( %obj.isStatic() )
                %obj.respawn();
@@ -273,7 +273,7 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
                   serverPlay3D( %data.pickupSound, %col.getTransform() );
 
                if ( isObject( %col.client ) )
-                  messageClient( %col.client, 'MsgItemPickup', '\c2You picked up a %1', %data.pickupName );
+                  messageClient( %col.client, 'MsgItemPickup', "", %data.pickupName );
 
                if ( %obj.isStatic() )
                   %obj.respawn();
@@ -294,7 +294,7 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
                   serverPlay3D( %data.pickupSound, %col.getTransform() );
 
                if ( isObject( %col.client ) )
-                  messageClient( %col.client, 'MsgItemPickup', '\c2You picked up a %1', %data.pickupName );
+                  messageClient( %col.client, 'MsgItemPickup', "", %data.pickupName );
 
                if ( %obj.isStatic() )
                   %obj.respawn();
@@ -316,7 +316,7 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
                serverPlay3D( %data.pickupSound, %col.getTransform() );
 
             if ( isObject( %col.client ) )
-               messageClient( %col.client, 'MsgItemPickup', '\c2You picked up %2 %1\s', %data.pickUpName, %inv );
+               messageClient( %col.client, 'MsgItemPickup', "", %data.pickUpName, %inv );
 
             if ( %obj.isStatic() )
                %obj.respawn();
@@ -334,7 +334,7 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
                serverPlay3D( %data.pickupSound, %col.getTransform() );
 
             if ( isObject( %col.client ) )
-               messageClient( %col.client, 'MsgItemPickup', '\c2You picked up %1\'s', %data.pickUpName );
+               messageClient( %col.client, 'MsgItemPickup', "", %data.pickUpName );
 
             if ( %obj.isStatic() )
                %obj.respawn();

@@ -275,7 +275,7 @@ function GrenadeImage::onUnmount(%data, %player, %slot)
 
 function WeaponImage::onClipEmpty(%this, %obj, %slot)
 {
-   //echo("WeaponImage::onClipEmpty: " SPC %this SPC %obj SPC %slot);
+   echo("WeaponImage::onClipEmpty: " SPC %this SPC %obj SPC %slot);
 
    // Attempt to automatically reload.  Schedule this so it occurs
    // outside of the current state that called this method

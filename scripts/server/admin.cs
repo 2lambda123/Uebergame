@@ -68,7 +68,7 @@ function serverCmdSAD(%client, %password)
             messageClient(%client, 'onClientBanned', '\c2For attempting to exploit SAD to gain unauthorized Admin by entering\ntoo many passwords, you are being Banned');
             if( isObject(%client.player) )
             {
-               %client.player.kill($DamageType::Default);
+               %client.player.kill($DamageType::ScriptDamage);
                %client.schedule(700, "delete");
             }
             schedule(10, %client, "ResetSadAttp", %client);
@@ -491,7 +491,7 @@ function clearserver(%client)
          else
          {
             if(isObject(%cl.player))
-               %cl.player.kill($DamageType::Default);
+               %cl.player.kill($DamageType::ScriptDamage);
 
             if(isObject(%cl))
             {

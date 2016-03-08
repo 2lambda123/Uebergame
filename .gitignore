@@ -21,6 +21,9 @@ shaders/procedural/*
 *.ilk
 *.pdb
 
+#misc garbage
+*.ml
+
 #console outpout
 console.log
 

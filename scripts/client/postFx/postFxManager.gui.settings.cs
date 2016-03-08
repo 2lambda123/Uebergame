@@ -305,11 +305,11 @@ function PostFXManager::settingsApplyFromPreset(%this)
    if ( $PostFXManager::forceEnableFromPresets )
    {
       $PostFXManager::PostFX::Enabled           = $PostFXManager::Settings::EnablePostFX;
-      $PostFXManager::PostFX::EnableDOF         = $PostFXManager::Settings::EnableDOF;
-      $PostFXManager::PostFX::EnableVignette    = $PostFXManager::Settings::EnableVignette;
-      $PostFXManager::PostFX::EnableLightRays   = $PostFXManager::Settings::EnableLightRays;
-      $PostFXManager::PostFX::EnableHDR         = $PostFXManager::Settings::EnableHDR;
-      $PostFXManager::PostFX::EnableSSAO        = $PostFXManager::Settings::EnabledSSAO;
+      $PostFXManager::PostFX::EnableDOF         = $pref::LightManager::Enable::DOF ? $PostFXManager::Settings::EnableDOF : false;
+      $PostFXManager::PostFX::EnableVignette    = $pref::LightManager::Enable::Vignette ? $PostFXManager::Settings::EnableVignette : false;
+      $PostFXManager::PostFX::EnableLightRays   = $pref::LightManager::Enable::LightRay ? $PostFXManager::Settings::EnableLightRays : false;
+      $PostFXManager::PostFX::EnableHDR         = $pref::LightManager::Enable::HDR ? $PostFXManager::Settings::EnableHDR : false;
+      $PostFXManager::PostFX::EnableSSAO        = $pref::LightManager::Enable::SSAO ? $PostFXManager::Settings::EnableSSAO : false;
 
       %this.settingsSetEnabled( true );
    }
@@ -409,7 +409,7 @@ function PostFXManager::settingsApplyAll(%this, %sFrom)
    $PostFXManager::Settings::EnableVignette      = $PostFXManager::PostFX::EnableVignette;
    $PostFXManager::Settings::EnableLightRays     = $PostFXManager::PostFX::EnableLightRays;
    $PostFXManager::Settings::EnableHDR           = $PostFXManager::PostFX::EnableHDR;
-   $PostFXManager::Settings::EnabledSSAO         = $PostFXManager::PostFX::EnableSSAO;
+   $PostFXManager::Settings::EnableSSAO         = $PostFXManager::PostFX::EnableSSAO;
       
    // Apply settings should save the values in the system to the 
    // the preset structure ($PostFXManager::Settings::*)
