@@ -23,7 +23,7 @@
 // List of master servers to query, each one is tried in order
 // until one responds
 $Pref::Server::RegionMask = 2;
-$pref::Master[0] = "2:88.198.65.149:28002";
+$pref::Master[0] = "2:duion.com:28002";
 
 // Information about the server
 $Pref::Server::Name = "Uebergame server";

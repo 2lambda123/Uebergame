@@ -27,18 +27,19 @@ datablock DecalData(ScorchBigDecal)
 {
    Material = "DECAL_scorch";
    size = "4.0";
-   lifeSpan = "10000";
+   lifeSpan = "60000";
 };
 
 datablock DecalData(ScorchRXDecal)
 {
    Material = "DECAL_RocketEXP";
    size = "4.0";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "2";
    texCols = "2";
-   clippingAngle = "80";
+   clippingAngle = "66";
    screenStartRadius = "200";
    screenEndRadius = "100";
 };
@@ -47,24 +48,26 @@ datablock DecalData(BulletHoleDecal)
 {
    Material = "DECAL_bulletHole";
    size = "0.2";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "2";
    texCols = "2";
    screenStartRadius = "20";
    screenEndRadius = "5";
-   clippingAngle = "45";
+   clippingAngle = "66";
 };
 
 datablock DecalData(bloodDecalData)  
 {  
    Material = "DECAL_blood_splatter_01";  
    size = "1";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "2";
    texCols = "2";
-   clippingAngle = "89";
+   clippingAngle = "66";
    screenStartRadius = "200";
    screenEndRadius = "100";  
 }; 
@@ -73,11 +76,12 @@ datablock DecalData(redPaintSplatterDecal)
 {  
    Material = "DECAL_paint_splatter_01_red";  
    size = "1";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "4";
    texCols = "4";
-   clippingAngle = "89";
+   clippingAngle = "66";
    screenStartRadius = "200";
    screenEndRadius = "100";  
 };
@@ -86,11 +90,12 @@ datablock DecalData(bluePaintSplatterDecal)
 {  
    Material = "DECAL_paint_splatter_01_blue";  
    size = "1";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "4";
    texCols = "4";
-   clippingAngle = "89";
+   clippingAngle = "66";
    screenStartRadius = "200";
    screenEndRadius = "100";  
 }; 
@@ -99,11 +104,12 @@ datablock DecalData(greenPaintSplatterDecal)
 {  
    Material = "DECAL_paint_splatter_01_green";  
    size = "1";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "4";
    texCols = "4";
-   clippingAngle = "89";
+   clippingAngle = "66";
    screenStartRadius = "200";
    screenEndRadius = "100";  
 }; 
@@ -112,11 +118,12 @@ datablock DecalData(yellowPaintSplatterDecal)
 {  
    Material = "DECAL_paint_splatter_01_yellow";  
    size = "1";
-   lifeSpan = "100000";
+   lifeSpan = "10000";
+   fadeTime = "50000";
    randomize = "1";
    texRows = "4";
    texCols = "4";
-   clippingAngle = "89";
+   clippingAngle = "66";
    screenStartRadius = "200";
    screenEndRadius = "100";  
 }; 

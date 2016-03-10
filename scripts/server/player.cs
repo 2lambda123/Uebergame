@@ -837,8 +837,8 @@ datablock DecalData(PlayerFootprint)
 {
    size = "0.35";
    material = CommonPlayerFootprint;
-   lifeSpan = "16000";
-   fadeTime = "16000";
+   lifeSpan = "2000";
+   fadeTime = "28000";
    textureCoordCount = "0";
 };
 

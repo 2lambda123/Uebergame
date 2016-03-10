@@ -233,7 +233,7 @@ $pref::TS::detailAdjust = 1.0;
 $pref::Decals::enabled = true;
 
 ///
-$pref::Decals::lifeTimeScale = "1";
+$pref::Decals::lifeTimeScale = 1;
 
 //
 $pref::PhysicsDebris::lifetimeScale = "1";
@@ -291,6 +291,9 @@ if ( isObject( LightingQualityGroup ) )
    LightingQualityGroup.delete();
 if ( isObject( ShaderQualityGroup ) )
    ShaderQualityGroup.delete();
+
+if ( isObject( DecalQualityGroup ) )
+   DecalQualityGroup.delete();
  
 new SimGroup( MeshQualityGroup )
 { 
@@ -489,10 +492,27 @@ new SimGroup( ShaderQualityGroup )
       caseSensitive = true;
       
       key["$pref::Video::disablePixSpecular"] = false;
-      key["$pref::Video::disableNormalmapping"] = false;
+	  key["$pref::Video::disableNormalmapping"] = false;
       key["$pref::Video::disableParallaxMapping"] = false;     
       key["$pref::Water::disableTrueReflections"] = false;          
    };   
+};
+
+new SimGroup( DecalQualityGroup ) //extra compact code design
+{
+   new ArrayObject([0.1]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=0.1; };
+   new ArrayObject([0.25]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=0.25; };
+   new ArrayObject([0.5]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=0.5; };
+   new ArrayObject([1]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=1; };
+   new ArrayObject([2]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=2; };
+   new ArrayObject([3]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=3; };
+   new ArrayObject([4]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=4; };
+   new ArrayObject([5]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=5; };
+   new ArrayObject([10]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=10; };
+   new ArrayObject([15]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=15; };
+   new ArrayObject([30]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=30; };
+   new ArrayObject([60]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=60; };
+   new ArrayObject([1440]) {class="GraphicsQualityLevel"; key["$pref::Decals::lifeTimeScale"]=1440; };
 };
 
 function GraphicsQualityAutodetect()
@@ -521,14 +541,16 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          MeshQualityGroup-->Lowest.apply();
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
-         ShaderQualityGroup-->Low.apply();    
+         ShaderQualityGroup-->Low.apply();
+		 DecalQualityGroup-->(0.1).apply();			 
       }
       else
       {
          MeshQualityGroup-->Lowest.apply();
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
-         ShaderQualityGroup-->Lowest.apply();   
+         ShaderQualityGroup-->Lowest.apply();
+		 DecalQualityGroup-->(0.1).apply();				 
       }
    }   
    else
@@ -539,6 +561,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->High.apply();
          LightingQualityGroup-->High.apply();
          ShaderQualityGroup-->High.apply();
+		 DecalQualityGroup-->(5).apply();	
       }
       else if ( %videoMem > 400 || %videoMem == 0 )
       {
@@ -546,6 +569,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Normal.apply();
          LightingQualityGroup-->Normal.apply();
          ShaderQualityGroup-->Normal.apply();
+		 DecalQualityGroup-->(2).apply();	
          
          if ( %videoMem == 0 )
             return "Torque was unable to detect available video memory. Applying 'Normal' quality.";
@@ -556,6 +580,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Low.apply();
          LightingQualityGroup-->Low.apply();
          ShaderQualityGroup-->Low.apply();
+		 DecalQualityGroup-->(0.5).apply();		 
       }
    }
    

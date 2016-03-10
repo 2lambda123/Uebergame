@@ -215,6 +215,16 @@ new GuiControlProfile (GuiTextProfile)
    cursorColor = "0 0 0 255";
 };
 
+if( !isObject( GuiOrangeTextProfile ) )
+new GuiControlProfile (GuiOrangeTextProfile)
+{
+   justify = "left";
+   fontColor = "224 128 0 255";
+   category = "Core";
+   fontSize = "16";
+   fontType = "Arial bold";
+};
+
 if( !isObject( GuiTextRightProfile ) )
 new GuiControlProfile (GuiTextRightProfile : GuiTextProfile)
 {

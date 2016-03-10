@@ -47,13 +47,13 @@ new TerrainMaterial()
    diffuseSize = "250";
    detailMap = "art/terrains/sand/ter_sand_dirty_01_D";
    detailDistance = "100";
-   macroSize = "75";
+   macroSize = "30";
    internalName = "ter_sand_dirty_01";
-   macroStrength = "0.5";
+   macroStrength = "0.8";
    detailSize = "4";
    macroMap = "art/terrains/sand/ter_sand_dirty_01_D";
    normalMap = "art/terrains/sand/ter_sand_dirty_01_N";
-   parallaxScale = "0.1";
+   parallaxScale = "0";
 };
 
 singleton Material(TerrainFX_ter_sand_dirty_02)    
@@ -77,12 +77,12 @@ new TerrainMaterial()
    detailMap = "art/terrains/sand/ter_sand_dirty_02_D";
    detailDistance = "100";
    macroMap = "art/terrains/sand/ter_sand_dirty_02_D";
-   macroSize = "75";
+   macroSize = "30";
    internalName = "ter_sand_dirty_02";
    detailSize = "4";
-   macroStrength = "0.5";
+   macroStrength = "0.8";
    normalMap = "art/terrains/sand/ter_sand_dirty_02_N";
-   parallaxScale = "0.1";
+   parallaxScale = "0";
 };
 
 singleton Material(TerrainFX_ter_sand_dirty_03)    
@@ -105,12 +105,13 @@ new TerrainMaterial(ter_sand_dirty_03)
    diffuseSize = "250";
    detailMap = "art/terrains/sand/ter_sand_dirty_03_D";
    detailDistance = "100";
-   macroSize = "75";
+   macroSize = "30";
    internalName = "ter_sand_dirty_03";
    macroMap = "art/terrains/sand/ter_sand_dirty_03_D";
-   macroStrength = "0.5";
+   macroStrength = "0.8";
    normalMap = "art/terrains/sand/ter_sand_dirty_03_N";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
+   detailSize = "4";
 };
 
 singleton Material(TerrainFX_ter_sand_rough_01)    

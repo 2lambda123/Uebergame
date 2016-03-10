@@ -172,7 +172,7 @@ function OptionsDlg::onWake(%this)
          %selId = 2;
       case "cycleNextWeaponOnly":
          %selId = 3;
-      case "setZoomFOV":
+      case "toggleZoomFOV":
          %selId = 4;
    }
    MouseZActionMenu.setSelected( %selId );
@@ -190,6 +190,8 @@ function OptionsDlg::onWake(%this)
       %this-->OptGraphicsFullscreenToggle.setStateOn( Canvas.isFullScreen() );
    }
    %this-->OptGraphicsVSyncToggle.setStateOn( !$pref::Video::disableVerticalSync );
+
+   %this-->Tgl_7.setStateOn( $pref::Decals::enabled );
    
    %this-->Tgl_10.setStateOn( $pref::LightManager::Enable::Vignette );
    %this-->Tgl_11.setStateOn( $pref::LightManager::Enable::HDR );
@@ -222,6 +224,8 @@ function OptionsDlg::onWake(%this)
    %this-->OptTextureQualityPopup.init( TextureQualityGroup );
    %this-->OptLightingQualityPopup.init( LightingQualityGroup );
    %this-->OptShaderQualityPopup.init( ShaderQualityGroup );
+   
+   %this-->OptDecalQualityPopup.init( DecalQualityGroup );
 
    // Setup the anisotropic filtering menu.
    %ansioCtrl = %this-->OptAnisotropicPopup;
@@ -282,7 +286,7 @@ function OptionsDlg::onWake(%this)
    %aaMenu.setSelected( getWord( $pref::Video::mode, $WORD::AA ) );
    
    OptMouseSensitivity.value = $pref::Input::LinkMouseSensitivity;
-      
+
    // Set the graphics pane to start.
    //%this-->OptGraphicsButton.performClick();
 }
@@ -301,17 +305,17 @@ function OptionsDlg::onSleep(%this)
    spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
    vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
 }
-
+ //unused
 function OptionsDlg::saveSettings(%this)
 {
    switch$ (%this.pane)
    {
       case "Player":
 	  
-         OptPlayerNameInput.setField();
-         %playerName = OptPlayerNameInput.getValue();
-         %skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
-         $pref::Player = %playerName TAB %skin;
+         //OptPlayerNameInput.setField();
+         //%playerName = OptPlayerNameInput.getValue();
+         //%skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
+         //$pref::Player = %playerName TAB %skin;
 
       case "Network":
 
@@ -325,7 +329,7 @@ function OptionsDlg::saveSettings(%this)
             case 3:
                moveMap.bind( mouse, zaxis, cycleNextWeaponOnly );
             case 4:
-               moveMap.bind( mouse, zaxis, setZoomFOV );
+               moveMap.bind( mouse, zaxis, toggleZoomFOV );
             default:
                moveMap.unbind( mouse, zaxis );
          }
@@ -497,16 +501,18 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
    if ( %this-->OptMeshQualityPopup.apply( MeshQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptTextureQualityPopup.apply( TextureQualityGroup, %testNeedApply ) ) return true;            
    if ( %this-->OptLightingQualityPopup.apply( LightingQualityGroup, %testNeedApply ) ) return true;            
-   if ( %this-->OptShaderQualityPopup.apply( ShaderQualityGroup, %testNeedApply ) ) return true;      
+   if ( %this-->OptShaderQualityPopup.apply( ShaderQualityGroup, %testNeedApply ) ) return true;     
 
+   if ( %this-->OptDecalQualityPopup.apply( DecalQualityGroup, %testNeedApply ) ) return true;
+   
    // Check the anisotropic filtering.   
-   %level = %this-->OptAnisotropicPopup.getSelected();
-   if ( %level != $pref::Video::defaultAnisotropy )
+   %aniLevel = %this-->OptAnisotropicPopup.getSelected();
+   if ( %aniLevel != $pref::Video::defaultAnisotropy )
    {
       if ( %testNeedApply )
          return true;
                                  
-      $pref::Video::defaultAnisotropy = %level;
+      $pref::Video::defaultAnisotropy = %aniLevel;
    }
    
    // If we're applying the state then recheck the 
@@ -1150,8 +1156,8 @@ function Tgl_14::onAction(%this)
 function OptPlayerNameInput::setField(%this)
 {
    // called when you type in text input field
-   //%value = %this.getValue();
-   //%this.setValue(%value);
+   %value = %this.getValue();
+   %this.setValue(%value);
 }
 
 function OptPlayerSkinMenu::init(%this)

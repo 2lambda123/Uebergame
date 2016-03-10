@@ -18,7 +18,7 @@ new TerrainMaterial()
    detailMap = "art/terrains/rubble/ter_rubble_waste_01_D";
    internalName = "ter_rubble_waste_01";
    macroSize = "64";
-   macroStrength = "0.5";
+   macroStrength = "0.8";
    detailSize = "5";
    diffuseSize = "200";
    normalMap = "art/terrains/rubble/ter_rubble_waste_01_N";

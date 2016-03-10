@@ -29,6 +29,9 @@ singleton Material(DECAL_scorch)
    translucentZWrite = true;
    alphaTest = true;
    alphaRef = 84;
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_RocketEXP)
@@ -45,6 +48,9 @@ singleton Material(DECAL_RocketEXP)
    specularPower[0] = "64";
    specularStrength[0] = "0.35";
    pixelSpecular[0] = "1";
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_bulletHole)
@@ -57,6 +63,7 @@ singleton Material(DECAL_bulletHole)
    materialTag0 = "decal";
    castShadows = "0";
    showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_defaultblobshadow)
@@ -69,6 +76,9 @@ singleton Material(DECAL_defaultblobshadow)
    alphaTest = false;
    //alphaRef = 64;
    //emissive[0] = "1";
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_blood_splatter_01)
@@ -87,6 +97,8 @@ singleton Material(DECAL_blood_splatter_01)
    specular[1] = "1 1 1 1";
    diffuseColor[0] = "White";
    castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_paint_splatter_01_red)
@@ -104,13 +116,14 @@ singleton Material(DECAL_paint_splatter_01_red)
    specularPower[0] = "32";
    specular[1] = "1 1 1 1";
    diffuseColor[0] = "1 0.3 0 1";
-   castShadows = "1";
    subSurface[0] = "0";
    subSurfaceColor[0] = "1 0.2 0.2 1";
    subSurfaceRolloff[0] = "0.2";
-   showFootprints = "0";
    specularStrength[0] = "0.5";
    specularMap[0] = "art/decals/paintball/pb_splatter_01_D.dds";
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_paint_splatter_01_blue)
@@ -128,14 +141,14 @@ singleton Material(DECAL_paint_splatter_01_blue)
    specularPower[0] = "32";
    specular[1] = "1 1 1 1";
    diffuseColor[0] = "0.223529 0.345098 0.952941 1";
-   castShadows = "1";
    subSurface[0] = "0";
    subSurfaceColor[0] = "1 0.2 0.2 1";
    subSurfaceRolloff[0] = "0.2";
-   showFootprints = "0";
    specularStrength[0] = "0.5";
    specularMap[0] = "art/decals/paintball/pb_splatter_01_D.dds";
-   effectColor[0] = "InvisibleBlack";
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_paint_splatter_01_green)
@@ -153,13 +166,14 @@ singleton Material(DECAL_paint_splatter_01_green)
    specularPower[0] = "32";
    specular[1] = "1 1 1 1";
    diffuseColor[0] = "0.298039 0.929412 0.25098 1";
-   castShadows = "1";
    subSurface[0] = "0";
    subSurfaceColor[0] = "1 0.2 0.2 1";
    subSurfaceRolloff[0] = "0.2";
-   showFootprints = "0";
    specularStrength[0] = "0.5";
    specularMap[0] = "art/decals/paintball/pb_splatter_01_D.dds";
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 
 singleton Material(DECAL_paint_splatter_01_yellow)
@@ -177,12 +191,13 @@ singleton Material(DECAL_paint_splatter_01_yellow)
    specularPower[0] = "1";
    specular[1] = "1 1 1 1";
    diffuseColor[0] = "0.941177 0.85098 0.00784314 1";
-   castShadows = "0";
    subSurface[0] = "0";
    subSurfaceColor[0] = "1 0.2 0.2 1";
    subSurfaceRolloff[0] = "0.2";
-   showFootprints = "0";
    specularStrength[0] = "0.5";
    specularMap[0] = "art/decals/paintball/pb_splatter_01_D.dds";
+   castShadows = "0";
+   showFootprints = "0";
+   vertColor[0] = true;
 };
 

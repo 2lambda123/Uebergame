@@ -550,5 +550,5 @@ SmsInv.AddWeapon(Lurker, "Lurker rifle", 1);
 SmsInv.AllowClip("armor\tSoldier\t3");
 SmsInv.AddClip(LurkerClip, "Lurker Clips", 3);
 
-SmsInv.AllowAmmo("armor\tSoldier\t3");
-SmsInv.AddAmmo(LurkerAmmo, 3);
+SmsInv.AllowAmmo("armor\tSoldier\t30");
+SmsInv.AddAmmo(LurkerAmmo, 30);
