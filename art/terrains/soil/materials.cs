@@ -76,8 +76,8 @@ new TerrainMaterial()
    detailMap = "art/terrains/soil/ter_soil_mixed_01_D";
    internalName = "ter_soil_mixed_01";
    detailSize = "3";
-   parallaxScale = "0.1";
-   macroSize = "25";
+   parallaxScale = "0.07";
+   macroSize = "64";
    macroMap = "art/terrains/soil/ter_soil_mixed_01_D";
    normalMap = "art/terrains/soil/ter_soil_mixed_01_N";
 };

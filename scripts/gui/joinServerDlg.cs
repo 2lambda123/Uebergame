@@ -107,7 +107,7 @@ function JoinServerDlg::query(%this)
       32,                           // maxBots
       $pref::Net::RegionMask,       // regionMask
       0,                            // maxPing
-      100,                          // minCPU
+      0,                          // minCPU
       0                             // filterFlags
       //0,                            // buddy count
       //0                             // buddy list
@@ -128,7 +128,7 @@ function JoinServerDlg::queryLan(%this)
       32,                           // maxBots
       0,                            // regionMask
       0,                            // maxPing
-      100,                          // minCPU
+      0,                          // minCPU
       0                             // filterFlags
       );
 }

@@ -315,7 +315,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    // Play the reload clip animation
    stateName[11]                     = "ReloadClip";
    stateTransitionGeneric0In[11]     = "SprintEnter";
-   stateTransitionOnTimeout[11]      = "Ready";
+   stateTransitionOnTimeout[11]      = "ReloadFinish";
    stateWaitForTimeout[11]           = true;
    stateScaleAnimation[11]           = false;
    stateScaleAnimationFP[11]         = false;
@@ -325,6 +325,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateShapeSequence[11]            = "Reload";
    stateScaleShapeSequence[11]       = true;
    stateSound[11]                    = ShotgunReloadSound;
+   stateAllowImageChange[11]         = false; 
 
    // Start Sprinting
    stateName[12]                    = "SprintEnter";
@@ -361,6 +362,12 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateSequenceTransitionOut[14]   = true;
    stateAllowImageChange[14]        = false;
    stateSequence[14]                = "sprint";
+   
+   stateName[15]                     = "ReloadFinish"; 
+   stateTimeoutValue[15]             = 0.1; 
+   stateWaitForTimeout[15]           = true; 
+   stateTransitionOnTimeout[15]      = "Ready";
+   stateScript[15]                   = "onReloadFinish";   
 };
 
 datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
@@ -383,7 +390,8 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";
-   stateTransitionOnTimeout[1]     = "Ready";
+   stateTransitionOnTimeout[1]      = "Ready";
+   stateAllowImageChange[1]         = false; 
 };
 
 function ShotgunWeaponImage::onFire(%data, %obj, %slot)
@@ -463,6 +471,6 @@ SmsInv.AddWeapon(Shotgun, "Shotgun", 1);
 SmsInv.AllowClip("armor\tSoldier\t3");
 SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 3);
 
-SmsInv.AllowAmmo("armor\tSoldier\t2");
-SmsInv.AddAmmo(ShotgunAmmo, 2);
+SmsInv.AllowAmmo("armor\tSoldier\t8");
+SmsInv.AddAmmo(ShotgunAmmo, 8);
 

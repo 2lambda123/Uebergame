@@ -303,7 +303,8 @@ new SimGroup( MeshQualityGroup )
       caseSensitive = true;
       
       key["$pref::TS::detailAdjust"] = 0.5;
-      key["$pref::TS::skipRenderDLs"] = 0;      
+      key["$pref::TS::skipRenderDLs"] = 0;
+	  key["$pref::TS::smallestVisiblePixelSize"] = 16;	  
       key["$pref::Terrain::lodScale"] = 2.0;
       key["$pref::decalMgr::enabled"] = false;
       key["$pref::GroundCover::densityScale"] = 0.5;
@@ -315,7 +316,8 @@ new SimGroup( MeshQualityGroup )
       caseSensitive = true;
             
       key["$pref::TS::detailAdjust"] = 0.75;
-      key["$pref::TS::skipRenderDLs"] = 0;      
+      key["$pref::TS::skipRenderDLs"] = 0;
+	  key["$pref::TS::smallestVisiblePixelSize"] = 12;	  
       key["$pref::Terrain::lodScale"] = 1.5;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 0.75;
@@ -327,7 +329,8 @@ new SimGroup( MeshQualityGroup )
       caseSensitive = true;
 
       key["$pref::TS::detailAdjust"] = 1.0;
-      key["$pref::TS::skipRenderDLs"] = 0;      
+      key["$pref::TS::skipRenderDLs"] = 0;  
+	  key["$pref::TS::smallestVisiblePixelSize"] = 8;		  
       key["$pref::Terrain::lodScale"] = 1.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 1.0;
@@ -339,10 +342,24 @@ new SimGroup( MeshQualityGroup )
       caseSensitive = true;
 
       key["$pref::TS::detailAdjust"] = 1.5;
-      key["$pref::TS::skipRenderDLs"] = 0;      
+      key["$pref::TS::skipRenderDLs"] = 0; 
+	  key["$pref::TS::smallestVisiblePixelSize"] = 4;		  
       key["$pref::Terrain::lodScale"] = 0.75;
       key["$pref::decalMgr::enabled"] = true;
-      key["$pref::GroundCover::densityScale"] = 1.0;
+      key["$pref::GroundCover::densityScale"] = 1.5;
+   };   
+   
+      new ArrayObject( [Highest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+
+      key["$pref::TS::detailAdjust"] = 2.0;
+      key["$pref::TS::skipRenderDLs"] = 0; 
+	  key["$pref::TS::smallestVisiblePixelSize"] = 2;		  
+      key["$pref::Terrain::lodScale"] = 0.5;
+      key["$pref::decalMgr::enabled"] = true;
+      key["$pref::GroundCover::densityScale"] = 2.0;
    };   
 };
 
@@ -387,6 +404,16 @@ new SimGroup( TextureQualityGroup )
       key["$pref::Reflect::refractTexScale"] = 1.25;
       key["$pref::Terrain::detailScale"] = 1.5;      
    };   
+   
+      new ArrayObject( [Highest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+
+      key["$pref::Video::textureReductionLevel"] = 0;
+      key["$pref::Reflect::refractTexScale"] = 1.5;
+      key["$pref::Terrain::detailScale"] = 2.0;      
+   }; 
 };
 
 function TextureQualityGroup::onApply( %this, %level )
@@ -440,6 +467,17 @@ new SimGroup( LightingQualityGroup )
       key["$pref::Shadows::disable"] = false;
       key["$pref::Shadows::textureScalar"] = 2.0;
       key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";          
+   };  
+
+   new ArrayObject( [Highest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::lightManager"] = "Advanced Lighting";
+      key["$pref::Shadows::disable"] = false;
+      key["$pref::Shadows::textureScalar"] = 3.0;
+      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";          
    };   
 };
 
@@ -469,7 +507,7 @@ new SimGroup( ShaderQualityGroup )
       class = "GraphicsQualityLevel";
       caseSensitive = true;
       
-      key["$pref::Video::disablePixSpecular"] = false;
+      key["$pref::Video::disablePixSpecular"] = true;
       key["$pref::Video::disableNormalmapping"] = false;
       key["$pref::Video::disableParallaxMapping"] = true;
       key["$pref::Water::disableTrueReflections"] = true;
@@ -483,7 +521,7 @@ new SimGroup( ShaderQualityGroup )
       key["$pref::Video::disablePixSpecular"] = false;
       key["$pref::Video::disableNormalmapping"] = false;
       key["$pref::Video::disableParallaxMapping"] = true;   
-      key["$pref::Water::disableTrueReflections"] = false;   
+      key["$pref::Water::disableTrueReflections"] = true;   
    };
    
    new ArrayObject( [High] )
@@ -493,9 +531,20 @@ new SimGroup( ShaderQualityGroup )
       
       key["$pref::Video::disablePixSpecular"] = false;
 	  key["$pref::Video::disableNormalmapping"] = false;
-      key["$pref::Video::disableParallaxMapping"] = false;     
+      key["$pref::Video::disableParallaxMapping"] = true;     
       key["$pref::Water::disableTrueReflections"] = false;          
    };   
+   
+      new ArrayObject( [Highest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::Video::disablePixSpecular"] = false;
+	  key["$pref::Video::disableNormalmapping"] = false;
+      key["$pref::Video::disableParallaxMapping"] = false;     
+      key["$pref::Water::disableTrueReflections"] = false;          
+   };  
 };
 
 new SimGroup( DecalQualityGroup ) //extra compact code design
@@ -555,7 +604,15 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
    }   
    else
    {
-      if ( %videoMem > 1000 )
+	  if ( %videoMem > 2000 )
+      {
+         MeshQualityGroup-->Highest.apply();
+         TextureQualityGroup-->Highest.apply();
+         LightingQualityGroup-->Highest.apply();
+         ShaderQualityGroup-->Highest.apply();
+		 DecalQualityGroup-->(15).apply();	
+      }
+      else if ( %videoMem > 1000 )
       {
          MeshQualityGroup-->High.apply();
          TextureQualityGroup-->High.apply();
@@ -572,7 +629,7 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
 		 DecalQualityGroup-->(2).apply();	
          
          if ( %videoMem == 0 )
-            return "Torque was unable to detect available video memory. Applying 'Normal' quality.";
+            return "Uebergame was unable to detect available video memory. Applying 'Normal' quality.";
       }
       else
       {

@@ -1,10 +1,10 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiChunkedBitmapCtrl(LoadingGui) {
-   bitmap = $MainGuiBackground;
+   bitmap = "art/gui/space_background_big.dds";
    useVariable = "0";
    tile = "0";
    position = "0 0";
-   extent = "1280 720";
+   extent = "1024 768";
    minExtent = "800 600";
    horizSizing = "width";
    vertSizing = "height";
@@ -18,10 +18,10 @@
    canSaveDynamicFields = "1";
 
    new GuiBitmapCtrl(LOAD_MapPic) {
-      bitmap = "levels/load_mission.jpg";
+      bitmap = "art/gui/space_background_big.dds";
       wrap = "0";
       position = "0 0";
-      extent = "1280 720";
+      extent = "1024 768";
       minExtent = "640 480";
       horizSizing = "width";
       vertSizing = "height";
@@ -34,14 +34,35 @@
       canSave = "1";
       canSaveDynamicFields = "0";
    };
+   new GuiButtonCtrl() {
+      text = "DISCONNECT";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      position = "914 4";
+      extent = "108 20";
+      minExtent = "8 8";
+      horizSizing = "left";
+      vertSizing = "bottom";
+      profile = "GuiButtonProfile";
+      visible = "1";
+      active = "1";
+      command = "disconnect();";
+      accelerator = "escape";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "0";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+   };
    new GuiBitmapCtrl() {
       bitmap = "art/gui/top_border";
       wrap = "0";
       position = "0 0";
-      extent = "1280 90";
+      extent = "1024 768";
       minExtent = "8 2";
       horizSizing = "width";
-      vertSizing = "bottom";
+      vertSizing = "top";
       profile = "GuiDefaultProfile";
       visible = "1";
       active = "1";
@@ -60,8 +81,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "0 27";
-         extent = "1280 60";
+         position = "0 704";
+         extent = "1024 60";
          minExtent = "8 8";
          horizSizing = "width";
          vertSizing = "top";
@@ -78,11 +99,11 @@
    new GuiBitmapCtrl() {
       bitmap = "art/gui/btm_border";
       wrap = "0";
-      position = "0 630";
-      extent = "1280 90";
+      position = "0 32";
+      extent = "1024 96";
       minExtent = "8 2";
       horizSizing = "width";
-      vertSizing = "top";
+      vertSizing = "bottom";
       profile = "GuiDefaultProfile";
       visible = "1";
       active = "1";
@@ -108,7 +129,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "0 0";
-         extent = "1280 62";
+         extent = "1024 96";
          minExtent = "8 8";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -128,7 +149,7 @@
             matchColor = "0 0 255 255";
             maxColorIndex = "9";
             position = "2 2";
-            extent = "1276 14";
+            extent = "1020 14";
             minExtent = "12 12";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -149,7 +170,7 @@
       maxChars = "-1";
       text = "Server Rules";
       useURLMouseCursor = "0";
-      position = "920 105";
+      position = "664 105";
       extent = "352 14";
       minExtent = "8 8";
       horizSizing = "left";
@@ -234,27 +255,6 @@
       profile = "GuiMLTextProfile";
       visible = "1";
       active = "1";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "0";
-      canSave = "1";
-      canSaveDynamicFields = "0";
-   };
-   new GuiButtonCtrl() {
-      text = "DISCONNECT";
-      groupNum = "-1";
-      buttonType = "PushButton";
-      useMouseEvents = "0";
-      position = "1169 5";
-      extent = "100 15";
-      minExtent = "8 8";
-      horizSizing = "left";
-      vertSizing = "bottom";
-      profile = "GuiButtonProfile";
-      visible = "1";
-      active = "1";
-      command = "disconnect();";
-      accelerator = "escape";
       tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "0";

@@ -372,7 +372,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    // Play the reload clip animation
    stateName[10]                     = "ReloadClip";
    stateTransitionGeneric0In[10]     = "SprintEnter";
-   stateTransitionOnTimeout[10]      = "Ready";
+   stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
    stateTimeoutValue[10]             = 2.0;
    stateReload[10]                   = true;
@@ -382,6 +382,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateScaleAnimation[10]           = true;
    stateScaleAnimationFP[10]         = false;
    stateSound[10]                    = RyderReloadSound;
+   stateAllowImageChange[10]         = false; 
    
    // Start Sprinting
    stateName[11]                    = "SprintEnter";
@@ -418,6 +419,12 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
+   
+   stateName[14]                     = "ReloadFinish"; 
+   stateTimeoutValue[14]             = 0.1; 
+   stateWaitForTimeout[14]           = true; 
+   stateTransitionOnTimeout[14]      = "Ready";
+   stateScript[14]                   = "onReloadFinish";   
 };
 
 datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
@@ -439,6 +446,8 @@ datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
    stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";
+   stateTransitionOnTimeout[1]      = "Ready";
+   stateAllowImageChange[1]         = false; 
    //on exit iron sights it plays the "switch_in" animation from the "activate" state
    //needs to be changed later, since that animation is long and ugly
 };

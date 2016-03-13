@@ -318,11 +318,15 @@ function serverCmdReloadWeapon(%client)
    // Don't reload if the weapon's full.
    if ( %player.getInventory(%image.ammo) == %image.ammo.maxInventory )
       return;
-
+  // No Iron Sight aiming while reloading.
+   if (%player.isInIronSights == true)
+	  return;
+  
    if ( %image > 0 )
    {
       %image.clearAmmoClip( %player, $WeaponSlot );
-      //%image.reloadAmmoClip(%player, $WeaponSlot);
+      %image.reloadAmmoClip(%player, $WeaponSlot);
+	  %player.isReloading = true;
    }
 }
 
@@ -651,6 +655,8 @@ function serverCmdDoIronSights(%client, %val)
    %player = %client.player;
    if ( !isObject( %player ) || %player.getState() $= "Dead" )
       return;
+   if ( %player.isReloading == true)
+	  return;
 
    %curWeapon = %player.getMountedImage( $WeaponSlot );
    %image = %curWeapon.ironSight;
@@ -669,6 +675,7 @@ function serverCmdDoIronSights(%client, %val)
    {
       commandToClient( %client, 'DoZoomReticle', 1 );
    }
+   %player.isInIronSights = true;
 }
 
 function serverCmdUndoIronSights(%client, %val)
@@ -690,4 +697,5 @@ function serverCmdUndoIronSights(%client, %val)
       %player.allowSprinting(true);
       %player.allowSwimming(true);
    }
+   %player.isInIronSights = false;
 }

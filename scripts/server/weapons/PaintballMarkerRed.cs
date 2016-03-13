@@ -289,7 +289,7 @@ datablock ShapeBaseImageData(PaintballMarkerRedWeaponImage)
    stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
    stateTransitionOnTimeout[6]      = "Ready";
-   stateWaitForTimeout[6]           = "0";
+   stateWaitForTimeout[6]           = true;
    stateTimeoutValue[6]             = 0.05;
    stateAllowImageChange[6]         = false;
 
@@ -342,6 +342,7 @@ datablock ShapeBaseImageData(PaintballMarkerRedWeaponImage)
    stateScaleAnimation[10]           = true;
    stateScaleAnimationFP[10]         = false;
    stateSound[10]                    = LurkerReloadSound;
+   stateAllowImageChange[10]         = false; 
 
    // Start Sprinting
    stateName[11]                    = "SprintEnter";

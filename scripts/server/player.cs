@@ -1937,8 +1937,6 @@ function Armor::animationDone(%this, %obj)
 // Player methods
 //-----------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------
-
 function Player::kill(%player, %damageType)
 {
    %player.setInvincible( false );

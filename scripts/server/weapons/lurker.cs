@@ -419,7 +419,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    // Put another round into the chamber if one is available
    stateName[6]                     = "NewRound";
    stateTransitionOnTimeout[6]      = "Fire";
-   stateWaitForTimeout[6]           = false;
+   stateWaitForTimeout[6]           = true;
    stateTimeoutValue[6]             = 0.02;
 
    // No ammo in the weapon, just idle until something
@@ -461,7 +461,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    // Play the reload clip animation
    stateName[10]                     = "ReloadClip";
    stateTransitionGeneric0In[10]     = "SprintEnter";
-   stateTransitionOnTimeout[10]      = "Ready";
+   stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
    stateScaleAnimation[10]           = false;
    stateScaleAnimationFP[10]         = false;
@@ -471,6 +471,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateShapeSequence[10]            = "Reload";
    stateScaleShapeSequence[10]       = true;
    stateSound[10]                    = LurkerReloadSound;
+   stateAllowImageChange[10]         = false; 
 
    // Start Sprinting
    stateName[11]                    = "SprintEnter";
@@ -516,7 +517,14 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateWaitForTimeout[14]           = true;  
    stateTransitionOnTimeout[14]      = "Ready";    
    stateTransitionOnTriggerDown[14]  = "Fire";  
-   stateTransitionOnNoAmmo[14]       = "NoAmmo";  
+   stateTransitionOnNoAmmo[14]       = "NoAmmo"; 
+
+   stateName[15]                     = "ReloadFinish"; 
+   stateTimeoutValue[15]             = 0.1; 
+   stateWaitForTimeout[15]           = true; 
+   stateTransitionOnTimeout[15]      = "Ready";
+   stateScript[15]                   = "onReloadFinish";   
+
 };
 
 datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
@@ -526,7 +534,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    animateOnServer = false;
    useEyeOffset = false;
    //eyeOffset = "-0.147 -0.225 0.025";
-   eyeOffset = "-0.16 -0.29 0.060";
+   eyeOffset = "-0.161 -0.29 0.060";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
    projectileSpread = "0.007";
@@ -539,6 +547,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    stateSequence[1]                 = "idle";
    stateSound[1]                    = "";
    stateTransitionOnTimeout[1]      = "Ready";
+   stateAllowImageChange[1]         = false; 
 };
 
 //-----------------------------------------------------------------------------

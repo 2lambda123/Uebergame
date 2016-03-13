@@ -519,7 +519,7 @@ function toggleIronSights( %val )
 {
    if ( Canvas.getContent() != PlayGui.getId() )
       return;
-
+  
    if ( %val )
    {
       ServerConnection.zoomed = true;

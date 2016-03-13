@@ -873,6 +873,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    %player.setTeamId(%client.team);
    %player.setTransform(%spawnPoint);
    %player.setShapeName(%client.playerName);
+   %player.isInIronSights = false;
+   %player.isReloading = false;
    
    if ( %client.team == 0 )
       %player.setSkinName( %client.skin );

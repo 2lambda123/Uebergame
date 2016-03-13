@@ -397,7 +397,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    // Play the reload clip animation
    stateName[10]                     = "ReloadClip";
    stateTransitionGeneric0In[10]     = "SprintEnter";
-   stateTransitionOnTimeout[10]      = "Ready";
+   stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
    stateScaleAnimation[10]           = false;
    stateScaleAnimationFP[10]         = false;
@@ -407,6 +407,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateShapeSequence[10]            = "Reload";
    stateScaleShapeSequence[10]       = true;
    stateSound[10]                    = GLReloadSound;
+   stateAllowImageChange[10]         = false; 
 
    // Start Sprinting
    stateName[11]                    = "SprintEnter";
@@ -443,6 +444,12 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
+   
+   stateName[14]                     = "ReloadFinish"; 
+   stateTimeoutValue[14]             = 0.1; 
+   stateWaitForTimeout[14]           = true; 
+   stateTransitionOnTimeout[14]      = "Ready";
+   stateScript[14]                   = "onReloadFinish";   
 };
 
 //SMS Inventory----------------------------------------------------------------

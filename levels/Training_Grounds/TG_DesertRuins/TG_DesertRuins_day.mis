@@ -34,7 +34,7 @@ new SimGroup(MissionGroup) {
       colorize = "0.00392157 0.00392157 0.00392157 1";
       rayleighScattering = "0.0035";
       sunScale = "0.886275 0.87451 0.596078 1";
-      ambientScale = "0.65098 0.65098 0.65098 1";
+      ambientScale = "0.996078 0.996078 0.996078 1";
       fogScale = "0.996078 0.996078 0.996078 1";
       exposure = "1";
       zOffset = "0";
@@ -82,11 +82,11 @@ new SimGroup(MissionGroup) {
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
-      updateBasetex = "0";
       position = "-512 -512 -512";
       rotation = "1 0 0 0";
       canSave = "1";
       canSaveDynamicFields = "1";
+         updateBasetex = "0";
    };
    new BasicClouds(wolks) {
       layerEnabled[0] = "1";
@@ -7357,7 +7357,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "6.6052 -77.7108 -0.714344";
-            rotation = "-0.0843795 0.0843795 -0.992855 90.4132";
+            rotation = "-0.0843795 0.0843795 -0.992855 90.4133";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";

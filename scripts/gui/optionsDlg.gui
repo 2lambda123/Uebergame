@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Graphics";
+      pane = "Controls";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -49,11 +49,11 @@
       new GuiTabBookCtrl(Opt_Tabs) {
          tabPosition = "Top";
          tabMargin = "7";
-         minTabWidth = "108";
+         minTabWidth = "120";
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "1";
+         selectedPage = "3";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -436,12 +436,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptGraphicsPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -544,7 +545,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1600 x 900  (16:9)";
+               text = "1440 x 900";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -648,7 +649,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Highest";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -656,7 +657,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "152 84";
+               position = "141 84";
                extent = "78 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -678,7 +679,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Highest";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -686,7 +687,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "152 110";
+               position = "141 110";
                extent = "78 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -731,7 +732,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Highest";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -739,7 +740,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "152 138";
+               position = "141 138";
                extent = "78 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -807,7 +808,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "High";
+               text = "Highest";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -815,7 +816,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "152 166";
+               position = "141 166";
                extent = "78 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -841,7 +842,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "19 194";
+               position = "18 223";
                extent = "120 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -868,7 +869,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "185 195";
+               position = "173 224";
                extent = "45 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1127,7 +1128,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "21 222";
+               position = "21 194";
                extent = "79 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1154,7 +1155,7 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "185 223";
+               position = "174 195";
                extent = "44 18";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1175,7 +1176,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "0.5";
+               text = "15";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1516,7 +1517,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.75";
+                  value = "0.423404";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
@@ -1539,7 +1540,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Primärer Soundtreiber";
+               text = "Lautsprecher (Realtek High Definition Audio)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1589,7 +1590,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "DirectSound";
+               text = "XAudio";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1640,7 +1641,7 @@
                maxChars = "-1";
                useURLMouseCursor = "0";
                position = "409 16";
-               extent = "200 84";
+               extent = "200 98";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1691,14 +1692,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             tooltip = "To re map a control simply double click the control name.";
             hovertime = "500";
             isContainer = "1";
             internalName = "OptControlsPane";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1772,8 +1772,31 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
+            new GuiTextCtrl() {
+               text = "X";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "371 47";
+               extent = "16 16";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
             new GuiTextCtrl(MouseXText) {
-               text = "(0.09)";
+               text = "0.406504";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1782,7 +1805,7 @@
                anchorLeft = "1";
                anchorRight = "0";
                position = "393 46";
-               extent = "48 18";
+               extent = "60 18";
                minExtent = "8 8";
                horizSizing = "relative";
                vertSizing = "relative";
@@ -1796,12 +1819,12 @@
                canSaveDynamicFields = "0";
             };
             new GuiSliderCtrl(MouseXSlider) {
-               range = "0 1";
-               ticks = "1000";
+               range = "0 2";
+               ticks = "9";
                snap = "0";
-               value = "1";
-               position = "393 63";
-               extent = "217 34";
+               value = "0.406504";
+               position = "374 63";
+               extent = "256 34";
                minExtent = "8 8";
                horizSizing = "relative";
                vertSizing = "relative";
@@ -1817,7 +1840,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl(MouseYText) {
-               text = "(1)";
+               text = "0.406504";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1825,8 +1848,8 @@
                anchorBottom = "0";
                anchorLeft = "1";
                anchorRight = "0";
-               position = "392 99";
-               extent = "37 18";
+               position = "393 99";
+               extent = "60 18";
                minExtent = "8 8";
                horizSizing = "relative";
                vertSizing = "relative";
@@ -1840,12 +1863,12 @@
                canSaveDynamicFields = "0";
             };
             new GuiSliderCtrl(MouseYSlider) {
-               range = "0 1";
-               ticks = "1000";
+               range = "0 2";
+               ticks = "9";
                snap = "0";
-               value = "1";
-               position = "393 116";
-               extent = "217 34";
+               value = "0.406504";
+               position = "374 116";
+               extent = "256 34";
                minExtent = "8 8";
                horizSizing = "relative";
                vertSizing = "relative";
@@ -1865,7 +1888,7 @@
                groupNum = "-1";
                buttonType = "ToggleButton";
                useMouseEvents = "0";
-               position = "393 149";
+               position = "390 149";
                extent = "140 31";
                minExtent = "8 2";
                horizSizing = "relative";
@@ -1929,7 +1952,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Cycle Weapon";
+               text = "Cycle Zoom Level";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1948,27 +1971,6 @@
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
-               canSave = "1";
-               canSaveDynamicFields = "0";
-            };
-            new GuiSliderCtrl(OptMouseSensitivity) {
-               range = "0.02 2";
-               ticks = "10";
-               snap = "0";
-               value = "0.4";
-               position = "105 326";
-               extent = "244 18";
-               minExtent = "8 2";
-               horizSizing = "right";
-               vertSizing = "bottom";
-               profile = "GuiSliderProfile";
-               visible = "0";
-               active = "0";
-               command = "OptMouseSetSensitivity(OptMouseSensitivity.value);";
-               tooltipProfile = "GuiToolTipProfile";
-               hovertime = "1000";
-               isContainer = "0";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -2068,24 +2070,26 @@
                   canSaveDynamicFields = "0";
                };
             };
-            new GuiButtonCtrl() {
-               text = "Save";
-               groupNum = "-1";
-               buttonType = "PushButton";
-               useMouseEvents = "0";
-               position = "521 389";
-               extent = "100 25";
-               minExtent = "8 8";
-               horizSizing = "relative";
-               vertSizing = "relative";
-               profile = "GuiButtonProfile";
+            new GuiTextCtrl() {
+               text = "Y";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "371 100";
+               extent = "16 16";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
                visible = "1";
                active = "1";
-               command = "optionsDlg.saveSettings();.saveSettings();";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
-               isContainer = "0";
-               internalName = "save";
+               isContainer = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -2194,7 +2198,7 @@
                range = "100 450";
                ticks = "36";
                snap = "0";
-               value = "450";
+               value = "154";
                position = "170 163";
                extent = "400 16";
                minExtent = "8 2";
@@ -2260,7 +2264,7 @@
                range = "2 32";
                ticks = "31";
                snap = "0";
-               value = "32";
+               value = "22.5385";
                position = "170 202";
                extent = "400 16";
                minExtent = "8 2";
@@ -2303,7 +2307,7 @@
                range = "8 32";
                ticks = "25";
                snap = "0";
-               value = "32";
+               value = "12";
                position = "170 241";
                extent = "400 16";
                minExtent = "8 2";

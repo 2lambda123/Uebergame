@@ -114,18 +114,15 @@ function GraphicsQualityPopup::apply( %this, %qualityGroup, %testNeedApply )
 
 function OptionsDlg::setPane(%this, %pane)
 {
+   %this-->OptPlayerPane.setVisible(false);
    %this-->OptAudioPane.setVisible(false);
    %this-->OptGraphicsPane.setVisible(false);
    %this-->OptAdvGraphicsPane.setVisible(false);
    %this-->OptNetworkPane.setVisible(false);
    %this-->OptControlsPane.setVisible(false);
-   %this-->OptGeneralPane.setVisible(false);
-   %this-->OptServerPane.setVisible(false);
    
    %this.findObjectByInternalName( "Opt" @ %pane @ "Pane", true ).setVisible(true);
    
-   %this.fillRemapList();
-      
    // Update the state of the apply button.
    %this._updateApplyState();
 }
@@ -138,11 +135,14 @@ function Opt_Tabs::onTabSelected(%this, %tab)
    
    if( %tab $="Controls" )
       OptionsDlg.fillRemapList();
+   //update mouse slider values again so it does not get reset
+   MouseXSlider.setValue( moveMap.getScale( mouse, xaxis ) );
+   MouseYSlider.setValue( moveMap.getScale( mouse, yaxis ) );
 }
 
 function OptionsDlg::onWake(%this)
 {
-   Opt_Tabs.selectPage(Player);
+   Opt_Tabs.selectPage(Graphics);
 
    // Player Pane
    OptPlayerNameInput.setValue(getField($pref::Player, 0));
@@ -154,9 +154,10 @@ function OptionsDlg::onWake(%this)
    // Initialize the Control Options controls:
    OptBindListMenu.init();
 
-   MouseXSlider.setValue( moveMap.getScale( mouse, xaxis ) / 2 );
-   MouseYSlider.setValue( moveMap.getScale( mouse, yaxis ) / 2 );
-   InvertMouseTgl.setValue( moveMap.isInverted( mouse, yaxis ) );
+   MouseXSlider.setValue( moveMap.getScale( mouse, xaxis ) );
+   MouseYSlider.setValue( moveMap.getScale( mouse, yaxis ) );
+   MouseXText.setValue( moveMap.getScale( mouse, xaxis ) );
+   MouseYText.setValue( moveMap.getScale( mouse, yaxis ) );
 
    MouseZActionMenu.clear();
    MouseZActionMenu.add( "Nothing", 1 );
@@ -284,44 +285,18 @@ function OptionsDlg::onWake(%this)
    %aaMenu.Add( "2x", 2 );
    %aaMenu.Add( "4x", 4 );
    %aaMenu.setSelected( getWord( $pref::Video::mode, $WORD::AA ) );
-   
    OptMouseSensitivity.value = $pref::Input::LinkMouseSensitivity;
-
-   // Set the graphics pane to start.
-   //%this-->OptGraphicsButton.performClick();
 }
 
 function OptionsDlg::onSleep(%this)
-{
-   // Mouse
-   %xSens = MouseXSlider.getValue() * 2;
-   %ySens = MouseYSlider.getValue() * 2;
-   moveMap.bind( mouse, xaxis, "S", %xSens, "yaw" );
-   %yFlags = InvertMouseTgl.getValue() ? "SI" : "S";
-   moveMap.bind( mouse, yaxis, %yFlags, %ySens, "pitch" );
-
-   // write out the control config into the rw/config.cs file
-   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
-   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-}
- //unused
-function OptionsDlg::saveSettings(%this)
-{
-   switch$ (%this.pane)
-   {
-      case "Player":
-	  
-         //OptPlayerNameInput.setField();
-         //%playerName = OptPlayerNameInput.getValue();
-         //%skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
-         //$pref::Player = %playerName TAB %skin;
-
-      case "Network":
-
-      case "Audio":
-
-      case "Controls":
+{  
+	  	 // Mouse
+         %xSens = MouseXSlider.getValue();
+         %ySens = MouseYSlider.getValue();
+         moveMap.bind( mouse, xaxis, "S", %xSens, "yaw" );
+         %yFlags = InvertMouseTgl.getValue() ? "SI" : "S";
+         moveMap.bind( mouse, yaxis, %yFlags, %ySens, "pitch" );
+	 
          switch ( MouseZActionMenu.getSelected() )
          {
             case 2:
@@ -333,7 +308,11 @@ function OptionsDlg::saveSettings(%this)
             default:
                moveMap.unbind( mouse, zaxis );
          }
-   }
+		 
+   // write out the control config files into the user home directory
+   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
+   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
 }
 
 function OptGraphicsDriverMenu::onSelect( %this, %id, %text )

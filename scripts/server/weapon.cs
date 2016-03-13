@@ -273,23 +273,29 @@ function GrenadeImage::onUnmount(%data, %player, %slot)
 // Clip Management
 //-----------------------------------------------------------------------------
 
+function WeaponImage::onReloadFinish(%this, %player)
+{
+%player.isReloading = false;
+}
+
 function WeaponImage::onClipEmpty(%this, %obj, %slot)
 {
    echo("WeaponImage::onClipEmpty: " SPC %this SPC %obj SPC %slot);
 
    // Attempt to automatically reload.  Schedule this so it occurs
    // outside of the current state that called this method
+
    %this.schedule( 0, "reloadAmmoClip", %obj, %slot );
 }
 
 function WeaponImage::reloadAmmoClip(%this, %obj, %slot)
 {
    //echo("WeaponImage::reloadAmmoClip: " SPC %this SPC %obj SPC %slot);
-
+  
    // Make sure we're indeed the currect image on the given slot
    if ( %this != %obj.getMountedImage( %slot ) )
       return;
-
+   
    if ( %this.isField("clip") )
    {
       if ( %obj.getInventory(%this.clip) > 0 )
@@ -322,11 +328,12 @@ function WeaponImage::clearAmmoClip( %this, %obj, %slot )
    {
       // Commenting out this line will use a "hard clip" system, where
       // A player will lose any ammo currently in the gun when reloading.
-      %pocketAmount = %this.stashSpareAmmo( %obj );
+      //%pocketAmount = %this.stashSpareAmmo( %obj );
       
-      if ( %obj.getInventory( %this.clip ) > 0 || %pocketAmount != 0 )
+      if ( %obj.getInventory( %this.clip ) > 0) // || %pocketAmount != 0 )
          %obj.setImageAmmo(%slot, false);
    }
+
 }
 
 function WeaponImage::stashSpareAmmo( %this, %player )
