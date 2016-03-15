@@ -73,7 +73,12 @@ datablock SFXPlayList(LurkerFireSoundList)
    track[ 0 ] = LurkerFireSound;
 };
 */
-
+datablock SFXProfile(MachineGunDryFire)
+{
+   filename = "art/sound/weapons/dry_fire_01";
+   description = AudioClosest3D;
+   preload = true;
+};
 
 // ----------------------------------------------------------------------------
 // Particles
@@ -327,14 +332,12 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    shellExitVariance   = 15.0;
    shellVelocity       = 3.0;
 
-   // Weapon lights up while firing
    lightType = "WeaponFireLight";
    lightColor = "0.992126 0.968504 0.708661 1";
    lightRadius = "3.5";
    lightDuration = "100";
    lightBrightness = 1;
 
-   // Shake camera while firing.
    shakeCamera = true;
    camShakeFreq = "4 4 4";
    camShakeAmp = "4 4 4";
@@ -343,13 +346,10 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
 
    useRemainderDT = true;
 
-   // Initial start up state
    stateName[0]                     = "Preactivate";
    stateTransitionOnLoaded[0]       = "Activate";
    stateTransitionOnNoAmmo[0]       = "NoAmmo";
 
-   // Activating the gun.  Called when the weapon is first
-   // mounted and there is ammo.
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
@@ -357,7 +357,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateSequence[1]                 = "switch_in";
    stateSound[1]                    = LurkerSwitchinSound;
 
-   // Ready to fire, just waiting for the trigger
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";
    stateTransitionOnMotion[2]       = "ReadyMotion";
@@ -370,7 +369,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnTriggerDown[2]  = "Fire";
    stateSequence[2]                 = "idle";
 
-   // Same as Ready state but plays a fidget sequence
    stateName[3]                     = "ReadyFidget";
    stateTransitionGeneric0In[3]     = "SprintEnter";
    stateTransitionOnMotion[3]       = "ReadyMotion";
@@ -380,9 +378,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnNoAmmo[3]       = "NoAmmo";
    stateTransitionOnTriggerDown[3]  = "Fire";
    stateSequence[3]                 = "idle_fidget1";
-   //stateSound[3]                    = LurkerIdleSound;
 
-   // Ready to fire with player moving
    stateName[4]                     = "ReadyMotion";
    stateTransitionGeneric0In[4]     = "SprintEnter";
    stateTransitionOnNoMotion[4]     = "Ready";
@@ -395,8 +391,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnTriggerDown[4]  = "Fire";
    stateSequence[4]                 = "run";
 
-   // Fire the weapon. Calls the fire script which does
-   // the actual work.
    stateName[5]                     = "Fire";
    stateTransitionGeneric0In[5]     = "FireStop";
    stateTransitionOnTimeout[5]      = "NewRound";
@@ -405,10 +399,10 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateFire[5]                     = true;
    stateRecoil[5]                   = "";
    stateAllowImageChange[5]         = false;
-   stateSequence[5]                 = "Fire";
+   stateSequence[5]                 = "fire";
    stateScaleAnimation[5]           = false;
    stateSequenceNeverTransition[5]  = true;
-   stateSequenceRandomFlash[5]      = true;        // use muzzle flash sequence
+   stateSequenceRandomFlash[5]      = true;
    stateScript[5]                   = "onFire";
    stateSound[5]                    = LurkerFireSound;
    stateEmitter[5]                  = GunFireSmokeEmitter;
@@ -416,21 +410,15 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnNoAmmo[5]       = "FireStop";
    stateEjectShell[5]               = true;
 
-   // Put another round into the chamber if one is available
    stateName[6]                     = "NewRound";
    stateTransitionOnTimeout[6]      = "Fire";
    stateWaitForTimeout[6]           = true;
    stateTimeoutValue[6]             = 0.02;
 
-   // No ammo in the weapon, just idle until something
-   // shows up. Play the dry fire sound if the trigger is
-   // pulled.
    stateName[7]                     = "NoAmmo";
    stateTransitionGeneric0In[7]     = "SprintEnter";
    stateTransitionOnMotion[7]       = "NoAmmoMotion";
-   stateTransitionOnAmmo[7]         = "ReloadClip";
-   stateTimeoutValue[7]             = 0.1;   // Slight pause to allow script to run when trigger is still held down from Fire state
-   stateScript[7]                   = "onClipEmpty";
+   stateTimeoutValue[7]             = 0.1;
    stateSequence[7]                 = "idle";
    stateScaleAnimation[7]           = false;
    stateScaleAnimationFP[7]         = false;
@@ -445,22 +433,19 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateSequenceTransitionIn[8]     = true;
    stateSequenceTransitionOut[8]    = true;
    stateTransitionOnTriggerDown[8]  = "DryFire";
-   stateTransitionOnAmmo[8]         = "ReloadClip";
    stateSequence[8]                 = "run";
 
-   // No ammo dry fire
    stateName[9]                     = "DryFire";
    stateTransitionGeneric0In[9]     = "SprintEnter";
-   stateTransitionOnAmmo[9]         = "ReloadClip";
-   stateWaitForTimeout[9]           = "0";
-   stateTimeoutValue[9]             = 0.7;
-   stateTransitionOnTimeout[9]      = "NoAmmo";
+   stateTransitionOnMotion[9]       = "NoAmmoMotion";
+   stateWaitForTimeout[9]           = true;
+   stateTimeoutValue[9]             = 0.25;
+   stateSequence[9]                 = "idle";
    stateScript[9]                   = "onDryFire";
+   stateTransitionOnTimeout[9]      = "NoAmmo";
    stateSound[9]                    = MachineGunDryFire;
 
-   // Play the reload clip animation
    stateName[10]                     = "ReloadClip";
-   stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
    stateScaleAnimation[10]           = false;
@@ -471,9 +456,8 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateShapeSequence[10]            = "Reload";
    stateScaleShapeSequence[10]       = true;
    stateSound[10]                    = LurkerReloadSound;
-   stateAllowImageChange[10]         = false; 
+   stateAllowImageChange[10]         = false;  
 
-   // Start Sprinting
    stateName[11]                    = "SprintEnter";
    stateTransitionGeneric0Out[11]   = "SprintExit";
    stateTransitionOnTimeout[11]     = "Sprinting";
@@ -487,7 +471,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateAllowImageChange[11]        = false;
    stateSequence[11]                = "sprint";
 
-   // Sprinting
    stateName[12]                    = "Sprinting";
    stateTransitionGeneric0Out[12]   = "SprintExit";
    stateWaitForTimeout[12]          = false;
@@ -498,7 +481,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateAllowImageChange[12]        = false;
    stateSequence[12]                = "sprint";
    
-   // Stop Sprinting
    stateName[13]                    = "SprintExit";
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
@@ -509,7 +491,6 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
 
-   // Fire Stop
    stateName[14]                     = "FireStop";  
    stateScript[14]                   = "onFireStop";  
    stateSound[14]                    = LurkerFireStopSound;  
@@ -519,12 +500,10 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnTriggerDown[14]  = "Fire";  
    stateTransitionOnNoAmmo[14]       = "NoAmmo"; 
 
-   stateName[15]                     = "ReloadFinish"; 
-   stateTimeoutValue[15]             = 0.1; 
-   stateWaitForTimeout[15]           = true; 
-   stateTransitionOnTimeout[15]      = "Ready";
-   stateScript[15]                   = "onReloadFinish";   
-
+   stateName[15]                     = "ReloadFinish";
+   stateTimeoutValue[15]             = 0.1;
+   stateTransitionOnAmmo[15]         = "Ready";
+   stateScript[15]                   = "onReloadFinish";    
 };
 
 datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
@@ -548,7 +527,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    stateSound[1]                    = "";
    stateTransitionOnTimeout[1]      = "Ready";
    stateAllowImageChange[1]         = false; 
-};
+}; 
 
 //-----------------------------------------------------------------------------
 // SMS Inventory
@@ -556,7 +535,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Lurker, "Lurker rifle", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t3");
+SmsInv.AllowClip("armor\tSoldier\t12");
 SmsInv.AddClip(LurkerClip, "Lurker Clips", 3);
 
 SmsInv.AllowAmmo("armor\tSoldier\t30");

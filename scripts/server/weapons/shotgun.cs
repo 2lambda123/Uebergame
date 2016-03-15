@@ -184,13 +184,10 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
 
    useRemainderDT = true;
 
-   // Initial start up state
    stateName[0]                     = "Preactivate";
    stateTransitionOnLoaded[0]       = "Activate";
    stateTransitionOnNoAmmo[0]       = "NoAmmo";
 
-   // Activating the gun.  Called when the weapon is first
-   // mounted and there is ammo.
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
@@ -199,7 +196,6 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateSequence[1]                 = "switch_in";
    stateSound[1]                    = ShotgunSwitchinSound;
 
-   // Ready to fire, just waiting for the trigger
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";
    stateTransitionOnMotion[2]       = "ReadyMotion";
@@ -212,7 +208,6 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionOnTriggerDown[2]  = "Fire";
    stateSequence[2]                 = "idle";
 
-   // Same as Ready state but plays a fidget sequence
    stateName[3]                     = "ReadyFidget";
    stateTransitionGeneric0In[3]     = "SprintEnter";
    stateTransitionOnMotion[3]       = "ReadyMotion";
@@ -224,7 +219,6 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateSequence[3]                 = "idle_fidget1";
    //stateSound[3]                    = ShotgunCockSound;
 
-   // Ready to fire with player moving
    stateName[4]                     = "ReadyMotion";
    stateTransitionGeneric0In[4]     = "SprintEnter";
    stateTransitionOnNoMotion[4]     = "Ready";
@@ -237,25 +231,22 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionOnTriggerDown[4]  = "Fire";
    stateSequence[4]                 = "run";
 
-   // Fire the weapon. Calls the fire script which does
-   // the actual work.
    stateName[5]                     = "Fire";
    stateTransitionGeneric0In[5]     = "SprintEnter";
    stateTransitionOnTimeout[5]      = "WaitForRelease";
-   stateTimeoutValue[5]             = 0.25;
+   stateTimeoutValue[5]             = 0.20;
    stateFire[5]                     = true;
    stateRecoil[5]                   = "light_recoil";
    stateAllowImageChange[5]         = false;
    stateSequence[5]                 = "fire";
    stateScaleAnimation[5]           = false;
    stateSequenceNeverTransition[5]  = true;
-   stateSequenceRandomFlash[5]      = true;        // use muzzle flash sequence
+   stateSequenceRandomFlash[5]      = true;
    stateScript[5]                   = "onFire";
    stateSound[5]                    = ShotgunFireSound;
    stateEmitter[5]                  = GunFireSmokeEmitter;
    stateEmitterTime[5]              = 0.025;
 
-   // Wait for the player to release the trigger
    stateName[6]                     = "WaitForRelease";
    stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnTriggerUp[6]    = "NewRound";
@@ -263,27 +254,22 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateWaitForTimeout[6]           = true;
    stateAllowImageChange[6]         = false;
 
-   // Put another round into the chamber if one is available
    stateName[7]                     = "NewRound";
    stateTransitionGeneric0In[7]     = "SprintEnter";
    stateTransitionOnNoAmmo[7]       = "NoAmmo";
    stateTransitionOnTimeout[7]      = "Ready";
    stateWaitForTimeout[7]           = true;
-   stateTimeoutValue[7]             = 0.70;
+   stateTimeoutValue[7]             = 0.65;
    stateSequence[7]                 = "fire_alt";
    stateScaleAnimation[5]           = true;
    stateAllowImageChange[7]         = false;
    stateEjectShell[7]               = true;
    stateSound[7]                    = ShotgunCockSound;
 
-   // No ammo in the weapon, just idle until something
-   // shows up. Play the dry fire sound if the trigger is
-   // pulled.
    stateName[8]                     = "NoAmmo";
    stateTransitionGeneric0In[8]     = "SprintEnter";
    stateTransitionOnMotion[8]       = "NoAmmoMotion";
-   stateTransitionOnAmmo[8]         = "ReloadClip";
-   stateTimeoutValue[8]             = 0.1;   // Slight pause to allow script to run when trigger is still held down from Fire state
+   stateTimeoutValue[8]             = 0.1;
    stateScript[8]                   = "onClipEmpty";
    stateSequence[8]                 = "idle";
    stateScaleAnimation[8]           = false;
@@ -299,22 +285,17 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateSequenceTransitionIn[9]     = true;
    stateSequenceTransitionOut[9]    = true;
    stateTransitionOnTriggerDown[9]  = "DryFire";
-   stateTransitionOnAmmo[9]         = "ReloadClip";
    stateSequence[9]                 = "run";
 
-   // No ammo dry fire
    stateName[10]                     = "DryFire";
    stateTransitionGeneric0In[10]     = "SprintEnter";
-   stateTransitionOnAmmo[10]         = "ReloadClip";
-   stateWaitForTimeout[10]           = "0";
-   stateTimeoutValue[10]             = 0.7;
+   stateWaitForTimeout[10]           = true;
+   stateTimeoutValue[10]             = 0.6;
    stateTransitionOnTimeout[10]      = "NoAmmo";
    stateScript[10]                   = "onDryFire";
    stateSound[10]                    = MachineGunDryFire;
 
-   // Play the reload clip animation
    stateName[11]                     = "ReloadClip";
-   stateTransitionGeneric0In[11]     = "SprintEnter";
    stateTransitionOnTimeout[11]      = "ReloadFinish";
    stateWaitForTimeout[11]           = true;
    stateScaleAnimation[11]           = false;
@@ -327,7 +308,6 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateSound[11]                    = ShotgunReloadSound;
    stateAllowImageChange[11]         = false; 
 
-   // Start Sprinting
    stateName[12]                    = "SprintEnter";
    stateTransitionGeneric0Out[12]   = "SprintExit";
    stateTransitionOnTimeout[12]     = "Sprinting";
@@ -341,7 +321,6 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateAllowImageChange[12]        = false;
    stateSequence[12]                = "sprint";
 
-   // Sprinting
    stateName[13]                    = "Sprinting";
    stateTransitionGeneric0Out[13]   = "SprintExit";
    stateWaitForTimeout[13]          = false;
@@ -352,7 +331,6 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
    
-   // Stop Sprinting
    stateName[14]                    = "SprintExit";
    stateTransitionGeneric0In[14]    = "SprintEnter";
    stateTransitionOnTimeout[14]     = "Ready";
@@ -363,11 +341,10 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateAllowImageChange[14]        = false;
    stateSequence[14]                = "sprint";
    
-   stateName[15]                     = "ReloadFinish"; 
-   stateTimeoutValue[15]             = 0.1; 
-   stateWaitForTimeout[15]           = true; 
-   stateTransitionOnTimeout[15]      = "Ready";
-   stateScript[15]                   = "onReloadFinish";   
+   stateName[15]                     = "ReloadFinish";
+   stateTimeoutValue[15]             = 0.1;
+   stateTransitionOnAmmo[15]         = "Ready";
+   stateScript[15]                   = "onReloadFinish"; 
 };
 
 datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
@@ -468,9 +445,8 @@ function ShotgunIronSightImage::onFire(%data, %obj, %slot)
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Shotgun, "Shotgun", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t3");
+SmsInv.AllowClip("armor\tSoldier\t12");
 SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 3);
 
 SmsInv.AllowAmmo("armor\tSoldier\t8");
 SmsInv.AddAmmo(ShotgunAmmo, 8);
-

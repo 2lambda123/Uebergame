@@ -310,23 +310,31 @@ function serverCmdCycleWeapon(%client, %data)
    }
 }
 
+//User initiates to trigger a reload, clears out clip, starts the animation, from there the state machine handles playing the animation and reloading
 function serverCmdReloadWeapon(%client)
 {
    %player = %client.getControlObject();
    %image = %player.getMountedImage( $WeaponSlot );
    
-   // Don't reload if the weapon's full.
-   if ( %player.getInventory(%image.ammo) == %image.ammo.maxInventory )
-      return;
+   if (%player.isReloading == true) return;
+   if ( !%image.isField("clip") ) return;
+   if ( %player.getInventory(%image.clip) <= 0 ) return;
+   
+   // Don't reload if the weapon's full. //function is broken since we are using the sms system.
+   //if ( %player.getInventory(%image.ammo) == %image.ammo.maxInventory )
+   //return;
+ 
   // No Iron Sight aiming while reloading.
    if (%player.isInIronSights == true)
-	  return;
-  
+      return;
+ 
    if ( %image > 0 )
    {
+      //TODO: partial clip storage and drop to ground.
       %image.clearAmmoClip( %player, $WeaponSlot );
-      %image.reloadAmmoClip(%player, $WeaponSlot);
-	  %player.isReloading = true;
+      %image.startReloadAmmoClip(%player, $WeaponSlot);
+      %player.isReloading = true;
+	  %player.allowSprinting(false);
    }
 }
 
@@ -670,12 +678,12 @@ function serverCmdDoIronSights(%client, %val)
       %player.allowJetJumping(false);
       %player.allowSprinting(false);
       %player.allowSwimming(false);
+	  %player.isInIronSights = true;
    }
    else
    {
       commandToClient( %client, 'DoZoomReticle', 1 );
    }
-   %player.isInIronSights = true;
 }
 
 function serverCmdUndoIronSights(%client, %val)
@@ -683,7 +691,7 @@ function serverCmdUndoIronSights(%client, %val)
    %player = %client.player;
    if ( !isObject( %player ) || %player.getState() $= "Dead" )
       return;
-
+   
    %curWeapon = %player.getMountedImage($WeaponSlot);
    %image = %curWeapon.parentImage;
 
@@ -696,6 +704,6 @@ function serverCmdUndoIronSights(%client, %val)
       %player.allowJetJumping(true);
       %player.allowSprinting(true);
       %player.allowSwimming(true);
+	  %player.isInIronSights = false;
    }
-   %player.isInIronSights = false;
 }

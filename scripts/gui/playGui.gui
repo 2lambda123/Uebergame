@@ -335,8 +335,8 @@
       verticalOffset = "1";
       distanceFade = "0.1";
       position = "0 0";
-      extent = "1344 1068";
-      minExtent = "256 256";
+      extent = "1024 768";
+      minExtent = "640 480";
       horizSizing = "width";
       vertSizing = "height";
       profile = "GuiShapeNameProfile";
@@ -722,7 +722,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "164 32";
-            extent = "96 20";
+            extent = "100 20";
             minExtent = "8 8";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -744,7 +744,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "268 32";
+            position = "272 32";
             extent = "21 20";
             minExtent = "8 8";
             horizSizing = "left";

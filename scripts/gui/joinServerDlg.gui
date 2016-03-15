@@ -168,7 +168,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "2 2";
-            extent = "598 8";
+            extent = "601 128";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "height";
@@ -213,7 +213,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "0 0";
+            position = "8 0";
             extent = "195 20";
             minExtent = "8 8";
             horizSizing = "relative";
@@ -300,7 +300,7 @@
          vertSizing = "top";
          profile = "GuiButtonProfile";
          visible = "1";
-         active = "0";
+         active = "1";
          command = "JoinServerDlg.join();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";

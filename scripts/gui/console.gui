@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ConsoleDlg) {
-   profile = "GuiDefaultProfile";
+   profile = "GuiModelessDialogProfile";
    horizSizing = "right";
    vertSizing = "bottom";
    position = "0 0";
@@ -13,7 +13,7 @@
       horizSizing = "right";
       vertSizing = "bottom";
       position = "0 0";
-      extent = "500 300";
+      extent = "640 480";
       minExtent = "8 2";
       visible = "1";
       text = "Console";
@@ -24,7 +24,6 @@
       canClose = "1";
       canMinimize = "0";
       canMaximize = "1";
-      MinSize = "500 300";
       closeCommand = "ToggleConsole(1);";
 
       new GuiScrollCtrl() {
@@ -32,7 +31,7 @@
          horizSizing = "width";
          vertSizing = "height";
          position = "3 36";
-         extent = "494 246";
+         extent = "634 440";
          minExtent = "8 2";
          visible = "1";
          willFirstRespond = "1";
@@ -52,8 +51,8 @@
          profile = "GuiTextEditProfile";
          horizSizing = "width";
          vertSizing = "top";
-         position = "3 278";
-         extent = "494 18";
+         position = "3 462";
+         extent = "634 18";
          minExtent = "8 2";
          visible = "1";
          altCommand = "ConsoleEntry::eval();";

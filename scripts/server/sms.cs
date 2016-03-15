@@ -39,7 +39,6 @@ $SMS::MaxItems = 0;
 $SMS::MaxGrenades = 0;
 $SMS::MaxMines = 0;
 $SMS::MaxVehicles = 0;
-$SMS::MaxClips = 0;
 
 //-----------------------------------------------------------------------------
 // SMS allow functions set up arrays for armor max's

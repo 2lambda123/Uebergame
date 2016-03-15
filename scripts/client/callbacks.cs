@@ -33,7 +33,7 @@ function SyncAmmoHud(%msgType, %msgString, %weapon, %slot, %ammo, %amountInClips
    %amount = deTag(%ammo);
    %magCount = deTag(%amountInClips);
    WeaponText.setValue(%name);
-
+/*
    if (!%amount)
       AmmoAmount.setVisible(false);
    else
@@ -41,6 +41,11 @@ function SyncAmmoHud(%msgType, %msgString, %weapon, %slot, %ammo, %amountInClips
       AmmoAmount.setVisible(true);
       AmmoAmount.setText(%amount @ "/" @ %magCount);
    }
+*/
+//make ammo hud always visible, even when out of ammo
+AmmoAmount.setVisible(true);
+AmmoAmount.setText(%amount @ "/" @ %magCount);
+
    //AmmoAmount.setValue(%amount);
    //ClipAmount.setValue(%magCount);
 }

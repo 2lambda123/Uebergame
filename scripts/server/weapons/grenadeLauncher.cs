@@ -187,7 +187,7 @@ datablock ProjectileData( GrenadeProjectile )
    isBallistic         = 1; // Causes the projectile to be affected by gravity "arc".
    gravityMod          = 1;
 
-   lightDesc           = "GrenadeLauncherLightDesc";
+   lightDesc           = "";
 };
 
 //-----------------------------------------------------------------------------
@@ -335,14 +335,13 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateSequence[4]                 = "idle";
    stateScaleAnimation[4]           = true;
    stateSequenceNeverTransition[4]  = true;
-   stateSequenceRandomFlash[4]      = false;        // use muzzle flash sequence
+   stateSequenceRandomFlash[4]      = false;
    stateScript[4]                   = "onFire";
    //stateEmitter[4]                  = RyderFireSmokeEmitter;
    //stateEmitterTime[4]              = 0.025;
    stateEjectShell[4]               = true;
    stateSound[4]                    = GLFireSound;
 
-   // Wait for the player to release the trigger
    stateName[5]                     = "WaitForRelease";
    stateTransitionGeneric0In[5]     = "SprintEnter";
    stateTransitionOnTriggerUp[5]    = "NewRound";
@@ -350,7 +349,6 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateWaitForTimeout[5]           = true;
    stateAllowImageChange[5]         = false;
 
-   // Put another round in the chamber
    stateName[6]                     = "NewRound";
    stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
@@ -359,19 +357,14 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateTimeoutValue[6]             = 0.5;
    stateAllowImageChange[6]         = false;
 
-   // No ammo in the weapon, just idle until something
-   // shows up. Play the dry fire sound if the trigger is
-   // pulled.
    stateName[7]                     = "NoAmmo";
    stateTransitionGeneric0In[7]     = "SprintEnter";
    stateTransitionOnMotion[7]       = "NoAmmoMotion";
-   stateTransitionOnAmmo[7]         = "ReloadClip";
-   stateTimeoutValue[7]             = 0.1;   // Slight pause to allow script to run when trigger is still held down from Fire state
-   stateScript[7]                   = "onClipEmpty";
-   stateTransitionOnTriggerDown[7]  = "DryFire";
+   stateTimeoutValue[7]             = 0.1;
    stateSequence[7]                 = "idle";
    stateScaleAnimation[7]           = false;
    stateScaleAnimationFP[7]         = false;
+   stateTransitionOnTriggerDown[7]  = "DryFire";
    
    stateName[8]                     = "NoAmmoMotion";
    stateTransitionGeneric0In[8]     = "SprintEnter";
@@ -381,22 +374,20 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateScaleAnimationFP[8]         = false;
    stateSequenceTransitionIn[8]     = true;
    stateSequenceTransitionOut[8]    = true;
-   stateTransitionOnAmmo[8]         = "ReloadClip";
    stateTransitionOnTriggerDown[8]  = "DryFire";
    stateSequence[8]                 = "run";
 
-   // No ammo dry fire
    stateName[9]                     = "DryFire";
    stateTransitionGeneric0In[9]     = "SprintEnter";
-   stateTransitionOnAmmo[9]         = "ReloadClip";
-   stateWaitForTimeout[9]           = "0";
-   stateTimeoutValue[9]             = 1.5;
-   stateTransitionOnTimeout[9]      = "NoAmmo";
+   stateTransitionOnMotion[9]       = "NoAmmoMotion";
+   stateWaitForTimeout[9]           = true;
+   stateTimeoutValue[9]             = 1.0;
+   stateSequence[9]                 = "idle";
    stateScript[9]                   = "onDryFire";
+   stateTransitionOnTimeout[9]      = "NoAmmo";
+   stateSound[9]                    = MachineGunDryFire;
 
-   // Play the reload clip animation
    stateName[10]                     = "ReloadClip";
-   stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
    stateScaleAnimation[10]           = false;
@@ -409,7 +400,6 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateSound[10]                    = GLReloadSound;
    stateAllowImageChange[10]         = false; 
 
-   // Start Sprinting
    stateName[11]                    = "SprintEnter";
    stateTransitionGeneric0Out[11]   = "SprintExit";
    stateTransitionOnTimeout[11]     = "Sprinting";
@@ -423,7 +413,6 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateAllowImageChange[11]        = false;
    stateSequence[11]                = "sprint";
 
-   // Sprinting
    stateName[12]                    = "Sprinting";
    stateTransitionGeneric0Out[12]   = "SprintExit";
    stateWaitForTimeout[12]          = false;
@@ -434,7 +423,6 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateAllowImageChange[12]        = false;
    stateSequence[12]                = "sprint";
    
-   // Stop Sprinting
    stateName[13]                    = "SprintExit";
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
@@ -445,11 +433,10 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
    
-   stateName[14]                     = "ReloadFinish"; 
-   stateTimeoutValue[14]             = 0.1; 
-   stateWaitForTimeout[14]           = true; 
-   stateTransitionOnTimeout[14]      = "Ready";
-   stateScript[14]                   = "onReloadFinish";   
+   stateName[15]                     = "ReloadFinish";
+   stateTimeoutValue[15]             = 0.1;
+   stateTransitionOnAmmo[15]         = "Ready";
+   stateScript[15]                   = "onReloadFinish";  
 };
 
 //SMS Inventory----------------------------------------------------------------
@@ -457,7 +444,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(GrenadeLauncher, "Grenade Launcher", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t3");
+SmsInv.AllowClip("armor\tSoldier\t12");
 SmsInv.AddClip(GrenadeLauncherClip, "Grenade Belt", 3);
 
 SmsInv.AllowAmmo("armor\tSoldier\t6");

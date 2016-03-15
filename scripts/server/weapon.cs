@@ -184,7 +184,7 @@ function WeaponImage::onMount(%this, %obj, %slot)
          %obj.setImageAmmo( %slot, true );
          %currentAmmo = %obj.getInventory( %this.ammo );
       }
-      else if( %obj.getInventory( %this.clip ) > 0 )
+      /*else if( %obj.getInventory( %this.clip ) > 0 )
       {
          // Fill the weapon up from the first clip
          %obj.setInventory( %this.ammo, %this.ammo.maxInventory );
@@ -193,7 +193,7 @@ function WeaponImage::onMount(%this, %obj, %slot)
          // Add any spare ammo that may be "in the player's pocket"
          %currentAmmo = %this.ammo.maxInventory;
          %amountInClips += %obj.getFieldValue( "remaining" @ %this.ammo.getName());
-      }
+      }*/ //above code is not working and we use a hard clip system
       else
       {
          %currentAmmo = 0 + %obj.getFieldValue( "remaining" @ %this.ammo.getName());
@@ -272,49 +272,10 @@ function GrenadeImage::onUnmount(%data, %player, %slot)
 //-----------------------------------------------------------------------------
 // Clip Management
 //-----------------------------------------------------------------------------
-
-function WeaponImage::onReloadFinish(%this, %player)
+function WeaponImage::startReloadAmmoClip(%this, %obj, %slot)
 {
-%player.isReloading = false;
-}
-
-function WeaponImage::onClipEmpty(%this, %obj, %slot)
-{
-   echo("WeaponImage::onClipEmpty: " SPC %this SPC %obj SPC %slot);
-
-   // Attempt to automatically reload.  Schedule this so it occurs
-   // outside of the current state that called this method
-
-   %this.schedule( 0, "reloadAmmoClip", %obj, %slot );
-}
-
-function WeaponImage::reloadAmmoClip(%this, %obj, %slot)
-{
-   //echo("WeaponImage::reloadAmmoClip: " SPC %this SPC %obj SPC %slot);
-  
-   // Make sure we're indeed the currect image on the given slot
-   if ( %this != %obj.getMountedImage( %slot ) )
-      return;
-   
-   if ( %this.isField("clip") )
-   {
-      if ( %obj.getInventory(%this.clip) > 0 )
-      {
-         %obj.decInventory( %this.clip, 1 );
-         %obj.setInventory( %this.ammo, %obj.maxInventory(%this.ammo), 1 );
-         %obj.setImageAmmo(%slot, true);
-      }
-      else
-      {
-         %amountInPocket = %obj.getFieldValue( "remaining" @ %this.ammo.getName() );
-         if ( %amountInPocket )
-         {
-            %obj.setFieldValue( "remaining" @ %this.ammo.getName(), 0 );
-            %obj.setInventory( %this.ammo, %amountInPocket );
-            %obj.setImageAmmo( %slot, true );
-         }
-      }
-   }
+    //Transition to the state that plays the animation
+    %obj.setManualImageState(%slot, "ReloadClip");  
 }
 
 function WeaponImage::clearAmmoClip( %this, %obj, %slot )
@@ -334,6 +295,41 @@ function WeaponImage::clearAmmoClip( %this, %obj, %slot )
          %obj.setImageAmmo(%slot, false);
    }
 
+}
+
+function WeaponImage::reloadAmmoClip(%this, %obj, %slot)
+{
+   // Make sure we're indeed the currect image on the given slot
+   if ( %this != %obj.getMountedImage( %slot ) )
+      return;
+   
+   //Does this weapon use clips
+   if ( %this.isField("clip") )
+   {
+      //Are there any clips left in inventory
+      if ( %obj.getInventory(%this.clip) > 0 )
+      {
+         //remove a clip
+         %obj.decInventory( %this.clip, 1 );
+         //reset our current ammo back to a full clip size
+         %obj.setInventory( %this.ammo, %obj.maxInventory(%this.ammo), 1 );
+         //reset the state machine so firing can happen again.
+         %obj.setImageAmmo(%slot, true);
+      }
+   }
+}
+ 
+function WeaponImage::onReloadFinish(%this, %obj, %slot)
+{
+    %obj.isReloading = false;
+	%obj.allowSprinting(true);
+    %this.schedule( 0, "reloadAmmoClip", %obj, %slot );
+}
+
+function WeaponImage::onWeaponActivate(%this, %obj, %slot)
+{
+    if ( %obj.getInventory( %this.ammo ) <= 0 )
+        %obj.setManualImageState(%slot, "NoAmmo"); 
 }
 
 function WeaponImage::stashSpareAmmo( %this, %player )

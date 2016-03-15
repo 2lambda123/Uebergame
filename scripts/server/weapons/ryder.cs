@@ -305,7 +305,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTimeoutValue[4]             = 0.23;
    stateWaitForTimeout[4]           = true;
    stateFire[4]                     = true;
-   //stateRecoil[4]                   = "";
+   stateRecoil[4]                   = "";
    stateAllowImageChange[4]         = false;
    stateSequence[4]                 = "fire";
    stateScaleAnimation[4]           = true;
@@ -334,19 +334,14 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTimeoutValue[6]             = 0.05;
    stateAllowImageChange[6]         = false;
 
-   // No ammo in the weapon, just idle until something
-   // shows up. Play the dry fire sound if the trigger is
-   // pulled.
    stateName[7]                     = "NoAmmo";
    stateTransitionGeneric0In[7]     = "SprintEnter";
    stateTransitionOnMotion[7]       = "NoAmmoMotion";
-   stateTransitionOnAmmo[7]         = "ReloadClip";
-   stateTimeoutValue[7]             = 0.1;   // Slight pause to allow script to run when trigger is still held down from Fire state
-   stateScript[7]                   = "onClipEmpty";
-   stateTransitionOnTriggerDown[7]  = "DryFire";
+   stateTimeoutValue[7]             = 0.1;
    stateSequence[7]                 = "idle";
    stateScaleAnimation[7]           = false;
    stateScaleAnimationFP[7]         = false;
+   stateTransitionOnTriggerDown[7]  = "DryFire";
    
    stateName[8]                     = "NoAmmoMotion";
    stateTransitionGeneric0In[8]     = "SprintEnter";
@@ -356,22 +351,20 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateScaleAnimationFP[8]         = false;
    stateSequenceTransitionIn[8]     = true;
    stateSequenceTransitionOut[8]    = true;
-   stateTransitionOnAmmo[8]         = "ReloadClip";
    stateTransitionOnTriggerDown[8]  = "DryFire";
    stateSequence[8]                 = "run";
 
-   // No ammo dry fire
    stateName[9]                     = "DryFire";
    stateTransitionGeneric0In[9]     = "SprintEnter";
-   stateTransitionOnAmmo[9]         = "ReloadClip";
-   stateWaitForTimeout[9]           = "0";
-   stateTimeoutValue[9]             = 0.7;
-   stateTransitionOnTimeout[9]      = "NoAmmo";
+   stateTransitionOnMotion[9]       = "NoAmmoMotion";
+   stateWaitForTimeout[9]           = true;
+   stateTimeoutValue[9]             = 0.4;
+   stateSequence[9]                 = "idle";
    stateScript[9]                   = "onDryFire";
+   stateTransitionOnTimeout[9]      = "NoAmmo";
+   stateSound[9]                    = MachineGunDryFire;
 
-   // Play the reload clip animation
    stateName[10]                     = "ReloadClip";
-   stateTransitionGeneric0In[10]     = "SprintEnter";
    stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
    stateTimeoutValue[10]             = 2.0;
@@ -420,11 +413,10 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateAllowImageChange[13]        = false;
    stateSequence[13]                = "sprint";
    
-   stateName[14]                     = "ReloadFinish"; 
-   stateTimeoutValue[14]             = 0.1; 
-   stateWaitForTimeout[14]           = true; 
-   stateTransitionOnTimeout[14]      = "Ready";
-   stateScript[14]                   = "onReloadFinish";   
+   stateName[14]                     = "ReloadFinish";
+   stateTimeoutValue[14]             = 0.1;
+   stateTransitionOnAmmo[14]         = "Ready";
+   stateScript[14]                   = "onReloadFinish"; 
 };
 
 datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
@@ -458,7 +450,7 @@ datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Ryder, "Ryder pistol", 0);
 
-SmsInv.AllowClip("armor\tSoldier\t3");
+SmsInv.AllowClip("armor\tSoldier\t12");
 SmsInv.AddClip(RyderClip, "Ryder clips", 3);
 
 SmsInv.AllowAmmo("armor\tSoldier\t15");
