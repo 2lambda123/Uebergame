@@ -340,7 +340,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
 
    shakeCamera = true;
    camShakeFreq = "4 4 4";
-   camShakeAmp = "4 4 4";
+   camShakeAmp = "3 3 3";
    camShakeDuration = "0.5";
    camShakeRadius = "1.2";
 
