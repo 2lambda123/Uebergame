@@ -174,25 +174,6 @@ datablock ParticleEmitterData(BulletDirtDustEmitter)
    softnessDistance = "1";
 };
 
-//-----------------------------------------------------------------------------
-// Explosion
-//-----------------------------------------------------------------------------
-datablock ExplosionData(BulletDirtExplosion)
-{
-   soundProfile = BulletImpactSoundList;
-   lifeTimeMS = 65;
-
-   // Volume particles
-   particleEmitter = BulletDirtDustEmitter;
-   particleDensity = 4;
-   particleRadius = 0.3;
-
-   // Point emission
-   emitter[0] = BulletDirtSprayEmitter;
-   emitter[1] = BulletDirtSprayEmitter;
-   emitter[2] = BulletDirtRocksEmitter;
-};
-
 //--------------------------------------------------------------------------
 // Shell ejected during reload.
 //-----------------------------------------------------------------------------

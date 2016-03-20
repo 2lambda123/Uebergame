@@ -261,23 +261,24 @@ datablock ParticleData(DamageBubbleParticle)
 {
    textureName = "art/particles/bubble";
    dragCoefficient = 0.0;
-   gravityCoefficient = -0.04;
-   inheritedVelFactor = 0.5;
+   gravityCoefficient = "-0.041514";
+   inheritedVelFactor = "0.499022";
    constantAcceleration = 0.0;
-   lifetimeMS = 2000;
-   lifetimeVarianceMS = 200;
+   lifetimeMS = "1000";
+   lifetimeVarianceMS = "400";
    useInvAlpha = false;
    spinRandomMin = -90.0;
    spinRandomMax = 90.0;
-   colors[0] = "0.7 0.7 0.7 0.0";
-   colors[1] = "0.3 0.3 0.3 1.0";
+   colors[0] = "0.692913 0.692913 0.692913 0";
+   colors[1] = "0.299213 0.299213 0.299213 1";
    colors[2] = "0.0 0.0 0.0 0.0";
-   sizes[0] = 0.2;
-   sizes[1] = 0.8;
-   sizes[2] = 1.0;
+   sizes[0] = "0.15";
+   sizes[1] = "0.25";
+   sizes[2] = "0.4";
    times[0] = 0.0;
-   times[1] = 0.5;
+   times[1] = "0.498039";
    times[2] = 1.0;
+   animTexName = "art/particles/bubble";
 };
 
 datablock ParticleEmitterData(DamageBubbles)

@@ -228,82 +228,91 @@ datablock DebrisData(LargeExplosionDebris)
 
 datablock ParticleData(LargeBubbleParticle)
 {
-   textureName          = "art/particles/bubble";
+   textureName          = "art/particles/fxpack1/rocks.png";
    dragCoeffiecient     = 0;
-   gravityCoefficient   = -0.2;
+   gravityCoefficient   = "0";
    inheritedVelFactor   = 0;
    constantAcceleration = 0;
-   lifetimeMS           = 1500;
-   lifetimeVarianceMS   = 500;
+   lifetimeMS           = "1000";
+   lifetimeVarianceMS   = "800";
    useInvAlpha          = false;
-   spinRandomMin        = -180;
-   spinRandomMax        = 180;
+   spinRandomMin        = "-90";
+   spinRandomMax        = "90";
 
-   colors[0] = "0.7 0.8 1.0 0.0";
-   colors[1] = "0.7 0.8 1.0 0.4";
-   colors[2] = "0.7 0.8 1.0 0.0";
+   colors[0] = "0.503937 0.614173 0.677165 0.759";
+   colors[1] = "0.511811 0.614173 0.692913 0.527";
+   colors[2] = "0.511811 0.614173 0.700787 0.149606";
 
-   sizes[0]  = 1.0;
-   sizes[1]  = 2.0;
-   sizes[2]  = 3.0;
+   sizes[0]  = "1.5";
+   sizes[1]  = "2";
+   sizes[2]  = "3";
 
    times[0]  = 0.0;
    times[1]  = 0.4;
    times[2]  = 1.0;
+   animTexName = "art/particles/fxpack1/rocks.png";
 };
 
 datablock ParticleEmitterData(LargeBubblesEmitter)
 {
-   ejectionPeriodMS = 8;
-   periodVarianceMS = 1;
-   ejectionVelocity = 4;
-   velocityVariance = 2;
+   ejectionPeriodMS = "5";
+   periodVarianceMS = "4";
+   ejectionVelocity = "4";
+   velocityVariance = "2";
    thetaMin         = 0;
    thetaMax         = 80;
    ejectionOffset   = 4;
    particles        = "LargeBubbleParticle";
+   blendStyle = "ADDITIVE";
+   lifetimeMS = "0";
+   lifetimeVarianceMS = "0";
 };
 
 datablock ParticleData(LargeWaterMistParticle)
 {
    textureName          = "art/particles/splatter";
-   dragCoefficient      = 1;
-   gravityCoefficient   = -0.01;
+   dragCoefficient      = "0.99218";
+   gravityCoefficient   = "0.197803";
    inheritedVelFactor   = 1;
    constantAcceleration = 0;
-   lifetimeMS           = 2000;
-   lifetimeVarianceMS   = 250;
+   lifetimeMS           = "1200";
+   lifetimeVarianceMS   = "1000";
    spinRandomMin        = -90;
-   spinRandomMax        = 500;
+   spinRandomMax        = "90";
    useInvAlpha          = false;
 
-   colors[0] = "0.4 0.4 1.0 1.0";
-   colors[1] = "0.4 0.4 1.0 0.5";
-   colors[2] = "0.0 0.0 0.0 0.0";
+   colors[0] = "0.223529 0.34902 0.478431 0.598425";
+   colors[1] = "0.321569 0.470588 0.596078 0.401575";
+   colors[2] = "0.494118 0.607843 0.717647 0.299213";
 
-   sizes[0]  = 2.5;
-   sizes[1]  = 5.0;
-   sizes[2]  = 7.0;
+   sizes[0]  = "2.99701";
+   sizes[1]  = "5.99707";
+   sizes[2]  = "7.99915";
 
    times[0]  = 0.0;
-   times[1]  = 0.5;
-   times[2]  = 1.0;
+   times[1]  = "0.329412";
+   times[2]  = "0.74902";
+   animTexName = "art/particles/splatter";
+   colors[3] = "0.596078 0.694118 0.796079 0.108";
+   sizes[3] = "11.9972";
 };
 
 datablock ParticleEmitterData(LargeWaterMistEmitter)
 {
-   ejectionPeriodMS = 2;
-   periodVarianceMS = 0;
-   ejectionVelocity = 20;
-   velocityVariance = 0;
+   ejectionPeriodMS = "2";
+   periodVarianceMS = "1";
+   ejectionVelocity = "20";
+   velocityVariance = "10";
    ejectionOffset   = 0;
-   thetaMin         = 85;
-   thetaMax         = 85;
+   thetaMin         = "45";
+   thetaMax         = "90";
    phiReferenceVel  = 0;
    phiVariance      = 360;
-   overrideAdvances = false;
-   lifetimeMS       = 500;
+   overrideAdvances = 0;
+   lifetimeMS       = "500";
    particles        = "LargeWaterMistParticle";
+   blendStyle = "ADDITIVE";
+   lifetimeVarianceMS = "250";
 };
 
 datablock ParticleData(LargeWaterSparkParticle)
@@ -355,7 +364,7 @@ datablock ExplosionData(LargeWaterExplosion)
    //lifeTimeMS = 1000; // Affects only the emitter array
 
    particleEmitter = LargeBubblesEmitter;
-   particleDensity = 100;
+   particleDensity = 2000;
    particleRadius  = 5;
 
    emitter[0] = LargeWaterSparksEmitter; 

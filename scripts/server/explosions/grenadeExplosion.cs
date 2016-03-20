@@ -41,33 +41,33 @@ datablock SFXProfile(GrenadeLauncherExplosionSound)
 datablock ParticleData(GrenadeSplashParticle)
 {
    canSaveDynamicFields = "1";
-   dragCoefficient = "0.997067";
+   dragCoefficient = "0.99218";
    windCoefficient = "1";
    gravityCoefficient = "-0.00732601";
    inheritedVelFactor = "0.197652";
    constantAcceleration = "-1.4";
    lifetimeMS = "288";
-   lifetimeVarianceMS = "0";
+   lifetimeVarianceMS = "150";
    spinSpeed = "0";
    spinRandomMin = "0";
    spinRandomMax = "0";
    useInvAlpha = "0";
    animateTexture = "0";
    framesPerSec = "1";
-   textureName = "art/particles/droplet";
-   animTexName[0] = "art/particles/droplet";
-   colors[0] = "0.692913 0.787402 1 1";
-   colors[1] = "0.692913 0.787402 1 0.496063";
-   colors[2] = "0.692913 0.787402 1 0";
+   textureName = "art/particles/sickieparticles/mist.png";
+   animTexName[0] = "art/particles/sickieparticles/mist.png";
+   colors[0] = "0.685039 0.787402 1 1";
+   colors[1] = "0.685039 0.787402 1 0.496063";
+   colors[2] = "0.685039 0.787402 1 0";
    colors[3] = "1 1 1 1";
-   sizes[0] = "0.0457792";
-   sizes[1] = "0.195324";
-   sizes[2] = "0.195324";
+   sizes[0] = "0.08";
+   sizes[1] = "0.192272";
+   sizes[2] = "0.25";
    sizes[3] = "1";
    times[0] = "0";
-   times[1] = "0.498039";
+   times[1] = "0.494118";
    times[2] = "1";
-   times[3] = "2";
+   times[3] = "1";
 };
 
 datablock ParticleEmitterData(GrenadeSplashEmitter)
@@ -106,33 +106,34 @@ datablock ParticleData(GrenadeExplosionBubbleParticle)
 {
    textureName = "art/particles/bubble";
    dragCoefficient = 0.0;
-   gravityCoefficient = -0.25;
+   gravityCoefficient = "-0.1";
    inheritedVelFactor = 0.0;
    constantAcceleration = 0.0;
-   lifetimeMS = 2000;
-   lifetimeVarianceMS = 750;
+   lifetimeMS = "800";
+   lifetimeVarianceMS = "600";
    useInvAlpha = false;
 
    spinRandomMin = -100.0;
    spinRandomMax =  100.0;
 
-   colors[0] = "0.7 0.8 1.0 0.0";
-   colors[1] = "0.7 0.8 1.0 0.4";
-   colors[2] = "0.7 0.8 1.0 0.0";
+   colors[0] = "0.494118 0.607843 0.709804 0.394";
+   colors[1] = "0.478431 0.576471 0.682353 0.303";
+   colors[2] = "0.482353 0.564706 0.682353 0.195";
 
-   sizes[0] = 0.75;
-   sizes[1] = 0.75;
-   sizes[2] = 0.75;
+   sizes[0] = "0.05";
+   sizes[1] = "0.1";
+   sizes[2] = "0.2";
 
    times[0] = 0.0;
-   times[1] = 0.5;
+   times[1] = "0.498039";
    times[2] = 1.0;
+   animTexName = "art/particles/bubble";
 };
 
 datablock ParticleEmitterData(GrenadeExplosionBubbleEmitter)
 {
-   ejectionPeriodMS = 7;
-   periodVarianceMS = 0;
+   ejectionPeriodMS = "2";
+   periodVarianceMS = "1";
    ejectionVelocity = 1.0;
    ejectionOffset   = 2.0;
    velocityVariance = 0.5;
@@ -140,8 +141,9 @@ datablock ParticleEmitterData(GrenadeExplosionBubbleEmitter)
    thetaMax = 80;
    phiReferenceVel = 0;
    phiVariance = 360;
-   overrideAdvances = false;
+   overrideAdvances = 0;
    particles = "GrenadeExplosionBubbleParticle";
+   blendStyle = "ADDITIVE";
 };
 
 datablock ParticleData(UnderwaterGrenadeSparks)
@@ -183,45 +185,57 @@ datablock ParticleEmitterData(UnderwaterGrenadeSparkEmitter)
 
 datablock ParticleData(UnderwaterGrenadeExplosionSmoke)
 {
-   textureName = "art/particles/smokeParticle";
-   dragCoeffiecient = 105.0;
-   gravityCoefficient = -0.0;   // rises slowly
-   inheritedVelFactor = 0.025;
-
+   textureName = "art/particles/sickieparticles/rock_impact_1_inner.png";
+   dragCoeffiecient = 105;
+   gravityCoefficient = "1";
+   inheritedVelFactor = "1";
    constantAcceleration = -1.0;
    
-   lifetimeMS = 1250;
-   lifetimeVarianceMS = 0;
+   lifetimeMS = "800";
+   lifetimeVarianceMS = "400";
 
    useInvAlpha = false;
-   spinRandomMin = -200.0;
-   spinRandomMax = 200.0;
+   spinRandomMin = -100.0;
+   spinRandomMax = 100.0;
 
-   colors[0] = "0.4 0.4 1.0 1.0";
-   colors[1] = "0.4 0.4 1.0 0.5";
-   colors[2] = "0.0 0.0 0.0 0.0";
-   sizes[0] = 1.0;
-   sizes[1] = 3.0;
-   sizes[2] = 5.0;
+   colors[0] = "0.527559 0.598425 0.692913 0.502";
+   colors[1] = "0.511811 0.606299 0.716535 0.353";
+   colors[2] = "0.480315 0.574803 0.700787 0.253";
+   colors[3] = "0.505882 0.611765 0.701961 0.104";
+   sizes[0] = "2";  
+   sizes[1] = "2.5";
+   sizes[2] = "3.5";
+   sizes[3] = "4.5";
    times[0] = 0.0;
    times[1] = 0.2;
-   times[2] = 1.0;
+   times[2] = "0.6875";
+   times[3] = 1;
+   animTexName = "art/particles/sickieparticles/rock_impact_1_inner.png";
+   ejectionPeriodMS = "1";
+   periodVarianceMS = "0";
+   ejectionVelocity = "12";
+   velocityVariance = "8";
+   thetaMax = "180";
+   particles = "UnderwaterGrenadeExplosionSmoke";
+   blendStyle = "ADDITIVE";
 };
 
 datablock ParticleEmitterData(UnderwaterGrenadeExplosionSmokeEmitter)
 {
-   ejectionPeriodMS = 10;
-   periodVarianceMS = 0;
+   ejectionPeriodMS = "2";
+   periodVarianceMS = "1";
 
-   ejectionVelocity = 5.25;
-   velocityVariance = 0.25;
+   ejectionVelocity = "10";
+   velocityVariance = "6";
 
    thetaMin = 0.0;
-   thetaMax = 180.0;
+   thetaMax = 90.0;
 
-   lifetimeMS = 250;
+   lifetimeMS = "200";
 
    particles = "UnderwaterGrenadeExplosionSmoke";
+   blendStyle = "ADDITIVE";
+   lifetimeVarianceMS = "100";
 };
 
 datablock ExplosionData(UnderwaterHandGrenadeSubExplosion1)

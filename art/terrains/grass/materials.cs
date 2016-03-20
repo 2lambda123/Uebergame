@@ -130,7 +130,7 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "32";
    macroStrength = "0.8";
-   parallaxScale = "0.07";
+   parallaxScale = "0";
    detailSize = "5";
    normalMap = "art/terrains/grass/ter_grass_sparse_01_N";
    macroMap = "art/terrains/grass/ter_grass_sparse_01_M";

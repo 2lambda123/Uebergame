@@ -48,7 +48,7 @@ new TerrainMaterial()
    macroSize = "64";
    macroStrength = "0.5";
    internalName = "ter_dirt_ash_02";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
    detailStrength = "1.2";
    normalMap = "art/terrains/dirt/ter_dirt_ash_02_N";
    macroMap = "art/terrains/dirt/ter_dirt_ash_02_M";
@@ -185,6 +185,6 @@ new TerrainMaterial()
    internalName = "ter_dirt_gravel_05";
    macroMap = "art/terrains/dirt/ter_dirt_gravel_05_M";
    macroStrength = "0.7";
-   parallaxScale = "0.04";
+   parallaxScale = "0";
    normalMap = "art/terrains/dirt/ter_dirt_gravel_05_N";
 };

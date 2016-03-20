@@ -30,8 +30,8 @@ $Gui::DefaultFontBold = "Arial Bold";
 $Gui::DefaultFontSize = "14";
 $Gui::CustomFont = "CRYSTAL";
 $Gui::CustomFontSize = "18"; // 12, 18, 24, 36, 48, 60, 72
-$Gui::ColorAlly = "0 255 0";
-$Gui::ColorEnemy = "255 0 0";
+$Gui::ColorAlly = "0 224 0";
+$Gui::ColorEnemy = "224 0 0";
 
 //-----------------------------------------------------------------------------
 // Chat Hud profiles
@@ -237,6 +237,7 @@ singleton GuiControlProfile(ObjTextLeftProfile)
    fontSize = $Gui::DefaultFontSize;
    fontColor = $Gui::ColorEnemy;
    justify = "left";
+   fontColors[0] = "224 0 0 255";
 };
 // Bottom
 singleton GuiControlProfile(ObjTextCenterProfile : ObjTextLeftProfile)
@@ -248,12 +249,14 @@ singleton GuiControlProfile(ObjTextTeamLeftProfile : ObjTextLeftProfile)
 {
    fontColor = $Gui::ColorAlly;
    justify = "left";
+   fontColors[0] = "0 224 0 255";
 };
 //Top
 singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
 {
    fontColor = $Gui::ColorAlly;  
    justify = "center";
+   fontColors[0] = "0 224 0 255";
 };
 
 //-----------------------------------------------------------------------------

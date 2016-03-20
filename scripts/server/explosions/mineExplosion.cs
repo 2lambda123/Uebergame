@@ -40,34 +40,35 @@ datablock SFXProfile(UnderwaterMineExplosionSound)
 datablock ParticleData(MineExplosionBubbleParticle)
 {
    dragCoefficient      = 0.0;
-   gravityCoefficient   = -0.25;
+   gravityCoefficient   = "-0.251526";
    inheritedVelFactor   = 0.0;
    constantAcceleration = 0.0;
-   lifetimeMS           = 2000;
-   lifetimeVarianceMS   = 750;
+   lifetimeMS           = "600";
+   lifetimeVarianceMS   = "500";
    useInvAlpha          = false;
    textureName = "art/particles/bubble";
 
    spinRandomMin        = -100.0;
    spinRandomMax        =  100.0;
 
-   colors[0]     = "0.7 0.8 1.0 0.0";
-   colors[1]     = "0.7 0.8 1.0 0.4";
-   colors[2]     = "0.7 0.8 1.0 0.0";
+   colors[0]     = "0.685039 0.795276 1 0";
+   colors[1]     = "0.685039 0.795276 1 0.393701";
+   colors[2]     = "0.685039 0.795276 1 0";
 
-   sizes[0]      = 1.0;
-   sizes[1]      = 1.0;
-   sizes[2]      = 1.0;
+   sizes[0]      = "0.05";
+   sizes[1]      = "0.1";
+   sizes[2]      = "0.15";
 
    times[0]      = 0.0;
-   times[1]      = 0.3;
+   times[1]      = "0.294118";
    times[2]      = 1.0;
+   animTexName = "art/particles/bubble";
 };
 
 datablock ParticleEmitterData(MineExplosionBubbleEmitter)
 {
    ejectionPeriodMS = 7;
-   periodVarianceMS = 0;
+   periodVarianceMS = "6";
    ejectionVelocity = 1.0;
    ejectionOffset   = 2.0;
    velocityVariance = 0.5;
@@ -75,8 +76,9 @@ datablock ParticleEmitterData(MineExplosionBubbleEmitter)
    thetaMax         = 80;
    phiReferenceVel  = 0;
    phiVariance      = 360;
-   overrideAdvances = false;
+   overrideAdvances = 0;
    particles = "MineExplosionBubbleParticle";
+   blendStyle = "ADDITIVE";
 };
 
 datablock ParticleData( UnderwaterMineCrescentParticle )

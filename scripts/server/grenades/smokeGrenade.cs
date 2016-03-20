@@ -23,7 +23,7 @@
 datablock SFXProfile(SmokeGrenadeExplosionSound)
 {
    filename = "art/sound/weapons/grenades/smokeGrenade";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -33,62 +33,63 @@ datablock SFXProfile(SmokeGrenadeExplosionSound)
 datablock ParticleData(SmokeScreenSmoke)
 {
    textureName          = "art/particles/smokeScreen";
-   dragCoefficient      = 0.75;
-   gravityCoefficient   = -0.01;
-   inheritedVelFactor   = 0.2;
+   dragCoefficient      = "0.747801";
+   gravityCoefficient   = "-0.02";
+   inheritedVelFactor   = "0.1";
    windCoefficient      = 0.2;
    constantAcceleration = 0.0;
-   lifetimeMS           = 10000;
-   lifetimeVarianceMS   = 500;
+   lifetimeMS           = "7000";
+   lifetimeVarianceMS   = "6000";
    useInvAlpha          = true;
    spinRandomMin        = -20.0;
    spinRandomMax        = 20.0;
    spinSpeed            = 1.0;
 
-   colors[0] = "0.6 0.6 0.6 0.3";
-   colors[1] = "0.6 0.6 0.6 0.3";
-   colors[2] = "0.6 0.6 0.6 0.0";
+   colors[0] = "0.598425 0.598425 0.598425 0.8";
+   colors[1] = "0.598425 0.598425 0.598425 0.5";
+   colors[2] = "0.598425 0.598425 0.598425 0.107";
 
-   sizes[0] = 6.0;
-   sizes[1] = 8.0;
-   sizes[2] = 10.0;
+   sizes[0] = "5";
+   sizes[1] = "9";
+   sizes[2] = "11";
 
    times[0] = 0.0;
-   times[1] = 0.75;
+   times[1] = "0.74902";
    times[2] = 1.0;
+   animTexName = "art/particles/smokeScreen";
 };
 
 datablock ParticleEmitterData(SmokeScreenSmokeEmitter1)
 {
-   ejectionPeriodMS = 50;
-   periodVarianceMS = 1;
-   ejectionVelocity = 8.0;
+   ejectionPeriodMS = "250";
+   periodVarianceMS = "100";
+   ejectionVelocity = "5";
    velocityVariance = 4.0;
-   ejectionOffset   = 3.0;
-   thetaMin         = 85;
-   thetaMax         = 90;
+   ejectionOffset   = "0";
+   thetaMin         = 75;
+   thetaMax         = 95;
    phiReferenceVel  = 0;
    phiVariance      = 360;
-   overrideAdvances = false;
    orientParticles  = false;
    orientOnVelocity = false;
    particles = "SmokeScreenSmoke";
+   blendStyle = "NORMAL";
 };
 
 datablock ParticleEmitterData(SmokeScreenSmokeEmitter2 : SmokeScreenSmokeEmitter1)
 {
-   ejectionPeriodMS = 250;
-   periodVarianceMS = 1;
-   ejectionVelocity = 5.0;
-   velocityVariance = 5.0;
-   ejectionOffset   = 0.0;
+   ejectionPeriodMS = "90";
+   periodVarianceMS = "80";
+   ejectionVelocity = "2.5";
+   velocityVariance = "1.5";
+   ejectionOffset   = "2";
 };
 
 datablock ParticleEmitterData(SmokeScreenEmitter : SmokeScreenSmokeEmitter1)
 {
    ejectionPeriodMS = 250;
    ejectionVelocity = 1;
-   velocityVariance = 0.5;
+   velocityVariance = 0.9;
    ejectionOffset   = 2.0;
 };
 

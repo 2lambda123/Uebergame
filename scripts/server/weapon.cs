@@ -175,6 +175,9 @@ function WeaponImage::onMount(%this, %obj, %slot)
    // it back to true would enable changing to the fire state again.
    // Images assume a false ammo state on load.  We need to
    // set the state according to the current inventory.
+   
+   //player just switched to a new weapon, so he is not reloading anymore
+   %obj.isReloading = false;
 
    if( %this.isField("clip") )
    {

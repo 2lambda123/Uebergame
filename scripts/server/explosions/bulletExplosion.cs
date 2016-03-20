@@ -214,16 +214,16 @@ datablock ParticleData(BulletDust)
    spinRandomMax =  180.0;
    useInvAlpha   = true;
 
-   colors[0]     = "0.496063 0.393701 0.299213 0.685039";
-   colors[1]     = "0.685039 0.606299 0.527559 0.346457";
-   colors[2]     = "0.897638 0.84252 0.795276 0";
+   colors[0]     = "0.6 0.501961 0.376471 0.407";
+   colors[1]     = "0.819608 0.74902 0.607843 0.199";
+   colors[2]     = "0.839216 0.792157 0.698039 0";
 
    sizes[0]      = 1.0;
-   sizes[1]      = "4";
-   sizes[2]      = "8";
+   sizes[1]      = "3";
+   sizes[2]      = "7";
 
    times[0]      = 0.0;
-   times[1]      = "0.498039";
+   times[1]      = "0.494118";
    times[2]      = 1.0;
    animTexName = "art/particles/impact";
 };
@@ -232,14 +232,14 @@ datablock ParticleEmitterData(BulletDustEmitter)
 {
    ejectionPeriodMS = "12";
    periodVarianceMS = 8;
-   ejectionVelocity = 3.1;
+   ejectionVelocity = "3";
    velocityVariance = 0.8;
-   thetaMin         = 0.0;
-   thetaMax         = 180.0;
-   lifetimeMS       = 250;
+   thetaMin         = "60";
+   thetaMax         = "100";
+   lifetimeMS       = "0";
    particles = "BulletDust";
    blendStyle = "NORMAL";
-   lifetimeVarianceMS = "100";
+   lifetimeVarianceMS = "0";
 };
 
 datablock ParticleData(BulletImpactSmokeParticle)
@@ -354,29 +354,30 @@ datablock ExplosionData(BulletExplosion)
 
 datablock ParticleData(BulletWaterMistParticle)
 {
-   textureName          = "art/particles/splatter";
+   textureName          = "art/particles/fxpack1/watervapor.png";
    dragCoefficient      = 0;
    gravityCoefficient   = 0.0;
    windCoefficient      = 0;
    inheritedVelFactor   = 0.0;
    constantAcceleration = 0.0;
-   lifetimeMS           = 600;
+   lifetimeMS           = "400";
    lifetimeVarianceMS   = 200;
    spinRandomMin        = -180.0;
    spinRandomMax        = 180.0;
    useInvAlpha          = true;
 
-   colors[0] = "1.0 1.0 1.0 0.4";
-   colors[1] = "1.0 1.0 1.0 0.2";
-   colors[2] = "1.0 1.0 1.0 0.0";
+   colors[0] = "0.448819 0.535433 0.629921 0.402";
+   colors[1] = "0.433071 0.535433 0.637795 0.307";
+   colors[2] = "0.425197 0.535433 0.637795 0.216";
 
-   sizes[0]  = 1.0;
-   sizes[1]  = 2.5;
-   sizes[2]  = 4.0;
+   sizes[0]  = "0.997986";
+   sizes[1]  = "1.99902";
+   sizes[2]  = "2.99701";
 
    times[0]  = 0.0;
-   times[1]  = 0.5;
+   times[1]  = "0.494118";
    times[2]  = 1.0;
+   animTexName = "art/particles/fxpack1/watervapor.png";
 };
 
 datablock ParticleEmitterData(BulletWaterMistEmitter)
@@ -392,84 +393,88 @@ datablock ParticleEmitterData(BulletWaterMistEmitter)
 
 datablock ParticleData(BulletWaterSplashParticle)
 {
-   textureName        = "art/particles/droplet";
+   textureName        = "art/particles/sickieparticles/rock_impact_2_outer.png";
    dragCoefficient    = 0;
-   gravityCoefficient = 3.5;
-   lifetimeMS         = 650;
-   lifetimeVarianceMS = 200;
+   gravityCoefficient = "2";
+   lifetimeMS         = "600";
+   lifetimeVarianceMS = "400";
    spinRandomMin      = -120.0;
    spinRandomMax      =  120.0;
    useInvAlpha        = false;
    
-   colors[0] = "1.0 1.0 1.0 0.7";
-   colors[1] = "1.0 1.0 1.0 0.35";
-   colors[2] = "1.0 1.0 1.0 0.0";
+   colors[0] = "0.464567 0.543307 0.622047 0.716535";
+   colors[1] = "0.480315 0.566929 0.645669 0.511811";
+   colors[2] = "0.472441 0.551181 0.614173 0.181102";
 
-   sizes[0]  = 0.25;
-   sizes[1]  = 1.0;
-   sizes[2]  = 1.0;
+   sizes[0]  = "0.299091";
+   sizes[1]  = "0.497467";
+   sizes[2]  = "0.997986";
 
    times[0]  = 0.0;
-   times[1]  = 0.5;
+   times[1]  = "0.494118";
    times[2]  = 1.0;
+   animTexName = "art/particles/sickieparticles/rock_impact_2_outer.png";
 };
 
 datablock ParticleEmitterData(BulletWaterSplashEmitter)
 {
    ejectionPeriodMS = 1;
    periodVarianceMS = 0;
-   ejectionVelocity = 10.0;
+   ejectionVelocity = "7";
    velocityVariance = 6.0;
    thetaMin         = 0.0;
    thetaMax         = 18.0;
    orientParticles  = false;
    orientOnVelocity = false;
    particles        = "BulletWaterSplashParticle";
+   blendStyle = "ADDITIVE";
 };
 
 datablock ParticleData(BulletWaterBubblesParticle)
 {
-   textureName          = "art/particles/bubble";
-   dragCoefficient      = 1;
-   gravityCoefficient   = 0;
-   inheritedVelFactor   = 0.2;
+   textureName          = "art/particles/bubble.png";
+   dragCoefficient      = "0.99218";
+   gravityCoefficient   = "-0.100122";
+   inheritedVelFactor   = "0.199609";
    constantAcceleration = 0;
-   lifetimeMS           = 250;
-   lifetimeVarianceMS   = 100;
+   lifetimeMS           = "250";
+   lifetimeVarianceMS   = "220";
 
-   colors[0] = "0.7 0.8 1.0 1.0";
-   colors[1] = "0.7 0.8 1.0 0.5";
-   colors[2] = "0.7 0.8 1.0 0.0";
+   colors[0] = "0.669291 0.795276 1 0.503937";
+   colors[1] = "0.669291 0.795276 1 0.307087";
+   colors[2] = "0.669291 0.795276 1 0.19685";
 
-   sizes[0]  = 1.0;
-   sizes[1]  = 0.6;
-   sizes[2]  = 0.3;
+   sizes[0]  = "0.0396753";
+   sizes[1]  = "0.0793505";
+   sizes[2]  = "0.119026";
 
    times[0]  = 0;
-   times[1]  = 0.5;
+   times[1]  = "0.494118";
    times[2]  = 1;
+   animTexName = "art/particles/bubble.png";
 };
 
 datablock ParticleEmitterData(BulletWaterBubblesEmitter)
 {
    ejectionPeriodMS = 4;
-   periodVarianceMS = 0;
-   ejectionVelocity = 8;
-   velocityVariance = 2;
+   periodVarianceMS = "3";
+   ejectionVelocity = "3";
+   velocityVariance = "2";
    ejectionOffset   = 0;
    thetaMin         = 0;
    thetaMax         = 80;
    phiReferenceVel  = 0;
    phiVariance      = 360;
-   overrideAdvances = false;
+   overrideAdvances = 0;
    orientParticles  = true;
-   lifetimeMS       = 100;
+   lifetimeMS       = "0";
    particles        = "BulletWaterBubblesParticle";
+   blendStyle = "ADDITIVE";
 };
 
 datablock ExplosionData(BulletWaterExplosion)
 {
-   soundProfile = BulletImpactSound;
+   soundProfile = BulletImpactSoundList;
    lifeTimeMS = 65;
 
    particleEmitter = BulletWaterMistEmitter;

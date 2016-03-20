@@ -1,3 +1,25 @@
+//-----------------------------------------------------------------------------
+// Copyright (c) 2012 GarageGames, LLC
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+//-----------------------------------------------------------------------------
+
 //--------------------------------------------------------------------------
 // Sounds
 //--------------------------------------------------------------------------
@@ -30,11 +52,11 @@ datablock SFXProfile(GLSwitchinSound)
 datablock ParticleData(UWGrenadeTrailParticle)
 {
    dragCoefficient      = 0.0;
-   gravityCoefficient   = -0.25;
+   gravityCoefficient   = "-0.251526";
    inheritedVelFactor   = 0.0;
    constantAcceleration = 0.0;
-   lifetimeMS           = 1500;
-   lifetimeVarianceMS   = 600;
+   lifetimeMS           = "400";
+   lifetimeVarianceMS   = "300";
    useInvAlpha          = false;
 
    textureName = "art/particles/bubble.png";
@@ -43,16 +65,16 @@ datablock ParticleData(UWGrenadeTrailParticle)
    spinRandomMin        = -100.0;
    spinRandomMax        =  100.0;
 
-   colors[0]     = "0.7 0.8 1.0 0.4";
-   colors[1]     = "0.7 0.8 1.0 0.4";
-   colors[2]     = "0.7 0.8 1.0 0.0";
+   colors[0]     = "0.692913 0.795276 1 0.519";
+   colors[1]     = "0.692913 0.795276 1 0.315";
+   colors[2]     = "0.692913 0.795276 1 0.166";
 
-   sizes[0]      = 0.5;
-   sizes[1]      = 0.5;
-   sizes[2]      = 0.5;
+   sizes[0]      = "0.05";
+   sizes[1]      = "0.08";
+   sizes[2]      = "0.12";
 
    times[0]      = 0.0;
-   times[1]      = 0.5;
+   times[1]      = "0.498039";
    times[2]      = 1.0;
 };
 
@@ -182,7 +204,7 @@ datablock ProjectileData( GrenadeProjectile )
    lifetime            = 15000; // How long the projectile should exist before deleting itself
    fadeDelay           = 10000; // Brief Amount of time, in milliseconds, before the projectile begins to fade out.
 
-   bounceElasticity    = 0.4;
+   bounceElasticity    = 0.3;
    bounceFriction      = 0.3;
    isBallistic         = 1; // Causes the projectile to be affected by gravity "arc".
    gravityMod          = 1;
