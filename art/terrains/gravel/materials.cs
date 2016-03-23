@@ -21,7 +21,7 @@ new TerrainMaterial()
    detailSize = "4";
    macroMap = "art/terrains/gravel/ter_gravel_plain_01_M";
    macroStrength = "1";
-   parallaxScale = "0.04";
+   parallaxScale = "0";
    normalMap = "art/terrains/gravel/ter_gravel_plain_01_N";
 };
 
@@ -47,7 +47,7 @@ new TerrainMaterial()
    internalName = "ter_gravel_rough_01";
    detailStrength = "1.2";
    macroStrength = "1";
-   parallaxScale = "0.04";
+   parallaxScale = "0";
    detailSize = "4";
    normalMap = "art/terrains/gravel/ter_gravel_rough_01_N";
    macroMap = "art/terrains/gravel/ter_gravel_rough_01_M";
@@ -77,6 +77,6 @@ new TerrainMaterial()
    detailDistance = "100";
    macroMap = "art/terrains/gravel/ter_gravel_sparse_01_M";
    normalMap = "art/terrains/gravel/ter_gravel_sparse_01_N";
-   parallaxScale = "0.04";
+   parallaxScale = "0";
    detailSize = "6";
 };

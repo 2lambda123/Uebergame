@@ -466,8 +466,8 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(GrenadeLauncher, "Grenade Launcher", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t12");
-SmsInv.AddClip(GrenadeLauncherClip, "Grenade Belt", 3);
+SmsInv.AllowClip("armor\tSoldier\t4");
+SmsInv.AddClip(GrenadeLauncherClip, "Grenade Belt", 4);
 
 SmsInv.AllowAmmo("armor\tSoldier\t6");
 SmsInv.AddAmmo(GrenadeLauncherAmmo, 6);

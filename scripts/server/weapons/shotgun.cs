@@ -467,8 +467,8 @@ function ShotgunIronSightImage::onFire(%data, %obj, %slot)
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Shotgun, "Shotgun", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t12");
-SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 3);
+SmsInv.AllowClip("armor\tSoldier\t4");
+SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 4);
 
 SmsInv.AllowAmmo("armor\tSoldier\t8");
 SmsInv.AddAmmo(ShotgunAmmo, 8);

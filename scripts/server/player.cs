@@ -1007,8 +1007,6 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    upResistSpeed = 25;
    upResistFactor = 0.3;
 
-
-
    //NOTE:  some sounds commented out until wav's are available
 
    // Footstep Sounds
@@ -1047,13 +1045,12 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
 
    pickupRadius = 1;
 
-
    // Allowable Inventory Items
 
-   maxWeapons = 4;
-   maxSpecials = 1;
-   maxGrenades = 1;
-   maxMines = 1;
+   maxWeapons = $pref::Server::MaxWeapons;
+   maxSpecials = $pref::Server::MaxSpecials;
+   maxGrenades = $pref::Server::MaxGrenades;
+   maxMines = $pref::Server::MaxMines;
 
    // Radius damage
    canImpulse = true;
@@ -1062,15 +1059,27 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    MoveSpeed = 0.5;          // You could call this the AI's throttle 1 = 100% throttle.
    MoveTolerance = 1;        // Distance from target position that is accepted as "reached"
 
-
    jumpTowardsNormal = "1";
    shadowSize = "512";
+};
+
+datablock PlayerData(PaintballPlayerData : DefaultSoldier)
+{
+   shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
+   shapeNameFP[0] = "";
+   availableSkins =  "base blue red green yellow";
+   boundingBox = "0.75 0.75 1.8";
+   crouchBoundingBox = "0.75 0.75 1.25";
+   renderFirstPerson = "1";
+   
+   maxInvRyder = "0";
 };
 
 //-----------------------------------------------------------------------------
 // SMS
 //            |Datablock|     |$SMS::ArmorName|     |Index|
 SmsInv.AddArmor( DefaultSoldier, "Soldier", 0 );
+SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 0 );
 
 //----------------------------------------------------------------------------
 // Drowning script
@@ -1418,24 +1427,12 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
 
       switch$ (%damageType){
        
-      case "Suicide":
-         return;
-             
-      case "Drowning":
-         return;
-         
-      case "Paint":
-         return;
-		 
-	  case "MissionAreaDamage":
-         return;	
-
-      case "ScriptDamage":
-         return;		 
-
-      default:
-         // Process all other damage types
-                   
+      case "Suicide": return;     
+      case "Drowning": return;
+      case "Paint": return;	 
+	  case "MissionAreaDamage": return;	
+      case "ScriptDamage": return;		 
+      default: // Process all other damage types               
    }
    
    %centerpoint = %obj.getWorldBoxCenter();
@@ -1481,7 +1478,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
             }
         }
    }
-      /*
+      
    %particles = new ParticleEmitterNode()   
 {
       position = %position;  
@@ -1492,7 +1489,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
       velocity = "1";  
    };  
    MissionCleanup.add(%particles);  
-   %particles.schedule(1000, "delete"); */
+   %particles.schedule(1000, "delete");
 }
 
 //----------------------------------------------------------------------------

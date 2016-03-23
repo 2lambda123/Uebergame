@@ -50,18 +50,21 @@ datablock ItemData(MunitionsPack)
 
 datablock ShapeBaseImageData(MunitionsPackImage)
 {
-   shapeFile = "art/editor/invisible.dts";
+   shapeFile = "art/shapes/items/ammo/futuristic_ammo_box_01.dts";
+   shapeFileFP = "art/editor/invisible.dts";
    computeCRC = false;
    cloakable = true;
    item = MunitionsPack;
-   mountPoint = 2;
+   useEyeNode = true;
+   mountPoint = 1;
    mass = 2;
-   offset = "0 0 0";
+   offset     = "0 -0.05 -0.35"; // L/R - F/B - T/B
+   rotation   = "-0.616949 0.628951 0.473069 80.6613";
 
    throwTimeout = 800;
    usesEnergy = true;
-   minEnergy = 20;
-   fireEnergy = 20;
+   minEnergy = 50;
+   fireEnergy = 40;
 
    lightType = "NoLight"; // NoLight, ConstantLight, PulsingLight, WeaponFireLight.
 
@@ -111,7 +114,7 @@ function MunitionsPackImage::onActivate(%data, %obj, %slot)
    }
 
    // Throw an ammo crate
-   %item = ItemData::create(AmmoBox);
+   %item = ItemData::create(AmmoClipBox);
    %item.sourceObject = %obj;
    %item.static = false;
    MissionCleanup.add(%item);

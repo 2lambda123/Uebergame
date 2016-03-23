@@ -419,8 +419,8 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(SniperRifle, "Sniper Rifle", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t12");
-SmsInv.AddClip(SniperMag, "Sniper Magazine", 3);
+SmsInv.AllowClip("armor\tSoldier\t4");
+SmsInv.AddClip(SniperMag, "Sniper Magazine", 4);
 
 SmsInv.AllowAmmo("armor\tSoldier\t6");
 SmsInv.AddAmmo(SniperAmmo, 6);

@@ -44,6 +44,8 @@
 
          new GuiConsole(ConsoleMessageLogView) {
             profile = "GuiConsoleProfile";
+		    horizSizing = "width";
+            vertSizing = "height";
             position = "0 0";
          };
       };

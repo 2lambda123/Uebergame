@@ -450,8 +450,8 @@ datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Ryder, "Ryder pistol", 0);
 
-SmsInv.AllowClip("armor\tSoldier\t12");
-SmsInv.AddClip(RyderClip, "Ryder clips", 3);
+SmsInv.AllowClip("armor\tSoldier\t4");
+SmsInv.AddClip(RyderClip, "Ryder clips", 4);
 
 SmsInv.AllowAmmo("armor\tSoldier\t15");
 SmsInv.AddAmmo(RyderAmmo, 15);

@@ -53,7 +53,6 @@ datablock ItemData(Grenade : DefaultWeapon)
    shapeFile = "art/shapes/weapons/grenade/grenade.dts";
    computeCRC = false;
 
-   // Script varibles
    image = FragGrenadeImage;
    thrownItem = GrenadeThrown;
    pickUpName = 'Frag Grenade';

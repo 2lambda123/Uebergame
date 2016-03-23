@@ -20,7 +20,7 @@ new TerrainMaterial()
    internalName = "ter_forest_dirt_01";
    detailSize = "5";
    macroStrength = "0.5";
-   parallaxScale = "0.04";
+   parallaxScale = "0";
    normalMap = "art/terrains/forest/ter_forest_dirt_01_N";
    macroMap = "art/terrains/forest/ter_forest_dirt_01_M";
 };
@@ -48,7 +48,7 @@ new TerrainMaterial()
    macroMap = "art/terrains/forest/ter_forest_grass_01_M";
    macroSize = "40";
    macroStrength = "0.8";
-   parallaxScale = "0.02";
+   parallaxScale = "0";
    internalName = "ter_forest_grass_01";
 };
 
@@ -74,7 +74,7 @@ new TerrainMaterial()
    internalName = "ter_forest_plants_01";
    macroStrength = "0.5";
    normalMap = "art/terrains/forest/ter_forest_plants_01_N";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
    detailSize = "5";
    macroMap = "art/terrains/forest/ter_forest_plants_01_M";
 };

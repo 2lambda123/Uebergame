@@ -240,10 +240,13 @@ function MfDGame::loadOut(%game, %player)
    else
    {
       SmsInv.ProcessLoadout( %client );
+	  if (%player.PlayerData = DefaultSoldier)
+	  {
       %player.setInventory( HealthKit, 1 );
       %player.setInventory( Ryder, 1, 1 );
       %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
       %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );
+	  }
       %player.weaponCount++;
    }
 }

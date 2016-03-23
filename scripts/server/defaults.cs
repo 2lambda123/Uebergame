@@ -90,3 +90,7 @@ $pref::Server::DisallowVoteBaseSacking = 0;
 $pref::Server::DisallowVoteServerMode = 0;
 $pref::Server::DisallowVoteStartMatch = 0;
 $pref::Server::DisallowVoteTimeLimit = 0;
+$pref::Server::MaxWeapons = 1;
+$pref::Server::MaxSpecials = 1;
+$pref::Server::MaxGrenades = 1;
+$pref::Server::MaxMines = 1;

@@ -641,13 +641,13 @@ function resizeMessageHud( %val )
 //------------------------------------------------------------------------------
 // Weapon functions
 //------------------------------------------------------------------------------
-
+/*
 function melee( %val )
 {
    if ( %val )
       commandToServer( 'DoMelee' );
 }
-
+*/
 function reloadWeapon( %val )
 {
    if ( %val )
@@ -941,7 +941,7 @@ moveMap.bind( keyboard, "lshift", doSprint );
 //-----------------------------------------------------------------------------
 // Weapons
 moveMap.bind( mouse, button0, mouseFire );
-moveMap.bind( keyboard, "q", melee );
+//moveMap.bind( keyboard, "q", melee ); //melee not working correctly yet
 moveMap.bind( keyboard, "r", reloadWeapon );
 moveMap.bind( mouse, zaxis, cycleWeaponAxis );
 moveMap.bind( keyboard, "+", nextWeapon );
@@ -958,7 +958,7 @@ moveMap.bind( keyboard, "alt w", throwWeapon );
 moveMap.bind( keyboard, "alt a", tossAmmo );
 
 moveMap.bind( keyboard, "b", triggerSpecial );
-moveMap.bind( keyboard, "alt b", tossSpecial );
+moveMap.bind( keyboard, "ctrl b", tossSpecial );
 moveMap.bind( keyboard, "g", throwGrenade );
 moveMap.bind( keyboard, "alt g", tossGrenade );
 

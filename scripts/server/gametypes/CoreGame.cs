@@ -717,30 +717,33 @@ function CoreGame::pickPointInSpawnSphere(%game, %spawnSphere)
    %attemptsToSpawn = 0;
    while( !%SpawnLocationFound && ( %attemptsToSpawn < 5 ) )
    {
-      %sphereLocation = %spawnSphere.getTransform();
-      
-      // Attempt to spawn the player within the bounds of the spawnsphere.
-      %angleY = mDegToRad(getRandom(0, 100) * m2Pi());
-      %angleXZ = mDegToRad(getRandom(0, 100) * m2Pi());
+      %spherePos = %spawnSphere.getPosition();
 
-      %sphereLocation = setWord( %sphereLocation, 0, getWord(%sphereLocation, 0) + (mCos(%angleY) * mSin(%angleXZ) * getRandom(-%spawnSphere.radius, %spawnSphere.radius)));
+      // Attempt to spawn the player within the bounds of the spawnsphere.
+      %angleY = mDegToRad( getRandom( 0, 100 ) * m2Pi() );
+      %angleXZ = mDegToRad( getRandom( 0, 100 ) * m2Pi() );
+
+      %sphereLocation = setWord( %spherePos, 0, getWord(%spherePos, 0) + (mCos(%angleY) * mSin(%angleXZ) * getRandom(-%spawnSphere.radius, %spawnSphere.radius)));
       %sphereLocation = setWord( %sphereLocation, 1, getWord(%sphereLocation, 1) + (mCos(%angleXZ) * getRandom(-%spawnSphere.radius, %spawnSphere.radius)));
       
       %SpawnLocationFound = true;
 
-      // Now have to check that another object doesn't already exist at this spot.
-      // Use the bounding box of the object to check if where we are about to spawn in is
-      // clear.
-      %boundingBoxSize = %objectToSpawn.getDatablock().boundingBox;
-      %searchRadius = getWord(%boundingBoxSize, 0);
-      %boxSizeY = getWord(%boundingBoxSize, 1);
-      
-      // Use the larger dimention as the radius to search
-      if (%boxSizeY > %searchRadius)
-         %searchRadius = %boxSizeY;
+      // Now we need to make sure that the surface we want to spawn on is valid..
+      %x = getWord( %sphereLocation, 0 );
+      %y = getWord( %sphereLocation, 1 );
+      %z = getWord( %sphereLocation, 2 );
+      %start = %x SPC %y SPC ( %z + 10 );
+      %end = %x SPC %y SPC "-1";
+      %surface = containerRayCast( %start, %end, $TypeMasks::TerrainObjectType | $TypeMasks::StaticObjectType, 0 );
+      if ( !%surface )
+      {
+         //warn( "No valid spawn surface could be found" );
+         %SpawnLocationFound = false;
+         break;
+      }
 
-      // Search a radius about the area we're about to spawn for players.
-      initContainerRadiusSearch( %sphereLocation, %searchRadius, $TypeMasks::PlayerObjectType );
+      // Now have to check that another object doesn't already exist at this spot.
+      initContainerRadiusSearch( %sphereLocation, 3.5, ( $TypeMasks::PlayerObjectType | $TypeMasks::PlayerObjectType ) );
       while ( (%objectNearExit = containerSearchNext()) != 0 )
       {
          // If any player is found within this radius, mark that we need to look
@@ -758,7 +761,7 @@ function CoreGame::pickPointInSpawnSphere(%game, %spawnSphere)
    // At the center of the sphere and give a warning.
    if ( !%SpawnLocationFound )
    {
-      %sphereLocation = %spawnSphere.getTransform();
+      %sphereLocation = %spherePos;
       warn("WARNING: Could not spawn player after" SPC %attemptsToSpawn 
       SPC "tries in spawnsphere" SPC %spawnSphere SPC "without overlapping another player. Attempting spawn in center of sphere.");
    }
@@ -887,8 +890,19 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    // Setup inventory - We could tie this into some object that has to be enabled in order to get your selection
    // Perhaps deployables would require their own object you get them from. So they would not be part of your loadout
    %game.loadOut(%player);
-   %player.use( %player.weaponSlot[0] );
-
+   //%player.use( %player.weaponSlot[1] );
+   
+   
+   if (%client.PlayerData == PaintballPlayerData)
+   {
+	   %player.use( %player.weaponSlot[0] );
+   }
+   
+   if (%client.PlayerData == DefaultSoldier)
+   {
+	   %player.use( %player.weaponSlot[1] );
+   }
+	   
    // Update the camera to start with the player.
    if ( !%client.isAiControlled() )
    {
@@ -954,10 +968,13 @@ function CoreGame::loadOut(%game, %player)
    else
    {
       SmsInv.ProcessLoadout( %client );
+	  if (%player.PlayerData = DefaultSoldier)
+	  {
       %player.setInventory( HealthKit, 1 );
       %player.setInventory( Ryder, 1, 1 );
       %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
       %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );
+	  }
       %player.weaponCount++;
    }
 }

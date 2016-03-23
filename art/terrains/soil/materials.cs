@@ -22,7 +22,7 @@ new TerrainMaterial()
    macroSize = "50";
    detailSize = "3";
    normalMap = "art/terrains/soil/ter_soil_dark_01_N";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
    macroStrength = "0.5";
    macroMap = "art/terrains/soil/ter_soil_dark_02_B";
 };
@@ -52,7 +52,7 @@ new TerrainMaterial()
    detailSize = "4";
    macroStrength = "0.5";
    normalMap = "art/terrains/soil/ter_soil_dark_02_N";
-   parallaxScale = "0.04";
+   parallaxScale = "0";
    macroMap = "art/terrains/soil/ter_soil_dark_02_B";
 };
 
@@ -76,7 +76,7 @@ new TerrainMaterial()
    detailMap = "art/terrains/soil/ter_soil_mixed_01_D";
    internalName = "ter_soil_mixed_01";
    detailSize = "3";
-   parallaxScale = "0.07";
+   parallaxScale = "0";
    macroSize = "64";
    macroMap = "art/terrains/soil/ter_soil_mixed_01_D";
    normalMap = "art/terrains/soil/ter_soil_mixed_01_N";

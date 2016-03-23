@@ -211,6 +211,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    
    exec("./audioProfiles.cs");
    exec("./defaultEmitters.cs");
+   exec("./particles.cs");
    exec("./explosions/smallExplosion.cs");
    exec("./explosions/mediumExplosion.cs");
    exec("./explosions/largeExplosion.cs");
@@ -241,6 +242,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    // items - Must be loaded before weapons, holds defaults
    exec("./items/item.cs");
    exec("./items/ammoBox.cs");
+   exec("./items/ammoClipBox.cs");
    exec("./items/healthPatch.cs");
    exec("./items/healthKit.cs");
    exec("./items/armoryCrate.cs");

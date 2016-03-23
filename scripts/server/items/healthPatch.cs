@@ -36,7 +36,11 @@ datablock SFXProfile(HealthPatchSound)
 
 datablock ItemData(Medpack_medium)
 {
-   category = "Specials";
+   // Mission editor category, this datablock will show up in the
+   // specified category under the "shapes" root category.
+   category = "Health";
+
+   className = "HealthPatch";
 
    // Basic Item properties
    shapeFile = "art/shapes/items/health/medpack_01.dts";
@@ -88,10 +92,12 @@ function HealthPatch::onCollision(%this, %obj, %col, %vec, %speed)
          %dam = %dam - (%this.repairInstant); //instantly added health
            if(%dam < 0)
               %dam = 0;
+		  
+		 %col.setDamageLevel(%dam);
 		 
          serverPlay3D(%data.pickupSound, %col.getTransform());
-         if ( isObject( %col.client ) )
-            messageClient(%col.client, 'MsgHealthPatchUsed', '\c2Health Applied');
+         //if ( isObject( %col.client ) )
+            //messageClient(%col.client, 'MsgHealthPatchUsed', '\c2Health Applied');
 		
          if(%obj.isStatic())
             %obj.respawn();

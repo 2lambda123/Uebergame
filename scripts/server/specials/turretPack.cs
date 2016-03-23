@@ -62,7 +62,7 @@ datablock ShapeBaseImageData(TurretDeployableImage)
 {
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Turret/TP_Turret.dts";
-   shapeFileFP = "art/shapes/weapons/Turret/FP_Turret.dts";
+   shapeFileFP = "art/editor/invisible.dts";
    emap = true;
    computeCRC = false;
    cloakable  = true;
@@ -72,13 +72,12 @@ datablock ShapeBaseImageData(TurretDeployableImage)
 
    item = TurretDeployable;
    deployed = DeployedTurret;
-   mountPoint = 2;
+   mountPoint = 1;
    mass       = 2;
    firstPerson = true;
    useEyeNode = true;
-   offset     = "0 -0.5 1.2"; // L/R - F/B - T/B
-   //offset = "0 +0.01 0";
-   //rotation = "1 0 0 180";
+   offset     = "0.15 -0.4 0"; // L/R - F/B - T/B
+   rotation   = "1 0 0 0";
 
    lightType = "NoLight";
 

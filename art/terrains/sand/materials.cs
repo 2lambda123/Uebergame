@@ -139,5 +139,5 @@ new TerrainMaterial()
    macroStrength = "1";
    macroMap = "art/terrains/sand/ter_sand_rough_01_M";
    normalMap = "art/terrains/sand/ter_sand_rough_01_N";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
 };

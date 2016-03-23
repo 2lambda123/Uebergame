@@ -32,6 +32,11 @@ function ServerOptionsDlg::onWake(%this)
    SOP_BanTime.setValue( $pref::Server::BanTime );
    SOP_TimeLimit.setValue( $pref::Server::TimeLimit );
    SOP_WarmupTime.setValue( $pref::Server::warmupTime );
+   SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
+   SOP_MaxSpecials.setValue( $pref::Server::MaxSpecials );
+   SOP_MaxGrenades.setValue( $pref::Server::MaxGrenades );
+   SOP_MaxMines.setValue( $pref::Server::MaxMines );
+   
 
    // Setup the AI control
    if($pref::Server::AiCount > $pref::Server::MaxPlayers - 1)
@@ -69,6 +74,18 @@ function ServerOptionsDlg::onSleep(%this)
 
    if ( checkIsNumber( SOP_WarmupTime.getValue() ) )
       $pref::Server::warmupTime = SOP_WarmupTime.getValue();
+  
+   if ( checkIsNumber( SOP_MaxWeapons.getValue() ) )
+      $pref::Server::MaxWeapons = SOP_MaxWeapons.getValue();
+  
+   if ( checkIsNumber( SOP_MaxSpecials.getValue() ) )
+      $pref::Server::MaxSpecials = SOP_MaxSpecials.getValue();
+
+   if ( checkIsNumber( SOP_MaxGrenades.getValue() ) )
+      $pref::Server::MaxGrenades = SOP_MaxGrenades.getValue();
+
+   if ( checkIsNumber( SOP_Maxmines.getValue() ) )
+      $pref::Server::Maxmines = SOP_Maxmines.getValue();
 }
 
 function checkIsNumber(%string)

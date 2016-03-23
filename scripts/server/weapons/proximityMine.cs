@@ -416,5 +416,5 @@ function ProxMineImage::onFire( %data, %obj, %slot )
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(ProxMine, "Proximity Mine", 1);
 
-SmsInv.AllowAmmo("armor\tSoldier\t1");
-SmsInv.AddAmmo(ProxMineAmmo, 1);
+SmsInv.AllowAmmo("armor\tSoldier\t2");
+SmsInv.AddAmmo(ProxMineAmmo, 2);

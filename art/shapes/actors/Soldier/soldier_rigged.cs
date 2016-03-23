@@ -359,4 +359,6 @@ function SoldierDAE::onLoad(%this)
    %this.addTrigger("Turret_Side", "9", "2");
    // end keyframes
    //keyframes for crouching disabled to emulate sneaking
+   //mount nodes
+   %this.addNode("mount1", "Bip01_Spine2", "-0.221679 -0.0704633 1.20907 0 0 0 0", "1");
 }

@@ -190,7 +190,7 @@ new TerrainMaterial()
    macroStrength = "0.7";
    macroMap = "art/terrains/rock/ter_rock_spotted_01_M";
    normalMap = "art/terrains/rock/ter_rock_spotted_01_N";
-   parallaxScale = "0.08";
+   parallaxScale = "0";
    detailSize = "4";
    useSideProjection = "0";
 };
@@ -206,7 +206,7 @@ new TerrainMaterial()
    macroStrength = "0.7";
    macroMap = "art/terrains/rock/ter_rock_spotted_01_M";
    normalMap = "art/terrains/rock/ter_rock_spotted_01_N";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
    detailSize = "4";
    useSideProjection = "1";
 };

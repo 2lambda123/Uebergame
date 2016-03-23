@@ -19,7 +19,7 @@ new TerrainMaterial()
    macroSize = "92";
    internalName = "ter_dirt_ash_01";
    macroStrength = "0.5";
-   parallaxScale = "0.05";
+   parallaxScale = "0";
    normalMap = "art/terrains/dirt/ter_dirt_ash_01_N";
    macroMap = "art/terrains/dirt/ter_dirt_ash_02_M";
    detailMap = "art/terrains/dirt/ter_dirt_ash_01_D";

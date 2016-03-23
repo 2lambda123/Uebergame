@@ -516,8 +516,8 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
 SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Lurker, "Lurker rifle", 1);
 
-SmsInv.AllowClip("armor\tSoldier\t12");
-SmsInv.AddClip(LurkerClip, "Lurker Clips", 3);
+SmsInv.AllowClip("armor\tSoldier\t4");
+SmsInv.AddClip(LurkerClip, "Lurker Clips", 4);
 
 SmsInv.AllowAmmo("armor\tSoldier\t30");
 SmsInv.AddAmmo(LurkerAmmo, 30);
