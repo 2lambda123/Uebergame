@@ -249,7 +249,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    // Shake camera while firing.
    shakeCamera = true;
    camShakeFreq = "3 3 3";
-   camShakeAmp = "5 5 5";
+   camShakeAmp = "7 7 7";
    camShakeDuration = "1.0";
    camShakeRadius = "1.2";
 

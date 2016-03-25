@@ -785,7 +785,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    if( isObject(%client.player) && ( %client.player.getState() !$= "Dead" ) )
       //%client.player.kill( $DamageType::ScriptDamage );
       %client.player.schedule(50,"delete"); //better solution
-
+	  
    // clients and cameras can exist in team 0, but players should not
    // Force to a valid team
    if ( %client.team == 0 )
@@ -815,7 +815,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          allowTeleport = true;
       };
       // Determine which character skins are not already in use
-      %availableSkins = %player.getDatablock().availableSkins;             // TAB delimited list of skin names
+      %availableSkins = %player.getDatablock().availableSkins; // TAB delimited list of skin names
       %count = ClientGroup.getCount();
       for (%cl = 0; %cl < %count; %cl++)
       {
@@ -823,7 +823,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          if (%other != %client)
          {
             %availableSkins = strreplace(%availableSkins, %other.skin, "");
-            %availableSkins = strreplace(%availableSkins, "\t\t", "");     // remove empty fields
+            %availableSkins = strreplace(%availableSkins, "\t\t", "");  // remove empty fields
          }
       }
 
@@ -833,12 +833,35 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    }
    else
    {
+	  /*
       %player = new Player() {
          dataBlock = $NameToData[%client.loadout[0]];
          client = %client;
          team = %client.team;
          isBot = false;
       };
+	  */
+	  //override the %armor loadout to use the playerdatablock allowed by the server
+	  //this method needs to be improved later to allow multiple playerdatas if chosen
+	  //this needs to be extended to weapon loadout as well, since this goes wrong sometimes still
+	  if ( $pref::Server::AllowPlayerPaintballer == 0 )
+	  {
+		 %player = new Player() {
+         dataBlock = DefaultSoldier;
+         client = %client;
+         team = %client.team;
+         isBot = false;
+         };
+	  }
+	  if ( $pref::Server::AllowPlayerPaintballer == 1 )
+	  {
+		 %player = new Player() {
+         dataBlock = PaintballPlayerData;
+         client = %client;
+         team = %client.team;
+         isBot = false;
+         };
+	  }
    }
    MissionCleanup.add(%player);
 
@@ -891,8 +914,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    // Perhaps deployables would require their own object you get them from. So they would not be part of your loadout
    %game.loadOut(%player);
    //%player.use( %player.weaponSlot[1] );
-   
-   
+      
    if (%client.PlayerData == PaintballPlayerData)
    {
 	   %player.use( %player.weaponSlot[0] );
@@ -968,6 +990,7 @@ function CoreGame::loadOut(%game, %player)
    else
    {
       SmsInv.ProcessLoadout( %client );
+	  
 	  if (%player.PlayerData = DefaultSoldier)
 	  {
       %player.setInventory( HealthKit, 1 );

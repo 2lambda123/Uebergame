@@ -157,6 +157,32 @@ function serverCmdUse(%client, %data)
    %player.use( %data );
 }
 
+//function to pick up things with a button //broken, needs fixing
+function serverCmdPickupFacing(%client)
+{
+   // get player object
+   %player = %client.getControlObject();
+    
+   // verify it is a player object
+   if (%player.getClassName() !$= "Player")
+      return; // abort, it is not
+    
+   // raycast for an item that the player is facing, and also look for types
+   // that could be between the player and the item they're facing.
+   %typeMask = $TypeMasks::ItemObjectType | $TypeMasks::StaticObjectType;
+   %result = %player.doRaycast(4 /*range*/, %typeMask);
+    
+   // only care about object id part of the result
+   %result = getWord(%result, 0);
+    
+   // pickup only if it's an item
+   if ((%result != 0) && (%result.getClassName() $= "Item"))
+   {
+      echo("Picking up");
+      %player.pickup(%result);
+   }
+}
+
 function serverCmdThrow(%client, %data)
 {
    %player = %client.player;

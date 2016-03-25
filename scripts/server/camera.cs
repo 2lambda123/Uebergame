@@ -610,7 +610,7 @@ function displaySpectatorHud(%client, %targetClient, %potentialClient)
          bottomPrint(%client, "Spectator Fly Mode\n" @ %potName @ "\nTeam: <color:ff0000>" @ %potTeam, 0, 3);
    }   
    else
-      BottomPrint( %client, "Spectator Fly Mode.\nChoose a team or\npress FIRE to be auto assigned.", 0, 3 );
+      BottomPrint( %client, "Spectator Fly Mode.\npress i to Choose a team and weapons or\npress FIRE to be auto assigned.", 0, 3 );
 }
 
 function resetSpectatorFollow( %client, %dismount )

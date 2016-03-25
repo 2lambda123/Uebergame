@@ -676,7 +676,6 @@
          sinkAllKeyEvents = "0";
          password = "0";
          passwordMask = "*";
-         text = "";
          maxLength = "1024";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -705,7 +704,6 @@
          sinkAllKeyEvents = "0";
          password = "0";
          passwordMask = "*";
-         text = "";
          maxLength = "1024";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -734,7 +732,6 @@
          sinkAllKeyEvents = "0";
          password = "0";
          passwordMask = "*";
-         text = "";
          maxLength = "1024";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -763,7 +760,6 @@
          sinkAllKeyEvents = "0";
          password = "0";
          passwordMask = "*";
-         text = "";
          maxLength = "1024";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -875,6 +871,26 @@
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiCheckBoxCtrl(SOP_AllowPlayerPaintballer) {
+         text = "Activate Paintball Mode";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         position = "409 357";
+         extent = "162 30";
+         minExtent = "8 2";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "GuiCheckBoxProfile";
+         visible = "1";
+         active = "1";
+         variable = "$pref::Server::AllowPlayerPaintballer";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

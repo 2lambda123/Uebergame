@@ -94,3 +94,5 @@ $pref::Server::MaxWeapons = 1;
 $pref::Server::MaxSpecials = 1;
 $pref::Server::MaxGrenades = 1;
 $pref::Server::MaxMines = 1;
+//$pref::Server::AllowPlayerSoldier = 1;
+$pref::Server::AllowPlayerPaintballer = 0;

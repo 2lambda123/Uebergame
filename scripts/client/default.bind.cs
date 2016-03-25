@@ -943,6 +943,7 @@ moveMap.bind( keyboard, "lshift", doSprint );
 moveMap.bind( mouse, button0, mouseFire );
 //moveMap.bind( keyboard, "q", melee ); //melee not working correctly yet
 moveMap.bind( keyboard, "r", reloadWeapon );
+//moveMap.bindCmd(keyboard, "e", "commandToServer('PickupFacing');", "");
 moveMap.bind( mouse, zaxis, cycleWeaponAxis );
 moveMap.bind( keyboard, "+", nextWeapon );
 moveMap.bind( keyboard, "minus", prevWeapon );

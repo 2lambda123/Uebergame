@@ -161,6 +161,26 @@ function ShapeBase::use(%player, %data)
    return false;
 }
 
+function ShapeBase::pickup(%this, %obj, %amount)
+{
+   // This method is called to pickup an object and add it to the inventory.
+   // The datablock onPickup method is actually responsible for doing all the
+   // work, including incrementing the inventory.
+
+   %data = %obj.getDatablock();
+
+   // Try and pickup the max if no value was specified
+   if (%amount $= "")
+      %amount = %this.maxInventory(%data) - %this.getInventory(%data);
+
+   // The datablock does the work...
+   if (%amount < 0)
+      %amount = 0;
+   if (%amount)
+      return %data.onPickup(%obj, %this, %amount);
+   return false;
+}
+
 function ShapeBase::hasInventory(%this, %data)
 {
    //echo("\c3ShapeBase::hasInventory( " @ %this.client.nameBase @ ", " @ %data @ " )");

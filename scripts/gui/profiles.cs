@@ -741,9 +741,10 @@ new GuiControlProfile ( CenterPrintTextProfile )
 {
    opaque = false;
    fontType = "Arial";
-   fontSize = 12;
+   fontSize = "16";
    fontColor = "0 255 0";
    category = "Core";
+   fontColors[0] = "0 255 0 255";
 };
 
 // ----------------------------------------------------------------------------

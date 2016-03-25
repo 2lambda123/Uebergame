@@ -270,20 +270,20 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateEmitterTime[5]              = 0.025;
 
    stateName[6]                     = "WaitForRelease";
-   stateTransitionGeneric0In[6]     = "SprintEnter";
+   //stateTransitionGeneric0In[6]     = "SprintEnter";
    stateTransitionOnTriggerUp[6]    = "NewRound";
    stateTimeoutValue[6]             = 0.05;
    stateWaitForTimeout[6]           = true;
    stateAllowImageChange[6]         = false;
 
    stateName[7]                     = "NewRound";
-   stateTransitionGeneric0In[7]     = "SprintEnter";
+   //stateTransitionGeneric0In[7]     = "SprintEnter";
    stateTransitionOnNoAmmo[7]       = "NoAmmo";
    stateTransitionOnTimeout[7]      = "Ready";
    stateWaitForTimeout[7]           = true;
    stateTimeoutValue[7]             = 0.65;
    stateSequence[7]                 = "fire_alt";
-   stateScaleAnimation[5]           = true;
+   stateScaleAnimation[7]           = true;
    stateAllowImageChange[7]         = false;
    stateEjectShell[7]               = true;
    stateSound[7]                    = ShotgunCockSound;

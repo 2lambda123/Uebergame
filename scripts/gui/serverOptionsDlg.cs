@@ -35,8 +35,7 @@ function ServerOptionsDlg::onWake(%this)
    SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
    SOP_MaxSpecials.setValue( $pref::Server::MaxSpecials );
    SOP_MaxGrenades.setValue( $pref::Server::MaxGrenades );
-   SOP_MaxMines.setValue( $pref::Server::MaxMines );
-   
+   SOP_MaxMines.setValue( $pref::Server::MaxMines );   
 
    // Setup the AI control
    if($pref::Server::AiCount > $pref::Server::MaxPlayers - 1)
