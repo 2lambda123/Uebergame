@@ -174,7 +174,8 @@ function ItemData::onInventory(%data, %obj, %amount)
                      }
                
                      if ( isObject(%obj.client) && !%obj.client.isAiControlled() )
-                        messageClient(%obj.client, 'MsgAmmoCnt', "", addTaggedString($DataToName[%image.item]), %i, addTaggedString(%currentAmmo), addTaggedString(%amountInClips));
+                        //messageClient(%obj.client, 'MsgAmmoCnt', "", addTaggedString($DataToName[%image.item]), %i, addTaggedString(%currentAmmo), addTaggedString(%amountInClips));
+					    messageClient(%obj.client, 'MsgAmmoCnt', "", addTaggedString($DataToName[%image.item]), %i, %currentAmmo, %amountInClips); //removed tagged strings to prevent console spam
                   }
                }
             }
@@ -303,7 +304,7 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
             }
          }
 
-      case "Ammo":
+      case "AmmoClip":
          %ammoName = %data.getName();
          %aMax = %col.getDataBlock().maxInv[%ammoName];
          if(%obj.ammoStore $= "")
@@ -324,8 +325,9 @@ function ItemData::onCollision(%data, %obj, %col, %vec, %speed)
                %obj.delete();
          }
 
-      case "AmmoClip":
+      case "Ammo":
 
+	  
       default:
          %inv = %col.incInventory(%data, 1);
          if ( %inv > 0 )
@@ -401,7 +403,7 @@ datablock ItemData(DefaultClip)
 {
    category = "AmmoClip";
    className = "AmmoClip";
-   shapeFile = "art/shapes/items/ammo/futuristic_ammo_box_01.dts";
+   shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.dts";
    computeCRC = false;
    emap = true;
    renderWhenDestroyed = true;
@@ -428,7 +430,7 @@ datablock ItemData(DefaultAmmo)
 {
    category = "Ammo";
    className = "Ammo";
-   shapeFile = "art/shapes/items/ammo/futuristic_ammo_box_01.dts";
+   shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.dts";
    computeCRC = false;
    emap = true;
    renderWhenDestroyed = true;

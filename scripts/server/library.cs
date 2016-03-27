@@ -892,9 +892,9 @@ function SceneObject::repulse(%obj, %col)
    %velocity = %obj.getVelocity();
    %normal = vectorDot( %velocity, VectorNormalize( %velocity ) );
    if( %normal < 15 )
-      %multi = 12;
+      %multi = 8;
    else
-      %multi = 12 / %normal;
+      %multi = 8 / %normal;
 
    %objPos = %obj.posFromTransform();
    %colPos = %col.posFromTransform();

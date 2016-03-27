@@ -250,7 +250,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 
    exec("./grenades/grenade.cs");
    exec("./grenades/smokeGrenade.cs");
-   exec("./grenades/tripMine.cs");
+   //exec("./grenades/tripMine.cs"); //broken, needs to be fixed to use ammo system
    exec("./grenades/timeBomb.cs");
    exec("./grenades/shapeCharge.cs");
 
@@ -271,12 +271,12 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./weapons/PaintballMarkerGreen.cs");
    exec("./weapons/PaintballMarkerYellow.cs");
 	  
-   exec("./weapons/proximityMine.cs");
+   //exec("./weapons/proximityMine.cs"); //broken, needs to be fixed to use ammo system
    //exec("./weapons/deployedTurret.cs");
 
    exec("./specials/munitionsPack.cs");
    exec("./specials/firstAidPack.cs");
-   exec("./specials/turretPack.cs");
+   //exec("./specials/turretPack.cs"); //turret broken, it does not fire at enemies
    //exec("./specials/vehiclePack.cs"); //needs proper vehicle first
    //exec("./specials/platform.cs"); //fix it
 

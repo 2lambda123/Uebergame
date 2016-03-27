@@ -102,12 +102,13 @@ function clientCmdSetHudMode(%mode)
    clientCmdHideReticle();
    clientDeploySensorOff();
    objectiveHud.setVisible(false);
-   //HudRadar.setVisible(false);
+   TargetHud.setVisible(false);
 
    switch$( $HudMode )
    {
       case "Spectator":
          HudClock.setVisible(true);
+         TargetHud.setVisible(true);
 
       case "HudTest":
          ClusterHud.setVisible(true);
@@ -124,7 +125,6 @@ function clientCmdSetHudMode(%mode)
          HudClock.setVisible(true);
          clientCmdShowReticle();
          objectiveHud.setVisible(true);
-         //HudRadar.setVisible(true);
          if(voteHud.voting)
             mainVoteHud.setVisible(1);
          else
@@ -143,7 +143,6 @@ function clientCmdSetHudMode(%mode)
          HudClock.setVisible(true);
          clientCmdShowReticle();
          objectiveHud.setVisible(true);
-         //HudRadar.setVisible(true);
          if(voteHud.voting)
             mainVoteHud.setVisible(1);
          else
@@ -153,7 +152,6 @@ function clientCmdSetHudMode(%mode)
          HudClock.setVisible(true);
          clientCmdShowReticle();
          objectiveHud.setVisible(true);
-         //HudRadar.setVisible(true);
          if(voteHud.voting)
             mainVoteHud.setVisible(1);
          else

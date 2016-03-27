@@ -88,6 +88,9 @@ $DamageText[$DamageCount] = "Grenade Launcher";
 $DamageType::Rocket = $DamageCount++;
 $DamageText[$DamageCount] = "Rocket";
 
+$DamageType::Paintball = $DamageCount++;
+$DamageText[$DamageCount] = "Paintball";
+
 //-------------------------------------------------------------------------- Grenades - Mines etc.
 $DamageType::Grenade = $DamageCount++;
 $DamageText[$DamageCount] = "Grenade";
@@ -153,6 +156,7 @@ datablock SimDataBlock(TurretDamageScale)
    damageScale[$DamageType::Shotgun] = 0.9;
    damageScale[$DamageType::GrenadeLauncher] = 1.0;
    damageScale[$DamageType::Rocket] = 1.0;
+   damageScale[$DamageType::Paintball] = 1.0;
 
    damageScale[$DamageType::Grenade] = 1.0;
    damageScale[$DamageType::Mine] = 1.5;
@@ -210,6 +214,7 @@ datablock SimDataBlock(StaticShapeDamageScale)
    damageScale[$DamageType::Shotgun] = 1.0;
    damageScale[$DamageType::GrenadeLauncher] = 1.2;
    damageScale[$DamageType::Rocket] = 1.5;
+   damageScale[$DamageType::Paintball] = 1.0;
 
    damageScale[$DamageType::Grenade] = 1.2;
    damageScale[$DamageType::Mine] = 2.0;
@@ -242,6 +247,7 @@ datablock SimDataBlock(ArmorDamageScale)
    damageScale[$DamageType::Shotgun] = 1.0;
    damageScale[$DamageType::GrenadeLauncher] = 1.0;
    damageScale[$DamageType::Rocket] = 1.0;
+   damageScale[$DamageType::Paintball] = 1.0;
 
    damageScale[$DamageType::Grenade] = 1.0;
    damageScale[$DamageType::Mine] = 1.0;

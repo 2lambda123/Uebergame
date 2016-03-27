@@ -95,6 +95,7 @@ datablock ProjectileData( PaintballProjectileRed )
    damageRadius        = 0;
    areaImpulse         = 0.5;
    impactForce         = 1;
+   damageType          = $DamageType::Paintball;
 
    explosion           = PaintExplosionRed;
    decal               = redPaintSplatterDecal;

@@ -82,7 +82,7 @@ function JoinServerDlg::onWake()
    JS_cancelQuery.setActive(0);
 
    JS_listLabels.clear();
-   %text = "PASS" TAB "NAME" TAB "PING" TAB "PLAYERS" TAB "VERSION" TAB "GAME" TAB "FAV";
+   %text = "PASS" TAB "NAME" TAB "PING" TAB "PLAYERS" TAB "VERSION" TAB "LEVEL" TAB "FAV";
    JS_listLabels.addRow(0, %text);
    JS_listLabels.setSelectedRow(0);
    //JS_listLabels.scrollVisible(0);
@@ -191,7 +191,8 @@ function JoinServerDlg::update(%this)
          $ServerInfo::Ping TAB
          $ServerInfo::PlayerCount @ "/" @ $ServerInfo::MaxPlayers TAB
          $ServerInfo::Version TAB
-         $ServerInfo::GameType TAB
+         //$ServerInfo::GameType TAB
+		 $ServerInfo::MissionName TAB
          ($ServerInfo::Favorite? "Yes": "No") TAB
          %i);  // ServerInfo index stored also This index is used by setServerInfo
    }

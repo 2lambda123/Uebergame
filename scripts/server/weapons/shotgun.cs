@@ -68,7 +68,7 @@ datablock ProjectileData( ShotgunProjectile )
 {
    projectileShapeName = "";
    //sound               = "";
-   directDamage        = 10;
+   directDamage        = 12;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;
@@ -107,7 +107,7 @@ datablock ProjectileData( ShotgunProjectile )
 datablock ItemData(ShotgunMag : DefaultClip)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/shotgun/shotgun_TP.dts";
+   //shapeFile = "art/shapes/weapons/shotgun/shotgun_TP.dts";
 
    // Dynamic properties defined by the scripts
    pickUpName = 'Shotgun magazine';
@@ -115,7 +115,7 @@ datablock ItemData(ShotgunMag : DefaultClip)
 
 datablock ItemData(ShotgunAmmo : DefaultAmmo)
 {
-   shapeFile = "art/shapes/weapons/shotgun/shotgun_TP.dts";
+   //shapeFile = "art/shapes/weapons/shotgun/shotgun_TP.dts";
    pickUpName = 'Shotgun ammo';
    clip = ShotgunMag;
 };

@@ -161,7 +161,7 @@ datablock ProjectileData( RyderProjectile )
 datablock ItemData(RyderClip : DefaultClip)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
+   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.dts";
 
    // Dynamic properties defined by the scripts
    pickUpName = 'Ryder magazine';
@@ -170,7 +170,7 @@ datablock ItemData(RyderClip : DefaultClip)
 datablock ItemData(RyderAmmo : DefaultAmmo)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Ryder/TP_Ryder.dts";
+   shapeFile = "art/shapes/weapons/Ryder/Ryder_clip.dts";
 
    // Dynamic properties defined by the scripts
    pickUpName = 'Ryder bullet';

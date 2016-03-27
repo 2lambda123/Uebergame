@@ -336,7 +336,7 @@ function ShapeChargeTossed::activateCharge(%data, %item, %pos, %rot)
    %charge.armed = false;
    %charge.damaged = 0;
    %charge.thwart = false;
-   messageClient(%source.client, 'MsgShapeChargePlaced', "\c2Shape charge deployed.");
+   //messageClient(%source.client, 'MsgShapeChargePlaced', "\c2Shape charge deployed.");
 
    %item.schedule(50, "delete"); // Safe to remove the item now
 

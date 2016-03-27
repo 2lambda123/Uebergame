@@ -1436,11 +1436,12 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
 
       switch$ (%damageType){
        
-      case "Suicide": return;     
+      case "Suicide": return;     //does not work
       case "Drowning": return;
       case "Paint": return;	 
 	  case "MissionAreaDamage": return;	
-      case "ScriptDamage": return;		 
+      case "ScriptDamage": return;	
+      case "Impact": return;	//does not work
       default: // Process all other damage types               
    }
    
