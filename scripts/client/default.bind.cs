@@ -157,10 +157,19 @@ function showPlayerList(%val)
       AdminDlg.toggle(%val);
 }
 
-function showScoreBoard(%val)
+function showScoreBoard(%val, %team)
 {
+	
+   %team = %client.team;
+	
+   if ( %team == "" ) //console spam, string always==0, when game has not started, needs fixing
+   {
    if (%val)
-      clientCmdToggleScoreHud(%val);
+	   ScoreHudFFA.toggle(%val); 
+   }
+
+   else if(%val)
+      clientCmdToggleScoreHud(%val);  
 }
 
 function toggleArmoryDlg( %val )

@@ -153,7 +153,7 @@ function handleSetTeamScores(%msgType, %msgString, %a1, %a2)
    updatePlayerScoreList();
 }
 
-function updatePlayerScoreList()
+function updatePlayerScoreList(%this, %player)
 {
    ScoreHud.PlayerScore[0].clear();
    ScoreHud.PlayerScore[1].clear();

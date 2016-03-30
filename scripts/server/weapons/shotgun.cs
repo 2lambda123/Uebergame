@@ -68,7 +68,7 @@ datablock ProjectileData( ShotgunProjectile )
 {
    projectileShapeName = "";
    //sound               = "";
-   directDamage        = 12;
+   directDamage        = 15;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;

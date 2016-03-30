@@ -63,7 +63,7 @@ new GuiControlProfile (GuiDefaultProfile)
    fontColorSEL= "196 116 108 255";
 
    // bitmap information
-   bitmapBase = "";
+   //bitmapBase = "";
    textOffset = "0 0";
 
    // used by guiTextControl
@@ -194,12 +194,12 @@ if( !isObject( GuiTextProfile ) )
 new GuiControlProfile (GuiTextProfile)
 {
    justify = "left";
-   fontColor = "196 196 196 255";
+   fontColor = "224 224 224 255";
    category = "Core";
    fillColor = "32 32 32 255";
    fillColorHL = "72 72 72 255";
    fillColorNA = "18 18 18 255";
-   fontColors[0] = "196 196 196 255";
+   fontColors[0] = "224 224 224 255";
    fillColorSEL = "72 12 0 255";
    fontColors[1] = "255 255 255 255";
    fontColors[2] = "128 128 128 255";

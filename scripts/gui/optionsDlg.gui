@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Controls";
+      pane = "Network";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "3";
+         selectedPage = "4";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -180,7 +180,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "base";
+               text = "swamp";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -204,7 +204,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "base";
+               skin = "swamp";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -545,7 +545,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1440 x 900";
+               text = "1024 x 768  (4:3)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -649,7 +649,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Highest";
+               text = "Custom";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -679,7 +679,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Highest";
+               text = "Low";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -732,7 +732,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Highest";
+               text = "Low";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -808,7 +808,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Highest";
+               text = "Low";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -953,7 +953,7 @@
                range = "0.001 2";
                ticks = "9";
                snap = "0";
-               value = "1";
+               value = "1.00837";
                position = "105 349";
                extent = "518 15";
                minExtent = "8 2";
@@ -1517,7 +1517,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.423404";
+                  value = "0.170213";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
@@ -1692,13 +1692,14 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             tooltip = "To re map a control simply double click the control name.";
             hovertime = "500";
             isContainer = "1";
             internalName = "OptControlsPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1796,7 +1797,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl(MouseXText) {
-               text = "0.406504";
+               text = "1";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1822,7 +1823,7 @@
                range = "0 2";
                ticks = "9";
                snap = "0";
-               value = "0.406504";
+               value = "1";
                position = "374 63";
                extent = "256 34";
                minExtent = "8 8";
@@ -1840,7 +1841,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl(MouseYText) {
-               text = "0.406504";
+               text = "1";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1866,7 +1867,7 @@
                range = "0 2";
                ticks = "9";
                snap = "0";
-               value = "0.406504";
+               value = "1";
                position = "374 116";
                extent = "256 34";
                minExtent = "8 8";
@@ -1952,7 +1953,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Cycle Zoom Level";
+               text = "Cycle Weapon";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -2054,7 +2055,7 @@
                   fitParentWidth = "1";
                   clipColumnText = "0";
                   position = "1 1";
-                  extent = "345 816";
+                  extent = "345 800";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2110,13 +2111,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptNetworkPane";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -2195,10 +2195,10 @@
                canSaveDynamicFields = "0";
             };
             new GuiSliderCtrl(OP_PacketSizeSlider) {
-               range = "100 450";
+               range = "100 1200";
                ticks = "36";
                snap = "0";
-               value = "154";
+               value = "450";
                position = "170 163";
                extent = "400 16";
                minExtent = "8 2";
@@ -2264,7 +2264,7 @@
                range = "2 32";
                ticks = "31";
                snap = "0";
-               value = "22.5385";
+               value = "32";
                position = "170 202";
                extent = "400 16";
                minExtent = "8 2";
@@ -2307,7 +2307,7 @@
                range = "8 32";
                ticks = "25";
                snap = "0";
-               value = "12";
+               value = "32";
                position = "170 241";
                extent = "400 16";
                minExtent = "8 2";
@@ -2390,7 +2390,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl() {
-               text = "450";
+               text = "1200";
                maxLength = "1024";
                margin = "0 0 0 0";
                padding = "0 0 0 0";

@@ -133,6 +133,8 @@ function Torque::initClient(%this)
    exec("~/gui/hudlessGui.cs");   // For screen shots
    exec("~/gui/chatHud.gui");
    exec("~/gui/messageHud.gui");
+   exec("~/gui/scoreHudFFA.gui");
+   exec("~/gui/scoreHudFFA.cs");
    exec("~/gui/scoreHud.gui");
    exec("~/gui/voteHudDlg.gui");
    exec("~/gui/voteHudDlg.cs");

@@ -75,7 +75,7 @@ datablock SFXProfile(PainCrySound)
    description = AudioClose3D;
    preload = true;
 };
-
+/*
 datablock SFXProfile(PainCrySound1)
 {
    fileName = "art/sound/player/pain/orc_pain";
@@ -99,7 +99,7 @@ datablock SFXPlayList(PainCrySoundList)
    track[ 1 ] = PainCrySound1;
    track[ 2 ] = PainCrySound2;
 };
-
+*/
 //----------------------------------------------------------------------------
 
 datablock SFXProfile(FootLightSoftSound)
@@ -1071,6 +1071,12 @@ datablock PlayerData(PaintballPlayerData : DefaultSoldier)
    boundingBox = "0.75 0.75 1.8";
    crouchBoundingBox = "0.75 0.75 1.25";
    renderFirstPerson = "1";
+   
+   groundImpactMinSpeed    = "4.1";
+   groundImpactShakeFreq   = "3 3 3";
+   groundImpactShakeAmp    = "0.2 0.2 0.2";
+   groundImpactShakeDuration = "1";
+   groundImpactShakeFalloff = 10.0;
    
    maxInvRyder = "0";
 };
@@ -2063,7 +2069,7 @@ function Player::playDeathCry(%this)
 
 function Player::playPain(%this)
 {
-   %this.playAudio( 0, PainCrySoundList );
+   %this.playAudio( 0, PainCrySound );
 }
 
 // ----------------------------------------------------------------------------

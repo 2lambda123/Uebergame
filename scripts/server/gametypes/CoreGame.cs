@@ -915,12 +915,12 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    %game.loadOut(%player);
    //%player.use( %player.weaponSlot[1] );
       
-   if (%client.PlayerData == PaintballPlayerData)
+   if (%client.PlayerData == PaintballPlayerData) //console spam, string always==0, when game has not started, needs fixing
    {
 	   %player.use( %player.weaponSlot[0] );
    }
    
-   if (%client.PlayerData == DefaultSoldier)
+   if (%client.PlayerData == DefaultSoldier) //console spam, string always==0, when game has not started, needs fixing
    {
 	   %player.use( %player.weaponSlot[1] );
    }

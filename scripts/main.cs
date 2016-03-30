@@ -55,6 +55,10 @@ function Torque::onStart(%this)
    exec( "./client/defaults.cs" );
    exec( "./server/defaults.cs" );
 
+   // Update config files Versions
+   exec( "./client/updatePrefs.cs" );
+   //updatePrefs();
+   
    // Load up our user saved settings, if existing
    if ( isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" ) )
    exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" );

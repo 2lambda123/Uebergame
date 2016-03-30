@@ -21,7 +21,7 @@
       bitmap = "art/gui/top_border";
       wrap = "0";
       position = "0 0";
-      extent = "1024 144";
+      extent = "1024 96";
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "bottom";
@@ -52,8 +52,8 @@
       canSaveDynamicFields = "0";
    };
    new GuiControl() {
-      position = "128 192";
-      extent = "768 512";
+      position = "128 142";
+      extent = "768 562";
       minExtent = "8 8";
       horizSizing = "width";
       vertSizing = "height";
@@ -70,8 +70,8 @@
          columns = "0 300 600";
          fitParentWidth = "0";
          clipColumnText = "0";
-         position = "36 688";
-         extent = "616 8";
+         position = "36 738";
+         extent = "643 16";
          minExtent = "616 8";
          horizSizing = "width";
          vertSizing = "top";
@@ -100,7 +100,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "8 43";
-         extent = "750 461";
+         extent = "750 511";
          minExtent = "8 8";
          horizSizing = "relative";
          vertSizing = "relative";
@@ -118,7 +118,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "0 0";
-            extent = "1143 8";
+            extent = "737 18";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -173,7 +173,7 @@
       anchorLeft = "1";
       anchorRight = "0";
       position = "0 0";
-      extent = "1024 144";
+      extent = "1024 96";
       minExtent = "8 8";
       horizSizing = "width";
       vertSizing = "bottom";
@@ -193,7 +193,7 @@
          matchColor = "0 0 255 255";
          maxColorIndex = "9";
          position = "2 2";
-         extent = "1020 140";
+         extent = "1020 14";
          minExtent = "12 12";
          horizSizing = "relative";
          vertSizing = "relative";
@@ -241,7 +241,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "6 158";
+      position = "6 108";
       extent = "512 18";
       minExtent = "8 8";
       horizSizing = "right";
