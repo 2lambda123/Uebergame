@@ -27,7 +27,7 @@ $HostGameRules["TDM", 0] = "Kill the enemy and don't get killed.";
 $HostGameRules["TDM", 1] = "Team with the most kills wins!";
 //--- GAME RULES END ---
 
-package TDMGame
+package PBTDMGame
 {
    function TDMdummy()
    {
@@ -35,11 +35,11 @@ package TDMGame
    }
 };
 
-function TDMGame::setupGameParams(%game)
+function PBTDMGame::setupGameParams(%game)
 {
-   //echo("TDMGame::setupGameParams(" SPC %game.class SPC ")");
+   //echo("PBTDMGame::setupGameParams(" SPC %game.class SPC ")");
    
-   %game.playerType = "DefaultSoldier";
+   %game.playerType = "Paintball";
    
    CoreGame::setupGameParams(%game);
 
@@ -49,9 +49,9 @@ function TDMGame::setupGameParams(%game)
    %game.SCORE_PER_TEAMKILL = -5;
 }
 
-function TDMGame::onMissionLoaded(%game)
+function PBTDMGame::onMissionLoaded(%game)
 {
-   //echo("TDMGame::onMissionLoaded(" SPC %game.class SPC ")");
+   //echo("PBTDMGame::onMissionLoaded(" SPC %game.class SPC ")");
    CoreGame::onMissionLoaded(%game);
    for(%i = 1; %i <= %game.numTeams; %i++)
    {
@@ -60,9 +60,9 @@ function TDMGame::onMissionLoaded(%game)
    }
 }
 
-function TDMGame::setUpTeams(%game)
+function PBTDMGame::setUpTeams(%game)
 {
-   //echo("TDMGame::setUpTeams(" SPC %game.class SPC ")");
+   //echo("PBTDMGame::setUpTeams(" SPC %game.class SPC ")");
    %group = nameToID("MissionGroup/Teams");
    if ( %group == -1 )
       return;
@@ -111,14 +111,14 @@ function TDMGame::setUpTeams(%game)
    }
 }
 
-function TDMGame::getTeamName(%game, %team)
+function PBTDMGame::getTeamName(%game, %team)
 {
    return addTaggedString($pref::Server::teamName[%team]);
 }
 
-function TDMGame::onClientEnterGame(%game, %client)
+function PBTDMGame::onClientEnterGame(%game, %client)
 {
-   //echo("TDMGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //echo("PBTDMGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    CoreGame::onClientEnterGame(%game, %client);
 
    // Set clients score and stats to zero
@@ -137,9 +137,9 @@ function TDMGame::onClientEnterGame(%game, %client)
    }
 }
 
-function TDMGame::onClientLeaveGame(%game, %client)
+function PBTDMGame::onClientLeaveGame(%game, %client)
 {
-   //echo("TDMGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //echo("PBTDMGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    %game.clearClientVaribles(%client);
    %game.updateScore(%client);
 
@@ -148,9 +148,9 @@ function TDMGame::onClientLeaveGame(%game, %client)
 
 //-----------------------------------------------------------------------------
 
-function TDMGame::assignClientTeam(%game, %client, %respawn)
+function PBTDMGame::assignClientTeam(%game, %client, %respawn)
 {
-   //echo("TDMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %respawn SPC ")");
+   //echo("PBTDMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %respawn SPC ")");
 
    %numPlayers = ClientGroup.getCount();
    for(%i = 0; %i <= %game.numTeams; %i++)
@@ -184,9 +184,9 @@ function TDMGame::assignClientTeam(%game, %client, %respawn)
    echo(%client.nameBase @ " (cl " @ %client @ ") joined team " @ %client.team);
 }
 
-function TDMGame::clientJoinTeam(%game, %client, %team, %respawn)
+function PBTDMGame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   //echo("TDMGame::clientJoinTeam(" SPC %game.class @", "@ %team @", "@ %respawn SPC ")");
+   //echo("PBTDMGame::clientJoinTeam(" SPC %game.class @", "@ %team @", "@ %respawn SPC ")");
    if ( %team < 1 || %team > %game.numTeams )
       return;
 
@@ -210,9 +210,9 @@ function TDMGame::clientJoinTeam(%game, %client, %team, %respawn)
 
 //-----------------------------------------------------------------------------
 
-function TDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
+function PBTDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   //echo("TDMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   //echo("PBTDMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Call the parent.
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
@@ -239,9 +239,9 @@ function TDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient,
    }
 }
 
-function TDMGame::updateScore(%game, %cl)
+function PBTDMGame::updateScore(%game, %cl)
 {
-   //echo("TDMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   //echo("PBTDMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -257,7 +257,7 @@ function TDMGame::updateScore(%game, %cl)
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
 
-function TDMGame::getScoreLimit(%game)
+function PBTDMGame::getScoreLimit(%game)
 {
    %scoreLimit = MissionGroup.scoreLimit;
    if(%scoreLimit $= "")
@@ -276,7 +276,7 @@ function TDMGame::getScoreLimit(%game)
    }
 }
 
-function TDMGame::checkScoreLimit(%game, %team)
+function PBTDMGame::checkScoreLimit(%game, %team)
 {
    %scoreLimit = %game.getScoreLimit();
    %over = false;
@@ -293,16 +293,16 @@ function TDMGame::checkScoreLimit(%game, %team)
       %game.onGameScoreLimit();
 }
 
-function TDMGame::onGameScoreLimit(%game)
+function PBTDMGame::onGameScoreLimit(%game)
 {
-   //echo("TDMGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   //echo("PBTDMGame::onGameScoreLimit(" SPC %game.class SPC ")");
    echo("Game over (scorelimit)");
    %game.cycleGame();
 }
 
-function TDMGame::endGame(%game)
+function PBTDMGame::endGame(%game)
 {
-   //echo("TDMGame::endGame(" SPC %game SPC ")");
+   //echo("PBTDMGame::endGame(" SPC %game SPC ")");
    if ( $Game::Running )
    {
       // send the winner message.
@@ -330,26 +330,26 @@ function TDMGame::endGame(%game)
    CoreGame::endGame(%game);
 }
 
-function TDMGame::clearClientVaribles(%game, %client)
+function PBTDMGame::clearClientVaribles(%game, %client)
 {
-   //echo("TDMGame::clearClientVaribles(" SPC %game.class SPC %client.nameBase SPC ")");
+   //echo("PBTDMGame::clearClientVaribles(" SPC %game.class SPC %client.nameBase SPC ")");
    CoreGame::clearClientVaribles(%game, %client);
 }
 
-function TDMGame::pushChooseTeamMenu(%game, %client)
+function PBTDMGame::pushChooseTeamMenu(%game, %client)
 {
    // This list MUST be sent in order so that it is sync with the clients drop down menu.
    %list = strupr($pref::Server::teamName[0] TAB "AUTOMATIC" TAB $pref::Server::teamName[1] TAB $pref::Server::teamName[2]);
    commandToClient(%client, 'PushTeamMenu', addTaggedString(%list));
 }
 
-function TDMGame::pushChooseSpawnMenu(%game, %client)
+function PBTDMGame::pushChooseSpawnMenu(%game, %client)
 {
    %list = "Firebase";
    commandToClient( %client, 'PushSpawnMenu', %list );
 }
 
-function TDMGame::clientChooseSpawn(%game, %client, %option, %value)
+function PBTDMGame::clientChooseSpawn(%game, %client, %option, %value)
 {
    switch$ ( %option )
    {

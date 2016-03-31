@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Grounds - Dirt Pit Arena by night";
          enabled = "1";
          levelName = "TG_DirtPit_night";
-         MissionTypes = "DM TDM";
+         MissionTypes = "DM TDM PBDM PBTDM";
    };
    new ScatterSky(Himmel) {
       skyBrightness = "25";

@@ -1084,17 +1084,9 @@ datablock PlayerData(PaintballPlayerData : DefaultSoldier)
 //-----------------------------------------------------------------------------
 // SMS
 //            |Datablock|     |$SMS::ArmorName|     |Index|
-//only add allowed playerDatablocks to the loadoutmenu
-//needs to be extended later if there will be more playerDatablocks
-if ( $pref::Server::AllowPlayerPaintballer == 0 ) // we only have one checkbox that toggles paintball on/off
-{
-SmsInv.AddArmor( DefaultSoldier, "Soldier", 0 );
-}
 
-if ( $pref::Server::AllowPlayerPaintballer == 1 )
-{
+SmsInv.AddArmor( DefaultSoldier, "Soldier", 0 );
 SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 0 );
-}
 
 //----------------------------------------------------------------------------
 // Drowning script

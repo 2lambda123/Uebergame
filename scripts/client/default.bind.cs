@@ -157,19 +157,13 @@ function showPlayerList(%val)
       AdminDlg.toggle(%val);
 }
 
-function showScoreBoard(%val, %team)
+function showScoreBoard(%val)
 {
-	
-   %team = %client.team;
-	
-   if ( %team == "" ) //console spam, string always==0, when game has not started, needs fixing
-   {
-   if (%val)
-	   ScoreHudFFA.toggle(%val); 
-   }
+   if ( ( $Client::TeamCount > 1 ) && (%val) )
+     clientCmdToggleScoreHud(%val);
 
    else if(%val)
-      clientCmdToggleScoreHud(%val);  
+     ScoreHudFFA.toggle(%val); 
 }
 
 function toggleArmoryDlg( %val )
@@ -533,9 +527,9 @@ function toggleIronSights( %val )
    {
       ServerConnection.zoomed = true;
       setFov($Player::CurrentFOV);
-      DOFPostEffect.setAutoFocus( true );
-      DOFPostEffect.setFocusParams( 0.5, 0.5, 50, 500, -5, 5 );
-      DOFPostEffect.enable();
+      //DOFPostEffect.setAutoFocus( true );
+      //DOFPostEffect.setFocusParams( 0.5, 0.5, 50, 500, -5, 5 );
+      //DOFPostEffect.enable();
       commandToServer( 'DoIronSights' );
       reticle.setVisible(false);
    }
@@ -543,7 +537,7 @@ function toggleIronSights( %val )
    {
       ServerConnection.zoomed = false;
       setFov($pref::Player::Fov);
-      ppOptionsUpdateDOFSettings();
+      //ppOptionsUpdateDOFSettings();
       commandToServer( 'UndoIronSights' );
       reticle.setVisible(true);
       zoomReticle.setVisible(false);

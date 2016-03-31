@@ -11,7 +11,9 @@
 shaders/procedural/*
 
 #fonts cache
-*.uft
+#*.uft
+#fonts need to be included now, because of some bug
+#that causes crashes for some people because the fonts do not get generated
 
 #compiler garbage
 *.exp

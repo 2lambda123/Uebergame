@@ -141,7 +141,7 @@ function CoreGame::setupGameParams(%game)
 {
    // Setup scoring etc.
    LogEcho("\c4CoreGame::setupGameParams(" SPC %game.class SPC ")");
-
+   
    $Game::Schedule = "";
 
    %game.SCORE_PER_DESTROY_VEHICLE = 8;
@@ -833,34 +833,29 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    }
    else
    {
-	  /*
-      %player = new Player() {
-         dataBlock = $NameToData[%client.loadout[0]];
-         client = %client;
-         team = %client.team;
-         isBot = false;
-      };
-	  */
-	  //override the %armor loadout to use the playerdatablock allowed by the server
-	  //this method needs to be improved later to allow multiple playerdatas if chosen
-	  //this needs to be extended to weapon loadout as well, since this goes wrong sometimes still
-	  if ( $pref::Server::AllowPlayerPaintballer == 0 )
+	  switch$ (%game.playerType)
 	  {
-		 %player = new Player() {
+	  case "DefaultSoldier":
+	     %player = new Player() {
          dataBlock = DefaultSoldier;
          client = %client;
          team = %client.team;
          isBot = false;
          };
-	  }
-	  if ( $pref::Server::AllowPlayerPaintballer == 1 )
-	  {
+	  case "Paintball":
 		 %player = new Player() {
          dataBlock = PaintballPlayerData;
          client = %client;
          team = %client.team;
          isBot = false;
          };
+	  default:
+		 %player = new Player() {
+         dataBlock = $NameToData[%client.loadout[0]];
+         client = %client;
+         team = %client.team;
+         isBot = false;
+        };
 	  }
    }
    MissionCleanup.add(%player);
@@ -913,18 +908,14 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    // Setup inventory - We could tie this into some object that has to be enabled in order to get your selection
    // Perhaps deployables would require their own object you get them from. So they would not be part of your loadout
    %game.loadOut(%player);
-   //%player.use( %player.weaponSlot[1] );
-      
-   if (%client.PlayerData == PaintballPlayerData) //console spam, string always==0, when game has not started, needs fixing
+
+   switch$ (%game.playerType)
    {
-	   %player.use( %player.weaponSlot[0] );
+     case "Paintball": %player.use( %player.weaponSlot[0] );
+	 case "DefaultSoldier": %player.use( %player.weaponSlot[1] );
+	 default: %player.use( %player.weaponSlot[1] );
    }
    
-   if (%client.PlayerData == DefaultSoldier) //console spam, string always==0, when game has not started, needs fixing
-   {
-	   %player.use( %player.weaponSlot[1] );
-   }
-	   
    // Update the camera to start with the player.
    if ( !%client.isAiControlled() )
    {
@@ -993,7 +984,7 @@ function CoreGame::loadOut(%game, %player)
 	  
 	  if (%player.PlayerData = DefaultSoldier)
 	  {
-      %player.setInventory( HealthKit, 1 );
+      //%player.setInventory( HealthKit, 1 );
       %player.setInventory( Ryder, 1, 1 );
       %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
       %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );

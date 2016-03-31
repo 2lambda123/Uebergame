@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Level in the desert ruins by day";
          enabled = "1";
          levelName = "TG_DesertRuins_day";
-         MissionTypes = "DM TDM";
+         MissionTypes = "DM TDM PBDM PBTDM";
    };
    new ScatterSky(Sky) {
       skyBrightness = "15";

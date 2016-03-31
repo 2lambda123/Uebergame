@@ -220,7 +220,7 @@ $pref::Reflect::refractTexScale = 1.0;
 $pref::Reflect::frameLimitMS = 10;
 
 /// Set true to force all water objects to use static cubemap reflections.
-$pref::Water::disableTrueReflections = false;
+$pref::Water::disableTrueReflections = true;
 
 // A global LOD scalar which can reduce the overall density of placed GroundCover.
 $pref::GroundCover::densityScale = 1.0;
@@ -273,7 +273,7 @@ $pref::windEffectRadius = 25;
 $pref::Video::autoDetect = 1;
 
 /// smallestVisiblePixelSize stops rendering shapes smaller than this amount
-$pref::TS::smallestVisiblePixelSize = 2;
+$pref::TS::smallestVisiblePixelSize = 4;
 
 //-----------------------------------------------------------------------------
 // Graphics Quality Groups

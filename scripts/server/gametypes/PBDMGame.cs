@@ -27,7 +27,7 @@ $HostGameRules["DM", 0] = "Eliminate the competition.";
 $HostGameRules["DM", 1] = "Player with the best kill to death ratio wins!";
 //--- GAME RULES END ---
 
-package DMGame
+package PBDMGame
 {
    function DMdummy()
    {
@@ -35,11 +35,11 @@ package DMGame
    }
 };
 
-function DMGame::setupGameParams(%game)
+function PBDMGame::setupGameParams(%game)
 {
-   //LogEcho("DMGame::setupGameParams(" SPC %game.class SPC ")");
+   //LogEcho("PBDMGame::setupGameParams(" SPC %game.class SPC ")");
    
-   %game.playerType = "DefaultSoldier";
+   %game.playerType = "Paintball";
    
    CoreGame::setupGameParams(%game);
 
@@ -48,7 +48,7 @@ function DMGame::setupGameParams(%game)
    %game.SCORE_PER_SUICIDE = -10;
 }
 
-function DMGame::getTeamName(%game, %team)
+function PBDMGame::getTeamName(%game, %team)
 {
    if(%team == 0)
       return addTaggedString($pref::Server::teamName[%team]);
@@ -56,9 +56,9 @@ function DMGame::getTeamName(%game, %team)
       return 'Game';
 }
 
-function DMGame::setUpTeams(%game)
+function PBDMGame::setUpTeams(%game)
 {
-   //LogEcho("DMGame::setUpTeams(" SPC %game.class SPC ")");
+   //LogEcho("PBDMGame::setUpTeams(" SPC %game.class SPC ")");
    %group = nameToID("MissionGroup/Teams");
    if(%group == -1)
       return;
@@ -87,9 +87,9 @@ function DMGame::setUpTeams(%game)
    %game.numTeams = 1;
 }
 
-function DMGame::onClientEnterGame(%game, %client)
+function PBDMGame::onClientEnterGame(%game, %client)
 {
-   //LogEcho("DMGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("PBDMGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
 
    CoreGame::onClientEnterGame(%game, %client);
 
@@ -107,16 +107,16 @@ function DMGame::onClientEnterGame(%game, %client)
    messageClient(%client, 'MsgYourKills', "", 0);
 }
 
-function DMGame::onClientLeaveGame(%game, %client)
+function PBDMGame::onClientLeaveGame(%game, %client)
 {
-   //LogEcho("DMGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("PBDMGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    %game.clearClientVaribles(%client);
    %game.updateScore(%client);
 
    CoreGame::onClientLeaveGame(%game, %client);
 }
 
-function DMGame::getClientIndex(%game, %client)
+function PBDMGame::getClientIndex(%game, %client)
 {
    // Find our index in the client group...
    for( %i = 0; %i < ClientGroup.getCount(); %i++ )
@@ -127,9 +127,9 @@ function DMGame::getClientIndex(%game, %client)
    return -1;
 }
 
-function DMGame::assignClientTeam(%game, %client)
+function PBDMGame::assignClientTeam(%game, %client)
 {
-   LogEcho("DMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   LogEcho("PBDMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
 
    // This is pretty simple, just get the clients index from the client group
    // plus four, we plus four because the index starts at zero.
@@ -142,9 +142,9 @@ function DMGame::assignClientTeam(%game, %client)
    messageAll( 'MsgClientJoinTeam', '\c1%4 has joined the %3.', %client, %client.team, %game.getTeamName(%client.team), %client.playerName );
 }
 
-function DMGame::clientChangeTeam(%game, %client, %team, %fromObs)
+function PBDMGame::clientChangeTeam(%game, %client, %team, %fromObs)
 {
-   //LogEcho("DMGame::clientChangeTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %fromObs SPC ")");
+   //LogEcho("PBDMGame::clientChangeTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %fromObs SPC ")");
 
    if(%fromObs)
    {
@@ -153,9 +153,9 @@ function DMGame::clientChangeTeam(%game, %client, %team, %fromObs)
    }
 }
 
-function DMGame::clientJoinTeam(%game, %client, %team, %respawn)
+function PBDMGame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   LogEcho("DMGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
+   LogEcho("PBDMGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
    if ( %team != 0 )
       return;
 
@@ -163,7 +163,7 @@ function DMGame::clientJoinTeam(%game, %client, %team, %respawn)
    %game.spawnPlayer(%client, %respawn);
 }
 
-function DMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
+function PBPBDMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 {
    %player = CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn);
    
@@ -191,9 +191,9 @@ function DMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
    %player.setSkinName( %client.skin );
 }
 
-function DMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
+function PBDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   LogEcho("DMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   LogEcho("PBDMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Call the default to handle the basics
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
@@ -214,9 +214,9 @@ function DMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, 
    messageClient(%client, 'MsgYourDeaths', "", %client.deaths + %client.suicides);
 }
 
-function DMGame::updateScore(%game, %cl)
+function PBDMGame::updateScore(%game, %cl)
 {
-   LogEcho("DMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   LogEcho("PBDMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -232,9 +232,9 @@ function DMGame::updateScore(%game, %cl)
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
 
-function DMGame::endGame(%game)
+function PBDMGame::endGame(%game)
 {
-   LogEcho("DMGame::endGame(" SPC %game SPC ")");
+   LogEcho("PBDMGame::endGame(" SPC %game SPC ")");
    if($Game::Running)
    {
       %winner = getWord(%game.findTopScorer(), 0);
@@ -247,20 +247,20 @@ function DMGame::endGame(%game)
    CoreGame::endGame(%game);
 }
 
-function DMGame::pushChooseTeamMenu(%game, %client)
+function PBDMGame::pushChooseTeamMenu(%game, %client)
 {
    // This list MUST be sent in order so that it is sync with the clients drop down menu.
    %list = strupr($pref::Server::teamName[0] TAB "AUTOMATIC");
    commandToClient(%client, 'PushTeamMenu', addTaggedString(%list));
 }
 
-function DMGame::pushChooseSpawnMenu(%game, %client)
+function PBDMGame::pushChooseSpawnMenu(%game, %client)
 {
    %list = "Firebase";
    commandToClient( %client, 'PushSpawnMenu', %list );
 }
 
-function DMGame::clientChooseSpawn(%game, %client, %option, %value)
+function PBDMGame::clientChooseSpawn(%game, %client, %option, %value)
 {
    switch$ ( %option )
    {
