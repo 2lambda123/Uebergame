@@ -10,10 +10,8 @@
 #shaders cache
 shaders/procedural/*
 
-#fonts cache
+#fonts cache include to avoid issues
 #*.uft
-#fonts need to be included now, because of some bug
-#that causes crashes for some people because the fonts do not get generated
 
 #compiler garbage
 *.exp

@@ -222,7 +222,7 @@ new GuiControlProfile (GuiOrangeTextProfile)
    fontColor = "224 128 0 255";
    category = "Core";
    fontSize = "16";
-   fontType = "Arial bold";
+   fontType = "Arial Bold";
 };
 
 if( !isObject( GuiTextRightProfile ) )

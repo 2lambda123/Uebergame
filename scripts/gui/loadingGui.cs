@@ -124,7 +124,7 @@ function handleLoadInfoMessage(%msgType, %msgString, %misFile, %mapName, %typeNa
 
 function handleLoadDescriptionMessage(%msgType, %msgString, %line)
 {
-   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:16>" @ %line;
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_MapDescription.addtext( %text @ "\n\n", true );
 
@@ -137,7 +137,7 @@ function handleLoadDescriptionMessage(%msgType, %msgString, %line)
 
 function handleLoadRulesLineMessage(%msgType, %msgString, %line)
 {
-   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:16>" @ %line;
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_GameText.addtext( %text @ "\n\n", true );
 }
@@ -146,7 +146,7 @@ function handleLoadRulesLineMessage(%msgType, %msgString, %line)
 
 function handleLoadServerInfoMessage(%msgType, %msgString, %line)
 {
-   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:16>" @ %line;
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_ServerInfo.addtext( %text @ "\n\n", true );
 }
