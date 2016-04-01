@@ -20,10 +20,10 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-$QuickChatMenu::titleColor  = "<font:" @ $Gui::DefaultFontBold @ ":14><color:7FFFD4>";
-$QuickChatMenu::groupColor  = "<font:" @ $Gui::DefaultFontBold @ ":14><color:00CED1>";
-$QuickChatMenu::chatColor   = "<font:" @ $Gui::DefaultFontBold @ ":14><color:FFFFFF>";
-$QuickChatMenu::escapeColor = "<font:" @ $Gui::DefaultFontBold @ ":14><color:00CED1>";
+//$QuickChatMenu::titleColor  = "<font:" @ "Arial Bold" @ ":14><color:7FFFD4>";
+//$QuickChatMenu::groupColor  = "<font:" @ "Arial Bold" @ ":14><color:00CED1>";
+//$QuickChatMenu::chatColor   = "<font:" @ "Arial Bold" @ ":14><color:FFFFFF>";
+//$QuickChatMenu::escapeColor = "<font:" @ "Arial Bold" @ ":14><color:00CED1>";
 
 function toggleQuickChatHud( %val )
 {
@@ -125,7 +125,7 @@ function QuickChatMenuHud::onWake( %this )
 
 function QuickChatMenuHud::readObject( %this, %object )
 {
-   %displayString = $QuickChatMenu::titleColor @ %object.title;
+   %displayString = "<font:" @ "Arial Bold" @ ":14><color:7FFFD4>" @ %object.title;
 
    for ( %i = 0; %i < %object.childCount; %i++ )
    {
@@ -133,14 +133,14 @@ function QuickChatMenuHud::readObject( %this, %object )
 
       // add this item to the display string
       if( %child.isGroup )
-         %displayString = %displayString @ $QuickChatMenu::groupColor @ "\n";
+         %displayString = %displayString @ "<font:" @ "Arial Bold" @ ":14><color:00CED1>" @ "\n";
       else
-         %displayString = %displayString @ $QuickChatMenu::chatColor @ "\n";
+         %displayString = %displayString @ "<font:" @ "Arial Bold" @ ":14><color:FFFFFF>" @ "\n";
 
       %displayString = %displayString @ %child.key @ ": " @ %child.title;
    }
 
-   %displayString = %displayString @ "\n" @ $QuickChatMenu::escapeColor @ "Esc: leave chat menu";
+   %displayString = %displayString @ "\n" @ "<font:" @ "Arial Bold" @ ":14><color:00CED1>" @ "Esc: leave chat menu";
 
    QCMenuText.setText(%displayString);
    QuickChatBase.extent = firstWord(QuickChatBase.extent) SPC 30 + (15*%object.childCount);

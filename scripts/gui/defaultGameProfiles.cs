@@ -25,17 +25,8 @@
 //GuiMenuButtonProfile.soundButtonOver = "AudioButtonOver";
 //GuiMenuButtonProfile.soundButtonDown = "AudioButtonDown";
 
-$Gui::DefaultFont = "Arial";
-$Gui::DefaultFontBold = "Arial Bold";
-$Gui::DefaultFontSize = "14";
-$Gui::CustomFont = "CRYSTAL";
-$Gui::CustomFontSize = "18"; // 12, 18, 24, 36, 48, 60, 72
-$Gui::ColorAlly = "0 224 0";
-$Gui::ColorEnemy = "224 0 0";
-
 //-----------------------------------------------------------------------------
 // Chat Hud profiles
-
 
 singleton GuiControlProfile (ChatHudEditProfile)
 {
@@ -103,15 +94,15 @@ singleton GuiControlProfile ("ChatHudMessageProfile")
 */
 singleton GuiControlProfile(ChatHudMessageProfile)
 {
-   fontType = $Gui::DefaultFontBold;
+   fontType = "Arial Bold";
    fontSize = 14;
    fontColor = "240 248 255"; // default color (death msgs, scoring, inventory)
    fontColors[1] = "127 255 212";   // client join/drop, tournament mode
    fontColors[2] = "240 230 140"; // gameplay, admin/voting, pack/deployable
 
-   fontColors[3] = $Gui::ColorAlly; //"255 255 255"; // team chat, spam protection message, client tasks
+   fontColors[3] = "0 224 0"; //"255 255 255"; // team chat, spam protection message, client tasks
 
-   fontColors[4] = $Gui::ColorEnemy; //"255 255 0";  // global chat
+   fontColors[4] = "224 0 0"; //"255 255 0";  // global chat
 
    fontColors[5] = "200 200 50"; // used in single player game
 
@@ -143,8 +134,8 @@ singleton GuiControlProfile ("HudBorderProfile")
 
 singleton GuiControlProfile(GuiShapeNameProfile)
 {
-   fontType = $Gui::DefaultFont;
-   fontSize = $Gui::DefaultFontSize;
+   fontType = "Arial";
+   fontSize = "14";
 };
 
 //-----------------------------------------------------------------------------
@@ -186,7 +177,6 @@ singleton GuiControlProfile(GuiLoadPaneProfile)
 singleton GuiControlProfile(GameOverHeaderProfile)
 {
    opaque = false;
-   fontType = $Gui::CustomFont;
    fontSize = 24;
    fontColor = "255 255 255";
    justify = "center";
@@ -195,7 +185,6 @@ singleton GuiControlProfile(GameOverHeaderProfile)
 singleton GuiControlProfile(ScoreHeaderTextProfile)
 {
    opaque = false;
-   fontType = $Gui::CustomFont;
    fontSize = 24;
    fontColor = "255 255 255";
    justify = "center";
@@ -203,7 +192,6 @@ singleton GuiControlProfile(ScoreHeaderTextProfile)
 
 singleton GuiControlProfile(TeamScoreTextLProfile : GuiTextProfile)
 {
-   fontType = $Gui::CustomFont;
    fontSize = 18;
    fontColor = "255 255 255";
    fontColorHL = "255 100 100";
@@ -213,7 +201,6 @@ singleton GuiControlProfile(TeamScoreTextLProfile : GuiTextProfile)
 
 singleton GuiControlProfile(TeamScoreTextRProfile : GuiTextProfile)
 {
-   fontType = $Gui::CustomFont;
    fontSize = 18;
    fontColor = "255 255 255";
    fontColorHL = "255 100 100";
@@ -233,9 +220,9 @@ singleton GuiControlProfile(BloodStreakProfile)
 //Bottom
 singleton GuiControlProfile(ObjTextLeftProfile)
 {
-   fontType = $Gui::DefaultFontBold;
-   fontSize = $Gui::DefaultFontSize;
-   fontColor = $Gui::ColorEnemy;
+   fontType = "Arial Bold";
+   fontSize = "14";
+   fontColor = "224 0 0";
    justify = "left";
    fontColors[0] = "224 0 0 255";
 };
@@ -247,14 +234,14 @@ singleton GuiControlProfile(ObjTextCenterProfile : ObjTextLeftProfile)
 //Top
 singleton GuiControlProfile(ObjTextTeamLeftProfile : ObjTextLeftProfile)
 {
-   fontColor = $Gui::ColorAlly;
+   fontColor = "0 224 0";
    justify = "left";
    fontColors[0] = "0 224 0 255";
 };
 //Top
 singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
 {
-   fontColor = $Gui::ColorAlly;  
+   fontColor = "0 224 0";  
    justify = "center";
    fontColors[0] = "0 224 0 255";
 };
@@ -264,12 +251,12 @@ singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
 
 singleton GuiControlProfile(FriendNameTextProfile : GuiTextProfile)
 {
-   fontColor = $Gui::ColorAlly;
+   fontColor = "0 224 0";
    justify = "center";
 };
 
 singleton GuiControlProfile(EnemyNameTextProfile : GuiTextProfile)
 {
-   fontColor = $Gui::ColorEnemy;
+   fontColor = "224 0 0";
    justify = "center";
 };
