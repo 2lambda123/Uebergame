@@ -1,18 +1,18 @@
-Übergame v1.0.4.0
+Übergame v1.0.5.0
 ===============
 
 Übergame is a free open source, realism like, multi-purpose,
 multiplayer, casual, first-person-shooter game, based on the Torque3D MIT engine.
 
 Official Homepage:
-http://www.duion.com/games/uebergame/main
+http://www.uebergame.com
 
-Moddb Page:
+Moddb Page for updates:
 http://www.moddb.com/games/uebergame
 
 For Binaries download the latest version or go to
 http://www.duion.com/games/uebergame/playtesting
-for nightly builds if available, or compile them yourself using the engine Repoistory.
+for nightly builds if available, or compile them yourself using the engine Repository.
 
 
 Source Code:
@@ -26,8 +26,7 @@ Engine source directory: https://github.com/Duion/Torque3D
 License:
 ===============
 Copyright (c) 2012 GarageGames, LLC
-
-Copyright (c) 2014 Christian Femmer aka Duion
+Copyright (c) 2016 Christian Femmer aka Duion
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
@@ -46,5 +45,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 IN THE SOFTWARE.
-
-
