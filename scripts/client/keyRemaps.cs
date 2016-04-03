@@ -42,12 +42,12 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Turn Right";
 $RemapCmd[$RemapCount] = "turnRight";
 $RemapCount++;
-$RemapName[$RemapCount] = "Look Up";
-$RemapCmd[$RemapCount] = "panUp";
-$RemapCount++;
-$RemapName[$RemapCount] = "Look Down";
-$RemapCmd[$RemapCount] = "panDown";
-$RemapCount++;
+//$RemapName[$RemapCount] = "Look Up";
+//$RemapCmd[$RemapCount] = "panUp";
+//$RemapCount++;
+//$RemapName[$RemapCount] = "Look Down";
+//$RemapCmd[$RemapCount] = "panDown";
+//$RemapCount++;
 $RemapName[$RemapCount] = "Jump";
 $RemapCmd[$RemapCount] = "jump";
 $RemapCount++;
@@ -60,9 +60,9 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Crouch";
 $RemapCmd[$RemapCount] = "doCrouch";
 $RemapCount++;
-$RemapName[$RemapCount] = "Prone";
-$RemapCmd[$RemapCount] = "doProne";
-$RemapCount++;
+//$RemapName[$RemapCount] = "Prone";
+//$RemapCmd[$RemapCount] = "doProne";
+//$RemapCount++;
 
 //-----------------------------------------------------------------------------
 // Weapons
@@ -85,6 +85,7 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Select Previous Weapon";
 $RemapCmd[$RemapCount] = "prevWeapon";
 $RemapCount++;
+/*
 $RemapName[$RemapCount] = "Weapon Slot One";
 $RemapCmd[$RemapCount] = "useFirstWeaponSlot";
 $RemapCount++;
@@ -109,7 +110,7 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Weapon Slot Eight";
 $RemapCmd[$RemapCount] = "useEighthWeaponSlot";
 $RemapCount++;
-
+*/
 //-----------------------------------------------------------------------------
 // Ammo
 
@@ -166,24 +167,12 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Adjust Zoom";
 $RemapCmd[$RemapCount] = "toggleZoomFOV";
 $RemapCount++;
-$RemapName[$RemapCount] = "Toggle Zoom";
-$RemapCmd[$RemapCount] = "toggleZoom";
-$RemapCount++;
 $RemapName[$RemapCount] = "Free Look";
 $RemapCmd[$RemapCount] = "toggleFreeLook";
 $RemapCount++;
 $RemapName[$RemapCount] = "Switch 1st/3rd person view";
 $RemapCmd[$RemapCount] = "toggleFirstPerson";
 $RemapCount++;
-//$RemapName[$RemapCount] = "Toggle Camera";
-//$RemapCmd[$RemapCount] = "toggleCamera";
-//$RemapCount++;
-//$RemapName[$RemapCount] = "Drop Camera at Player";
-//$RemapCmd[$RemapCount] = "dropCameraAtPlayer";
-//$RemapCount++;
-//$RemapName[$RemapCount] = "Drop Player at Camera";
-//$RemapCmd[$RemapCount] = "dropPlayerAtCamera";
-//$RemapCount++;
 
 //-----------------------------------------------------------------------------
 // Messaging
@@ -238,18 +227,18 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Commit Suicide";
 $RemapCmd[$RemapCount] = "doSuicide";
 $RemapCount++;
-$RemapName[$RemapCount] = "Animation - Wave";
-$RemapCmd[$RemapCount] = "celebrationWave";
-$RemapCount++;
-$RemapName[$RemapCount] = "Animation - Salute";
-$RemapCmd[$RemapCount] = "celebrationSalute";
-$RemapCount++;
+//$RemapName[$RemapCount] = "Animation - Wave";
+//$RemapCmd[$RemapCount] = "celebrationWave";
+//$RemapCount++;
+//$RemapName[$RemapCount] = "Animation - Salute";
+//$RemapCmd[$RemapCount] = "celebrationSalute";
+//$RemapCount++;
 $RemapName[$RemapCount] = "Toggle Demo Recording";
 $RemapCmd[$RemapCount] = "toggleDemoRecording";
 $RemapCount++;
-$RemapName[$RemapCount] = "Throw Flag";
-$RemapCmd[$RemapCount] = "throwFlag";
-$RemapCount++;
+//$RemapName[$RemapCount] = "Throw Flag"; //not in use yet
+//$RemapCmd[$RemapCount] = "throwFlag";
+//$RemapCount++;
 
 //-----------------------------------------------------------------------------
 // Spectator Map
@@ -260,7 +249,7 @@ $SpecRemapCount++;
 $SpecRemapName[$SpecRemapCount] = "Move Down";
 $SpecRemapCmd[$SpecRemapCount] = "movedown";
 $SpecRemapCount++;
-$SpecRemapName[$SpecRemapCount] = "Toggle Specerver Mode";
+$SpecRemapName[$SpecRemapCount] = "Toggle Spectator Mode";
 $SpecRemapCmd[$SpecRemapCount] = "jump";
 $SpecRemapCount++;
 $SpecRemapName[$SpecRemapCount] = "Spawn/Previous";
@@ -306,9 +295,9 @@ $VehRemapCount++;
 $VehRemapName[$VehRemapCount] = "Exit Vehicle";
 $VehRemapCmd[$VehRemapCount] = "autoMountVehicle";
 $VehRemapCount++;
-$VehRemapName[$VehRemapCount] = "Thrust";
-$VehRemapCmd[$VehRemapCount] = "mouseJet";
-$VehRemapCount++;
+//$VehRemapName[$VehRemapCount] = "Thrust";
+//$VehRemapCmd[$VehRemapCount] = "mouseJet";
+//$VehRemapCount++;
 $VehRemapName[$VehRemapCount] = "Free Look";
 $VehRemapCmd[$VehRemapCount] = "toggleFreeLook";
 $VehRemapCount++;

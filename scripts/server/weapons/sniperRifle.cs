@@ -34,14 +34,14 @@ datablock SFXProfile(SniperFireSound)
 datablock SFXProfile(SniperReloadSound)
 {
    filename = "art/sound/weapons/sniper_reload";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
 datablock SFXProfile(SniperSwitchinSound)
 {
    filename = "art/sound/weapons/wpn_ryder_switchin";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -248,8 +248,8 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
 
    // Shake camera while firing.
    shakeCamera = true;
-   camShakeFreq = "3 3 3";
-   camShakeAmp = "7 7 7";
+   camShakeFreq = "3 2 4"; //  -up / +down  front/back  right/left
+   camShakeAmp = "12 12 4";
    camShakeDuration = "1.0";
    camShakeRadius = "1.2";
 
@@ -329,7 +329,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
    stateTransitionOnTimeout[6]      = "Ready";
    stateWaitForTimeout[6]           = true;
-   stateTimeoutValue[6]             = 0.45;
+   stateTimeoutValue[6]             = 0.75;
    stateAllowImageChange[6]         = false;
    stateEjectShell[6]               = true;
 

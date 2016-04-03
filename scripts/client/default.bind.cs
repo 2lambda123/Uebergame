@@ -24,7 +24,7 @@
 // Global Non-remapable binds
 //-----------------------------------------------------------------------------
 GlobalActionMap.bindCmd(keyboard, "F1", "", "contextHelp();");
-//GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
+GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 GlobalActionMap.bind(keyboard, "F9", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
@@ -161,7 +161,7 @@ function showScoreBoard(%val)
 {
    if ( ( $Client::TeamCount > 1 ) && (%val) )
      clientCmdToggleScoreHud(%val);
-
+   // use a different gui for deathmatch//FFA games because of errors with the scoreHud
    else if(%val)
      ScoreHudFFA.toggle(%val); 
 }
@@ -486,7 +486,8 @@ function turnOffZoom()
    reticle.setVisible(true);
    zoomReticle.setVisible(false);
 }
-
+//tpggleZoom not in use, we have toggleIronSights instead
+/*
 function toggleZoom(%val)
 {
    if ( Canvas.getContent() != PlayGui.getId() )
@@ -498,7 +499,7 @@ function toggleZoom(%val)
       setFov($Player::CurrentFOV);
 
       //zoomReticle.setBitmap( "art/gui/weaponHud/zoomHair12.png" );
-      zoomReticle.setBitmap( "art/gui/weaponHud/bino.png" );
+      //zoomReticle.setBitmap( "art/gui/weaponHud/bino.png" );
       reticle.setVisible(false);
       zoomReticle.setVisible(true);
 
@@ -511,7 +512,7 @@ function toggleZoom(%val)
       turnOffZoom();
    }
 }
-
+*/
 //------------------------------------------------------------------------------
 // Iron sights functions
 // Scripted by: ZOD, idea by deepscratch
@@ -922,7 +923,7 @@ new ActionMap(moveMap);
 
 //-----------------------------------------------------------------------------
 // Movment
-moveMap.bindCmd(keyboard, "escape", "", "escapeFromGame();");
+moveMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 
 moveMap.bind( mouse, xaxis, yaw );
 moveMap.bind( mouse, yaxis, pitch );
@@ -930,15 +931,15 @@ moveMap.bind( keyboard, "w", moveforward );
 moveMap.bind( keyboard, "a", moveleft );
 moveMap.bind( keyboard, "s", movebackward );
 moveMap.bind( keyboard, "d", moveright );
-moveMap.bind( keyboard, "up", moveup );
-moveMap.bind( keyboard, "down", movedown );
-moveMap.bind( keyboard, "left", turnLeft );
-moveMap.bind( keyboard, "right", turnRight );
-moveMap.bind( keyboard, "home", panUp );
-moveMap.bind( keyboard, "end", panDown );
+moveMap.bind( keyboard, "up", moveforward );
+moveMap.bind( keyboard, "down", movebackward );
+moveMap.bind( keyboard, "left", moveleft);
+moveMap.bind( keyboard, "right", moveright);
+//moveMap.bind( keyboard, "home", panUp );
+//moveMap.bind( keyboard, "end", panDown );
 moveMap.bind( keyboard, "space", jump );
 moveMap.bind( keyboard, "lcontrol", doCrouch );
-moveMap.bind( keyboard, "x", doProne );
+//moveMap.bind( keyboard, "x", doProne );
 moveMap.bind( keyboard, "lshift", doSprint );
 //moveMap.bind( keyboard, "e", mouseJet ); //no jetpacking yet
 //-----------------------------------------------------------------------------
@@ -959,7 +960,7 @@ moveMap.bind( keyboard, "6", useSixthWeaponSlot );
 moveMap.bind( keyboard, "7", useSeventhWeaponSlot );
 moveMap.bind( keyboard, "8", useEighthWeaponSlot );
 moveMap.bind( keyboard, "alt w", throwWeapon );
-moveMap.bind( keyboard, "alt a", tossAmmo );
+//moveMap.bind( keyboard, "alt a", tossAmmo ); //needs update to clips
 
 moveMap.bind( keyboard, "b", triggerSpecial );
 moveMap.bind( keyboard, "ctrl b", tossSpecial );
@@ -978,24 +979,21 @@ moveMap.bind( mouse, button1, toggleIronSights );
 moveMap.bind( keyboard, "z", toggleZoomFOV );
 moveMap.bind( keyboard, "v", toggleFreeLook );
 moveMap.bind( keyboard, "F3", toggleFirstPerson );
-//moveMap.bind( keyboard,"F6", toggleCamera );
-//moveMap.bind( keyboard, "F8", dropCameraAtPlayer );
-//moveMap.bind( keyboard, "F7", dropPlayerAtCamera );
 
 //-----------------------------------------------------------------------------
 // Misc
-//moveMap.bind( keyboard, "ctrl w", celebrationWave );
-//moveMap.bind( keyboard, "ctrl s", celebrationSalute );
+//moveMap.bind( keyboard, "l", celebrationWave );
+//moveMap.bind( keyboard, "rctrl l", celebrationSalute );
 moveMap.bind( keyboard, "ctrl k", doSuicide );
-moveMap.bind( keyboard, "ctrl f", throwFlag );
+//moveMap.bind( keyboard, "ctrl f", throwFlag );
 
 //-----------------------------------------------------------------------------
 // Huds
 moveMap.bind( keyboard, "F2", showPlayerList );
 moveMap.bind( keyboard, "tab", showScoreBoard );
-moveMap.bind( keyboard, "u", toggleMessageHud );
+moveMap.bind( keyboard, "t", toggleMessageHud );
 moveMap.bind( keyboard, "y", teamMessageHud );
-moveMap.bind( keyboard, "o", fireTeamMessageHud );
+moveMap.bind( keyboard, "u", fireTeamMessageHud );
 moveMap.bind( keyboard, "pageUp", pageMessageHudUp );
 moveMap.bind( keyboard, "pageDown", pageMessageHudDown );
 moveMap.bind( keyboard, "p", resizeMessageHud );
@@ -1022,13 +1020,13 @@ moveMap.bind( gamepad, btn_back, showPlayerList );
 
 moveMap.bind( gamepad, dpadl, nextWeapon);
 moveMap.bind( gamepad, dpadu, prevWeapon);
-moveMap.bindCmd( gamepad, dpadd, "commandToServer('reloadWeapon');", "");
+moveMap.bindCmd( gamepad, dpadd, reloadWeapon );
 moveMap.bind( gamepad, dpadr, doSprint);
 
 moveMap.bind( gamepad, triggerr, gamepadFire );
 moveMap.bind( gamepad, triggerl, gamepadAltTrigger );
-moveMap.bind( gamepad, btn_b, toggleZoomFOV );
-moveMap.bind( gamepad, btn_back, toggleCamera );
+moveMap.bind( gamepad, btn_b, doCrouch );
+moveMap.bind( gamepad, btn_back,  showScoreBoard );
 
 //------------------------------------------------------------------------------
 // Spectator actionmap
@@ -1038,7 +1036,7 @@ if(isObject(spectatorMap))
    spectator.delete();
 
 new ActionMap(spectatorMap);
-spectatorMap.bindCmd(keyboard, "escape", "", "escapeFromGame();");
+spectatorMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 spectatorMap.copyBind( moveMap, moveup );
 spectatorMap.copyBind( moveMap, movedown );
 spectatorMap.copyBind( moveMap, jump );
@@ -1061,7 +1059,7 @@ function brake(%val)
    $mvTriggerCount2++;
 }
 
-vehicleMap.bindCmd( keyboard, "escape", "", "escapeFromGame();" );
+vehicleMap.bindCmd( keyboard, "escape", "", "handleEscape();");
 vehicleMap.copyBind( moveMap, moveforward );
 vehicleMap.copyBind( moveMap, movebackward );
 vehicleMap.copyBind( moveMap, moveleft );

@@ -28,9 +28,8 @@
 
 datablock SFXProfile(HealthPatchSound)
 {
-   filename = "art/sound/items/health_mono_01";
-   description = AudioClose3d;
-   environment = GenericSample;
+   filename = "art/sound/items/health_mono_01.ogg";
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -95,7 +94,7 @@ function HealthPatch::onCollision(%this, %obj, %col, %vec, %speed)
 		  
 		 %col.setDamageLevel(%dam);
 		 
-         serverPlay3D(%data.pickupSound, %col.getTransform());
+         serverPlay3D( HealthPatchSound, %col.getTransform());
          //if ( isObject( %col.client ) )
             //messageClient(%col.client, 'MsgHealthPatchUsed', '\c2Health Applied');
 		

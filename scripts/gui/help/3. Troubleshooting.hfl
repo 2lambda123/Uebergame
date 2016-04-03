@@ -4,7 +4,6 @@
 <font:Arial:16>Try reducing the graphics settings until it's acceptable.
 Some tips:
 Greatest performance increase is achieved by reducing the games resolution.
-Disabling "HDR" and "ParallaxMaps" under "Adv. Graphics" for example gives you great performance increase without much visual drawback.
 Reducing lighting quality gives the greatest performance increase, especially on lowest settings, but it will look very ugly. So this should be your last resort, for example if you are running on a slow laptop.
 
 <font:Arial Bold:16>Video Issues
@@ -12,7 +11,7 @@ Reducing lighting quality gives the greatest performance increase, especially on
 You can get video drivers from your card manufacturers website.
 
 <font:Arial Bold:16>My game is not on the server list
-<font:Arial:16>Make sure the "multiplayer" checkbox was checked, when you started the game.
+<font:Arial:16>Make sure the "multiplayer" checkbox was checked, when you started the game, as well as the "display on master server" under options.
 If you still do not get listed, you likely have your ports blocked, Uebergame needs the ports 28000 and 28002 to be open on your firewall/router.
 
 <font:Arial Bold:16>Game crashes
@@ -21,7 +20,7 @@ If you want to do a bug report, create a copy of it, since it gets overwritten t
 
 <font:Arial Bold:16>Developer features
 <font:Arial:16>Some features are intended for developers only, so they require some more experience to use.
-"F2" opens the metrics display, which shows you how fast the game runs in frames per second, "alt F2" opens the ueber-metrics display with much more information.
+"F4" opens the metrics display, which shows you how fast the game runs in frames per second, "alt F4" opens the ueber-metrics display with much more information.
 "F9" opens the games console, it is used for debugging.
 "F11" opens the WorldEditor, which is used to create levels for the game as well as the ability to modify some game functions,
 but you better do that with a copied version of your gamefolder, otherwise you may break your game.

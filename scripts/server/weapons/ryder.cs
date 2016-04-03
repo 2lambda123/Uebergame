@@ -34,14 +34,14 @@ datablock SFXProfile(RyderFireSound)
 datablock SFXProfile(RyderReloadSound)
 {
    filename = "art/sound/weapons/wpn_ryder_reload";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
 datablock SFXProfile(RyderSwitchinSound)
 {
    filename = "art/sound/weapons/wpn_ryder_switchin";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 

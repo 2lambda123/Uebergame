@@ -7,36 +7,46 @@ W		Move Forward
 S		Move Backward
 A		Strafe Left
 D		Strafe Right
-
 Space		Jump
 Ctrl		Crouch
 Left Shift		Sprint
 
 <font:Arial Bold:16>Weapons<font:Arial:16>
 Mouse Button		Fire
-1-4		Weapon slots
+Mouse Button 2		Aim
+1-8		Weapon Slots
 R		Reload Weapon
+G		Throw Grenade
+B		Use Special
+Y		Toggle Zoom level
+I		Open Armory Hud
 
 <font:Arial Bold:16>Messages<font:Arial:16>
 Tab		Show scoreboard
-T		Chat
+T		Chat All
+Y		Chat Team
+U		Chat FireTeam
+C		Quick Chat Hud
 P		Resize Message HUD
 Pageup		Scroll up messages
 Pagedown		Scroll down messages
 
 <font:Arial Bold:16>Other functions<font:Arial:16>
-
+ctrl k		uicide
 ctrl n		Net graph, shows ping etc
-alt enter   Fullscreen
-alt h       Hides the HUD (also hides exit menu, so put back on, if you want to exit)
-v           Vanity, enables free look in third person
+alt enter		Fullscreen
+alt h		Hides the HUD (also hides exit menu, so put back on, if you want to exit)
+v		Vanity, enables free look in third person
+insert		ote Yes
+delete		Vote No
 
 ESC		Exit menu
 
 F1		Help menu
-F2		Show metrics (FPS)
-alt F2  Show ueber-metrics (FPS+much more)
+F2		Admin menu
 F3		Third Person
+F4		Show metrics (FPS)
+alt F4		Show ueber-metrics (FPS+much more)
 F5		Screenshot
 alt F5		Screenshot without HUD
 alt F6		start recording Demo

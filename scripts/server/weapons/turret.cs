@@ -81,7 +81,7 @@ datablock SFXProfile(TurretScanningSound)
 datablock SFXProfile(TurretSwitchinSound)
 {
    filename = "art/sound/turret/wpn_turret_switchin";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 

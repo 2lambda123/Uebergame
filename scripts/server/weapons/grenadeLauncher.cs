@@ -34,14 +34,14 @@ datablock SFXProfile(GLFireSound)
 datablock SFXProfile(GLReloadSound)
 {
    filename = "art/sound/weapons/wpn_lurker_reload";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
 datablock SFXProfile(GLSwitchinSound)
 {
    filename = "art/sound/weapons/wpn_lurker_switchin";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 

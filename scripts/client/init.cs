@@ -86,7 +86,7 @@ function Torque::initClient(%this)
 
    if (isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" ) )
          exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" );
-
+	 
    // Base client functionality
    exec( "./message.cs" );
    exec( "./mission.cs" );
@@ -173,6 +173,11 @@ function Torque::initClient(%this)
    exec("scripts/gui/guiMusicPlayer.cs");
    exec("scripts/gui/guiVideoPlayer.cs");
 
+   //update user config files, if he has an old version
+   exec( "./client/updatePrefs.cs" );
+   if($Pref::Version !$= 1050)
+   updatePrefs();
+   
    // Really shouldn't be starting the networking unless we are
    // going to connect to a remote server, or host a multi-player
    // game.

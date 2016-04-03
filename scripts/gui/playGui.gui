@@ -29,9 +29,9 @@
 
    new GuiCrossHairHud(zoomReticle) {
       damageFillColor = "1 1 1 1";
-      damageFrameColor = "0 0 0 1";
-      damageRect = "100 6";
-      damageOffset = "0 50";
+      damageFrameColor = "1 1 1 1";
+      damageRect = "0 0";
+      damageOffset = "512 512";
       bitmap = "art/gui/weaponHud/zoomHair_filled";
       wrap = "0";
       position = "0 0";

@@ -324,7 +324,7 @@ datablock ShapeBaseImageData(PaintballMarkerBlueWeaponImage)
 
    projectile = PaintballProjectileBlue;
    projectileType = Projectile;
-   projectileSpread = "0.015";
+   projectileSpread = "0.02";
 
    shakeCamera = true;
    camShakeFreq = "2 2 2";
@@ -491,7 +491,7 @@ datablock ShapeBaseImageData( PaintballMarkerBlueIronSightImage : PaintballMarke
    useEyeNode = true;
    animateOnServer = false;
    useEyeOffset = false;
-   eyeOffset = "0 0.2 -0.147";
+   eyeOffset = "0 0.18 -0.147";
    eyeRotation = "0 0 0 0";
 
    projectileSpread = "0.005";
@@ -511,8 +511,8 @@ datablock ShapeBaseImageData( PaintballMarkerBlueIronSightImage : PaintballMarke
 SmsInv.AllowWeapon("Paintballer");
 SmsInv.AddWeapon(PaintballMarkerBlue, "Blue paintball marker", 1);
 
-SmsInv.AllowClip("armor\tPaintballer\t2");
-SmsInv.AddClip(PaintballClip, "Paintball clips", 2);
+SmsInv.AllowClip("armor\tPaintballer\t3");
+SmsInv.AddClip(PaintballClip, "Paintball clips", 3);
 
-SmsInv.AllowAmmo("armor\tPaintballer\t70");
-SmsInv.AddAmmo(PaintballAmmo, 70);
+SmsInv.AllowAmmo("armor\tPaintballer\t60");
+SmsInv.AddAmmo(PaintballAmmo, 60);

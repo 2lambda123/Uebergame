@@ -41,7 +41,7 @@ datablock SFXProfile(ShotgunCockSound)
 datablock SFXProfile(ShotgunReloadSound)
 {
    filename = "art/sound/weapons/wpn_lurker_reload";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 /*
@@ -56,7 +56,7 @@ datablock SFXPlayList(ShotgunFireSoundList)
 datablock SFXProfile(ShotgunSwitchinSound)
 {
    fileName = "art/sound/weapons/wpn_lurker_switchin";
-   description = "AudioClose3D";
+   description = "AudioClosest3D";
    canSave = "1";
 };
 

@@ -76,6 +76,7 @@ new SimGroup(MissionGroup) {
    new SimGroup(ObserverDropPoints) {
       canSave = "1";
       canSaveDynamicFields = "1";
+         powerCount = "0";
 
       new Camera() {
          controlMode = "Fly";
@@ -91,7 +92,7 @@ new SimGroup(MissionGroup) {
          isAIControlled = "0";
          dataBlock = "Spectator";
          position = "186.693 265.122 15.5798";
-         rotation = "-0.0124053 -0.170265 0.98532 188.212";
+         rotation = "-0.0124048 -0.170265 0.98532 188.212";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -101,14 +102,17 @@ new SimGroup(MissionGroup) {
    new SimGroup(Teams) {
       canSave = "1";
       canSaveDynamicFields = "1";
+         powerCount = "0";
 
       new SimGroup(Team0) {
          canSave = "1";
          canSaveDynamicFields = "1";
+            powerCount = "0";
 
          new SimGroup(SpawnSpheres0) {
             canSave = "1";
             canSaveDynamicFields = "1";
+               powerCount = "0";
 
             new SpawnSphere() {
                autoSpawn = "0";
@@ -742,10 +746,12 @@ new SimGroup(MissionGroup) {
       new SimGroup(Team1) {
          canSave = "1";
          canSaveDynamicFields = "1";
+            powerCount = "0";
 
          new SimGroup(SpawnSpheres1) {
             canSave = "1";
             canSaveDynamicFields = "1";
+               powerCount = "0";
 
             new SpawnSphere() {
                autoSpawn = "0";
@@ -1328,10 +1334,12 @@ new SimGroup(MissionGroup) {
       new SimGroup(Team2) {
          canSave = "1";
          canSaveDynamicFields = "1";
+            powerCount = "0";
 
          new SimGroup(SpawnSpheres2) {
             canSave = "1";
             canSaveDynamicFields = "1";
+               powerCount = "0";
 
             new SpawnSphere() {
                autoSpawn = "0";
@@ -3883,7 +3891,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "196.088 199.662 0.152294";
-         rotation = "-0.90227 -0.303413 0.30635 95.4338";
+         rotation = "-0.90227 -0.303413 0.30635 95.434";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3943,7 +3951,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "157.867 198.949 -0.627831";
-         rotation = "0.986165 -0.103945 0.129132 80.1429";
+         rotation = "0.986165 -0.103945 0.129132 80.1431";
          scale = "1.26476 1.28864 1.37413";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4089,7 +4097,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "200.522 239.583 0.651882";
-         rotation = "0.0333559 -0.0550458 0.997927 79.7506";
+         rotation = "0.0333559 -0.0550458 0.997927 79.7508";
          scale = "1 1 1.04733";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4653,6 +4661,92 @@ new SimGroup(MissionGroup) {
          position = "244.756 148.408 28.3762";
          rotation = "1 0 0 0";
          scale = "100 100 100";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+   };
+   new SimGroup(levelBarriers) {
+      canSave = "1";
+      canSaveDynamicFields = "1";
+         powerCount = "0";
+
+      new TSStatic() {
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
+         playAmbient = "1";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Collision Mesh";
+         decalType = "None";
+         allowPlayerStep = "0";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "320.25 64 7.25";
+         rotation = "0 0 -1 90";
+         scale = "256 2 16";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
+         playAmbient = "1";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Collision Mesh";
+         decalType = "None";
+         allowPlayerStep = "0";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "64 319 8.25";
+         rotation = "1 0 0 0";
+         scale = "256 2 16";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
+         playAmbient = "1";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Collision Mesh";
+         decalType = "None";
+         allowPlayerStep = "0";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "64 63 7.25";
+         rotation = "1 0 0 0";
+         scale = "256 2 16";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "art/shapes/walls/invisible/invisible_cube_1x1.dts";
+         playAmbient = "1";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Collision Mesh";
+         decalType = "None";
+         allowPlayerStep = "0";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "65 64.25 7.25";
+         rotation = "0 0 -1 90";
+         scale = "256 2 16";
          canSave = "1";
          canSaveDynamicFields = "1";
       };

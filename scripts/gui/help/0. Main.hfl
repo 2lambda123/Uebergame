@@ -1,7 +1,7 @@
 <just:left><lmargin%:5><rmargin%:95><font:Arial Bold:24>
 Übergame
 <font:Arial:16>
-Übergame is a typical multiplayer FPS with basic deathmatch gameplay.
+Übergame is a typical multiplayer shooter with deathmatch and team gameplay.
 <font:Arial Bold:20>
 Main Menu:
 <font:Arial:20>
@@ -9,18 +9,19 @@ Main Menu:
 <font:Arial:16>
 "Query Master" updates the internet server list,
 "Refresh Server" will refresh a single server in the list,
-"Query LAN" searches for games in a local network.
+"Query LAN" searches for games in a local network,
+"Join IP" will let you connect manually to a server by IP.
 <font:Arial:20>
 "Host" will let you start your own game.
 <font:Arial:16>
-Select a mission from the top line of preview images and press start to start a game server.
-The "Multiplayer" checkbox has to be enabled if you want your game to be listed publicly.
+Chose a map, a game type, adjust the server options and press "Load Level".
+The "Multiplayer" checkbox has to be enabled, if you want your game to be listed publicly.
 <font:Arial:20>
 "Editor" will do the same as "Host" but starts the level with editor open.
 
 "Options" lets you set player name, skin, graphics, sound, control and network settings.
 
-"Extras" has one player for game recordings and one for sound files.
+"Extras" has some players for recordings and music, which are not ready to use yet.
 
 "Help" opens this dialog.
 

@@ -233,7 +233,7 @@ $pref::TS::detailAdjust = 1.0;
 $pref::Decals::enabled = true;
 
 ///
-$pref::Decals::lifeTimeScale = 1;
+$pref::Decals::lifeTimeScale = 2;
 
 //
 $pref::PhysicsDebris::lifetimeScale = "1";
@@ -421,7 +421,6 @@ function TextureQualityGroup::onApply( %this, %level )
    // Note that this can be a slow operation.  
    reloadTextures();
 }
-
 
 new SimGroup( LightingQualityGroup )
 { 

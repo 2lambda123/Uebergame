@@ -170,7 +170,7 @@ datablock ShapeBaseImageData( PaintballMarkerRedIronSightImage : PaintballMarker
    useEyeNode = true;
    animateOnServer = false;
    useEyeOffset = false;
-   eyeOffset = "0 0.2 -0.147";
+   eyeOffset = "0 0.18 -0.147";
    eyeRotation = "0 0 0 0";
 
    projectileSpread = "0.005";
@@ -189,9 +189,3 @@ datablock ShapeBaseImageData( PaintballMarkerRedIronSightImage : PaintballMarker
 
 SmsInv.AllowWeapon("Paintballer");
 SmsInv.AddWeapon(PaintballMarkerRed, "Red paintball marker", 1);
-
-SmsInv.AllowClip("armor\tPaintballer\t2");
-SmsInv.AddClip(PaintballClip, "Paintball clips", 2);
-
-SmsInv.AllowAmmo("armor\tPaintballer\t70");
-SmsInv.AddAmmo(PaintballAmmo, 70);

@@ -40,7 +40,7 @@ datablock SFXProfile(LurkerFireStopSound)
 datablock SFXProfile(LurkerReloadSound)
 {
    filename = "art/sound/weapons/wpn_lurker_reload";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 /* unused
@@ -54,7 +54,7 @@ datablock SFXProfile(LurkerIdleSound)
 datablock SFXProfile(LurkerSwitchinSound)
 {
    filename = "art/sound/weapons/wpn_lurker_switchin";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -494,7 +494,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    animateOnServer = false;
    useEyeOffset = false;
    //eyeOffset = "-0.147 -0.225 0.025";
-   eyeOffset = "-0.161 -0.29 0.060";
+   eyeOffset = "-0.161 -0.35 0.060";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
    projectileSpread = "0.007";

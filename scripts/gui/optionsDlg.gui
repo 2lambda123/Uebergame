@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Network";
+      pane = "Audio";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "4";
+         selectedPage = "2";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -180,7 +180,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "swamp";
+               text = "base";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -204,7 +204,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "swamp";
+               skin = "base";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -649,7 +649,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Custom";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -679,7 +679,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Low";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -732,7 +732,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Low";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -808,7 +808,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Low";
+               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -861,7 +861,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "16X";
+               text = "Off";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -953,7 +953,7 @@
                range = "0.001 2";
                ticks = "9";
                snap = "0";
-               value = "1.00837";
+               value = "1";
                position = "105 349";
                extent = "518 15";
                minExtent = "8 2";
@@ -1147,7 +1147,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "4x";
+               text = "1x";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1176,7 +1176,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "15";
+               text = "1";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1285,13 +1285,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptAudioPane";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1517,7 +1516,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.170213";
+                  value = "0.75";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
@@ -1540,7 +1539,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Lautsprecher (Realtek High Definition Audio)";
+               text = "Primärer Soundtreiber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1590,7 +1589,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "XAudio";
+               text = "DirectSound";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1641,7 +1640,7 @@
                maxChars = "-1";
                useURLMouseCursor = "0";
                position = "409 16";
-               extent = "200 98";
+               extent = "200 84";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -1666,12 +1665,13 @@
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "GuiCheckBoxProfile";
-               visible = "1";
+               visible = "0";
                active = "1";
                variable = "$pref::Audio::BackgroundMusic";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -1743,7 +1743,7 @@
                profile = "GuiButtonProfile";
                visible = "1";
                active = "1";
-               command = "optionsDlg.restoreDefaultMappings();";
+               command = "restoreDefaultMappings();";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
@@ -2055,7 +2055,7 @@
                   fitParentWidth = "1";
                   clipColumnText = "0";
                   position = "1 1";
-                  extent = "345 800";
+                  extent = "345 640";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2111,12 +2111,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptNetworkPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 

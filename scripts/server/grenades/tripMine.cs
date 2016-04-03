@@ -39,7 +39,7 @@ datablock SFXProfile( MineArmedSound )
 datablock SFXProfile( MineSwitchinSound )
 {
    filename = "art/sound/weapons/wpn_proximitymine_switchin";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
