@@ -712,9 +712,10 @@ function redoMapping( %device, %action, %cmd, %oldIndex, %newIndex )
    //%actionMap.bind( %device, %action, $RemapCmd[%newIndex] );
    %actionMap.bind( %device, %action, %cmd );
 	
-   %remapList = %this-->OptRemapList;
-   %remapList.setRowById( %oldIndex, buildFullMapString( %oldIndex ) );
-   %remapList.setRowById( %newIndex, buildFullMapString( %newIndex ) );
+   //those 3 lines cause a crash, so I commented them out, hope they were not too important
+   //%remapList = %this-->OptRemapList;
+   //%remapList.setRowById( %oldIndex, buildFullMapString( %oldIndex ) );
+   //%remapList.setRowById( %newIndex, buildFullMapString( %newIndex ) );
 
    OptionsDlg.fillRemapList();
 }

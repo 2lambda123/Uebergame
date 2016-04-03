@@ -174,7 +174,6 @@ function Torque::initClient(%this)
    exec("scripts/gui/guiVideoPlayer.cs");
 
    //update user config files, if he has an old version
-   exec( "./client/updatePrefs.cs" );
    if($Pref::Version !$= 1050)
    updatePrefs();
    
