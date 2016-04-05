@@ -505,7 +505,7 @@
    new GuiControl(ClusterHud) {
       position = "0 0";
       extent = "1024 768";
-      minExtent = "640 480";
+      minExtent = "8 8";
       horizSizing = "width";
       vertSizing = "height";
       profile = "GuiModelessDialogProfile";
@@ -631,7 +631,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "16 32";
+            position = "8 32";
             extent = "112 20";
             minExtent = "8 8";
             horizSizing = "right";
@@ -654,7 +654,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "132 32";
+            position = "124 32";
             extent = "21 20";
             minExtent = "8 8";
             horizSizing = "left";
@@ -724,7 +724,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "164 32";
-            extent = "100 20";
+            extent = "128 20";
             minExtent = "8 8";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -745,7 +745,7 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "272 32";
+            position = "288 32";
             extent = "21 20";
             minExtent = "8 8";
             horizSizing = "left";

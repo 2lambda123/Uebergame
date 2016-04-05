@@ -77,19 +77,19 @@ $DamageType::Shotgun = $DamageCount++;
 $DamageText[$DamageCount] = "Shotgun";
 
 $DamageType::Rifle = $DamageCount++;
-$DamageText[$DamageCount] = "Assault Rifle";
+$DamageText[$DamageCount] = "Rifle";
 
 $DamageType::Sniper = $DamageCount++;
-$DamageText[$DamageCount] = "Sniper Rifle";
+$DamageText[$DamageCount] = "Sniper";
 
 $DamageType::GrenadeLauncher = $DamageCount++;
-$DamageText[$DamageCount] = "Grenade Launcher";
+$DamageText[$DamageCount] = "Grenade";
 
 $DamageType::Rocket = $DamageCount++;
 $DamageText[$DamageCount] = "Rocket";
 
 $DamageType::Paintball = $DamageCount++;
-$DamageText[$DamageCount] = "Paintball";
+$DamageText[$DamageCount] = "Paint";
 
 //-------------------------------------------------------------------------- Grenades - Mines etc.
 $DamageType::Grenade = $DamageCount++;

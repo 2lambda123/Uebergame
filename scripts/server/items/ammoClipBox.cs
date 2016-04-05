@@ -25,7 +25,7 @@ datablock ItemData(AmmoClipBox : DefaultAmmo)
    shapeFile = "art/shapes/weapons/Lurker/Lurker_clip.dts";
    computeCRC = false;
    mass = 10;
-   maxVelocity = 15;
+   maxVelocity = 12;
    pickUpName = 'ammo clip crate';
 };
 

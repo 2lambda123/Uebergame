@@ -95,14 +95,14 @@ singleton GuiControlProfile ("ChatHudMessageProfile")
 singleton GuiControlProfile(ChatHudMessageProfile)
 {
    fontType = "Arial Bold";
-   fontSize = 14;
-   fontColor = "240 248 255"; // default color (death msgs, scoring, inventory)
+   fontSize = 16;
+   fontColor = "255 224 128"; // default color (death msgs, scoring, inventory)
    fontColors[1] = "127 255 212";   // client join/drop, tournament mode
    fontColors[2] = "240 230 140"; // gameplay, admin/voting, pack/deployable
 
    fontColors[3] = "0 224 0"; //"255 255 255"; // team chat, spam protection message, client tasks
 
-   fontColors[4] = "224 0 0"; //"255 255 0";  // global chat
+   fontColors[4] = "255 255 255"; //"255 255 0";  // global chat
 
    fontColors[5] = "200 200 50"; // used in single player game
 
@@ -221,7 +221,7 @@ singleton GuiControlProfile(BloodStreakProfile)
 singleton GuiControlProfile(ObjTextLeftProfile)
 {
    fontType = "Arial Bold";
-   fontSize = "14";
+   fontSize = "16";
    fontColor = "224 0 0";
    justify = "left";
    fontColors[0] = "224 0 0 255";
@@ -230,6 +230,7 @@ singleton GuiControlProfile(ObjTextLeftProfile)
 singleton GuiControlProfile(ObjTextCenterProfile : ObjTextLeftProfile)
 {
    justify = "center";
+   fontSize = "16";
 };
 //Top
 singleton GuiControlProfile(ObjTextTeamLeftProfile : ObjTextLeftProfile)
@@ -237,6 +238,7 @@ singleton GuiControlProfile(ObjTextTeamLeftProfile : ObjTextLeftProfile)
    fontColor = "0 224 0";
    justify = "left";
    fontColors[0] = "0 224 0 255";
+   fontColors[8] = "Magenta";
 };
 //Top
 singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
@@ -259,4 +261,49 @@ singleton GuiControlProfile(EnemyNameTextProfile : GuiTextProfile)
 {
    fontColor = "224 0 0";
    justify = "center";
+};
+
+//-----------------------------------------------------------------------------
+// ScoreHud
+
+singleton GuiControlProfile(ScoreHudHeaderProfile)
+{
+   fontType = "Arial Bold";
+   fontSize = 20;
+   fontColor = "255 255 255";
+};
+
+singleton GuiControlProfile(ScoreHudHeaderBlueProfile)
+{
+   fontType = "Arial Bold";
+   fontSize = 18;
+   fontColor = "150 200 255";
+};
+
+singleton GuiControlProfile(ScoreHudHeaderRedProfile)
+{
+   fontType = "Arial Bold";
+   fontSize = 18;
+   fontColor = "255 200 150";
+};
+
+singleton GuiControlProfile(ScoreHudTextWhiteProfile)
+{
+   fontType = "Arial Bold";
+   fontSize = 14;
+   fontColor = "240 240 240";
+};
+
+singleton GuiControlProfile(ScoreHudTextBlueProfile)
+{
+   fontType = "Arial Bold";
+   fontSize = 14;
+   fontColor = "150 200 255";
+};
+
+singleton GuiControlProfile(ScoreHudTextRedProfile)
+{
+   fontType = "Arial Bold";
+   fontSize = 14;
+   fontColor = "255 200 150";
 };

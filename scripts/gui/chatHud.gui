@@ -98,8 +98,8 @@
             anchorBottom = "0";
             anchorLeft = "1";
             anchorRight = "0";
-            position = "8 8";
-            extent = "312 70";
+            position = "2 2";
+            extent = "320 70";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -120,7 +120,7 @@
                matchColor = "0 0 255 255";
                maxColorIndex = "5";
                position = "1 1";
-               extent = "310 14";
+               extent = "320 16";
                minExtent = "8 8";
                horizSizing = "width";
                vertSizing = "height";

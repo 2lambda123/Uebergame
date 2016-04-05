@@ -22,6 +22,7 @@
 
 // List of master servers to query, each one is tried in order
 // until one responds
+$pref::Net::DisplayOnMaster = 1; //list hosted games by default on master server
 $Pref::Server::RegionMask = 2;
 $pref::Master[0] = "2:duion.com:28002";
 

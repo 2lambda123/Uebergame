@@ -37,7 +37,7 @@ function PlayGui::onWake(%this)
 
    // Add the cluster and objective huds.
    // Adding keeps them in the foreground in case we are zoomed.
-   %this.add(ClusterHud);
+   //%this.add(ClusterHud);
 
    // Add the FireTeam hud
    %this.add(FireTeamHud);

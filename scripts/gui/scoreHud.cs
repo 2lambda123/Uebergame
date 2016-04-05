@@ -22,12 +22,12 @@
 function ScoreGui::configure(%this, %gameType)
 {
    ScoreHud.PlayerScore[0] = new GuiTextListCtrl() {
-      profile = "GuiTxtWhtProfile";
+      profile = "ScoreHudTextWhiteProfile";
       horizSizing = "center";
       vertSizing = "bottom";
       position = "56 315";
-      extent = "500 120";
-      minExtent = "500 120";
+      extent = "500 160";
+      minExtent = "500 160";
       visible = "1";
       enumerate = "1";
       resizeCell = "1";
@@ -37,12 +37,12 @@ function ScoreGui::configure(%this, %gameType)
       noDuplicates = "true";
    };
    ScoreHud.PlayerScore[1] = new GuiTextListCtrl() {
-      profile = "GuiTxtWhtProfile";
+      profile = "ScoreHudTextBlueProfile";
       horizSizing = "relative";
       vertSizing = "bottom";
-      position = "20 110";
-      extent = "230 130";
-      minExtent = "230 130";
+      position = "20 60";
+      extent = "230 250";
+      minExtent = "230 250";
       visible = "1";
       enumerate = "1";
       resizeCell = "1";
@@ -52,12 +52,12 @@ function ScoreGui::configure(%this, %gameType)
       noDuplicates = "true";
    };
    ScoreHud.PlayerScore[2] = new GuiTextListCtrl() {
-      profile = "GuiTxtWhtProfile";
+      profile = "ScoreHudTextRedProfile";
       horizSizing = "relative";
       vertSizing = "bottom";
-      position = "342 110";
-      extent = "230 130";
-      minExtent = "230 130";
+      position = "342 60";
+      extent = "230 250";
+      minExtent = "230 250";
       visible = "1";
       enumerate = "1";
       resizeCell = "1";

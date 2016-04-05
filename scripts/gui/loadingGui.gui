@@ -245,7 +245,7 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "914 4";
+      position = "902 4";
       extent = "108 20";
       minExtent = "8 8";
       horizSizing = "left";

@@ -145,7 +145,7 @@ function CoreGame::setupGameParams(%game)
    $Game::Schedule = "";
 
    %game.SCORE_PER_DESTROY_VEHICLE = 8;
-   %game.SCORE_PER_DESTROY_SHAPE = 5;
+   %game.SCORE_PER_DESTROY_SHAPE = 0;
    %game.SCORE_PER_DESTROY_TURRET = 6;
 
    // Setup max vehicles allowed
@@ -1047,7 +1047,7 @@ function CoreGame::friendlyFireMessage(%game, %damaged, %damager)
 
 function CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   LogEcho("\c4CoreGame::onDeath(" SPC %game.class @", "@ %player @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+    LogEcho("\c4CoreGame::onDeath(" SPC %game.class @", "@ %player @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Switch the client over to the death cam and unhook the player object.
    if ( isObject( %client ) )
@@ -2822,7 +2822,7 @@ function CoreGame::staticShapeDestroyed(%game, %obj, %destroyer)
       {
          %destroyer.client.shapeDestroys++;
          messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
-         messageClient(%destroyer.client, %msgType, 'You received a %1 point bonus for destroying an enemy %2', %game.SCORE_PER_DESTROY_SHAPE, %shapeName);
+         messageClient(%destroyer.client, %msgType, "", %game.SCORE_PER_DESTROY_SHAPE, %shapeName); //needs to be fixed (especially the shapecharge) and properly integrated
          %game.updateScore(%destroyer.client);
       }
    }

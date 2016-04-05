@@ -172,7 +172,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
       portInit($Pref::Server::Port);
       allowConnections(true);
 
-      if ($pref::Net::DisplayOnMaster !$= "Never" )
+      if ($pref::Net::DisplayOnMaster !$= "0" )
          schedule( 50,0,startHeartbeat);
    }
 

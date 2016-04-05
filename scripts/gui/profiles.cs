@@ -221,8 +221,9 @@ new GuiControlProfile (GuiOrangeTextProfile)
    justify = "left";
    fontColor = "224 128 0 255";
    category = "Core";
-   fontSize = "16";
+   fontSize = "18";
    fontType = "Arial Bold";
+   fontColors[0] = "224 128 0 255";
 };
 
 if( !isObject( GuiTextRightProfile ) )

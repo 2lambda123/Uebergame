@@ -44,9 +44,9 @@ function TDMGame::setupGameParams(%game)
    CoreGame::setupGameParams(%game);
 
    %game.SCORE_PER_KILL = 10; 
-   %game.SCORE_PER_DEATH = -5;
-   %game.SCORE_PER_SUICIDE = -5;
-   %game.SCORE_PER_TEAMKILL = -5;
+   %game.SCORE_PER_DEATH = -10;
+   %game.SCORE_PER_SUICIDE = -10;
+   %game.SCORE_PER_TEAMKILL = -10;
 }
 
 function TDMGame::onMissionLoaded(%game)
