@@ -678,7 +678,7 @@
             anchorLeft = "1";
             anchorRight = "0";
             position = "64 8";
-            extent = "129 20";
+            extent = "132 20";
             minExtent = "8 8";
             horizSizing = "right";
             vertSizing = "top";

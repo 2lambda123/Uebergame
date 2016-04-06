@@ -188,4 +188,4 @@ datablock ShapeBaseImageData( PaintballMarkerRedIronSightImage : PaintballMarker
 // SMS Inventory
 
 SmsInv.AllowWeapon("Paintballer");
-SmsInv.AddWeapon(PaintballMarkerRed, "Red paintball marker", 1);
+SmsInv.AddWeapon(PaintballMarkerRed, "Red Marker", 1);
