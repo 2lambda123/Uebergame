@@ -85,7 +85,7 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Select Previous Weapon";
 $RemapCmd[$RemapCount] = "prevWeapon";
 $RemapCount++;
-/*
+
 $RemapName[$RemapCount] = "Weapon Slot One";
 $RemapCmd[$RemapCount] = "useFirstWeaponSlot";
 $RemapCount++;
@@ -110,7 +110,7 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Weapon Slot Eight";
 $RemapCmd[$RemapCount] = "useEighthWeaponSlot";
 $RemapCount++;
-*/
+
 //-----------------------------------------------------------------------------
 // Ammo
 
@@ -151,12 +151,12 @@ $RemapCount++;
 //-----------------------------------------------------------------------------
 // Inventory
 
-//$RemapName[$RemapCount] = "Choose Next Loadout";
-//$RemapCmd[$RemapCount] = "cycleLoadoutNext";
-//$RemapCount++;
-//$RemapName[$RemapCount] = "Choose Previous Loadout";
-//$RemapCmd[$RemapCount] = "cycleLoadoutPrev";
-//$RemapCount++;
+$RemapName[$RemapCount] = "Choose Next Loadout";
+$RemapCmd[$RemapCount] = "cycleLoadoutNext";
+$RemapCount++;
+$RemapName[$RemapCount] = "Choose Previous Loadout";
+$RemapCmd[$RemapCount] = "cycleLoadoutPrev";
+$RemapCount++;
 
 //-----------------------------------------------------------------------------
 // Camera and View

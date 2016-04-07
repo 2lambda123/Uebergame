@@ -198,14 +198,14 @@ datablock ProjectileData( GrenadeProjectile )
 
    Splash              = GrenadeSplash;
    muzzleVelocity      = 50;
-   velInheritFactor    = 0.5;
+   velInheritFactor    = 0.4;
 
-   armingDelay         = 1000; // How long it should not detonate on impact
+   armingDelay         = 800; // How long it should not detonate on impact
    lifetime            = 15000; // How long the projectile should exist before deleting itself
    fadeDelay           = 10000; // Brief Amount of time, in milliseconds, before the projectile begins to fade out.
 
-   bounceElasticity    = 0.3;
-   bounceFriction      = 0.3;
+   bounceElasticity    = 0.25;
+   bounceFriction      = 0.25;
    isBallistic         = 1; // Causes the projectile to be affected by gravity "arc".
    gravityMod          = 1;
 

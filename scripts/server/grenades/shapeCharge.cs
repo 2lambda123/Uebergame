@@ -50,8 +50,8 @@ datablock StaticShapeData(ShapeChargeDeployed : StaticShapeDamageScale)
    rechargeRate = 0;
 
    isInvincible = false;
-   maxDamage = 60; // Must be higher then destroyed level
-   destroyedLevel = 50;
+   maxDamage = 50; // Must be higher then destroyed level
+   destroyedLevel = 49;
    directDamage = 0;
    radiusDamage = 250.0;
    damageRadius = 8;
@@ -176,7 +176,7 @@ function ShapeChargeImage::onUnmount(%data, %obj, %slot)
 function ShapeChargeImage::onActivate(%data, %obj, %slot)
 {
    LogEcho("ShapeChargeImage::onActivate(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
-
+   
    // Only one per customer!
    if ( isObject( %obj.thrownChargeId ) )
    {
@@ -313,7 +313,7 @@ function ShapeChargeTossed::onStickyCollision(%data, %item)
    %intAngle = getTerrainAngle(%norm);
    %rotAxis = vectorNormalize(vectorCross(%norm, "0 0 1"));
    if (getWord(%norm, 2) == 1 || getWord(%norm, 2) == -1)
-      %rotAxis = vectorNormalize(vectorCross(%norm, "0 1 0"));
+      %rotAxis = vectorNormalize(vectorCross(%norm, "0 0 1"));
 
    %rot = %rotAxis @ " " @ %intAngle;
    %data.activateCharge(%item, %pos, %rot);
@@ -382,7 +382,7 @@ function ShapeChargeDeployed::onDestroyed(%data, %obj, %prevState)
       if ( %obj.sourceObject.thrownChargeId == %obj )
          %obj.sourceObject.thrownChargeId = 0;
 
-   %obj.schedule(500, "delete");
+   %obj.schedule(50, "delete");
 }
 
 //-----------------------------------------------------------------------------

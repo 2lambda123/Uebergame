@@ -272,7 +272,7 @@ function PBTDMGame::getScoreLimit(%game)
 
          %players++;
       }
-      return( %players * 3 );
+      return( %players * 5 );
    }
 }
 

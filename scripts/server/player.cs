@@ -1599,7 +1599,7 @@ function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
    // Dead is checked first so if dead and mounted, only dead is returned by C++..
    if ( %obj.getState() $= "Dead" )
    {
-      if ( $DamageText[%damageType] $= "Grenade" || $DamageText[%damageType] $= "Grenade Launcher" )
+      if ( $DamageText[%damageType] $= "Grenade" || $DamageText[%damageType] $= "Explosion" )
          %obj.setVelocity( "0 0" SPC ( 1 / %this.mass ) ); 
 
       if ( isObject( Game ) )

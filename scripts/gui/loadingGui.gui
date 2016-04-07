@@ -5,7 +5,7 @@
    tile = "0";
    position = "0 0";
    extent = "1024 768";
-   minExtent = "800 600";
+   minExtent = "640 480";
    horizSizing = "width";
    vertSizing = "height";
    profile = "GuiModelessDialogProfile";
@@ -127,8 +127,8 @@
             allowedMatches[1] = "tgeserver";
             matchColor = "0 0 255 255";
             maxColorIndex = "9";
-            position = "2 2";
-            extent = "1020 14";
+            position = "2 -2";
+            extent = "1007 96";
             minExtent = "12 12";
             horizSizing = "relative";
             vertSizing = "relative";

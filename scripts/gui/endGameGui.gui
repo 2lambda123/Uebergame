@@ -5,7 +5,7 @@
    tile = "0";
    position = "0 0";
    extent = "1024 768";
-   minExtent = "800 600";
+   minExtent = "640 480";
    horizSizing = "width";
    vertSizing = "height";
    profile = "GuiModelessDialogProfile";

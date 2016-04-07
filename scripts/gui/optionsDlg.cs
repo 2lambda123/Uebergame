@@ -290,6 +290,12 @@ function OptionsDlg::onWake(%this)
 
 function OptionsDlg::onSleep(%this)
 {  
+         // Player
+         OptPlayerNameInput.setField();
+         %playerName = OptPlayerNameInput.getValue();
+         %skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
+         $pref::Player = %playerName TAB %skin;
+
 	  	 // Mouse
          %xSens = MouseXSlider.getValue();
          %ySens = MouseYSlider.getValue();

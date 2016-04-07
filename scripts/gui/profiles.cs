@@ -332,6 +332,8 @@ new GuiControlProfile( GuiTextEditProfile )
 if( !isObject( GuiProgressProfile ) )
 new GuiControlProfile( GuiProgressProfile )
 {
+   fontSize = 18;
+   fontType = "Arial Bold";
    opaque = false;
    fillColor = "0 162 255 200";
    border = true;

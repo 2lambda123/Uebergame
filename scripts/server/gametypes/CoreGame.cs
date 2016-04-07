@@ -521,7 +521,7 @@ function CoreGame::setClientState(%game, %client)
    }
 
    // Send mission information
-   messageClient(%client, 'MsgEnterGameInfo', '\c1You are in mission %1 ( %3 ).',
+   messageClient(%client, 'MsgEnterGameInfo', '\c1You are in mission %1 (%3)',
                                               addTaggedString($MissionDisplayName),
                                               addTaggedString(%game.class), 
                                               addTaggedString($MissionTypeDisplayName), 
@@ -892,7 +892,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    %player.setTransform(%spawnPoint);
    %player.setShapeName(%client.playerName);
    %player.isInIronSights = false;
-   %player.isReloading = false;
+   %player.isReloading = true; //workaround to prevent crosshair showing, if no weapon is equipped
    
    if ( %client.team == 0 )
       %player.setSkinName( %client.skin );
@@ -1071,7 +1071,7 @@ function CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient
          {
             %game.awardScoreKill(%sourceClient, %damageType);
             %game.awardScoreDeath(%client, %damageType);
-            messageAll( 'MsgDeath', '%1 was killed by %2. \c2[ %3 ]', %client.playerName, %sourceClient.playerName, $DamageText[%damageType] );
+            messageAll( 'MsgDeath', '%1 was killed by %2\c2 [%3]', %client.playerName, %sourceClient.playerName, $DamageText[%damageType] );
          }
 
          // Send silent message with player stats
