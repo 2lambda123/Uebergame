@@ -1148,7 +1148,7 @@ function CoreGame::clearClientVaribles(%game, %client)
    %client.deaths = 0;
    %client.suicides = 0;
    %client.efficiency = 0.0;
-   %client.midairs = 0;
+   //%client.midairs = 0; //unused?!
    %client.vehicleDestroys = 0;
    %client.shapeDestroys = 0;
    %client.turretDestroys = 0;
@@ -1534,6 +1534,20 @@ function CoreGame::onClientBecomeSpectator(%game, %client)
 {
    // Leave fire team if any..
    serverCmdleaveFireTeam(%client);
+   
+   //reset scores for spectators, they do not deserve scores
+   %game.clearClientVaribles(%client);
+
+   for(%i = 0; %i < ClientGroup.getCount(); %i++)
+   {
+      %cl = ClientGroup.getObject(%i);
+      messageClient(%client, 'MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
+   }
+
+   // Setup objective hud
+   messageClient(%client, 'MsgYourScoreIs', "", 0);
+   messageClient(%client, 'MsgYourDeaths', "", 0);
+   messageClient(%client, 'MsgYourKills', "", 0);
 }
 
 function CoreGame::cancelCountdown(%game)

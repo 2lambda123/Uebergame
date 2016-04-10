@@ -1,11 +1,11 @@
-singleton TSShapeConstructor(shotgun_FPDAE)
+singleton TSShapeConstructor(FP_Lurker_brownDAE)
 {
-   baseShape = "./shotgun_FP.dts";
-   lodType = "TrailingNumber";
+   baseShape = "./FP_Lurker_brown.dts";
+   lodType = "DetectDTS";
    loadLights = "0";
 };
 
-function shotgun_FPDAE::onLoad(%this)
+function FP_Lurker_brownDAE::onLoad(%this)
 {
    %this.renameSequence("ambient", "timeline");
    %this.setSequenceCyclic("timeline", "0");

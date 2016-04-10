@@ -124,7 +124,7 @@ datablock ProjectileData( RyderProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 25;
+   directDamage        = 26;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;

@@ -182,6 +182,20 @@ function PBTDMGame::assignClientTeam(%game, %client, %respawn)
    messageClient(%client, 'MsgCheckTeamLines', "", %client.team);
 
    echo(%client.nameBase @ " (cl " @ %client @ ") joined team " @ %client.team);
+   
+   //clear scores when client changes team
+   %game.clearClientVaribles(%client);
+
+   for(%i = 0; %i < ClientGroup.getCount(); %i++)
+   {
+      %cl = ClientGroup.getObject(%i);
+      messageClient(%client, 'MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
+   }
+
+   // Setup objective hud
+   messageClient(%client, 'MsgYourScoreIs', "", 0);
+   messageClient(%client, 'MsgYourDeaths', "", 0);
+   messageClient(%client, 'MsgYourKills', "", 0);
 }
 
 function PBTDMGame::clientJoinTeam(%game, %client, %team, %respawn)

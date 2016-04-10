@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-singleton Material(Lurker_ScopeScreen_Base)
+singleton Material(Mat_Lurker_ScopeScreen_Main)
 {
    mapTo = "Lurker_ScopeScreen_Base";
    diffuseMap[0] = "art/shapes/weapons/Lurker/Lurker_D.dds";
@@ -32,11 +32,11 @@ singleton Material(Lurker_ScopeScreen_Base)
    materialTag0 = "weapon";
 };
 
-singleton Material(Lurker_Base)
+singleton Material(Mat_Lurker_Main)
 {
    mapTo = "Lurker_Base";
    diffuseMap[0] = "art/shapes/weapons/Lurker/Lurker_D.dds";
-   specularMap[0] = "art/shapes/weapons/Lurker/Lurker_D.dds";
+   specularMap[0] = "art/shapes/weapons/Lurker/Lurker_S.dds";
    specular[0] = "1 1 1 1";
    specularPower[0] = "10";
    translucentBlendOp = "None";
@@ -45,7 +45,7 @@ singleton Material(Lurker_Base)
    materialTag0 = "weapon";
 };
 
-singleton Material(Lurker_MuzzleFlash_Base)
+singleton Material(Mat_Lurker_MuzzleFlash_Main)
 {
    mapTo = "Lurker_MuzzleFlash_Base";
    diffuseMap[0] = "Lurker_MuzzleFlash.dds";
@@ -65,4 +65,16 @@ singleton Material(Lurker_MuzzleFlash_Base)
    waveAmp[0] = "0.016";
    castShadows = "0";
    materialTag0 = "weapon";
+};
+
+singleton Material(Mat_dark_Lurker : Mat_Lurker_Main)
+{
+   mapTo = "dark_Lurker";
+   diffuseMap[0] = "art/shapes/weapons/Lurker/Lurker_dark_D.dds";
+};
+
+singleton Material(Mat_brown_Lurker : Mat_Lurker_Main)
+{
+   mapTo = "brown_Lurker";
+   diffuseMap[0] = "art/shapes/weapons/Lurker/Lurker_brown_D.dds";
 };

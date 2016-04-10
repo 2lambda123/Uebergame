@@ -253,10 +253,11 @@ datablock ItemData(LurkerAmmo : DefaultAmmo)
 // been dropped, thrown or is acting as re-spawnable item.  When the weapon
 // is mounted onto a shape, the LurkerWeaponImage is used.
 //-----------------------------------------------------------------------------
+
 datablock ItemData(Lurker : DefaultWeapon)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
+   shapeFile = "art/shapes/weapons/Lurker_dark/TP_Lurker_dark.dts";
 
    // Dynamic properties defined by the scripts
    pickUpName = 'Lurker rifle';
@@ -267,8 +268,8 @@ datablock ItemData(Lurker : DefaultWeapon)
 datablock ShapeBaseImageData(LurkerWeaponImage)
 {
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
-   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.dts";
+   shapeFile = "art/shapes/weapons/Lurker_dark/TP_Lurker_dark.dts";
+   shapeFileFP = "art/shapes/weapons/Lurker_dark/FP_Lurker_dark.dts";
    emap = true;
    computeCRC = false;
 
@@ -494,7 +495,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    animateOnServer = false;
    useEyeOffset = false;
    //eyeOffset = "-0.147 -0.225 0.025";
-   eyeOffset = "-0.161 -0.29 0.060";
+   eyeOffset = "-0.161 -0.30 0.060";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
    projectileSpread = "0.007";
@@ -519,5 +520,5 @@ SmsInv.AddWeapon(Lurker, "Lurker rifle", 1);
 SmsInv.AllowClip("armor\tSoldier\t4");
 SmsInv.AddClip(LurkerClip, "Lurker Clips", 4);
 
-SmsInv.AllowAmmo("armor\tSoldier\t30");
-SmsInv.AddAmmo(LurkerAmmo, 30);
+SmsInv.AllowAmmo("armor\tSoldier\t35");
+SmsInv.AddAmmo(LurkerAmmo, 35);

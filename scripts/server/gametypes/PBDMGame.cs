@@ -140,6 +140,20 @@ function PBDMGame::assignClientTeam(%game, %client)
 
    // Let everybody know this client joined the game
    messageAll( 'MsgClientJoinTeam', '\c1%4 has joined the %3.', %client, %client.team, %game.getTeamName(%client.team), %client.playerName );
+   
+   //clear scores when client changes team
+   %game.clearClientVaribles(%client);
+
+   for(%i = 0; %i < ClientGroup.getCount(); %i++)
+   {
+      %cl = ClientGroup.getObject(%i);
+      messageClient(%client, 'MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
+   }
+
+   // Setup objective hud
+   messageClient(%client, 'MsgYourScoreIs', "", 0);
+   messageClient(%client, 'MsgYourDeaths', "", 0);
+   messageClient(%client, 'MsgYourKills', "", 0);
 }
 
 function PBDMGame::clientChangeTeam(%game, %client, %team, %fromObs)

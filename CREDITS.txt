@@ -1,6 +1,11 @@
 This lists contains the credits to all art assets, all are licensed CC0 (Public Domain)
 Credits are not mandatory for CC0 but this file is to keep track and for verification.
 
+art/gui:
+
+art/gui/splash.bmp -Design by Nendor -remixed by Duion
+
+
 art/sound:
 
 art/sound/environment/night/night_crickets_01.ogg  -icuttv  https://www.freesound.org/people/icuttv/sounds/181362/  -edited by Duion

@@ -235,7 +235,8 @@ datablock ItemData(GrenadeLauncherAmmo : DefaultAmmo)
 //-----------------------------------------------------------------------------
 datablock ItemData(GrenadeLauncher : DefaultWeapon)
 {
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
+   shapeFile = "art/shapes/weapons/Lurker_brown/TP_Lurker_brown.dts";
+
    pickUpName = 'Grenade Launcher';
    image = GrenadeLauncherImage;
 };
@@ -248,8 +249,9 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    className = "WeaponImage";
 
    // Basic Item properties
-   shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
-   shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.dts";
+   shapeFile = "art/shapes/weapons/Lurker_brown/TP_Lurker_brown.dts";
+   shapeFileFP = "art/shapes/weapons/Lurker_brown/FP_Lurker_brown.dts";
+   
    emap = true;
    computeCRC = false;
 

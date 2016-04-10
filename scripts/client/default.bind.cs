@@ -963,7 +963,7 @@ moveMap.bind( keyboard, "alt w", throwWeapon );
 //moveMap.bind( keyboard, "alt a", tossAmmo ); //needs update to clips
 
 moveMap.bind( keyboard, "b", triggerSpecial );
-moveMap.bind( keyboard, "ctrl b", tossSpecial );
+moveMap.bind( keyboard, "alt b", tossSpecial );
 moveMap.bind( keyboard, "g", throwGrenade );
 moveMap.bind( keyboard, "alt g", tossGrenade );
 
@@ -1004,7 +1004,7 @@ moveMap.bind( keyboard, "delete", voteNo );
 moveMap.bind( keyboard, "i", toggleArmoryDlg );
 moveMap.bind( keyboard, "=", cycleLoadoutNext );
 moveMap.bind( keyboard, "-", cycleLoadoutPrev );
-moveMap.bind( keyboard, "ctrl n", toggleNetGraph );
+moveMap.bind( keyboard, "n", toggleNetGraph );
 //moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
 //moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???
 moveMap.bind( keyboard, "F6", toggleMusicPlayer );

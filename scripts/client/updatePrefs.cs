@@ -8,6 +8,9 @@ function updatePrefs()
 	$pref::Video::unavailableTexturePath = "art/editor/unavailable";
 	$pref::Video::warningTexturePath = "art/editor/warnmat";
 	
+	//new server settings
+	$pref::Server::TimeLimit = 15;
+	
     //update the keybindings to use the new features
 	restoreDefaultMappings();
 	//set the pref version so we know the user's config files have been updated

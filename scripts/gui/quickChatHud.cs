@@ -39,7 +39,7 @@ ActionMapGroup.add(ChatMenuActionMapGroup);
 
 new ActionMap(ChatMenuGroupAction);
 ChatMenuActionMapGroup.add(ChatMenuGroupAction);
-ChatMenuGroupAction.bindCmd(keyboard, "escape", "canvas.popdialog(QuickChatMenuHud);", "");
+ChatMenuGroupAction.bindCmd(keyboard, "c", "canvas.popdialog(QuickChatMenuHud);", "");
 
 if( isObject(ChatMenuGroup) )
    ChatMenuGroup.delete();
@@ -77,7 +77,7 @@ function openChatGroup( %key, %name )
    %parent.child[%parent.childCount] = %child;
    %parent.childCount++;
     
-   %child.actionMap.bindCmd(keyboard, "escape", "parentChatGroup();", "");
+   %child.actionMap.bindCmd(keyboard, "c", "parentChatGroup();", "");
     
    $CurrentChatMenu = %child;
 }
@@ -140,7 +140,7 @@ function QuickChatMenuHud::readObject( %this, %object )
       %displayString = %displayString @ %child.key @ ": " @ %child.title;
    }
 
-   %displayString = %displayString @ "\n" @ "<font:" @ "Arial Bold" @ ":14><color:00CED1>" @ "Esc: leave chat menu";
+   %displayString = %displayString @ "\n" @ "<font:" @ "Arial Bold" @ ":14><color:00CED1>" @ "C: leave chat menu";
 
    QCMenuText.setText(%displayString);
    QuickChatBase.extent = firstWord(QuickChatBase.extent) SPC 30 + (15*%object.childCount);

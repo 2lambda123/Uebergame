@@ -112,26 +112,26 @@ datablock ParticleData(BulletTrailParticle)
    gravityCoefficient = 0;
    inheritedVelFactor = 0;
    constantAcceleration = 0.0;
-   lifetimeMS = "500";
-   lifetimeVarianceMS = "250";
+   lifetimeMS = "750";
+   lifetimeVarianceMS = "500";
    useInvAlpha = true;
    spinRandomMin = -60;
    spinRandomMax = 60;
    spinSpeed = 1;
 
-   colors[0] = "0.231373 0.180392 0.0627451 0.598425";
-   colors[1] = "0.266667 0.243137 0.129412 0.401575";
-   colors[2] = "0.482353 0.482353 0.380392 0.212598";
-   colors[3] = "0.141176 0.141176 0.141176 0.1";
+   colors[0] = "0.996078 0.921569 0.72549 0.598";
+   colors[1] = "0.996078 0.976471 0.792157 0.39";
+   colors[2] = "0.996078 0.992157 0.878431 0.207";
+   colors[3] = "0.996078 0.996078 0.996078 0";
 
-   sizes[0] = "0.1";
-   sizes[1] = "0.07";
-   sizes[2] = "0.05";
-   sizes[3] = "0.3";
+   sizes[0] = "0.05";
+   sizes[1] = "0.1";
+   sizes[2] = "0.2";
+   sizes[3] = "0.299091";
 
    times[0] = 0.0;
-   times[1] = "0.166667";
-   times[2] = "0.3";
+   times[1] = "0.262745";
+   times[2] = "0.694118";
    times[3] = "1";
 
    dragCoefficient = "0.190616";
@@ -148,7 +148,7 @@ datablock ParticleEmitterData(BulletTrailEmitter)
    phiReferenceVel = 90;
    particles = "BulletTrailParticle";
    ejectionOffset = "0.1";
-   blendStyle = "ADDITIVE";
+   blendStyle = "NORMAL";
 };
 
 //-----------------------------------------------------------------------------

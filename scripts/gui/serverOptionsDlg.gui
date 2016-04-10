@@ -762,7 +762,6 @@
          sinkAllKeyEvents = "0";
          password = "0";
          passwordMask = "*";
-         text = "1";
          maxLength = "1024";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -805,6 +804,26 @@
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiCheckBoxCtrl() {
+         text = "Random Mission Cycling";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         position = "304 357";
+         extent = "168 30";
+         minExtent = "8 2";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "GuiCheckBoxProfile";
+         visible = "1";
+         active = "1";
+         variable = "$pref::Server::RandomMissions";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

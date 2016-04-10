@@ -196,6 +196,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    // Basic Item properties
    shapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
    shapeFileFP = "art/shapes/weapons/Lurker/FP_Lurker.dts";
+
    emap = true;
    computeCRC = false;
 
@@ -329,7 +330,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionOnNoAmmo[6]       = "NoAmmo";
    stateTransitionOnTimeout[6]      = "Ready";
    stateWaitForTimeout[6]           = true;
-   stateTimeoutValue[6]             = 0.75;
+   stateTimeoutValue[6]             = 0.95;
    stateAllowImageChange[6]         = false;
    stateEjectShell[6]               = true;
 
