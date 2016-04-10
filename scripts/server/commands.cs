@@ -389,11 +389,12 @@ function serverCmdUseSpecial(%client, %val)
 function serverCmdThrowGrenade(%client, %val)
 {
    %player = %client.player;
-   
-   %player.isReloading = true; //workaround to prevent zoom crosshair from showing 
-   
-   if ( !isObject( %player ) || %player.getState() $= "Dead" || !$Game::Running )
+   %outOfGrenade = !%player.getImageAmmo($GrenadeSlot);  
+	  
+   if ( !isObject( %player ) || %player.getState() $= "Dead" || !$Game::Running || %outOfGrenade )
       return;
+  
+   %player.isReloading = true; //workaround to prevent zoom crosshair from showing 
 
    if ( !%player.isMounted() )
    {
