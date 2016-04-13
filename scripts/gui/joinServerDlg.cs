@@ -148,7 +148,7 @@ function JoinServerDlg::join(%this)
    %id = JS_serverList.getSelectedId();
    // The server info index is stored in the row along with the
    // rest of displayed info.
-   %index = getField(JS_serverList.getRowTextById(%id), 7);
+   %index = getField(JS_serverList.getRowTextById(%id), 8);
    if ( setServerInfo( %index ) )
    {
       if ( $ServerInfo::Password )
@@ -231,7 +231,7 @@ function ServerPopupMenu::onSelect(%this, %id, %text)
    {
       case 0: // Refresh selected server
          %id = JS_serverList.getSelectedId();
-         %index = getField(JS_serverList.getRowTextById(%id), 7);
+         %index = getField(JS_serverList.getRowTextById(%id), 8);
          if(setServerInfo(%index))
             querySingleServer( $ServerInfo::Address, 0 );
          else
@@ -239,7 +239,7 @@ function ServerPopupMenu::onSelect(%this, %id, %text)
 
       case 1: // Show selected servers information
          %id = JS_serverList.getSelectedId();
-         %index = getField(JS_serverList.getRowTextById(%id), 7);
+         %index = getField(JS_serverList.getRowTextById(%id), 8);
          if ( setServerInfo( %index ) )
          {
             MessageBoxOK( "SERVER INFO",
@@ -266,7 +266,7 @@ function ServerPopupMenu::onSelect(%this, %id, %text)
  
       case 2: // Set as favorite
          %id = JS_serverList.getSelectedId();
-         %index = getField(JS_serverList.getRowTextById(%id), 7);
+         %index = getField(JS_serverList.getRowTextById(%id), 8);
          if ( setServerInfo( %index ) )
          {
             if ( $Pref::Client::ServerFavoriteCount $= "" )
