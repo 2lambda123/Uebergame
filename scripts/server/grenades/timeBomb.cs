@@ -171,7 +171,7 @@ function TimeBombImage::onThrowGrenade(%data, %obj, %slot)
       %obj.bombThrown = %thrownItem;
       %thrownItem.armed = false;
       //commandToClient( %obj.client, 'OpenBombTimer' );
-      
+	  %thrownItem.schedulePop(); //add item pop to remove undetonated timebombs   
    }
    else
       Parent::onThrowGrenade(%data, %obj, %slot);

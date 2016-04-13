@@ -193,6 +193,7 @@ function JoinServerDlg::update(%this)
          $ServerInfo::Version TAB
          //$ServerInfo::GameType TAB
 		 $ServerInfo::MissionName TAB
+		 $ServerInfo::MissionType TAB
          ($ServerInfo::Favorite? "Yes": "No") TAB
          %i);  // ServerInfo index stored also This index is used by setServerInfo
    }

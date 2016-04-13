@@ -276,7 +276,7 @@ datablock ExplosionData(UnderwaterGrenadeExplosion)
 
 datablock ParticleData(GrenadeSparks)
 {
-   textureName          = "art/particles/spark";
+   textureName          = "art/particles/bigSpark";
    dragCoefficient      = 1;
    gravityCoefficient   = 0.0;
    inheritedVelFactor   = 0.2;
@@ -299,7 +299,7 @@ datablock ParticleData(GrenadeSparks)
 
 datablock ParticleEmitterData(GrenadeSparkEmitter)
 {
-   ejectionPeriodMS = 3;
+   ejectionPeriodMS = "6";
    periodVarianceMS = 0;
    ejectionVelocity = 18;
    velocityVariance = 6.75;
@@ -308,10 +308,11 @@ datablock ParticleEmitterData(GrenadeSparkEmitter)
    thetaMax         = 180;
    phiReferenceVel  = 0;
    phiVariance      = 360;
-   overrideAdvances = false;
+   overrideAdvances = 0;
    orientParticles  = true;
    lifetimeMS       = 100;
    particles        = "GrenadeSparks";
+   blendStyle = "ADDITIVE";
 };
 
 datablock ParticleData(GrenadeExplosionSmoke)

@@ -30,7 +30,7 @@
 
 singleton GuiControlProfile (ChatHudEditProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "Arial";
    fontSize = 16;
    opaque = false;
    fillColor = "255 255 255";
@@ -63,7 +63,7 @@ singleton GuiControlProfile(GuiBevelLoweredProfile)
 
 singleton GuiControlProfile (ChatHudTextProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "Arial";
    fontSize = 16;
    opaque = false;
    fillColor = "255 255 255";

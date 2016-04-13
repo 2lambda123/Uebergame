@@ -19,6 +19,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
+AdminDlg.initialized = false; //set variable to fix non-initiated PlayerPopupMenu
 
 function AdminDlg::toggle(%this, %val)
 {

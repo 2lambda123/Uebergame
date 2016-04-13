@@ -349,7 +349,7 @@ new SimGroup( MeshQualityGroup )
       key["$pref::GroundCover::densityScale"] = 1.5;
    };   
    
-      new ArrayObject( [Highest] )
+      new ArrayObject( [Ueber] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
@@ -405,7 +405,7 @@ new SimGroup( TextureQualityGroup )
       key["$pref::Terrain::detailScale"] = 1.5;      
    };   
    
-      new ArrayObject( [Highest] )
+      new ArrayObject( [Ueber] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
@@ -468,7 +468,7 @@ new SimGroup( LightingQualityGroup )
       key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";          
    };  
 
-   new ArrayObject( [Highest] )
+   new ArrayObject( [Ueber] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
@@ -542,7 +542,7 @@ new SimGroup( ShaderQualityGroup )
       key["$pref::windEffectRadius"] = 50;	  
    };   
    
-      new ArrayObject( [Highest] )
+      new ArrayObject( [Ueber] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
@@ -615,10 +615,10 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
    {
 	  if ( %videoMem > 2000 )
       {
-         MeshQualityGroup-->Highest.apply();
-         TextureQualityGroup-->Highest.apply();
-         LightingQualityGroup-->Highest.apply();
-         ShaderQualityGroup-->Highest.apply();
+         MeshQualityGroup-->Ueber.apply();
+         TextureQualityGroup-->Ueber.apply();
+         LightingQualityGroup-->Ueber.apply();
+         ShaderQualityGroup-->Ueber.apply();
 		 DecalQualityGroup-->(15).apply();	
       }
       else if ( %videoMem > 1000 )

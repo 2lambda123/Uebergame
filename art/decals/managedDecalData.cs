@@ -33,7 +33,7 @@ datablock DecalData(ScorchBigDecal)
 datablock DecalData(ScorchRXDecal)
 {
    Material = "DECAL_RocketEXP";
-   size = "4.0";
+   size = "3.0";
    lifeSpan = "10000";
    fadeTime = "50000";
    randomize = "1";
