@@ -3892,7 +3892,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "196.088 199.662 0.152294";
-         rotation = "-0.90227 -0.303413 0.30635 95.434";
+         rotation = "-0.90227 -0.303413 0.30635 95.4341";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3952,7 +3952,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "157.867 198.949 -0.627831";
-         rotation = "0.986165 -0.103945 0.129132 80.1431";
+         rotation = "0.986165 -0.103945 0.129132 80.1432";
          scale = "1.26476 1.28864 1.37413";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4098,7 +4098,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "200.522 239.583 0.651882";
-         rotation = "0.0333559 -0.0550458 0.997927 79.7508";
+         rotation = "0.0333559 -0.0550458 0.997927 79.7509";
          scale = "1 1 1.04733";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4576,7 +4576,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.25";
+         volume = "0.15";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4600,7 +4600,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.25";
+         volume = "0.15";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4624,7 +4624,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.25";
+         volume = "0.15";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -4648,7 +4648,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.25";
+         volume = "0.15";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";

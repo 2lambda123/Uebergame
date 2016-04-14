@@ -117,11 +117,11 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextListCtrl(JS_listLabels) {
-         columns = "0 40 195 250 335 450 590";
+         columns = "0 35 212 245 302 360 506 573";
          fitParentWidth = "0";
          clipColumnText = "0";
          position = "10 52";
-         extent = "620 16";
+         extent = "603 16";
          minExtent = "8 8";
          horizSizing = "width";
          vertSizing = "bottom";
@@ -164,7 +164,7 @@
          canSaveDynamicFields = "0";
 
          new GuiTextListCtrl(JS_serverList) {
-            columns = "0 40 195 240 300 365 475";
+            columns = "0 32 214 256 308 358 505 577";
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "2 2";
@@ -205,7 +205,7 @@
          canSaveDynamicFields = "0";
 
          new GuiTextCtrl(JS_statusText) {
-            text = "No servers found.";
+            text = "8 servers found.";
             maxLength = "255";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

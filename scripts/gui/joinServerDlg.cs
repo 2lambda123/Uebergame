@@ -82,7 +82,7 @@ function JoinServerDlg::onWake()
    JS_cancelQuery.setActive(0);
 
    JS_listLabels.clear();
-   %text = "PASS" TAB "NAME" TAB "PING" TAB "PLAYERS" TAB "VERSION" TAB "LEVEL" TAB "FAV";
+   %text = "PASS" TAB "NAME" TAB "PING" TAB "PLAYERS" TAB "VERSION" TAB "LEVEL" TAB "TYPE" TAB "FAV";
    JS_listLabels.addRow(0, %text);
    JS_listLabels.setSelectedRow(0);
    //JS_listLabels.scrollVisible(0);

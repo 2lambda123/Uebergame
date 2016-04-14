@@ -190,6 +190,7 @@ function ShapeChargeImage::onActivate(%data, %obj, %slot)
             ServerPlay3D( ShapeChargeTriggerSound, %obj.thrownChargeId.getTransform() );
             %obj.thrownChargeId.getDataBlock().detonate( %obj.thrownChargeId, %obj );
 
+			%obj.isReloading = false; //fix iron sight after shapeCharge detonate
             // Unmount the image, this will also remove inventory, we have to schedule this to avoid game crash
             %obj.schedule( 100, "dismountImage", %slot );
             //%obj.setInventory( %data.item, 0 );
