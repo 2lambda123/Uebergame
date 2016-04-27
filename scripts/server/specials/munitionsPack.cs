@@ -58,7 +58,7 @@ datablock ShapeBaseImageData(MunitionsPackImage)
    useEyeNode = true;
    mountPoint = 1;
    mass = 2;
-   offset     = "0 -0.05 -0.35"; // L/R - F/B - T/B
+   offset     = "0.15 0.09 0.08"; // L/R - F/B - T/B
    rotation   = "-0.616949 0.628951 0.473069 80.6613";
 
    throwTimeout = 800;

@@ -468,7 +468,7 @@ function EditorOpenMission(%filename)
    }
    else
    {
-      loadMission( %filename, true ) ;
+      tge.loadMission( %filename, true ) ;
    
       pushInstantGroup();
 

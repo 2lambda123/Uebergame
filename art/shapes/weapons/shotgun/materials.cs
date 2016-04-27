@@ -36,8 +36,8 @@ singleton Material(Mat_shotgunmetal_TP)
    effectColor[0] = "0 0 0 0";
    materialTag0 = "Weapon";
    diffuseColor[0] = "0.145098 0.145098 0.145098 1";
-   specularPower[0] = "32";
-   specularStrength[0] = "0.7";
+   specularPower[0] = "1";
+   specularStrength[0] = "0.4";
    pixelSpecular[0] = "1";
 };
 

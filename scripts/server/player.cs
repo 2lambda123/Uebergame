@@ -868,7 +868,7 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    cloakTexture = "art/particles/cloakTexture.png";
 
    canObserve = 1;
-   cameraMaxDist = 3;
+   cameraMaxDist = 2.25;
    cameraMinDist = 0.2;
    cameraDefaultFov = "90";
    cameraMinFov = "5";

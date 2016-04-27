@@ -236,7 +236,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
 
    projectile = RyderProjectile;
    projectileType = Projectile;
-   projectileSpread = "0.018";
+   projectileSpread = "0.016";
 
    casing = RyderBulletShell;
    shellExitDir        = "1.0 0.3 1.0";
@@ -429,7 +429,7 @@ datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
    eyeOffset = "-0.19488 -0.3 0.049";
    eyeRotation = "0.405853 0 0.913938 3.80559";
 
-   projectileSpread = "0.009";
+   projectileSpread = "0.008";
    parentImage = "RyderWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.

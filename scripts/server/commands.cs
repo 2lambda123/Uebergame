@@ -391,7 +391,7 @@ function serverCmdThrowGrenade(%client, %val)
    %player = %client.player;
    %outOfGrenade = !%player.getImageAmmo($GrenadeSlot); //check if player has no grenades and then return
 	  
-   if ( !isObject( %player ) || %player.getState() $= "Dead" || !$Game::Running || %outOfGrenade )
+   if ( !isObject( %player ) || %player.getState() $= "Dead" || !$Game::Running || %outOfGrenade || %player.isInIronSights == true )
       return;
   
    %player.isReloading = true; //workaround to prevent zoom crosshair from showing 
