@@ -111,7 +111,7 @@ datablock ExplosionData(SmokeGrenadeExplosion)
 
 datablock ItemData(SmokeGrenadeThrown : DefaultAmmo)
 {
-   shapeFile = "art/shapes/weapons/grenade/grenade.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenade.dts";
    mass = 1.0;
    density = 20;
    elasticity = 0.2;
@@ -134,7 +134,7 @@ datablock ItemData(SmokeGrenade : DefaultWeapon)
 {
    category = "Handheld";
    className = "HandInventory";
-   shapeFile = "art/shapes/weapons/grenade/grenade.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenade.dts";
    computeCRC = false;
 
    // Script varibles
@@ -147,7 +147,7 @@ datablock ItemData(SmokeGrenade : DefaultWeapon)
 
 datablock ItemData(SmokeGrenadeAmmo : DefaultAmmo)
 {
-   shapeFile = "art/shapes/weapons/grenade/grenade.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenade.dts";
    pickUpName = 'smoke grenade';
 };
 
@@ -157,8 +157,8 @@ datablock ShapeBaseImageData(SmokeGrenadeImage)
    className = GrenadeImage;
 
    shapeFile = "art/editor/invisible.dts";
-   //shapeFile = "art/shapes/weapons/grenade/grenade.dts";
-   //shapeFileFP = "art/shapes/weapons/grenade/grenade.dts";
+   //shapeFile = "art/shapes/weapons/Grenade/grenade.dts";
+   //shapeFileFP = "art/shapes/weapons/Grenade/grenade.dts";
    emap = true;
    computeCRC = false;
    cloakable = true;

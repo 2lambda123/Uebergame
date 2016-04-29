@@ -56,7 +56,7 @@ datablock SFXProfile( MineTriggeredSound )
 datablock ItemData(tripMineDeployed : DefaultAmmo)
 {
    category = "Deployable";
-   shapeFile = "art/shapes/weapons/grenade/grenade.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenade.dts";
    mass = 2;
    density = 20;
    elasticity = 0.2;
@@ -88,7 +88,7 @@ datablock ItemData(TripMine : DefaultWeapon)
 {
    category = "Handheld";
    className = "HandInventory";
-   shapeFile = "art/shapes/weapons/grenade/grenade.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenade.dts";
    computeCRC = false;
 
    image = TripMineImage;

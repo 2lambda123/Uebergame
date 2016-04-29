@@ -284,7 +284,7 @@ datablock ParticleEmitterData(BulletImpactSmoke)
 
 datablock ParticleData(BulletSparks)
 {
-   textureName = "art/particles/bigSpark.PNG";
+   textureName = "art/particles/bigSpark.png";
    dragCoefficient = "0.99218";
    gravityCoefficient = 0;
    inheritedVelFactor = "0.2";
@@ -300,7 +300,7 @@ datablock ParticleData(BulletSparks)
    times[0] = 0;
    times[1] = "0.2";
    times[2] = "0.5";
-   animTexName = "art/particles/bigSpark.PNG";
+   animTexName = "art/particles/bigSpark.png";
    sizes[3] = "0.05";
    colors[3] = "0.388235 0.372549 0.329412 1";
    ejectionPeriodMS = "7";

@@ -296,14 +296,14 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./inventory.cs");
 
    // Game files
-   exec("./gametypes/CoreGame.cs"); // Parent to all, want this loaded first
+   exec("./gameTypes/CoreGame.cs"); // Parent to all, want this loaded first
 
-   %search = "./gametypes/*Game.cs";
+   %search = "./gameTypes/*Game.cs";
    for(%file = findFirstFile(%search); %file !$= ""; %file = findNextFile(%search))
    {
      %type = fileBase(%file);
      if(%type !$= CoreGame)
-        exec("./gametypes/" @ %type @ ".cs");
+        exec("./gameTypes/" @ %type @ ".cs");
    }
 
    // Mission scripting support. Auto-execute files - Temporary until I figure out how to just exe the mapscript in the proper dir itself
