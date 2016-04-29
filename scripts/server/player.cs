@@ -875,7 +875,7 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    cameraMaxFov = "120";
 
    explosion = PlayerExplosion;
-   debrisShapeName = "art/shapes/weapons/grenade/grenadeDebris.dts";
+   debrisShapeName = "art/shapes/weapons/Grenade/grenadeDebris.dts";
    debris = playerDebris;
    
    throwForce = 30;

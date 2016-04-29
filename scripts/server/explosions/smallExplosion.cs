@@ -137,7 +137,7 @@ datablock ParticleEmitterData(SmallDebrisTrailEmitter)
 
 datablock DebrisData(SmallExplosionDebris)
 {
-   shapeFile = "art/shapes/weapons/grenade/grenadeDebris.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenadeDebris.dts";
 
    emitters = "SmallDebrisTrailEmitter";
    explosion = SmallDebrisExplosion;

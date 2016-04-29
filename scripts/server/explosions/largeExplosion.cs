@@ -196,7 +196,7 @@ datablock ParticleEmitterData(LargeDebrisSmokeEmitter)
 
 datablock DebrisData(LargeExplosionDebris)
 {
-   shapeFile = "art/shapes/weapons/grenade/grenadeDebris.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenadeDebris.dts";
    emitters[0] = "LargeDebrisFireEmitter";
    //emitters[1] = "LargeDebrisSmokeEmitter";
    explosion = LargeDebrisExplosion;

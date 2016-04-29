@@ -806,7 +806,7 @@ datablock ParticleEmitterData(FragDebrisTrailEmitter)
 
 datablock DebrisData(FragDebris)
 {
-   shapeFile = "art/shapes/weapons/grenade/grenadeDebris.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenadeDebris.dts";
    render2D = "0";
    emitters[0] = "FragDebrisTrailEmitter";
    elasticity = "0.6";

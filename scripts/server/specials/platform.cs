@@ -116,7 +116,7 @@ datablock StaticShapeData(DeployedPlatform : StaticShapeDamageScale)
    destroyedLevel = 15.0;
    disabledLevel = 14.0;
 
-   debrisShapeName =  "art/shapes/weapons/grenade/grenadeDebris.dts";
+   debrisShapeName =  "art/shapes/weapons/Grenade/grenadeDebris.dts";
    debris = SmallExplosionDebris;
    renderWhenDestroyed = true;
 

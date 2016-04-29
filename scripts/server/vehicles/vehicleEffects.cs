@@ -459,7 +459,7 @@ datablock ParticleEmitterData(VehicleDebrisSmokeEmitter)
 
 datablock DebrisData(VehicleDebris)
 {
-   shapeFile = "art/shapes/weapons/grenade/grenadeDebris.dts";
+   shapeFile = "art/shapes/weapons/Grenade/grenadeDebris.dts";
    emitters[0] = VehicleDebrisSmokeEmitter;
    emitters[1] = VehicleDebrisFireEmitter;
    explosion = ShapeDebrisExplosion; // scripts/server/staticshapes/staticShape.cs
