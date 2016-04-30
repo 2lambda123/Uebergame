@@ -386,8 +386,8 @@ function resetServerDefaults()
    exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" );
 
    allowConnections(true); // ZOD: Open up the server for connections again.
-
-   tge.loadMission( $pref::Server::MissionFile, $pref::Server::MissionType, false );
+   //reload the current level
+   tge.loadMission( $Server::MissionFile, $Server::MissionType, false );
    $resettingServer = false;
    echo( "Server reset complete." );
 }
