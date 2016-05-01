@@ -33,6 +33,36 @@ singleton Material(Mat_yellow_paintball_player : Mat_paintball_player)
    diffuseMap[0] = "art/shapes/actors/paintball_player/paintball_player_yellow_D.dds";
 };
 
+singleton Material(Mat_olive_paintball_player : Mat_paintball_player)
+{
+   mapTo = "olive_paintball_player";
+   diffuseMap[0] = "art/shapes/actors/paintball_player/paintball_player_olive_D.dds";
+};
+
+singleton Material(Mat_swamp_paintball_player : Mat_paintball_player)
+{
+   mapTo = "swamp_paintball_player";
+   diffuseMap[0] = "art/shapes/actors/paintball_player/paintball_player_swamp_D.dds";
+};
+
+singleton Material(Mat_urban_paintball_player : Mat_paintball_player)
+{
+   mapTo = "urban_paintball_player";
+   diffuseMap[0] = "art/shapes/actors/paintball_player/paintball_player_urban_D.dds";
+};
+
+singleton Material(Mat_water_paintball_player : Mat_paintball_player)
+{
+   mapTo = "water_paintball_player";
+   diffuseMap[0] = "art/shapes/actors/paintball_player/paintball_player_water_D.dds";
+};
+
+singleton Material(Mat_desert_paintball_player : Mat_paintball_player)
+{
+   mapTo = "desert_paintball_player";
+   diffuseMap[0] = "art/shapes/actors/paintball_player/paintball_player_desert_D.dds";
+};
+
 singleton Material(paintball_player_paintball_marker_01_001)
 {
    mapTo = "paintball_marker_01_001";

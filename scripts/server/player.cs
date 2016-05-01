@@ -1067,7 +1067,6 @@ datablock PlayerData(PaintballPlayerData : DefaultSoldier)
 {
    shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
    shapeNameFP[0] = "";
-   availableSkins =  "base blue red green yellow";
    boundingBox = "0.75 0.75 1.8";
    crouchBoundingBox = "0.75 0.75 1.25";
    renderFirstPerson = "1";

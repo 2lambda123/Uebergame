@@ -177,7 +177,7 @@ function PBDMGame::clientJoinTeam(%game, %client, %team, %respawn)
    %game.spawnPlayer(%client, %respawn);
 }
 
-function PBPBDMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
+function PBDMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 {
    %player = CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn);
    
