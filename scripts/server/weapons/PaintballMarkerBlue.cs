@@ -271,7 +271,7 @@ datablock ItemData(PaintballAmmo)
 
    // Dynamic properties defined by the scripts
    pickUpName = "Paintball Ammo";
-   maxInventory = 70;
+   maxInventory = 60;
    clip = PaintballClip;
 };
 

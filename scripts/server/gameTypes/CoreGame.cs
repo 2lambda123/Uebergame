@@ -911,9 +911,38 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 
    switch$ (%game.playerType)
    {
-     case "Paintball": %player.use( %player.weaponSlot[0] );
-	 case "DefaultSoldier": %player.use( %player.weaponSlot[1] );
-	 default: %player.use( %player.weaponSlot[1] );
+     case "Paintball": 
+	 //loadout a red marker by default for red team and for blue team and deathmatch a blue marker as default
+	 if ( %player.weaponSlot[0] $= "" && %client.team == 2 )
+	 {
+     %player.setInventory( PaintballMarkerRed, 1, 1 );
+     %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
+     %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
+     %player.weaponCount++;
+	 }
+     else
+	 {
+     %player.setInventory( PaintballMarkerBlue, 1, 1 );
+     %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
+     %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
+     %player.weaponCount++;
+	 }
+	 //use slot 0 since this is our first weapon
+	 %player.use( %player.weaponSlot[0] );
+	 
+	 case "DefaultSoldier": 
+	 //check if soldier did not equip a primary weapon and give Lurker Rifle as a default then
+	 if ( %player.weaponSlot[1] $= "" )
+	 {
+     %player.setInventory( Lurker, 1, 1 );
+     %player.setInventory( LurkerClip, %player.maxInventory(LurkerClip), 1 );
+     %player.setInventory( LurkerAmmo, %player.maxInventory(LurkerAmmo), 1 );
+     %player.weaponCount++;
+	 }
+	 //use slot 1 for the DefaultSoldier, since his main weapon is on slot 1 instead of 0, since he has a pistol also
+	 %player.use( %player.weaponSlot[1] );
+	 
+	 default: %player.use( %player.weaponSlot[0] ); //all others start with weapon slot 0 as default
    }
    
    // Update the camera to start with the player.
