@@ -835,27 +835,29 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    {
 	  switch$ (%game.playerType)
 	  {
-	  case "DefaultSoldier":
+	   case "DefaultSoldier":
 	     %player = new Player() {
-         dataBlock = DefaultSoldier;
-         client = %client;
-         team = %client.team;
-         isBot = false;
+           dataBlock = DefaultSoldier;
+           client = %client;
+           team = %client.team;
+           isBot = false;
          };
-	  case "Paintball":
+		 
+	   case "Paintball":
 		 %player = new Player() {
-         dataBlock = PaintballPlayerData;
-         client = %client;
-         team = %client.team;
-         isBot = false;
+           dataBlock = PaintballPlayerData;
+           client = %client;
+           team = %client.team;
+           isBot = false;
          };
-	  default:
+		 
+	   default:
 		 %player = new Player() {
-         dataBlock = $NameToData[%client.loadout[0]];
-         client = %client;
-         team = %client.team;
-         isBot = false;
-        };
+           dataBlock = $NameToData[%client.loadout[0]];
+           client = %client;
+           team = %client.team;
+           isBot = false;
+         };
 	  }
    }
    MissionCleanup.add(%player);
@@ -914,13 +916,13 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
      case "Paintball": 
 	 //loadout a red marker by default for red team and for blue team and deathmatch a blue marker as default
 	 if ( %player.weaponSlot[0] $= "" && %client.team == 2 )
-	 {
+     {
      %player.setInventory( PaintballMarkerRed, 1, 1 );
      %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
      %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
      %player.weaponCount++;
 	 }
-     else
+     else if ( %player.weaponSlot[0] $= "" )
 	 {
      %player.setInventory( PaintballMarkerBlue, 1, 1 );
      %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
