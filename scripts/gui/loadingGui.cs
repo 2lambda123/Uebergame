@@ -107,7 +107,7 @@ function handleLoadInfoMessage(%msgType, %msgString, %misFile, %mapName, %typeNa
    // This should probably be moved into an engine function
    if (isFile(%image @ ".png") ||
        isFile(%image @ ".jpg") ||
-       isFile(%image @ ".bmp"))
+       isFile(%image @ ".dds"))
    {
       LOAD_MapPic.setBitmap( %image );
    }

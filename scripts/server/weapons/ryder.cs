@@ -272,7 +272,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 1.0;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = RyderSwitchinSound;
+   //stateSound[1]                    = RyderSwitchinSound;
 
    // Ready to fire, just waiting for the trigger
    stateName[2]                     = "Ready";

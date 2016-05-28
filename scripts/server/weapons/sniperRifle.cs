@@ -272,7 +272,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = SniperSwitchinSound;
+   //stateSound[1]                    = SniperSwitchinSound;
 
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";

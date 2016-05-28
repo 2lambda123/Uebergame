@@ -34,8 +34,10 @@ singleton Material(Mat_camo_net_02)
    showFootprints = "0";
    footstepSoundId = "0";
    impactSoundId = "1";
-   alphaTest = "1";
+   alphaTest = "0";
    alphaRef = "144";
    normalMap[0] = "art/textures/camo/camo_net_02_N.dds";
    specularMap[0] = "art/textures/camo/camo_net_02_D.dds";
+   translucent = "1";
+   doubleSided = "1";
 };

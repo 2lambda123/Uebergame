@@ -321,7 +321,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = GLSwitchinSound;
+   //stateSound[1]                    = GLSwitchinSound;
 
    // Ready to fire, just waiting for the trigger
    stateName[2]                     = "Ready";

@@ -885,7 +885,7 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    maxFreelookAngle = 3.0;
 
    mass = "100";
-   drag = "1.3";
+   drag = "1";
    maxdrag = 0.4;
    density = "1.1";
    maxDamage = 100;

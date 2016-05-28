@@ -209,8 +209,8 @@ datablock ProjectileData( PaintballProjectileBlue )
    explosion           = PaintExplosionBlue;
    decal               = bluePaintSplatterDecal;
 
-   muzzleVelocity      = 33;
-   velInheritFactor    = 0.25;
+   muzzleVelocity      = 40;
+   velInheritFactor    = 0;
 
    armingDelay         = 0;
    lifetime            = 12000;
@@ -218,7 +218,7 @@ datablock ProjectileData( PaintballProjectileBlue )
    bounceElasticity    = 0;
    bounceFriction      = 0;
    isBallistic         = true;
-   gravityMod          = 0.66;
+   gravityMod          = 0.8;
 };
 
 function PaintballProjectileBlue::onCollision(%this,%obj,%col,%fade,%pos,%normal)
@@ -343,7 +343,7 @@ datablock ShapeBaseImageData(PaintballMarkerBlueWeaponImage)
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = LurkerSwitchinSound;
+   //stateSound[1]                    = LurkerSwitchinSound;
 
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";
@@ -437,7 +437,7 @@ datablock ShapeBaseImageData(PaintballMarkerBlueWeaponImage)
    stateName[10]                     = "ReloadClip";
    stateTransitionOnTimeout[10]      = "ReloadFinish";
    stateWaitForTimeout[10]           = true;
-   stateTimeoutValue[10]             = 3.0;
+   stateTimeoutValue[10]             = 2.5;
    stateReload[10]                   = true;
    stateSequence[10]                 = "reload";
    stateShapeSequence[10]            = "Reload";
@@ -473,7 +473,7 @@ datablock ShapeBaseImageData(PaintballMarkerBlueWeaponImage)
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.3;
+   stateTimeoutValue[13]            = 0.1;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
@@ -497,7 +497,7 @@ datablock ShapeBaseImageData( PaintballMarkerBlueIronSightImage : PaintballMarke
    projectileSpread = "0.005";
    parentImage = "PaintballMarkerBlueWeaponImage";
 
-   stateTimeoutValue[1]             = 0.25;
+   stateTimeoutValue[1]             = 0.5;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]                 = "idle";
    stateSound[1]                    = "";

@@ -70,9 +70,9 @@ new TerrainMaterial()
    diffuseMap = "art/terrains/gravel/ter_gravel_sparse_01_B";
    diffuseSize = "400";
    detailMap = "art/terrains/gravel/ter_gravel_sparse_01_D";
-   macroSize = "100";
+   macroSize = "40";
    internalName = "ter_gravel_sparse_01";
-   macroStrength = "1";
+   macroStrength = "1.2";
    detailStrength = "1";
    detailDistance = "100";
    macroMap = "art/terrains/gravel/ter_gravel_sparse_01_M";

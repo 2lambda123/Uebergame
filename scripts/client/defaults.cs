@@ -305,7 +305,7 @@ new SimGroup( MeshQualityGroup )
       key["$pref::TS::detailAdjust"] = 0.5;
       key["$pref::TS::skipRenderDLs"] = 0;
 	  key["$pref::TS::smallestVisiblePixelSize"] = 10;	  
-      key["$pref::Terrain::lodScale"] = 2.0;
+      key["$pref::Terrain::lodScale"] = 4.0;
       key["$pref::decalMgr::enabled"] = false;
       key["$pref::GroundCover::densityScale"] = 0.5;
    };
@@ -318,7 +318,7 @@ new SimGroup( MeshQualityGroup )
       key["$pref::TS::detailAdjust"] = 0.75;
       key["$pref::TS::skipRenderDLs"] = 0;
 	  key["$pref::TS::smallestVisiblePixelSize"] = 8;	  
-      key["$pref::Terrain::lodScale"] = 1.5;
+      key["$pref::Terrain::lodScale"] = 3.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 0.75;
    };
@@ -331,7 +331,7 @@ new SimGroup( MeshQualityGroup )
       key["$pref::TS::detailAdjust"] = 1.0;
       key["$pref::TS::skipRenderDLs"] = 0;  
 	  key["$pref::TS::smallestVisiblePixelSize"] = 4;		  
-      key["$pref::Terrain::lodScale"] = 1.0;
+      key["$pref::Terrain::lodScale"] = 2.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 1.0;
    };
@@ -344,7 +344,7 @@ new SimGroup( MeshQualityGroup )
       key["$pref::TS::detailAdjust"] = 1.5;
       key["$pref::TS::skipRenderDLs"] = 0; 
 	  key["$pref::TS::smallestVisiblePixelSize"] = 2;		  
-      key["$pref::Terrain::lodScale"] = 0.75;
+      key["$pref::Terrain::lodScale"] = 1.5;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 1.5;
    };   
@@ -357,7 +357,7 @@ new SimGroup( MeshQualityGroup )
       key["$pref::TS::detailAdjust"] = 2.0;
       key["$pref::TS::skipRenderDLs"] = 0; 
 	  key["$pref::TS::smallestVisiblePixelSize"] = 1;		  
-      key["$pref::Terrain::lodScale"] = 0.5;
+      key["$pref::Terrain::lodScale"] = 1.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 2.0;
    };   

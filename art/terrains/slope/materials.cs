@@ -39,7 +39,7 @@ singleton Material(TerrainFX_ter_slope_rubble_01_side)
 
 new TerrainMaterial()
 {
-   diffuseMap = "art/terrains/slope/ter_slope_rubble_01_B_side";
+   diffuseMap = "art/terrains/slope/ter_slope_rubble_01_B";
    diffuseSize = "200";
    detailMap = "art/terrains/slope/ter_slope_rubble_01_D";
    detailSize = "5";

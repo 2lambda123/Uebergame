@@ -216,7 +216,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTimeoutValue[1]             = 0.5;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = ShotgunSwitchinSound;
+   //stateSound[1]                    = ShotgunSwitchinSound;
 
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";
@@ -257,6 +257,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionGeneric0In[5]     = "SprintEnter";
    stateTransitionOnTimeout[5]      = "WaitForRelease";
    stateTimeoutValue[5]             = 0.20;
+   stateWaitForTimeout[5]           = true;
    stateFire[5]                     = true;
    stateRecoil[5]                   = "light_recoil";
    stateAllowImageChange[5]         = false;
@@ -388,7 +389,7 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    stateTimeoutValue[1]             = 0.5;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
-   stateSound[1]        = "";
+   stateSound[1]                    = "";
    stateTransitionOnTimeout[1]      = "Ready";
    stateAllowImageChange[1]         = false; 
 };

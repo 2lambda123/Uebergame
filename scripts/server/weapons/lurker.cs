@@ -337,7 +337,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
    stateSequence[1]                 = "switch_in";
-   stateSound[1]                    = LurkerSwitchinSound;
+   //stateSound[1]                    = LurkerSwitchinSound;
 
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";

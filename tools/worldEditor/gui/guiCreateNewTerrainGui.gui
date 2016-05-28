@@ -309,11 +309,12 @@ function CreateNewTerrainGui::onWake( %this )
    
    %rezList = %this-->theRezList;
    %rezList.clear();
+   %rezList.add( "128", 128 );
    %rezList.add( "256", 256 );
    %rezList.add( "512", 512 );
    %rezList.add( "1024", 1024 );
    %rezList.add( "2048", 2048 );
-   //%rezList.add( "4096", 4096 );
+   %rezList.add( "4096", 4096 );
    %rezList.setSelected( 256 );
    
    %this-->flatRadio.setStateOn( true );
