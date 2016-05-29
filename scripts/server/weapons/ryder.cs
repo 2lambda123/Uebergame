@@ -133,7 +133,7 @@ datablock ProjectileData( RyderProjectile )
 	
    explosion           = BulletExplosion;
    waterExplosion      = BulletWaterExplosion;
-   playerExplosion     = BloodSpillEmitter;
+   playerExplosion     = PlayerBloodExplosion;
    decal               = BulletHoleDecal;
 
    //particleEmitter     = "BulletTrailEmitter";

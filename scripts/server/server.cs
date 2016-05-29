@@ -218,6 +218,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./explosions/bulletExplosion.cs");
    exec("./explosions/grenadeExplosion.cs");
    exec("./explosions/mineExplosion.cs");
+   exec("./explosions/playerExplosion.cs");
 
    exec("./markers.cs");
    exec("./triggers.cs");

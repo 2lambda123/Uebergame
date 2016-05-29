@@ -92,14 +92,16 @@ datablock SFXProfile(PainCrySound2)
 
 datablock SFXPlayList(PainCrySoundList)
 {
-   // Use a looped description so the list playback will loop.
-   description = AudioClosest3D;
-
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
    track[ 0 ] = PainCrySound0;
    track[ 1 ] = PainCrySound1;
    track[ 2 ] = PainCrySound2;
 };
 */
+
 //----------------------------------------------------------------------------
 
 datablock SFXProfile(FootLightSoftSound)
@@ -662,175 +664,6 @@ datablock DebrisData( PlayerDebris )
    ignoreWater = false;
 };
 
-datablock ParticleData(PlayerSkullsParticle)
-{
-   textureName = "art/particles/skull01.png";
-   dragCoefficient = 0.4;
-   gravityCoefficient = -0.5;
-   inheritedVelFactor = 1;
-   constantAcceleration = 0;
-   lifetimeMS = 1000;
-   lifetimeVarianceMS = 150;
-
-   colors[0] = "0.56 0.36 0.26 1.0";
-   colors[1] = "0.56 0.36 0.26 1.0";
-   colors[2] = "1.0 0.36 0.26 0.0";
-
-   sizes[0] = 0.5;
-   sizes[1] = 1.0;
-   sizes[2] = 1.5;
-
-   times[0] = 0.0;
-   times[1] = 0.5;
-   times[2] = 1.0;
-};
-
-datablock ParticleEmitterData(PlayerSkullsEmitter)
-{
-   ejectionOffset = 1;
-   ejectionPeriodMS = 100;
-   periodVarianceMS = 25;
-   ejectionVelocity = 2;
-   velocityVariance = 0.25;
-   thetaMax = 180;
-   phiReferenceVel = 0;
-   phiVariance = 360;
-   lifetimeMS = 250;
-   particles = "PlayerSkullsParticle";
-   blendStyle = "NORMAL";
-};
-
-datablock ParticleData(PlayerBloodParticle)
-{
-   textureName        = "art/particles/millsplash01.png";
-   dragCoeffiecient   = 105;
-   gravityCoefficient = "0";
-   inheritedVelFactor = "0.0234834";
-
-   constantAcceleration = -0.80;
-   
-   lifetimeMS         = "1000";
-   lifetimeVarianceMS = 0;
-
-   useInvAlpha   = true;
-   spinRandomMin = "-1";
-   spinRandomMax =  "0";
-
-   colors[0] = "1 0 0 0.496063";
-   colors[1] = "0.5 0 0 0.5";
-   colors[2] = "0.2 0 0 0.25";
-
-   sizes[0] = 1.0;
-   sizes[1] = "2";
-   sizes[2] = "3";
-
-   times[0] = 0.0;
-   times[1] = 0.2;
-   times[2] = 1.0;
-   spinSpeed = "0";
-   animTexName = "art/particles/millsplash01.png";
-   colors[3] = "0.15 0 0 0.5";
-};
-
-datablock ParticleEmitterData(PlayerBloodEmitter)
-{
-   ejectionPeriodMS = "6";
-   periodVarianceMS = 0;
-   ejectionVelocity = "4";
-   velocityVariance = 0.25;
-   thetaMin         = 0.0;
-   thetaMax         = 180.0;
-   lifetimeMS       = 250;
-   particles        = "PlayerBloodParticle";
-   blendStyle = "NORMAL";
-};
-
-datablock ExplosionData(PlayerExplosion)
-{
-   //soundProfile = GrenadeExplosionSound;
-   lifeTimeMS = 500; // Quick flash, short burn, and moderate dispersal
-
-   // Volume particles
-   particleEmitter = PlayerBloodEmitter;
-   particleDensity = 75;
-   particleRadius = 2.25;
-
-   // Point emission
-   emitter[0] = PlayerSkullsEmitter;
-   emitter[1] = PlayerSkullsEmitter;
-
-   shakeCamera = false;
-
-   // Dynamic light
-   lightStartRadius = 10;
-   lightEndRadius = 5;
-   lightStartColor = "0.5 0.0 1.0";
-   lightEndColor = "0.5 0.5 0.5";
-   lightStartBrightness = 5.0;
-   lightEndBrightness = 0.0;
-   lightNormalOffset = 2.0;
-};
-
-//----------------------------------------------------------------------------
-// Damage Impact
-
-datablock ParticleData(BloodSpillParticle)
-{
-   textureName = "art/particles/blood_droplets.png";
-   animTexName[0] = "art/particles/blood_droplets.png";
-
-   dragCoefficient = 1;
-   gravityCoefficient = 0.5;
-   windCoefficient = 1;
-   inheritedVelFactor = 0.5;
-   constantAcceleration = 0;
-   lifetimeMS = 1000;
-   lifetimeVarianceMS = 250;
-   spinRandomMin = -30.0;
-   spinRandomMax = 30.0;
-
-   colors[0] = "0.2 0 0 1";
-   colors[1] = "0.3 0.09 0.09 1";
-
-   sizes[0] = 0.5;
-   sizes[1] = 1.4;
-   sizes[1] = 0;
-   sizes[1] = 0;
-
-   times[0] = 0;
-   times[1] = 1.0;
-   times[2] = 1.0;
-   times[3] = 1.0;
-};
-
-datablock ParticleEmitterData(BloodSpillEmitter)
-{
-   ejectionOffset = 0;
-   ejectionPeriodMS = 5;
-   periodVarianceMS = 2;
-
-   ejectionVelocity = 3;
-   velocityVariance = 1;
-
-   thetaMin = 0.0;
-   thetaMax = 22;
-
-   phiReferenceVel = 0;
-   phiVariance = 90;
-
-   overrideAdvance = 0;
-   orientOnVelocity = 1;
-
-   lifetimeMS = 100;
-   particles = "BloodSpillParticle";
-   softnessDistance = "10";
-   orientParticles = "0";
-   blendStyle = "ADDITIVE";
-   alignParticles = "1";
-   alignDirection = "1 0 0";
-   softParticles = "1";
-};
-
 //----------------------------------------------------------------------------
 
 datablock DecalData(PlayerFootprint)
@@ -1043,7 +876,7 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
 
    observeParameters = "0.5 4.5 4.5";
 
-   pickupRadius = 1;
+   pickupRadius = 1.2;
 
    // Allowable Inventory Items
 
@@ -1485,7 +1318,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
             }
         }
    }
-      
+   /*
    %particles = new ParticleEmitterNode()   
 {
       position = %position;  
@@ -1497,6 +1330,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
    };  
    MissionCleanup.add(%particles);  
    %particles.schedule(1000, "delete");
+   */
 }
 
 //----------------------------------------------------------------------------

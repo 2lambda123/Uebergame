@@ -952,6 +952,7 @@ moveMap.bind( mouse, zaxis, cycleWeaponAxis );
 moveMap.bind( keyboard, "+", nextWeapon );
 moveMap.bind( keyboard, "minus", prevWeapon );
 moveMap.bind( keyboard, "1", useFirstWeaponSlot );
+//moveMap.bindCmd(keyboard, "1", "commandToServer('selectWeaponSlot', 0);", ""); //alternative method
 moveMap.bind( keyboard, "2", useSecondWeaponSlot );
 moveMap.bind( keyboard, "3", useThirdWeaponSlot );
 moveMap.bind( keyboard, "4", useFourthWeaponSlot );
