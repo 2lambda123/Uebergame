@@ -10,6 +10,7 @@ art/sound:
 
 art/sound/environment/night/night_crickets_01.ogg  -icuttv  https://www.freesound.org/people/icuttv/sounds/181362/  -edited by Duion
 art/sound/environment/wind/wind_basic_01.ogg  -klangfabrik  https://www.freesound.org/people/klangfabrik/sounds/26714/  -edited by Duion
+art/sound/environment/wind/wind_medium_01.ogg  -worthahep88  https://www.freesound.org/people/worthahep88/sounds/319211/ -edited by Duion
 art/sound/impact_concrete_01.ogg -Yoyodaman234 https://www.freesound.org/people/Yoyodaman234/sounds/166508/ -edited by Duion
 art/sound/environment/wind/wind_storm_01.ogg  -asbestos bill  https://www.freesound.org/people/asbestos%20bill/sounds/181287/ -edited by Duion
 art/sound/environment/forest/wind_forest_01.ogg -MrAuralization https://www.freesound.org/people/MrAuralization/sounds/243617/
@@ -19,7 +20,8 @@ art/sound/weapons/paintball/paintball_impact_1.wav -rombart https://www.freesoun
 art/sound/weapons/paintball/paintball_impact_2.wav remix of 1 and 3 -by Duion
 art/sound/weapons/paintball/paintball_impact_3.wav -minian89 https://www.freesound.org/people/minian89/sounds/195955/ -edited by Duion
 art/sound/weapons/paintball/paintball_shot_1.wav -fabianofa https://www.freesound.org/people/fabianofa/sounds/98188/ -edited by Duion
-art/sounds/weapons/grenades/smokeGrenade.ogg -univ_lyon3 https://www.freesound.org/people/univ_lyon3/sounds/201848/ -edited by Duion
-art/sounds/weapons/dry_fire_01.wav -brianhanson2nd https://www.freesound.org/people/brianhanson2nd/sounds/171211/ -edited by Duion
+art/sound/weapons/grenades/smokeGrenade.ogg -univ_lyon3 https://www.freesound.org/people/univ_lyon3/sounds/201848/ -edited by Duion
+art/sound/weapons/dry_fire_01.wav -brianhanson2nd https://www.freesound.org/people/brianhanson2nd/sounds/171211/ -edited by Duion
+art/sound/player/hit/player_hit_08.wav - player_hit_11.wav -editor_adp https://www.freesound.org/people/editor_adp/sounds/269485/ -edited by Duion
 
 art/sound/deploy_error.wav -Isaac200000 https://www.freesound.org/people/Isaac200000/sounds/188013/
