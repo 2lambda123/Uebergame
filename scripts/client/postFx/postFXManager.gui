@@ -82,7 +82,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "1";
+         selectedPage = "5";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -127,6 +127,7 @@
             tooltip = "Options for the Screen Space Ambient Occlusion postFX";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -197,6 +198,7 @@
                   tooltip = "Contains general overall settings for the SSAO postFX";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -277,7 +279,7 @@
                      sbUsesNAColor = "0";
                      reverseTextList = "0";
                      bitmapBounds = "16 16";
-                     text = "Low";
+                     text = "High";
                      maxLength = "1024";
                      margin = "0 0 0 0";
                      padding = "0 0 0 0";
@@ -326,7 +328,7 @@
                      range = "0 50";
                      ticks = "1000";
                      snap = "0";
-                     value = "2";
+                     value = "8.20895";
                      position = "120 56";
                      extent = "211 17";
                      minExtent = "8 2";
@@ -345,7 +347,7 @@
                      range = "0 0.3";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.001";
+                     value = "0.3";
                      position = "120 86";
                      extent = "211 17";
                      minExtent = "8 2";
@@ -364,7 +366,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.95";
+                     value = "0.445545";
                      position = "119 113";
                      extent = "212 17";
                      minExtent = "8 2";
@@ -403,6 +405,7 @@
                   tooltip = "Contains settings for the near range ambient occlusion aspect of the SSAO postFX";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -410,7 +413,7 @@
                      range = "0.001 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.1";
+                     value = "0.166844";
                      position = "122 17";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -429,7 +432,7 @@
                      range = "0 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.1";
+                     value = "0.829384";
                      position = "122 62";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -448,7 +451,7 @@
                      range = "0 20";
                      ticks = "1000";
                      snap = "0";
-                     value = "6";
+                     value = "2.18009";
                      position = "122 39";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -563,7 +566,7 @@
                      range = "0 50";
                      ticks = "1000";
                      snap = "0";
-                     value = "1";
+                     value = "13.0332";
                      position = "122 86";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -601,7 +604,7 @@
                      range = "0 2";
                      ticks = "1000";
                      snap = "0";
-                     value = "1";
+                     value = "1.01149";
                      position = "246 133";
                      extent = "97 17";
                      minExtent = "8 2";
@@ -717,7 +720,7 @@
                      range = "0.001 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "1";
+                     value = "0.522223";
                      position = "122 17";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -760,7 +763,7 @@
                      range = "0 20";
                      ticks = "1000";
                      snap = "0";
-                     value = "10";
+                     value = "5.87678";
                      position = "122 39";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -803,7 +806,7 @@
                      range = "0 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.2";
+                     value = "0.450237";
                      position = "122 62";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -846,7 +849,7 @@
                      range = "0 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "2";
+                     value = "2.01422";
                      position = "122 86";
                      extent = "221 17";
                      minExtent = "8 2";
@@ -948,7 +951,6 @@
                };
             };
             new GuiCheckBoxCtrl(ppOptionsEnableSSAO) {
-               useInactiveState = "0";
                text = "Enable";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -986,12 +988,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             tooltip = "Options for the High Definition Range Lighting postFX";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1017,7 +1020,7 @@
                tabHeight = "20";
                allowReorder = "0";
                defaultPage = "-1";
-               selectedPage = "0";
+               selectedPage = "2";
                frontTabPadding = "0";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1056,12 +1059,13 @@
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "GuiTabPageProfile";
-                  visible = "1";
+                  visible = "0";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   tooltip = "Contains settings related to the brightness of the HDR postFX";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -1069,7 +1073,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0";
+                     value = "0.107143";
                      position = "132 77";
                      extent = "206 17";
                      minExtent = "8 2";
@@ -1089,7 +1093,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.0459184";
+                     value = "0.571429";
                      position = "132 50";
                      extent = "206 17";
                      minExtent = "8 2";
@@ -1181,7 +1185,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.52551";
+                     value = "0.892857";
                      position = "132 104";
                      extent = "206 17";
                      minExtent = "8 2";
@@ -1201,7 +1205,7 @@
                      range = "0.1 10";
                      ticks = "1000";
                      snap = "0";
-                     value = "2";
+                     value = "1.31846";
                      position = "132 132";
                      extent = "205 17";
                      minExtent = "8 2";
@@ -1268,7 +1272,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.265306";
+                     value = "0.44898";
                      position = "132 24";
                      extent = "206 17";
                      minExtent = "8 2";
@@ -1308,6 +1312,7 @@
                   tooltip = "Contains settings related to the blooming aspect of the HDR postFX";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
@@ -1315,7 +1320,7 @@
                      range = "0 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.502645";
+                     value = "0.185185";
                      position = "132 70";
                      extent = "199 17";
                      minExtent = "8 2";
@@ -1335,7 +1340,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.510526";
+                     value = "0.394737";
                      position = "132 97";
                      extent = "200 17";
                      minExtent = "8 2";
@@ -1355,7 +1360,7 @@
                      range = "0 3";
                      ticks = "1000";
                      snap = "0";
-                     value = "1.4127";
+                     value = "1.20635";
                      position = "132 123";
                      extent = "199 17";
                      minExtent = "8 2";
@@ -1469,7 +1474,7 @@
                      range = "0 5";
                      ticks = "1000";
                      snap = "0";
-                     value = "1.60526";
+                     value = "0.394737";
                      position = "132 43";
                      extent = "200 17";
                      minExtent = "8 2";
@@ -1486,7 +1491,6 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiCheckBoxCtrl(ppOptionsHDRBloom) {
-                     useInactiveState = "0";
                      text = " Enable Bloom";
                      groupNum = "-1";
                      buttonType = "ToggleButton";
@@ -1524,7 +1528,7 @@
                   horizSizing = "right";
                   vertSizing = "bottom";
                   profile = "GuiTabPageProfile";
-                  visible = "0";
+                  visible = "1";
                   active = "1";
                   tooltipProfile = "GuiToolTipProfile";
                   tooltip = "Contains settings related to the effects the HDR postFX can offer";
@@ -1534,7 +1538,6 @@
                   canSaveDynamicFields = "0";
 
                   new GuiCheckBoxCtrl(ppOptionsHDREffectsBlueShift) {
-                     useInactiveState = "0";
                      text = " Enable Color Shift";
                      groupNum = "-1";
                      buttonType = "ToggleButton";
@@ -1601,7 +1604,6 @@
                };
             };
             new GuiCheckBoxCtrl(ppOptionsHDRToneMapping) {
-               useInactiveState = "0";
                text = " Enable Tone Mapping";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -1618,11 +1620,11 @@
                tooltip = "Enables or disabled tone mapping on the HDR. The tone mapping balanced the brightness levels during the HDR process. Recommended";
                hovertime = "1000";
                isContainer = "0";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
             new GuiCheckBoxCtrl(ppOptionsEnableHDR) {
-               useInactiveState = "0";
                text = "Enable";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -1643,7 +1645,6 @@
                canSaveDynamicFields = "0";
             };
             new GuiCheckBoxCtrl(ppOptionsEnableHDRDebug) {
-               useInactiveState = "0";
                text = "Debug";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -1686,10 +1687,11 @@
             tooltip = "Options for the Light Rays postFX";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
-           new GuiSliderCtrl(ppOptionsLightRaysBrightScalar) {
+            new GuiSliderCtrl(ppOptionsLightRaysBrightScalar) {
                range = "0 5";
                ticks = "1000";
                snap = "0";
@@ -1707,7 +1709,7 @@
                isContainer = "0";
                canSave = "1";
                canSaveDynamicFields = "0";
-            };			
+            };
             new GuiTextCtrl(ppOptionsLightRaysBrightnessScalarLabel) {
                text = "Brightness";
                maxLength = "1024";
@@ -1732,8 +1734,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-		    new GuiSliderCtrl(ppOptionsLightRaysSampleScalar) {
+            new GuiSliderCtrl(ppOptionsLightRaysSampleScalar) {
                range = "20 512";
                ticks = "512";
                snap = "0";
@@ -1752,8 +1753,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			new GuiTextCtrl(ppOptionsLightRaysSampleScalarLabel) {
+            new GuiTextCtrl(ppOptionsLightRaysSampleScalarLabel) {
                text = "Samples";
                maxLength = "512";
                margin = "0 0 0 0";
@@ -1777,8 +1777,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			new GuiSliderCtrl(ppOptionsLightRaysDensityScalar) {
+            new GuiSliderCtrl(ppOptionsLightRaysDensityScalar) {
                range = "0.01 1";
                ticks = "1000";
                snap = "0";
@@ -1797,8 +1796,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			new GuiTextCtrl(ppOptionsLightRaysDensityScalarLabel) {
+            new GuiTextCtrl(ppOptionsLightRaysDensityScalarLabel) {
                text = "Density";
                maxLength = "1000";
                margin = "0 0 0 0";
@@ -1822,8 +1820,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			new GuiSliderCtrl(ppOptionsLightRaysWeightScalar) {
+            new GuiSliderCtrl(ppOptionsLightRaysWeightScalar) {
                range = "0.1 10";
                ticks = "1000";
                snap = "0";
@@ -1842,8 +1839,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			new GuiTextCtrl(ppOptionsLightRaysWeightScalarLabel) {
+            new GuiTextCtrl(ppOptionsLightRaysWeightScalarLabel) {
                text = "Weight";
                maxLength = "1000";
                margin = "0 0 0 0";
@@ -1867,13 +1863,11 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			
-			new GuiSliderCtrl(ppOptionsLightRaysDecayScalar) {
+            new GuiSliderCtrl(ppOptionsLightRaysDecayScalar) {
                range = "0.01 1";
                ticks = "1000";
                snap = "0";
-               value = "1.0";
+               value = "1";
                position = "96 165";
                extent = "264 17";
                minExtent = "8 2";
@@ -1888,8 +1882,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			
-			new GuiTextCtrl(ppOptionsLightRaysDecayScalarLabel) {
+            new GuiTextCtrl(ppOptionsLightRaysDecayScalarLabel) {
                text = "Decay";
                maxLength = "1000";
                margin = "0 0 0 0";
@@ -1914,7 +1907,6 @@
                canSaveDynamicFields = "0";
             };
             new GuiCheckBoxCtrl(ppOptionsEnableLightRays) {
-               useInactiveState = "0";
                text = "Enable";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -1958,6 +1950,7 @@
             tooltip = "Options for the Depth Of Field postFX";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -2028,31 +2021,11 @@
                   tooltip = "Contains general settings related to the DOF system";
                   hovertime = "1000";
                   isContainer = "1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
-                  //new GuiCheckBoxCtrl(ppOptionsDOFEnableDOF) {
-                     //useInactiveState = "0";
-                     //text = "Enable DOF";
-                     //groupNum = "-1";
-                     //buttonType = "ToggleButton";
-                     //useMouseEvents = "0";
-                     //position = "31 43";
-                     //extent = "140 30";
-                     //minExtent = "8 2";
-                     //horizSizing = "right";
-                     //vertSizing = "bottom";
-                     //profile = "GuiCheckBoxProfile";
-                     //visible = "1";
-                     //active = "1";
-                     //tooltipProfile = "GuiToolTipProfile";
-                     //hovertime = "1000";
-                     //isContainer = "0";
-                     //canSave = "1";
-                     //canSaveDynamicFields = "0";
-                  //};
                   new GuiCheckBoxCtrl(ppOptionsDOFEnableAutoFocus) {
-                     useInactiveState = "0";
                      text = "Enable Auto Focus";
                      groupNum = "-1";
                      buttonType = "ToggleButton";
@@ -2126,7 +2099,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0";
+                     value = "0.102804";
                      position = "120 8";
                      extent = "224 17";
                      minExtent = "8 2";
@@ -2169,7 +2142,7 @@
                      range = "0 1";
                      ticks = "1000";
                      snap = "0";
-                     value = "0";
+                     value = "0.471963";
                      position = "120 34";
                      extent = "224 17";
                      minExtent = "8 2";
@@ -2209,10 +2182,10 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiSliderCtrl(ppOptionsDOFFocusRangeMinSlider) {
-                     range = "0.01 1e+003";
+                     range = "0.01 1000";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.01";
+                     value = "93.467";
                      position = "120 61";
                      extent = "224 17";
                      minExtent = "8 2";
@@ -2252,10 +2225,10 @@
                      canSaveDynamicFields = "0";
                   };
                   new GuiSliderCtrl(ppOptionsDOFFocusRangeMaxSlider) {
-                     range = "0.01 1e+003";
+                     range = "0.01 1000";
                      ticks = "1000";
                      snap = "0";
-                     value = "0.01";
+                     value = "191.597";
                      position = "119 87";
                      extent = "224 17";
                      minExtent = "8 2";
@@ -2298,7 +2271,7 @@
                      range = "0 50";
                      ticks = "1000";
                      snap = "0";
-                     value = "0";
+                     value = "16.0465";
                      position = "119 114";
                      extent = "225 17";
                      minExtent = "8 2";
@@ -2341,7 +2314,7 @@
                      range = "0 50";
                      ticks = "1000";
                      snap = "0";
-                     value = "0";
+                     value = "7.71028";
                      position = "119 141";
                      extent = "224 17";
                      minExtent = "8 2";
@@ -2359,7 +2332,6 @@
                };
             };
             new GuiCheckBoxCtrl(ppOptionsEnableDOF) {
-               useInactiveState = "0";
                text = "Enable";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -2397,15 +2369,15 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             tooltip = "Options for the Vignette postFX";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
-            Enabled = "1";
 
             new GuiCheckBoxCtrl(ppOptionsEnableVignette) {
                text = "Enable";
@@ -2431,7 +2403,7 @@
                range = "0.001 5";
                ticks = "1000";
                snap = "0";
-               value = "0.6";
+               value = "2";
                position = "96 46";
                extent = "221 17";
                minExtent = "8 2";
@@ -2472,6 +2444,288 @@
                canSaveDynamicFields = "0";
             };
          };
+         new GuiTabPageCtrl(ppOptionsSunBokehTab) {
+            fitBook = "0";
+            text = "SunBokeh";
+            maxLength = "1024";
+            docking = "Client";
+            margin = "0 0 0 0";
+            padding = "0 0 0 0";
+            anchorTop = "1";
+            anchorBottom = "1";
+            anchorLeft = "1";
+            anchorRight = "1";
+            position = "0 20";
+            extent = "394 213";
+            minExtent = "8 2";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            profile = "GuiTabPageProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            tooltip = "Options for the SunBokeh postFX";
+            hovertime = "1000";
+            isContainer = "1";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+
+            new GuiCheckBoxCtrl(ppOptionsEnableSunBokeh) {
+               text = "Enable";
+               groupNum = "-1";
+               buttonType = "ToggleButton";
+               useMouseEvents = "0";
+               position = "329 7";
+               extent = "53 20";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiCheckBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Enable/Disable the SunBokeh postFX";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl(ppOptionsSunBokehSunAmountSlider) {
+               range = "0 3";
+               ticks = "1000";
+               snap = "0";
+               value = "0.35";
+               position = "20 26";
+               extent = "271 17";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl(ppOptionsSunBokehSunAmountLabel) {
+               text = "Amount of bokeh around the sun";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "18 8";
+               extent = "274 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Controls the maximum exposure of vignetting.";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl(ppOptionsSunBokehEdgeAmountSlider) {
+               range = "0 3";
+               ticks = "1000";
+               snap = "0";
+               value = "0.4";
+               position = "20 66";
+               extent = "271 17";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl(ppOptionsSunBokehEdgeAmountLabel) {
+               text = "Amount of bokeh around the edge";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "18 48";
+               extent = "274 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Controls the maximum exposure of vignetting.";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl(ppOptionsSunBokehHaloAmountSlider) {
+               range = "0 3";
+               ticks = "1000";
+               snap = "0";
+               value = "0.7";
+               position = "20 106";
+               extent = "271 17";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl(ppOptionsSunBokehHaloAmountLabel) {
+               text = "Amount of the glare/halo";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "18 88";
+               extent = "274 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Controls the maximum exposure of vignetting.";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl(ppOptionsSunBokehSunSizeSlider) {
+               range = "0 2";
+               ticks = "1000";
+               snap = "0";
+               value = "0.125";
+               position = "20 148";
+               extent = "271 17";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl(ppOptionsSunBokehSunSizeLabel) {
+               text = "Size of the sun mask";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "18 130";
+               extent = "274 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Controls the maximum exposure of vignetting.";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl(ppOptionsSunBokehBokehSizeSlider) {
+               range = "32 1920";
+               ticks = "1000";
+               snap = "0";
+               value = "550";
+               position = "20 187";
+               extent = "271 17";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl(ppOptionsSunBokehBokehSizeLabel) {
+               text = "How much the bokeh texture tiles";
+               maxLength = "1024";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "18 169";
+               extent = "274 18";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Controls the maximum exposure of vignetting.";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiCheckBoxCtrl(ppOptionsDebugSunBokeh) {
+               text = "Debug";
+               groupNum = "-1";
+               buttonType = "ToggleButton";
+               useMouseEvents = "0";
+               position = "331 65";
+               extent = "58 20";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiCheckBoxProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               tooltip = "Set this if you\'d like to see only the effect mask. Useful for tweaking.";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+         };
          new GuiTabPageCtrl() {
             fitBook = "0";
             text = "Color Correction";
@@ -2488,12 +2742,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "ColorCorrectionTab";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -2658,7 +2913,6 @@
          canSaveDynamicFields = "0";
       };
       new GuiCheckBoxCtrl(ppOptionsEnable) {
-         useInactiveState = "0";
          text = "Enable PostFX System";
          groupNum = "-1";
          buttonType = "ToggleButton";

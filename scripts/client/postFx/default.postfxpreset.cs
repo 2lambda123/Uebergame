@@ -21,6 +21,7 @@
 //-----------------------------------------------------------------------------
 
 $PostFXManager::Settings::EnableVignette = "0";
+$PostFXManager::Settings::EnableSunBokeh = "0";
 $PostFXManager::Settings::EnableDOF = "0";
 $PostFXManager::Settings::EnableSSAO = "0";
 $PostFXManager::Settings::EnableHDR = "0";

@@ -27,7 +27,7 @@ new SimGroup(MissionGroup) {
          levelName = "TG_DesertRuins_dawn";
          MissionTypes = "DM TDM PBDM PBTDM";
    };
-   new ScatterSky(Sky) {
+   new ScatterSky(Himmel) {
       skyBrightness = "30";
       sunSize = "0.5";
       colorizeAmount = "0";

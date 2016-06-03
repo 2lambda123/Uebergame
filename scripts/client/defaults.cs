@@ -130,6 +130,7 @@ $pref::LightManager::Enable::HDR = "0";
 $pref::LightManager::Enable::LightRay = "1";
 $pref::LightManager::Enable::SSAO = "0";
 $pref::LightManager::Enable::Vignette = "1";
+$pref::LightManager::Enable::SunBokeh = "1";
 $pref::LightManager::sgAtlasMaxDynamicLights = "64";
 $pref::LightManager::sgDynamicShadowDetailSize = "0";
 $pref::LightManager::sgDynamicShadowQuality = "0";

@@ -55,6 +55,11 @@ function PostFXManager::settingsSetEnabled(%this, %bEnablePostFX)
          VignettePostEffect.enable();
       else
          VignettePostEffect.disable();
+	 
+	  if ( $PostFXManager::PostFX::EnableSunBokeh )
+         $SunBokehPostFX.enable();
+      else
+         $SunBokehPostFX.disable();
      
       postVerbose("% - PostFX Manager - PostFX enabled");      
    }
@@ -67,6 +72,7 @@ function PostFXManager::settingsSetEnabled(%this, %bEnablePostFX)
       LightRayPostFX.disable();
       DOFPostEffect.disable();
 	  VignettePostEffect.disable();
+	  SunBokehPostFX.disable();
       
       postVerbose("% - PostFX Manager - PostFX disabled");
    }
@@ -106,6 +112,12 @@ function PostFXManager::settingsEffectSetEnabled(%this, %sName, %bEnable)
       %postEffect = VignettePostEffect;
       $PostFXManager::PostFX::EnableVignette = %bEnable;
       //$pref::PostFX::Vignette::Enabled = %bEnable;
+   }
+   else if(%sName $= "SunBokeh")
+   {
+      %postEffect = SunBokehPostFX;
+      $PostFXManager::PostFX::EnableSunBokeh = %bEnable;
+      //$pref::PostFX::SunBokeh::Enabled = %bEnable;
    }
    
    // Apply the change
@@ -210,14 +222,25 @@ function PostFXManager::settingsRefreshDOF(%this)
    
    ppOptionsDOFBlurCurveNearSlider.setValue($DOFPostFx::BlurCurveNear);
    ppOptionsDOFBlurCurveFarSlider.setValue($DOFPostFx::BlurCurveFar);
-
 }
 
 function PostFXManager::settingsRefreshVignette(%this)
 {
   //Apply the enabled flag 
    ppOptionsEnableVignette.setValue($PostFXManager::PostFX::EnableVignette);   
+}
 
+function PostFXManager::settingsRefreshSunBokeh(%this)
+{
+  //Apply the enabled flag 
+   ppOptionsEnableSunBokeh.setValue($PostFXManager::PostFX::EnableSunBokeh); 
+   ppOptionsDebugSunBokeh.setValue($SunBokehPostFX::debug);   
+   
+   ppOptionsSunBokehSunAmountSlider.setValue($SunBokehPostFX::sunAmount);
+   ppOptionsSunBokehEdgeAmountSlider.setValue($SunBokehPostFX::edgeAmount);
+   ppOptionsSunBokehHaloAmountSlider.setValue($SunBokehPostFX::haloAmount);
+   ppOptionsSunBokehSunSizeSlider.setValue($SunBokehPostFX::sunSize);
+   ppOptionsSunBokehBokehSizeSlider.setValue($SunBokehPostFX::bokehSize);
 }
 
 function PostFXManager::settingsRefreshAll(%this)
@@ -228,6 +251,7 @@ function PostFXManager::settingsRefreshAll(%this)
    $PostFXManager::PostFX::EnableLightRays   = LightRayPostFX.isEnabled();
    $PostFXManager::PostFX::EnableDOF         = DOFPostEffect.isEnabled();
    $PostFXManager::PostFX::EnableVignette    = VignettePostEffect.isEnabled();
+   $PostFXManager::PostFX::EnableSunBokeh    = SunBokehPostFX.isEnabled();
    
    //For all the postFX here, apply the active settings in the system
    //to the gui controls.
@@ -237,6 +261,7 @@ function PostFXManager::settingsRefreshAll(%this)
    %this.settingsRefreshLightrays();
    %this.settingsRefreshDOF();
    %this.settingsRefreshVignette();
+   %this.settingsRefreshSunBokeh();
    
    ppOptionsEnable.setValue($PostFXManager::PostFX::Enabled);
 
@@ -301,12 +326,20 @@ function PostFXManager::settingsApplyFromPreset(%this)
   
    //Vignette settings   
    $VignettePostEffect::VMax           = $PostFXManager::Settings::Vignette::VMax;
+   
+   //SunBokeh settings   
+   $SunBokehPostFX::sunAmount          = $PostFXManager::Settings::SunBokeh::sunAmount;
+   $SunBokehPostFX::edgeAmount         = $PostFXManager::Settings::SunBokeh::edgeAmount;
+   $SunBokehPostFX::haloAmount         = $PostFXManager::Settings::SunBokeh::haloAmount;
+   $SunBokehPostFX::sunSize            = $PostFXManager::Settings::SunBokeh::sunSize;
+   $SunBokehPostFX::bokehSize          = $PostFXManager::Settings::SunBokeh::bokehSize;
   
    if ( $PostFXManager::forceEnableFromPresets )
    {
       $PostFXManager::PostFX::Enabled           = $PostFXManager::Settings::EnablePostFX;
       $PostFXManager::PostFX::EnableDOF         = $pref::LightManager::Enable::DOF ? $PostFXManager::Settings::EnableDOF : false;
       $PostFXManager::PostFX::EnableVignette    = $pref::LightManager::Enable::Vignette ? $PostFXManager::Settings::EnableVignette : false;
+	  $PostFXManager::PostFX::EnableSunBokeh    = $pref::LightManager::Enable::SunBokeh ? $PostFXManager::Settings::EnableSunBokeh : false;
       $PostFXManager::PostFX::EnableLightRays   = $pref::LightManager::Enable::LightRay ? $PostFXManager::Settings::EnableLightRays : false;
       $PostFXManager::PostFX::EnableHDR         = $pref::LightManager::Enable::HDR ? $PostFXManager::Settings::EnableHDR : false;
       $PostFXManager::PostFX::EnableSSAO        = $pref::LightManager::Enable::SSAO ? $PostFXManager::Settings::EnableSSAO : false;
@@ -344,7 +377,6 @@ function PostFXManager::settingsApplySSAO(%this)
    $PostFXManager::Settings::SSAO::sStrength                = $SSAOPostFx::sStrength;
 
    postVerbose("% - PostFX Manager - Settings Saved - SSAO");    
-   
 }
 
 function PostFXManager::settingsApplyHDR(%this)
@@ -375,8 +407,7 @@ function PostFXManager::settingsApplyLightRays(%this)
    $PostFXManager::Settings::LightRays::weight              = $LightRayPostFX::weight;
    $PostFXManager::Settings::LightRays::decay               = $LightRayPostFX::decay;
    
-   postVerbose("% - PostFX Manager - Settings Saved - Light Rays");   
-   
+   postVerbose("% - PostFX Manager - Settings Saved - Light Rays");    
 }
 
 function PostFXManager::settingsApplyDOF(%this)
@@ -390,7 +421,6 @@ function PostFXManager::settingsApplyDOF(%this)
    $PostFXManager::Settings::DOF::BlurCurveFar              = $DOFPostFx::BlurCurveFar;
    
    postVerbose("% - PostFX Manager - Settings Saved - DOF");   
-   
 }
 
 function PostFXManager::settingsApplyVignette(%this)
@@ -398,7 +428,17 @@ function PostFXManager::settingsApplyVignette(%this)
    $PostFXManager::Settings::Vignette::VMax                 = $VignettePostEffect::VMax;
 
    postVerbose("% - PostFX Manager - Settings Saved - Vignette");   
-   
+}
+
+function PostFXManager::settingsApplySunBokeh(%this)
+{
+   $PostFXManager::Settings::SunBokeh::sunAmount            = $SunBokehPostFX::sunAmount;
+   $PostFXManager::Settings::SunBokeh::edgeAmount           = $SunBokehPostFX::edgeAmount;
+   $PostFXManager::Settings::SunBokeh::haloAmount           = $SunBokehPostFX::haloAmount;
+   $PostFXManager::Settings::SunBokeh::sunSize              = $SunBokehPostFX::sunSize;
+   $PostFXManager::Settings::SunBokeh::bokehSize            = $SunBokehPostFX::bokehSize;
+
+   postVerbose("% - PostFX Manager - Settings Saved - SunBokeh");   
 }
 
 function PostFXManager::settingsApplyAll(%this, %sFrom)
@@ -407,9 +447,10 @@ function PostFXManager::settingsApplyAll(%this, %sFrom)
    $PostFXManager::Settings::EnablePostFX        = $PostFXManager::PostFX::Enabled;  
    $PostFXManager::Settings::EnableDOF           = $PostFXManager::PostFX::EnableDOF;
    $PostFXManager::Settings::EnableVignette      = $PostFXManager::PostFX::EnableVignette;
+   $PostFXManager::Settings::EnableSunBokeh      = $PostFXManager::PostFX::EnableSunBokeh;
    $PostFXManager::Settings::EnableLightRays     = $PostFXManager::PostFX::EnableLightRays;
    $PostFXManager::Settings::EnableHDR           = $PostFXManager::PostFX::EnableHDR;
-   $PostFXManager::Settings::EnableSSAO         = $PostFXManager::PostFX::EnableSSAO;
+   $PostFXManager::Settings::EnableSSAO          = $PostFXManager::PostFX::EnableSSAO;
       
    // Apply settings should save the values in the system to the 
    // the preset structure ($PostFXManager::Settings::*)
@@ -424,6 +465,8 @@ function PostFXManager::settingsApplyAll(%this, %sFrom)
    %this.settingsApplyDOF();
    // Vignette
    %this.settingsApplyVignette();
+   // SunBokeh
+   %this.settingsApplySunBokeh();
    
    postVerbose("% - PostFX Manager - All Settings applied to $PostFXManager::Settings");
 }

@@ -44,6 +44,7 @@ new SimGroup(MissionGroup) {
       moonElevation = "45";
       castShadows = "1";
       brightness = "1";
+	  flareType = "NullLightFlare";
       flareScale = "1";
       nightColor = "0.0313726 0.0470588 0.0784314 1";
       nightFogColor = "0.14902 0.211765 0.345098 1";

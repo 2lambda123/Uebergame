@@ -194,6 +194,7 @@ function OptionsDlg::onWake(%this)
 
    %this-->Tgl_7.setStateOn( $pref::Decals::enabled );
    
+   %this-->Tgl_9.setStateOn( $pref::LightManager::Enable::sunBokeh );
    %this-->Tgl_10.setStateOn( $pref::LightManager::Enable::Vignette );
    %this-->Tgl_11.setStateOn( $pref::LightManager::Enable::HDR );
    %this-->Tgl_12.setStateOn( $pref::LightManager::Enable::SSAO );
@@ -1065,6 +1066,20 @@ function OptAudioUpdate()
 }
 
 //-----------------------------------------------------------------------------
+
+function Tgl_9::onAction(%this)
+{
+   if ( %this.getValue() )
+   {     
+      sunBokehPostFX.enable();
+      $pref::LightManager::Enable::SunBokeh = "1";
+   }
+   else
+   {
+      sunBokehPostFX.disable();
+      $pref::LightManager::Enable::SunBokeh = "0";
+   }
+}
 
 function Tgl_10::onAction(%this)
 {

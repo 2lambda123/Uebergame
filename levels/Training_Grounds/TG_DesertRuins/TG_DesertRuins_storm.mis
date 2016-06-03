@@ -27,7 +27,7 @@ new SimGroup(MissionGroup) {
          levelName = "TG_DesertRuins_storm";
          MissionTypes = "DM TDM PBDM PBTDM";
    };
-   new ScatterSky(Sky) {
+   new ScatterSky(Himmel) {
       skyBrightness = "30";
       sunSize = "1";
       colorizeAmount = "1";
@@ -44,6 +44,7 @@ new SimGroup(MissionGroup) {
       moonElevation = "45";
       castShadows = "1";
       brightness = "0.8";
+      flareType = "SunFlareExample2";
       flareScale = "1";
       nightColor = "0.0196078 0.0117647 0.109804 1";
       nightFogColor = "0.0196078 0.0117647 0.109804 1";
@@ -9835,7 +9836,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-6.5342 2.68343 0.708619";
-            rotation = "0.129136 -0.129136 -0.983182 90.972";
+            rotation = "0.129136 -0.129136 -0.983183 90.9719";
             scale = "1.22625 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -9895,7 +9896,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2013";
+            rotation = "0.0590455 0.0590455 0.996508 90.2014";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";

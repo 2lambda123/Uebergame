@@ -101,6 +101,12 @@ function ppOptionsEnableVignette::onAction(%this)
    PostFXManager.settingsEffectSetEnabled("Vignette", %toEnable);
 }
 
+function ppOptionsEnableSunBokeh::onAction(%this)
+{ 
+   %toEnable = PostFXManager.getEnableResultFromControl(%this);
+   PostFXManager.settingsEffectSetEnabled("SunBokeh", %toEnable);
+}
+
 function ppOptionsSavePreset::onClick(%this)
 {
    //Stores the current settings into a preset file for loading and use later on 
@@ -426,6 +432,55 @@ function ppOptionsVignetteEnableVignette::onAction(%this)
 {
    $PostFXManager::PostFX::EnableVignette = %this.getValue();
    ppOptionsUpdateVignetteSettings();
+}
+
+function ppOptionsUpdateSunBokehSettings()
+{  
+   if($PostFXManager::PostFX::EnableSunBokeh)
+   {
+      SunBokehPostFX.enable();
+   }
+   else
+   {
+      SunBokehPostFX.disable();
+   }
+}
+
+function ppOptionsSunBokehEnableSunBokeh::onAction(%this)
+{
+   $PostFXManager::PostFX::EnableSunBokeh = %this.getValue();
+   ppOptionsUpdateSunBokehSettings();
+}
+
+function ppOptionsDebugSunBokeh::onAction(%this)
+{
+   $SunBokehPostFX::debug = %this.getValue();
+}
+
+function ppOptionsSunBokehSunAmountSlider::onMouseDragged(%this)
+{
+   $SunBokehPostFX::sunAmount = %this.value;
+   %this.ToolTip = "Value : " @ %this.value;
+}
+function ppOptionsSunBokehEdgeAmountSlider::onMouseDragged(%this)
+{
+   $SunBokehPostFX::edgeAmount = %this.value;
+   %this.ToolTip = "Value : " @ %this.value;
+}
+function ppOptionsSunBokehHaloAmountSlider::onMouseDragged(%this)
+{
+   $SunBokehPostFX::haloAmount = %this.value;
+   %this.ToolTip = "Value : " @ %this.value;
+}
+function ppOptionsSunBokehSunSizeSlider::onMouseDragged(%this)
+{
+   $SunBokehPostFX::sunSize = %this.value;
+   %this.ToolTip = "Value : " @ %this.value;
+}
+function ppOptionsSunBokehBokehSizeSlider::onMouseDragged(%this)
+{
+   $SunBokehPostFX::bokehSize = %this.value;
+   %this.ToolTip = "Value : " @ %this.value;
 }
 
 function ppColorCorrection_selectFile()

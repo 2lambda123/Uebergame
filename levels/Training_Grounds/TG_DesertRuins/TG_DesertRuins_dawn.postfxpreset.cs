@@ -12,6 +12,7 @@ $PostFXManager::Settings::EnableSSAO = "1";
 $PostFXManager::Settings::EnableHDR = "1";
 $PostFXManager::Settings::EnableLightRays = "1";
 $PostFXManager::Settings::EnablePostFX = "1";
+$PostFXManager::Settings::EnableSunBokeh = "1";
 $PostFXManager::Settings::EnableVignette = "1";
 $PostFXManager::Settings::HDR::adaptRate = "1.31846";
 $PostFXManager::Settings::HDR::blueShiftColor = "0.403922 0.380392 0.286275 1";
