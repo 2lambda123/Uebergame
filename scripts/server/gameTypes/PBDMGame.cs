@@ -23,13 +23,13 @@
 // DisplayName = Deathmatch
 
 //--- GAME RULES BEGIN ---
-$HostGameRules["DM", 0] = "Eliminate the competition.";
-$HostGameRules["DM", 1] = "Player with the best kill to death ratio wins!";
+$HostGameRules["PBDM", 0] = "Eliminate the competition.";
+$HostGameRules["PBDM", 1] = "Player with the best kill to death ratio wins!";
 //--- GAME RULES END ---
 
 package PBDMGame
 {
-   function DMdummy()
+   function PBDMdummy()
    {
       echo("All game types MUST have a package to activate! Even if all it contains is a dummy function.");
    }
@@ -53,7 +53,7 @@ function PBDMGame::getTeamName(%game, %team)
    if(%team == 0)
       return addTaggedString($pref::Server::teamName[%team]);
    else
-      return 'Game';
+      return 'Match';
 }
 
 function PBDMGame::setUpTeams(%game)

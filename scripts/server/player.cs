@@ -1261,17 +1261,17 @@ function Armor::onImpact(%this, %obj, %collidedObject, %vec, %vecLen)
 
 //----------------------------------------------------------------------------
 
-//Creates blood spatter decals and particles
+//Creates blood spatter decals
 function DamageTypeCollision(%obj, %damage, %damageType, %position){
-
-      switch$ (%damageType){
-       
-      case "Suicide": return;     //does not work
+   //echo("DAMAGE TYPE COLLISION YO: " @ %damageType); //debug
+   switch$ ($DamageText[%damageType])
+   {
+      case "Suicide": return;
       case "Drowning": return;
-      case "Paint": return;	 
+      case "Paintball": return;	 
 	  case "MissionAreaDamage": return;	
       case "ScriptDamage": return;	
-      case "Impact": return;	//does not work
+      case "Impact": return;
       default: // Process all other damage types               
    }
    

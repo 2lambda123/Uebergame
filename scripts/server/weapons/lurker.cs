@@ -467,7 +467,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.3;
+   stateTimeoutValue[13]            = 0.35;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
@@ -503,7 +503,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1]             = 0.5;
+   stateTimeoutValue[1]             = 0.7;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]                 = "idle";
    stateSound[1]                    = "";
@@ -520,5 +520,5 @@ SmsInv.AddWeapon(Lurker, "Lurker rifle", 1);
 SmsInv.AllowClip("armor\tSoldier\t4");
 SmsInv.AddClip(LurkerClip, "Lurker Clips", 4);
 
-SmsInv.AllowAmmo("armor\tSoldier\t35");
-SmsInv.AddAmmo(LurkerAmmo, 35);
+SmsInv.AllowAmmo("armor\tSoldier\t30");
+SmsInv.AddAmmo(LurkerAmmo, 30);

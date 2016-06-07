@@ -53,7 +53,7 @@ function DMGame::getTeamName(%game, %team)
    if(%team == 0)
       return addTaggedString($pref::Server::teamName[%team]);
    else
-      return 'Game';
+      return 'Battle';
 }
 
 function DMGame::setUpTeams(%game)

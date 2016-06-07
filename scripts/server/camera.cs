@@ -450,7 +450,7 @@ function observeClient(%client, %target)
       if (isObject(%client.player))
          %client.player.scriptKill(0);
 
-      //messageAllExcept(%client, -1, 'ClientNowSpectator', '\c1%1 is now an spectator.', %client.playerName);
+      //messageAllExcept(%client, -1, 'ClientNowSpectator', '\c1%1 is now a spectator.', %client.playerName);
       //messageClient(%client, 'YouNowSpectator', '\c1You are now spectating %1.', %target.playerName);   
    }
 

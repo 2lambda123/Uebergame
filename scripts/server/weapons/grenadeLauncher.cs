@@ -451,7 +451,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.5;
+   stateTimeoutValue[13]            = 0.6;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;

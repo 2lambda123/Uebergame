@@ -221,15 +221,6 @@ datablock ProjectileData( PaintballProjectileBlue )
    gravityMod          = 0.8;
 };
 
-function PaintballProjectileBlue::onCollision(%this,%obj,%col,%fade,%pos,%normal)
-{
-   // Apply impact force from the projectile.
-
-   // Apply damage to the object all shape base objects
-   if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,%this.directDamage,"Paint");
-}
-
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------

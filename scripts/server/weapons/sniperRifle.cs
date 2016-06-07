@@ -229,7 +229,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
 
    projectile = SniperProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.001;
+   projectileSpread = 0.0015;
 
    //altProjectile = GrenadeLauncherProjectile;
    //altProjectileSpread = "0.02";
@@ -402,7 +402,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.5;
+   stateTimeoutValue[13]            = 0.8;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;

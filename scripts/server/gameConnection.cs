@@ -149,7 +149,7 @@ function GameConnection::onConnect( %client, %name, %skin )
       %client.getPacketLoss());
 
    // Inform all the other clients of the new guy
-   messageAllExcept(%client, -1, 'MsgClientJoin', '\c1%1 joined the game.',
+   messageAllExcept(%client, -1, 'MsgClientJoin', '\c1%1 is connecting.',
       %client.playerName,
       %client,
       %client.guid,

@@ -112,15 +112,6 @@ datablock ProjectileData( PaintballProjectileYellow )
    gravityMod          = 0.66;
 };
 
-function PaintballProjectileYellow::onCollision(%this,%obj,%col,%fade,%pos,%normal)
-{
-   // Apply impact force from the projectile.
-   
-   // Apply damage to the object all shape base objects
-   if ( %col.getType() & $TypeMasks::GameBaseObjectType )
-      %col.damage(%obj,%pos,%this.directDamage,"Paint");
-}
-
 //--------------------------------------------------------------------------
 // Weapon Item.  This is the item that exists in the world, i.e. when it's
 // been dropped, thrown or is acting as re-spawnable item.  When the weapon

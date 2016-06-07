@@ -1,4 +1,4 @@
-Übergame v1.0.5.0
+Übergame v1.0.6.0
 ===============
 
 Übergame is a free open source, realism like, multi-purpose,

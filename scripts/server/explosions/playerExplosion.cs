@@ -74,8 +74,8 @@ datablock ParticleData(PlayerBloodImpactParticle)
    gravityCoefficient = "-0.2";
    inheritedVelFactor = "0.499022";
    constantAcceleration = "-0.2";
-   lifetimeMS = "151";
-   lifetimeVarianceMS = "150";
+   lifetimeMS = "180";
+   lifetimeVarianceMS = "170";
    spinSpeed = "0";
    spinRandomMax = "90";
    useInvAlpha = "1";
@@ -138,8 +138,8 @@ datablock ParticleData(PlayerBloodSpillParticle)
 
 datablock ParticleEmitterData(PlayerBloodSpillEmitter)
 {
-   ejectionPeriodMS = "9";
-   periodVarianceMS = "8";
+   ejectionPeriodMS = "8";
+   periodVarianceMS = "7";
    ejectionVelocity = "4";
    velocityVariance = "2";
    thetaMin = "145";
@@ -150,8 +150,8 @@ datablock ParticleEmitterData(PlayerBloodSpillEmitter)
    blendStyle = "NORMAL";
    softParticles = "0";  
    phiVariance = "90";
-   lifetimeMS = "300";
-   lifetimeVarianceMS = "200";
+   lifetimeMS = "150";
+   lifetimeVarianceMS = "140";
    alignDirection = "1 0 0";
 };
 
@@ -210,4 +210,10 @@ datablock ExplosionData(PlayerBloodExplosion)
    // Point emission
    emitter[0] = PlayerBloodSpillEmitter;
    emitter[1] = PlayerBloodImpactEmitter;
+   
+   shakeCamera = true;
+   camShakeFreq = "2.5 2.5 1.5";
+   camShakeAmp = "8.0 8.0 8.0";
+   camShakeDuration = 1.0;
+   camShakeRadius = 1.0;
 };

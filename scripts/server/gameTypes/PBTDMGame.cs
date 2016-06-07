@@ -23,13 +23,13 @@
 // DisplayName = Team Deathmatch
 
 //--- GAME RULES BEGIN ---
-$HostGameRules["TDM", 0] = "Kill the enemy and don't get killed.";
-$HostGameRules["TDM", 1] = "Team with the most kills wins!";
+$HostGameRules["PBTDM", 0] = "Kill the enemy and don't get killed.";
+$HostGameRules["PBTDM", 1] = "Team with the most kills wins!";
 //--- GAME RULES END ---
 
 package PBTDMGame
 {
-   function TDMdummy()
+   function PBTDMdummy()
    {
       echo("All game types MUST have a package to activate! Even if all it contains is a dummy function.");
    }

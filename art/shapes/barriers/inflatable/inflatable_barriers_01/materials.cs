@@ -18,6 +18,7 @@ singleton Material(Mat_inflatable_barrier_01)
    specularStrength[1] = "0.7";
    pixelSpecular[1] = "1";
    cubemap = "sky_day_01_Cubemap";
+   footstepSoundId = "0";
 };
 
 singleton Material(Mat_blueyellow_inflatable_barrier_01 : Mat_inflatable_barrier_01)
@@ -32,6 +33,7 @@ singleton Material(Mat_blueyellow_inflatable_barrier_01 : Mat_inflatable_barrier
    pixelSpecular[1] = "1";
    cubemap = "sky_day_01_Cubemap";
    pixelSpecular[0] = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(Mat_redblue_inflatable_barrier_01 : Mat_inflatable_barrier_01)
@@ -47,6 +49,7 @@ singleton Material(Mat_redblue_inflatable_barrier_01 : Mat_inflatable_barrier_01
    specularPower[1] = "16";
    specularStrength[1] = "0.7";
    pixelSpecular[1] = "1";
+   footstepSoundId = "0";
 };
 
 singleton Material(Mat_blackyellow_inflatable_barrier_01 : Mat_inflatable_barrier_01)
@@ -61,6 +64,7 @@ singleton Material(Mat_blackyellow_inflatable_barrier_01 : Mat_inflatable_barrie
    pixelSpecular[1] = "1";
    cubemap = "sky_day_01_Cubemap";
    pixelSpecular[0] = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material(Mat_greenblack_inflatable_barrier_01 : Mat_inflatable_barrier_01)
@@ -75,4 +79,5 @@ singleton Material(Mat_greenblack_inflatable_barrier_01 : Mat_inflatable_barrier
    pixelSpecular[1] = "1";
    cubemap = "sky_day_01_Cubemap";
    pixelSpecular[0] = "0";
+   footstepSoundId = "0";
 };

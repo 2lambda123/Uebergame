@@ -68,7 +68,7 @@ datablock ProjectileData( ShotgunProjectile )
 {
    projectileShapeName = "";
    //sound               = "";
-   directDamage        = 14;
+   directDamage        = 13;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;
@@ -358,7 +358,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionGeneric0In[14]    = "SprintEnter";
    stateTransitionOnTimeout[14]     = "Ready";
    stateWaitForTimeout[14]          = false;
-   stateTimeoutValue[14]            = 0.5;
+   stateTimeoutValue[14]            = 0.25;
    stateSequenceTransitionIn[14]    = true;
    stateSequenceTransitionOut[14]   = true;
    stateAllowImageChange[14]        = false;
@@ -386,7 +386,7 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1]             = 0.5;
+   stateTimeoutValue[1]             = 0.6;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]                    = "";
