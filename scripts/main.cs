@@ -130,10 +130,10 @@ function onExit()
    }
    
    echo("Exporting client prefs");
-   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", False);
+   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", false);
 	  
    echo("Exporting server prefs");
-   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", False);
+   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", false);
 
    BanList::Export(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs");
 

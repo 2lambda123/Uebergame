@@ -40,6 +40,9 @@ singleton ShaderData( PFX_SunBokehShader )
 {     
    DXVertexShaderFile  = "shaders/common/postFx/postFxV.hlsl";  
    DXPixelShaderFile   = "shaders/common/postFx/sunBokeh.hlsl";  
+
+   OGLVertexShaderFile  = "shaders/common/postFx/gl/postFxV.glsl";  
+   OGLPixelShaderFile   = "shaders/common/postFx/sunBokeh.glsl";  
           
    samplerNames[1] = "$bokehTex";  
    samplerNames[2] = "$dirtTex";  
