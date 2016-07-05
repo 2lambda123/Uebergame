@@ -38,8 +38,8 @@ function Torque::initServer(%this)
    $Server::MissionFileSpec = "levels/*.mis";
 
    // Base server functionality
-   if (isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs" ) )
-   exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs" );
+   if( isFile($HomePath @ "/banlist.cs") )
+      exec($HomePath @ "/banlist.cs");
 
    exec("./audio.cs");
    exec("./message.cs");
@@ -86,7 +86,7 @@ function Torque::initDedicated(%this)
    if ( !isFile( %level ) )
       return false;
 
-   tge.createServer( "MultiPlayer", %level, $missionTypeArg );
+   %this.createServer( "MultiPlayer", %level, $missionTypeArg );
 }
 
 /// Attempt to find an open port to initialize the server with
@@ -146,7 +146,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    //%relPath = makeRelativePath(%level, getWorkingDirectory());
    //echo( "c4\Relative Path:" SPC %relPath );
 
-   tge.destroyServer();
+   %this.destroyServer();
 
    $missionSequence = 0;
    $Server::PlayerCount = 0;
@@ -368,7 +368,7 @@ function Torque::destroyServer(%this)
    
    // Save any server settings
    echo( "Exporting server prefs..." );
-   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", False);
+   export( "$Pref::*", $HomePath @ "/server.config.cs", false );
 
    // Increase the server session number.  This is used to make sure we're
    // working with the server session we think we are.
@@ -384,7 +384,7 @@ function resetServerDefaults()
       Game.endGame();
 
    exec( "./defaults.cs" );
-   exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" );
+   exec( $HomePath @ "/server.config.cs" );
 
    allowConnections(true); // ZOD: Open up the server for connections again.
    //reload the current level

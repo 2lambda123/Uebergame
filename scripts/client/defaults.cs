@@ -32,6 +32,17 @@ $pref::Video::missingTexturePath = "art/editor/missingTexture";
 $pref::Video::unavailableTexturePath = "art/editor/unavailable";
 $pref::Video::warningTexturePath = "art/editor/warnmat";
 
+// Constants for referencing video resolution preferences
+$WORD::RES_X = 0;
+$WORD::RES_Y = 1;
+$WORD::FULLSCREEN = 2;
+$WORD::BITDEPTH = 3;
+$WORD::REFRESH = 4;
+$WORD::AA = 5;
+
+// Debugging
+$GameBase::boundingBox = false;
+
 // Now add your own game specific client preferences as
 // well as any overloaded core defaults here.
 
@@ -53,11 +64,13 @@ $pref::SFX::rolloffFactor = "0.25";
 $pref::Player = "Player\tbase";
 $pref::Player::defaultFov = 90;
 $pref::Player::Fov = 90;
+$pref::Player::FriendlyColor = "0.000000 1.000000 0.000000 1.000000";
+$pref::Player::EnemyColor = "1.000000 0.000000 0.000000 1.000000";
 //$pref::Player::SelectedVehicle = "Cheetah"; //vehicles not ready yet
 
 $pref::Audio::BackgroundMusic = 1;
 
-$pref::Net::LagThreshold = 400;
+$pref::Net::LagThreshold = 250; // 400 is insane
 $pref::Net::Port = 28000;
 $pref::Net::PacketRateToClient = "32";
 $pref::Net::PacketRateToServer = "32";
