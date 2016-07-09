@@ -384,7 +384,7 @@ function resetServerDefaults()
       Game.endGame();
 
    exec( "./defaults.cs" );
-   exec( $HomePath @ "/server.config.cs" );
+   exec( $HomePath @ "/settings.config.cs" );
 
    allowConnections(true); // ZOD: Open up the server for connections again.
    //reload the current level

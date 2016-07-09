@@ -35,7 +35,7 @@ function serverCmdSAD(%client, %password)
          {
             if(%password $= "changeme")
             {
-               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal SAD PW. You need to change the default \"$pref::Server::SuperAdminPassword\" value in \"server.config.cs\"!');
+               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal SAD PW. You need to change the default \"$pref::Server::SuperAdminPassword\" value in \"settings.config.cs\"!');
                return;
             }
             %client.isAdmin = true;
@@ -49,7 +49,7 @@ function serverCmdSAD(%client, %password)
          {
             if(%password $= "changethis")
             {
-               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal Admin PW. You need to change the default \"$pref::Server::AdminPassword\" value in \"server.config.cs\"!');
+               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal Admin PW. You need to change the default \"$pref::Server::AdminPassword\" value in \"settings.config.cs\"!');
                return;
             }
             %client.isAdmin = true;
