@@ -317,9 +317,9 @@ function OptionsDlg::onSleep(%this)
          }
 		 
    // write out the control config files into the user home directory
-   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
-   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+   moveMap.save($HomePath @ "/bindings.config.cs", false);
+   spectatorMap.save($HomePath @ "/bindings.config.cs", true);
+   vehicleMap.save($HomePath @ "/bindings.config.cs", true);
 }
 
 function OptGraphicsDriverMenu::onSelect( %this, %id, %text )
