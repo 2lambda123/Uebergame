@@ -189,7 +189,7 @@ function GameConnection::onConnect( %client, %name, %skin )
 
 function writeConnectionLog()
 {
-   %file = $pref::Server::LogPath @"/"@ "connections.csv";
+   %file = $HomePath @"/"@ "connections.csv";
    %conn = new FileObject();
    if ( %conn.openForAppend( %file ) )
    {
@@ -202,7 +202,7 @@ function writeConnectionLog()
 
 function readConnectionLog()
 {
-   %file = $pref::Server::LogPath @"/"@ "connections.csv";
+   %file = $HomePath @"/"@ "connections.csv";
    %conn = new FileObject();
    if( %conn.openForRead( %file ) )
    {	

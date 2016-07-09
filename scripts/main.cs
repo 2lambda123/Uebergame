@@ -77,8 +77,8 @@ function Torque::onStart(%this)
    exec( "./client/updatePrefs.cs" );
    
    // Load up our user saved settings, if existing
-   if (isFile($HomePath @ "/client.config.cs"))
-      exec( $HomePath @ "/client.config.cs" );
+   if (isFile($HomePath @ "/settings.config.cs.cs"))
+      exec( $HomePath @ "/settings.config.cs.cs" );
 
    $ScriptGroup = new SimGroup(ScriptClassGroup);
 
@@ -148,12 +148,9 @@ function onExit()
       spectatorMap.save($HomePath @ "/bindings.config.cs", true);
       vehicleMap.save($HomePath @ "/bindings.config.cs", true);
    }
-   
-   echo("Exporting client prefs");
-   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", False);
-	  
-   echo("Exporting server prefs");
-   export("$Pref::*", $HomePath @ "/server.config.cs", False);
+
+   echo("Exporting settings and banlist");
+   export("$pref::*", $HomePath @ "/settings.config.cs", false);
    BanList::Export($HomePath @ "/banlist.cs");
 
    Parent::onExit();
@@ -305,7 +302,7 @@ function LogEcho(%string)
    if( $pref::LogEchoEnabled )
    {
 /*
-      %file = $pref::Server::LogPath @"/"@ "echos.txt";
+      %file = $HomePath @"/"@ "echos.txt";
       %log = new FileObject();
       %log.openForAppend(%file);
       %log.writeLine("\"" @ %string );

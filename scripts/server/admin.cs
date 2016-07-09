@@ -565,7 +565,7 @@ function AddToAdminList(%admin, %client)
    else
       $pref::Server::AdminList = $pref::Server::AdminList TAB %client.guid;
 
-   export("$pref::*", ( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs" ), false);
+   export("$pref::*", $HomePath @ "/settings.config.cs", false);
    echo(%client.nameBase @ " " @ %client.guid @ " added to Admin list.", 1);
 }
 
@@ -584,7 +584,7 @@ function AddToSuperAdminList(%client)
    else
       $pref::Server::SuperAdminList = $pref::Server::SuperAdminList TAB %client.guid;
 
-   export("$pref::*", ( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" ), false);
+   export("$pref::*", $HomePath @ "/settings.config.cs", false);
    echo(%client.nameBase @ " " @ %client.guid @ " added to Super Admin list.", 1);
 }
 

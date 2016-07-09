@@ -368,7 +368,7 @@ function Torque::destroyServer(%this)
    
    // Save any server settings
    echo( "Exporting server prefs..." );
-   export( "$Pref::*", $HomePath @ "/server.config.cs", false );
+   export("$pref::*", $HomePath @ "/settings.config.cs", false);
 
    // Increase the server session number.  This is used to make sure we're
    // working with the server session we think we are.
