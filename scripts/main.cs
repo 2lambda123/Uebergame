@@ -77,8 +77,8 @@ function Torque::onStart(%this)
    exec( "./client/updatePrefs.cs" );
    
    // Load up our user saved settings, if existing
-   if (isFile($HomePath @ "/settings.config.cs.cs"))
-      exec( $HomePath @ "/settings.config.cs.cs" );
+   if (isFile($HomePath @ "/settings.config.cs"))
+      exec( $HomePath @ "/settings.config.cs" );
 
    $ScriptGroup = new SimGroup(ScriptClassGroup);
 
