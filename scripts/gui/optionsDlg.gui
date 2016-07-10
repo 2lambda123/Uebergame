@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Audio";
+      pane = "Graphics";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "2";
+         selectedPage = "1";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -180,7 +180,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "base";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -204,7 +203,6 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "base";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -436,13 +434,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptGraphicsPane";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -545,7 +542,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1024 x 768  (4:3)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -649,7 +645,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -679,7 +674,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -732,7 +726,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -808,7 +801,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -861,7 +853,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Off";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -954,6 +945,7 @@
                ticks = "9";
                snap = "0";
                value = "1";
+               value = "1";
                position = "105 349";
                extent = "518 15";
                minExtent = "8 2";
@@ -969,7 +961,7 @@
                canSave = "1";
                canSaveDynamicFields = "0";
             };
-			new GuiCheckBoxCtrl(Tgl_9) {
+            new GuiCheckBoxCtrl(Tgl_9) {
                text = "Enable sunBokeh";
                groupNum = "-1";
                buttonType = "ToggleButton";
@@ -980,13 +972,14 @@
                horizSizing = "right";
                vertSizing = "bottom";
                profile = "GuiCheckBoxProfile";
-               visible = "1";
+               visible = "0";
                active = "1";
-               variable = "$pref::LightManager::Enable::sunBokeh";
+               variable = "$pref::LightManager::Enable::SunBokeh";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
-               internalName = "Tgl_10";
+               internalName = "Tgl_9";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -1168,7 +1161,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1x";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1197,7 +1189,6 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1306,12 +1297,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptAudioPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1537,7 +1529,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.75";
+                  value = "0.489362";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
@@ -1560,7 +1552,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Primärer Soundtreiber";
+               text = "Lautsprecher (Realtek High Definition Audio)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1610,7 +1602,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "DirectSound";
+               text = "XAudio";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1661,7 +1653,7 @@
                maxChars = "-1";
                useURLMouseCursor = "0";
                position = "409 16";
-               extent = "200 84";
+               extent = "200 98";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -2076,7 +2068,7 @@
                   fitParentWidth = "1";
                   clipColumnText = "0";
                   position = "1 1";
-                  extent = "345 640";
+                  extent = "345 720";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2220,7 +2212,7 @@
                range = "100 1200";
                ticks = "36";
                snap = "0";
-               value = "450";
+               value = "641";
                position = "170 163";
                extent = "400 16";
                minExtent = "8 2";

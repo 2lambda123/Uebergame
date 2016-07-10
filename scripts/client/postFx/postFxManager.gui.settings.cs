@@ -57,9 +57,9 @@ function PostFXManager::settingsSetEnabled(%this, %bEnablePostFX)
          VignettePostEffect.disable();
 	 
 	  if ( $PostFXManager::PostFX::EnableSunBokeh )
-         $SunBokehPostFX.enable();
+         SunBokehPostFX.enable();
       else
-         $SunBokehPostFX.disable();
+         SunBokehPostFX.disable();
      
       postVerbose("% - PostFX Manager - PostFX enabled");      
    }

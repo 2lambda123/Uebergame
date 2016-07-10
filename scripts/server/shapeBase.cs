@@ -509,6 +509,7 @@ function ShapeBase::dismountImage(%this, %slot)
 //-----------------------------------------------------------------------------
 // ZOD: Team functions, should be in the engine
 //-----------------------------------------------------------------------------
+/* //removing this should make the turrets shoot again
 function ShapeBase::setTeamId(%obj, %team)
 {
    if ( %team < 0 )
@@ -521,7 +522,7 @@ function ShapeBase::getTeamId(%obj)
 {
    return %obj.teamId;
 }
-
+*/
 //-----------------------------------------------------------------------------
 // ShapeBaseImage datablock
 //-----------------------------------------------------------------------------

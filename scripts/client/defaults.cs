@@ -130,7 +130,7 @@ $pref::LightManager::Enable::HDR = "0";
 $pref::LightManager::Enable::LightRay = "1";
 $pref::LightManager::Enable::SSAO = "0";
 $pref::LightManager::Enable::Vignette = "1";
-$pref::LightManager::Enable::SunBokeh = "1";
+$pref::LightManager::Enable::SunBokeh = "0";
 $pref::LightManager::sgAtlasMaxDynamicLights = "64";
 $pref::LightManager::sgDynamicShadowDetailSize = "0";
 $pref::LightManager::sgDynamicShadowQuality = "0";
@@ -275,6 +275,9 @@ $pref::Video::autoDetect = 1;
 
 /// smallestVisiblePixelSize stops rendering shapes smaller than this amount
 $pref::TS::smallestVisiblePixelSize = 4;
+
+/// terrain LOD scale
+$pref::Terrain::lodScale = 2.0;
 
 //-----------------------------------------------------------------------------
 // Graphics Quality Groups
@@ -601,7 +604,14 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
          ShaderQualityGroup-->Low.apply();
-		 DecalQualityGroup-->(0.1).apply();			 
+		 DecalQualityGroup-->(0.1).apply();
+		 
+         $pref::LightManager::Enable::sunBokeh = "0";
+         $pref::LightManager::Enable::Vignette = "1";
+         $pref::LightManager::Enable::HDR = "0";
+         $pref::LightManager::Enable::SSAO = "0";
+         $pref::LightManager::Enable::LightRay = "0";
+         $pref::LightManager::Enable::DOF = "0"; 
       }
       else
       {
@@ -609,7 +619,14 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Lowest.apply();
          LightingQualityGroup-->Lowest.apply();
          ShaderQualityGroup-->Lowest.apply();
-		 DecalQualityGroup-->(0.1).apply();				 
+		 DecalQualityGroup-->(0.1).apply();	
+
+         $pref::LightManager::Enable::sunBokeh = "0";
+         $pref::LightManager::Enable::Vignette = "1";
+         $pref::LightManager::Enable::HDR = "0";
+         $pref::LightManager::Enable::SSAO = "0";
+         $pref::LightManager::Enable::LightRay = "0";
+         $pref::LightManager::Enable::DOF = "0"; 		 
       }
    }   
    else
@@ -621,6 +638,13 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          LightingQualityGroup-->Ueber.apply();
          ShaderQualityGroup-->Ueber.apply();
 		 DecalQualityGroup-->(15).apply();	
+		 
+		 $pref::LightManager::Enable::sunBokeh = "0";
+         $pref::LightManager::Enable::Vignette = "1";
+         $pref::LightManager::Enable::HDR = "1";
+         $pref::LightManager::Enable::SSAO = "1";
+         $pref::LightManager::Enable::LightRay = "1";
+         $pref::LightManager::Enable::DOF = "1"; 
       }
       else if ( %videoMem > 1000 )
       {
@@ -629,6 +653,13 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          LightingQualityGroup-->High.apply();
          ShaderQualityGroup-->High.apply();
 		 DecalQualityGroup-->(5).apply();	
+		 
+		 $pref::LightManager::Enable::sunBokeh = "0";
+         $pref::LightManager::Enable::Vignette = "1";
+         $pref::LightManager::Enable::HDR = "0";
+         $pref::LightManager::Enable::SSAO = "1";
+         $pref::LightManager::Enable::LightRay = "1";
+         $pref::LightManager::Enable::DOF = "1"; 
       }
       else if ( %videoMem > 400 || %videoMem == 0 )
       {
@@ -636,7 +667,14 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Normal.apply();
          LightingQualityGroup-->Normal.apply();
          ShaderQualityGroup-->Normal.apply();
-		 DecalQualityGroup-->(2).apply();	
+		 DecalQualityGroup-->(2).apply();
+
+		 $pref::LightManager::Enable::sunBokeh = "0";
+         $pref::LightManager::Enable::Vignette = "1";
+         $pref::LightManager::Enable::HDR = "0";
+         $pref::LightManager::Enable::SSAO = "0";
+         $pref::LightManager::Enable::LightRay = "1";
+         $pref::LightManager::Enable::DOF = "1"; 		 
          
          if ( %videoMem == 0 )
             return "Uebergame was unable to detect available video memory. Applying 'Normal' quality.";
@@ -647,7 +685,14 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          TextureQualityGroup-->Low.apply();
          LightingQualityGroup-->Low.apply();
          ShaderQualityGroup-->Low.apply();
-		 DecalQualityGroup-->(0.5).apply();		 
+		 DecalQualityGroup-->(0.5).apply();	
+
+		 $pref::LightManager::Enable::sunBokeh = "0";
+         $pref::LightManager::Enable::Vignette = "1";
+         $pref::LightManager::Enable::HDR = "0";
+         $pref::LightManager::Enable::SSAO = "0";
+         $pref::LightManager::Enable::LightRay = "1";
+         $pref::LightManager::Enable::DOF = "0"; 		 
       }
    }
    

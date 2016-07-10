@@ -20,9 +20,9 @@
 // IN THE SOFTWARE.  
 //-----------------------------------------------------------------------------  
 
-$SunBokehPostFX::sunAmount = 0.35;  //Controls the amount of bokeh around the sun.
-$SunBokehPostFX::edgeAmount = 0.4;  //Controls the amount of bokeh around the edge of the screen.
-$SunBokehPostFX::haloAmount = 0.7;  //Controls the amount of the glare/halo.
+$SunBokehPostFX::sunAmount = 0.3;  //Controls the amount of bokeh around the sun.
+$SunBokehPostFX::edgeAmount = 0.3;  //Controls the amount of bokeh around the edge of the screen.
+$SunBokehPostFX::haloAmount = 0.3;  //Controls the amount of the glare/halo.
 $SunBokehPostFX::sunSize = 0.125;  //Controls the size of the sun mask.
 $SunBokehPostFX::bokehSize = 550; //Controls how much the bokeh texture tiles (eg. bokeh size).
 $SunBokehPostFX::debug = 0; //Set this to 1 if you'd like to see only the effect mask. Useful for tweaking.
@@ -40,7 +40,8 @@ singleton ShaderData( PFX_SunBokehShader )
 {     
    DXVertexShaderFile  = "shaders/common/postFx/postFxV.hlsl";  
    DXPixelShaderFile   = "shaders/common/postFx/sunBokeh.hlsl";  
-          
+         
+   samplerNames[0] = "$backBuffer";		 
    samplerNames[1] = "$bokehTex";  
    samplerNames[2] = "$dirtTex";  
           

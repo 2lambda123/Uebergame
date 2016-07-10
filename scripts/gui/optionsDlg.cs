@@ -1071,12 +1071,12 @@ function Tgl_9::onAction(%this)
 {
    if ( %this.getValue() )
    {     
-      sunBokehPostFX.enable();
+      SunBokehPostFX.enable();
       $pref::LightManager::Enable::SunBokeh = "1";
    }
    else
    {
-      sunBokehPostFX.disable();
+      SunBokehPostFX.disable();
       $pref::LightManager::Enable::SunBokeh = "0";
    }
 }
