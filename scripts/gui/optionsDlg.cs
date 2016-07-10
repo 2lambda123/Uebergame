@@ -320,6 +320,8 @@ function OptionsDlg::onSleep(%this)
    moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
    spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
    vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
+   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", false);
+   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", false);
 }
 
 function OptGraphicsDriverMenu::onSelect( %this, %id, %text )
