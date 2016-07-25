@@ -495,7 +495,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    animateOnServer = false;
    useEyeOffset = false;
    //eyeOffset = "-0.147 -0.225 0.025";
-   eyeOffset = "-0.161 -0.30 0.060";
+   eyeOffset = "-0.161 -0.36 0.060";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
    projectileSpread = "0.007";
