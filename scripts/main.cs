@@ -20,19 +20,34 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// Not required as there is nothing to load
-//tge.loadDir("core");
-
-// Constants for referencing video resolution preferences
-$WORD::RES_X = 0;
-$WORD::RES_Y = 1;
-$WORD::FULLSCREEN = 2;
-$WORD::BITDEPTH = 3;
-$WORD::REFRESH = 4;
-$WORD::AA = 5;
-
-// Debugging
-$GameBase::boundingBox = false;
+function Torque::getHomePath(%this)
+{
+   echo("no config in game directory - Set directory to users");
+   %temp = getUserHomeDirectory();
+   echo(%temp);
+   if( !isDirectory( %temp ) )
+   {
+      echo("c2cannot find home user document folder");
+      %temp = getUserDataDirectory();
+      echo(%temp);
+      if( !isDirectory( %temp ) )
+      {
+         echo("c2cannot find home user appdata roaming folder");
+         $HomePath = "prefs";
+      }
+      else
+      {
+         //put it in appdata/roaming
+         $HomePath = %temp @ "/" @ $appName;
+      }
+   }
+   else
+   {
+      //put it in user/documents
+      $HomePath = %temp @ "/My Games/" @ $appName;
+   }
+   return( $HomePath );
+}
 
 //---------------------------------------------------------------------------------------------
 // CorePackage
@@ -50,6 +65,9 @@ function Torque::onStart(%this)
 
    Parent::onStart(%this);
 
+   // Set our saves directory
+   %this.getHomePath();
+
    // Load up default settings
    exec( "./gui/profiles.cs" );
    exec( "./client/defaults.cs" );
@@ -59,8 +77,8 @@ function Torque::onStart(%this)
    exec( "./client/updatePrefs.cs" );
    
    // Load up our user saved settings, if existing
-   if ( isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" ) )
-   exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" );
+   if (isFile($HomePath @ "/settings.config.cs"))
+      exec( $HomePath @ "/settings.config.cs" );
 
    $ScriptGroup = new SimGroup(ScriptClassGroup);
 
@@ -93,10 +111,10 @@ function Torque::onStart(%this)
    // Start up in either client, or dedicated server mode
    if ( $isDedicated || $pref::Server::Dedicated )
    {
-      tge.initDedicated();
+      %this.initDedicated();
    }
    else
-      tge.initClient();
+      %this.initClient();
 }
 
 //---------------------------------------------------------------------------------------------
@@ -124,18 +142,16 @@ function onExit()
    echo("Exporting client control configuration");
    if (isObject(moveMap))
    {
-   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
-   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-   }
-   
-   echo("Exporting client prefs");
-   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", false);
-	  
-   echo("Exporting server prefs");
-   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", false);
+      moveMap.save($HomePath @ "/bindings.config.cs", false);
 
-   BanList::Export(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs");
+      // Append the other action maps:
+      spectatorMap.save($HomePath @ "/bindings.config.cs", true);
+      vehicleMap.save($HomePath @ "/bindings.config.cs", true);
+   }
+
+   echo("Exporting settings and banlist");
+   export("$pref::*", $HomePath @ "/settings.config.cs", false);
+   BanList::Export($HomePath @ "/banlist.cs");
 
    Parent::onExit();
 }
@@ -286,7 +302,7 @@ function LogEcho(%string)
    if( $pref::LogEchoEnabled )
    {
 /*
-      %file = $pref::Server::LogPath @"/"@ "echos.txt";
+      %file = $HomePath @"/"@ "echos.txt";
       %log = new FileObject();
       %log.openForAppend(%file);
       %log.writeLine("\"" @ %string );

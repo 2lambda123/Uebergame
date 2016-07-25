@@ -106,5 +106,5 @@ function GameConnection::isOnServerBanList( %client, %guid )
 function exportBanList()
 {
    echo("Exporting server ip banlist");
-   export("$Banned::*", (GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/banlist.cs"), false);
+   export("$Banned::*", $HomePath @ "/banlist.cs", false);
 }

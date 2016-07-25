@@ -317,11 +317,13 @@ function OptionsDlg::onSleep(%this)
          }
 		 
    // write out the control config files into the user home directory
-   moveMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", false);
-   spectatorMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-   vehicleMap.save(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs", true);
-   export("$pref::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs", false);
-   export("$Pref::Server::*", GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/server.config.cs", false);
+
+   moveMap.save($HomePath @ "/binds.cs", false);
+   spectatorMap.save($HomePath @ "/binds.cs", true);
+   vehicleMap.save($HomePath @ "/binds.cs", true);
+   
+   //export settings directly in case the game is not existed regularly and settings are lost
+   export("$pref::*", $HomePath @ "/settings.config.cs", false);
 }
 
 function OptGraphicsDriverMenu::onSelect( %this, %id, %text )

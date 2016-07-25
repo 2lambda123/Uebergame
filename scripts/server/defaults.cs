@@ -23,12 +23,12 @@
 // List of master servers to query, each one is tried in order
 // until one responds
 $pref::Net::DisplayOnMaster = 1; //list hosted games by default on master server
-$Pref::Server::RegionMask = 2;
+$pref::Server::RegionMask = 2;
 $pref::Master[0] = "2:duion.com:28002";
 
 // Information about the server
-$Pref::Server::Name = "Uebergame server";
-$Pref::Server::Info = "This is an Uebergame server.";
+$pref::Server::Name = "Uebergame server";
+$pref::Server::Info = "This is an Uebergame server.";
 
 // Text to appear on loading screen
 // Multiple lines possible just add more varibles
@@ -36,23 +36,23 @@ $pref::Server::Message0 = "Server Information";
 $pref::Server::Message1 = "Welcome to the Uebergame server!";
 $pref::Server::Message2 = "Let the game begin.";
 
-$Pref::Server::ConnectionError =
+$pref::Server::ConnectionError =
    "You likely do not have the correct version of the game installed or "@
    "you are missing some of the related art and levels. "@
    "Please contact the server administrator and try to solve the issue.";
 
 // The network port is also defined by the client, this value 
 // overrides pref::net::port for dedicated servers
-$Pref::Server::Port = 28000;
+$pref::Server::Port = 28000;
 
 // If the password is set, clients must provide it in order
 // to connect to the server
-$Pref::Server::Password = "";
+$pref::Server::Password = "";
 
 $pref::Server::Dedicated = 0;
 
 // Password for admin clients
-$Pref::Server::AdminPassword = "changeme";
+$pref::Server::AdminPassword = "changeme";
 $pref::Server::SuperAdminPassword = "changemetoo";
 
 // outdated settings, needs checking
@@ -72,12 +72,12 @@ $pref::Server::MissionFile = "levels/TG_DesertRuins/TG_DesertRuins_day.mis";
 $pref::Server::ConnLogPath = "logs";
 $pref::Server::MissionType = "DM";
 $pref::Server::RandomMissions = 1;
-$Pref::Server::MaxPlayers = 10;
-$Pref::Server::TimeLimit = 15;               // In minutes
-$Pref::Server::KickBanTime = 300;            // specified in seconds
-$Pref::Server::BanTime = 1800;               // specified in seconds
-$Pref::Server::FloodProtectionEnabled = 1;
-$Pref::Server::MaxChatLen = 120;
+$pref::Server::MaxPlayers = 10;
+$pref::Server::TimeLimit = 15;               // In minutes
+$pref::Server::KickBanTime = 300;            // specified in seconds
+$pref::Server::BanTime = 1800;               // specified in seconds
+$pref::Server::FloodProtectionEnabled = 1;
+$pref::Server::MaxChatLen = 120;
 $pref::Server::teamName[0] = "Purgatory";
 $pref::Server::teamName[1] = "Blue Team";
 $pref::Server::teamName[2] = "Red Team";

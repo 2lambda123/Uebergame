@@ -115,17 +115,15 @@ function _screenShot( %tiles, %overlap )
    if ( $pref::Video::screenShotSession > 999 )
       $pref::Video::screenShotSession = 1;
                   
-   %name = "screenshot_" @ formatSessionNumber($pref::Video::screenShotSession) @ "-" @
-            formatImageNumber($screenshotNumber);            
-   %name = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/screenshots/" @expandFileName( %name );
+   %name = "screenshot_" @ $Client::MissionName @ formatSessionNumber($pref::Video::screenShotSession) @ "-" @ formatImageNumber($screenshotNumber);
+   %name = expandFileName( %name );
    
    $screenshotNumber++;
    
-   if (  ( $pref::Video::screenShotFormat $= "JPEG" ) ||
-         ( $pref::video::screenShotFormat $= "JPG" ) )         
-      screenShot( %name, "JPEG", %tiles, %overlap );      
+   if ( ( $pref::Video::screenShotFormat $= "JPEG" ) || ( $pref::video::screenShotFormat $= "JPG" ) )         
+      screenShot( $HomePath @ "/screenshots/" @%name, "JPEG", %tiles, %overlap );      
    else
-      screenShot( %name, "PNG", %tiles, %overlap );
+      screenShot( $HomePath @ "/screenshots/" @%name, "PNG", %tiles, %overlap );
 }
 
 /// This will close the console and take a large format

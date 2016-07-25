@@ -391,8 +391,8 @@ function ArmoryDlg::saveLoadout(%this)
       }
 
       $pref::Player::Loadout[$pref::Player::SelectedLoadout] = %list;
-      echo("exporting pref::* to client.config.cs");
-      export("$pref::*", ( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/client.config.cs" ), False);
+      echo("exporting pref::* to settings.config.cs");
+      export("$pref::*", $HomePath @ "/settings.config.cs", false);
    }
    // Clear the text input field and disable send button
    SaveLoadout.setActive(0);

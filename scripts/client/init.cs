@@ -84,8 +84,8 @@ function Torque::initClient(%this)
    // Default player key bindings
    exec("./default.bind.cs");
 
-   if (isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" ) )
-         exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/bindings.config.cs" );
+   if (isFile($HomePath @ "/bindings.config.cs"))
+      exec($HomePath @ "/bindings.config.cs");
 	 
    // Base client functionality
    exec( "./message.cs" );
