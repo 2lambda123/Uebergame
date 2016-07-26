@@ -27,7 +27,7 @@ function kick( %client, %admin )
    messageAll( 'MsgAdminForce', '\c2The Admin has kicked %1.', %client.playerName);
 
    if (!%client.isAIControlled())
-      BanList::add(%client.guid, %client.getAddress(), $Pref::Server::KickBanTime);
+      BanList::add(%client.guid, %client.getAddress(), $pref::Server::KickBanTime);
 
    %client.delete( $AdminCl.nameBase @ " has kicked you from this server." );
 }
@@ -40,7 +40,7 @@ function ban( %client, %admin )
       messageAll( 'MsgVotePassed', '\c2%1 was banned by vote.', %client.playerName );
 
    if (!%client.isAIControlled())
-      BanList::add(%client.guid, %client.getAddress(), $Pref::Server::BanTime);
+      BanList::add(%client.guid, %client.getAddress(), $pref::Server::BanTime);
 
    %client.addToServerBanList();
    %client.delete( $AdminCl.nameBase @ " has banned you from this server." );

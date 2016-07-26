@@ -70,7 +70,7 @@ function serverCmdDoMelee(%client)
 
 function serverCmdSAD( %client, %password )
 {
-   if( %password !$= "" && %password $= $Pref::Server::AdminPassword)
+   if( %password !$= "" && %password $= $pref::Server::AdminPassword)
    {
       %client.isAdmin = true;
       %client.isSuperAdmin = true;
@@ -82,7 +82,7 @@ function serverCmdSAD( %client, %password )
 function serverCmdSADSetPassword(%client, %password)
 {
    if(%client.isSuperAdmin)
-      $Pref::Server::AdminPassword = %password;
+      $pref::Server::AdminPassword = %password;
 }
 
 //-----------------------------------------------------------------------------

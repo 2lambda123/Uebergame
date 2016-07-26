@@ -595,13 +595,13 @@ function TerrainMaterialDlg::restoreMaterials( %this )
 
 function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName )
 {
-   if( $Pref::TerrainEditor::LastPath $= "" )
-      $Pref::TerrainEditor::LastPath = "art/terrains";
+   if( $pref::TerrainEditor::LastPath $= "" )
+      $pref::TerrainEditor::LastPath = "art/terrains";
 
    %dlg = new OpenFileDialog()
    {
       Filters        = $TerrainEditor::TextureFileSpec;
-      DefaultPath    = $Pref::TerrainEditor::LastPath;
+      DefaultPath    = $pref::TerrainEditor::LastPath;
       DefaultFile    = %defaultFileName;
       ChangePath     = false;
       MustExist      = true;
@@ -610,7 +610,7 @@ function TerrainMaterialDlg::_selectTextureFileDialog( %this, %defaultFileName )
    %ret = %dlg.Execute();
    if ( %ret )
    {
-      $Pref::TerrainEditor::LastPath = filePath( %dlg.FileName );
+      $pref::TerrainEditor::LastPath = filePath( %dlg.FileName );
       %file = %dlg.FileName;
    }
       

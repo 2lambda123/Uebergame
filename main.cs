@@ -27,7 +27,7 @@ $appName = "Uebergame";
 $defaultGame = "scripts";
 
 // Set profile directory
-$Pref::Video::ProfilePath = "scripts/client/profile";
+$pref::Video::ProfilePath = "scripts/client/profile";
 
 function createCanvas(%windowTitle)
 {

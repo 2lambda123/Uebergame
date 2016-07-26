@@ -169,7 +169,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
       echo("Starting multiplayer mode");
 
       // Make sure the network port is set to the correct pref.
-      portInit($Pref::Server::Port);
+      portInit($pref::Server::Port);
       allowConnections(true);
 
       if ($pref::Net::DisplayOnMaster !$= "0" )

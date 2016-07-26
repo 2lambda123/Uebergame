@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-$TeamDeployableMax[DeployedTurret] = mFloor($Pref::Server::MaxPlayers * 0.25);
+$TeamDeployableMax[DeployedTurret] = mFloor($pref::Server::MaxPlayers * 0.25);
 
 //-----------------------------------------------------------------------------
 

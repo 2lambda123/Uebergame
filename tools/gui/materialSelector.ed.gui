@@ -638,9 +638,9 @@ new GuiControl(MaterialSelectorOverlay, EditorGuiGroup) {
    };
 };
 
-$Pref::MaterialSelector::CurrentStaticFilter = "MaterialFilterAllArray";
-$Pref::MaterialSelector::CurrentFilter = ""; //ALL
-$Pref::MaterialSelector::ThumbnailCountIndex = 0;
+$pref::MaterialSelector::CurrentStaticFilter = "MaterialFilterAllArray";
+$pref::MaterialSelector::CurrentFilter = ""; //ALL
+$pref::MaterialSelector::ThumbnailCountIndex = 0;
 
 new PersistenceManager(MaterialSelectorPerMan);
 
@@ -728,8 +728,8 @@ function MaterialSelector::showDialogBase( %this, %selectCallback, %returnType, 
    MaterialSelector.selectCallback = %selectCallback;
    MaterialSelector.returnType = %returnType;
    
-   MaterialSelector.currentStaticFilter = $Pref::MaterialSelector::CurrentStaticFilter;
-   MaterialSelector.currentFilter = $Pref::MaterialSelector::CurrentFilter;
+   MaterialSelector.currentStaticFilter = $pref::MaterialSelector::CurrentStaticFilter;
+   MaterialSelector.currentFilter = $pref::MaterialSelector::CurrentFilter;
 
    MaterialSelector.terrainMaterials = %useTerrainMaterials;
    
@@ -740,7 +740,7 @@ function MaterialSelector::showDialogBase( %this, %selectCallback, %returnType, 
    MaterialSelector-->materialPreviewCountPopup.add( "50",  3 );
    MaterialSelector-->materialPreviewCountPopup.add( "75",  4 );
    MaterialSelector-->materialPreviewCountPopup.add( "100", 5 );
-   MaterialSelector-->materialPreviewCountPopup.setSelected( $Pref::MaterialSelector::ThumbnailCountIndex );
+   MaterialSelector-->materialPreviewCountPopup.setSelected( $pref::MaterialSelector::ThumbnailCountIndex );
    
    Canvas.pushDialog(MaterialSelectorOverlay);
    MaterialSelector.setVisible(1);
@@ -759,8 +759,8 @@ function MaterialSelector::hideDialog( %this )
 
 function MaterialSelector::breakdown( %this )
 {
-   $Pref::MaterialSelector::CurrentStaticFilter = MaterialSelector.currentStaticFilter;
-   $Pref::MaterialSelector::CurrentFilter = MaterialSelector.currentFilter;
+   $pref::MaterialSelector::CurrentStaticFilter = MaterialSelector.currentStaticFilter;
+   $pref::MaterialSelector::CurrentFilter = MaterialSelector.currentFilter;
    
    MaterialSelector-->filterArray.deleteAllObjects();
    MaterialSelector-->materialSelection.deleteAllObjects();
@@ -1885,7 +1885,7 @@ function MaterialSelector::selectPage(%this, %page)
 
 function MaterialSelector::thumbnailCountUpdate(%this)
 {
-   $Pref::MaterialSelector::ThumbnailCountIndex = MaterialSelector-->materialPreviewCountPopup.getSelected();
+   $pref::MaterialSelector::ThumbnailCountIndex = MaterialSelector-->materialPreviewCountPopup.getSelected();
    MaterialSelector.LoadFilter( MaterialSelector.currentFilter, MaterialSelector.currentStaticFilter );
 }
 

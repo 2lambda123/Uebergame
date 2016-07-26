@@ -22,10 +22,10 @@
 
 function ServerOptionsDlg::onWake(%this)
 {
-   SOP_ServerName.setValue( $Pref::Server::Name );
-   SOP_ServerInfo.setValue( $Pref::Server::Info );
+   SOP_ServerName.setValue( $pref::Server::Name );
+   SOP_ServerInfo.setValue( $pref::Server::Info );
    SOP_MaxPlayers.setValue( $pref::Server::MaxPlayers );
-   SOP_ServerPass.setValue( $Pref::Server::Password );
+   SOP_ServerPass.setValue( $pref::Server::Password );
    SOP_SuperPass.setValue( $pref::Server::SuperAdminPassword );
    SOP_AdminPass.setValue( $pref::Server::AdminPassword );
    SOP_KickTime.setValue( $pref::Server::KickBanTime );
@@ -49,13 +49,13 @@ function ServerOptionsDlg::onWake(%this)
 
 function ServerOptionsDlg::onSleep(%this)
 {
-   $Pref::Server::Name = SOP_ServerName.getValue();
-   $Pref::Server::Info = SOP_ServerInfo.getValue();
+   $pref::Server::Name = SOP_ServerName.getValue();
+   $pref::Server::Info = SOP_ServerInfo.getValue();
 
    if ( checkIsNumber( SOP_MaxPlayers.getValue() ) )
       $pref::Server::MaxPlayers = SOP_MaxPlayers.getValue();
 
-   $Pref::Server::Password = SOP_ServerPass.getValue();
+   $pref::Server::Password = SOP_ServerPass.getValue();
    $pref::Server::SuperAdminPassword = SOP_SuperPass.getValue();
    $pref::Server::AdminPassword = SOP_AdminPass.getValue();
 

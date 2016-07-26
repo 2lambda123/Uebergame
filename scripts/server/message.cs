@@ -100,7 +100,7 @@ function GameConnection::spamReset(%this)
 
 function spamAlert(%client)
 {
-   if($Pref::Server::FloodProtectionEnabled != true)
+   if($pref::Server::FloodProtectionEnabled != true)
       return(false);
 
    if(!%client.isSpamming && (%client.spamMessageCount >= $SPAM_MESSAGE_THRESHOLD))

@@ -269,10 +269,10 @@ function ServerPopupMenu::onSelect(%this, %id, %text)
          %index = getField(JS_serverList.getRowTextById(%id), 8);
          if ( setServerInfo( %index ) )
          {
-            if ( $Pref::Client::ServerFavoriteCount $= "" )
-               $Pref::Client::ServerFavoriteCount = 0;
+            if ( $pref::Client::ServerFavoriteCount $= "" )
+               $pref::Client::ServerFavoriteCount = 0;
 
-            $Pref::Client::ServerFavorite[$Pref::Client::ServerFavoriteCount++] = $ServerInfo::Address;
+            $pref::Client::ServerFavorite[$pref::Client::ServerFavoriteCount++] = $ServerInfo::Address;
          }
   }
    Canvas.popDialog(ServerActionDlg);

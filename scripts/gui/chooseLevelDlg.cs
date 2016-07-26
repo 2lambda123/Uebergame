@@ -134,8 +134,8 @@ function StartLevel(%mission, %serverType)
 
    //LogEcho("CL_StartLevel selected id:" SPC %id SPC "Mission:" SPC %mission);
 
-   if ( $Pref::Server::Password !$= "" )
-      $Client::Password = $Pref::Server::Password;
+   if ( $pref::Server::Password !$= "" )
+      $Client::Password = $pref::Server::Password;
 
    // Show the loading screen immediately.
    if ( isObject( LoadingGui ) )

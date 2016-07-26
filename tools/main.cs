@@ -56,9 +56,9 @@ package Tools
       echo( " % - Initializing Tools" );         
       
       // Default file path when saving from the editor (such as prefabs)
-      if ($Pref::WorldEditor::LastPath $= "")
+      if ($pref::WorldEditor::LastPath $= "")
       {
-         $Pref::WorldEditor::LastPath = getMainDotCsDir();
+         $pref::WorldEditor::LastPath = getMainDotCsDir();
       }
       
       // Common GUI stuff.

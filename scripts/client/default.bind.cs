@@ -251,22 +251,22 @@ function movedown(%val)
 
 function turnLeft( %val )
 {
-   $mvYawRightSpeed = %val ? $Pref::Input::KeyboardTurnSpeed : 0;
+   $mvYawRightSpeed = %val ? $pref::Input::KeyboardTurnSpeed : 0;
 }
 
 function turnRight( %val )
 {
-   $mvYawLeftSpeed = %val ? $Pref::Input::KeyboardTurnSpeed : 0;
+   $mvYawLeftSpeed = %val ? $pref::Input::KeyboardTurnSpeed : 0;
 }
 
 function panUp( %val )
 {
-   $mvPitchDownSpeed = %val ? $Pref::Input::KeyboardTurnSpeed : 0;
+   $mvPitchDownSpeed = %val ? $pref::Input::KeyboardTurnSpeed : 0;
 }
 
 function panDown( %val )
 {
-   $mvPitchUpSpeed = %val ? $Pref::Input::KeyboardTurnSpeed : 0;
+   $mvPitchUpSpeed = %val ? $pref::Input::KeyboardTurnSpeed : 0;
 }
 
 function getMouseAdjustAmount(%val)

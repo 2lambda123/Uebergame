@@ -309,37 +309,37 @@ function EditorGui::writeWorldEditorSettings(%this)
    EditorSettings.endGroup();
 
    EditorSettings.beginGroup( "Tools" );
-   EditorSettings.setValue( "snapGround",             EWorldEditor.stickToGround );          //$Pref::WorldEditor::snapGround
-   EditorSettings.setValue( "snapSoft",               EWorldEditor.getSoftSnap() );          //$Pref::WorldEditor::snapSoft
-   EditorSettings.setValue( "snapSoftSize",           EWorldEditor.getSoftSnapSize() );      //$Pref::WorldEditor::snapSoftSize
-   EditorSettings.setValue( "boundingBoxCollision",   EWorldEditor.boundingBoxCollision );   //$Pref::WorldEditor::boundingBoxCollision
-   EditorSettings.setValue( "objectsUseBoxCenter",    EWorldEditor.objectsUseBoxCenter );    //$Pref::WorldEditor::objectsUseBoxCenter
+   EditorSettings.setValue( "snapGround",             EWorldEditor.stickToGround );          //$pref::WorldEditor::snapGround
+   EditorSettings.setValue( "snapSoft",               EWorldEditor.getSoftSnap() );          //$pref::WorldEditor::snapSoft
+   EditorSettings.setValue( "snapSoftSize",           EWorldEditor.getSoftSnapSize() );      //$pref::WorldEditor::snapSoftSize
+   EditorSettings.setValue( "boundingBoxCollision",   EWorldEditor.boundingBoxCollision );   //$pref::WorldEditor::boundingBoxCollision
+   EditorSettings.setValue( "objectsUseBoxCenter",    EWorldEditor.objectsUseBoxCenter );    //$pref::WorldEditor::objectsUseBoxCenter
    EditorSettings.setValue( "dropAtScreenCenterScalar",  EWorldEditor.dropAtScreenCenterScalar );
    EditorSettings.setValue( "dropAtScreenCenterMax",  EWorldEditor.dropAtScreenCenterMax );
    EditorSettings.endGroup();
 
    EditorSettings.beginGroup( "Render" );
-   EditorSettings.setValue( "renderObjHandle",        EWorldEditor.renderObjHandle );        //$Pref::WorldEditor::renderObjHandle
-   EditorSettings.setValue( "renderObjText",          EWorldEditor.renderObjText );          //$Pref::WorldEditor::renderObjText
-   EditorSettings.setValue( "renderPopupBackground",  EWorldEditor.renderPopupBackground );  //$Pref::WorldEditor::renderPopupBackground
-   EditorSettings.setValue( "renderSelectionBox",     EWorldEditor.renderSelectionBox );     //$Pref::WorldEditor::renderSelectionBox
-   EditorSettings.setValue( "showMousePopupInfo",     EWorldEditor.showMousePopupInfo );     //$Pref::WorldEditor::showMousePopupInfo
+   EditorSettings.setValue( "renderObjHandle",        EWorldEditor.renderObjHandle );        //$pref::WorldEditor::renderObjHandle
+   EditorSettings.setValue( "renderObjText",          EWorldEditor.renderObjText );          //$pref::WorldEditor::renderObjText
+   EditorSettings.setValue( "renderPopupBackground",  EWorldEditor.renderPopupBackground );  //$pref::WorldEditor::renderPopupBackground
+   EditorSettings.setValue( "renderSelectionBox",     EWorldEditor.renderSelectionBox );     //$pref::WorldEditor::renderSelectionBox
+   EditorSettings.setValue( "showMousePopupInfo",     EWorldEditor.showMousePopupInfo );     //$pref::WorldEditor::showMousePopupInfo
    EditorSettings.endGroup();
 
    EditorSettings.beginGroup( "Color" );
-   EditorSettings.setValue( "dragRectColor",          EWorldEditor.dragRectColor );          //$Pref::WorldEditor::dragRectColor
-   EditorSettings.setValue( "objectTextColor",        EWorldEditor.objectTextColor );        //$Pref::WorldEditor::objectTextColor
-   EditorSettings.setValue( "objMouseOverColor",      EWorldEditor.objMouseOverColor );      //$Pref::WorldEditor::objMouseOverColor
-   EditorSettings.setValue( "objMouseOverSelectColor",EWorldEditor.objMouseOverSelectColor );//$Pref::WorldEditor::objMouseOverSelectColor
-   EditorSettings.setValue( "objSelectColor",         EWorldEditor.objSelectColor );         //$Pref::WorldEditor::objSelectColor
-   EditorSettings.setValue( "popupBackgroundColor",   EWorldEditor.popupBackgroundColor );   //$Pref::WorldEditor::popupBackgroundColor
-   EditorSettings.setValue( "selectionBoxColor",      EWorldEditor.selectionBoxColor );      //$Pref::WorldEditor::selectionBoxColor
+   EditorSettings.setValue( "dragRectColor",          EWorldEditor.dragRectColor );          //$pref::WorldEditor::dragRectColor
+   EditorSettings.setValue( "objectTextColor",        EWorldEditor.objectTextColor );        //$pref::WorldEditor::objectTextColor
+   EditorSettings.setValue( "objMouseOverColor",      EWorldEditor.objMouseOverColor );      //$pref::WorldEditor::objMouseOverColor
+   EditorSettings.setValue( "objMouseOverSelectColor",EWorldEditor.objMouseOverSelectColor );//$pref::WorldEditor::objMouseOverSelectColor
+   EditorSettings.setValue( "objSelectColor",         EWorldEditor.objSelectColor );         //$pref::WorldEditor::objSelectColor
+   EditorSettings.setValue( "popupBackgroundColor",   EWorldEditor.popupBackgroundColor );   //$pref::WorldEditor::popupBackgroundColor
+   EditorSettings.setValue( "selectionBoxColor",      EWorldEditor.selectionBoxColor );      //$pref::WorldEditor::selectionBoxColor
    EditorSettings.endGroup();
 
    EditorSettings.beginGroup( "Images" );
-   EditorSettings.setValue( "defaultHandle",          EWorldEditor.defaultHandle );          //$Pref::WorldEditor::defaultHandle
-   EditorSettings.setValue( "selectHandle",           EWorldEditor.selectHandle );           //$Pref::WorldEditor::selectHandle
-   EditorSettings.setValue( "lockedHandle",           EWorldEditor.lockedHandle );           //$Pref::WorldEditor::lockedHandle
+   EditorSettings.setValue( "defaultHandle",          EWorldEditor.defaultHandle );          //$pref::WorldEditor::defaultHandle
+   EditorSettings.setValue( "selectHandle",           EWorldEditor.selectHandle );           //$pref::WorldEditor::selectHandle
+   EditorSettings.setValue( "lockedHandle",           EWorldEditor.lockedHandle );           //$pref::WorldEditor::lockedHandle
    EditorSettings.endGroup();
    
    EditorSettings.beginGroup( "Docs" );
@@ -353,21 +353,21 @@ function EditorGui::writeWorldEditorSettings(%this)
    
    EditorSettings.beginGroup( "AxisGizmo", true );
 
-   EditorSettings.setValue( "axisGizmoMaxScreenLen",  GlobalGizmoProfile.screenLength );     //$Pref::WorldEditor::axisGizmoMaxScreenLen
-   EditorSettings.setValue( "rotationSnap",           GlobalGizmoProfile.rotationSnap );     //$Pref::WorldEditor::rotationSnap
-   EditorSettings.setValue( "snapRotations",          GlobalGizmoProfile.snapRotations );    //$Pref::WorldEditor::snapRotations
-   EditorSettings.setValue( "mouseRotateScalar",      GlobalGizmoProfile.rotateScalar );     //$Pref::WorldEditor::mouseRotateScalar
-   EditorSettings.setValue( "mouseScaleScalar",       GlobalGizmoProfile.scaleScalar );      //$Pref::WorldEditor::mouseScaleScalar
+   EditorSettings.setValue( "axisGizmoMaxScreenLen",  GlobalGizmoProfile.screenLength );     //$pref::WorldEditor::axisGizmoMaxScreenLen
+   EditorSettings.setValue( "rotationSnap",           GlobalGizmoProfile.rotationSnap );     //$pref::WorldEditor::rotationSnap
+   EditorSettings.setValue( "snapRotations",          GlobalGizmoProfile.snapRotations );    //$pref::WorldEditor::snapRotations
+   EditorSettings.setValue( "mouseRotateScalar",      GlobalGizmoProfile.rotateScalar );     //$pref::WorldEditor::mouseRotateScalar
+   EditorSettings.setValue( "mouseScaleScalar",       GlobalGizmoProfile.scaleScalar );      //$pref::WorldEditor::mouseScaleScalar
    EditorSettings.setValue( "renderWhenUsed",         GlobalGizmoProfile.renderWhenUsed );
    EditorSettings.setValue( "renderInfoText",         GlobalGizmoProfile.renderInfoText );
 
    EditorSettings.beginGroup( "Grid" );
-   EditorSettings.setValue( "gridColor",              GlobalGizmoProfile.gridColor );        //$Pref::WorldEditor::gridColor
-   EditorSettings.setValue( "gridSize",               GlobalGizmoProfile.gridSize );         //$Pref::WorldEditor::gridSize
-   EditorSettings.setValue( "snapToGrid",             GlobalGizmoProfile.snapToGrid );       //$Pref::WorldEditor::snapToGrid
-   EditorSettings.setValue( "renderPlane",            GlobalGizmoProfile.renderPlane );      //$Pref::WorldEditor::renderPlane
-   EditorSettings.setValue( "renderPlaneHashes",      GlobalGizmoProfile.renderPlaneHashes );//$Pref::WorldEditor::renderPlaneHashes
-   EditorSettings.setValue( "planeDim",               GlobalGizmoProfile.planeDim );         //$Pref::WorldEditor::planeDim
+   EditorSettings.setValue( "gridColor",              GlobalGizmoProfile.gridColor );        //$pref::WorldEditor::gridColor
+   EditorSettings.setValue( "gridSize",               GlobalGizmoProfile.gridSize );         //$pref::WorldEditor::gridSize
+   EditorSettings.setValue( "snapToGrid",             GlobalGizmoProfile.snapToGrid );       //$pref::WorldEditor::snapToGrid
+   EditorSettings.setValue( "renderPlane",            GlobalGizmoProfile.renderPlane );      //$pref::WorldEditor::renderPlane
+   EditorSettings.setValue( "renderPlaneHashes",      GlobalGizmoProfile.renderPlaneHashes );//$pref::WorldEditor::renderPlaneHashes
+   EditorSettings.setValue( "planeDim",               GlobalGizmoProfile.planeDim );         //$pref::WorldEditor::planeDim
    EditorSettings.endGroup();
 
    EditorSettings.endGroup(); // AxisGizmo

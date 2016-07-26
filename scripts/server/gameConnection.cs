@@ -52,7 +52,7 @@ function GameConnection::onConnect( %client, %name, %skin )
    // Send down the connection error info, the client is
    // responsible for displaying this message if a connection
    // error occures.
-   messageClient(%client,'MsgConnectionError',"",$Pref::Server::ConnectionError);
+   messageClient(%client,'MsgConnectionError',"",$pref::Server::ConnectionError);
 
    // Send mission information to the client
    sendLoadInfoToClient( %client );

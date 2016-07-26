@@ -174,7 +174,7 @@ function ForestEditorGui::newMesh( %this )
    %dlg = new OpenFileDialog()
    {
       Filters        = %spec;
-      DefaultPath    = $Pref::WorldEditor::LastPath;
+      DefaultPath    = $pref::WorldEditor::LastPath;
       DefaultFile    = "";
       ChangePath     = true;
    };
@@ -183,7 +183,7 @@ function ForestEditorGui::newMesh( %this )
    
    if ( %ret )
    {
-      $Pref::WorldEditor::LastPath = filePath( %dlg.FileName );
+      $pref::WorldEditor::LastPath = filePath( %dlg.FileName );
       %fullPath = makeRelativePath( %dlg.FileName, getMainDotCSDir() );
       %file = fileBase( %fullPath );
    }   

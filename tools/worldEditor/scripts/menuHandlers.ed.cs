@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-$Pref::WorldEditor::FileSpec = "Torque Mission Files (*.mis)|*.mis|All Files (*.*)|*.*|";
+$pref::WorldEditor::FileSpec = "Torque Mission Files (*.mis)|*.mis|All Files (*.*)|*.*|";
 
 //////////////////////////////////////////////////////////////////////////
 // File Menu Handlers
@@ -307,7 +307,7 @@ function EditorSaveMissionAs( %missionName )
       {
          %dlg = new SaveFileDialog()
          {
-            Filters        = $Pref::WorldEditor::FileSpec;
+            Filters        = $pref::WorldEditor::FileSpec;
             DefaultPath    = EditorSettings.value("LevelInformation/levelsDirectory");
             ChangePath     = false;
             OverwritePrompt   = true;
@@ -432,7 +432,7 @@ function EditorOpenMission(%filename)
    {
       %dlg = new OpenFileDialog()
       {
-         Filters        = $Pref::WorldEditor::FileSpec;
+         Filters        = $pref::WorldEditor::FileSpec;
          DefaultPath    = EditorSettings.value("LevelInformation/levelsDirectory");
          ChangePath     = false;
          MustExist      = true;
@@ -489,7 +489,7 @@ function EditorExportToCollada()
       %dlg = new SaveFileDialog()
       {
          Filters        = "COLLADA Files (*.dae)|*.dae|";
-         DefaultPath    = $Pref::WorldEditor::LastPath;
+         DefaultPath    = $pref::WorldEditor::LastPath;
          DefaultFile    = "";
          ChangePath     = false;
          OverwritePrompt   = true;
@@ -498,7 +498,7 @@ function EditorExportToCollada()
       %ret = %dlg.Execute();
       if ( %ret )
       {
-         $Pref::WorldEditor::LastPath = filePath( %dlg.FileName );
+         $pref::WorldEditor::LastPath = filePath( %dlg.FileName );
          %exportFile = %dlg.FileName;
       }
 
@@ -522,7 +522,7 @@ function EditorMakePrefab()
       %dlg = new SaveFileDialog()
       {
          Filters        = "Prefab Files (*.prefab)|*.prefab|";
-         DefaultPath    = $Pref::WorldEditor::LastPath;
+         DefaultPath    = $pref::WorldEditor::LastPath;
          DefaultFile    = "";
          ChangePath     = false;
          OverwritePrompt   = true;
@@ -531,7 +531,7 @@ function EditorMakePrefab()
       %ret = %dlg.Execute();
       if ( %ret )
       {
-         $Pref::WorldEditor::LastPath = filePath( %dlg.FileName );
+         $pref::WorldEditor::LastPath = filePath( %dlg.FileName );
          %saveFile = %dlg.FileName;
       }
       

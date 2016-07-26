@@ -174,7 +174,7 @@ function Torque::initClient(%this)
    exec("scripts/gui/guiVideoPlayer.cs");
 
    //update user config files, if he has an old version
-   if($Pref::Version !$= 1050)
+   if($pref::Version !$= 1050)
    updatePrefs();
    
    // Really shouldn't be starting the networking unless we are

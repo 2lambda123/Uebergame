@@ -143,7 +143,7 @@ function onServerMessage(%message)
 function MainChatHud::onWake( %this )
 {
    // set the chat hud to the users pref
-   %this.setChatHudLength( $Pref::ChatHudLength );
+   %this.setChatHudLength( $pref::ChatHudLength );
 }
 //------------------------------------------------------------------------------
 
