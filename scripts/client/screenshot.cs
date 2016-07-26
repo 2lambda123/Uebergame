@@ -121,7 +121,7 @@ function _screenShot( %tiles, %overlap )
    $screenshotNumber++;
    
    if ( ( $pref::Video::screenShotFormat $= "JPEG" ) || ( $pref::video::screenShotFormat $= "JPG" ) )         
-      screenShot( $HomePath @ "/screenshots/" @%name, "JPEG", %tiles, %overlap );      
+      screenShot( $HomePath @ "/screenshots/" @%name, "JPG", %tiles, %overlap );      
    else
       screenShot( $HomePath @ "/screenshots/" @%name, "PNG", %tiles, %overlap );
 }

@@ -33,7 +33,7 @@ function Torque::getHomePath(%this)
       if( !isDirectory( %temp ) )
       {
          echo("c2cannot find home user appdata roaming folder");
-         $HomePath = "prefs";
+         $HomePath = "configs";
       }
       else
       {
@@ -77,8 +77,8 @@ function Torque::onStart(%this)
    exec( "./client/updatePrefs.cs" );
    
    // Load up our user saved settings, if existing
-   if (isFile($HomePath @ "/settings.config.cs"))
-      exec( $HomePath @ "/settings.config.cs" );
+   if (isFile($HomePath @ "/config.cs"))
+      exec( $HomePath @ "/config.cs" );
 
    $ScriptGroup = new SimGroup(ScriptClassGroup);
 
@@ -142,15 +142,15 @@ function onExit()
    echo("Exporting client control configuration");
    if (isObject(moveMap))
    {
-      moveMap.save($HomePath @ "/bindings.config.cs", false);
+      moveMap.save($HomePath @ "/bindings.cs", false);
 
       // Append the other action maps:
-      spectatorMap.save($HomePath @ "/bindings.config.cs", true);
-      vehicleMap.save($HomePath @ "/bindings.config.cs", true);
+      spectatorMap.save($HomePath @ "/bindings.cs", true);
+      vehicleMap.save($HomePath @ "/bindings.cs", true);
    }
 
-   echo("Exporting settings and banlist");
-   export("$pref::*", $HomePath @ "/settings.config.cs", false);
+   echo("Exporting configs");
+   export("$pref::*", $HomePath @ "/config.cs", false);
    BanList::Export($HomePath @ "/banlist.cs");
 
    Parent::onExit();

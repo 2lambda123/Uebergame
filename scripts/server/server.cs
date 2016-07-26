@@ -368,7 +368,7 @@ function Torque::destroyServer(%this)
    
    // Save any server settings
    echo( "Exporting server prefs..." );
-   export("$pref::*", $HomePath @ "/settings.config.cs", false);
+   export("$pref::*", $HomePath @ "/config.cs", false);
 
    // Increase the server session number.  This is used to make sure we're
    // working with the server session we think we are.
@@ -384,7 +384,7 @@ function resetServerDefaults()
       Game.endGame();
 
    exec( "./defaults.cs" );
-   exec( $HomePath @ "/settings.config.cs" );
+   exec( $HomePath @ "/config.cs" );
 
    allowConnections(true); // ZOD: Open up the server for connections again.
    //reload the current level

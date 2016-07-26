@@ -84,8 +84,8 @@ function Torque::initClient(%this)
    // Default player key bindings
    exec("./default.bind.cs");
 
-   if (isFile($HomePath @ "/bindings.config.cs"))
-      exec($HomePath @ "/bindings.config.cs");
+   if (isFile($HomePath @ "/bindings.cs"))
+      exec($HomePath @ "/bindings.cs");
 	 
    // Base client functionality
    exec( "./message.cs" );

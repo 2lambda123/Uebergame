@@ -318,12 +318,12 @@ function OptionsDlg::onSleep(%this)
 		 
    // write out the control config files into the user home directory
 
-   moveMap.save($HomePath @ "/binds.cs", false);
-   spectatorMap.save($HomePath @ "/binds.cs", true);
-   vehicleMap.save($HomePath @ "/binds.cs", true);
+   moveMap.save($HomePath @ "/bindings.cs", false);
+   spectatorMap.save($HomePath @ "/bindings.cs", true);
+   vehicleMap.save($HomePath @ "/bindings.cs", true);
    
    //export settings directly in case the game is not existed regularly and settings are lost
-   export("$pref::*", $HomePath @ "/settings.config.cs", false);
+   export("$pref::*", $HomePath @ "/config.cs", false);
 }
 
 function OptGraphicsDriverMenu::onSelect( %this, %id, %text )

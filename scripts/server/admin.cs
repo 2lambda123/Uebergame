@@ -35,7 +35,7 @@ function serverCmdSAD(%client, %password)
          {
             if(%password $= "changeme")
             {
-               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal SAD PW. You need to change the default \"$pref::Server::SuperAdminPassword\" value in \"settings.config.cs\"!');
+               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal SAD PW. You need to change the default \"$pref::Server::SuperAdminPassword\" value in \"config.cs\"!');
                return;
             }
             %client.isAdmin = true;
@@ -49,7 +49,7 @@ function serverCmdSAD(%client, %password)
          {
             if(%password $= "changethis")
             {
-               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal Admin PW. You need to change the default \"$pref::Server::AdminPassword\" value in \"settings.config.cs\"!');
+               messageClient(%client, 'MsgPasswordFailed', '\c2Illegal Admin PW. You need to change the default \"$pref::Server::AdminPassword\" value in \"config.cs\"!');
                return;
             }
             %client.isAdmin = true;
@@ -565,7 +565,7 @@ function AddToAdminList(%admin, %client)
    else
       $pref::Server::AdminList = $pref::Server::AdminList TAB %client.guid;
 
-   export("$pref::*", $HomePath @ "/settings.config.cs", false);
+   export("$pref::*", $HomePath @ "/config.cs", false);
    echo(%client.nameBase @ " " @ %client.guid @ " added to Admin list.", 1);
 }
 
@@ -584,7 +584,7 @@ function AddToSuperAdminList(%client)
    else
       $pref::Server::SuperAdminList = $pref::Server::SuperAdminList TAB %client.guid;
 
-   export("$pref::*", $HomePath @ "/settings.config.cs", false);
+   export("$pref::*", $HomePath @ "/config.cs", false);
    echo(%client.nameBase @ " " @ %client.guid @ " added to Super Admin list.", 1);
 }
 

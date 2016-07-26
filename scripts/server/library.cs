@@ -1393,8 +1393,9 @@ function ListDatablocks()
    {
       %datablock = DataBlockGroup.getObject(%i);
       echo("Datablock: " @ %datablock.getClassName());
-
-      %fileName = $HomePath @ "/Datablocks/" @ %datablock.getClassName() @ "/" @ %datablock.getName() @ ".cs";
+	  
+	  %fileName = "datablocks/" @ %datablock.getClassName() @ "/" @ %datablock.getName() @ ".cs";
+			
       %datablock.save(%filename);
    }
 

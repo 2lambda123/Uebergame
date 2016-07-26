@@ -12,7 +12,7 @@ function ScoreHudFFA::onWake(%this)
          %id = PlayerListGuiList.getRowId(%i);
          ScoreHudFFAList.addRow(%id, %text);
       }
-      ScoreHudFFAList.sortNumerical(1, false);
+      ScoreHudFFAList.sortNumerical(2, false);
 	  
 	  ScoreHudFFA.GetScoreHudFFAUpdate();  
 }
@@ -34,7 +34,7 @@ function ScoreHudFFA::refresh(%this)
          %id = PlayerListGuiList.getRowId(%i);
          ScoreHudFFAList.addRow(%id, %text);
       }
-      ScoreHudFFAList.sortNumerical(1, false);
+      ScoreHudFFAList.sortNumerical(2, false);
 }
 
 function ScoreHudFFA::GetScoreHudFFAUpdate(%this)

@@ -64,8 +64,8 @@ $pref::SFX::rolloffFactor = "0.25";
 $pref::Player = "Player\tbase";
 $pref::Player::defaultFov = 90;
 $pref::Player::Fov = 90;
-$pref::Player::FriendlyColor = "0.000000 1.000000 0.000000 1.000000";
-$pref::Player::EnemyColor = "1.000000 0.000000 0.000000 1.000000";
+//$pref::Player::FriendlyColor = "0.000000 1.000000 0.000000 1.000000"; //not in use
+//$pref::Player::EnemyColor = "1.000000 0.000000 0.000000 1.000000"; //not in use
 //$pref::Player::SelectedVehicle = "Cheetah"; //vehicles not ready yet
 
 $pref::Audio::BackgroundMusic = 1;
@@ -92,7 +92,7 @@ $sceneLighting::cacheLighting = 1;
 
 $pref::Video::displayDevice = "D3D9";
 $pref::Video::disableVerticalSync = 0;
-$pref::Video::mode = "1024 768 false 32 60 1";
+$pref::Video::mode = "1024 768 false 32 60 4";
 $pref::Video::defaultFenceCount = 0;
 $pref::Video::screenShotSession = 0;
 $pref::Video::screenShotFormat = "PNG";
@@ -625,6 +625,8 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          $pref::LightManager::Enable::SSAO = "0";
          $pref::LightManager::Enable::LightRay = "0";
          $pref::LightManager::Enable::DOF = "0"; 
+		 
+		 $pref::Video::defaultAnisotropy = "0";
       }
       else
       {
@@ -639,7 +641,9 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          $pref::LightManager::Enable::HDR = "0";
          $pref::LightManager::Enable::SSAO = "0";
          $pref::LightManager::Enable::LightRay = "0";
-         $pref::LightManager::Enable::DOF = "0"; 		 
+         $pref::LightManager::Enable::DOF = "0"; 
+
+         $pref::Video::defaultAnisotropy = "0";	 
       }
    }   
    else
@@ -658,6 +662,8 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          $pref::LightManager::Enable::SSAO = "1";
          $pref::LightManager::Enable::LightRay = "1";
          $pref::LightManager::Enable::DOF = "1"; 
+		 
+		 $pref::Video::defaultAnisotropy = "16";
       }
       else if ( %videoMem > 1000 )
       {
@@ -673,6 +679,8 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          $pref::LightManager::Enable::SSAO = "1";
          $pref::LightManager::Enable::LightRay = "1";
          $pref::LightManager::Enable::DOF = "1"; 
+		 
+		 $pref::Video::defaultAnisotropy = "8";
       }
       else if ( %videoMem > 400 || %videoMem == 0 )
       {
@@ -687,7 +695,9 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          $pref::LightManager::Enable::HDR = "0";
          $pref::LightManager::Enable::SSAO = "0";
          $pref::LightManager::Enable::LightRay = "1";
-         $pref::LightManager::Enable::DOF = "1"; 		 
+         $pref::LightManager::Enable::DOF = "1"; 	
+
+         $pref::Video::defaultAnisotropy = "4";	 
          
          if ( %videoMem == 0 )
             return "Uebergame was unable to detect available video memory. Applying 'Normal' quality.";
@@ -705,7 +715,9 @@ function GraphicsQualityAutodetect_Apply( %shaderVer, %intel, %videoMem )
          $pref::LightManager::Enable::HDR = "0";
          $pref::LightManager::Enable::SSAO = "0";
          $pref::LightManager::Enable::LightRay = "1";
-         $pref::LightManager::Enable::DOF = "0"; 		 
+         $pref::LightManager::Enable::DOF = "0"; 
+
+         $pref::Video::defaultAnisotropy = "0";
       }
    }
    
