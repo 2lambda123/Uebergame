@@ -20,6 +20,8 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+#include "shaderModel.hlsl"
+
 struct Vert
 {
 	float3 position	: POSITION;
@@ -31,7 +33,7 @@ struct Vert
 
 struct Conn
 {
-	float4 position : POSITION;
+	float4 position : TORQUE_POSITION;
    float4 color : COLOR0;
 	float2 texCoord	: TEXCOORD0;
 	float fade : TEXCOORD1;
@@ -46,12 +48,12 @@ Conn main( Vert In )
     Conn Out;
 
     // Decals are in world space.
-    Out.position = mul( modelview, float4( In.position.xyz, 1.0 ) );
+    Out.position = mul( modelview, float4( In.position, 1.0 ) );
  
     Out.color = In.color;
     Out.texCoord = In.texCoord;
  
-    float fromCasterDist = length( In.position.xyz - shadowCasterPosition ) - shadowLength;   
+    float fromCasterDist = length( In.position - shadowCasterPosition ) - shadowLength;   
     Out.fade = 1.0 - saturate( fromCasterDist / shadowLength );
     
    return Out;

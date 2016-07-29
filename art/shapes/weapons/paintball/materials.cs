@@ -23,4 +23,5 @@ singleton Material(Mat_paintball_marker_01)
    normalMap[0] = "art/shapes/weapons/paintball/paintball_marker_01_N.dds";
    specularPower[0] = "16";
    specularStrength[0] = "0.7";
+   castDynamicShadows = "1";
 };

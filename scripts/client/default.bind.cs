@@ -118,13 +118,23 @@ function escapeFromGame()
 function showMetrics(%val)
 {
    if(%val)
-      metrics("fps");
+   {
+      if(!Canvas.isMember(FrameOverlayGui))
+         metrics("fps");
+      else
+         metrics("");
+   }
 }
 
 function showUeberMetrics(%val)
 {
    if(%val)
-      metrics("fps gfx shadow sfx terrain groundcover forest net");
+   {
+      if(!Canvas.isMember(FrameOverlayGui))
+         metrics("fps gfx shadow sfx terrain groundcover forest net");
+      else
+         metrics("");
+   }
 }
 
 // Only if debug build

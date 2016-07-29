@@ -612,6 +612,32 @@ function CoreGame::onClientEnterGame(%game, %client)
    if ( %client.team > 0 )
       messageClient(%client, 'MsgCheckTeamLines', "", %client.team);
 
+   // new 3.9 entity feature
+   %entityIds = parseMissionGroupForIds("Entity", "");
+   %entityCount = getWordCount(%entityIds);
+   
+   for(%i=0; %i < %entityCount; %i++)
+   {
+      %entity = getWord(%entityIds, %i);
+      
+      for(%e=0; %e < %entity.getCount(); %e++)
+      {
+         %child = %entity.getObject(%e);
+         if(%child.getCLassName() $= "Entity")
+            %entityIds = %entityIds SPC %child.getID();  
+      }
+      
+      for(%c=0; %c < %entity.getComponentCount(); %c++)
+      {
+         %comp = %entity.getComponentByIndex(%c);
+         
+         if(%comp.isMethod("onClientConnect"))
+         {
+            %comp.onClientConnect(%client);  
+         }
+      }
+   }
+  
    // were ready to go.
    %client.matchStartReady = true;
    echo("Client" SPC %client SPC "is ready.");

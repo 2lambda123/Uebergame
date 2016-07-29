@@ -79,8 +79,8 @@ new TerrainMaterial()
    detailSize = "4";
    parallaxScale = "0.04";
    detailMap = "art/terrains/asphalt/ter_asphalt_decay_01_D";
-   normalMap = "art/terrains/asphalt/ter_asphalt_decay_01_N";
    macroDistance = "250";
+   normalMap = "art/terrains/asphalt/ter_asphalt_decay_01_N";
 };
 
 singleton Material(TerrainFX_ter_asphalt_concrete_01)    

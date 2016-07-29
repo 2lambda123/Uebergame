@@ -13,4 +13,5 @@ singleton Material( sky_day_01_SkyMat )
    cubemap = sky_day_01_Cubemap;
    materialTag0 = "Skies";
    effectColor[1] = "InvisibleBlack";
+   isSky = true;
 };

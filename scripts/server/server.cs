@@ -191,6 +191,8 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./cameraData.cs");
    exec("./deployables.cs");
    exec("./power.cs");
+   exec("./VolumetricFog.cs");
+   exec("./physicsShape.cs");
    
    // Create the server physics world.
    physicsInitWorld( "server" );
@@ -313,6 +315,26 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    {
        if( fileBase(%file) $= fileBase(%level) )
           exec( %file );
+   }
+   
+   //Entity/Component stuff
+   if(isFile("./components/game/camera.cs"))
+   exec("./components/game/camera.cs");
+   if(isFile("./components/game/controlObject.cs"))
+   exec("./components/game/controlObject.cs");
+   if(isFile("./components/game/itemRotate.cs"))
+   exec("./components/game/itemRotate.cs");
+   if(isFile("./components/game/playerSpawner.cs"))
+   exec("./components/game/playerSpawner.cs");
+   if(isFile("./components/input/fpsControls.cs"))
+   exec("./components/input/fpsControls.cs");
+   if(isFile("./components/input/inputManager.cs"))
+   exec("./components/input/inputManager.cs");
+   
+   if(isFile("./gameObjects/GameObjectManager.cs"))
+   {
+   exec("./gameObjects/GameObjectManager.cs");
+   execGameObjects();  
    }
 
    // Load the level

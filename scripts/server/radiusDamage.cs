@@ -59,7 +59,7 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
    // Use the container system to iterate through all the objects
    // within our explosion radius.  We'll apply damage to all ShapeBase
    // objects.
-   InitContainerRadiusSearch( %position, %radius, $TypeMasks::ShapeBaseObjectType );
+   InitContainerRadiusSearch( %position, %radius, $TypeMasks::ShapeBaseObjectType | $TypeMasks::DynamicShapeObjectType);
 
    // Create an array of targets to damage and or impulse
    %count = 0;
@@ -93,6 +93,7 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
       // Full damage is applied to anything less than half the radius away,
       // linear scale from there.
       %distScale = (%dist < %halfRadius) ? 1.0 : 1.0 - ((%dist - %halfRadius) / %halfRadius);
+	  %distScale = mClamp(%distScale,0.0,1.0);
       //%amount = (1.0 - (%dist / %radius)) * %coverage * %damage;
       //error("Amount:" SPC %amount);
 

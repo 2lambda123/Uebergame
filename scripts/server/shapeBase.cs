@@ -491,6 +491,19 @@ function ShapeBase::clearDamageDt(%this)
    %this.damageSchedule = "";
 }
 
+function GameBase::damage(%this, %sourceObject, %position, %damage, %damageType)
+{
+   // All damage applied by one object to another should go through this method.
+   // This function is provided to allow objects some chance of overriding or
+   // processing damage values and types.  As opposed to having weapons call
+   // ShapeBase::applyDamage directly. Damage is redirected to the datablock,
+   // this is standard procedure for many built in callbacks.
+      
+   %datablock = %this.getDataBlock();
+   if ( isObject( %datablock ) )
+      %datablock.damage(%this, %sourceObject, %position, %damage, %damageType);
+}
+
 // ZOD: Avoid engine crashes by setting a schedule to unmount images
 function ShapeBase::dismountImage(%this, %slot)
 {

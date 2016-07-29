@@ -199,11 +199,11 @@ function Torque::parseArgs(%this)
       switch$ (%arg)
       {
          case "-fullscreen":
-            setFullScreen(true);
+            $cliFullscreen = true;
             $argUsed[%i]++;
 
          case "-windowed":
-            setFullScreen(false);
+            $cliFullscreen = false;
             $argUsed[%i]++;
 
          case "-openGL":

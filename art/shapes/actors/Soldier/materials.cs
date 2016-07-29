@@ -24,9 +24,9 @@ singleton Material(Mat_Soldier_Main)
 {
    mapTo = "base_Soldier_Main";
 
-   diffuseMap[0] = "Soldier_D.dds";
-   normalMap[0] = "Soldier_N.dds";
-   specularMap[0] = "Soldier_S.dds";
+   diffuseMap[0] = "art/shapes/actors/Soldier/Soldier_D.dds";
+   normalMap[0] = "art/shapes/actors/Soldier/Soldier_N.dds";
+   specularMap[0] = "art/shapes/actors/Soldier/Soldier_S.dds";
 
    diffuseColor[0] = "1 1 1 1";
    specular[0] = "0.9 0.9 0.9 1";
@@ -38,6 +38,7 @@ singleton Material(Mat_Soldier_Main)
    materialTag0 = "Player";
    useAnisotropic[0] = "0";
    specularStrength[0] = "0.784314";
+   castDynamicShadows = "0";
 };
 
 singleton Material(Mat_Soldier_Dazzle)

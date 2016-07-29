@@ -7,6 +7,7 @@ singleton Material(Mat_paintball_player)
    specularMap[0] = "art/shapes/actors/paintball_player/paintball_player_S.dds";
    specularStrength[0] = "0.2";
    materialTag0 = "Player";
+   castDynamicShadows = "1";
 };
 
 singleton Material(Mat_blue_paintball_player : Mat_paintball_player)

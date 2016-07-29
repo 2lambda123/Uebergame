@@ -42,7 +42,7 @@ singleton ShaderData( PFX_SunBokehShader )
    DXPixelShaderFile   = "shaders/common/postFx/sunBokeh.hlsl";
    
    OGLVertexShaderFile  = "shaders/common/postFx/gl/postFxV.glsl";  
-   OGLPixelShaderFile   = "shaders/common/postFx/sunBokeh.glsl";  
+   OGLPixelShaderFile   = "shaders/common/postFx/gl/sunBokeh.glsl";  
     
    samplerNames[0] = "$backBuffer";		 
    samplerNames[1] = "$bokehTex";  
