@@ -861,9 +861,9 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    {
 	  switch$ (%game.playerType)
 	  {
-	   case "DefaultSoldier":
+	   case "DefaultPlayerData":
 	     %player = new Player() {
-           dataBlock = DefaultSoldier;
+           dataBlock = DefaultPlayerData;
            client = %client;
            team = %client.team;
            isBot = false;
@@ -958,7 +958,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 	 //use slot 0 since this is our first weapon
 	 %player.use( %player.weaponSlot[0] );
 	 
-	 case "DefaultSoldier": 
+	 case "DefaultPlayerData": 
 	 //check if soldier did not equip a primary weapon and give Lurker Rifle as a default then
 	 if ( %player.weaponSlot[1] $= "" )
 	 {
@@ -967,7 +967,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
      %player.setInventory( LurkerAmmo, %player.maxInventory(LurkerAmmo), 1 );
      %player.weaponCount++;
 	 }
-	 //use slot 1 for the DefaultSoldier, since his main weapon is on slot 1 instead of 0, since he has a pistol also
+	 //use slot 1 for the DefaultPlayerData, since his main weapon is on slot 1 instead of 0, since he has a pistol also
 	 %player.use( %player.weaponSlot[1] );
 	 
 	 default: %player.use( %player.weaponSlot[0] ); //all others start with weapon slot 0 as default
@@ -1039,7 +1039,7 @@ function CoreGame::loadOut(%game, %player)
    {
       SmsInv.ProcessLoadout( %client );
 	  
-	  if (%player.PlayerData = DefaultSoldier)
+	  if (%player.PlayerData = DefaultPlayerData)
 	  {
       //%player.setInventory( HealthKit, 1 );
       %player.setInventory( Ryder, 1, 1 );

@@ -240,7 +240,7 @@ function MfDGame::loadOut(%game, %player)
    else
    {
       SmsInv.ProcessLoadout( %client );
-	  if (%player.PlayerData = DefaultSoldier)
+	  if (%player.PlayerData = DefaultPlayerData)
 	  {
       %player.setInventory( HealthKit, 1 );
       %player.setInventory( Ryder, 1, 1 );

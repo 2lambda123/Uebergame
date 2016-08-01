@@ -39,7 +39,7 @@ function DMGame::setupGameParams(%game)
 {
    //LogEcho("DMGame::setupGameParams(" SPC %game.class SPC ")");
    
-   %game.playerType = "DefaultSoldier";
+   %game.playerType = "DefaultPlayerData";
    
    CoreGame::setupGameParams(%game);
 

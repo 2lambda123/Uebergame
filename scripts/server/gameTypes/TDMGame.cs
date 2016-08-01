@@ -39,7 +39,7 @@ function TDMGame::setupGameParams(%game)
 {
    //echo("TDMGame::setupGameParams(" SPC %game.class SPC ")");
    
-   %game.playerType = "DefaultSoldier";
+   %game.playerType = "DefaultPlayerData";
    
    CoreGame::setupGameParams(%game);
 

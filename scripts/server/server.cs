@@ -314,7 +314,10 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    for( %file = findFirstFile( %path ); %file !$= ""; %file = findNextFile( %path ) )
    {
        if( fileBase(%file) $= fileBase(%level) )
+      {
           exec( %file );
+         echo( "executing map script:" SPC %file );
+	  }
    }
    
    //Entity/Component stuff

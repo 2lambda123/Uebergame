@@ -679,7 +679,7 @@ datablock DecalData(PlayerFootprint)
 // This is our default player datablock that all others will derive from.
 // ----------------------------------------------------------------------------
 
-datablock PlayerData(DefaultSoldier : ArmorDamageScale)
+datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 {
    className = Armor;
    cmdCategory = "Clients";
@@ -896,7 +896,7 @@ datablock PlayerData(DefaultSoldier : ArmorDamageScale)
    shadowSize = "512";
 };
 
-datablock PlayerData(PaintballPlayerData : DefaultSoldier)
+datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
 {
    shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
    shapeNameFP[0] = "";
@@ -917,7 +917,7 @@ datablock PlayerData(PaintballPlayerData : DefaultSoldier)
 // SMS
 //            |Datablock|     |$SMS::ArmorName|     |Index|
 
-SmsInv.AddArmor( DefaultSoldier, "Soldier", 0 );
+SmsInv.AddArmor( DefaultPlayerData, "Soldier", 0 );
 SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 0 );
 
 //----------------------------------------------------------------------------

@@ -396,6 +396,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnTimeout[6]      = "Fire";
    stateWaitForTimeout[6]           = true;
    stateTimeoutValue[6]             = 0.02;
+   stateTransitionGeneric0In[6]     = "FireStop";
 
    stateName[7]                     = "NoAmmo";
    stateTransitionGeneric0In[7]     = "SprintEnter";
@@ -481,6 +482,7 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionOnTimeout[14]      = "Ready";    
    stateTransitionOnTriggerDown[14]  = "Fire";  
    stateTransitionOnNoAmmo[14]       = "NoAmmo"; 
+   stateTransitionGeneric0In[14]     = "Ready";
 
    stateName[15]                     = "ReloadFinish";
    stateTimeoutValue[15]             = 0.1;
