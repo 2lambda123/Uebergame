@@ -73,9 +73,9 @@ new TerrainMaterial()
    detailStrength = "1";
    detailDistance = "100";
    macroMap = "art/terrains/asphalt/ter_asphalt_decay_01_D";
-   macroSize = "64";
+   macroSize = "42";
    internalName = "ter_asphalt_decay_01";
-   macroStrength = "0.8";
+   macroStrength = "0.5";
    detailSize = "4";
    parallaxScale = "0.04";
    detailMap = "art/terrains/asphalt/ter_asphalt_decay_01_D";
@@ -103,7 +103,7 @@ new TerrainMaterial()
    macroSize = "18";
    internalName = "ter_asphalt_concrete_01";
    macroStrength = "0.6";
-   detailStrength = "1";
+   detailStrength = "0.8";
    parallaxScale = "0";
    detailSize = "4";
    detailMap = "art/terrains/asphalt/ter_asphalt_concrete_01_D";

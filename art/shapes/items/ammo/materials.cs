@@ -10,4 +10,5 @@ singleton Material(Mat_futuristic_ammo_box_01)
    normalMap[0] = "futuristic_ammo_box_01_N.dds";
    specularMap[0] = "futuristic_ammo_box_01_S.dds";
    showFootprints = "0";
+   castDynamicShadows = "1";
 };

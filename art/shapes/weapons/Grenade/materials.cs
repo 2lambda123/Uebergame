@@ -38,6 +38,7 @@ singleton Material(grenade_grenade)
 	translucent = false;
 	translucentBlendOp = "None";
 	materialTag0 = "Weapon";
+	castDynamicShadows = "1";
 };
 
 //--- grenade.dts MATERIALS END ---

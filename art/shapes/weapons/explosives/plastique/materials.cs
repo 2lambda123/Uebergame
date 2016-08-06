@@ -10,4 +10,5 @@ singleton Material(plastique)
    normalMap[0] = "art/shapes/weapons/explosives/plastique/plastique_N.dds";
    specularMap[0] = "art/shapes/weapons/explosives/plastique/plastique_S.dds";
    showFootprints = "0";
+   castDynamicShadows = "1";
 };

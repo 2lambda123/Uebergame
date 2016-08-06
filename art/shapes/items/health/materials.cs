@@ -12,4 +12,5 @@ singleton Material(Mat_medpack_01)
    showFootprints = "0";
    footstepSoundId = "1";
    vertColor[0] = "1";
+   castDynamicShadows = "1";
 };

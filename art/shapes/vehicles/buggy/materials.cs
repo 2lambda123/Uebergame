@@ -24,4 +24,5 @@ new Material(Mat_buggy)
 {
    diffuseMap[0] = "buggy";
    translucent = false;
+   castDynamicShadows = "1";
 };

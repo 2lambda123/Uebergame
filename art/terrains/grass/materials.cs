@@ -19,7 +19,7 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "32";
    parallaxScale = "0";
-   macroStrength = "1";
+   macroStrength = "0.9";
    macroMap = "art/terrains/grass/ter_grass_flowers_01_M";
    detailStrength = "1";
    detailSize = "5";
@@ -102,7 +102,7 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "30";
    internalName = "ter_grass_short_01";
-   macroStrength = "0.7";
+   macroStrength = "0.5";
    detailSize = "4";
    macroMap = "art/terrains/grass/ter_grass_short_01_M";
    parallaxScale = "0";

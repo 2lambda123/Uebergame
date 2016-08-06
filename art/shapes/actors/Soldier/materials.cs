@@ -38,7 +38,7 @@ singleton Material(Mat_Soldier_Main)
    materialTag0 = "Player";
    useAnisotropic[0] = "0";
    specularStrength[0] = "0.784314";
-   castDynamicShadows = "0";
+   castDynamicShadows = "1";
 };
 
 singleton Material(Mat_Soldier_Dazzle)

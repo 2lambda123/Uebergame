@@ -11,6 +11,7 @@ singleton Material(Mat_flag_01)
    specularMap[0] = "art/shapes/objectives/flags/flag_01_S.dds";
    specularStrength[0] = "0.8";
    showFootprints = "0";
+   castDynamicShadows = "1";
 };
 
 singleton Material(Mat_blue_flag_01 : Mat_flag_01)

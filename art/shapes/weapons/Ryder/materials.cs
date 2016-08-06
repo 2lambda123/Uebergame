@@ -31,7 +31,8 @@ singleton Material(FP_Ryder_Base)
    pixelSpecular[0] = "1";
    useAnisotropic[0] = "1";
    normalMap[0] = "art/shapes/weapons/Ryder/FP_Ryder_N.dds";
-   materialTag0 = "weapon";
+   materialTag0 = "Weapon";
+   castDynamicShadows = "1";
 };
 
 singleton Material(TP_Ryder_Base)
@@ -44,7 +45,8 @@ singleton Material(TP_Ryder_Base)
    specularPower[0] = "10";
    translucentBlendOp = "None";
    pixelSpecular[0] = "0";
-   materialTag0 = "weapon";
+   materialTag0 = "Weapon";
+   castDynamicShadows = "1";
 };
 
 singleton Material(Ryder_MuzzleFlash_Base)
@@ -66,6 +68,6 @@ singleton Material(Ryder_MuzzleFlash_Base)
    waveFreq[0] = "5.313";
    waveAmp[0] = "0.016";
    castShadows = "0";
-   materialTag0 = "weapon";
+   materialTag0 = "Weapon";
 };
 

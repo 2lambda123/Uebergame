@@ -29,7 +29,8 @@ singleton Material(Mat_Lurker_ScopeScreen_Main)
    translucentBlendOp = "None";
    glow[0] = "0";
    emissive[0] = "0";
-   materialTag0 = "weapon";
+   materialTag0 = "Weapon";
+   castDynamicShadows = "1";
 };
 
 singleton Material(Mat_Lurker_Main)
@@ -42,7 +43,8 @@ singleton Material(Mat_Lurker_Main)
    translucentBlendOp = "None";
    useAnisotropic[0] = "1";
    normalMap[0] = "art/shapes/weapons/Lurker/Lurker_N.dds";
-   materialTag0 = "weapon";
+   materialTag0 = "Weapon";
+   castDynamicShadows = "1";
 };
 
 singleton Material(Mat_Lurker_MuzzleFlash_Main)
@@ -64,7 +66,7 @@ singleton Material(Mat_Lurker_MuzzleFlash_Main)
    waveFreq[0] = "5.313";
    waveAmp[0] = "0.016";
    castShadows = "0";
-   materialTag0 = "weapon";
+   materialTag0 = "Weapon";
 };
 
 singleton Material(Mat_dark_Lurker : Mat_Lurker_Main)

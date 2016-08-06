@@ -9,4 +9,5 @@ singleton Material(time_bomb)
    diffuseMap[0] = "time_bomb_D.dds";
    normalMap[0] = "time_bomb_N.dds";
    specularMap[0] = "time_bomb_S.dds";
+   castDynamicShadows = "1";
 };

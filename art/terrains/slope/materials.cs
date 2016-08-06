@@ -23,6 +23,7 @@ new TerrainMaterial()
    macroStrength = "0.6";
    parallaxScale = "0.03";
    normalMap = "art/terrains/slope/ter_slope_rubble_01_N";
+   detailStrength = "1";
 };
 
 singleton Material(TerrainFX_ter_slope_rubble_01_side)    

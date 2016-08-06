@@ -31,6 +31,7 @@ singleton Material(ProxMine_Base)
    pixelSpecular[0] = "1";
    specularMap[0] = "ProxMine_S.dds";
    useAnisotropic[0] = "1";
+   castDynamicShadows = "1";
 };
 
 singleton Material(ProxMine_Glow_Base)
