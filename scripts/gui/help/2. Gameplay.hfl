@@ -1,21 +1,21 @@
-<lmargin%:5><rmargin%:95><font:Arial Bold:20>Gameplay
+<lmargin%:5><rmargin%:95><font:ArialBold:20>Gameplay
 
-<font:Arial Bold:16>Deathmatch
+<font:ArialBold:16>Deathmatch
 <font:Arial:16>
 Deathmatch is an all vs all gamemode. After you started or joined a game you will be spawned into the level on a random location.
 Deathmatch is available for paintball as well, called "Paintball Deathmatch"
-<font:Arial Bold:16>Goal
+<font:ArialBold:16>Goal
 <font:Arial:16>Your goal is to kill the other players, each kill gives you 10 score, one death -5 and after the match the player with the highest score wins.
-<font:Arial Bold:16>Team Deathmatch
+<font:ArialBold:16>Team Deathmatch
 <font:Arial:16>
 Team Deathmatch is a blue team vs red team gamemode. Each team has it's own starting area where player get spawned.
 Team Deathmatch is available for paintball as well, called "Paintball Team Deathmatch"
-<font:Arial Bold:16>Goal
+<font:ArialBold:16>Goal
 <font:Arial:16>Your goal is to kill the other team, each kill gives you 10 score, one death -5 and after the match the team with the most kills wins.
-<font:Arial Bold:16>Equipment
+<font:ArialBold:16>Equipment
 <font:Arial:16> Press "i" to open the armory, there you can chose your loadout, depending on what is allowed by the server. If you are the Soldier you start with a pistol
 and additionally you can chose a primary weapon, a grenade type and a special device. The paintball player instead just can chose one paintball marker.
-<font:Arial Bold:16> Health and Stamina
+<font:ArialBold:16> Health and Stamina
 <font:Arial:16>On the bottom left you have two bars, the green one is stamina which is reduced when you sprint and jump and refills when you are resting.
 The red one is your health, when you take damage your health is reduced, when it reaches zero, you die. It slowly refills by itself, but you also can collect medpacks.
 Medpacks give you 30 health and increases your refill rate for a while.

@@ -222,7 +222,7 @@ new GuiControlProfile (GuiOrangeTextProfile)
    fontColor = "224 128 0 255";
    category = "Core";
    fontSize = "18";
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontColors[0] = "224 128 0 255";
 };
 
@@ -333,7 +333,7 @@ if( !isObject( GuiProgressProfile ) )
 new GuiControlProfile( GuiProgressProfile )
 {
    fontSize = 18;
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    opaque = false;
    fillColor = "0 162 255 200";
    border = true;
@@ -388,7 +388,7 @@ new GuiControlProfile( GuiButtonProfile )
    borderColor = "80 80 80 255";
    borderColorHL = "64 54 45 255";
    bevelColorHL = "30 30 30 255";
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
 };
 
 if( !isObject( GuiMenuButtonProfile ) )
@@ -397,7 +397,7 @@ new GuiControlProfile( GuiMenuButtonProfile )
    opaque = true;
    border = "1";
    fontSize = "24";
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontColor = "93 85 54 255";
    fontColorHL = "230 127 25 255";
    fontColorNA = "64 64 64 255";
@@ -677,7 +677,7 @@ new GuiControlProfile( GuiTabPageProfile : GuiDefaultProfile )
 if( !isObject( GuiConsoleProfile ) )
 new GuiControlProfile( GuiConsoleProfile )
 {
-   fontType = ($platform $= "macos") ? "Monaco" : "Lucida Console";
+   fontType = ($platform $= "macos") ? "Monaco" : "LucidaConsole";
    fontSize = ($platform $= "macos") ? 13 : 12;
    fontColor = "255 255 255";
    fontColorHL = "0 255 255";

@@ -182,7 +182,7 @@ function CL_LevelList::onSelect(%this, %row)
    %this.getMissionInfo(%mission);
 
    CL_Description.setText("");
-   %text = "<color:ffffff><shadowcolor:000000><shadow:1:1><font:Arial Bold:12>";
+   %text = "<color:ffffff><shadowcolor:000000><shadow:1:1><font:ArialBold:12>";
    for(%line = 0; %line < $SMInfoLineCount; %line++)
       CL_Description.addtext( %text @ $SMInfoLine[%line] @ "\n\n", true );
 }

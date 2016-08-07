@@ -116,15 +116,15 @@ function handleLoadInfoMessage(%msgType, %msgString, %misFile, %mapName, %typeNa
       LOAD_MapPic.setBitmap( "levels/load_mission.jpg" );
    }
 
-   LOAD_MapName.setText( "<color:ffffff><shadowcolor:000000><shadow:3:3><font:Arial Bold:24>" @ %mapName );
-   LOAD_MissionType.setText( "<color:ffffff><shadowcolor:000000><shadow:3:3><font:Arial Bold:24>" @ %typeName );
+   LOAD_MapName.setText( "<color:ffffff><shadowcolor:000000><shadow:3:3><font:ArialBold:24>" @ %mapName );
+   LOAD_MissionType.setText( "<color:ffffff><shadowcolor:000000><shadow:3:3><font:ArialBold:24>" @ %typeName );
 }
 
 //------------------------------------------------------------------------------
 
 function handleLoadDescriptionMessage(%msgType, %msgString, %line)
 {
-   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:18>" @ %line;
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_MapDescription.addtext( %text @ "\n\n", true );
 
@@ -137,7 +137,7 @@ function handleLoadDescriptionMessage(%msgType, %msgString, %line)
 
 function handleLoadRulesLineMessage(%msgType, %msgString, %line)
 {
-   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:18>" @ %line;
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_GameText.addtext( %text @ "\n\n", true );
 }
@@ -146,7 +146,7 @@ function handleLoadRulesLineMessage(%msgType, %msgString, %line)
 
 function handleLoadServerInfoMessage(%msgType, %msgString, %line)
 {
-   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:Arial Bold:18>" @ %line;
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_ServerInfo.addtext( %text @ "\n\n", true );
 }

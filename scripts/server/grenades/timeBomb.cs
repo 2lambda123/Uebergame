@@ -155,7 +155,7 @@ function serverCmdsetBombTimer(%client, %time)
 
       %player.bombThrown.armed = true;
       %player.bombThrown.detThread = %player.bombThrown.getDataBlock().schedule(%time * 1000, "detonate", %player.bombThrown);
-      bottomPrint(%client, "<font:Arial Bold:14>Bomb armed with a time of" SPC %time SPC "seconds!", 3, 2);
+      bottomPrint(%client, "<font:ArialBold:14>Bomb armed with a time of" SPC %time SPC "seconds!", 3, 2);
    }
 }
 

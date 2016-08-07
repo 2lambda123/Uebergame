@@ -35,7 +35,7 @@ singleton GuiControlProfile (EditorToolButtonProfile)
 
 singleton GuiControlProfile (EditorTextProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontColor = "196 196 196 255";
    autoSizeWidth = true;
    autoSizeHeight = true;
@@ -44,7 +44,7 @@ singleton GuiControlProfile (EditorTextProfile)
 
 singleton GuiControlProfile (EditorTextProfileWhite)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontColor = "255 255 255";
    autoSizeWidth = true;
    autoSizeHeight = true;

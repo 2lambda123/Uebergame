@@ -224,7 +224,7 @@ singleton GuiControlProfile(BloodStreakProfile)
 //Bottom
 singleton GuiControlProfile(ObjTextLeftProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = "16";
    fontColor = "224 0 0";
    justify = "left";
@@ -272,42 +272,42 @@ singleton GuiControlProfile(EnemyNameTextProfile : GuiTextProfile)
 
 singleton GuiControlProfile(ScoreHudHeaderProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 20;
    fontColor = "255 255 255";
 };
 
 singleton GuiControlProfile(ScoreHudHeaderBlueProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 18;
    fontColor = "150 200 255";
 };
 
 singleton GuiControlProfile(ScoreHudHeaderRedProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 18;
    fontColor = "255 200 150";
 };
 
 singleton GuiControlProfile(ScoreHudTextWhiteProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 14;
    fontColor = "240 240 240";
 };
 
 singleton GuiControlProfile(ScoreHudTextBlueProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 14;
    fontColor = "150 200 255";
 };
 
 singleton GuiControlProfile(ScoreHudTextRedProfile)
 {
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 14;
    fontColor = "255 200 150";
 };

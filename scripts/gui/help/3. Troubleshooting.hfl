@@ -1,24 +1,24 @@
-<lmargin%:5><rmargin%:95><font:Arial Bold:20>Troubleshooting
+<lmargin%:5><rmargin%:95><font:ArialBold:20>Troubleshooting
 
-<font:Arial Bold:16>Bad Performance
+<font:ArialBold:16>Bad Performance
 <font:Arial:16>Try reducing the graphics settings until it's acceptable.
 Some tips:
 Greatest performance increase is achieved by reducing the games resolution.
 Reducing lighting quality gives the greatest performance increase, especially on lowest settings, but it will look very ugly. So this should be your last resort, for example if you are running on a slow laptop.
 
-<font:Arial Bold:16>Video Issues
+<font:ArialBold:16>Video Issues
 <font:Arial:16>Make sure you have the latest stable drivers for your video card.
 You can get video drivers from your card manufacturers website.
 
-<font:Arial Bold:16>My game is not on the server list
+<font:ArialBold:16>My game is not on the server list
 <font:Arial:16>Make sure the "multiplayer" checkbox was checked, when you started the game, as well as the "display on master server" under options.
 If you still do not get listed, you likely have your ports blocked, Uebergame needs the ports 28000 and 28002 to be open on your firewall/router.
 
-<font:Arial Bold:16>Game crashes
+<font:ArialBold:16>Game crashes
 <font:Arial:16>When the game crashes and you don't know why, have a look into the console.log file, it is created in your game folder, maybe the contents will give you a hint what went wrong.
 If you want to do a bug report, create a copy of it, since it gets overwritten the next time you start the game and contact the developers for a bug report, or post an issue on the Uebergame github-repository.
 
-<font:Arial Bold:16>Developer features
+<font:ArialBold:16>Developer features
 <font:Arial:16>Some features are intended for developers only, so they require some more experience to use.
 "F4" opens the metrics display, which shows you how fast the game runs in frames per second, "alt F4" opens the ueber-metrics display with much more information.
 "F9" opens the games console, it is used for debugging.

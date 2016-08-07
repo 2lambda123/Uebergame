@@ -258,7 +258,7 @@ if( !isObject( ToolsGuiTextBoldCenterProfile ) )
 new GuiControlProfile (ToolsGuiTextBoldCenterProfile : ToolsGuiTextProfile)
 {
    // fontColor = "50 50 50"; // +++ already defined in ToolsGuiTextProfile
-   fontType = "Arial Bold";
+   fontType = "ArialBold";
    fontSize = 16;
    justify = "center";
    category = "Tools";
@@ -813,7 +813,7 @@ new GuiControlProfile( ToolsGuiTreeViewProfile )
 if( !isObject( ToolsGuiTextPadProfile ) )
 new GuiControlProfile( ToolsGuiTextPadProfile )
 {
-   fontType ="Lucida Console";
+   fontType ="LucidaConsole";
    fontSize ="12";
    tab = true;
    canKeyFocus = true;
