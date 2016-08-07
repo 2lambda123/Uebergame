@@ -7,13 +7,13 @@ new SimGroup(MissionGroup) {
 
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
-      visibleDistance = "10000";
+      visibleDistance = "5000";
       visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.501961 0.678431 0.835294 1";
       fogDensity = "0.002";
-      fogDensityOffset = "20";
-      fogAtmosphereHeight = "0";
+      fogDensityOffset = "50";
+      fogAtmosphereHeight = "50";
       canvasClearColor = "39 48 55 255";
       ambientLightBlendPhase = "1";
       ambientLightBlendCurve = "0 0 -1 -1";
@@ -35,7 +35,7 @@ new SimGroup(MissionGroup) {
       rayleighScattering = "0.0035";
       sunScale = "0.886275 0.87451 0.596078 1";
       ambientScale = "0.996078 0.996078 0.996078 1";
-      fogScale = "0.996078 0.996078 0.996078 1";
+      fogScale = "0.667 0.584 0.376 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "50";
@@ -43,6 +43,8 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
+      staticRefreshFreq = "128";
+      dynamicRefreshFreq = "8";
       brightness = "0.9";
       flareType = "SunFlareExample2";
       flareScale = "1";
@@ -93,9 +95,9 @@ new SimGroup(MissionGroup) {
       layerEnabled[1] = "0";
       layerEnabled[2] = "0";
       texture[0] = "art/clouds/clouds_mixed_01_bright.dds";
-      texture[1] = "art/skies/clouds/cloud2";
-      texture[2] = "art/skies/clouds/cloud3";
-      texScale[0] = "1";
+      texture[1] = "art/clouds/cloud2";
+      texture[2] = "art/clouds/cloud3";
+      texScale[0] = "2";
       texScale[1] = "1";
       texScale[2] = "1";
       texDirection[0] = "1 0";
@@ -107,7 +109,7 @@ new SimGroup(MissionGroup) {
       texOffset[0] = "0 0";
       texOffset[1] = "0.5 0.5";
       texOffset[2] = "0.5 0.5";
-      height[0] = "4";
+      height[0] = "2";
       height[1] = "3";
       height[2] = "2";
       position = "52.3391 -53.8302 -21.3384";
@@ -187,7 +189,7 @@ new SimGroup(MissionGroup) {
       windScale[6] = "1";
       windScale[7] = "1";
       maxSlope[0] = "45";
-      maxSlope[1] = "0";
+      maxSlope[1] = "45";
       maxSlope[2] = "0";
       maxSlope[3] = "0";
       maxSlope[4] = "0";
@@ -327,7 +329,7 @@ new SimGroup(MissionGroup) {
       windScale[5] = "1";
       windScale[6] = "1";
       windScale[7] = "1";
-      maxSlope[0] = "0";
+      maxSlope[0] = "45";
       maxSlope[1] = "0";
       maxSlope[2] = "0";
       maxSlope[3] = "0";
@@ -468,7 +470,7 @@ new SimGroup(MissionGroup) {
       windScale[5] = "1";
       windScale[6] = "1";
       windScale[7] = "1";
-      maxSlope[0] = "0";
+      maxSlope[0] = "45";
       maxSlope[1] = "0";
       maxSlope[2] = "0";
       maxSlope[3] = "0";
@@ -9782,7 +9784,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-6.5342 2.68343 0.708619";
-            rotation = "0.129136 -0.129136 -0.983183 90.9719";
+            rotation = "0.129136 -0.129136 -0.983183 90.9717";
             scale = "1.22625 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -9842,7 +9844,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2012";
+            rotation = "0.0590455 0.0590455 0.996508 90.2016";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10775,7 +10777,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -12 0";
-         rotation = "-0.0138342 -0.0138342 -0.999809 90.0112";
+         rotation = "0.00366813 0.00366805 -0.999987 90.0012";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";

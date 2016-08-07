@@ -13,7 +13,7 @@ new SimGroup(MissionGroup) {
       fogColor = "0.184314 0.25098 0.298039 1";
       fogDensity = "0.06";
       fogDensityOffset = "2";
-      fogAtmosphereHeight = "0";
+      fogAtmosphereHeight = "50";
       canvasClearColor = "13 18 27 255";
       ambientLightBlendPhase = "1";
       ambientLightBlendCurve = "0 0 -1 -1";
@@ -34,7 +34,7 @@ new SimGroup(MissionGroup) {
       colorize = "0.00392157 0.00392157 0.00392157 1";
       rayleighScattering = "0.0035";
       sunScale = "0.886275 0.87451 0.596078 1";
-      ambientScale = "0.207843 0.207843 0.207843 1";
+      ambientScale = "0.2 0.196 0.196 1";
       fogScale = "0.996078 0.996078 0.996078 1";
       exposure = "1";
       zOffset = "0";
@@ -43,10 +43,12 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "40";
       moonElevation = "45";
       castShadows = "1";
+      staticRefreshFreq = "128";
+      dynamicRefreshFreq = "8";
       brightness = "1";
       flareScale = "1";
-      nightColor = "0.0196078 0.0117647 0.109804 1";
-      nightFogColor = "0.184314 0.25098 0.298039 1";
+      nightColor = "0.043 0.043 0.137 1";
+      nightFogColor = "0.102 0.157 0.196 1";
       moonEnabled = "1";
       moonMat = "Moon_Glow_Mat";
       moonScale = "0.1";
@@ -57,7 +59,7 @@ new SimGroup(MissionGroup) {
       shadowType = "PSSM";
       texSize = "512";
       overDarkFactor = "2000 1000 500 100";
-      shadowDistance = "400";
+      shadowDistance = "200";
       shadowSoftness = "0.15";
       numSplits = "4";
       logWeight = "0.91";
@@ -93,20 +95,20 @@ new SimGroup(MissionGroup) {
       layerEnabled[2] = "0";
       texture[0] = "art/clouds/clouds_mixed_01_night.dds";
       texture[1] = "art/clouds/cloud2.png";
-      texture[2] = "art/skies/clouds/cloud3";
-      texScale[0] = "1";
+      texture[2] = "art/clouds/cloud3";
+      texScale[0] = "2";
       texScale[1] = "1";
       texScale[2] = "1";
       texDirection[0] = "1 0";
       texDirection[1] = "1 0";
       texDirection[2] = "1 0";
-      texSpeed[0] = "0.001";
+      texSpeed[0] = "0.0012";
       texSpeed[1] = "0.001";
       texSpeed[2] = "0.0003";
       texOffset[0] = "0 0";
       texOffset[1] = "0.5 0.5";
       texOffset[2] = "0.5 0.5";
-      height[0] = "4";
+      height[0] = "2";
       height[1] = "3";
       height[2] = "2";
       position = "52.3391 -53.8302 -21.3384";
@@ -186,7 +188,7 @@ new SimGroup(MissionGroup) {
       windScale[6] = "1";
       windScale[7] = "1";
       maxSlope[0] = "45";
-      maxSlope[1] = "0";
+      maxSlope[1] = "45";
       maxSlope[2] = "0";
       maxSlope[3] = "0";
       maxSlope[4] = "0";
@@ -326,7 +328,7 @@ new SimGroup(MissionGroup) {
       windScale[5] = "1";
       windScale[6] = "1";
       windScale[7] = "1";
-      maxSlope[0] = "0";
+      maxSlope[0] = "45";
       maxSlope[1] = "0";
       maxSlope[2] = "0";
       maxSlope[3] = "0";
@@ -467,7 +469,7 @@ new SimGroup(MissionGroup) {
       windScale[5] = "1";
       windScale[6] = "1";
       windScale[7] = "1";
-      maxSlope[0] = "0";
+      maxSlope[0] = "45";
       maxSlope[1] = "0";
       maxSlope[2] = "0";
       maxSlope[3] = "0";
@@ -9841,7 +9843,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2016";
+            rotation = "0.0590455 0.0590455 0.996508 90.2018";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10754,7 +10756,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -12 0";
-         rotation = "-0.0138342 -0.0138342 -0.999809 90.0112";
+         rotation = "0.019091 0.0190909 -0.999636 90.0212";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -11483,6 +11485,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11515,6 +11519,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11546,6 +11552,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11575,6 +11583,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11605,6 +11615,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11637,6 +11649,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11666,6 +11680,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11698,6 +11714,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11729,6 +11747,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11758,6 +11778,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11790,6 +11812,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11819,6 +11843,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11851,6 +11877,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11880,6 +11908,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11912,6 +11942,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11943,6 +11975,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -11974,6 +12008,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12005,6 +12041,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12036,6 +12074,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12067,6 +12107,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12098,6 +12140,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12129,6 +12173,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12160,6 +12206,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12191,6 +12239,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12222,6 +12272,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12253,6 +12305,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12284,6 +12338,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12315,6 +12371,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12346,6 +12404,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12377,6 +12437,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12408,6 +12470,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12439,6 +12503,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12470,6 +12536,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12501,6 +12569,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12532,6 +12602,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12563,6 +12635,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12594,6 +12668,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12625,6 +12701,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12656,6 +12734,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12687,6 +12767,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12718,6 +12800,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "2";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12747,6 +12831,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12777,6 +12863,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12807,6 +12895,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12837,6 +12927,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12867,6 +12959,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12897,6 +12991,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12927,6 +13023,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12957,6 +13055,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -12987,6 +13087,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13017,6 +13119,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13047,6 +13151,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13077,6 +13183,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13107,6 +13215,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13137,6 +13247,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13167,6 +13279,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13197,6 +13311,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13227,6 +13343,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13257,6 +13375,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13287,6 +13407,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13317,6 +13439,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13347,6 +13471,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13377,6 +13503,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13407,6 +13535,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13437,6 +13567,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13467,6 +13599,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13497,6 +13631,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -13527,6 +13663,8 @@ new SimGroup(MissionGroup) {
          color = "0.835294 0.792157 0.584314 1";
          brightness = "0.6";
          castShadows = "0";
+         staticRefreshFreq = "250";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";

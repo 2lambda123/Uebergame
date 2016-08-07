@@ -2,20 +2,18 @@
 new SimGroup(MissionGroup) {
    canSave = "1";
    canSaveDynamicFields = "1";
-      cdTrack = "2";
-      CTF_scoreLimit = "5";
       enabled = "1";
-      musicTrack = "lush";
+      powerCount = "0";
 
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
-      visibleDistance = "5000";
+      visibleDistance = "2000";
       visibleGhostDistance = "0";
       decalBias = "0.0015";
-      fogColor = "0.6 0.6 0.7 1";
-      fogDensity = "0";
-      fogDensityOffset = "50";
-      fogAtmosphereHeight = "0";
+      fogColor = "0.529 0.569 0.718 1";
+      fogDensity = "0.0005";
+      fogDensityOffset = "100";
+      fogAtmosphereHeight = "200";
       canvasClearColor = "0 0 0 255";
       ambientLightBlendPhase = "1";
       ambientLightBlendCurve = "0 0 -1 -1";
@@ -27,6 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Racing example map";
          enabled = "1";
          levelName = "Racing Island";
+         MissionTypes = "DM TDM PBDM PBTDM";
    };
    new SimGroup(PlayerDropPoints) {
       canSave = "1";
@@ -107,13 +106,14 @@ new SimGroup(MissionGroup) {
       };
    };
    new TerrainBlock(Racing_Island) {
-      terrainFile = "./Racing_Island_01.ter";
+      terrainFile = "levels/Race_Tracks/Racing_Island_01/Racing_Island_01.ter";
       castShadows = "1";
       squareSize = "1";
       baseTexSize = "1024";
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
+      updateBasetex = "1";
       position = "-512 -512 0";
       rotation = "1 0 0 0";
       canSave = "1";
@@ -135,6 +135,8 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
+      staticRefreshFreq = "8";
+      dynamicRefreshFreq = "8";
       brightness = "1";
       flareScale = "1";
       nightColor = "0.0196078 0.0117647 0.109804 1";
@@ -216,13 +218,13 @@ new SimGroup(MissionGroup) {
       foamRippleInfluence = "0.05";
       cubemap = "BlueSkyCubemap";
       fullReflect = "1";
-      reflectivity = "0.6";
+      reflectivity = "0.2";
       reflectPriority = "1";
       reflectMaxRateMs = "15";
       reflectDetailAdjust = "1";
       reflectNormalUp = "1";
       useOcclusionQuery = "1";
-      reflectTexSize = "256";
+      reflectTexSize = "1024";
       waterFogDensity = "0.1";
       waterFogDensityOffset = "1";
       wetDepth = "4";
@@ -243,8 +245,8 @@ new SimGroup(MissionGroup) {
       layerEnabled[1] = "0";
       layerEnabled[2] = "0";
       texture[0] = "art/clouds/clouds_mixed_01_bright.dds";
-      texture[1] = "art/skies/clouds/cloud2";
-      texture[2] = "art/skies/clouds/cloud3";
+      texture[1] = "art/clouds/cloud2";
+      texture[2] = "art/clouds/cloud3";
       texScale[0] = "1";
       texScale[1] = "1";
       texScale[2] = "1";
@@ -265,94 +267,6 @@ new SimGroup(MissionGroup) {
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "159.027 -255.022 57.1184";
-      rotation = "-0.0165317 0.0189788 0.999683 227.28";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "159.407 -244.847 57.1145";
-      rotation = "-0.0259195 0.0171072 0.999518 227.274";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "160.215 -235.312 56.6964";
-      rotation = "-0.00817218 0.0356676 0.99933 227.508";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "161.218 -226.813 56.1166";
-      rotation = "-0.0109927 0.0551781 0.998416 227.313";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "162.717 -219.155 55.6578";
-      rotation = "-0.00960928 0.0348153 0.999348 227.015";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "164.202 -210.578 55.6981";
-      rotation = "0.00367154 -0.0266651 0.999638 227.245";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "164.279 -202.16 56.3726";
-      rotation = "0.00613318 -0.0549291 0.998471 229.158";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
-   };
-   new WheeledVehicle() {
-      disableMove = "0";
-      isAIControlled = "0";
-      dataBlock = "DefaultCar";
-      position = "163.442 -195.383 56.641";
-      rotation = "-0.0514699 -0.0375356 0.997969 226.716";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-         mountable = "1";
    };
 };
 //--- OBJECT WRITE END ---
