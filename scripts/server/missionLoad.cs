@@ -164,8 +164,8 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    MissionGroup.setupGameType(%missionType);
 
    // Deal with power
-   MissionGroup.clearPower();
-   MissionGroup.powerInit(0);
+   //MissionGroup.clearPower(); //decactivated since it spams and is not in use
+   //MissionGroup.powerInit(0); //decactivated since it spams and is not in use
 
    // Make the MissionCleanup group the place where all new objects will automatically be added.
    $instantGroup = MissionCleanup;

@@ -37,15 +37,16 @@
 //%client.getLocation();
 //%client.moveForward(); // Test function
 
-$Bot::ThinkTime = 1000;         // The time frequency at which the AI scans for player targets
+$Bot::ThinkTime = 500;         // The time frequency at which the AI scans for player targets
 $Bot::DetectionDistance = 50;   // The distance from the AI that it will search for other players
-$Bot::LoseTargetDistance = 100; // The distance from the AI that it will break off its chase
+$Bot::LoseTargetDistance = 75; // The distance from the AI that it will break off its chase
 $Bot::FireDistance = 20;        // Max distance from the AI that will cause it to fire
 $Bot::MeleeDistance = 2;        // Durr
 $Bot::FireDelay = 1000;         // Default Time AI can start shooting again after its fired a shot
 $Bot::GrenadeDelay = 3000;      // Default Time AI can start throwing a grenade again after its tossed one
 $Bot::MeleeDelay = 2000;        // Default Time AI can start melee again after its done its last
 $Bot::FireTimeout = 500;        // Default time after pressing fire that the AI stops firing
+$Bot::MoveSpeed = 1;
 
 //-----------------------------------------------------------------------------
 // Client naming functions, used for aiConnection::onConnect()
@@ -360,6 +361,9 @@ function AIClient::setUpTasks(%client)
 {
    echo("\c5AIClient::setUpTasks(" SPC %client.nameBase SPC ")");
 
+   if ( isEventPending( %this.thinkSchedule ) )
+      cancel( %this.thinkSchedule );
+
    %bot = %client.player;
    if ( !isObject( %bot ) || %bot.getState() $= "Dead" )
       return;
@@ -367,22 +371,26 @@ function AIClient::setUpTasks(%client)
    %client.clearTasks();
 
    // Wandering deathmatch bot or objective seeking?
-   //%random = mFloor( getRandom( 0, 1 ) );
+   %random = mFloor( getRandom( 0, 2 ) );
+   switch( %random )
+   {
+      case 0:
+         %client.taskMode = "Wander";
+      //case 1:
+      //   %client.taskMode = "Guard";
+      //case 1:
+      //   %client.taskMode = "Wingman";
+      default:
+         %client.taskMode = "Wander";
+   }
 
-   //switch( %random )
-   //{
-   //   case 0:
    //      %client.taskMode = "Wander";
-   //   case 1:
-   //      %client.taskMode = "Guard";
-   //   default:
-   //      %client.taskMode = "Wingman";
-   //}
 
-   %client.taskMode = "Wander";
+   //if ( !%bot.getNavMesh() )
+   //   error( "No Nav Mesh found for" SPC %client.nameBase );
 
    // Run a looping function
-   %client.schedule( mFloor( getRandom(1, 3) ) * 1000, "think" );
+   %client.schedule( mFloor( getRandom(0.5, 2) ) * 1000, "think" );
 }
 
 // Called from the Game object
@@ -404,16 +412,18 @@ function AIClient::clearTasks(%this)
 
    %this.thinkSchedule = "";
 
-   //%this.stop();
+   %this.stop();
    //%this.clearAim();
 
    %player = %this.player;
    if ( isObject( %player ) )
    {
-      %player.setMoveSpeed( %player.getDataBlock().MoveSpeed );
+      %player.clearMoveTriggers();
+      %player.setMoveSpeed( $Bot::MoveSpeed );
       %player.clearAim();
       %player.stop();
       %player.pathSet = 0;
+      %player.path = "";
       %player.fireTrigger = "";
       %player.grenadeTrigger = "";
       %player.firing = 0;
@@ -511,25 +521,53 @@ function AIClient::think(%client)
       return( false );
    }
 
+   // Are we damaged?
+   %level = %bot.getDamageLevel();
+   if ( %level >= ( %bot.getDataBlock().maxDamage * 0.7 ) && %client.taskMode !$= "Health" )
+   {
+      // Find a med pack
+      %client.prevMode = %client.taskMode;
+      %client.taskMode = "Health";
+   }
+   else
+   {
+      // Feeling better
+      if ( %client.taskMode $= "Health" && %level < %bot.getDataBlock().maxDamage * 0.5 )
+      {
+         %client.taskMode = %client.prevMode;
+      }
+   }
+
+   if ( VectorLen( %bot.getVelocity() ) < 0.5 )
+   {
+      %bot.stuckTick++;
+      if ( %bot.stuckTick >= 8 && %bot.pathSet )
+      {
+         %bot.moveRandom();
+         %bot.stuckTick = 0;
+         %bot.thinkSchedule = %bot.schedule( ($Bot::ThinkTime * 2), "think" );
+         return;
+      }
+   }
+
    //echo("AIClient::SoldierThink(" SPC %client.nameBase SPC ")");
 
-   // Decide what to do based on the task at hand.
+   // Decide what to do based on the task at hand
    switch$ ( %client.taskMode )
    {
       case "Wander":
          if ( !%bot.pathSet )
-            %bot.pushTask("doWanderTask()");
+            %bot.doWanderTask();
 
-      case "Guard":
-         if ( !%bot.pathSet )
-            %bot.pushTask("doWingmanTask()");
+      //case "Guard":
+      //   %bot.doGuardTask();
 
       case "Wingman":
          if ( !%bot.pathSet )
-            %bot.pushTask("doWingmanTask()");
+            %bot.doWingmanTask();
 
       case "Health":
-         %bot.pushTask("doHealthTask()");
+         %bot.doHealthTask();
 
       case "Attack":
          %target = %bot.getAimObject();
@@ -554,6 +592,38 @@ function AIClient::think(%client)
                {
                   %bot.pathSet = 1;
                   %bot.followObject( %target, 2 );
+                  %bot.setMoveTrigger(5);
+               }
+
+               if ( %dist < $Bot::FireDistance )
+               {
+                  if ( %bot.getMoveTrigger(5) )
+                     %bot.clearMoveTrigger(5);
+
+                  //if ( %dist <= $Bot::MeleeDistance )
+                  //{
+                  //   %bot.doMelee( %target );
+                  //}
+                  //else
+                  //{
+                     //%bot.setAimLocation( %targPos );
+
+                     if ( %bot.getMountedImage( $GrenadeSlot ) != 0 && %bot.hasAmmo( %bot.getMountedImage( $GrenadeSlot ).item.getId() ) )
+                     {
+                        //%bot.triggerGrenade( $GrenadeSlot );
+                     }
+                  //}
+               }
+               else
+               {
+                  if( %bot.checkInLos(%target, false, true) )
+                  {
+                     if ( !%bot.firing )
+                     {
+                        %client.chooseWeapon( %target, %dist );
+                        %bot.triggerFire( $WeaponSlot, 1 );
+                     }
+                  }
                }
             }
          }
@@ -583,7 +653,7 @@ function AIClient::chooseWeapon(%client, %target, %dist)
       %useWeapon = "GrenadeLauncher";
    //else if (%dist < 10 && %hasPistol)
    //   %useWeapon = "Ryder";
-   else if (%dist < 40)
+   else if (%dist < 20)
    {
       if ( %hasShotgun )
          %useWeapon = "Shotgun";
@@ -592,7 +662,7 @@ function AIClient::chooseWeapon(%client, %target, %dist)
       else if ( %hasPistol )
          %useWeapon = "Ryder";
    }
-   else if (%dist < 60)
+   else if (%dist < 40)
    {
       if (%hasThump)
          %useWeapon = "GrenadeLauncher";
@@ -601,11 +671,13 @@ function AIClient::chooseWeapon(%client, %target, %dist)
       else if ( %hasPistol )
          %useWeapon = "Ryder";
    }
-   else if ( %dist > 75 )
+   else if ( %dist > 40 )
    {
       if (%hasSniper)
          %useWeapon = "SniperRifle";
-      else if (%hasRifle)
+      else if (%hasThump)
+         %useWeapon = "GrenadeLauncher";
+	  else if ( %hasRifle )
          %useWeapon = "Lurker";
       else if (%hasPistol)
          %useWeapon = "Ryder";
@@ -642,7 +714,7 @@ function AIClient::choosePlayerTarget(%client)
          continue;
 
       %dist = vectorDist(%bot.getPosition(), %tgt.getPosition());
-      if ( ( %dist <= $Bot::DetectionDistance && %client.isTargetInView( %tgt, "90" ) ) || $Bot::MeleeDistance )
+      if ( ( %dist <= $Bot::DetectionDistance && %bot.checkInFoV( %tgt, 65 ) ) || $Bot::MeleeDistance )
       {
          %target = %tgt;
          break;
@@ -699,16 +771,16 @@ function AIClient::chooseWingman(%client)
       }
    }
 
+   // Don't want to forget, even if it's NULL
+   %client.wingman = %wingman;
+
    // Hey, we found one
    if ( %wingman != -1 )
    {
       //serverCmdTeamMessageSent( %client, "I'm pairing up with" SPC  %wingman.client.nameBase );
-      serverCmdPrivateMessageSent( %client, %cl, "I'll follow you" );
-      //echo( %client.nameBase SPC "has" SPC %wingman.client.nameBase SPC "assigned as wingman" );
+      serverCmdPrivateMessageSent( %client, %wingman.client, "I'll follow you" );
+      echo( %client.nameBase SPC "has" SPC %wingman.client.nameBase SPC "assigned as wingman" );
    }
-
-   // Don't want to forget, even if it's NULL
-   %client.wingman = %wingman;
 
    return( %wingman );
 }
@@ -859,10 +931,10 @@ function AIClient::getRandomLoadout(%client)
 }
 
 $BotInventoryIndex = 0;
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tGrenade Launcher\tSpecial\tMedical\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tGrenade Launcher\tSpecial\tMedical\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tWeapon\tGrenade Launcher\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
 

@@ -180,6 +180,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "base";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -203,6 +204,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
+               skin = "base";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -286,6 +288,7 @@
             };
             new GuiBitmapCtrl() {
                bitmap = "art/gui/hudfill.png";
+               color = "255 255 255 255";
                wrap = "0";
                position = "356 120";
                extent = "256 256";
@@ -328,6 +331,7 @@
             };
             new GuiBitmapCtrl(OP_CrosshairPreview) {
                bitmap = "art/gui/weaponHud/crossHair256.png";
+               color = "255 255 255 255";
                wrap = "0";
                position = "356 120";
                extent = "256 256";
@@ -542,6 +546,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "1776 x 1000  (16:9)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -645,6 +650,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -674,6 +680,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -726,6 +733,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -801,6 +809,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -853,6 +862,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "16X";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -918,7 +928,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl() {
-               text = "Gamma:";
+               text = "Contrast:";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -941,12 +951,11 @@
                canSaveDynamicFields = "0";
             };
             new GuiSliderCtrl() {
-               range = "0.001 2";
+               range = "2 2.5";
                ticks = "9";
                snap = "0";
-               value = "1";
-               value = "1";
-               position = "105 349";
+               value = "2.39764";
+               position = "105 286";
                extent = "518 15";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1161,6 +1170,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "4x";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1189,6 +1199,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
+               text = "15";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1277,6 +1288,92 @@
                hovertime = "1000";
                isContainer = "0";
                internalName = "Tgl_7";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl() {
+               range = "-0.5 0.5";
+               ticks = "9";
+               snap = "0";
+               value = "0.00787401";
+               position = "105 318";
+               extent = "518 15";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderProfile";
+               visible = "1";
+               active = "1";
+               variable = "$pref::Video::Brightness";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiSliderCtrl() {
+               range = "0.5 1.5";
+               ticks = "9";
+               snap = "0";
+               value = "1.10236";
+               position = "105 349";
+               extent = "518 15";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiSliderProfile";
+               visible = "1";
+               active = "1";
+               variable = "$pref::Video::Contrast";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl() {
+               text = "Brightness:";
+               maxLength = "255";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "19 318";
+               extent = "66 15";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiTextCtrl() {
+               text = "Gamma:";
+               maxLength = "255";
+               margin = "0 0 0 0";
+               padding = "0 0 0 0";
+               anchorTop = "1";
+               anchorBottom = "0";
+               anchorLeft = "1";
+               anchorRight = "0";
+               position = "19 286";
+               extent = "52 15";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiTextProfile";
+               visible = "1";
+               active = "1";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
                canSave = "1";
                canSaveDynamicFields = "0";
             };
@@ -1529,7 +1626,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.489362";
+                  value = "0.476596";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
@@ -2212,7 +2309,7 @@
                range = "100 1200";
                ticks = "36";
                snap = "0";
-               value = "641";
+               value = "450";
                position = "170 163";
                extent = "400 16";
                minExtent = "8 2";
@@ -2364,7 +2461,7 @@
                range = "200 800";
                ticks = "25";
                snap = "0";
-               value = "400";
+               value = "250";
                position = "170 279";
                extent = "400 16";
                minExtent = "8 2";

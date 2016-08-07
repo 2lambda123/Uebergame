@@ -44,7 +44,7 @@ void main()
    
    // Skip fogging the extreme far plane so that 
    // the canvas clear color always appears.
-   clip( 0.9999 - depth );  //duion: important for fog, don't remove
+   //clip( 0.9999 - depth );  //disabled, since fog atmosphere height seems to work now
    
    float factor = computeSceneFog( eyePosWorld,
                                    eyePosWorld + ( wsEyeRay * depth ),
