@@ -320,6 +320,9 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 	  }
    }
    
+   // setup the behavior tree framework
+   exec("./BadBehavior/main.cs");
+   
    //Entity/Component stuff
    if(isFile("./components/game/camera.cs"))
    exec("./components/game/camera.cs");
