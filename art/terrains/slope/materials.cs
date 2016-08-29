@@ -17,10 +17,10 @@ new TerrainMaterial()
    detailMap = "art/terrains/slope/ter_slope_rubble_01_D";
    detailSize = "5";
    detailDistance = "100";
-   macroSize = "40";
+   macroSize = "42";
    internalName = "ter_slope_rubble_01";
    macroMap = "art/terrains/slope/ter_slope_rubble_01_M";
-   macroStrength = "0.6";
+   macroStrength = "0.5";
    parallaxScale = "0.03";
    normalMap = "art/terrains/slope/ter_slope_rubble_01_N";
    detailStrength = "1";

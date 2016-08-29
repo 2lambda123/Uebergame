@@ -44,8 +44,8 @@ new TerrainMaterial()
    internalName = "ter_grass_flowers_02";
    diffuseSize = "250";
    macroSize = "42";
-   macroStrength = "1";
-   detailStrength = "1.5";
+   macroStrength = "0.7";
+   detailStrength = "1";
    detailDistance = "100";
    normalMap = "art/terrains/grass/ter_grass_flowers_02_N";
    parallaxScale = "0";

@@ -7,7 +7,7 @@ singleton Material(Mat_fir_01_branch)
    specularPower[0] = "1";
    translucent = "0";
    diffuseMap[0] = "art/shapes/trees/fir/fir_01/fir_01_branch_D.dds";
-   doubleSided = "0";
+   doubleSided = "1";
    alphaTest = "1";
    alphaRef = "80";
    subSurface[0] = "0";
@@ -17,6 +17,7 @@ singleton Material(Mat_fir_01_branch)
    useAnisotropic[0] = "1";
    showFootprints = "0";
    materialTag0 = "Miscellaneous";
+   specular[1] = "1 1 1 1";
 };
 
 singleton Material(Mat_fir_01_bark)

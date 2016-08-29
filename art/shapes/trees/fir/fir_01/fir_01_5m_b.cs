@@ -6,5 +6,5 @@ singleton TSShapeConstructor(Fir_01_5m_bDae)
 
 function Fir_01_5m_bDae::onLoad(%this)
 {
-   %this.addImposter("32", "6", "0", "0", "128", "1", "0");
+   %this.addImposter("2", "6", "0", "0", "128", "1", "0");
 }
