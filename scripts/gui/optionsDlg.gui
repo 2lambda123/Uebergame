@@ -180,7 +180,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "base";
+               text = "water";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -204,7 +204,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "base";
+               skin = "water";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -954,7 +954,7 @@
                range = "2 2.5";
                ticks = "9";
                snap = "0";
-               value = "2.39764";
+               value = "2.26476";
                position = "105 286";
                extent = "518 15";
                minExtent = "8 2";
@@ -1292,10 +1292,10 @@
                canSaveDynamicFields = "0";
             };
             new GuiSliderCtrl() {
-               range = "-0.5 0.5";
+               range = "-0.25 0.25";
                ticks = "9";
                snap = "0";
-               value = "0.00787401";
+               value = "0.000984251";
                position = "105 318";
                extent = "518 15";
                minExtent = "8 2";
@@ -1312,10 +1312,10 @@
                canSaveDynamicFields = "0";
             };
             new GuiSliderCtrl() {
-               range = "0.5 1.5";
+               range = "0.75 1.25";
                ticks = "9";
                snap = "0";
-               value = "1.10236";
+               value = "1.00394";
                position = "105 349";
                extent = "518 15";
                minExtent = "8 2";
@@ -1626,7 +1626,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.476596";
+                  value = "0.16383";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";

@@ -813,14 +813,15 @@ new GuiControlProfile( ToolsGuiTreeViewProfile )
 if( !isObject( ToolsGuiTextPadProfile ) )
 new GuiControlProfile( ToolsGuiTextPadProfile )
 {
-   fontType ="LucidaConsole";
-   fontSize ="12";
+   fontType ="Arial";
+   fontSize ="14";
    tab = true;
    canKeyFocus = true;
    
    // Deviate from the Default
    opaque=true;  
-   fillColor = "21 21 21 255";   
+   fillColor = "21 21 21 255";
+   fontColor = "196 196 196 255";   
    border = 0;
    category = "Tools";
 };
@@ -1292,10 +1293,17 @@ singleton GuiControlProfile( GuiCreatorIconButtonProfile )
 
 singleton GuiControlProfile( GuiMenuBarProfile )
 {
-   fillcolor = "255 255 255";
-   fillcolorHL = "213 231 248";
+   fillColor = "32 32 32 255";
+   fillColorHL = "72 72 72 255";
+   fillColorNA = "18 18 18 255";
    borderColor = "98 163 229";
    borderColorHL = "122 177 232";
+   
+   fontColor = "196 196 196 255";
+   fontColorSEL = "212 212 212 255";
+   fontColorHL = "255 255 255 255";
+   fontColorNA = "128 128 128 255";
+   
    border = 0;
    borderThickness = 1;
    opaque = true;
