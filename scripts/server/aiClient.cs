@@ -500,7 +500,7 @@ function AIClient::onTargetExitLOS(%client)
 }
 
 //-----------------------------------------------------------------------------
-
+/*
 // This function runs as a continuous loop on the client.
 function AIClient::think(%client)
 {
@@ -920,7 +920,7 @@ function AIClient::findHealth(%client)
    }
    return( %target );
 }
-
+*/
 //-----------------------------------------------------------------------------
 // Inventory lists. Choose one at random
 

@@ -828,6 +828,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       %player = new AiPlayer()
       {
          dataBlock = $NameToData[%client.loadout[0]];
+		 //dataBlock = BadBotData; 
+         class = "BadBot";
          client = %client;
          team = %client.team;
          isBot = true;
@@ -840,6 +842,14 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          allowClimb = true;
          allowTeleport = true;
       };
+	  
+   //BadBot
+   %player.setPosition(%spawnPoint);
+   //BadBot tetherpoint will give the bot a place to call home
+   %player.tetherPoint = %spawnPoint;
+   //BadBot
+   %player.setbehavior(BotTree, $BotTickFrequency);
+   
       // Determine which character skins are not already in use
       %availableSkins = %player.getDatablock().availableSkins; // TAB delimited list of skin names
       %count = ClientGroup.getCount();

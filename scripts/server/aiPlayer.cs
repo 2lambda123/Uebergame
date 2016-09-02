@@ -35,299 +35,507 @@
 // Since the AIPlayer doesn't implement it's own datablock, these callbacks
 // all take place in the PlayerData namespace.
 //-----------------------------------------------------------------------------
-
+/*
 //-----------------------------------------------------------------------------
 // Demo Pathed AIPlayer.
 //-----------------------------------------------------------------------------
 
-function DemoPlayer::onReachDestination(%this,%obj)
+function Armor::onReachDestination(%this, %player)
 {
-   //echo( %obj @ " onReachDestination" );
-
-   // Moves to the next node on the path.
-   // Override for all player.  Normally we'd override this for only
-   // a specific player datablock or class of players.
-   if (%obj.path !$= "")
+   //echo( "\c4Armor::onReachDestination(" SPC %this.getName() @", "@ %player.client.nameBase SPC ")" );
+   %client = %player.client;
+   if ( isObject( %client ) && %client.isAiControlled() )
    {
-      if (%obj.currentNode == %obj.targetNode)
-         %this.onEndOfPath(%obj,%obj.path);
-      else
-         %obj.moveToNextNode();
+      if ( %client.taskMode $= "Health" )
+      {
+         %player.gotHealth = 1;
+      }   
    }
+   %player.pathSet = 0;
 }
 
-function DemoPlayer::onMoveStuck(%this,%obj)
+function Armor::onMoveStuck(%this, %player)
 {
-   //echo( %obj @ " onMoveStuck" );
+   echo( "\c4Armor::onMoveStuck(" SPC %this.getName() @", "@ %player.client.nameBase SPC ")" );
+   %player.moveRandom();
 }
 
-function DemoPlayer::onTargetExitLOS(%this,%obj)
+function Armor::onTargetExitLOS(%this,%player)
 {
-   //echo( %obj @ " onTargetExitLOS" );
-}
 
-function DemoPlayer::onTargetEnterLOS(%this,%obj)
-{
-   //echo( %obj @ " onTargetEnterLOS" );
-}
-
-function DemoPlayer::onEndOfPath(%this,%obj,%path)
-{
-   %obj.nextTask();
-}
-
-function DemoPlayer::onEndSequence(%this,%obj,%slot)
-{
-   echo("Sequence Done!");
-   %obj.stopThread(%slot);
-   %obj.nextTask();
-}
-
-//-----------------------------------------------------------------------------
-// AIPlayer static functions
-//-----------------------------------------------------------------------------
-
-function AIPlayer::spawnAtLocation(%name, %spawnPoint)
-{
-   // Create the demo player object
-   %player = new AiPlayer()
+   //echo( "\c4Armor::onTargetExitLOS(" SPC %this.getName() @", "@ %player.client.nameBase SPC ")" );
+   %client = %player.client;
+   if ( isObject( %client ) && %client.isAiControlled() )
    {
-      dataBlock = DemoPlayer;
-      path = "";
-   };
-   MissionCleanup.add(%player);
-   %player.setShapeName(%name);
-   %player.setTransform(%spawnPoint);
-   return %player;
-}
-
-function AIPlayer::spawnOnPath(%name, %path)
-{
-   // Spawn a player and place him on the first node of the path
-   if (!isObject(%path))
-      return 0;
-   %node = %path.getObject(0);
-   %player = AIPlayer::spawnAtLocation(%name, %node.getTransform());
-   return %player;
-}
-
-//-----------------------------------------------------------------------------
-// AIPlayer methods
-//-----------------------------------------------------------------------------
-
-function AIPlayer::followPath(%this,%path,%node)
-{
-   // Start the player following a path
-   if (!isObject(%path))
-   {
-      %this.path = "";
-      return;
-   }
-
-   if (%node > %path.getCount() - 1)
-      %this.targetNode = %path.getCount() - 1;
-   else
-      %this.targetNode = %node;
-
-   if (%this.path $= %path)
-      %this.moveToNode(%this.currentNode);
-   else
-   {
-      %this.path = %path;
-      %this.moveToNode(0);
-   }
-}
-
-function AIPlayer::moveToNextNode(%this)
-{
-   %pathNodeCount=%this.path.getCount();
-   %slowdown=0;
-
-   %targetNode=%this.currentNode + 1;
-
-   if (%this.path.isLooping) {
-      %targetNode %= %pathNodeCount;
-   } else {
-      if (%targetNode >= %pathNodeCount-1) {
-         %targetNode=%pathNodeCount-1;
-
-         if (%currentNode < %targetNode)
-            %slowdown=1;
+      if ( %client.firing )
+      {
+          %client.fire( $WeaponSlot, 0 );
       }
    }
 
-   %this.moveToNode(%targetNode, %slowdown);
 }
 
-function AIPlayer::moveToNode(%this,%index,%slowdown)
+function Armor::onTargetEnterLOS(%this,%player)
 {
-   // Move to the given path node index
-   %this.currentNode = %index;
-   %node = %this.path.getObject(%index);
-   %this.setMoveDestination(%node.getTransform(),%slowdown);
-}
 
-//-----------------------------------------------------------------------------
-//
-//-----------------------------------------------------------------------------
+   //echo( "\c4Armor::onTargetEnterLOS(" SPC %this.getName() @", "@ %player.client.nameBase SPC ")" );
+   %client = %player.client;
+   %target = %player.getAimObject();
 
-function AIPlayer::pushTask(%this,%method)
-{
-   if (%this.taskIndex $= "")
+   if ( %target != -1 && %target.getState() !$= "Dead" && !%target.isCloaked() )
    {
-      %this.taskIndex = 0;
-      %this.taskCurrent = -1;
+      %targPos = %target.GetBoxCenter();
+      %dist = vectorDist( %player.getPosition(), %targPos );
+
+      // AiClient is assigned to this AiPlayer?
+      if ( isObject( %client ) && %client.isAiControlled() )
+      {
+         //echo( %client.nameBase @ "::onTargetEnterLOS(" SPC %target.client.nameBase SPC ")" );
+
+         if ( %dist < $Bot::FireDistance )
+         {
+            //if ( %dist <= $Bot::MeleeDistance )
+            //{
+            //   %player.doMelee( %target );
+            //}
+            //else
+            //{
+               %player.setAimLocation( %targPos );
+
+               if ( %player.getMountedImage( $GrenadeSlot ) != 0 && %player.hasAmmo( %player.getMountedImage( $GrenadeSlot ).item.getId() ) )
+               {
+                  //%player.triggerGrenade( $GrenadeSlot );
+               }
+            //}
+         }
+         else
+         {
+            if ( !%player.firing )
+            {
+               %client.chooseWeapon( %target, %dist );
+               %player.triggerFire( $WeaponSlot, 1 );
+            }
+         }
+      }
    }
-   %this.task[%this.taskIndex] = %method;
-   %this.taskIndex++;
-   if (%this.taskCurrent == -1)
-      %this.executeTask(%this.taskIndex - 1);
+
 }
 
-function AIPlayer::clearTasks(%this)
+function Armor::onEndSequence(%this,%player,%slot)
 {
-   %this.taskIndex = 0;
-   %this.taskCurrent = -1;
+   %player.stopThread(%slot);
 }
 
-function AIPlayer::nextTask(%this)
+// ----------------------------------------------------------------------------
+// Tasks
+// ----------------------------------------------------------------------------
+
+function AIPlayer::doWanderTask(%player)
 {
-   if (%this.taskCurrent != -1)
-      if (%this.taskCurrent < %this.taskIndex - 1)
-         %this.executeTask(%this.taskCurrent++);
-      else
-         %this.taskCurrent = -1;
+   if ( !isObject( %player ) || %player.getState() $= "Dead" )
+      return;
+
+   %client = %player.client;
+
+   %ranPos = %player.getRanBotDest();
+
+   if ( !%player.setPathDestination( %ranPos ) )
+      %player.setMoveDestination( %ranPos, false );
+
+   %player.setAimLocation( %ranPos );
+   %player.pathSet = 1;
+
+   if ( %player.getMoveTrigger(5) ) // Stop sprinting if we are
+      %player.clearMoveTrigger(5);
+
+   // Find a target. If one is found our mode will change to attack
+   %client.choosePlayerTarget();
+
+   echo("\c5AIPlayer::doWanderTask(" SPC %player.client.nameBase @", "@ %ranPos SPC ")");
 }
 
-function AIPlayer::executeTask(%this,%index)
+function AIPlayer::doGuardTask(%player)
 {
-   %this.taskCurrent = %index;
-   eval(%this.getId() @"."@ %this.task[%index] @";");
+   if ( !isObject( %player ) || %player.getState() $= "Dead" )
+      return;
+
+   %client = %player.client;
+
+   // Look around
+   %player.scanArea();
+   //%player.moveRandom();
+
+   // Find a target. If one is found our mode will change to attack
+   %client.choosePlayerTarget();
+
+   echo("\c5AIPlayer::doGuardTask(" SPC %player.client.nameBase SPC ")");
 }
 
-//-----------------------------------------------------------------------------
-
-function AIPlayer::singleShot(%this)
+function AIPlayer::doHealthTask(%player, %health)
 {
-   // The shooting delay is used to pulse the trigger
-   %this.setImageTrigger(0, true);
-   %this.setImageTrigger(0, false);
-   %delay = %this.getDataBlock().shootingDelay;
-   if (%delay $= "")
-      %delay = 1000;
-   %this.trigger = %this.schedule(%delay, singleShot);
-}
+   %client = %player.client;
+   //%player.allowTacticalMovement(false);
 
-//-----------------------------------------------------------------------------
-
-function AIPlayer::wait(%this, %time)
-{
-   %this.schedule(%time * 1000, "nextTask");
-}
-
-function AIPlayer::done(%this,%time)
-{
-   %this.schedule(0, "delete");
-}
-
-function AIPlayer::fire(%this,%bool)
-{
-   if (%bool)
+   %player.clearAim();
+   %health = %player.findHealth();
+   if ( isObject( %health ) )
    {
-      cancel(%this.trigger);
-      %this.singleShot();
+      %healthPos = %health.getPosition();
+      %player.setPathDestination( %healthPos );
+      //%player.setMoveDestination( %healthPos, true );
+      %player.pathSet = 1;
+   }
+   else // Can't find any, back to business
+   {
+      if ( isObject( %client ) )
+      {
+         %client.taskMode = %client.prevMode;
+         %client.prevMode = "";
+      }
+      else
+      {
+         %player.taskMode = %player.prevMode;
+         %player.prevMode = "";
+      }
+   }
+
+   echo("\c5AIPlayer::doHealthTask(" SPC %player.client.nameBase SPC ")");
+}
+
+function AIPlayer::findHealth(%player)
+{
+   %target = -1;
+   InitContainerRadiusSearch( %player.GetBoxCenter(), $Bot::DetectionDistance, $TypeMasks::ItemObjectType );
+   while ((%tgt = containerSearchNext()) != 0)
+   {
+      if ( %tgt.getDataBlock().getName() $= "HealthPatch" )
+      {
+         %target = %tgt;
+         break;
+      }
+   }
+   return( %target );
+}
+
+function AIPlayer::doWingmanTask(%player)
+{
+   %client = %player.client;
+
+   %wingman = %client.wingman;
+   if ( isObject( %wingman ) && %wingman.getState() !$= "Dead" )
+   {
+      %player.followObject( %wingman, 5 );
+      %player.pathSet = 1;
+
+      // Find a target. If one is found our mode will change to attack
+      %client.choosePlayerTarget();
    }
    else
-      cancel(%this.trigger);
-   %this.nextTask();
+   {
+      // Could not find a wingman, switch tasks
+      %client.setUpTasks();
+   }
+
+   echo("\c5AIPlayer::doWingmanTask(" SPC %player.client.nameBase SPC ")");
 }
 
-function AIPlayer::aimAt(%this,%object)
+function AIPlayer::moveRandom(%player)
 {
-   echo("Aim: "@ %object);
-   %this.setAimObject(%object);
-   %this.nextTask();
+   if ( !isObject( %player ) || %player.getState() $= "Dead" )
+      return;
+
+   %x = getRandom( -5, 5 );
+   %y = getRandom( -5, 5 );
+   %pos = %player.getPosition();
+
+   %newX = setWord( %pos, 0, ( getWord(%pos, 0) + %x ) );
+   %newY = setWord( %pos, 1, ( getWord(%pos, 1) + %y ) );
+
+   %player.setMoveDestination( %newX SPC %newY SPC getTerrainHeight( %newX SPC %newY ), false );
+
+   echo("\c5AIPlayer::moveRandom(" SPC %player.client.nameBase @", "@ %player.getMoveDestination() SPC ")");
 }
 
-function AIPlayer::animate(%this,%seq)
+// Look around in all directions, needs to be looped
+function AIPlayer::scanArea(%player)
 {
-   //%this.stopThread(0);
-   //%this.playThread(0,%seq);
-   %this.setActionThread(%seq);
+   echo("\c5AIPlayer::scanArea(" SPC %player.client.nameBase @", "@ %player.scanCheck SPC ")");
+
+   %player.scanCheck++;
+   switch( %player.scanCheck )
+   {
+      case 1:
+         %player.setAimLocation( "0 0 1" );
+      case 2:
+         %player.setAimLocation( "99999 0 1" );
+      case 3:
+         %player.setAimLocation( "-99999 0 1" );
+      case 4:
+         %player.setAimLocation( "0 99999 1" );
+      case 5:
+         %player.setAimLocation( "0 -99999 1" );
+      case 6:
+         %player.scanCheck = 0;
+   }
 }
 
 // ----------------------------------------------------------------------------
 // Some handy getDistance/nearestTarget functions for the AI to use
 // ----------------------------------------------------------------------------
 
-function AIPlayer::getTargetDistance(%this, %target)
+function AIPlayer::getRanBotDest(%player)
 {
-   echo("\c4AIPlayer::getTargetDistance("@ %this @", "@ %target @")");
-   $tgt = %target;
-   %tgtPos = %target.getPosition();
-   %eyePoint = %this.getWorldBoxCenter();
-   %distance = VectorDist(%tgtPos, %eyePoint);
-   echo("Distance to target = "@ %distance);
-   return %distance;
+   // Grab a position from preplaced via a script object
+   %array = NameToID("MissionGroup/WanderArray");
+
+   if ( !isObject( %array ) )
+      error( "No WanderArray present in mission file!" );
+
+   %count = %array.WanderPosCount;
+   %ran = mFloor( getRandom( 1, %count ) );
+   %pos = %array.WanderPos[%ran];
+
+   return %pos;
 }
+*/
+// ----------------------------------------------------------------------------
+// Image Triggering/Combat
+// ----------------------------------------------------------------------------
 
-function AIPlayer::getNearestPlayerTarget(%this)
+function AIPlayer::doMelee(%player, %target)
 {
-   echo("\c4AIPlayer::getNearestPlayerTarget("@ %this @")");
+   if ( !isObject( %player ) || !isObject( %target ) || %player.getState() $= "Dead" || %target.getState() $= "Dead" || !$Game::Running )
+      return;
 
-   %index = -1;
-   %botPos = %this.getPosition();
-   %count = ClientGroup.getCount();
-   for(%i = 0; %i < %count; %i++)
+   if ( %player.getEnergyLevel() <= 15 )
+      return;
+
+   %timeout = getSimTime() - %player.lastMeleeTime;
+   if ( %timeout < $Bot::MeleeDelay ) // 1.5 second between melee attacks
+      return;
+
+   %player.setActionThread("ProxMine_Fire"); // Rigged DAE model
+
+   // Tiring
+   %player.setEnergyLevel( %player.getEnergyLevel() - 15 );
+
+   if ( %player.checkInLos( %target, false, true )  )
    {
-      %client = ClientGroup.getObject(%i);
-      if (%client.player $= "" || %client.player == 0)
-         return -1;
-      %playerPos = %client.player.getPosition();
+      %target.damage( %player, %player.getPosition(), 25, $DamageType::Melee );
 
-      %tempDist = VectorDist(%playerPos, %botPos);
-      if (%i == 0)
+      if ( %target.isMemberOfClass( "Player" ) )
       {
-         %dist = %tempDist;
-         %index = %i;
-      }
-      else
-      {
-         if (%dist > %tempDist)
-         {
-            %dist = %tempDist;
-            %index = %i;
-         }
+         //%target.repulse( %player );
+
+         %pushDirection = VectorNormalize( VectorSub( %targPos, %player.GetBoxCenter() ) );  
+         %pushVec = getwords( VectorScale( %pushDirection, 200 ), 0, 1);   
+         %target.applyImpulse( %targPos, %pushVec );
       }
    }
-   return %index;
+
+   // Get this last fire time and store it.
+   %player.lastMeleeTime = getSimTime();
+}
+
+function AIPlayer::triggerFire(%player, %slot, %bool)
+{
+   //error("AIPlayer::triggerFire(" SPC %player.nameBase @", "@ %slot @", "@ %bool SPC ")");
+
+   if ( !isObject( %player ) || %player.getState() $= "Dead" )
+   {
+      cancel( %player.fireTrigger );
+      %player.clearMoveTrigger( %slot );
+      //%player.setImageTrigger( %slot, 0 );
+      return;
+   }
+
+   if ( %bool )
+   {
+      cancel( %player.fireTrigger );
+
+      // Limit time between firings
+      %timeout = getSimTime() - %player.lastFireTime;
+      if ( %timeout < $Bot::FireDelay )
+         return;
+
+      %player.setMoveTrigger( %slot );
+      //%player.setImageTrigger( %slot, 1 );
+      %player.firing = true;
+
+      %weapon = %player.getMountedImage(%slot).item.getName();
+      switch$ ( %weapon )
+      {
+         case "Ryder":
+            %time = 500;
+         case "Lurker":
+            %time = 200;
+         case "Shotgun":
+            %time = 1000;
+         case "GrenadeLauncher":
+            %time = 1200;
+         case "SniperRifle":
+            %time = 1100;
+         default:
+            %time = $Bot::FireTimeout;
+      }
+
+      %player.fireTrigger = %player.schedule( %time, "singleShot",  %slot, 0 );
+   }
+   else
+   {
+      cancel( %player.fireTrigger );
+      %player.clearMoveTrigger( %slot );
+      //%player.setImageTrigger( %slot, 0 );
+      %player.firing = false;
+
+      // Get this last fire time and store it.
+      %player.lastFireTime = getSimTime();
+   }
+}
+
+function AIPlayer::triggerGrenade(%player, %slot)
+{
+   cancel( %player.grenadeTrigger );
+
+   if ( !isObject( %player ) || %player.getState() $= "Dead" )
+   {
+      %player.setImageTrigger( %slot, 0 );
+      return;
+   }
+
+   // Limit time between firings
+   %timeout = getSimTime() - %player.lastGrenadeTime;
+   if ( %timeout < $Bot::GrenadeDelay )
+      return;
+
+   %player.setImageTrigger( %slot, 1 );
+   %player.setImageTrigger( %slot, 0 );
+
+   %player.lastGrenadeTime = getSimTime();
+}
+
+function AIPlayer::getVectorTo(%this, %target)
+{
+   %pos = %target.getPosition();
+   %box1 = %this.getDataBlock().boundingBox;
+   %box2 = %target.getDataBlock().boundingBox;
+
+   %z = getWord(%box1, 2) / 2;
+   %offset = "0 0" SPC %z;
+     
+   %vec = VectorAdd(%offset, %this.getPosition());
+ 
+   %z = getWord(%box2, 2) / 2;
+   %offset = "0 0" SPC %z;
+     
+   %pos = VectorAdd(%offset, %pos);
+     
+   return VectorSub(%pos, %vec);
 }
 
 //-----------------------------------------------------------------------------
+// Waypoints
+//-----------------------------------------------------------------------------
 
-function AIPlayer::think(%player)
+MoveMap.bindCmd(keyboard, "x", "commandToServer(\'setWanderPosition\');", "");
+
+$BotWander::PosCount = 0;
+function serverCmdsetWanderPosition(%client)
 {
-   // Thinking allows us to consider other things...
-   %player.schedule(500, think);
+   if( isObject( %client.player ) )
+   {
+      %array = NameToID("MissionGroup/WanderArray");
+
+      if ( !isObject( %array ) )
+      {
+         new ScriptObject(WanderArray) {
+            class = "Wander";
+            canSave = "1";
+            canSaveDynamicFields = "1";
+         };
+
+         MissionGroup.add(WanderArray);
+      }
+
+      %transform = %client.player.getTransform();
+      %pos = posFromTransform( %transform );
+
+      $BotWander::PosCount++;
+
+      // Drop a waypoint so we can see where we have been
+      %waypoint = new WayPoint() {
+         team = 0;
+         markerName = "Wander Point" SPC $BotWander::PosCount;
+         dataBlock = "WayPointMarker";
+         position = VectorAdd( %pos, "0 0 1.15" );
+         rotation = rotFromTransform( %transform );
+      };
+      %waypoint.setTransform(%transform);
+      MissionCleanup.add(%waypoint);
+
+      %array.WanderPosCount = $BotWander::PosCount;
+      %array.WanderPos[$BotWander::PosCount] = VectorAdd( %pos, "0 0 0.25" );
+      %client.lastPos = %pos;
+      $BotWander::Pos[$BotWander::PosCount] = %array.WanderPos[$BotWander::PosCount];
+   }
+   //export("$BotWander::*", "logs/pos.cs", false);
 }
 
-function AIPlayer::spawn(%path)
+function AIPlayer::test()
 {
-   %player = AIPlayer::spawnOnPath("Shootme", %path);
+   %player = AIPlayer::spawnOnPath("xasd","MissionGroup/Paths/Path2");
+   %player.mountImage(PSWRifleImage,0);
+   %player.setInventory(PSWAmmo,1000);
+   
+   %player.pushTask("followPath(\"MissionGroup/Paths/Path2\")");
+   %player.pushTask("aimAt(\"MissionGroup/Room6/target\")");
+   %player.pushTask("wait(1)");   
+   %player.pushTask("fire(true)");
+   %player.pushTask("wait(10)");
+   %player.pushTask("fire(false)");
+   %player.pushTask("playThread(0,\"celwave\")");
+   %player.pushTask("done()");
+}
 
-   if (isObject(%player))
+function AIPlayer::testBot()
+{
+   // Create the demo player object
+   %player = new AiPlayer()
    {
-      %player.followPath(%path, -1);
+      dataBlock = DefaultSoldier;
+      client = 0;
+      team = mFloor(getRandom( 1, 2 ));
+      path = "";
+      pathSet = 0;
+      isBot = true;
+      mMoveTolerance = 2;
+      allowWalk = true;
+      allowJump = true;
+      allowDrop = true;
+      allowSwim = true;
+      allowLedge = true;
+      allowClimb = true;
+      allowTeleport = true;
+   };
+   MissionCleanup.add(%player);
+   %player.setTeamId(%player.team);
+   %player.setShapeName(getRandomBotName());
+   %player.setSkinName("base");
+   %player.setTransform(Game.pickSpawnPoint(%player.team));
+   %player.setRechargeRate(%player.getDataBlock().rechargeRate);
+   %player.setEnergyLevel(%player.getDataBlock().maxEnergy);
+   %player.setRepairRate(0);
+   %player.setMoveSpeed( %player.getDataBlock().MoveSpeed );
+   %player.setInventory( HealthKit, 1 );
+   %player.setInventory( Ryder, 1, 1 );
+   %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
+   %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );
+   %player.weaponCount = 1;
+   %player.use( %player.weaponSlot[0] );
+   %player.think();
 
-      // slow this sucker down, I'm tired of chasing him!
-      %player.setMoveSpeed(0.5);
+   if ( !%player.getNavMesh() )
+      error( "No Nav Mesh found for" SPC %player.getShapeName() );
 
-      //%player.mountImage(xxxImage, 0);
-      //%player.setInventory(xxxAmmo, 1000);
-      //%player.think();
-
-      return %player;
-   }
-   else
-      return 0;
+   return( %player );
 }

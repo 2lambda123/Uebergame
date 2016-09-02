@@ -876,7 +876,7 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 
    observeParameters = "0.5 4.5 4.5";
 
-   pickupRadius = 1.2;
+   pickupRadius = 1.3;
 
    // Allowable Inventory Items
 
@@ -894,6 +894,25 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 
    jumpTowardsNormal = "1";
    shadowSize = "512";
+   
+   //BadBot AI settings
+   VisionRange = 40;
+   VisionFov = 120;
+   findItemRange = 20;
+   targetObjectTypes = $TypeMasks::PlayerObjectType;
+   itemObjectTypes = $TypeMasks::itemObjectType;
+   optimalRange["Ryder"] = 12;
+   burstLength["Ryder"] = 100;
+   optimalRange["Lurker"] = 16;
+   burstLength["Lurker"] = 750;
+   optimalRange["Shotgun"] = 8;
+   burstLength["Shotgun"] = 100;
+   optimalRange["Sniper Rifle"] = 30;
+   burstLength["Sniper Rifle"] = 100;
+   optimalRange["Grenade Launcher"] = 25;
+   burstLength["Grenade Launcher"] = 100;
+   rangeTolerance = 3;
+   switchTargetProbability = 0.1;
 };
 
 datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
@@ -1460,8 +1479,8 @@ function Armor::onDamage(%this, %obj, %delta)
          %obj.playPain();
 
       // Send this off to the AI functions
-      if ( isObject( %obj.client ) && %obj.client.isAiControlled() )
-         %obj.client.onDamaged( %obj, %delta );
+      //if ( isObject( %obj.client ) && %obj.client.isAiControlled() )
+      //   %obj.client.onDamaged( %obj, %delta );
    }
 }
 
