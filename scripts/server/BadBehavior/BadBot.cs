@@ -89,7 +89,6 @@ datablock PlayerData(BadBotData : DefaultPlayerData)
    maxInv[DeployableTurret] = 0;
 };
 
-
 //=============================================================================
 // Supporting functions for an AIPlayer driven by a behavior tree
 //=============================================================================
@@ -127,13 +126,11 @@ function BadBot::spawn(%name, %startPos)
    return %bot;      
 }
 
-
 // override getMuzzleVector so that the bots aim at where they are looking
 function BadBot::getMuzzleVector(%this, %slot)
 {
    return %this.getEyeVector();
 }
-
 
 // use onAdd to equip the bot
 function BadBotData::onAdd(%data, %obj)
@@ -142,7 +139,6 @@ function BadBotData::onAdd(%data, %obj)
    game.loadout(%obj);
 }
 
-
 // Override onDisabled so we can stop running the behavior tree
 function BadBotData::onDisabled(%this, %obj, %state)
 {
@@ -150,12 +146,12 @@ function BadBotData::onDisabled(%this, %obj, %state)
    Parent::onDisabled(%this, %obj, %state);
 }
 
-
 // moveTo command, %dest can be either a location or an object
 function BadBot::moveTo(%obj, %dest, %slowDown)
 {
    %pos = isObject(%dest) ? %dest.getPosition() : %dest;
-   %obj.setMoveDestination(%pos, %slowDown);
+   //%obj.setMoveDestination(%pos, %slowDown); //old function wihtout navMesh
+   %obj.setPathDestination(%pos); //setPath uses navMesh
    %obj.atDestination = false;
 }
 
@@ -166,6 +162,7 @@ function BadBotData::onReachDestination(%data, %obj)
       %obj.behaviorTree.postSignal("onReachDestination");
       
    %obj.atDestination = true;
+   //%obj.setShapeName("onReachDestination"); //debug feature
 }
 
 // forward animationDone callback to the behavior tree as a signal
@@ -200,13 +197,11 @@ function BadBot::getClosestNodeOnPath(%this, %path)
    return -1;
 }
 
-
 // send a chat message from the bot
 function BadBot::say(%this, %message)
 {
    chatMessageAll(%this, '\c3%1: %2', %this.getShapeName(), %message);  
 }
-
 
 //=============================Global Utility==================================
 function RandomPointOnCircle(%center, %radius)
@@ -254,9 +249,9 @@ function wanderTask::behavior(%this, %obj)
    
    // move   
    %obj.moveTo(RandomPointOnCircle(%basePoint, 10));
+   //%obj.setShapeName(wanderTask); //debug feature
    return SUCCESS;
 }
-
 
 //==============================================================================
 // Move to closest node task
@@ -441,9 +436,10 @@ function shootAtTargetTask::behavior(%this, %obj)
 {
    if(!isEventPending(%obj.triggerSchedule))
    {
-      %obj.setMoveTrigger($WeaponSlot, true);
-      %burstLength = %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item.description];
-      %obj.triggerSchedule = %obj.schedule(%burstLength, setMoveTrigger, $WeaponSlot, false);
+      %obj.setImageTrigger($WeaponSlot, true);
+      %burstLength = %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item];
+	  //echo( "Burst length: " @ %burstLength );
+      %obj.triggerSchedule = %obj.schedule(%burstLength, setImageTrigger, $WeaponSlot, false);
    }
 
    return SUCCESS;

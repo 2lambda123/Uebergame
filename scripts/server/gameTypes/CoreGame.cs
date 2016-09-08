@@ -409,7 +409,7 @@ function CoreGame::startGame(%game)
       else // Set the Bots on their way..
       {
          //Bot start task time, incremented per bot so we dont get a pileup..
-         %cl.setUpTasks();
+         //%cl.setUpTasks();
          //if ( isObject( %cl.player ) )
          //   %cl.setControlObject(%cl.player);
       }
@@ -847,8 +847,6 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    %player.setPosition(%spawnPoint);
    //BadBot tetherpoint will give the bot a place to call home
    %player.tetherPoint = %spawnPoint;
-   //BadBot
-   %player.setbehavior(BotTree, $BotTickFrequency);
    
       // Determine which character skins are not already in use
       %availableSkins = %player.getDatablock().availableSkins; // TAB delimited list of skin names
@@ -1013,8 +1011,10 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       // Set the bot up with some random inventory selection
       %client.setBotFav(%client.getRandomLoadout());
 
+	  //BadBot
+      %player.setbehavior(BotTree, $BotTickFrequency);
       // Give the bot something to do
-      %client.setUpTasks();
+      //%client.setUpTasks();
 
       // Give the client control of the bot
 	  // Normally you would do this but we want to use AiPlayer class functions which are more robust that AiClient
@@ -1094,7 +1094,7 @@ function CoreGame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %dama
       if ( %clAttacker.player.causedRecentDamage != %clVictim.player )
       {
          %clAttacker.player.causedRecentDamage = %clVictim.player;
-         %clAttacker.player.schedule(1000, "causedTeamDamage", "");
+         %clAttacker.player.schedule(50, "causedTeamDamage", "");
          %game.friendlyFireMessage(%clVictim, %clAttacker);          
       }    
    }

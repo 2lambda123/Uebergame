@@ -456,7 +456,7 @@ function AIClient::animate(%this, %seq)
 //-----------------------------------------------------------------------------
 // C++ Callbacks
 //-----------------------------------------------------------------------------
-
+/*
 function AIClient::onAdd(%client)
 {
    // Do nothing
@@ -498,7 +498,7 @@ function AIClient::onTargetExitLOS(%client)
 {
    //echo("\c5" @ %client.nameBase @ "::onTargetExitLOS(" SPC %client.getTargetObject().getClassName() SPC ")" );
 }
-
+*/
 //-----------------------------------------------------------------------------
 /*
 // This function runs as a continuous loop on the client.

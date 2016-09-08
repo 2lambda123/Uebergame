@@ -167,7 +167,7 @@ function PlayerListGui::updatePlayerInfo(%this, %player)
       return;
 
    // Build the text:
-   %tag = %player.isSuperAdmin ? "[SA]" : (%player.isAdmin ? "[A]" : (%player.isBot ? "[B]" : ""));
+   %tag = %player.isSuperAdmin ? "[UeberAdmin]" : (%player.isAdmin ? "[Admin]" : (%player.isBot ? "[Bot]" : ""));
 
    if ( $Client::TeamCount > 1 )
    {

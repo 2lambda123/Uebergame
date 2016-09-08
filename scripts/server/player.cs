@@ -890,7 +890,7 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 
    // Used by AI
    MoveSpeed = 0.5;          // You could call this the AI's throttle 1 = 100% throttle.
-   MoveTolerance = 1;        // Distance from target position that is accepted as "reached"
+   MoveTolerance = 2;        // Distance from target position that is accepted as "reached"
 
    jumpTowardsNormal = "1";
    shadowSize = "512";
@@ -907,10 +907,10 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    burstLength["Lurker"] = 750;
    optimalRange["Shotgun"] = 8;
    burstLength["Shotgun"] = 100;
-   optimalRange["Sniper Rifle"] = 30;
-   burstLength["Sniper Rifle"] = 100;
-   optimalRange["Grenade Launcher"] = 25;
-   burstLength["Grenade Launcher"] = 100;
+   optimalRange["SniperRifle"] = 30;
+   burstLength["SniperRifle"] = 100;
+   optimalRange["GrenadeLauncher"] = 25;
+   burstLength["GrenadeLauncher"] = 100;
    rangeTolerance = 3;
    switchTargetProbability = 0.1;
 };
@@ -1579,7 +1579,12 @@ function Armor::onDisabled(%this, %player, %state)
    // AiPlayer class
    if ( %player.isBot )
    {
-      cancel( %player.thinkSchedule );
+	  //BadBot stopping behavior tree
+	  %player.behaviorTree.stop();
+      //Parent::onDisabled(%this, %player, %state);
+	  
+      //cancel( %player.thinkSchedule ); //from old AI player
+	  
       if ( $Bot::Set.isMember( %player ) )
          $Bot::Set.remove( %player );
       else
