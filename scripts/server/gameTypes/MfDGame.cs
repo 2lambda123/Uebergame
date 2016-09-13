@@ -231,7 +231,7 @@ function MfDGame::clientJoinTeam(%game, %client, %team, %respawn)
 
 function MfDGame::loadOut(%game, %player)
 {
-   LogEcho("\c4MfDGame::loadOut(" SPC %game.class SPC %player.client.nameBase SPC ")");
+   //LogEcho("\c4MfDGame::loadOut(" SPC %game.class SPC %player.client.nameBase SPC ")");
    %client = %player.client;
 
    // Equip the player with their choosen weapons etc.

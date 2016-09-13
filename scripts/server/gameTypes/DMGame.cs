@@ -129,7 +129,7 @@ function DMGame::getClientIndex(%game, %client)
 
 function DMGame::assignClientTeam(%game, %client)
 {
-   LogEcho("DMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("DMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
 
    // This is pretty simple, just get the clients index from the client group
    // plus four, we plus four because the index starts at zero.
@@ -169,7 +169,7 @@ function DMGame::clientChangeTeam(%game, %client, %team, %fromObs)
 
 function DMGame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   LogEcho("DMGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
+   //LogEcho("DMGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
    if ( %team != 0 )
       return;
 
@@ -207,7 +207,7 @@ function DMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 
 function DMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   LogEcho("DMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   //LogEcho("DMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Call the default to handle the basics
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
@@ -230,7 +230,7 @@ function DMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, 
 
 function DMGame::updateScore(%game, %cl)
 {
-   LogEcho("DMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   //LogEcho("DMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -248,7 +248,7 @@ function DMGame::updateScore(%game, %cl)
 
 function DMGame::endGame(%game)
 {
-   LogEcho("DMGame::endGame(" SPC %game SPC ")");
+   //LogEcho("DMGame::endGame(" SPC %game SPC ")");
    if($Game::Running)
    {
       %winner = getWord(%game.findTopScorer(), 0);

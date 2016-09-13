@@ -80,7 +80,7 @@ function Spectator::onTrigger(%data, %obj, %trigger, %state)
    if (EditorIsActive() || GuiEditorIsActive())
       return;
 	  
-   LogEcho("Spectator::onTrigger( " @ %data.getName() @ ", " @ %obj @ ", " @ %trigger @ ", " @ %state @ " )");
+   //LogEcho("Spectator::onTrigger( " @ %data.getName() @ ", " @ %obj @ ", " @ %trigger @ ", " @ %state @ " )");
 
    // Hand it over to the game object
    if(isObject(Game))
@@ -92,7 +92,7 @@ function Spectator::setMode(%data, %obj, %mode, %targetObj)
    if(%mode $= "")
       return;
 
-   LogEcho("Spectator::setMode( " @ %data.getName() @ ", " @ %obj @ ", " @ %mode @ ", " @ %targetObj @ " )");
+   //LogEcho("Spectator::setMode( " @ %data.getName() @ ", " @ %obj @ ", " @ %mode @ ", " @ %targetObj @ " )");
 
    // Hand it over to the game object
    if(isObject(Game))

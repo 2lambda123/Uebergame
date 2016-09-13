@@ -129,7 +129,7 @@ function PBDMGame::getClientIndex(%game, %client)
 
 function PBDMGame::assignClientTeam(%game, %client)
 {
-   LogEcho("PBDMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("PBDMGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
 
    // This is pretty simple, just get the clients index from the client group
    // plus four, we plus four because the index starts at zero.
@@ -169,7 +169,7 @@ function PBDMGame::clientChangeTeam(%game, %client, %team, %fromObs)
 
 function PBDMGame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   LogEcho("PBDMGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
+   //LogEcho("PBDMGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
    if ( %team != 0 )
       return;
 
@@ -207,7 +207,7 @@ function PBDMGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 
 function PBDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   LogEcho("PBDMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   //LogEcho("PBDMGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Call the default to handle the basics
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
@@ -230,7 +230,7 @@ function PBDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient
 
 function PBDMGame::updateScore(%game, %cl)
 {
-   LogEcho("PBDMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   //LogEcho("PBDMGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -248,7 +248,7 @@ function PBDMGame::updateScore(%game, %cl)
 
 function PBDMGame::endGame(%game)
 {
-   LogEcho("PBDMGame::endGame(" SPC %game SPC ")");
+   //LogEcho("PBDMGame::endGame(" SPC %game SPC ")");
    if($Game::Running)
    {
       %winner = getWord(%game.findTopScorer(), 0);

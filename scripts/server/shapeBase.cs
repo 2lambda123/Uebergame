@@ -507,7 +507,7 @@ function GameBase::damage(%this, %sourceObject, %position, %damage, %damageType)
 // ZOD: Avoid engine crashes by setting a schedule to unmount images
 function ShapeBase::dismountImage(%this, %slot)
 {
-   LogEcho("ShapeBase::dismountImage(" SPC %this.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("ShapeBase::dismountImage(" SPC %this.client.nameBase @", "@ %slot SPC ")");
    if( !isObject( %this ) || %this.getMountedImage( %slot ) == 0 )
    {
       return( false );
@@ -576,7 +576,7 @@ function ShapeBaseImageData::onDeconstruct(%data, %obj, %slot)
 
 function ShapeBaseImageData::onFire(%data, %obj, %slot)
 {
-   LogEcho("ShapeBaseImageData::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("ShapeBaseImageData::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
 
    if ( %data.ammo !$="" && !%obj.client.isAiControlled() ) // Ai has unlimited ammo, cause.. lazy bones
    {

@@ -894,25 +894,6 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 
    jumpTowardsNormal = "1";
    shadowSize = "512";
-   
-   //BadBot AI settings
-   VisionRange = 40;
-   VisionFov = 120;
-   findItemRange = 20;
-   targetObjectTypes = $TypeMasks::PlayerObjectType;
-   itemObjectTypes = $TypeMasks::itemObjectType;
-   optimalRange["Ryder"] = 12;
-   burstLength["Ryder"] = 100;
-   optimalRange["Lurker"] = 16;
-   burstLength["Lurker"] = 750;
-   optimalRange["Shotgun"] = 8;
-   burstLength["Shotgun"] = 100;
-   optimalRange["SniperRifle"] = 30;
-   burstLength["SniperRifle"] = 100;
-   optimalRange["GrenadeLauncher"] = 25;
-   burstLength["GrenadeLauncher"] = 100;
-   rangeTolerance = 3;
-   switchTargetProbability = 0.1;
 };
 
 datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
@@ -937,6 +918,7 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
 //            |Datablock|     |$SMS::ArmorName|     |Index|
 
 SmsInv.AddArmor( DefaultPlayerData, "Soldier", 0 );
+SmsInv.AddArmor( BadBotData, "BotSoldier", 0 );
 SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 0 );
 
 //----------------------------------------------------------------------------
@@ -1015,7 +997,7 @@ function sendMsgClientKilled_Drowning(%msgType, %client, %sourceClient, %damLoc)
 
 function Armor::onAdd(%this, %obj)
 {
-   LogEcho("Armor::onAdd(" SPC %this @", "@ %obj SPC ")");
+   //LogEcho("Armor::onAdd(" SPC %this @", "@ %obj SPC ")");
    // Seems to work ok, but some other things need to be adjusted such as movement speed.
    %scale = %this.scale $= "" ? "1 1 1" : %this.scale;
    if ( %obj.getScale() !$= %scale )
@@ -1077,7 +1059,7 @@ function Armor::onNewDataBlock(%this, %obj)
 
 function Armor::onMount(%this, %obj, %vehicle, %node)
 {
-   LogEcho("Armor::onMount( " @ %this.getName() @ ", " @ %obj @ ", " @ %vehicle @ ", " @ %node @ " )");
+   //LogEcho("Armor::onMount( " @ %this.getName() @ ", " @ %obj @ ", " @ %vehicle @ ", " @ %node @ " )");
    %vData = %vehicle.getDatablock();
    %type = %vData.getName();
    %class = %vehicle.getClassName();
@@ -1134,7 +1116,7 @@ function Armor::onUnmount(%this, %obj, %vehicle, %node)
 
 function Armor::doDismount(%this, %obj, %forced)
 {
-   LogEcho("\c4Armor::doDismount(" @ %this @", "@ %obj.client.nameBase @", "@ %forced @")");
+   //LogEcho("\c4Armor::doDismount(" @ %this @", "@ %obj.client.nameBase @", "@ %forced @")");
 
    // This function is called by player.cc when the jump trigger is true while mounted
    if( %obj.getState() !$= "Mounted" )
@@ -1271,7 +1253,7 @@ function Armor::onCollision(%this, %obj, %col)
 
 function Armor::onImpact(%this, %obj, %collidedObject, %vec, %vecLen)
 {
-   LogEcho("Armor::onImpact(" SPC %this.getName() @", "@ %obj.client.nameBase @", "@ %collidedObject.getName() @", "@ %vec @", "@ %vecLen SPC ")");
+   //LogEcho("Armor::onImpact(" SPC %this.getName() @", "@ %obj.client.nameBase @", "@ %collidedObject.getName() @", "@ %vec @", "@ %vecLen SPC ")");
    // This is called by the engine when a collision occurs over the minImpactSpeed player datablock parameter setting
    %this.damage(%obj, %collidedObject, VectorAdd(%obj.getPosition(),%vec), %vecLen * %this.speedDamageScale, $DamageType::Impact);
 
@@ -1356,7 +1338,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
 
 function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
 {
-   LogEcho("Armor::damage(" SPC %this.getName() @", "@ %obj.getClassname() @", "@ %source.getClassname() @", "@ %position @", "@ %amount @", "@ $DamageText[%damageType] SPC ")");
+   //LogEcho("Armor::damage(" SPC %this.getName() @", "@ %obj.getClassname() @", "@ %source.getClassname() @", "@ %position @", "@ %amount @", "@ $DamageText[%damageType] SPC ")");
 
    // The source is either the object that produced the damage or the objects owner
    if ( !isObject( %obj ) || %obj.invincible || %obj.getState() $= "Dead" )
@@ -1461,7 +1443,7 @@ function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
 
 function Armor::onDamage(%this, %obj, %delta)
 {
-   LogEcho("Armor::onDamage(" SPC %this.getName() @", "@ %obj.client.nameBase @", "@ %delta SPC ")");
+   //LogEcho("Armor::onDamage(" SPC %this.getName() @", "@ %obj.client.nameBase @", "@ %delta SPC ")");
 
    // This method is invoked by the ShapeBase code whenever the 
    // object's damage level changes.
@@ -1493,7 +1475,7 @@ function Armor::onDamage(%this, %obj, %delta)
 
 function Armor::onDisabled(%this, %player, %state)
 {
-   LogEcho("Armor::onDisabled(" SPC %this.getName() @", "@ %player.client.nameBase @", "@ %state SPC ")");
+   //LogEcho("Armor::onDisabled(" SPC %this.getName() @", "@ %player.client.nameBase @", "@ %state SPC ")");
    // Release the image triggers
    %player.setImageTrigger($WeaponSlot, false);
    %player.setImageTrigger($SpecialSlot, false);
@@ -2008,8 +1990,8 @@ function Player::unDeployObject(%player)
    {
       %item = %potDep.getDataBlock().item;
 
-      LogEcho( "Potential UnDeploable:" SPC %potDep.getClassName() SPC "Datablock:" SPC %potDep.getDataBlock().getName() SPC
-            "Is a Deployable:" SPC %potDep.getDataBlock().deployedObject SPC "Team:" SPC %potDep.team SPC "Owner:" SPC %potDep.getId().owner.nameBase );
+      //LogEcho( "Potential UnDeploable:" SPC %potDep.getClassName() SPC "Datablock:" SPC %potDep.getDataBlock().getName() SPC
+      //      "Is a Deployable:" SPC %potDep.getDataBlock().deployedObject SPC "Team:" SPC %potDep.team SPC "Owner:" SPC %potDep.getId().owner.nameBase );
 
       if ( %item !$= "" && %potDep.getDataBlock().deployedObject == true )
       {

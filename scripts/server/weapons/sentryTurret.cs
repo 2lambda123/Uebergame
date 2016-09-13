@@ -224,7 +224,7 @@ datablock ShapeBaseImageData(AITurretHeadImage)
 
 function AITurretHeadImage::onFire(%data, %obj, %slot)
 {
-   LogEcho("AITurretHeadImage::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("AITurretHeadImage::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
 
    if ( %data.ammo !$="" )
    {

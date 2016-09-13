@@ -48,7 +48,7 @@ function GameConnection::onConnectRequest( %client, %netAddress, %name, %skin )
 //
 function GameConnection::onConnect( %client, %name, %skin )
 {
-   LogEcho("GameConnection::onConnect(" SPC %client @", "@ %name @", "@ %skin SPC ")");
+   //LogEcho("GameConnection::onConnect(" SPC %client @", "@ %name @", "@ %skin SPC ")");
    // Send down the connection error info, the client is
    // responsible for displaying this message if a connection
    // error occures.
@@ -249,7 +249,7 @@ function GameConnection::getCleanIP(%client)
 //
 function GameConnection::setPlayerName(%client, %name)
 {
-   LogEcho("GameConnection::setPlayerName(" SPC %client @", "@ %name SPC ")");
+   //LogEcho("GameConnection::setPlayerName(" SPC %client @", "@ %name SPC ")");
    // Minimum length requirements
    %name = trim( strToPlayerName( %name ) );
 
@@ -263,7 +263,7 @@ function GameConnection::setPlayerName(%client, %name)
    if ( strlen( %name ) < 3 )
       %name = "Poser";
 
-   LogEcho("After length checks and bad word check, name is:" SPC %name);
+   //LogEcho("After length checks and bad word check, name is:" SPC %name);
 
    // Make sure the alias is unique, we'll hit something eventually
    if (!isNameUnique(%name))
@@ -285,7 +285,7 @@ function GameConnection::setPlayerName(%client, %name)
       %client.nameBase = %name;
       //%client.playerName = addTaggedString(%name);
       %client.playerName = addTaggedString("\cp\c8" @ %name @ "\co");
-      LogEcho("After Unique check name is:" SPC StripMLControlChars( detag( getTaggedString( %client.playerName ) ) ) );
+      //LogEcho("After Unique check name is:" SPC StripMLControlChars( detag( getTaggedString( %client.playerName ) ) ) );
    }
 }
 

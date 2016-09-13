@@ -103,7 +103,7 @@ function ItemData::onInventory(%data, %obj, %amount)
    if ( !%obj.isMemberOfClass( "Player" ) )
       return;
 
-   LogEcho("\c3ItemData::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
+   //LogEcho("\c3ItemData::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
    switch$ ( %data.className )
    {
       case "Weapon":

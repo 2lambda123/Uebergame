@@ -59,7 +59,7 @@ $Game::EndGamePause = 10 * 1000;
 
 function CoreGame::activatePackages(%game)
 {
-   LogEcho("CoreGame::activatePackages(" SPC %game.class SPC ")");
+   //LogEcho("CoreGame::activatePackages(" SPC %game.class SPC ")");
    // activate the default package for the game type
    // ZOD: We don't have a default package as of yet if ever..
    // All other gametypes MUST have a package even if just a dummy!
@@ -70,7 +70,7 @@ function CoreGame::activatePackages(%game)
 
 function CoreGame::deactivatePackages(%game)
 {
-   LogEcho("CoreGame::deactivatePackages(" SPC %game.class SPC ")");
+   //LogEcho("CoreGame::deactivatePackages(" SPC %game.class SPC ")");
    //deactivatePackage(CoreGame);
    if ( isActivePackage( %game.class ) && %game.class !$= CoreGame )
       deactivatePackage( %game.class );
@@ -79,7 +79,7 @@ function CoreGame::deactivatePackages(%game)
 function CoreGame::onMissionLoaded(%game)
 {
    // Called by loadMissionStage2() once the mission is finished loading
-   LogEcho("\c4CoreGame::onMissionLoaded(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::onMissionLoaded(" SPC %game.class SPC ")");
 
    //set up scoring variables and other game specific globals
    %game.setupGameParams();
@@ -140,7 +140,7 @@ function CoreGame::setupObjectCounts(%game)
 function CoreGame::setupGameParams(%game)
 {
    // Setup scoring etc.
-   LogEcho("\c4CoreGame::setupGameParams(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::setupGameParams(" SPC %game.class SPC ")");
    
    $Game::Schedule = "";
 
@@ -161,7 +161,7 @@ function SimGroup::assignTeam(%this, %team)
    for ( %i = 0; %i < %this.getCount(); %i++ )
    {
       %obj = %this.getObject(%i);
-      LogEcho("\c4SimGroup::assignTeam(" SPC %obj.getClassName() SPC %team SPC ")");
+      //LogEcho("\c4SimGroup::assignTeam(" SPC %obj.getClassName() SPC %team SPC ")");
       switch$ ( %obj.getClassName() )
       {
          case SpawnSphere:
@@ -216,7 +216,7 @@ function CoreGame::claimSpawn(%game, %obj, %newTeam, %oldTeam)
 
 function CoreGame::sendClientTeamList(%game, %client)
 {
-   LogEcho("\c4CoreGame::sendClientTeamList(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("\c4CoreGame::sendClientTeamList(" SPC %game.class @", "@ %client.nameBase SPC ")");
    // Send the client the current team list:
    %teamCount = %game.numTeams;
    for ( %i = 0; %i < %teamCount; %i++ )
@@ -231,7 +231,7 @@ function CoreGame::sendClientTeamList(%game, %client)
 
 function CoreGame::checkMatchStart(%game)
 {
-   LogEcho("\c4CoreGame::checkMatchStart(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::checkMatchStart(" SPC %game.class SPC ")");
    if($CountdownStarted || $Game::Running)
       return;
 
@@ -250,7 +250,7 @@ function CoreGame::checkMatchStart(%game)
 
 function CoreGame::checkTournamentStart(%game)
 {
-   LogEcho("\c4CoreGame::checkTournamentStart(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::checkTournamentStart(" SPC %game.class SPC ")");
    if($CountdownStarted || $Game::Running)
       return;
 
@@ -316,7 +316,7 @@ function CoreGame::checkTournamentStart(%game)
 
 function CoreGame::Countdown(%game, %timeMS)
 {
-   LogEcho("\c4CoreGame::Countdown(" SPC %game.class SPC %timeMS SPC ")");
+   //LogEcho("\c4CoreGame::Countdown(" SPC %game.class SPC %timeMS SPC ")");
    if( $countdownStarted )
       return;
 
@@ -359,7 +359,7 @@ function CoreGame::notifyMatchStart(%game, %time)
 
 function CoreGame::startGame(%game)
 {
-   LogEcho("\c4CoreGame::startGame(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::startGame(" SPC %game.class SPC ")");
    // This is where the game play should start
    // The default onMissionLoaded function starts the game.
 
@@ -452,7 +452,7 @@ function CoreGame::startGame(%game)
 // Called from function serverCmdMissionStartPhase2Ack in commands.cs
 function CoreGame::setClientState(%game, %client)
 {
-   LogEcho("\c4CoreGame::setClientState(" SPC %game.class SPC %client.nameBase SPC ")");
+   //LogEcho("\c4CoreGame::setClientState(" SPC %game.class SPC %client.nameBase SPC ")");
    // create a new camera for this client
    %client.camera = new Camera() 
    {
@@ -531,7 +531,7 @@ function CoreGame::setClientState(%game, %client)
 // Called from function serverCmdMissionStartPhase3Ack in commands.cs
 function CoreGame::onClientEnterGame(%game, %client)
 {
-   LogEcho("\c4CoreGame::onClientEnterGame(" SPC %game.class SPC %client.nameBase SPC ")");
+   //LogEcho("\c4CoreGame::onClientEnterGame(" SPC %game.class SPC %client.nameBase SPC ")");
 
    // Setup zee bots
    if ( %client.isAiControlled() )
@@ -645,7 +645,7 @@ function CoreGame::onClientEnterGame(%game, %client)
 
 function CoreGame::pickObserverSpawn(%game, %client, %next)
 {
-   LogEcho("\c4CoreGame::pickObserverSpawn(" SPC %game.class SPC %client.nameBase SPC %next SPC ")");
+   //LogEcho("\c4CoreGame::pickObserverSpawn(" SPC %game.class SPC %client.nameBase SPC %next SPC ")");
    %group = nameToID("MissionGroup/ObserverDropPoints");
    %count = %group.getCount();
 
@@ -681,7 +681,7 @@ function CoreGame::pickSpawnPoint(%game, %team)
    if ( %game.numTeams <= 1 && %team > 0 )
       %team = 0;
 
-   LogEcho("\c4CoreGame::pickSpawnPoint(" SPC %game.class SPC %team SPC ")");
+   //LogEcho("\c4CoreGame::pickSpawnPoint(" SPC %game.class SPC %team SPC ")");
    %spawngroup = "MissionCleanup/TeamDrops" @ %team;
    %group = nameToID(%spawngroup);
    if ( %group != -1 )
@@ -797,7 +797,7 @@ function CoreGame::pickPointInSpawnSphere(%game, %spawnSphere)
 
 function CoreGame::spawnPlayer(%game, %client, %respawn)
 {
-   LogEcho("\c4CoreGame::spawnPlayer(" SPC %game.class SPC %client.nameBase SPC %respawn SPC ")");
+   //LogEcho("\c4CoreGame::spawnPlayer(" SPC %game.class SPC %client.nameBase SPC %respawn SPC ")");
    // Combination create player and drop him somewhere
    %spawnPoint = %game.pickSpawnPoint(%client.team);
    %game.createPlayer(%client, %spawnPoint, %respawn);
@@ -805,7 +805,7 @@ function CoreGame::spawnPlayer(%game, %client, %respawn)
 
 function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 {
-   LogEcho("\c4CoreGame::createPlayer(" SPC %game.class SPC %client.nameBase SPC %spawnPoint SPC ")");
+   //LogEcho("\c4CoreGame::createPlayer(" SPC %game.class SPC %client.nameBase SPC %spawnPoint SPC ")");
    // The client should not have a player currently assigned. 
    // Assigning a new one could result in a player ghost.
    if( isObject(%client.player) && ( %client.player.getState() !$= "Dead" ) )
@@ -1039,7 +1039,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 
 function CoreGame::loadOut(%game, %player)
 {
-   LogEcho("\c4CoreGame::loadOut(" SPC %game.class SPC %player.client.nameBase SPC ")");
+   //LogEcho("\c4CoreGame::loadOut(" SPC %game.class SPC %player.client.nameBase SPC ")");
    %client = %player.client;
 
    // Equip the player with their choosen weapons etc.
@@ -1062,7 +1062,7 @@ function CoreGame::loadOut(%game, %player)
 
 function CoreGame::onClientLeaveGame(%game, %client)
 {
-   LogEcho("\c4CoreGame::onClientLeaveGame(" SPC %game.class SPC %client.nameBase SPC ")");
+   //LogEcho("\c4CoreGame::onClientLeaveGame(" SPC %game.class SPC %client.nameBase SPC ")");
    //cancel(%client.respawnTimer);
    //%client.respawnTimer = "";
 
@@ -1088,7 +1088,7 @@ function CoreGame::onClientLeaveGame(%game, %client)
 
 function CoreGame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %damageType)
 {
-   LogEcho("\c4CoreGame::onDamaged(" SPC %game.class @", "@ %clVictim.nameBase @", "@ %clAttacker.nameBase @", "@ %sourceObject @", "@ %damageType SPC ")");
+   //LogEcho("\c4CoreGame::onDamaged(" SPC %game.class @", "@ %clVictim.nameBase @", "@ %clAttacker.nameBase @", "@ %sourceObject @", "@ %damageType SPC ")");
    if ( %clAttacker && %clAttacker != %clVictim && %clVictim.team == %clAttacker.team )
    {
       if ( %clAttacker.player.causedRecentDamage != %clVictim.player )
@@ -1114,7 +1114,7 @@ function CoreGame::friendlyFireMessage(%game, %damaged, %damager)
 
 function CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-    LogEcho("\c4CoreGame::onDeath(" SPC %game.class @", "@ %player @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+    //LogEcho("\c4CoreGame::onDeath(" SPC %game.class @", "@ %player @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Switch the client over to the death cam and unhook the player object.
    if ( isObject( %client ) )
@@ -1227,7 +1227,7 @@ function CoreGame::clearClientVaribles(%game, %client)
 
 function CoreGame::EndCountdown(%game, %timeMS)
 {
-   LogEcho("\c4CoreGame::EndCountdown(" SPC %game.class SPC %timeMS SPC ")");
+   //LogEcho("\c4CoreGame::EndCountdown(" SPC %game.class SPC %timeMS SPC ")");
 
    if(%timeMS >= 60000)
       %game.endsixtyCount = %game.schedule(%timeMS - 60000, "notifyMatchEnd", 60000);
@@ -1258,7 +1258,7 @@ function CoreGame::notifyMatchEnd(%game, %time)
 
 function CoreGame::onGameDurationEnd(%game)
 {
-   LogEcho("\c4CoreGame::onGameDurationEnd(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::onGameDurationEnd(" SPC %game.class SPC ")");
    // This "redirect" is here so that we can abort the game cycle if
    // the $Game::Duration variable has been cleared, without having
    // to have a function to cancel the schedule.
@@ -1269,7 +1269,7 @@ function CoreGame::onGameDurationEnd(%game)
 
 function CoreGame::cycleGame(%game)
 {
-   LogEcho("\c4CoreGame::cycleGame(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::cycleGame(" SPC %game.class SPC ")");
    // This is setup as a schedule so that this function can be called
    // directly from object callbacks.  Object callbacks have to be
    // carefull about invoking server functions that could cause
@@ -1287,7 +1287,7 @@ function CoreGame::cycleGame(%game)
 
 function CoreGame::endGame(%game)
 {
-   LogEcho("\c4CoreGame::endGame(" SPC %game SPC ")");
+   //LogEcho("\c4CoreGame::endGame(" SPC %game SPC ")");
    if(!$Game::Running)
    {
       error("endGame: No game running!");
@@ -1323,7 +1323,7 @@ function CoreGame::endGame(%game)
 
 function CoreGame::setupClientTeams(%game)
 {
-   LogEcho("\c4CoreGame::setupClientTeams(" SPC %game SPC ")");
+   //LogEcho("\c4CoreGame::setupClientTeams(" SPC %game SPC ")");
    if(!$pref::Server::RandomizeTeams || %game.numTeams == 1)
    {
       %count = ClientGroup.getCount();
@@ -1397,7 +1397,7 @@ function CoreGame::setupClientTeams(%game)
 
 function CoreGame::onCyclePauseEnd(%game)
 {
-   LogEcho("\c4CoreGame::onCyclePauseEnd(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::onCyclePauseEnd(" SPC %game.class SPC ")");
    $Game::Cycling = false;
    if(isEventPending($Game::Schedule))
       cancel($Game::Schedule);
@@ -1411,7 +1411,7 @@ function CoreGame::onCyclePauseEnd(%game)
 // Alternate method just searches mis files and loads next
 //function CoreGame::onCyclePauseEnd(%game)
 //{
-//   LogEcho("\c4CoreGame::onCyclePauseEnd(" SPC %game.class SPC ")");
+//   //LogEcho("\c4CoreGame::onCyclePauseEnd(" SPC %game.class SPC ")");
 //   $Game::Cycling = false;
 //   if(isEventPending(%game.GameSchedule))
 //      cancel(%game.GameSchedule);
@@ -1513,7 +1513,7 @@ function CoreGame::findNextCycleMission(%game)
 
 function CoreGame::cycleMissions(%game)
 {
-   LogEcho("\c4CoreGame::cycleMissions(" SPC %game.class SPC ")");
+   //LogEcho("\c4CoreGame::cycleMissions(" SPC %game.class SPC ")");
    %nextMission = %game.findNextCycleMission();
    if ( %nextMission $= "" ) // Failsafe
       %nextMission = $Server::MissionFile;
@@ -1528,7 +1528,7 @@ function CoreGame::cycleMissions(%game)
 
 function CoreGame::forceSpectator(%game, %client, %reason)
 {
-   LogEcho("\c4CoreGame::forceSpectator(" SPC %game.class SPC %client.nameBase SPC %reason SPC ")");
+   //LogEcho("\c4CoreGame::forceSpectator(" SPC %game.class SPC %client.nameBase SPC %reason SPC ")");
    //make sure we have a valid client...
    if (%client <= 0)
       return;
@@ -1800,7 +1800,7 @@ function CoreGame::updateScoreHud(%game, %client)
 
 function CoreGame::SpectatorOnTrigger(%game, %data, %obj, %trigger, %state, %client)
 {
-   LogEcho("\c4CoreGame::SpectatorOnTrigger(" SPC %game.class SPC %data.getName() SPC %obj.mode SPC %trigger SPC %state SPC %client.nameBase SPC ")");
+   //LogEcho("\c4CoreGame::SpectatorOnTrigger(" SPC %game.class SPC %data.getName() SPC %obj.mode SPC %trigger SPC %state SPC %client.nameBase SPC ")");
    switch$ (%obj.mode)
    {
       case "NewConnect":
@@ -2002,7 +2002,7 @@ function CoreGame::SpectatorOnTrigger(%game, %data, %obj, %trigger, %state, %cli
 
 function CoreGame::SpectatorSetMode(%game, %data, %obj, %mode, %targetObj)
 {
-   LogEcho("\c4CoreGame::SpectatorSetMode(" SPC %game.class SPC %data.getName() SPC %obj SPC %mode SPC %targetObj SPC ")");
+   //LogEcho("\c4CoreGame::SpectatorSetMode(" SPC %game.class SPC %data.getName() SPC %obj SPC %mode SPC %targetObj SPC ")");
 
    %client = %obj.getControllingClient();
    switch$ (%mode)
@@ -2085,7 +2085,7 @@ function CoreGame::onTickTrigger(%game, %data, %obj)
 
 function CoreGame::sendPlayerVoteMenu(%game, %client, %targetClient, %key)
 {
-   LogEcho("\c4CoreGame::sendPlayerVoteMenu("@%game.class @", "@ %client.nameBase @", "@ %targetClient.nameBase @", "@ %key @")");
+   //LogEcho("\c4CoreGame::sendPlayerVoteMenu("@%game.class @", "@ %client.nameBase @", "@ %targetClient.nameBase @", "@ %key @")");
    if(!%targetClient.matchStartReady)
       return;
 
@@ -2208,7 +2208,7 @@ function CoreGame::sendPlayerVoteMenu(%game, %client, %targetClient, %key)
 
 function CoreGame::sendServerVoteMenu(%game, %client, %key)
 {
-   LogEcho("\c4CoreGame::sendServerVoteMenu("@%game.class @", "@ %client.nameBase @", "@ %key @")");
+   //LogEcho("\c4CoreGame::sendServerVoteMenu("@%game.class @", "@ %client.nameBase @", "@ %key @")");
 
    // This function fills the ESC_VoteMenu in the AdminDlg
    %isAdmin = (%client.isAdmin || %client.isSuperAdmin);
@@ -2316,7 +2316,7 @@ $Vote::TypeToDesc["VoteChangeTimeLimit"] = "change the time limit to";
 
 function CoreGame::InitVote(%game, %client, %typeName, %val1, %val2, %val3, %val4, %playerVote)
 {
-   LogEcho("\c4CoreGame::InitVote("@%game.class @", "@ %client.nameBase @", "@ %typeName @", "@ %val1 @", "@ %val2 @", "@ %val3 @", "@ %val4 @", "@ %playerVote @")");
+   //LogEcho("\c4CoreGame::InitVote("@%game.class @", "@ %client.nameBase @", "@ %typeName @", "@ %val1 @", "@ %val2 @", "@ %val3 @", "@ %val4 @", "@ %playerVote @")");
    %clientsVoting = 0;
    %adminAction = 0;
 
@@ -2445,7 +2445,7 @@ function CoreGame::InitVote(%game, %client, %typeName, %val1, %val2, %val3, %val
 
 function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %val3, %val4)
 {
-   LogEcho("\c4CoreGame::evalVote(" SPC %game.class SPC %client.nameBase SPC %typeName SPC %admin SPC %val1 SPC %val2 SPC %val3 SPC %val4 SPC ")");
+   //LogEcho("\c4CoreGame::evalVote(" SPC %game.class SPC %client.nameBase SPC %typeName SPC %admin SPC %val1 SPC %val2 SPC %val3 SPC %val4 SPC ")");
    // %client is the admin who issued the cmd or the player who initiated the vote
    // %val1 holds true or false for if this is an admin cmd or player vote
    switch$ (%typeName)
@@ -2996,7 +2996,7 @@ function CoreGame::awardScoreTeamkill(%game, %victimID, %killerID)
       {
          serverCmdStartNewVote(%victimID, "VoteKickPlayer", %killerID, 0, 0, 0, true);
          bottomPrintAll("<color:ff0000>" @ %killerID.nameBase @ " Has " @ %killerID.teamKills @ " team kills. Recommend voting yes.", 4, 2);
-         logEcho(%killerID.nameBase @ " GUID: " @ %killerID.guid @ " TKS: " @ %killerID.teamKills, 1);
+         //LogEcho(%killerID.nameBase @ " GUID: " @ %killerID.guid @ " TKS: " @ %killerID.teamKills, 1);
       }
       //else
       //{

@@ -256,7 +256,7 @@ function SmokeGrenadeAmmo::onInventory(%data, %obj, %amount)
    if ( !%obj.isMemberOfClass( "Player" ) )
       return;
 
-   LogEcho("\c3SmokeGrenadeAmmo::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
+   //LogEcho("\c3SmokeGrenadeAmmo::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
 
    // The ammo inventory state has changed, we need to update any mounted images using this ammo to reflect the new state.
    if ( ( %image = %obj.getMountedImage( $GrenadeSlot ) ) > 0 )

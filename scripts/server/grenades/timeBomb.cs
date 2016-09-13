@@ -161,7 +161,7 @@ function serverCmdsetBombTimer(%client, %time)
 
 function TimeBombImage::onThrowGrenade(%data, %obj, %slot)
 {
-   LogEcho("TimeBombImage::onThrowGrenade(" SPC %data @", "@ %obj.client.nameBase SPC ")");
+   //LogEcho("TimeBombImage::onThrowGrenade(" SPC %data @", "@ %obj.client.nameBase SPC ")");
 
    if ( isObject( %obj.client ) )
    {
@@ -184,7 +184,7 @@ function TimeBombAmmo::onInventory(%data, %obj, %amount)
    if ( !%obj.isMemberOfClass( "Player" ) )
       return;
 
-   LogEcho("\c3TimeBombAmmo::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
+   //LogEcho("\c3TimeBombAmmo::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
 
    // The ammo inventory state has changed, we need to update any mounted images using this ammo to reflect the new state.
    if ( ( %image = %obj.getMountedImage( $GrenadeSlot ) ) > 0 )

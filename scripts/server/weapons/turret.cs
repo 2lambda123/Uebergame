@@ -461,12 +461,12 @@ function TurretShape::damage(%this, %sourceObject, %position, %damage, %damageTy
 //-----------------------------------------------------------------------------
 function AITurretShapeData::onNewDatablock(%this, %turret)
 {
-   LogEcho("\c2AITurretShapeData::onNewDatablock(" SPC %this.getName() @ ", " @ %turret.getClassName() SPC ")");
+   //LogEcho("\c2AITurretShapeData::onNewDatablock(" SPC %this.getName() @ ", " @ %turret.getClassName() SPC ")");
 }
 
 function AITurretShapeData::onAdd(%this, %turret)
 {
-   LogEcho("\c2AITurretShapeData::onAdd(" SPC %this.getName() @", "@ %turret.getClassName() SPC ")" );
+   //LogEcho("\c2AITurretShapeData::onAdd(" SPC %this.getName() @", "@ %turret.getClassName() SPC ")" );
 
    %turret.setRechargeRate( %this.rechargeRate );
    %turret.setEnergyLevel( %this.maxEnergy );
@@ -494,7 +494,7 @@ function AITurretShapeData::onDestroyed(%this, %turret, %lastState)
 {
    // This method is invoked by the ShapeBase code whenever the
    // object's damage state changes.
-   LogEcho("\c2AITurretShapeData::onDestroyed(" SPC %this.getName() @", "@ %turret.getClassName() @", "@ %lastState SPC ")" );
+   //LogEcho("\c2AITurretShapeData::onDestroyed(" SPC %this.getName() @", "@ %turret.getClassName() @", "@ %lastState SPC ")" );
 
    %turret.playAudio( 0, TurretDestroyed );
    %turret.setAllGunsFiring( false );
@@ -534,7 +534,7 @@ function AITurretShapeData::onTarget(%this, %turret)
 {
    %target =  %turret.getTarget();
    %targName = isObject( %target.client ) ? %target.client.nameBase : %target.nameBase;
-   LogEcho("\c2AITurretShapeData::onTarget(" SPC deTag(%this.nameTag) @", "@ %targName SPC ")" );
+   //LogEcho("\c2AITurretShapeData::onTarget(" SPC deTag(%this.nameTag) @", "@ %targName SPC ")" );
 
    %turret.startTrackingTarget();
    //%turret.playAudio(0, TargetAquiredSound);
@@ -542,7 +542,7 @@ function AITurretShapeData::onTarget(%this, %turret)
 
 function AITurretShapeData::onNoTarget(%this, %turret)
 {
-   LogEcho("\c2AITurretShapeData::onNoTarget(" SPC %this.getName() @", "@ %turret.hasTarget() SPC ")" );
+   //LogEcho("\c2AITurretShapeData::onNoTarget(" SPC %this.getName() @", "@ %turret.hasTarget() SPC ")" );
 
    %turret.setAllGunsFiring(false);
    %turret.recenterTurret();
@@ -553,7 +553,7 @@ function AITurretShapeData::onFiring(%this, %turret)
 {
    %target =  %turret.getTarget();
    %targName = isObject( %target.client ) ? %target.client.nameBase : %target.nameBase;
-   LogEcho("\c2AITurretShapeData::onFiring(" SPC %this.getName() @", "@ %targName SPC ")" );
+   //LogEcho("\c2AITurretShapeData::onFiring(" SPC %this.getName() @", "@ %targName SPC ")" );
 
    %turret.setAllGunsFiring(true);
 }

@@ -292,7 +292,7 @@ datablock ShapeBaseImageData(CheetahTurretImage)
 
 function CheetahTurretImage::onFire(%data, %obj, %slot)
 {
-   LogEcho("CheetahTurretImage::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("CheetahTurretImage::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
 
    if ( %obj.getEnergyLevel() < %data.minEnergy )
       return;

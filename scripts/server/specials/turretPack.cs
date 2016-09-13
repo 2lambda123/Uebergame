@@ -141,7 +141,7 @@ function TurretDeployableImage::onUnmount(%data, %obj, %slot)
 
 function TurretDeployableImage::onActivate(%data, %obj, %slot)
 {
-   LogEcho("TurretDeployableImage::onActivate(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("TurretDeployableImage::onActivate(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
    %obj.client.deploySpecial = false;
 
    // Release the main weapon trigger and unmount the weapon
@@ -154,7 +154,7 @@ function TurretDeployableImage::onActivate(%data, %obj, %slot)
 
 function TurretDeployableImage::onActivateDone(%data, %obj, %slot)
 {
-   LogEcho("TurretDeployableImage::onActivateDone(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("TurretDeployableImage::onActivateDone(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
    if( $TeamDeployedCount[%obj.team, %data.deployed.getName()] >= $TeamDeployableMax[%data.deployed.getName()] )
    {
       messageClient(%obj.client, 'MsgDeployFailed', '\c2Your team has reached it\'s capacity for this item. %1', %data.deployed.nameTag);
@@ -175,7 +175,7 @@ function TurretDeployableImage::onActivateDone(%data, %obj, %slot)
 
 function ShapeBase::throwTurret( %this, %data )
 {
-   LogEcho("ShapeBase::throwTurret(" SPC %this.getClassName() @", "@ %data.getName() SPC ")");
+   //LogEcho("ShapeBase::throwTurret(" SPC %this.getClassName() @", "@ %data.getName() SPC ")");
 
    if ( !isObject( %data ) )
       return false;
@@ -192,7 +192,7 @@ function ShapeBase::throwTurret( %this, %data )
 
 function DeployedTurret::onThrow(%data, %user)
 {
-   LogEcho( "DeployedTurret::onThrow(" SPC %user.client.nameBase @", "@ %data.getName() SPC ")" );
+   //LogEcho( "DeployedTurret::onThrow(" SPC %user.client.nameBase @", "@ %data.getName() SPC ")" );
 
    %client = %user.client;
 
@@ -213,7 +213,7 @@ function DeployedTurret::onThrow(%data, %user)
    };
    addToDeploySet( %turret );
 
-   LogEcho( "Turret Typemask:" SPC getObjectTypeMask(%turret) SPC "GetType:" SPC %turret.getType() );
+   //LogEcho( "Turret Typemask:" SPC getObjectTypeMask(%turret) SPC "GetType:" SPC %turret.getType() );
 
    %turret.team = %user.team;
    %turret.setTeamId( %user.team );

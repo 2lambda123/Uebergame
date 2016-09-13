@@ -232,7 +232,7 @@ function Armory_Menu0::onSelect( %obj, %index, %text )
       if(isObject(%hud.data[%i, 1]))
          %list = %list TAB %hud.data[%i, 1].type TAB %hud.data[%i, 1].getValue();
    }
-   LogEcho("Armory_Menu::onSelect - Sending server inventory list:" SPC %list);
+   //LogEcho("Armory_Menu::onSelect - Sending server inventory list:" SPC %list);
    commandToServer( 'setClientLoadout', addTaggedString(%list) );
 }
 

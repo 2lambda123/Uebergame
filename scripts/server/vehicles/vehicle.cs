@@ -209,7 +209,7 @@ function VehicleData::onImpact(%data, %obj, %col, %vec, %vecLen)
 
 function VehicleData::onFlipped(%this, %vehicle, %flipped)
 {
-   LogEcho("VehicleData::onFlipped(" SPC %this.getName() @", "@ %vehicle.getClassName() @", "@ %flipped SPC ")");
+   //LogEcho("VehicleData::onFlipped(" SPC %this.getName() @", "@ %vehicle.getClassName() @", "@ %flipped SPC ")");
    %rot =  %vehicle.rotFromTransform();
    %newRot = "0 0" SPC getwords(%rot, 2, 3);
    %vehicle.setTransform(%vehicle.getPosition() SPC %newRot);
@@ -448,7 +448,7 @@ function SimGroup::setupPositionMarkers(%group, %create)
 
 function VehicleData::createPositionMarker(%data, %vehicle)
 {
-   LogEcho("VehicleData::createPositionMarker( " @ %data.getName() @ ", " @ %vehicle.getClassName() @ " )");
+   //LogEcho("VehicleData::createPositionMarker( " @ %data.getName() @ ", " @ %vehicle.getClassName() @ " )");
    %marker = new MissionMarker()
    {
       dataBlock = VehicleMarker;
@@ -469,7 +469,7 @@ function VehicleData::createPositionMarker(%data, %vehicle)
 
 function VehicleData::respawn(%data, %marker)
 {
-   LogEcho("VehicleData::respawn( " @ %data.getName() @ ", " @ %marker @ " )");
+   //LogEcho("VehicleData::respawn( " @ %data.getName() @ ", " @ %marker @ " )");
    %mask = $TypeMasks::PlayerObjectType | $TypeMasks::VehicleObjectType;
    InitContainerRadiusSearch(%marker.getWorldBoxCenter(), %data.checkRadius, %mask);
    if ( containerSearchNext() == 0 )

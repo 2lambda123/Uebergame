@@ -123,13 +123,13 @@ function Flag::onEnterLiquid(%data, %flag, %coverage, %type)
 
 function FlagImage::chargeStart(%data, %obj, %slot)
 {
-   LogEcho("FlagImage::chargeStart(" SPC %data.getName() @", "@ %obj.getClassname() @", "@ %slot SPC ")");
+   //LogEcho("FlagImage::chargeStart(" SPC %data.getName() @", "@ %obj.getClassname() @", "@ %slot SPC ")");
    %obj.startTime = getSimTime();
 }
 
 function FlagImage::onActivate(%data, %obj, %slot)
 {
-   LogEcho("FlagImage::onActivate(" SPC %data.getName() @", "@ %obj.getClassname() @", "@ %slot SPC ")");
+   //LogEcho("FlagImage::onActivate(" SPC %data.getName() @", "@ %obj.getClassname() @", "@ %slot SPC ")");
 
    if ( %obj.holdingFlag $= "" )
       return;

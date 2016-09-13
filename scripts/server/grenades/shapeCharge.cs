@@ -175,7 +175,7 @@ function ShapeChargeImage::onUnmount(%data, %obj, %slot)
 
 function ShapeChargeImage::onActivate(%data, %obj, %slot)
 {
-   LogEcho("ShapeChargeImage::onActivate(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
+   //LogEcho("ShapeChargeImage::onActivate(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
    
    // Only one per customer!
    if ( isObject( %obj.thrownChargeId ) )
@@ -240,7 +240,7 @@ function ShapeChargeTossed::onInventory(%data, %obj, %amount)
    if ( !%obj.isMemberOfClass( "Player" ) )
       return;
 
-   LogEcho("\c3ShapeChargeTossed::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
+   //LogEcho("\c3ShapeChargeTossed::onInventory(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %amount SPC ")");
 
    // The ammo inventory state has changed, we need to update any mounted images using this ammo to reflect the new state.
    if ( ( %image = %obj.getMountedImage( $GrenadeSlot ) ) > 0 )
@@ -261,7 +261,7 @@ function ShapeChargeTossed::onInventory(%data, %obj, %amount)
 
 function ShapeChargeTossed::onCollision(%data, %obj, %col)
 {
-   LogEcho("ShapeChargeTossed::onCollision(" SPC %data.getName() @", "@ %obj.getName() @", "@ %col.getClassName() SPC ")");
+   //LogEcho("ShapeChargeTossed::onCollision(" SPC %data.getName() @", "@ %obj.getName() @", "@ %col.getClassName() SPC ")");
 
    // Lets keep thing from floating mid air, the check velocity should handle it afterwards
    if ( %col.getType() & ( $TypeMasks::PlayerObjectType | $TypeMasks::VehicleObjectType | $TypeMasks::StaticShapeObjectType ) )
@@ -275,7 +275,7 @@ function ShapeChargeTossed::onCollision(%data, %obj, %col)
 
 function ShapeChargeTossed::checkVelocity(%data, %item)
 {
-   LogEcho("ShapeChargeTossed::checkVelocity(" SPC %data.getName() @", "@ %item.getClassName() SPC ")");
+   //LogEcho("ShapeChargeTossed::checkVelocity(" SPC %data.getName() @", "@ %item.getClassName() SPC ")");
 
    %item.checkCount++;
    if ( VectorLen( %item.getVelocity() ) < 0.1 )
@@ -306,7 +306,7 @@ function ShapeChargeTossed::checkVelocity(%data, %item)
 
 function ShapeChargeTossed::onStickyCollision(%data, %item)
 {
-   LogEcho("ShapeChargeTossed::onStickyCollision(" SPC %data.getName() @", "@ %item.sourceObject.client.nameBase SPC ")");
+   //LogEcho("ShapeChargeTossed::onStickyCollision(" SPC %data.getName() @", "@ %item.sourceObject.client.nameBase SPC ")");
    // We have sticky! Lets setup for the actual charge
    cancel(%item.velocCheck);
    %pos = %item.getLastStickyPos();
@@ -322,7 +322,7 @@ function ShapeChargeTossed::onStickyCollision(%data, %item)
 
 function ShapeChargeTossed::activateCharge(%data, %item, %pos, %rot)
 {
-   LogEcho( "ShapeChargeTossed::activateCharge(" SPC %data.getName() @", "@ %item.getDataBlock().getName() @", "@ %pos @", "@ %rot SPC ")");
+   //LogEcho( "ShapeChargeTossed::activateCharge(" SPC %data.getName() @", "@ %item.getDataBlock().getName() @", "@ %pos @", "@ %rot SPC ")");
    %source = %item.sourceObject;
 
    // Create the charge and schedule arming
@@ -355,14 +355,14 @@ function ShapeChargeTossed::activateCharge(%data, %item, %pos, %rot)
 
 function armShapeCharge(%item)
 {
-   LogEcho("armShapeCharge(" SPC %item SPC ")");
+   //LogEcho("armShapeCharge(" SPC %item SPC ")");
    %item.playAudio( 1, ShapeChargeActivateSound );
    %item.armed = true;
 }
 
 function ShapeChargeDeployed::detonate(%data, %item, %player)
 {
-   LogEcho("ShapeChargeDeployed::detonate(" SPC %data.getName() @", "@ %item @", "@ %player.client.nameBase SPC ")");
+   //LogEcho("ShapeChargeDeployed::detonate(" SPC %data.getName() @", "@ %item @", "@ %player.client.nameBase SPC ")");
    // No boom boom unless armed!
    if ( !%item.armed )
       return;

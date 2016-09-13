@@ -209,7 +209,7 @@ function TripMine::onInventory(%data, %player, %amount)
 
 function TripMineImage::onThrowGrenade(%data, %obj, %slot)
 {
-   LogEcho("TripMineImage::onThrowGrenade(" SPC %data.getName() @", "@ %obj.client.nameBase SPC ")");
+   //LogEcho("TripMineImage::onThrowGrenade(" SPC %data.getName() @", "@ %obj.client.nameBase SPC ")");
 
    if(%obj.getEnergyLevel() < %data.minEnergy)
       return %obj.setImageTrigger(%slot, false);
@@ -303,7 +303,7 @@ function TripMineImage::onThrowGrenade(%data, %obj, %slot)
 
 function TripMineDeployed::onDeploy(%data, %mine, %player)
 {
-   LogEcho("TripMineDeployed::onDeploy(" SPC %data.getName() SPC %mine.checkCount SPC %player.client.nameBase SPC ")");
+   //LogEcho("TripMineDeployed::onDeploy(" SPC %data.getName() SPC %mine.checkCount SPC %player.client.nameBase SPC ")");
    if(%mine.checkCount > %data.maxCheckCount)
       explodeMine(%mine, true);
 
@@ -337,7 +337,7 @@ function TripMineDeployed::onDeploy(%data, %mine, %player)
 
 function TripMineDeployed::initMine(%data, %mine, %player)
 {
-   LogEcho("TripMineDeployed::initMine(" SPC %data @", "@ %mine @", "@ %player.client.nameBase SPC ")");
+   //LogEcho("TripMineDeployed::initMine(" SPC %data @", "@ %mine @", "@ %player.client.nameBase SPC ")");
 
    serverPlay3D( MineDeploySound, %mine.getTransform() );
    %mine.playThread(0, "deploy");
@@ -385,7 +385,7 @@ function TripMineDeployed::CheckVicinity(%data, %mine)
 
 function TripMineDeployed::onCollision(%data, %mine, %col)
 {
-   LogEcho("TripMineDeployed::onCollision(" SPC %data.getName() SPC %mine SPC %col.client.nameBase SPC ")");
+   //LogEcho("TripMineDeployed::onCollision(" SPC %data.getName() SPC %mine SPC %col.client.nameBase SPC ")");
    // don't detonate if mine isn't armed yet
    if ( !%mine.armed )
       return;
@@ -407,14 +407,14 @@ function TripMineDeployed::onCollision(%data, %mine, %col)
 
 function explodeMine(%mine, %noDamage)
 {
-   LogEcho("explodeMine(" SPC %mine.getDataBlock().getName() SPC %noDamage SPC ")");
+   //LogEcho("explodeMine(" SPC %mine.getDataBlock().getName() SPC %noDamage SPC ")");
    %mine.noDamage = %noDamage;
    %mine.setDamageState(Destroyed);
 }
 
 function TripMineDeployed::damage(%data, %mine, %sourceObject, %position, %amount, %damageType)
 {
-   LogEcho("TripMineDeployed::damage(" SPC %data.getName() SPC %mine SPC %sourceObject SPC %position SPC %amount SPC %damageType SPC ")");
+   //LogEcho("TripMineDeployed::damage(" SPC %data.getName() SPC %mine SPC %sourceObject SPC %position SPC %amount SPC %damageType SPC ")");
 
    // This function is called AFTER ::onDestroyed if it is struck
    if ( !%mine.armed )
@@ -433,7 +433,7 @@ function TripMineDeployed::damage(%data, %mine, %sourceObject, %position, %amoun
 
 function TripMineDeployed::onDestroyed(%data, %mine, %prevState)
 {
-   LogEcho("TripMineDeployed::onDestroyed(" SPC %data.getName() SPC %mine SPC %prevState SPC ")");
+   //LogEcho("TripMineDeployed::onDestroyed(" SPC %data.getName() SPC %mine SPC %prevState SPC ")");
    %mine.boom = true;
 
    // %noDamage is a boolean flag -- don't want to set off all other mines in
