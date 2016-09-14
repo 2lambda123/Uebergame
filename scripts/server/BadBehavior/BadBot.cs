@@ -47,6 +47,7 @@ function DefaultPlayerData::damage(%this, %obj, %sourceObject, %position, %damag
 //-----------------------------------------------------------------------------
 datablock PlayerData(BadBotData : DefaultPlayerData)
 {
+	/*
    // max visible distance
    VisionRange = 40;
    
@@ -87,6 +88,25 @@ datablock PlayerData(BadBotData : DefaultPlayerData)
    maxInv[LurkerGrenadeAmmo] = 0;
    maxInv[ProxMine] = 0;
    maxInv[DeployableTurret] = 0;
+   */
+   //BadBot AI settings
+   VisionRange = 40;
+   VisionFov = 180;
+   findItemRange = 20;
+   targetObjectTypes = $TypeMasks::PlayerObjectType;
+   itemObjectTypes = $TypeMasks::itemObjectType;
+   optimalRange["Ryder"] = 12;
+   burstLength["Ryder"] = 100;
+   optimalRange["Lurker"] = 16;
+   burstLength["Lurker"] = 2000;
+   optimalRange["Shotgun"] = 8;
+   burstLength["Shotgun"] = 100;
+   optimalRange["SniperRifle"] = 30;
+   burstLength["SniperRifle"] = 2000;
+   optimalRange["GrenadeLauncher"] = 25;
+   burstLength["GrenadeLauncher"] = 2000;
+   rangeTolerance = 3;
+   switchTargetProbability = 0.2; //x
 };
 
 //=============================================================================
@@ -136,7 +156,7 @@ function BadBot::getMuzzleVector(%this, %slot)
 function BadBotData::onAdd(%data, %obj)
 {
    // give him the standard player loadout
-   game.loadout(%obj);
+   //game.loadout(%obj);
 }
 
 // Override onDisabled so we can stop running the behavior tree
@@ -150,9 +170,15 @@ function BadBotData::onDisabled(%this, %obj, %state)
 function BadBot::moveTo(%obj, %dest, %slowDown)
 {
    %pos = isObject(%dest) ? %dest.getPosition() : %dest;
-   //%obj.setMoveDestination(%pos, %slowDown); //old function wihtout navMesh
-   %obj.setPathDestination(%pos); //setPath uses navMesh
+   if ( %obj.getNavMesh() ) { %obj.setPathDestination(%pos); } //setPath uses navMesh
+   else { %obj.setMoveDestination(%pos, %slowDown); } //old function wihtout navMesh
    %obj.atDestination = false;
+}
+
+function BadBotData::onMoveStuck(%this, %obj)
+{
+   %obj.setShapeName("onMoveStuck"); //debug feature
+   %obj.moveTo(RandomPointOnCircle(%basePoint, 2));
 }
 
 // forward onReachDestination to the behavior tree as a signal
@@ -162,7 +188,7 @@ function BadBotData::onReachDestination(%data, %obj)
       %obj.behaviorTree.postSignal("onReachDestination");
       
    %obj.atDestination = true;
-   //%obj.setShapeName("onReachDestination"); //debug feature
+   %obj.setShapeName("onReachDestination"); //debug feature
 }
 
 // forward animationDone callback to the behavior tree as a signal
@@ -249,7 +275,7 @@ function wanderTask::behavior(%this, %obj)
    
    // move   
    %obj.moveTo(RandomPointOnCircle(%basePoint, 10));
-   //%obj.setShapeName(wanderTask); //debug feature
+   %obj.setShapeName(wanderTask); //debug feature
    return SUCCESS;
 }
 
@@ -369,6 +395,7 @@ function pickTargetTask::precondition(%this, %obj)
 
 function pickTargetTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(pickTargetTask); //debug feature
    %obj.targetObject = -1;
    %db = %obj.dataBlock;
    
@@ -403,6 +430,7 @@ function aimAtTargetTask::precondition(%this, %obj)
 
 function aimAtTargetTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(aimAtTargetTask); //debug feature
    // calculate an aim offset
    %targetPos = %obj.targetObject.getWorldBoxCenter();
    %weaponImage = %obj.getMountedImage($WeaponSlot);
@@ -434,23 +462,45 @@ function shootAtTargetTask::precondition(%this, %obj)
 
 function shootAtTargetTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(shootAtTargetTask); //debug feature
    if(!isEventPending(%obj.triggerSchedule))
    {
       %obj.setImageTrigger($WeaponSlot, true);
-      %burstLength = %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item];
-	  //echo( "Burst length: " @ %burstLength );
-      %obj.triggerSchedule = %obj.schedule(%burstLength, setImageTrigger, $WeaponSlot, false);
+      //%burstLength = %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item]
+	  %burstRandomLength = getRandom ( 100, %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item] );
+	  //echo( "Burst length: " @ %burstRandomLength );
+      %obj.triggerSchedule = %obj.schedule(%burstRandomLength, setImageTrigger, $WeaponSlot, false);
    }
 
    return SUCCESS;
 }
 
+//=============================================================================
+// reloadWeaponTask
+//=============================================================================
+function reloadWeaponTask::precondition(%this, %obj)
+{
+   if ( %obj.getInventory(%image.ammo) <= 0 ) return true;
+}
+
+function reloadWeaponTask::behavior(%this, %obj)
+{
+   if(!isEventPending(%obj.triggerSchedule))
+   {
+	  %reload = commandToServer( 'reloadWeapon' );
+	  %reloadRandomLength = getRandom ( 100, 1500 );
+      %obj.triggerSchedule = %obj.schedule(%reloadRandomLength, %reload);
+   }
+
+   return SUCCESS;
+}
 
 //=============================================================================
 // combatMoveTask
 //=============================================================================
 function combatMoveTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(combatMoveTask); //debug feature
    %image = %obj.getMountedImage($WeaponSlot);
    %db = %obj.getDatablock();
    %optimalRange = %db.optimalRange[%image.item.description];
@@ -469,6 +519,5 @@ function combatMoveTask::behavior(%this, %obj)
    %moveVec = VectorAdd(%moveVec, VectorScale(%right, 5 * (getRandom(0,2) - 1)));
       
    %obj.moveTo(VectorAdd(%obj.position, %moveVec));
-   
    return SUCCESS;
 }

@@ -122,7 +122,7 @@ function AIConnection::onConnect(%client, %name)
    addToServerGuidList( %client.guid );
 
    // Save client preferences on the connection object for later use.
-   %client.armor = "Soldier";
+   %client.armor = "BotSoldier";
    %client.skin = addTaggedString("Base");
    %client.setPlayerName(%name);
    %client.team = 0;
@@ -931,10 +931,10 @@ function AIClient::getRandomLoadout(%client)
 }
 
 $BotInventoryIndex = 0;
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
+//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
+//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
 

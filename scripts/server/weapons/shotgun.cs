@@ -471,5 +471,5 @@ SmsInv.AddWeapon(Shotgun, "Shotgun", 1);
 SmsInv.AllowClip("armor\tSoldier\t4");
 SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 4);
 
-SmsInv.AllowAmmo("armor\tSoldier\t8");
-SmsInv.AddAmmo(ShotgunAmmo, 8);
+SmsInv.AllowAmmo("armor\tSoldier\t1");
+SmsInv.AddAmmo(ShotgunAmmo, 1);

@@ -141,12 +141,12 @@ float3x3 quatToMat( float4 quat )
 float2 parallaxOffset(TORQUE_SAMPLER2D(texMap), float2 texCoord, float3 negViewTS, float depthScale)
 {
    float depth = TORQUE_TEX2D(texMap, texCoord).a;
-   float2 offset = negViewTS.xy * ( depth * depthScale );
+   float2 offset = negViewTS.xy * (depth * depthScale);
 
-   for ( int i=0; i < PARALLAX_REFINE_STEPS; i++ )
+   for (int i = 0; i < PARALLAX_REFINE_STEPS; i++)
    {
       depth = (depth + TORQUE_TEX2D(texMap, texCoord + offset).a) * 0.5;
-      offset = negViewTS.xy * ( depth * depthScale );
+      offset = negViewTS.xy * (depth * depthScale);
    }
 
    return offset;
@@ -294,7 +294,25 @@ float4 toLinear(float4 tex)
    return tex;
 }
 // Encodes gamma.
-float4 toLinear(float4 tex)
+float4 toGamma(float4 tex)
+{
+   return tex;
+}
+float3 toLinear(float3 tex)
+{
+   return tex;
+}
+// Encodes gamma.
+float3 toGamma(float3 tex)
+{
+   return tex;
+}
+float3 toLinear(float3 tex)
+{
+   return tex;
+}
+// Encodes gamma.
+float3 toLinear(float3 tex)
 {
    return tex;
 }
@@ -308,6 +326,16 @@ float4 toLinear(float4 tex)
 float4 toGamma(float4 tex)
 {
    return float4(pow(abs(tex.rgb), 1.0/2.2), tex.a);
+}
+// Sample in linear space. Decodes gamma.
+float3 toLinear(float3 tex)
+{
+   return pow(abs(tex.rgb), 2.2);
+}
+// Encodes gamma.
+float3 toGamma(float3 tex)
+{
+   return pow(abs(tex.rgb), 1.0/2.2);
 }
 #endif //
 

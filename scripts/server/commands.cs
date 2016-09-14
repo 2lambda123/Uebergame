@@ -339,7 +339,8 @@ function serverCmdCycleWeapon(%client, %data)
 //User initiates to trigger a reload, clears out clip, starts the animation, from there the state machine handles playing the animation and reloading
 function serverCmdReloadWeapon(%client)
 {
-   %player = %client.getControlObject();
+   //%player = %client.getControlObject(); // might be a camera
+   %player = %client.player;
    %image = %player.getMountedImage( $WeaponSlot );
    
    if (%player.isReloading == true) return;
@@ -350,7 +351,7 @@ function serverCmdReloadWeapon(%client)
    //if ( %player.getInventory(%image.ammo) == %image.ammo.maxInventory )
    //return;
  
-  // No Iron Sight aiming while reloading.
+   // No Iron Sight aiming while reloading.
    if (%player.isInIronSights == true)
       return;
  

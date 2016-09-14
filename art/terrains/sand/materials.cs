@@ -112,6 +112,7 @@ new TerrainMaterial(ter_sand_dirty_03)
    normalMap = "art/terrains/sand/ter_sand_dirty_03_N";
    parallaxScale = "0";
    detailSize = "4";
+   detailStrength = "1";
 };
 
 singleton Material(TerrainFX_ter_sand_rough_01)    

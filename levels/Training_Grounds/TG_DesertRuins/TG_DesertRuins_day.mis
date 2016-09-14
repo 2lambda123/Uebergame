@@ -43,7 +43,7 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
-      staticRefreshFreq = "128";
+      staticRefreshFreq = "80";
       dynamicRefreshFreq = "8";
       brightness = "0.9";
       flareType = "SunFlareExample2";
@@ -9784,7 +9784,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-6.5342 2.68343 0.708619";
-            rotation = "0.129136 -0.129136 -0.983183 90.9719";
+            rotation = "0.129136 -0.129136 -0.983182 90.972";
             scale = "1.22625 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -9844,7 +9844,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2018";
+            rotation = "0.0590455 0.0590455 0.996508 90.2019";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10777,7 +10777,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -12 0";
-         rotation = "0.00366813 0.00366805 -0.999987 90.0014";
+         rotation = "0.00366813 0.00366805 -0.999987 90.0015";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";

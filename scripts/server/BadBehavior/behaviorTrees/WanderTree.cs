@@ -14,7 +14,6 @@ new Root(WanderTree) {
          canSave = "1";
          canSaveDynamicFields = "1";
       };
-	  /* disabled since it gets stuck, solve later
       new WaitForSignal() {
          signalName = "onReachDestination";
          timeoutMs = "0";
@@ -22,7 +21,6 @@ new Root(WanderTree) {
          canSave = "1";
          canSaveDynamicFields = "1";
       };
-	  */
       new RandomWait() {
          waitMinMs = "0";
          waitMaxMs = "1000";
