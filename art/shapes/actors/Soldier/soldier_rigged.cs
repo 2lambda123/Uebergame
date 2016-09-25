@@ -90,7 +90,7 @@ function SoldierDAE::onLoad(%this)
    %this.setSequenceBlend( "Reload", "1", "Root", "0");
    
    %this.setSequenceGroundSpeed( "Back", "0 -1.6 0");
-   %this.setSequenceGroundSpeed( "Run", "0 2.5 0");
+   %this.setSequenceGroundSpeed( "Run", "0 2.125 0");
    %this.setSequenceGroundSpeed( "Side", "-1.6 0 0");
    %this.setSequenceGroundSpeed( "Swim_Backward", "0 -1 0");
    %this.setSequenceGroundSpeed( "Swim_Forward", "0 1 0");

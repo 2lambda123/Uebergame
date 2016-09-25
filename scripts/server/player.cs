@@ -733,31 +733,33 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    runForce = "3240";
    runEnergyDrain = "0.136";
    minRunEnergy = "0";
-   // value * 2.48 = kph
-   maxForwardSpeed = "4";
-   maxBackwardSpeed = "3";
-   maxSideSpeed = "3";
+   // assumed to be meters per second
+   // so 1kph = 0.278m/s
+   // 1ms = 3.6 kph
+   maxForwardSpeed = "3.33"; //average jogging speed of ~12 kph
+   maxBackwardSpeed = "2";
+   maxSideSpeed = "2.5";
 
-   sprintForce = "1500";
+   sprintForce = "800"; //low force to give some acceleration time
    sprintEnergyDrain = "0.512";
    minSprintEnergy = "1";
-   maxSprintForwardSpeed = "8";
+   maxSprintForwardSpeed = "8"; //28.8 kph, average sprinting speed of a man
    maxSprintBackwardSpeed = "4";
    maxSprintSideSpeed = "5";
-   sprintStrafeScale = "0.5";
-   sprintYawScale = "0.5";
-   sprintPitchScale = "0.5";
+   sprintStrafeScale = "0.417"; // 8/3.33 , sprint is 2.4 times faster so scale mouse accordingly
+   sprintYawScale = "0.417";
+   sprintPitchScale = "0.417";
    sprintCanJump = true;
 
    crouchForce = 405;
    maxCrouchForwardSpeed = "2";
-   maxCrouchBackwardSpeed = "1";
+   maxCrouchBackwardSpeed = "1.25";
    maxCrouchSideSpeed = "1.5";
 
    proneForce = 405;
-   maxProneForwardSpeed = 3.0;
-   maxProneBackwardSpeed = 1.5;
-   maxProneSideSpeed = 1.5;
+   maxProneForwardSpeed = 1.5;
+   maxProneBackwardSpeed = 1.0;
+   maxProneSideSpeed = 1.25;
 
    swimForce = "4320";
    maxUnderwaterForwardSpeed = "1.5";
