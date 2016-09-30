@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new Root(CombatTree) {
+new Root(combatTree) {
    canSave = "1";
    canSaveDynamicFields = "1";
 

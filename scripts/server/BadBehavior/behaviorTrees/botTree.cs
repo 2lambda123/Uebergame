@@ -52,14 +52,20 @@ new Root(BotTree) {
                canSaveDynamicFields = "1";
             };
             new SubTree() {
-               subTreeName = "PatrolTree";
+               subTreeName = "patrolTree";
                internalName = "patrol";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
             new SubTree() {
-               subTreeName = "WanderTree";
+               subTreeName = "wanderTree";
                internalName = "wander";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+			new SubTree() {
+               subTreeName = "reloadTree";
+               internalName = "reload";
                canSave = "1";
                canSaveDynamicFields = "1";
             };

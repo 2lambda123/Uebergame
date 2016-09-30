@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new Root(PatrolTree) {
+new Root(patrolTree) {
    canSave = "1";
    canSaveDynamicFields = "1";
 

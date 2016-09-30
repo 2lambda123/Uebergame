@@ -1,5 +1,5 @@
 //--- OBJECT WRITE BEGIN ---
-new Root(WanderTree) {
+new Root(wanderTree) {
    canSave = "1";
    canSaveDynamicFields = "1";
 

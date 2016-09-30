@@ -102,7 +102,7 @@ function clientCmdSetHudMode(%mode)
    clientCmdHideReticle();
    clientDeploySensorOff();
    objectiveHud.setVisible(false);
-   TargetHud.setVisible(false);
+   TargetHud.setVisible(true);
 
    switch$( $HudMode )
    {

@@ -266,6 +266,7 @@ function RandomPointOnCircle(%center, %radius)
 //==============================================================================
 function wanderTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(wanderTask); //debug feature
    // stop aiming at things
    %obj.clearAim();
    
@@ -275,7 +276,7 @@ function wanderTask::behavior(%this, %obj)
    
    // move   
    %obj.moveTo(RandomPointOnCircle(%basePoint, 10));
-   %obj.setShapeName(wanderTask); //debug feature
+
    return SUCCESS;
 }
 
@@ -296,6 +297,7 @@ function moveToClosestNodeTask::onEnter(%this, %obj)
 
 function moveToClosestNodeTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(moveToClosestNodeTask); //debug feature
    // get the closest node
    %obj.currentNode = %obj.getClosestNodeOnPath(%obj.path);
    
@@ -321,6 +323,7 @@ function patrolTask::onEnter(%this, %obj)
 
 function patrolTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(patrolTask); //debug feature
    // hook into the standard AIPlayer path following
    %obj.moveToNextNode();
    return SUCCESS;
@@ -331,6 +334,7 @@ function patrolTask::behavior(%this, %obj)
 //=============================================================================
 function findHealthTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(findHealthTask); //debug feature
    // get the objects datablock
    %db = %obj.dataBlock;
    
@@ -371,6 +375,7 @@ function getHealthTask::onEnter(%this, %obj)
 
 function getHealthTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(getHealthTask); //debug feature
    // succeed when we reach the item
    if(!%obj.atDestination)
       return RUNNING;
@@ -480,11 +485,14 @@ function shootAtTargetTask::behavior(%this, %obj)
 //=============================================================================
 function reloadWeaponTask::precondition(%this, %obj)
 {
+   //if ( %obj.getInventory(%image.clip) > 0 ) return true;
    if ( %obj.getInventory(%image.ammo) <= 0 ) return true;
+   
 }
 
 function reloadWeaponTask::behavior(%this, %obj)
 {
+   %obj.setShapeName(reloadWeaponTask); //debug feature
    if(!isEventPending(%obj.triggerSchedule))
    {
 	  %reload = commandToServer( 'reloadWeapon' );
