@@ -229,6 +229,34 @@ function BadBot::say(%this, %message)
    chatMessageAll(%this, '\c3%1: %2', %this.getShapeName(), %message);  
 }
 
+function BadBot::AIreloadWeapon(%player)
+{
+   //%player = %client.getControlObject(); // might be a camera
+   //%player = %client.player;
+   %image = %player.getMountedImage( $WeaponSlot );
+   
+   if ( %player.isReloading == true ) return;
+   if ( !%image.isField("clip") ) return;
+   if ( %player.getInventory(%image.clip) <= 0 ) return;
+   
+   // Don't reload if the weapon's full. //function is broken since we are using the sms system.
+   //if ( %player.getInventory(%image.ammo) == %image.ammo.maxInventory )
+   //return;
+ 
+   // No Iron Sight aiming while reloading.
+   if (%player.isInIronSights == true)
+      return;
+ 
+   if ( %image > 0 )
+   {
+      //TODO: partial clip storage and drop to ground.
+      %image.clearAmmoClip( %player, $WeaponSlot );
+      %image.startReloadAmmoClip(%player, $WeaponSlot);
+      %player.isReloading = true;
+	  %player.allowSprinting(false);
+   }
+}
+
 //=============================Global Utility==================================
 function RandomPointOnCircle(%center, %radius)
 {
@@ -485,9 +513,13 @@ function shootAtTargetTask::behavior(%this, %obj)
 //=============================================================================
 function reloadWeaponTask::precondition(%this, %obj)
 {
-   //if ( %obj.getInventory(%image.clip) > 0 ) return true;
-   if ( %obj.getInventory(%image.ammo) <= 0 ) return true;
-   
+   %weaponImage = %obj.getMountedImage($WeaponSlot);
+
+   //if( %obj.getImageAmmo($WeaponSlot) <= 0 && %obj.getInventory(%obj.getMountedImage($WeaponSlot).clip > 0)) return true;
+   //echo ("has ai clip? : " @ %obj.getInventory(%obj.getMountedImage($WeaponSlot).clip));
+   //echo ("has ai clip? : " @ %obj.getInventory (%weaponImage.clip));
+
+   if (%obj.getInventory (%weaponImage.clip) > 0 && %obj.isReloading == false) return true;
 }
 
 function reloadWeaponTask::behavior(%this, %obj)
@@ -495,11 +527,11 @@ function reloadWeaponTask::behavior(%this, %obj)
    %obj.setShapeName(reloadWeaponTask); //debug feature
    if(!isEventPending(%obj.triggerSchedule))
    {
-	  %reload = commandToServer( 'reloadWeapon' );
+	  //%reload = commandToServer( 'reloadWeapon' );
+	  //%reload = %obj.reloadWeapon;
 	  %reloadRandomLength = getRandom ( 100, 1500 );
-      %obj.triggerSchedule = %obj.schedule(%reloadRandomLength, %reload);
+      %obj.triggerSchedule = %obj.schedule(%reloadRandomLength, AIreloadWeapon);
    }
-
    return SUCCESS;
 }
 
@@ -527,5 +559,6 @@ function combatMoveTask::behavior(%this, %obj)
    %moveVec = VectorAdd(%moveVec, VectorScale(%right, 5 * (getRandom(0,2) - 1)));
       
    %obj.moveTo(VectorAdd(%obj.position, %moveVec));
+   
    return SUCCESS;
 }

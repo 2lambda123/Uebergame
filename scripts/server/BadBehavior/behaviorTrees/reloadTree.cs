@@ -8,7 +8,7 @@ new Root(reloadTree) {
       canSaveDynamicFields = "1";
 
       new ScriptEval() {
-         behaviorScript = "if (%obj.getInventory(%image.clip) > 0) return SUCCESS;";
+         behaviorScript = "if (%obj.getImageAmmo($WeaponSlot) <= 0 ) return SUCCESS;";
          defaultReturnStatus = "FAILURE";
          internalName = "need to reload?";
          canSave = "1";

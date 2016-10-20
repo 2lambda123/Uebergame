@@ -275,14 +275,62 @@ function AIClient::ProcessLoadout(%client)
       return;
 
    %player.clearInventory();
+   
    %weapCount = 0;
-
+   
+   // Now give them the stuff thats not listed in the armory (flagged).
+   // These are default weapons. Inventory restrictions will keep it clean
    for ( %i = 0; %i < $SMS::MaxWeapons; %i++ )
    {
       %default = $SMS::Weapon[%i];
-      if ( $SMS::ShowInInv[%default] == false )
+
+      // Filter out what isnt flagged..
+      if ( $SMS::ShowInInv[%default] == 0 )
       {
          %player.incInventory( %default, 1 );
+
+         if ( %default.image.clip !$= "" )
+            %player.incInventory( %default.image.clip, %player.maxInventory( %default.image.clip ) );
+
+         if ( %default.image.ammo !$= "" )
+            %player.incInventory( %default.image.ammo, %player.maxInventory( %default.image.ammo ) );
+      }
+      // We dont want these counting against maxWeapons or we will hit the ceiling instantly.
+   }
+
+   for ( %i = 0; %i < getFieldCount( %client.weaponIndex ); %i++ )
+   {
+      %WInv = $NameToData[%client.loadout[getField( %client.weaponIndex, %i )]];
+      if(%WInv !$= "")
+      {
+         // increment weapon count if current armor can hold this weapon
+         if ( %player.incInventory( %WInv, 1 ) > 0 )
+         {
+            %weapCount++;
+
+            if ( %WInv.image.clip !$= "" )
+               %player.incInventory( %WInv.image.clip, %player.maxInventory( %WInv.image.clip ) );
+
+            if ( %WInv.image.ammo !$= "" )
+               %player.incInventory( %WInv.image.ammo, %player.maxInventory( %WInv.image.ammo ) );
+         }
+      }
+
+      if( %weapCount >= %player.getDatablock().maxWeapons )
+         break;
+   }
+
+   //echo("Weapon Count:" SPC %weapCount);
+   %player.weaponCount = %weapCount;
+   
+   /*
+   for ( %i = 0; %i < $SMS::MaxWeapons; %i++ )
+   {
+      %default = $SMS::Weapon[%i];
+      if ( $SMS::ShowInInv[%default] == 0 )
+      {
+         %player.incInventory( %default, 1 );
+		 
          if ( %default.image.ammo !$= "" )
             %player.incInventory( %default.image.ammo, 999, true );
       }
@@ -304,7 +352,7 @@ function AIClient::ProcessLoadout(%client)
          break;
    }
    %player.weaponCount = %weapCount;
-
+*/
    //-----------------------------------------------------------------------------
    // Specials
    %specCount = 0;
@@ -345,12 +393,15 @@ function AIClient::ProcessLoadout(%client)
          break;
    }
    %player.grenadeCount = %grenCount;
-
+   
    %player.setInventory( HealthKit, 1 );
    %player.setInventory( Ryder, 1, 1 );
    %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
    %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );
    %player.weaponCount++;
+   
+   //echo ("has ai clip? : " @ %obj.getInventory(%obj.getMountedImage($WeaponSlot).clip));
+   //echo ("has ai clip? : " @ %player.getInventory(%player.getMountedImage($WeaponSlot).clip));
 }
 
 //-----------------------------------------------------------------------------
@@ -931,10 +982,10 @@ function AIClient::getRandomLoadout(%client)
 }
 
 $BotInventoryIndex = 0;
-//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
-//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
 $BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
 $BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
-//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
-//$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
 

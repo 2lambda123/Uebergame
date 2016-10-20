@@ -313,7 +313,10 @@ function WeaponImage::reloadAmmoClip(%this, %obj, %slot)
       if ( %obj.getInventory(%this.clip) > 0 )
       {
          //remove a clip
-         %obj.decInventory( %this.clip, 1 );
+		 if (%obj.isAIControlled)
+         %obj.decInventory( %this.clip, 0 ); //AI needs to have unlimited clips until they know how get new ones
+	     else
+		 %obj.decInventory( %this.clip, 1 ); 
          //reset our current ammo back to a full clip size
          %obj.setInventory( %this.ammo, %obj.maxInventory(%this.ammo), 1 );
          //reset the state machine so firing can happen again.

@@ -104,7 +104,7 @@ datablock ProjectileData( ShotgunProjectile )
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------
-datablock ItemData(ShotgunMag : DefaultClip)
+datablock ItemData(ShotgunClip : DefaultClip)
 {
    // Basic Item properties
    //shapeFile = "art/shapes/weapons/shotgun/shotgun_TP.dts";
@@ -117,7 +117,7 @@ datablock ItemData(ShotgunAmmo : DefaultAmmo)
 {
    //shapeFile = "art/shapes/weapons/shotgun/shotgun_TP.dts";
    pickUpName = 'Shotgun ammo';
-   clip = ShotgunMag;
+   clip = ShotgunClip;
 };
 
 //--------------------------------------------------------------------------
@@ -170,7 +170,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    // Projectiles and Ammo.
    item = Shotgun;
    ammo = ShotgunAmmo;
-   clip = ShotgunMag;
+   clip = ShotgunClip;
    ironSight = ShotgunIronSightImage;
 
    usesEnergy = 0;
@@ -469,7 +469,7 @@ SmsInv.AllowWeapon("Soldier");
 SmsInv.AddWeapon(Shotgun, "Shotgun", 1);
 
 SmsInv.AllowClip("armor\tSoldier\t4");
-SmsInv.AddClip(ShotgunMag, "Shotgun Magazine", 4);
+SmsInv.AddClip(ShotgunClip, "Shotgun Clip", 4);
 
-SmsInv.AllowAmmo("armor\tSoldier\t1");
-SmsInv.AddAmmo(ShotgunAmmo, 1);
+SmsInv.AllowAmmo("armor\tSoldier\t8");
+SmsInv.AddAmmo(ShotgunAmmo, 8);

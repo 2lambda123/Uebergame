@@ -467,7 +467,7 @@ function listClients()
       if(%cl.isAdmin)
          %type = %status @ "Admin ";
       if(%cl.isSuperAdmin)
-         %type = %status @ "SuperAdmin ";
+         %type = %status @ "UeberAdmin ";
       if(%type $= "")
          %type = "<normal>";
 

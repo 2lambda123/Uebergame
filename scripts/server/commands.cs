@@ -343,7 +343,7 @@ function serverCmdReloadWeapon(%client)
    %player = %client.player;
    %image = %player.getMountedImage( $WeaponSlot );
    
-   if (%player.isReloading == true) return;
+   if ( %player.isReloading == true) return;
    if ( !%image.isField("clip") ) return;
    if ( %player.getInventory(%image.clip) <= 0 ) return;
    

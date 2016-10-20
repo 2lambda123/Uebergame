@@ -35,13 +35,19 @@ new Root(BotTree) {
          canSaveDynamicFields = "1";
 
          new ActiveSelector() {
-            recheckFrequency = "1000";
+            recheckFrequency = "2000";
             canSave = "1";
             canSaveDynamicFields = "1";
 
             new SubTree() {
                subTreeName = "getHealthTree";
                internalName = "get health";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+            new SubTree() {
+               subTreeName = "reloadTree";
+               internalName = "reload";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -60,12 +66,6 @@ new Root(BotTree) {
             new SubTree() {
                subTreeName = "wanderTree";
                internalName = "wander";
-               canSave = "1";
-               canSaveDynamicFields = "1";
-            };
-			new SubTree() {
-               subTreeName = "reloadTree";
-               internalName = "reload";
                canSave = "1";
                canSaveDynamicFields = "1";
             };

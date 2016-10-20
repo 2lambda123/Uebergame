@@ -740,7 +740,7 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    maxBackwardSpeed = "2";
    maxSideSpeed = "2.5";
 
-   sprintForce = "800"; //low force to give some acceleration time
+   sprintForce = "1100"; //low force to give some acceleration time
    sprintEnergyDrain = "0.512";
    minSprintEnergy = "1";
    maxSprintForwardSpeed = "8"; //28.8 kph, average sprinting speed of a man

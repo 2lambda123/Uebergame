@@ -578,7 +578,8 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
 {
    //LogEcho("ShapeBaseImageData::onFire(" SPC %data.getName() @", "@ %obj.client.nameBase @", "@ %slot SPC ")");
 
-   if ( %data.ammo !$="" && !%obj.client.isAiControlled() ) // Ai has unlimited ammo, cause.. lazy bones
+   //if ( %data.ammo !$="" && !%obj.client.isAiControlled() ) // Ai has unlimited ammo, cause.. lazy bones
+   if ( %data.ammo !$="" )
    {
       if ( %obj.getInventory( %data.ammo ) <= 0 )
          return;
