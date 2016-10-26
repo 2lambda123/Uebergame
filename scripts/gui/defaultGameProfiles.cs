@@ -22,8 +22,10 @@
 
 //-----------------------------------------------------------------------------
 // Override base controls
-//GuiMenuButtonProfile.soundButtonOver = "AudioButtonOver";
-//GuiMenuButtonProfile.soundButtonDown = "AudioButtonDown";
+GuiMenuButtonProfile.soundButtonOver = "AudioButtonOverSoundList";
+GuiMenuButtonProfile.soundButtonDown = "AudioButtonAcceptSoundList"; //positive sound for all else
+GuiMenuButtonProfile2.soundButtonOver = "AudioButtonOverSoundList";
+GuiMenuButtonProfile2.soundButtonDown = "AudioButtonCancelSoundList"; //negative sound for exit, cancel etc
 
 //-----------------------------------------------------------------------------
 // Chat Hud profiles

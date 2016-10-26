@@ -156,7 +156,7 @@ new GuiControlProfile (GuiWindowProfile)
 {
    opaque = false;
    border = "0";
-   fillColor = "32 32 32 255";
+   fillColor = "32 32 32 192";
    fillColorHL = "72 72 72 255";
    fillColorNA = "18 18 18 255";
    fontColor = "196 196 196 255";
@@ -383,7 +383,7 @@ new GuiControlProfile( GuiButtonProfile )
    fillColorSEL = "90 90 90 255";
    borderThickness = "3";
    fontColors[1] = "230 127 25 255";
-   fontSize = "24";
+   fontSize = "18";
    fontColors[8] = "Fuchsia";
    borderColor = "80 80 80 255";
    borderColorHL = "64 54 45 255";
@@ -393,6 +393,35 @@ new GuiControlProfile( GuiButtonProfile )
 
 if( !isObject( GuiMenuButtonProfile ) )
 new GuiControlProfile( GuiMenuButtonProfile )
+{
+   opaque = true;
+   border = "1";
+   fontSize = "24";
+   fontType = "ArialBold";
+   fontColor = "93 85 54 255";
+   fontColorHL = "230 127 25 255";
+   fontColorNA = "64 64 64 255";
+   //fontColorSEL ="0 0 0";
+   fixedExtent = 0;
+   justify = "center";
+   canKeyFocus = false;
+   hasBitmapArray = false;
+   category = "Core";
+   fillColor = "20 20 20 255";
+   fillColorHL = "20 18 14 255";
+   fillColorNA = "20 20 20 255";
+   fillColorSEL = "90 90 90 255";
+   fontColors[0] = "93 85 54 255";
+   fontColors[2] = "64 64 64 255";
+   fontColors[1] = "230 127 25 255";
+   borderThickness = "3";
+   borderColor = "50 50 50 255";
+   borderColorHL = "64 54 45 255";
+   bevelColorHL = "30 30 30 255";
+};
+
+if( !isObject( GuiMenuButtonProfile2 ) )
+new GuiControlProfile( GuiMenuButtonProfile2 )
 {
    opaque = true;
    border = "1";
@@ -481,7 +510,7 @@ if( !isObject( GuiScrollProfile ) )
 new GuiControlProfile( GuiScrollProfile )
 {
    opaque = true;
-   fillcolor = "21 21 21 255";
+   fillcolor = "21 21 21 192";
    fontColor = "180 180 180 255";
    fontColorHL = "255 255 255 255";
    //borderColor = GuiDefaultProfile.borderColor;
@@ -769,27 +798,4 @@ new GuiControlProfile( GuiRadioProfile )
    modal = "1";
    fontColors[0] = "196 196 196 255";
    fontColors[1] = "255 255 255 255";
-};
-
-singleton GuiControlProfile(GuiButtonProfile)
-{
-   opaque = "1";
-   fillColor = "48 48 48 255";
-   fillColorHL = "28 26 22 255";
-   fillColorNA = "24 24 24 255";
-   fillColorSEL = "90 90 90 255";
-   borderThickness = "2";
-   fontSize = "18";
-   fontColors[0] = "147 133 84 255";
-   fontColors[2] = "64 64 64 255";
-   fontColors[8] = "Fuchsia";
-   fontColor = "147 133 84 255";
-   fontColorNA = "64 64 64 255";
-   justify = "Center";
-   category = "Core";
-   fixedExtent = "0";
-   border = "1";
-   borderColorHL = "64 54 45 255";
-   fontColors[1] = "230 127 25 255";
-   fontColorHL = "230 127 25 255";
 };

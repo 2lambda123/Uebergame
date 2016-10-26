@@ -77,6 +77,8 @@ function Torque::initClient(%this)
    $Client::MissionTypeQuery = "Any";
    $Client::GameType = "";
 
+   exec("./audioGui.cs"); //menu button sounds etc
+   
    // These should be game specific GuiProfiles.  Custom profiles are saved out
    // from the Gui Editor.  Either of these may override any that already exist.
    exec("scripts/gui/defaultGameProfiles.cs"); 
@@ -172,7 +174,7 @@ function Torque::initClient(%this)
    exec("scripts/gui/recordingsDlg.cs");
    exec("scripts/gui/guiMusicPlayer.cs");
    exec("scripts/gui/guiVideoPlayer.cs");
-
+   
    //update user config files, if he has an old version
    if($pref::Version !$= 1050)
    updatePrefs();
