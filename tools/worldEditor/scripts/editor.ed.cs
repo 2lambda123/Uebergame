@@ -99,6 +99,13 @@ function Editor::checkActiveLoadDone()
 //------------------------------------------------------------------------------
 function toggleEditor(%make)
 {
+   //close the dialog if already open and cancel the function
+   if (ChooseLevelDlg.isAwake()) 
+   {
+      Canvas.popDialog(ChooseLevelDlg);
+	  return;
+   }
+	 
    if (Canvas.isFullscreen())
    {
       MessageBoxOK("Windowed Mode Required", "Please switch to windowed mode to access the Mission Editor.");

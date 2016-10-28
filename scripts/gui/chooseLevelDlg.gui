@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ChooseLevelDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -32,11 +32,11 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 144";
+      position = "100 100";
       extent = "640 480";
       minExtent = "640 480";
-      horizSizing = "center";
-      vertSizing = "center";
+      horizSizing = "right";
+      vertSizing = "bottom";
       profile = "GuiWindowProfile";
       visible = "1";
       active = "1";
@@ -51,7 +51,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "1";
-         position = "441 435";
+         position = "438 435";
          extent = "192 36";
          minExtent = "8 8";
          horizSizing = "right";
@@ -70,7 +70,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "286 303";
+         position = "286 288";
          extent = "161 30";
          minExtent = "8 8";
          horizSizing = "right";
@@ -121,7 +121,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "470 356";
+         position = "450 339";
          extent = "156 25";
          minExtent = "127 23";
          horizSizing = "right";
@@ -144,7 +144,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "289 359";
+         position = "318 342";
          extent = "114 18";
          minExtent = "66 18";
          horizSizing = "right";
@@ -192,7 +192,7 @@
             fitParentWidth = "1";
             clipColumnText = "1";
             position = "1 1";
-            extent = "250 90";
+            extent = "250 288";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -207,7 +207,8 @@
          };
       };
       new GuiBitmapCtrl(CL_Preview) {
-         bitmap = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_storm_preview";
+         bitmap = "levels/Training_Grounds/TG_Fields/TG_Fields_rain_preview";
+         color = "255 255 255 255";
          wrap = "0";
          position = "286 37";
          extent = "340 240";
@@ -249,7 +250,7 @@
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "0";
-         position = "286 401";
+         position = "315 381";
          extent = "120 25";
          minExtent = "8 8";
          horizSizing = "right";

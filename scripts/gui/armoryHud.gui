@@ -15,15 +15,29 @@
    canSaveDynamicFields = "1";
    childGui = Armory_Root;
 
-   new GuiBitmapCtrl(Armory_Root) {
-      bitmap = "art/gui/hudfill";
-      wrap = "0";
-      position = "320 120";
+   new GuiWindowCtrl(Armory_Root) {
+      text = "Armory";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      canCollapse = "0";
+      closeCommand = "Canvas.popDialog(ArmoryDlg);";
+      edgeSnap = "1";
+      margin = "0 0 0 0";
+      padding = "0 0 0 0";
+      anchorTop = "1";
+      anchorBottom = "0";
+      anchorLeft = "1";
+      anchorRight = "0";
+      position = "384 208";
       extent = "640 480";
-      minExtent = "8 8";
-      horizSizing = "center";
-      vertSizing = "center";
-      profile = "CenterPrintProfile";
+      minExtent = "8 2";
+      horizSizing = "left";
+      vertSizing = "top";
+      profile = "GuiWindowProfile";
       visible = "1";
       active = "1";
       tooltipProfile = "GuiToolTipProfile";

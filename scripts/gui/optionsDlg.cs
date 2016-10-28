@@ -131,7 +131,7 @@ function OptionsDlg::setPane(%this, %pane)
 function Opt_Tabs::onTabSelected(%this, %tab)
 {
    //echo("Opt_Tabs::onTabSelected(" SPC %this.getName() @", "@ %tab SPC ")");
-   optionsDlg.pane = %tab;
+   OptionsDlg.pane = %tab;
    
    if( %tab $="Controls" )
       OptionsDlg.fillRemapList();
@@ -337,7 +337,7 @@ function OptGraphicsDriverMenu::onSelect( %this, %id, %text )
       %currRes = _makePrettyResString( Canvas.getVideoMode() );
                   
    // Fill the resolution list.
-   optionsDlg.initResMenu();
+   OptionsDlg.initResMenu();
 
    // Try to select the previous settings:
    %selId = %resMenu.findText( %currRes );
@@ -840,7 +840,7 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
          %actionMap.unbind( %device, %action );
 
          //refresh the options dialog to reflect the change
-         optionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
+         OptionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
          return;
       }
    }
@@ -858,7 +858,7 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
    {
       unbindExtraActions( %cmd, 1 );
       %actionMap.bind( %device, %action, %cmd );
-      optionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
+      OptionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
       return;
    }
 
@@ -869,7 +869,7 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
    {
       unbindExtraActions( %cmd, 0 );
       %actionMap.bind( %device, %action, %cmd );
-      optionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
+      OptionsDlg-->OptRemapList.setRowById( %this.index, buildFullMapString( %this.index ) );
       return;   
    }
 

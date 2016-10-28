@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(OptionsDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1280 1024";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Graphics";
+      pane = "Player";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -24,7 +24,7 @@
       canMinimize = "0";
       canMaximize = "0";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(optionsDlg);";
+      closeCommand = "Canvas.popDialog(OptionsDlg);";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -32,11 +32,11 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 144";
+      position = "320 80";
       extent = "640 480";
       minExtent = "8 8";
       horizSizing = "center";
-      vertSizing = "center";
+      vertSizing = "bottom";
       profile = "GuiWindowProfile";
       visible = "1";
       active = "1";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "1";
+         selectedPage = "0";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -91,12 +91,11 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -438,12 +437,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptGraphicsPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -809,7 +809,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Ueber";
+               text = "High";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -954,7 +954,7 @@
                range = "2 2.5";
                ticks = "9";
                snap = "0";
-               value = "2.26476";
+               value = "2.25197";
                position = "105 286";
                extent = "518 15";
                minExtent = "8 2";
@@ -1134,7 +1134,7 @@
                profile = "GuiButtonProfile";
                visible = "1";
                active = "0";
-               command = "optionsDlg.applyGraphics();Cmd_Apply.setactive(0);";
+               command = "OptionsDlg.applyGraphics();Cmd_Apply.setactive(0);";
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "0";
@@ -1199,7 +1199,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "15";
+               text = "2";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1295,7 +1295,7 @@
                range = "-0.25 0.25";
                ticks = "9";
                snap = "0";
-               value = "0.000984251";
+               value = "0.00393701";
                position = "105 318";
                extent = "518 15";
                minExtent = "8 2";
@@ -1315,7 +1315,7 @@
                range = "0.75 1.25";
                ticks = "9";
                snap = "0";
-               value = "1.00394";
+               value = "1.00689";
                position = "105 349";
                extent = "518 15";
                minExtent = "8 2";
@@ -1626,7 +1626,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.16383";
+                  value = "1";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";

@@ -116,6 +116,7 @@ function Torque::initClient(%this)
    // Load up the shell GUIs
    exec("~/gui/StartupGui.gui");
    exec("~/gui/mainMenuGui.gui");
+   exec("~/gui/gameMenuGui.gui");
    exec("~/gui/exitGameGui.gui");
    exec("~/gui/chooseLevelDlg.gui");
    exec("~/gui/serverOptionsDlg.gui");

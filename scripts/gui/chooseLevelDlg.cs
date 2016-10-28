@@ -82,6 +82,9 @@ function buildMissionTypePopup(%popup)
 function ChooseLevelDlgGoBtn::onMouseUp( %this )
 
 {
+   // if we are in a game and try to join another, quit the current game
+   if (PlayGui.isAwake())
+   disconnect();
 
    // So we can't fire the button when loading is in progress.
 
@@ -118,6 +121,7 @@ function ChooseLevelDlgGoBtn::onMouseUp( %this )
 
 function StartLevel(%mission, %serverType)
 {
+	
    if( %mission $= "" )
    {
       %id = CL_LevelList.getSelectedId();

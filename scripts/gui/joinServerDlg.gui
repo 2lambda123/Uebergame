@@ -1,9 +1,9 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(JoinServerDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
-   horizSizing = "width";
+   horizSizing = "relative";
    vertSizing = "height";
    profile = "GuiModelessDialogProfile";
    visible = "1";
@@ -32,11 +32,11 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 144";
+      position = "0 80";
       extent = "640 480";
       minExtent = "640 256";
-      horizSizing = "center";
-      vertSizing = "center";
+      horizSizing = "right";
+      vertSizing = "bottom";
       profile = "GuiWindowProfile";
       visible = "1";
       active = "1";
@@ -168,7 +168,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "2 2";
-            extent = "601 128";
+            extent = "601 64";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "height";
@@ -205,7 +205,7 @@
          canSaveDynamicFields = "0";
 
          new GuiTextCtrl(JS_statusText) {
-            text = "8 servers found.";
+            text = "4 servers found.";
             maxLength = "255";
             margin = "0 0 0 0";
             padding = "0 0 0 0";

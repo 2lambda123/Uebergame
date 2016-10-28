@@ -26,6 +26,14 @@ GuiMenuButtonProfile.soundButtonOver = "AudioButtonOverSoundList";
 GuiMenuButtonProfile.soundButtonDown = "AudioButtonAcceptSoundList"; //positive sound for all else
 GuiMenuButtonProfile2.soundButtonOver = "AudioButtonOverSoundList";
 GuiMenuButtonProfile2.soundButtonDown = "AudioButtonCancelSoundList"; //negative sound for exit, cancel etc
+GuiButtonProfile.soundButtonOver = "AudioButtonOverSoundList";
+GuiButtonProfile.soundButtonDown = "AudioButtonAcceptSubSoundList"; //for submenu buttons, lighter sound
+GuiPopUpMenuProfile.soundButtonOver = "AudioMenuItemHoverSoundList"; //hover sound for normal menu items
+GuiPopUpMenuProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
+GuiCheckBoxProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
+GuiCheckBoxProfile.soundButtonDown = "AudioCheckboxCheckSoundList";
+GuiTabBookProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
+GuiTabBookProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
 
 //-----------------------------------------------------------------------------
 // Chat Hud profiles
@@ -149,7 +157,7 @@ singleton GuiControlProfile(GuiShapeNameProfile)
 singleton GuiControlProfile(GuiTextNoKeyEditProfile)
 {
    opaque = true;
-   fillColor = "255 255 255";
+   fillColor = "92 92 92 255";
    fillColorHL = "128 128 128";
    border = 3;
    borderThickness = 2;
@@ -162,6 +170,9 @@ singleton GuiControlProfile(GuiTextNoKeyEditProfile)
    autoSizeHeight = true;
    tab = false;
    canKeyFocus = true;
+   fontColors[0] = "0 0 0 255";
+   bevelColorHL = "178 178 178 255";
+   bevelColorLL = "76 76 76 255";
 };
 
 // -----------------------------------------------------------------------------
@@ -255,7 +266,7 @@ singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
 };
 
 //-----------------------------------------------------------------------------
-// Name coloring for optionsDlg
+// Name coloring for OptionsDlg
 
 singleton GuiControlProfile(FriendNameTextProfile : GuiTextProfile)
 {
@@ -312,4 +323,35 @@ singleton GuiControlProfile(ScoreHudTextRedProfile)
    fontType = "ArialBold";
    fontSize = 14;
    fontColor = "255 200 150";
+};
+
+singleton GuiControlProfile( GuiPopUpMenuProfile2)
+{
+   textOffset         = "6 4";
+   bitmap             = "art/gui/dropDown";
+   hasBitmapArray     = true;
+   border             = "0";
+   profileForChildren = GuiPopUpMenuDefault;
+   category = "Core";
+   fontColors[0] = "196 196 196 255";
+   fontColors[1] = "255 255 255 255";
+   fontColor = "196 196 196 255";
+   fontColorHL = "255 255 255 255";
+   fontColors[2] = "128 128 128 255";
+   fontColorNA = "128 128 128 255";
+   fontCharset = "ANSI";
+   fontColors[3] = "255 255 255 255";
+   fontColorSEL = "255 255 255 255";
+   fontColors[4] = "160 72 64 255";
+   fontColors[5] = "196 116 108 255";
+   fontColorLink = "160 72 64 255";
+   fontColorLinkHL = "196 116 108 255";
+   fillColor = "21 21 21 255";
+   fillColorHL = "72 72 72 255";
+   fillColorNA = "18 18 18 255";
+   fillColorSEL = "116 116 116 255";
+   
+      // sounds
+   soundButtonDown = "AudioButtonOverSoundList";
+   soundButtonOver = "AudioButtonOverSoundList";
 };

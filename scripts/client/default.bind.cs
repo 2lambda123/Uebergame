@@ -104,12 +104,69 @@ function ActionMap::clearBind(%this, %command)
 
 function escapeFromGame()
 {
+	/*
    if ( $Server::ServerType $= "SinglePlayer" )
       //MessageBoxYesNo( "Exit", "Exit from this Mission?", "disconnect();", "");
 	  Canvas.pushDialog(exitGameGui);
    else
       //MessageBoxYesNo( "Disconnect", "Disconnect from the server?", "disconnect();", "");
 	  Canvas.pushDialog(exitGameGui);
+	  */
+	  
+	  //Canvas.pushDialog(gameMenuGui);
+	  toggleGameMenuGui();
+}
+
+//functions for toggling menus
+
+function toggleGameMenuGui()
+{
+   if( GameMenuGui.isAwake() )
+   Canvas.popDialog( GameMenuGui );
+   else
+   Canvas.pushDialog( GameMenuGui );
+}
+
+function toggleJoinServerDlg()
+{
+   if (JoinServerDlg.isAwake())
+   Canvas.popDialog(JoinServerDlg);
+   else
+   Canvas.pushDialog(JoinServerDlg);
+   //query servers once to start it filled with servers
+   JoinServerDlg.query();
+}
+
+function toggleChooseLevelDlg()
+{
+   if (ChooseLevelDlg.isAwake())
+   Canvas.popDialog(ChooseLevelDlg);
+   else
+   Canvas.pushDialog(ChooseLevelDlg);
+}
+
+function toggleOptionsDlg()
+{
+   if (OptionsDlg.isAwake())
+   Canvas.popDialog(OptionsDlg);
+   else
+   Canvas.pushDialog(OptionsDlg);
+}
+
+function toggleExtrasDlg()
+{
+   if (ExtrasDlg.isAwake())
+   Canvas.popDialog(ExtrasDlg);
+   else
+   Canvas.pushDialog(ExtrasDlg);
+}
+
+function toggleHelpDlg()
+{
+   if (HelpDlg.isAwake())
+   Canvas.popDialog(HelpDlg);
+   else
+   Canvas.pushDialog(HelpDlg);
 }
 
 // Opens a Gui ingame that displays all metrics in one window

@@ -144,6 +144,10 @@ function JoinServerDlg::cancel(%this)
 //----------------------------------------
 function JoinServerDlg::join(%this)
 {
+   // if we are in a game and try to join another, quit the current game
+   if (PlayGui.isAwake())
+   disconnect();
+
    cancelServerQuery();
    %id = JS_serverList.getSelectedId();
    // The server info index is stored in the row along with the

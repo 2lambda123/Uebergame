@@ -115,8 +115,8 @@ function AdminDlg::onSleep(%this)
 function AdminDlg::onOption(%this)
 {
    Canvas.popDialog( AdminDlg );
-   optionsDlg.setVisible(true);
-   Canvas.pushDialog( optionsDlg );
+   OptionsDlg.setVisible(true);
+   Canvas.pushDialog( OptionsDlg );
 }
 
 //-----------------------------------------------------------------------------

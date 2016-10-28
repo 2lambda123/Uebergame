@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(GuiMusicPlayer) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1280 1024";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 144";
+      position = "320 272";
       extent = "640 480";
       minExtent = "256 256";
       horizSizing = "center";
@@ -51,7 +51,7 @@
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "0";
-         position = "470 349";
+         position = "567 450";
          extent = "43 30";
          minExtent = "8 2";
          horizSizing = "left";
@@ -70,7 +70,7 @@
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "0";
-         position = "470 331";
+         position = "567 430";
          extent = "44 30";
          minExtent = "8 2";
          horizSizing = "left";
@@ -99,8 +99,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "6 29";
-         extent = "503 272";
+         position = "31 40";
+         extent = "580 350";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "height";
@@ -118,7 +118,7 @@
             fitParentWidth = "1";
             colorBullet = "1";
             position = "1 1";
-            extent = "488 2";
+            extent = "565 2";
             minExtent = "8 2";
             horizSizing = "width";
             vertSizing = "height";
@@ -138,8 +138,8 @@
          ticks = "16";
          snap = "0";
          value = "0";
-         position = "5 310";
-         extent = "505 23";
+         position = "32 404";
+         extent = "580 24";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "top";
@@ -154,33 +154,13 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiButtonCtrl(GuiMusicPlayerStopButton) {
-         text = "Stop";
-         groupNum = "-1";
-         buttonType = "PushButton";
-         useMouseEvents = "0";
-         position = "71 339";
-         extent = "60 32";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "top";
-         profile = "GuiButtonProfile";
-         visible = "1";
-         active = "1";
-         command = "GuiMusicPlayer.stop();";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
       new GuiButtonCtrl(GuiMusicPlayerPlayButton) {
          text = "Play";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "6 339";
-         extent = "60 32";
+         position = "32 439";
+         extent = "60 30";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "top";
@@ -188,6 +168,26 @@
          visible = "1";
          active = "1";
          command = "GuiMusicPlayer.play();";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiButtonCtrl(GuiMusicPlayerStopButton) {
+         text = "Stop";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         position = "106 439";
+         extent = "60 30";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "top";
+         profile = "GuiButtonProfile";
+         visible = "1";
+         active = "1";
+         command = "GuiMusicPlayer.stop();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";

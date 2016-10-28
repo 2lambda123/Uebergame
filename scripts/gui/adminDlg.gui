@@ -5,7 +5,7 @@
    minExtent = "640 480";
    horizSizing = "width";
    vertSizing = "height";
-   profile = "GuiDefaultProfile";
+   profile = "GuiModelessDialogProfile";
    visible = "1";
    active = "1";
    tooltipProfile = "GuiToolTipProfile";
@@ -14,6 +14,8 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       initialized = "1";
+      qLine0 = "Training Level in the desert ruins by day";
+      qLineCount = "1";
 
    new GuiWindowCtrl() {
       text = "ADMIN MENU";
@@ -32,11 +34,11 @@
       anchorBottom = "0";
       anchorLeft = "0";
       anchorRight = "0";
-      position = "192 144";
+      position = "0 204";
       extent = "640 480";
       minExtent = "640 480";
-      horizSizing = "center";
-      vertSizing = "center";
+      horizSizing = "right";
+      vertSizing = "top";
       profile = "GuiWindowProfile";
       visible = "1";
       active = "1";
@@ -150,7 +152,7 @@
             maxChars = "-1";
             useURLMouseCursor = "0";
             position = "1 1";
-            extent = "329 56";
+            extent = "329 70";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -198,7 +200,7 @@
             fitParentWidth = "1";
             clipColumnText = "1";
             position = "1 1";
-            extent = "341 8";
+            extent = "344 198";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -246,7 +248,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "1 1";
-            extent = "202 8";
+            extent = "202 126";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";

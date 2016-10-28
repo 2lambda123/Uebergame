@@ -23,8 +23,10 @@ art/sound/weapons/paintball/paintball_shot_1.wav -fabianofa https://www.freesoun
 art/sound/weapons/grenades/smokeGrenade.ogg -univ_lyon3 https://www.freesound.org/people/univ_lyon3/sounds/201848/ -edited by Duion
 art/sound/weapons/dry_fire_01.wav -brianhanson2nd https://www.freesound.org/people/brianhanson2nd/sounds/171211/ -edited by Duion
 art/sound/player/hit/player_hit_08.wav - player_hit_11.wav -editor_adp https://www.freesound.org/people/editor_adp/sounds/269485/ -edited by Duion
-art/sound/gui/button_over_01 -Andreas.Mustola https://www.freesound.org/people/Andreas.Mustola/sounds/255764/
-art/sound/gui/button_accept_01 -farpro https://www.freesound.org/people/farpro/sounds/264762/
-art/sound/gui/button_cancel_01 -farpro https://www.freesound.org/people/farpro/sounds/264763/
+art/sound/gui/button_over_01.wav -Andreas.Mustola https://www.freesound.org/people/Andreas.Mustola/sounds/255764/
+art/sound/gui/button_accept_01.wav -farpro https://www.freesound.org/people/farpro/sounds/264762/
+art/sound/gui/button_cancel_01.wav -farpro https://www.freesound.org/people/farpro/sounds/264763/
+art/sound/gui/menu_item_hover_01.wav -qubodup https://www.freesound.org/people/qubodup/sounds/159698/
+art/sound/gui/check_box_check_01.wav -loafdv https://www.freesound.org/people/loafdv/sounds/238290/
 
 art/sound/deploy_error.wav -Isaac200000 https://www.freesound.org/people/Isaac200000/sounds/188013/
