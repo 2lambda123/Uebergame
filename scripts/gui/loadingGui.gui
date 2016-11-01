@@ -19,6 +19,7 @@
 
    new GuiBitmapCtrl(LOAD_MapPic) {
       bitmap = "art/gui/space_background_big.dds";
+      color = "255 255 255 255";
       wrap = "0";
       position = "0 0";
       extent = "1024 768";
@@ -36,6 +37,7 @@
    };
    new GuiBitmapCtrl() {
       bitmap = "art/gui/top_border";
+      color = "255 255 255 255";
       wrap = "0";
       position = "0 672";
       extent = "1024 96";
@@ -77,6 +79,7 @@
    };
    new GuiBitmapCtrl() {
       bitmap = "art/gui/btm_border";
+      color = "255 255 255 255";
       wrap = "0";
       position = "0 0";
       extent = "1024 96";
@@ -127,8 +130,8 @@
             allowedMatches[1] = "tgeserver";
             matchColor = "0 0 255 255";
             maxColorIndex = "9";
-            position = "2 -2";
-            extent = "1007 96";
+            position = "2 2";
+            extent = "1020 16";
             minExtent = "12 12";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -240,21 +243,25 @@
       canSave = "1";
       canSaveDynamicFields = "0";
    };
-   new GuiButtonCtrl() {
-      text = "DISCONNECT";
+   new GuiBitmapButtonCtrl() {
+      bitmap = "art/gui/mainMenu/MMButton_disconnect";
+      bitmapMode = "Stretched";
+      autoFitExtents = "0";
+      useModifiers = "0";
+      useStates = "1";
+      masked = "0";
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "902 4";
-      extent = "108 20";
-      minExtent = "8 8";
+      position = "890 0";
+      extent = "128 64";
+      minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "bottom";
-      profile = "GuiButtonProfile";
+      profile = "GuiDefaultProfile";
       visible = "1";
       active = "1";
       command = "disconnect();";
-      accelerator = "escape";
       tooltipProfile = "GuiToolTipProfile";
       hovertime = "1000";
       isContainer = "0";

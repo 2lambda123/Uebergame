@@ -31,7 +31,7 @@
          horizSizing = "width";
          vertSizing = "height";
          position = "3 36";
-         extent = "634 440";
+         extent = "634 420";
          minExtent = "8 2";
          visible = "1";
          willFirstRespond = "1";
@@ -53,7 +53,7 @@
          profile = "GuiTextEditProfile";
          horizSizing = "width";
          vertSizing = "top";
-         position = "3 462";
+         position = "3 458";
          extent = "634 18";
          minExtent = "8 2";
          visible = "1";

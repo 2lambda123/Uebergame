@@ -703,10 +703,11 @@ new GuiControlProfile( GuiTabPageProfile : GuiDefaultProfile )
    fontColor = "196 196 196 255";
 };
 
+//"LucidaConsole" without the space in the name broke the console somehow, so I changed it back
 if( !isObject( GuiConsoleProfile ) )
 new GuiControlProfile( GuiConsoleProfile )
 {
-   fontType = ($platform $= "macos") ? "Monaco" : "LucidaConsole";
+   fontType = ($platform $= "macos") ? "Monaco" : "Lucida Console";
    fontSize = ($platform $= "macos") ? 13 : 12;
    fontColor = "255 255 255";
    fontColorHL = "0 255 255";

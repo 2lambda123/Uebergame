@@ -71,7 +71,7 @@ function AdminDlg::onWake(%this)
    // Start off the player list update schedule
    //commandToServer('SendPlayerListUpdate');
 
-   %headerStyle = "<font:Arial:14><color:00008B>";
+   %headerStyle = "<font:Arial:14><color:7777ff>";
    %statusText = "<spop><spush>" @ %headerStyle @ "SERVER NAME:<spop>" SPC $Client::ServerName
          NL "<spush>" @ %headerStyle @ "MISSION TYPE:<spop>" SPC $Client::MissionTypeName 
          NL "<spush>" @ %headerStyle @ "MISSION NAME:<spop>" SPC $Client::MissionName

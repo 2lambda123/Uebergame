@@ -32,8 +32,8 @@ GuiPopUpMenuProfile.soundButtonOver = "AudioMenuItemHoverSoundList"; //hover sou
 GuiPopUpMenuProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
 GuiCheckBoxProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
 GuiCheckBoxProfile.soundButtonDown = "AudioCheckboxCheckSoundList";
-GuiTabBookProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
-GuiTabBookProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
+//GuiTabBookProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
+//GuiTabBookProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
 
 //-----------------------------------------------------------------------------
 // Chat Hud profiles

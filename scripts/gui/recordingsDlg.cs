@@ -40,6 +40,10 @@ function recordingsDlg::onWake()
 
 function StartSelectedDemo()
 {
+   // quit the current game since playing recordings does not work when in a mission
+   if (PlayGui.isAwake())
+   disconnect();
+	
    // first unit is filename
    %sel = RecordingsDlgList.getSelectedId();
    %rowText = RecordingsDlgList.getRowTextById(%sel);
@@ -48,7 +52,7 @@ function StartSelectedDemo()
 
    new GameConnection(ServerConnection);
    RootGroup.add(ServerConnection);
-
+  
    // Start up important client-side stuff, such as the group
    // for particle emitters.  This doesn't get launched during a demo
    // as we short circuit the whole mission loading sequence.

@@ -114,10 +114,8 @@ function Torque::initClient(%this)
    loadMaterials();
    
    // Load up the shell GUIs
-   exec("~/gui/StartupGui.gui");
    exec("~/gui/mainMenuGui.gui");
    exec("~/gui/gameMenuGui.gui");
-   exec("~/gui/exitGameGui.gui");
    exec("~/gui/chooseLevelDlg.gui");
    exec("~/gui/serverOptionsDlg.gui");
    exec("~/gui/joinServerDlg.gui");
@@ -141,7 +139,6 @@ function Torque::initClient(%this)
    exec("~/gui/scoreHud.gui");
    exec("~/gui/voteHudDlg.gui");
    exec("~/gui/voteHudDlg.cs");
-   //exec("~/gui/clusterHud.gui"); // moved into play.gui
    exec("~/gui/quickChatHud.gui");
    exec("~/gui/adminDlg.gui");
    exec("~/gui/armoryHud.gui");
@@ -154,8 +151,8 @@ function Torque::initClient(%this)
    exec("scripts/gui/guiVideoPlayer.gui");
 
    // Gui scripts
-   //exec("~/gui/startupGui.cs");
    exec("~/gui/mainMenuGui.cs");
+   exec("~/gui/gameMenuGui.cs");
    exec("~/gui/recordingsDlg.cs");
    exec("~/gui/chooseLevelDlg.cs");
    exec("~/gui/serverOptionsDlg.cs");
@@ -164,7 +161,6 @@ function Torque::initClient(%this)
    exec("~/gui/loadingGui.cs");
    exec("~/gui/playGui.cs");
    exec("~/gui/adminDlg.cs");
-   exec("~/gui/clusterHud.cs");
    exec("~/gui/quickChatHud.cs");
    exec("~/gui/objectiveHud.cs");
    exec("~/gui/scoreHud.cs");
