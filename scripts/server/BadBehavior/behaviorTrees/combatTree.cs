@@ -8,7 +8,7 @@ new Root(combatTree) {
       canSaveDynamicFields = "1";
 
       new ScriptEval() {
-         behaviorScript = "if (isObject(%obj.targetObject) && %obj.targetObject.isEnabled()) return SUCCESS;";
+         behaviorScript = "if (isObject(%obj.targetObject) && %obj.targetObject.isEnabled() && %obj.checkInLos(%obj.targetObject)) return SUCCESS;";
          defaultReturnStatus = "FAILURE";
          canSave = "1";
          canSaveDynamicFields = "1";

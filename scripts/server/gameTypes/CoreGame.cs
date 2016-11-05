@@ -833,7 +833,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          client = %client;
          team = %client.team;
          isBot = true;
-         mMoveTolerance = 2;
+         mMoveTolerance = 0.15;
          allowWalk = true;
          allowJump = true;
          allowDrop = true;
@@ -1012,7 +1012,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       %client.setBotFav(%client.getRandomLoadout());
 
 	  //BadBot
-      %player.setbehavior(BotTree, $BotTickFrequency);
+      //%player.setbehavior(BotTree, $BotTickFrequency); //is in BadBotData::onAdd now
       // Give the bot something to do
       //%client.setUpTasks();
 

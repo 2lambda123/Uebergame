@@ -258,7 +258,7 @@
       minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "bottom";
-      profile = "GuiDefaultProfile";
+      profile = "GuiMenuButtonProfile2";
       visible = "1";
       active = "1";
       command = "disconnect();";

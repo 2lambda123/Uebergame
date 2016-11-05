@@ -73,7 +73,7 @@
          fitParentWidth = "0";
          clipColumnText = "0";
          position = "14 28";
-         extent = "1123 16";
+         extent = "616 8";
          minExtent = "616 8";
          horizSizing = "width";
          vertSizing = "bottom";
@@ -120,7 +120,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "0 0";
-            extent = "1206 409";
+            extent = "734 8";
             minExtent = "8 8";
             horizSizing = "width";
             vertSizing = "height";
@@ -252,7 +252,7 @@
       minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "bottom";
-      profile = "GuiDefaultProfile";
+      profile = "GuiMenuButtonProfile2";
       visible = "1";
       active = "1";
       command = "disconnect();";

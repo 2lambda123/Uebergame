@@ -93,6 +93,7 @@ function Torque::loadMission(%this, %missionFile, %missionType, %isFirstMission)
       %this.loadMissionStage2(%missionFile, %missionType, %isFirstMission);
    else
       %this.schedule( $MissionLoadPause, "loadMissionStage2", %missionFile, %missionType, %isFirstMission );
+  
 }
 
 //-----------------------------------------------------------------------------
@@ -213,7 +214,25 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
 
    // Allow clients to connect
    //allowConnections(true);
+   
+   // This throws away old bots so that connectAiClients can connect fresh ones
+   // This is a workaround to avoid having broken and dublicated bots in the next mission
+   for(%i = 0; %i < ClientGroup.getCount(); )
+   {
+   %outdatedBot = ClientGroup.getobject(%i);
+      if (%outdatedBot.isAIControlled())
+      {
+         %outdatedBot.delete();
+      } 
+      else
+      {
+         %i++;
+      }
+   }
 
+   //re-execute BadBehaviorTreeManager, since it gets removed by mission cleanup somehow
+   exec("./BadBehavior/behaviorTreeManager.cs");
+   
    // Need a group to put all the aiPlayer's in so we can index them etc.
    $Bot::Set = new SimSet( "BotSet" );
    MissionCleanup.add( $Bot::Set );

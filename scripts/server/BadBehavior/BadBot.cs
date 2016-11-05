@@ -106,7 +106,7 @@ datablock PlayerData(BadBotData : DefaultPlayerData)
    optimalRange["GrenadeLauncher"] = 25;
    burstLength["GrenadeLauncher"] = 2000;
    rangeTolerance = 3;
-   switchTargetProbability = 0.2; //x
+   switchTargetProbability = 0.5; //x
 };
 
 //=============================================================================
@@ -157,6 +157,16 @@ function BadBotData::onAdd(%data, %obj)
 {
    // give him the standard player loadout
    //game.loadout(%obj);
+   
+   if ( %obj.isBot )
+   {
+      // $Bot::Set is created in loadMissionStage2
+      if ( $Bot::Set.acceptsAsChild( %obj ) )
+         $Bot::Set.add( %obj );
+      else
+         error( "Failed to add new AiPlayer object to Bot Set!" );
+   }
+   %obj.setbehavior(BotTree, $BotTickFrequency);
 }
 
 // Override onDisabled so we can stop running the behavior tree
@@ -164,23 +174,37 @@ function BadBotData::onDisabled(%this, %obj, %state)
 {
    %obj.behaviorTree.stop();
    Parent::onDisabled(%this, %obj, %state);
+   
+   if ( $Bot::Set.isMember( %obj ) )
+      $Bot::Set.remove( %obj );
+   else
+      error( "Tried to remove AiPlayer from Bot Set that wasn't in the set!" );
 }
 
 // moveTo command, %dest can be either a location or an object
 function BadBot::moveTo(%obj, %dest, %slowDown)
 {
    %pos = isObject(%dest) ? %dest.getPosition() : %dest;
-   if ( %obj.getNavMesh() ) { %obj.setPathDestination(%pos); } //setPath uses navMesh
-   else { %obj.setMoveDestination(%pos, %slowDown); } //old function wihtout navMesh
+   if ( %obj.getNavMesh() ) 
+   { 
+      %obj.setPathDestination(%pos); //setPath uses navMesh
+   } 
+   else 
+   { 
+      %obj.setMoveDestination(%pos); //old function wihtout navMesh
+   } 
    %obj.atDestination = false;
 }
-
+/*
 function BadBotData::onMoveStuck(%this, %obj)
 {
    %obj.setShapeName("onMoveStuck"); //debug feature
+   
+   %obj.clearAim();
+   %basePoint = %obj.position;
    %obj.moveTo(RandomPointOnCircle(%basePoint, 2));
 }
-
+*/
 // forward onReachDestination to the behavior tree as a signal
 function BadBotData::onReachDestination(%data, %obj)
 {
@@ -294,17 +318,18 @@ function RandomPointOnCircle(%center, %radius)
 //==============================================================================
 function wanderTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(wanderTask); //debug feature
+    %obj.setShapeName(wanderTask); //debug feature
    // stop aiming at things
    %obj.clearAim();
    
    // if the bot has a tetherPoint, use that as the center of his wander area,
    // otherwise use his current position
-   %basePoint = %obj.tetherPoint !$= "" ? %obj.tetherPoint : %obj.position;
+   //%basePoint = %obj.tetherPoint !$= "" ? %obj.tetherPoint : %obj.position;
+   %basePoint = %obj.position;
    
    // move   
    %obj.moveTo(RandomPointOnCircle(%basePoint, 10));
-
+   
    return SUCCESS;
 }
 
@@ -426,9 +451,16 @@ function pickTargetTask::precondition(%this, %obj)
    return true;
 }
 
+function pickTargetTask::onEnter(%this, %obj)
+{
+   // stop aiming
+   %obj.clearAim();
+}
+
 function pickTargetTask::behavior(%this, %obj)
 {
    %obj.setShapeName(pickTargetTask); //debug feature
+   
    %obj.targetObject = -1;
    %db = %obj.dataBlock;
    
@@ -453,12 +485,39 @@ function pickTargetTask::behavior(%this, %obj)
 }
 
 //=============================================================================
+// followTargetTask
+//=============================================================================
+function huntTargetTask::precondition(%this, %obj)
+{
+   // need to be alive and have a target
+   return isObject(%obj.targetObject) && %obj.isEnabled();
+}
+
+function huntTargetTask::onEnter(%this, %obj)
+{
+   // stop aiming
+   %obj.clearAim();
+}
+
+function huntTargetTask::behavior(%this, %obj)
+{
+   %obj.setShapeName(huntTargetTask); //debug feature
+
+   %target = %obj.targetObject;
+
+   //%obj.followObject(%target, 1);
+   %obj.moveTo(%target);
+   
+   return SUCCESS;
+}
+
+//=============================================================================
 // aimAtTargetTask
 //=============================================================================
 function aimAtTargetTask::precondition(%this, %obj)
 {
    // need to be alive and have a target
-   return isObject(%obj.targetObject) && %obj.isEnabled();
+   return isObject(%obj.targetObject) && %obj.isEnabled() && %obj.checkInLos(%obj.targetObject);
 }
 
 function aimAtTargetTask::behavior(%this, %obj)

@@ -35,7 +35,7 @@ new Root(BotTree) {
          canSaveDynamicFields = "1";
 
          new ActiveSelector() {
-            recheckFrequency = "2000";
+            recheckFrequency = "1000";
             canSave = "1";
             canSaveDynamicFields = "1";
 
@@ -54,6 +54,12 @@ new Root(BotTree) {
             new SubTree() {
                subTreeName = "combatTree";
                internalName = "combat";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+			new SubTree() {
+               subTreeName = "huntTargetTree";
+               internalName = "hunt";
                canSave = "1";
                canSaveDynamicFields = "1";
             };

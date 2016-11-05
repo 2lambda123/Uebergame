@@ -321,7 +321,10 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    }
    
    // setup the behavior tree framework
-   exec("./BadBehavior/main.cs");
+   //exec("./BadBehavior/main.cs"); //main.cs seems to make problems by getting executed too often
+   exec("./BadBehavior/behaviorTreeManager.cs");
+   exec("./BadBehavior/BadBot.cs");
+   //exec("./botMatch.cs");
    
    //Entity/Component stuff
    if(isFile("./components/game/camera.cs"))

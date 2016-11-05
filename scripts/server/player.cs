@@ -890,10 +890,6 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    // Radius damage
    canImpulse = true;
 
-   // Used by AI
-   MoveSpeed = 0.5;          // You could call this the AI's throttle 1 = 100% throttle.
-   MoveTolerance = 2;        // Distance from target position that is accepted as "reached"
-
    jumpTowardsNormal = "1";
    shadowSize = "512";
 };
@@ -1031,7 +1027,7 @@ function Armor::onAdd(%this, %obj)
       }
    }
 
-   if ( %obj.isBot )
+   /*   if ( %obj.isBot ) //in BadBot.cs now
    {
       // $Bot::Set is created in loadMissionStage2
       if ( $Bot::Set.acceptsAsChild( %obj ) )
@@ -1041,7 +1037,7 @@ function Armor::onAdd(%this, %obj)
 
       if ( !%obj.getNavMesh() )
          error( "No Nav Mesh found for" SPC deTag(%obj.getShapeName()) );
-   }
+   } */
 }
 
 function Armor::onRemove(%this, %obj)
@@ -1199,6 +1195,9 @@ function Armor::doDismount(%this, %obj, %forced)
 
 function Armor::onCollision(%this, %obj, %col)
 {
+   //if ( %className $= "AIPlayer" )
+   //	return;
+
    // Mounting vehicles is done via a raycast instead of collision.
    // This function would be used for player to player collisions only.
    if ( !isObject( %col ) || %obj.getState() $= "Dead" )
@@ -1559,7 +1558,7 @@ function Armor::onDisabled(%this, %player, %state)
       schedule( 15000, %player.lastVehicle, "abandonTimeOut", %player.lastVehicle );
       %player.lastVehicle.lastPilot = "";
    }
-
+/* //in BadBot.cs now
    // AiPlayer class
    if ( %player.isBot )
    {
@@ -1574,7 +1573,7 @@ function Armor::onDisabled(%this, %player, %state)
       else
          error( "Tried to remove AiPlayer from Bot Set that wasn't in the set!" );
    }
-
+*/
    // Remove warning Gui in case the player was outside the mission area when he died
    //Canvas.popDialog (missionAreaWarningHud); //broken
    
