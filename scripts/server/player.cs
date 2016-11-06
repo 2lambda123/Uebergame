@@ -1534,7 +1534,7 @@ function Armor::onDisabled(%this, %player, %state)
       %player.thrownChargeId = 0;
    }
 
-   cancel( %player.scanMissileSchedule );
+   //cancel( %player.scanMissileSchedule ); //unused?!
    cancel( %player.progressMeter );
    cancel( %player.reCloak );
 

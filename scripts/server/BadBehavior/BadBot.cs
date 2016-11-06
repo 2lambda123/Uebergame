@@ -185,6 +185,7 @@ function BadBotData::onDisabled(%this, %obj, %state)
 function BadBot::moveTo(%obj, %dest, %slowDown)
 {
    %pos = isObject(%dest) ? %dest.getPosition() : %dest;
+   /*
    if ( %obj.getNavMesh() ) 
    { 
       %obj.setPathDestination(%pos); //setPath uses navMesh
@@ -193,8 +194,14 @@ function BadBot::moveTo(%obj, %dest, %slowDown)
    { 
       %obj.setMoveDestination(%pos); //old function wihtout navMesh
    } 
+   */
+   // above function is broken, sometimes bots do not find navMesh at the beginning
+   // and get stuck on their first spawn, so only use navMesh for now until this is figured out
+   %obj.setPathDestination(%pos);
    %obj.atDestination = false;
 }
+
+// onMoveStuck has issues it seems
 /*
 function BadBotData::onMoveStuck(%this, %obj)
 {
@@ -328,7 +335,7 @@ function wanderTask::behavior(%this, %obj)
    %basePoint = %obj.position;
    
    // move   
-   %obj.moveTo(RandomPointOnCircle(%basePoint, 10));
+   %obj.moveTo(RandomPointOnCircle(%basePoint, 15));
    
    return SUCCESS;
 }
@@ -459,7 +466,7 @@ function pickTargetTask::onEnter(%this, %obj)
 
 function pickTargetTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(pickTargetTask); //debug feature
+   //%obj.setShapeName(pickTargetTask); //debug feature
    
    %obj.targetObject = -1;
    %db = %obj.dataBlock;

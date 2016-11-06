@@ -508,7 +508,7 @@ function AIPlayer::testBot()
       path = "";
       pathSet = 0;
       isBot = true;
-      mMoveTolerance = 0.15;
+      mMoveTolerance = 0.10;
       allowWalk = true;
       allowJump = true;
       allowDrop = true;

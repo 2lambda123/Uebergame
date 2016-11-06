@@ -213,7 +213,7 @@ datablock ExplosionData(PlayerBloodExplosion)
    
    shakeCamera = true;
    camShakeFreq = "2.5 2.5 1.5";
-   camShakeAmp = "8.0 8.0 8.0";
+   camShakeAmp = "16.0 16.0 16.0"; //heavy impact shake when player is hit
    camShakeDuration = 1.0;
    camShakeRadius = 1.0;
 };

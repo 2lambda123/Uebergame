@@ -63,7 +63,6 @@ addBotName("Bullseye");
 addBotName("Casualty");
 addBotName("Fodder");
 addBotName("Grunt");
-addBotName("Bait");
 addBotName("Meat");
 addBotName("Tardo");
 addBotName("Roadkill");
@@ -84,6 +83,11 @@ addBotName("Spastic");
 addBotName("Bumpkin");
 addBotName("Mad Cow");
 addBotName("Oblivious");
+addBotName("Bait");
+addBotName("Master Bait");
+addBotName("Tin Can");
+addBotName("Slave");
+addBotName("Master Slave");
 
 function getRandomBotName()
 {
@@ -100,14 +104,36 @@ function connectAiClients(%num)
    if ( %num $= "" || %num < 1 )
       return;
 
-   if ( %num > 16 || %num > $pref::Server::MaxPlayers - 1 )
-      %num = 16;
+   if ( %num > 63 || %num > $pref::Server::MaxPlayers - 1 )
+      %num = 63;
 
    // This in turn in C++ code calls aiConnect which sets up a new AIConnection
    for ( %i = 1; %i <= %num; %i++ )
    {
       aiAddPlayer( getRandomBotName() );
    }
+}
+
+function chooseBotSkin (%client)
+{
+	/*
+      // Determine which character skins are not already in use
+      %availableSkins = %player.getDatablock().availableSkins; // TAB delimited list of skin names
+      %count = ClientGroup.getCount();
+      for (%cl = 0; %cl < %count; %cl++)
+      {
+         %other = ClientGroup.getObject(%cl);
+         if (%other != %client)
+         {
+            %availableSkins = strreplace(%availableSkins, %other.skin, "");
+            %availableSkins = strreplace(%availableSkins, "\t\t", "");  // remove empty fields
+         }
+      }
+	  */
+   // the above junk does not work, since there is no bots in game yet, so we use a simpler method below:
+   // Choose a random, unique skin for this client
+   %count = getFieldCount(%availableSkins);
+   %client.skin = addTaggedString( getField(%availableSkins, getRandom(%count)) );
 }
 
 // This is called from loadMissionStage2()
@@ -123,7 +149,8 @@ function AIConnection::onConnect(%client, %name)
 
    // Save client preferences on the connection object for later use.
    %client.armor = "BotSoldier";
-   %client.skin = addTaggedString("Base");
+   //%client.skin = addTaggedString("Base");
+   %client.skin = chooseBotSkin();
    %client.setPlayerName(%name);
    %client.team = 0;
    %client.lastTeam = 0;
@@ -152,7 +179,7 @@ function AIConnection::onConnect(%client, %name)
    // Set the bot up with some inventory selection
    %client.setBotFav( %client.getRandomLoadout() );
 
-   Game.schedule( 2000, "onClientEnterGame", %client );
+   Game.schedule( 5000, "onClientEnterGame", %client );
 
    $Server::BotCount++; // Master server gets this
 }

@@ -833,7 +833,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          client = %client;
          team = %client.team;
          isBot = true;
-         mMoveTolerance = 0.15;
+         mMoveTolerance = 0.10;
          allowWalk = true;
          allowJump = true;
          allowDrop = true;
@@ -848,22 +848,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    //BadBot tetherpoint will give the bot a place to call home
    %player.tetherPoint = %spawnPoint;
    
-      // Determine which character skins are not already in use
-      %availableSkins = %player.getDatablock().availableSkins; // TAB delimited list of skin names
-      %count = ClientGroup.getCount();
-      for (%cl = 0; %cl < %count; %cl++)
-      {
-         %other = ClientGroup.getObject(%cl);
-         if (%other != %client)
-         {
-            %availableSkins = strreplace(%availableSkins, %other.skin, "");
-            %availableSkins = strreplace(%availableSkins, "\t\t", "");  // remove empty fields
-         }
-      }
 
-      // Choose a random, unique skin for this client
-      %count = getFieldCount(%availableSkins);
-      %client.skin = addTaggedString( getField(%availableSkins, getRandom(%count)) );
+	  
    }
    else
    {
