@@ -24,24 +24,6 @@
 // sound itself) when creating new ones
 
 //-----------------------------------------------------------------------------
-// 3D Sounds
-//-----------------------------------------------------------------------------
-
-singleton SFXDescription(BulletFireDesc : AudioEffect )
-{
-   is3D              = true;
-   ReferenceDistance = 10.0;
-   MaxDistance       = 60.0;
-};
-
-singleton SFXDescription(BulletImpactDesc : AudioEffect )
-{
-   is3D              = true;
-   ReferenceDistance = 5.0;
-   MaxDistance       = 20.0;
-};
-
-//-----------------------------------------------------------------------------
 // Single shot sounds
 //-----------------------------------------------------------------------------
 
@@ -74,6 +56,27 @@ singleton SFXDescription( AudioClosest3D : AudioEffect )
    ReferenceDistance = 5.0;
    MaxDistance       = 20.0;
    priority = "1";
+};
+
+singleton SFXDescription(BulletFireDesc : AudioEffect )
+{
+   is3D              = true;
+   ReferenceDistance = 10.0;
+   MaxDistance       = 60.0;
+};
+
+singleton SFXDescription(BulletImpactDesc : AudioEffect )
+{
+   is3D              = true;
+   ReferenceDistance = 5.0;
+   MaxDistance       = 20.0;
+};
+
+singleton SFXDescription(AudioGrenadeImpact : AudioEffect )
+{
+   is3D              = true;
+   ReferenceDistance = 15.0;
+   MaxDistance       = 70.0;
 };
 
 //-----------------------------------------------------------------------------

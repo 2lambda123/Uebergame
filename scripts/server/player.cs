@@ -22,7 +22,7 @@
 
 // Timeouts for corpse deletion.
 $CorpseTimeoutValue = 10 * 1000;
-$InvincibleTime = 3 * 1000;
+$InvincibleTime = 2 * 1000;
 
 // Damage Rate for entering Liquid
 $DamageLava       = 0.01;
@@ -892,6 +892,25 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 
    jumpTowardsNormal = "1";
    shadowSize = "512";
+   
+   //BadBot AI settings
+   VisionRange = 80;
+   VisionFov = 180;
+   findItemRange = 20;
+   targetObjectTypes = $TypeMasks::PlayerObjectType;
+   itemObjectTypes = $TypeMasks::itemObjectType;
+   optimalRange["Ryder"] = 12;
+   burstLength["Ryder"] = 100;
+   optimalRange["Lurker"] = 16;
+   burstLength["Lurker"] = 2000;
+   optimalRange["Shotgun"] = 8;
+   burstLength["Shotgun"] = 100;
+   optimalRange["SniperRifle"] = 30;
+   burstLength["SniperRifle"] = 2000;
+   optimalRange["GrenadeLauncher"] = 25;
+   burstLength["GrenadeLauncher"] = 2000;
+   rangeTolerance = 3;
+   switchTargetProbability = 0.5;
 };
 
 datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
@@ -909,6 +928,23 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    groundImpactShakeFalloff = 10.0;
    
    maxInvRyder = "0";
+   
+   //BadBot AI settings
+   VisionRange = 80;
+   VisionFov = 180;
+   findItemRange = 20;
+   targetObjectTypes = $TypeMasks::PlayerObjectType;
+   itemObjectTypes = $TypeMasks::itemObjectType;
+   optimalRange["PaintballMarkerBlue"] = 10;
+   burstLength["PaintballMarkerBlue"] = 2000;
+   optimalRange["PaintballMarkerRed"] = 10;
+   burstLength["PaintballMarkerRed"] = 2000;
+   optimalRange["PaintballMarkerGreen"] = 10;
+   burstLength["PaintballMarkerGreen"] = 2000;
+   optimalRange["PaintballMarkerYellow"] = 10;
+   burstLength["PaintballMarkerYellow"] = 2000;
+   rangeTolerance = 5;
+   switchTargetProbability = 0.5;
 };
 
 //-----------------------------------------------------------------------------
@@ -916,8 +952,9 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
 //            |Datablock|     |$SMS::ArmorName|     |Index|
 
 SmsInv.AddArmor( DefaultPlayerData, "Soldier", 0 );
-SmsInv.AddArmor( BadBotData, "BotSoldier", 0 );
+//SmsInv.AddArmor( BotDefaultPlayerData, "BotSoldier", 0 );
 SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 0 );
+//SmsInv.AddArmor( BotPaintballPlayerData, "BotPaintballer", 0 );
 
 //----------------------------------------------------------------------------
 // Drowning script
@@ -1027,17 +1064,17 @@ function Armor::onAdd(%this, %obj)
       }
    }
 
-   /*   if ( %obj.isBot ) //in BadBot.cs now
+   // AiPlayer class
+   if ( %obj.isBot )
    {
       // $Bot::Set is created in loadMissionStage2
       if ( $Bot::Set.acceptsAsChild( %obj ) )
          $Bot::Set.add( %obj );
       else
          error( "Failed to add new AiPlayer object to Bot Set!" );
-
-      if ( !%obj.getNavMesh() )
-         error( "No Nav Mesh found for" SPC deTag(%obj.getShapeName()) );
-   } */
+	 
+	 %obj.setbehavior(BotTree, $BotTickFrequency);
+   }
 }
 
 function Armor::onRemove(%this, %obj)
@@ -1271,7 +1308,7 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
       case "Suicide": return;
       case "Drowning": return;
       case "Paintball": return;	 
-	  case "MissionAreaDamage": return;	
+	   case "MissionAreaDamage": return;	
       case "ScriptDamage": return;	
       case "Impact": return;
       default: // Process all other damage types               
@@ -1558,22 +1595,20 @@ function Armor::onDisabled(%this, %player, %state)
       schedule( 15000, %player.lastVehicle, "abandonTimeOut", %player.lastVehicle );
       %player.lastVehicle.lastPilot = "";
    }
-/* //in BadBot.cs now
+
    // AiPlayer class
    if ( %player.isBot )
    {
-	  //BadBot stopping behavior tree
-	  %player.behaviorTree.stop();
       //Parent::onDisabled(%this, %player, %state);
-	  
-      //cancel( %player.thinkSchedule ); //from old AI player
-	  
+   
       if ( $Bot::Set.isMember( %player ) )
          $Bot::Set.remove( %player );
       else
          error( "Tried to remove AiPlayer from Bot Set that wasn't in the set!" );
+  
+      %player.behaviorTree.stop();
    }
-*/
+
    // Remove warning Gui in case the player was outside the mission area when he died
    //Canvas.popDialog (missionAreaWarningHud); //broken
    
@@ -1774,8 +1809,25 @@ function Armor::onStopSprintMotion(%this, %obj)
    %obj.setImageGenericTrigger($WeaponSlot, 0, false);
 }
 
-function Armor::animationDone(%this, %obj)
+function Armor::onReachDestination(%data, %obj)
 {
+   if ( %obj.isBot )
+   {
+   if(isObject(%obj.behaviorTree))
+      %obj.behaviorTree.postSignal("onReachDestination");
+      
+   %obj.atDestination = true;
+   //%obj.setShapeName("onReachDestination"); //debug feature
+   }
+}
+
+function Armor::animationDone(%data, %obj)
+{
+   if ( %obj.isBot )
+   {
+   if(isObject(%obj.behaviorTree))
+      %obj.behaviorTree.postSignal("onAnimationDone");
+   }
 }
 
 //-----------------------------------------------------------------------------
@@ -1798,7 +1850,7 @@ function Player::kill(%player, %damageType)
          if ( !isObject( %player.thrownChargeId ) )
          {
             %item = ItemData::create(ShapeChargeTossed);
-            %item.setTransform( %player.GetBoxCenter SPC "1 0 0 0" );
+            %item.setTransform( %player.getBoxCenter SPC "1 0 0 0" );
             %item.static = true;
             %item.rotate = false;
             %item.armed = true;

@@ -997,7 +997,7 @@ function SceneObject::GetBoxHeight(%obj)
    return mAbs(getBoxMaxZ(%box)) + mAbs(getBoxMinZ(%box));
 }
 
-function SceneObject::GetBoxCenter(%obj)
+function SceneObject::getBoxCenter(%obj)
 {
    //box center by default will be 0 0 0, so use a lil matrix math, get it's current world position
    %matrix = %obj.getTransForm();

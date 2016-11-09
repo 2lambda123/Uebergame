@@ -23,14 +23,14 @@
 datablock SFXProfile(GrenadeExplosionSound)
 {
    filename = "art/sound/weapons/GRENADELAND.wav";
-   description = AudioDefault3d;
+   description = AudioGrenadeImpact;
    preload = true;
 };
 
 datablock SFXProfile(GrenadeLauncherExplosionSound)
 {
    filename = "art/sound/weapons/Crossbow_explosion";
-   description = AudioDefault3d;
+   description = AudioGrenadeImpact;
    preload = true;
 };
 

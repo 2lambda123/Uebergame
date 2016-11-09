@@ -40,6 +40,7 @@ function PBDMGame::setupGameParams(%game)
    //LogEcho("PBDMGame::setupGameParams(" SPC %game.class SPC ")");
    
    %game.playerType = "Paintball";
+   $gameMode = PBDMGame;
    
    CoreGame::setupGameParams(%game);
 

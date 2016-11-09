@@ -84,7 +84,7 @@ function Armor::onTargetEnterLOS(%this,%player)
 
    if ( %target != -1 && %target.getState() !$= "Dead" && !%target.isCloaked() )
    {
-      %targPos = %target.GetBoxCenter();
+      %targPos = %target.getBoxCenter();
       %dist = vectorDist( %player.getPosition(), %targPos );
 
       // AiClient is assigned to this AiPlayer?
@@ -205,7 +205,7 @@ function AIPlayer::doHealthTask(%player, %health)
 function AIPlayer::findHealth(%player)
 {
    %target = -1;
-   InitContainerRadiusSearch( %player.GetBoxCenter(), $Bot::DetectionDistance, $TypeMasks::ItemObjectType );
+   InitContainerRadiusSearch( %player.getBoxCenter(), $Bot::DetectionDistance, $TypeMasks::ItemObjectType );
    while ((%tgt = containerSearchNext()) != 0)
    {
       if ( %tgt.getDataBlock().getName() $= "HealthPatch" )
@@ -327,7 +327,7 @@ function AIPlayer::doMelee(%player, %target)
       {
          //%target.repulse( %player );
 
-         %pushDirection = VectorNormalize( VectorSub( %targPos, %player.GetBoxCenter() ) );  
+         %pushDirection = VectorNormalize( VectorSub( %targPos, %player.getBoxCenter() ) );  
          %pushVec = getwords( VectorScale( %pushDirection, 200 ), 0, 1);   
          %target.applyImpulse( %targPos, %pushVec );
       }

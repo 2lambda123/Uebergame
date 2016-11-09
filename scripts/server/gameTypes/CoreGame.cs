@@ -532,7 +532,7 @@ function CoreGame::setClientState(%game, %client)
 function CoreGame::onClientEnterGame(%game, %client)
 {
    //LogEcho("\c4CoreGame::onClientEnterGame(" SPC %game.class SPC %client.nameBase SPC ")");
-
+   
    // Setup zee bots
    if ( %client.isAiControlled() )
    {
@@ -824,11 +824,12 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    // Create the player object, AiClients get AiPlayer class
    if ( %client.isAiControlled() )
    {
-      // Create the player object
-      %player = new AiPlayer()
-      {
-         dataBlock = $NameToData[%client.loadout[0]];
-		 //dataBlock = BadBotData; 
+	  switch$ (%game.playerType)
+	  {
+	   case "DefaultPlayerData":
+	     %player = new AiPlayer()
+		 {
+         dataBlock = DefaultPlayerData;
          class = "BadBot";
          client = %client;
          team = %client.team;
@@ -841,22 +842,58 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          allowLedge = true;
          allowClimb = true;
          allowTeleport = true;
-      };
+         };
+		 
+	   case "Paintball":
+		 %player = new AiPlayer()
+		 {
+         dataBlock = PaintballPlayerData;
+         class = "BadBot";
+         client = %client;
+         team = %client.team;
+         isBot = true;
+         mMoveTolerance = 0.10;
+         allowWalk = true;
+         allowJump = true;
+         allowDrop = true;
+         allowSwim = true;
+         allowLedge = true;
+         allowClimb = true;
+         allowTeleport = true;
+         };
+		 
+	   default:
+		 %player = new AiPlayer()
+         {
+         dataBlock = $NameToData[%client.loadout[0]];
+         class = "BadBot";
+         client = %client;
+         team = %client.team;
+         isBot = true;
+         mMoveTolerance = 0.10;
+         allowWalk = true;
+         allowJump = true;
+         allowDrop = true;
+         allowSwim = true;
+         allowLedge = true;
+         allowClimb = true;
+         allowTeleport = true;
+         };
+      }
 	  
    //BadBot
    %player.setPosition(%spawnPoint);
    //BadBot tetherpoint will give the bot a place to call home
    %player.tetherPoint = %spawnPoint;
    
-
-	  
    }
    else
    {
 	  switch$ (%game.playerType)
 	  {
 	   case "DefaultPlayerData":
-	     %player = new Player() {
+	     %player = new Player() 
+		 {
            dataBlock = DefaultPlayerData;
            client = %client;
            team = %client.team;
@@ -864,7 +901,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          };
 		 
 	   case "Paintball":
-		 %player = new Player() {
+		 %player = new Player() 
+		 {
            dataBlock = PaintballPlayerData;
            client = %client;
            team = %client.team;
@@ -872,7 +910,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          };
 		 
 	   default:
-		 %player = new Player() {
+		 %player = new Player() 
+		 {
            dataBlock = $NameToData[%client.loadout[0]];
            client = %client;
            team = %client.team;
@@ -905,7 +944,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       %player.setInvincible( true );
       %player.setCloaked(true);
       %player.respawnCloakThread = %player.schedule(1 * 1000, "setRespawnCloakOff");
-	  %player.schedule( $InvincibleTime, "setInvincibleOff" );	  
+	   %player.schedule( $InvincibleTime, "setInvincibleOff" );	  
    }
 
    // Player setup...
@@ -931,8 +970,10 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    // Perhaps deployables would require their own object you get them from. So they would not be part of your loadout
    %game.loadOut(%player);
 
-   switch$ (%game.playerType)
+   if ( !%client.isAiControlled() )
    {
+   switch$ (%game.playerType)
+    {
      case "Paintball": 
 	 //loadout a red marker by default for red team and for blue team and deathmatch a blue marker as default
 	 if ( %player.weaponSlot[0] $= "" && %client.team == 2 )
@@ -965,6 +1006,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 	 %player.use( %player.weaponSlot[1] );
 	 
 	 default: %player.use( %player.weaponSlot[0] ); //all others start with weapon slot 0 as default
+    }
    }
    
    // Update the camera to start with the player.
@@ -995,8 +1037,19 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    if ( ( $Game::Running || %respawn ) && %client.isAiControlled() )
    {
       // Set the bot up with some random inventory selection
-      %client.setBotFav(%client.getRandomLoadout());
-
+      //echo( "playerType: " @ %game.playerType );
+      switch$ (%game.playerType)
+      {
+         case "DefaultPlayerData":
+         %client.setBotFav(%client.getRandomLoadout());
+         %player.use( %player.weaponSlot[1] );
+         case "Paintball":
+         %client.setBotFav(%client.getRandomLoadout2());
+         %player.use( %player.weaponSlot[0] );
+         default:
+         %client.setBotFav(%client.getRandomLoadout());
+         %player.use( %player.weaponSlot[1] );
+      }
 	  //BadBot
       //%player.setbehavior(BotTree, $BotTickFrequency); //is in BadBotData::onAdd now
       // Give the bot something to do
@@ -1080,7 +1133,8 @@ function CoreGame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %dama
       if ( %clAttacker.player.causedRecentDamage != %clVictim.player )
       {
          %clAttacker.player.causedRecentDamage = %clVictim.player;
-         %clAttacker.player.schedule(50, "causedTeamDamage", "");
+         if (!%sourceObject.isAiControlled) 
+         %clAttacker.player.schedule(50, "causedTeamDamage", ""); //this needs to be fixed to work with AI players later, so they get punished for team kill
          %game.friendlyFireMessage(%clVictim, %clAttacker);          
       }    
    }

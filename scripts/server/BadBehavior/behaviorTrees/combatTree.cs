@@ -50,7 +50,7 @@ new Root(combatTree) {
             canSaveDynamicFields = "1";
 
             new Ticker() {
-               frequencyMs = "2000";
+               frequencyMs = "1000";
                canSave = "1";
                canSaveDynamicFields = "1";
 

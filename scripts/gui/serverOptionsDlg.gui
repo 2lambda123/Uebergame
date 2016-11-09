@@ -627,12 +627,12 @@
          canSaveDynamicFields = "0";
       };
       new GuiSliderCtrl(SOP_AiCountSlider) {
-         range = "0 128";
-         ticks = "10";
-         snap = "0";
+         range = "0 63";
+         ticks = "62";
+         snap = "1";
          value = "0";
-         position = "396 65";
-         extent = "175 20";
+         position = "295 304";
+         extent = "320 20";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "relative";
@@ -648,7 +648,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(SOP_AiCountText) {
-         text = "AI Count (0)";
+         text = "AI Count (1)";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -656,7 +656,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "420 35";
+         position = "295 275";
          extent = "77 18";
          minExtent = "58 18";
          horizSizing = "relative";

@@ -49,7 +49,7 @@ function FlagStand::initializeObjective(%data, %obj)
    //};
    //MissionCleanup.add( %obj.emitter );
 
-   //%pos = VectorAdd( %obj.GetBoxCenter(), "0 0 0.1" );
+   //%pos = VectorAdd( %obj.getBoxCenter(), "0 0 0.1" );
    //%obj.emitter.setTransform( %pos SPC "1 0 0 0" );
 
    // Trigger does the work

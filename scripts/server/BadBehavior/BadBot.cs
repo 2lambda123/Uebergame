@@ -28,6 +28,7 @@ $BotTickFrequency = 100;
 // ----------------------------------------------------------------------------
 // make the local player invisible to the AI
 //-----------------------------------------------------------------------------
+/*
 function setGodMode(%val)
 {
    LocalClientConnection.player.isGod = %val;
@@ -41,13 +42,14 @@ function DefaultPlayerData::damage(%this, %obj, %sourceObject, %position, %damag
    
    Parent::damage(%this, %obj, %sourceObject, %position, %damage, %damageType);
 }
-
+*/
 //-----------------------------------------------------------------------------
 // bot datablock
 //-----------------------------------------------------------------------------
-datablock PlayerData(BadBotData : DefaultPlayerData)
+/*
+datablock PlayerData(BotDefaultPlayerData : DefaultPlayerData)
 {
-	/*
+	
    // max visible distance
    VisionRange = 40;
    
@@ -88,7 +90,7 @@ datablock PlayerData(BadBotData : DefaultPlayerData)
    maxInv[LurkerGrenadeAmmo] = 0;
    maxInv[ProxMine] = 0;
    maxInv[DeployableTurret] = 0;
-   */
+   
    //BadBot AI settings
    VisionRange = 40;
    VisionFov = 180;
@@ -106,9 +108,42 @@ datablock PlayerData(BadBotData : DefaultPlayerData)
    optimalRange["GrenadeLauncher"] = 25;
    burstLength["GrenadeLauncher"] = 2000;
    rangeTolerance = 3;
-   switchTargetProbability = 0.5; //x
+   switchTargetProbability = 0.5;
 };
 
+datablock PlayerData(BotPaintballPlayerData : DefaultPlayerData)
+{
+   shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
+   shapeNameFP[0] = "";
+   boundingBox = "0.75 0.75 1.8";
+   crouchBoundingBox = "0.75 0.75 1.25";
+   renderFirstPerson = "1";
+   
+   groundImpactMinSpeed    = "4.1";
+   groundImpactShakeFreq   = "3 3 3";
+   groundImpactShakeAmp    = "0.2 0.2 0.2";
+   groundImpactShakeDuration = "1";
+   groundImpactShakeFalloff = 10.0;
+   
+   maxInvRyder = "0";
+	
+   VisionRange = 40;
+   VisionFov = 180;
+   findItemRange = 20;
+   targetObjectTypes = $TypeMasks::PlayerObjectType;
+   itemObjectTypes = $TypeMasks::itemObjectType;
+   optimalRange["PaintballMarkerBlue"] = 10;
+   burstLength["PaintballMarkerBlue"] = 2000;
+   optimalRange["PaintballMarkerRed"] = 10;
+   burstLength["PaintballMarkerRed"] = 2000;
+   optimalRange["PaintballMarkerGreen"] = 10;
+   burstLength["PaintballMarkerGreen"] = 2000;
+   optimalRange["PaintballMarkerYellow"] = 10;
+   burstLength["PaintballMarkerYellow"] = 2000;
+   rangeTolerance = 5;
+   switchTargetProbability = 0.5;
+};
+*/
 //=============================================================================
 // Supporting functions for an AIPlayer driven by a behavior tree
 //=============================================================================
@@ -118,7 +153,7 @@ function BadBot::spawn(%name, %startPos)
 {
    // create the bot
    %bot = new AIPlayer(%name) {
-      dataBlock = BadBotData; 
+      dataBlock = BotDefaultPlayerData; 
       class = "BadBot";
    };
    
@@ -152,35 +187,6 @@ function BadBot::getMuzzleVector(%this, %slot)
    return %this.getEyeVector();
 }
 
-// use onAdd to equip the bot
-function BadBotData::onAdd(%data, %obj)
-{
-   // give him the standard player loadout
-   //game.loadout(%obj);
-   
-   if ( %obj.isBot )
-   {
-      // $Bot::Set is created in loadMissionStage2
-      if ( $Bot::Set.acceptsAsChild( %obj ) )
-         $Bot::Set.add( %obj );
-      else
-         error( "Failed to add new AiPlayer object to Bot Set!" );
-   }
-   %obj.setbehavior(BotTree, $BotTickFrequency);
-}
-
-// Override onDisabled so we can stop running the behavior tree
-function BadBotData::onDisabled(%this, %obj, %state)
-{
-   %obj.behaviorTree.stop();
-   Parent::onDisabled(%this, %obj, %state);
-   
-   if ( $Bot::Set.isMember( %obj ) )
-      $Bot::Set.remove( %obj );
-   else
-      error( "Tried to remove AiPlayer from Bot Set that wasn't in the set!" );
-}
-
 // moveTo command, %dest can be either a location or an object
 function BadBot::moveTo(%obj, %dest, %slowDown)
 {
@@ -201,9 +207,44 @@ function BadBot::moveTo(%obj, %dest, %slowDown)
    %obj.atDestination = false;
 }
 
-// onMoveStuck has issues it seems
+//=============================================================================
+// Supporting playerData functions
+//=============================================================================
 /*
-function BadBotData::onMoveStuck(%this, %obj)
+// use onAdd to equip the bot
+function BotDefaultPlayerData::onAdd(%data, %obj)
+{
+   // give him the standard player loadout
+   //game.loadout(%obj);
+   
+   if ( %obj.isBot )
+   {
+      // $Bot::Set is created in loadMissionStage2
+      if ( $Bot::Set.acceptsAsChild( %obj ) )
+         $Bot::Set.add( %obj );
+      else
+         error( "Failed to add new AiPlayer object to Bot Set!" );
+   }
+   
+   %obj.setbehavior(BotTree, $BotTickFrequency);
+}
+
+// Override onDisabled so we can stop running the behavior tree
+function BotDefaultPlayerData::onDisabled(%this, %obj, %state)
+{
+   Parent::onDisabled(%this, %obj, %state);
+   
+   if ( $Bot::Set.isMember( %obj ) )
+      $Bot::Set.remove( %obj );
+   else
+      error( "Tried to remove AiPlayer from Bot Set that wasn't in the set!" );
+  
+   %obj.behaviorTree.stop();
+}
+
+// onMoveStuck has issues it seems
+
+function BotDefaultPlayerData::onMoveStuck(%this, %obj)
 {
    %obj.setShapeName("onMoveStuck"); //debug feature
    
@@ -211,9 +252,9 @@ function BadBotData::onMoveStuck(%this, %obj)
    %basePoint = %obj.position;
    %obj.moveTo(RandomPointOnCircle(%basePoint, 2));
 }
-*/
+
 // forward onReachDestination to the behavior tree as a signal
-function BadBotData::onReachDestination(%data, %obj)
+function BotDefaultPlayerData::onReachDestination(%data, %obj)
 {
    if(isObject(%obj.behaviorTree))
       %obj.behaviorTree.postSignal("onReachDestination");
@@ -223,12 +264,12 @@ function BadBotData::onReachDestination(%data, %obj)
 }
 
 // forward animationDone callback to the behavior tree as a signal
-function BadBotData::animationDone(%data, %obj)
+function BotDefaultPlayerData::animationDone(%data, %obj)
 {
    if(isObject(%obj.behaviorTree))
       %obj.behaviorTree.postSignal("onAnimationDone");
 }
-
+*/
 // get the index of the closest node on the specified path
 function BadBot::getClosestNodeOnPath(%this, %path)
 {
@@ -288,6 +329,30 @@ function BadBot::AIreloadWeapon(%player)
    }
 }
 
+// Check to see if we hit target with scan instead of checking if we hit obstruction.
+// This check prevents shooting teammates in the back
+function BadBot::hasLosToTarget(%obj, %target)
+{
+   if ( !isObject(%obj) || %obj.getState() $= "Dead" )
+      return( false );
+
+   %start = %obj.getMuzzlePoint(%slot);
+   %end = getBoxCenter(%target);
+   %mask = ( $TypeMasks::StaticTSObjectType | $TypeMasks::TerrainObjectType | $TypeMasks::ShapeBaseObjectType );
+   
+   // 4th argument of the raycast should be hostile bots to ignore, since we want only check for friendly  bots in the way, but not done yet
+   //%scan = containerRayCast(%eyePos, %eyeEnd, %mask, %obj.toIgnore);
+   
+   %scan = containerRayCast(%start, %end, %mask);
+   %result = firstWord( %scan );
+
+   if (isObject(%obj))
+      if (%scan == %target)
+         return true;
+
+   return( false );
+}
+
 //=============================Global Utility==================================
 function RandomPointOnCircle(%center, %radius)
 {
@@ -325,7 +390,7 @@ function RandomPointOnCircle(%center, %radius)
 //==============================================================================
 function wanderTask::behavior(%this, %obj)
 {
-    %obj.setShapeName(wanderTask); //debug feature
+   %obj.setShapeName(wanderTask); //debug feature
    // stop aiming at things
    %obj.clearAim();
    
@@ -478,7 +543,9 @@ function pickTargetTask::behavior(%this, %obj)
       // don't target ourself, dead players or god.
       if(%target == %obj || !%target.isEnabled() || %target.isGod)
          continue;
-      
+      // don't target our team mates
+      if(%target.team == %obj.team)
+         continue;
       // Check that the target is within the bots view cone
       if(%obj.checkInFov(%target, %db.visionFov))
       {
@@ -553,10 +620,11 @@ function aimAtTargetTask::behavior(%this, %obj)
 //=============================================================================
 function shootAtTargetTask::precondition(%this, %obj)
 {
+   //echo ( "obj has los to target : " @ %obj.hasLosToTarget() );
    return isObject(%obj.targetObject) && 
           %obj.checkInLos(%obj.targetObject) &&
           VectorDot(VectorNormalize(VectorSub(%obj.getAimLocation(), %obj.position)), %obj.getForwardVector()) > 0.9 &&
-          %obj.getImageAmmo($WeaponSlot);  
+          %obj.getImageAmmo($WeaponSlot); // && %obj.hasLosToTarget(); //not working well right now, needs fixing
 }
 
 function shootAtTargetTask::behavior(%this, %obj)

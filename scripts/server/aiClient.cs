@@ -77,6 +77,8 @@ addBotName("Masochist");
 addBotName("Terminal");
 addBotName("KickMe");
 addBotName("Fred");
+addBotName("Fluffy");
+addBotName("Bunny");
 addBotName("Fluffy Bunny");
 addBotName("Carcass");
 addBotName("Spastic");
@@ -88,6 +90,41 @@ addBotName("Master Bait");
 addBotName("Tin Can");
 addBotName("Slave");
 addBotName("Master Slave");
+addBotName("Ballerman");
+addBotName("Schrotti");
+addBotName("Kaputnik");
+addBotName("Number 5");
+addBotName("Kork");
+addBotName("Default Soldier");
+addBotName("Unter Soldier");
+addBotName("Clone Krieger");
+addBotName("Min Damage");
+addBotName("Max Damage");
+addBotName("Collateral");
+addBotName("Android");
+addBotName("Das Bot");
+addBotName("Machine Soldier");
+addBotName("Automaton");
+addBotName("Dr Gadget");
+addBotName("Zeiborg");
+addBotName("Golem");
+addBotName("Sleepwalker");
+addBotName("Mario Net");
+addBotName("Pappkamerad");
+addBotName("Hans Wurst");
+addBotName("Weirdo");
+addBotName("Blechdose");
+addBotName("Ai Robot");
+addBotName("Botti");
+addBotName("Mechanical Turk");
+addBotName("Databot");
+addBotName("BotOMat");
+addBotName("BotMaster");
+addBotName("Dummy");
+addBotName("Ai Commander");
+addBotName("Ai Fish");
+addBotName("Turing Test");
+addBotName("Artificial");
 
 function getRandomBotName()
 {
@@ -104,8 +141,9 @@ function connectAiClients(%num)
    if ( %num $= "" || %num < 1 )
       return;
 
+   // Make sure bots never exceed the max players
    if ( %num > 63 || %num > $pref::Server::MaxPlayers - 1 )
-      %num = 63;
+      %num = ($pref::Server::MaxPlayers - 1);
 
    // This in turn in C++ code calls aiConnect which sets up a new AIConnection
    for ( %i = 1; %i <= %num; %i++ )
@@ -148,7 +186,7 @@ function AIConnection::onConnect(%client, %name)
    addToServerGuidList( %client.guid );
 
    // Save client preferences on the connection object for later use.
-   %client.armor = "BotSoldier";
+   %client.armor = "Soldier";
    //%client.skin = addTaggedString("Base");
    %client.skin = chooseBotSkin();
    %client.setPlayerName(%name);
@@ -177,9 +215,23 @@ function AIConnection::onConnect(%client, %name)
 	  0);
 
    // Set the bot up with some inventory selection
+   //echo ( "game Mode = " @ $gameMode );
+   switch$ ($gameMode)
+   {
+      case "DMGame":
    %client.setBotFav( %client.getRandomLoadout() );
-
-   Game.schedule( 5000, "onClientEnterGame", %client );
+      case "TDMGame":
+   %client.setBotFav( %client.getRandomLoadout() );
+      case "PBDMGame":
+   %client.setBotFav( %client.getRandomLoadout2() );
+      case "PBTDMGame":
+   %client.setBotFav( %client.getRandomLoadout2() );
+      default:
+   %client.setBotFav( %client.getRandomLoadout() );
+   }
+   // A bit of random timer to simulate more human behavior when the bots join the game
+   %randomJoinTime = getRandom( 1000, 15000 );   
+   Game.schedule( %randomJoinTime, "onClientEnterGame", %client );
 
    $Server::BotCount++; // Master server gets this
 }
@@ -656,7 +708,7 @@ function AIClient::think(%client)
          else
          {
             //warn( %player.namebase SPC "has target" SPC %player.getAimObject().player.nameBase);
-            %targPos = %target.GetBoxCenter();
+            %targPos = %target.getBoxCenter();
             %dist = vectorDist( %bot.getPosition(), %targPos );
 
             if ( %dist >= $Bot::LoseTargetDistance )
@@ -910,7 +962,7 @@ function AIClient::check2DAngletoTarget(%client, %tgt)
 
    %eyeVec = vectorNormalize(%bot.getEyeVector());
    %eyeangle = %client.getAngleofVector(%eyeVec);
-   %posVec = vectorSub(%tgt.GetBoxCenter(), %bot.GetBoxCenter());
+   %posVec = vectorSub(%tgt.getBoxCenter(), %bot.getBoxCenter());
    %posangle = %client.getAngleofVector(%posVec);
    %angle = %posangle - %eyeAngle;
    %angle = %angle ? %angle : %angle * -1;
@@ -945,14 +997,14 @@ function AIClient::hasLOStoTarget(%client, %target)
 
    %eyePos = posFromTransform(%bot.getEyeTransform());
    %nEyeVec = vectorNormalize(%bot.getEyeVector());
-   %dist = vectorDist(%eyePos, %target.GetBoxCenter());
+   %dist = vectorDist(%eyePos, %target.getBoxCenter());
    %scEyeVec = vectorScale(%nEyeVec, %dist);
    %eyeEnd = vectorAdd(%eyePos, %scEyeVec);
 
    %mask = ( $TypeMasks::StaticTSObjectType | $TypeMasks::TerrainObjectType | $TypeMasks::ShapeBaseObjectType );
 
    //%scan = containerRayCast(%eyePos, %eyeEnd, %mask, %bot);
-   %scan = containerRayCast(%eyePos, %target.GetBoxCenter(), %mask, %bot);
+   %scan = containerRayCast(%eyePos, %target.getBoxCenter(), %mask, %bot);
    %result = firstWord( %scan );
 
    if ( %result == %target )
@@ -984,7 +1036,7 @@ function AIClient::hasLOStoPosition(%client, %endPos)
 function AIClient::findHealth(%client)
 {
    %target = -1;
-   InitContainerRadiusSearch( %client.player.GetBoxCenter(), $Bot::DetectionDistance, $TypeMasks::ItemObjectType );
+   InitContainerRadiusSearch( %client.player.getBoxCenter(), $Bot::DetectionDistance, $TypeMasks::ItemObjectType );
    while ((%tgt = containerSearchNext()) != 0)
    {
       if ( %tgt.getDataBlock().getName() $= "Medpack_medium" )
@@ -1002,17 +1054,45 @@ function AIClient::findHealth(%client)
 //-----------------------------------------------------------------------------
 // Inventory lists. Choose one at random
 
-function AIClient::getRandomLoadout(%client)
+function AIClient::getRandomLoadout(%this, %client, %gameType)
 {
    %index = getRandom( 1, $BotInventoryIndex );
    return( $BotInventorySet[%index] );
 }
 
-$BotInventoryIndex = 0;
-$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
-$BotInventorySet[$BotInventoryIndex++] = "armor\tBotSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+function AIClient::getRandomLoadout2(%this, %client, %gameType)
+{
+   %index = getRandom( 1, $BotInventoryIndex2 );
+   return( $BotInventorySet2[%index] );
+}
 
+$BotInventoryIndex = 0;
+$BotInventoryIndex2 = 0;
+
+//riflers
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tLurker rifle\tSpecial\tMedical\tGrenade\tGrenade";
+//shotgunners
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tShotgun\tSpecial\tMedical\tGrenade\tGrenade";
+//grenadiers
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tGrenade Launcher\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tGrenade Launcher\tSpecial\tMedical\tGrenade\tGrenade";
+//snipers
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tSniper Rifle\tSpecial\tMunitions\tGrenade\tGrenade";
+$BotInventorySet[$BotInventoryIndex++] = "armor\tSoldier\tWeapon\tSniper Rifle\tSpecial\tMedical\tGrenade\tGrenade";
+
+
+//paintball loadouts
+$BotInventorySet2[$BotInventoryIndex2++] = "armor\tPaintballer\tWeapon\tBlue Marker\tSpecial\tEmpty\tGrenade\tEmpty";
+$BotInventorySet2[$BotInventoryIndex2++] = "armor\tPaintballer\tWeapon\tRed Marker\tSpecial\tEmpty\tGrenade\tEmpty";
+$BotInventorySet2[$BotInventoryIndex2++] = "armor\tPaintballer\tWeapon\tGreen Marker\tSpecial\tEmpty\tGrenade\tEmpty";
+$BotInventorySet2[$BotInventoryIndex2++] = "armor\tPaintballer\tWeapon\tYellow Marker\tSpecial\tEmpty\tGrenade\tEmpty";
+//team blue
+$BotInventorySet3[$BotInventoryIndex3++] = "armor\tPaintballer\tWeapon\tBlue Marker\tSpecial\tEmpty\tGrenade\tEmpty";
+//team red
+$BotInventorySet4[$BotInventoryIndex4++] = "armor\tPaintballer\tWeapon\tRed Marker\tSpecial\tEmpty\tGrenade\tEmpty";

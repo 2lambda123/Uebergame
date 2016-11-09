@@ -40,6 +40,7 @@ function DMGame::setupGameParams(%game)
    //LogEcho("DMGame::setupGameParams(" SPC %game.class SPC ")");
    
    %game.playerType = "DefaultPlayerData";
+   $gameMode = DMGame;
    
    CoreGame::setupGameParams(%game);
 
