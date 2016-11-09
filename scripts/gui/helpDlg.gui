@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(HelpDlg) {
    position = "0 0";
-   extent = "1920 1080";
+   extent = "1024 768";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -20,7 +20,7 @@
       resizeHeight = "1";
       canMove = "1";
       canClose = "1";
-      canMinimize = "1";
+      canMinimize = "0";
       canMaximize = "1";
       canCollapse = "0";
       closeCommand = "Canvas.popDialog(HelpDlg);";
@@ -31,7 +31,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "1280 80";
+      position = "384 80";
       extent = "640 480";
       minExtent = "256 256";
       horizSizing = "left";

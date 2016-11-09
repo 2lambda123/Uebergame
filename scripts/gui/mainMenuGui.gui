@@ -320,7 +320,7 @@
       minExtent = "8 2";
       horizSizing = "right";
       vertSizing = "top";
-      profile = "GuiDefaultProfile";
+      profile = "GuiButtonProfile";
       visible = "1";
       active = "1";
       command = "MainMenuGui.DuioncomLink();";
@@ -345,7 +345,7 @@
       minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "top";
-      profile = "GuiDefaultProfile";
+      profile = "GuiButtonProfile";
       visible = "1";
       active = "1";
       command = "MainMenuGui.Torque3DorgLink();";

@@ -57,6 +57,17 @@ function ChooseLevelDlg::onWake(%this)
       CL_LevelType.setSelected(0);
       CL_LevelType.onSelect(0, "");
    }
+   // Setup the AI control
+   if($pref::Server::AiCount > $pref::Server::MaxPlayers - 1)
+      $pref::Server::AiCount = $pref::Server::MaxPlayers - 1;
+
+   if ( $pref::Server::AiCount <= 0 )
+      %sliderValue = 0;
+   else
+      %sliderValue = $pref::Server::AiCount;
+   
+   SOP_AiCountSlider.setValue(%sliderValue);
+   SOP_AiCountText.setValue( "AI Count ("@%sliderValue@")" );
 }
 
 function ChooseLevelDlg::onSleep( %this )

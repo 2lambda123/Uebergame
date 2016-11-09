@@ -111,14 +111,14 @@ function AdminDlg::onSleep(%this)
    // Make sure the proper key maps are pushed
    tge.updateKeyMaps();
 }
-
+/*
 function AdminDlg::onOption(%this)
 {
    Canvas.popDialog( AdminDlg );
    OptionsDlg.setVisible(true);
    Canvas.pushDialog( OptionsDlg );
 }
-
+*/
 //-----------------------------------------------------------------------------
 // Player pop-up stuffs
 

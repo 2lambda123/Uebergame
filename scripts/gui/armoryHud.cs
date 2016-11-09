@@ -43,8 +43,10 @@ function ArmoryDlg::configure(%this)
 
 function clientCmdToggleArmory( %val )
 {
-   if( ArmoryDlg.isAwake() )
+   if( ArmoryDlg.isAwake() ) {
       commandToServer( 'HideArmoryHud' );
+      $ArmoryDlgActive = 0;
+   }
    else
    {
       commandToServer( 'ShowArmoryHud' );

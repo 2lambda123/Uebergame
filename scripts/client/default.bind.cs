@@ -117,20 +117,77 @@ function escapeFromGame()
 	  toggleGameMenuGui();
 }
 
-//functions for toggling menus
-
+// functions for toggling menus, reopons previously active menus
 function toggleGameMenuGui()
 {
    if( GameMenuGui.isAwake() )
+   {
+      if (JoinServerDlg.isAwake()) {
+      Canvas.popDialog(JoinServerDlg);
+      $JoinServerDlgActive = 1;
+      }
+      if (ChooseLevelDlg.isAwake()) {
+      Canvas.popDialog(ChooseLevelDlg);
+      $ChooseLevelDlgActive = 1;
+      }
+      if (OptionsDlg.isAwake()) {
+      Canvas.popDialog(OptionsDlg);
+      $OptionsDlgActive = 1;
+      }
+      if (ExtrasDlg.isAwake()) {
+      Canvas.popDialog(ExtrasDlg);
+      $ExtrasDlgActive = 1;
+      }
+      if (HelpDlg.isAwake()) {
+      Canvas.popDialog(HelpDlg);
+      $HelpDlgActive = 1;
+      }
+      if (AdminDlg.isAwake()) {
+      Canvas.popDialog(AdminDlg);
+      $AdminDlgActive = 1;
+      }
+      if (ArmoryDlg.isAwake()) {
+      Canvas.popDialog(ArmoryDlg);
+      $ArmoryDlgActive = 1;
+      }
+      if (ServerOptionsDlg.isAwake()) {
+      Canvas.popDialog(ServerOptionsDlg);
+      $ServerOptionsDlgActive = 1;
+         echo ( "sop" @ $ServerOptionsDlgActive);
+      }
+      
    Canvas.popDialog( GameMenuGui );
+   }
    else
+   {      
    Canvas.pushDialog( GameMenuGui );
+   
+      if ( $JoinServerDlgActive == 1 )
+      Canvas.pushDialog(JoinServerDlg);
+      if ( $ChooseLevelDlgActive == 1 )
+      Canvas.pushDialog(ChooseLevelDlg);
+      if ( $OptionsDlgActive == 1 )
+      Canvas.pushDialog(OptionsDlg);
+      if ( $ExtrasDlgActive == 1 )
+      Canvas.pushDialog(ExtrasDlg);
+      if ( $HelpDlgActive == 1 )
+      Canvas.pushDialog(HelpDlg);
+      if ( $AdminDlgActive == 1 )
+      Canvas.pushDialog(AdminDlg);
+      if ( $ArmoryDlgActive == 1 )
+      Canvas.pushDialog(ArmoryDlg);
+      if ( $ServerOptionsDlgActive == 1 )
+      Canvas.pushDialog(ServerOptionsDlg);
+   echo ( "sop" @ $ServerOptionsDlgActive);
+   }
 }
 
 function toggleJoinServerDlg()
 {
-   if (JoinServerDlg.isAwake())
+   if (JoinServerDlg.isAwake()) {
    Canvas.popDialog(JoinServerDlg);
+   $JoinServerDlgActive = 0;
+   }
    else
    Canvas.pushDialog(JoinServerDlg);
    //query servers once to start it filled with servers
@@ -139,34 +196,77 @@ function toggleJoinServerDlg()
 
 function toggleChooseLevelDlg()
 {
-   if (ChooseLevelDlg.isAwake())
+   if (ChooseLevelDlg.isAwake()) {
    Canvas.popDialog(ChooseLevelDlg);
+   $ChooseLevelDlgActive = 0;
+   }
    else
    Canvas.pushDialog(ChooseLevelDlg);
 }
 
 function toggleOptionsDlg()
 {
-   if (OptionsDlg.isAwake())
+   if (OptionsDlg.isAwake()) {
    Canvas.popDialog(OptionsDlg);
+   $OptionsDlgActive = 0;
+   }
    else
    Canvas.pushDialog(OptionsDlg);
 }
 
 function toggleExtrasDlg()
 {
-   if (ExtrasDlg.isAwake())
+   if (ExtrasDlg.isAwake()) {
    Canvas.popDialog(ExtrasDlg);
+   $ExtrasDlgActive = 0;
+   }
    else
    Canvas.pushDialog(ExtrasDlg);
 }
 
 function toggleHelpDlg()
 {
-   if (HelpDlg.isAwake())
+   if (HelpDlg.isAwake()) {
    Canvas.popDialog(HelpDlg);
+   $HelpDlgActive = 0;
+   }
    else
    Canvas.pushDialog(HelpDlg);
+}
+
+function toggleAdminDlg()
+{
+   if (AdminDlg.isAwake()) {
+   Canvas.popDialog(AdminDlg);
+   $AdminDlgActive = 0;
+   }
+   else
+   Canvas.pushDialog(AdminDlg);
+}
+
+function toggleArmoryDlg()
+{
+   if( ArmoryDlg.isAwake() ) {
+   commandToServer( 'HideArmoryHud' );
+   $ArmoryDlgActive = 0;
+   }
+   else
+   {
+   commandToServer( 'ShowArmoryHud' );
+   commandToServer( 'PushTeamChooseMenu' );
+   commandToServer( 'PushSpawnChooseMenu' );
+   }
+}
+
+function toggleServerOptionsDlg()
+{
+   if (ServerOptionsDlg.isAwake()) {
+   Canvas.popDialog(ServerOptionsDlg);
+   $ServerOptionsDlgActive = 0;
+      echo ( "sop" @ $ServerOptionsDlgActive);
+   }
+   else
+   Canvas.pushDialog(ServerOptionsDlg);
 }
 
 // Opens a Gui ingame that displays all metrics in one window

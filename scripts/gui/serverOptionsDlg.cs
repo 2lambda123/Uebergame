@@ -33,18 +33,6 @@ function ServerOptionsDlg::onWake(%this)
    SOP_TimeLimit.setValue( $pref::Server::TimeLimit );
    SOP_WarmupTime.setValue( $pref::Server::warmupTime );
    SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
-
-   // Setup the AI control
-   if($pref::Server::AiCount > $pref::Server::MaxPlayers - 1)
-      $pref::Server::AiCount = $pref::Server::MaxPlayers - 1;
-
-   if ( $pref::Server::AiCount <= 0 )
-      %sliderValue = 0;
-   else
-      %sliderValue = $pref::Server::AiCount;
-
-   SOP_AiCountSlider.setValue(%sliderValue);
-   SOP_AiCountText.setValue( "AI Count ("@%sliderValue@")" );
 }
 
 function ServerOptionsDlg::onSleep(%this)
