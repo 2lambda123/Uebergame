@@ -55,25 +55,6 @@ singleton SFXDescription( GuiMusicPlayerLoopingStream : AudioMusic2D )
 };
 
 //---------------------------------------------------------------------------------------------
-// Functions.
-
-function toggleMusicPlayer(%val)
-{
-   if ( %val )
-   {
-      if( !GuiMusicPlayer.isAwake() )
-      {
-         GuiMusicPlayer.setExtent( Canvas.getExtent() );
-         GuiMusicPlayer.setPosition( 0, 0 );
-
-         Canvas.pushDialog( GuiMusicPlayer );
-      }
-      else
-         Canvas.popDialog( GuiMusicPlayer );
-   }
-}
-
-//---------------------------------------------------------------------------------------------
 // Methods.
 
 function GuiMusicPlayer_onSFXSourceStatusChange( %id, %status )

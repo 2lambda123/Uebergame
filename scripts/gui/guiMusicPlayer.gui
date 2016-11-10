@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(GuiMusicPlayer) {
    position = "0 0";
-   extent = "1280 1024";
+   extent = "1024 768";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -16,12 +16,12 @@
    canSaveDynamicFields = "1";
 
    new GuiWindowCtrl() {
-      text = "Torque Music Player";
+      text = "Music Player";
       resizeWidth = "1";
       resizeHeight = "1";
       canMove = "1";
       canClose = "1";
-      canMinimize = "1";
+      canMinimize = "0";
       canMaximize = "1";
       canCollapse = "0";
       closeCommand = "Canvas.popDialog(GuiMusicPlayer);";
@@ -32,8 +32,8 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "320 272";
-      extent = "640 480";
+      position = "320 256";
+      extent = "384 256";
       minExtent = "256 256";
       horizSizing = "center";
       vertSizing = "center";
@@ -46,12 +46,61 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
+      new GuiScrollCtrl() {
+         willFirstRespond = "1";
+         hScrollBar = "dynamic";
+         vScrollBar = "alwaysOn";
+         lockHorizScroll = "0";
+         lockVertScroll = "0";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+         mouseWheelScrollSpeed = "-1";
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "2 25";
+         extent = "380 160";
+         minExtent = "8 2";
+         horizSizing = "width";
+         vertSizing = "height";
+         profile = "GuiScrollProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+
+         new GuiListBoxCtrl(GuiMusicPlayerMusicList) {
+            allowMultipleSelections = "1";
+            fitParentWidth = "1";
+            colorBullet = "1";
+            position = "1 1";
+            extent = "365 32";
+            minExtent = "8 2";
+            horizSizing = "width";
+            vertSizing = "height";
+            profile = "GuiDefaultProfile";
+            visible = "1";
+            active = "1";
+            tooltipProfile = "GuiToolTipProfile";
+            hovertime = "1000";
+            isContainer = "0";
+            superClass = "GuiMusicPlayerMusicListClass";
+            canSave = "1";
+            canSaveDynamicFields = "0";
+         };
+      };
       new GuiCheckBoxCtrl(GuiMusicPlayerFadeCheckBox) {
          text = "Fade";
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "0";
-         position = "567 450";
+         position = "311 231";
          extent = "43 30";
          minExtent = "8 2";
          horizSizing = "left";
@@ -70,7 +119,7 @@
          groupNum = "-1";
          buttonType = "ToggleButton";
          useMouseEvents = "0";
-         position = "567 430";
+         position = "311 211";
          extent = "44 30";
          minExtent = "8 2";
          horizSizing = "left";
@@ -84,62 +133,13 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiScrollCtrl() {
-         willFirstRespond = "1";
-         hScrollBar = "dynamic";
-         vScrollBar = "alwaysOn";
-         lockHorizScroll = "0";
-         lockVertScroll = "0";
-         constantThumbHeight = "0";
-         childMargin = "0 0";
-         mouseWheelScrollSpeed = "-1";
-         margin = "0 0 0 0";
-         padding = "0 0 0 0";
-         anchorTop = "1";
-         anchorBottom = "0";
-         anchorLeft = "1";
-         anchorRight = "0";
-         position = "31 40";
-         extent = "580 350";
-         minExtent = "8 2";
-         horizSizing = "width";
-         vertSizing = "height";
-         profile = "GuiScrollProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "1";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-
-         new GuiListBoxCtrl(GuiMusicPlayerMusicList) {
-            allowMultipleSelections = "1";
-            fitParentWidth = "1";
-            colorBullet = "1";
-            position = "1 1";
-            extent = "565 2";
-            minExtent = "8 2";
-            horizSizing = "width";
-            vertSizing = "height";
-            profile = "GuiDefaultProfile";
-            visible = "1";
-            active = "1";
-            tooltipProfile = "GuiToolTipProfile";
-            hovertime = "1000";
-            isContainer = "0";
-            superClass = "GuiMusicPlayerMusicListClass";
-            canSave = "1";
-            canSaveDynamicFields = "0";
-         };
-      };
       new GuiSliderCtrl(GuiMusicPlayerScrubber) {
          range = "0 1";
          ticks = "16";
          snap = "0";
          value = "0";
-         position = "32 404";
-         extent = "580 24";
+         position = "4 191";
+         extent = "376 24";
          minExtent = "8 2";
          horizSizing = "width";
          vertSizing = "top";
@@ -159,7 +159,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "32 439";
+         position = "32 220";
          extent = "60 30";
          minExtent = "8 2";
          horizSizing = "right";
@@ -179,7 +179,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "106 439";
+         position = "106 220";
          extent = "60 30";
          minExtent = "8 2";
          horizSizing = "right";

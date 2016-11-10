@@ -29,7 +29,7 @@ function recordingsDlg::onWake()
 {
    RecordingsDlgList.clear();
    %i = 0;
-   %filespec = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/recordings/*.rec";
+   %filespec = $HomePath @ "/recordings/*.rec";
    echo(%filespec);
    for(%file = findFirstFile(%filespec); %file !$= ""; %file = findNextFile(%filespec)) 
       RecordingsDlgList.addRow(%i++, fileBase(%file));
@@ -48,7 +48,7 @@ function StartSelectedDemo()
    %sel = RecordingsDlgList.getSelectedId();
    %rowText = RecordingsDlgList.getRowTextById(%sel);
 
-   %file = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/recordings/" @ getField(%rowText, 0) @ ".rec";
+   %file = $HomePath @ "/recordings/" @ getField(%rowText, 0) @ ".rec";
 
    new GameConnection(ServerConnection);
    RootGroup.add(ServerConnection);
@@ -82,6 +82,20 @@ function startDemoRecord()
    if(ServerConnection.isDemoPlaying())
       return;
    
+   if ( $pref::Video::recordingSession $= "" )
+      $pref::Video::recordingSession = 0;
+            
+   if ( $recordingNumber == 0 )
+      $pref::Video::recordingSession++;
+            
+   if ( $pref::Video::recordingSession > 999 )
+      $pref::Video::recordingSession = 1;
+                  
+   %file = $HomePath @ "/recordings/" @ "recording_" @ $Client::MissionName @ "_" @ formatSessionNumber($pref::Video::recordingSession) @ "-" @ formatImageNumber($recordingNumber) @ ".rec";
+   %file = expandFileName( %file );
+     
+   $recordingNumber++;
+   /*
    for(%i = 0; %i < 1000; %i++)
    {
       %num = %i;
@@ -96,7 +110,7 @@ function startDemoRecord()
    }
    if(%i == 1000)
       return;
-
+*/
    $DemoFileName = %file;
 
    ChatHud.AddLine( "\c4Recording to file \c2[" @ $DemoFileName @ "\cr]");

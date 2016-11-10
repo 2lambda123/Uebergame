@@ -23,21 +23,24 @@
 //-----------------------------------------------------------------------------
 // Global Non-remapable binds
 //-----------------------------------------------------------------------------
-GlobalActionMap.bindCmd(keyboard, "F1", "", "contextHelp();");
+
 GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 GlobalActionMap.bind(keyboard, "F9", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 
 //GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
-GlobalActionMap.bind(keyboard, "F4", showMetrics);
-GlobalActionMap.bind(keyboard, "ctrl F4", showUeberMetrics);
-GlobalActionMap.bind( keyboard, "alt F6", startRecordingDemo );
-GlobalActionMap.bind( keyboard, "alt F7", stopRecordingDemo );
-//GlobalActionMap.bind( keyboard, "F9", toggleDemoRecording );
+GlobalActionMap.bind(keyboard, "F2", showMetrics);
+GlobalActionMap.bind(keyboard, "F3", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
-GlobalActionMap.bind( keyboard, "alt F5", doScreenShotHudless);
-//GlobalActionMap.bind( keyboard, "F12", recordMovie );
+GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
+//GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );
+//GlobalActionMap.bind( keyboard, "alt F6", stopRecordMovie );
+GlobalActionMap.bind( keyboard, "alt F7", toggleMovieRecording );
+//GlobalActionMap.bind( keyboard, "F7", startRecordingDemo );
+//GlobalActionMap.bind( keyboard, "F8", stopRecordingDemo );
+GlobalActionMap.bind( keyboard, "alt F8", toggleDemoRecording );
+
 
 //------------------------------------------------------------------------------
 // Utility remap functions:
@@ -153,7 +156,18 @@ function toggleGameMenuGui()
       if (ServerOptionsDlg.isAwake()) {
       Canvas.popDialog(ServerOptionsDlg);
       $ServerOptionsDlgActive = 1;
-         echo ( "sop" @ $ServerOptionsDlgActive);
+      }
+      if (RecordingsDlg.isAwake()) {
+      Canvas.popDialog(RecordingsDlg);
+      $RecordingsDlgActive = 1;
+      }
+      if (GuiMusicPlayer.isAwake()) {
+      Canvas.popDialog(GuiMusicPlayer);
+      $GuiMusicPlayerActive = 1;
+      }
+      if (GuiVideoPlayer.isAwake()) {
+      Canvas.popDialog(GuiVideoPlayer);
+      $GuiVideoPlayerActive = 1;
       }
       
    Canvas.popDialog( GameMenuGui );
@@ -178,7 +192,12 @@ function toggleGameMenuGui()
       Canvas.pushDialog(ArmoryDlg);
       if ( $ServerOptionsDlgActive == 1 )
       Canvas.pushDialog(ServerOptionsDlg);
-   echo ( "sop" @ $ServerOptionsDlgActive);
+      if ( $RecordingsDlgActive == 1 )
+      Canvas.pushDialog(RecordingsDlg);
+      if ( $GuiMusicPlayerActive == 1 )
+      Canvas.pushDialog(GuiMusicPlayer);
+      if ( $GuiVideoPlayerActive == 1 )
+      Canvas.pushDialog(GuiVideoPlayer);
    }
 }
 
@@ -267,6 +286,36 @@ function toggleServerOptionsDlg()
    }
    else
    Canvas.pushDialog(ServerOptionsDlg);
+}
+
+function toggleRecordingsDlg(%val)
+{
+   if (recordingsDlg.isAwake()) {
+   Canvas.popDialog(recordingsDlg);
+   $recordingsDlgActive = 0;
+   }
+   else
+   Canvas.pushDialog(recordingsDlg);
+}
+
+function toggleGuiMusicPlayer(%val)
+{
+   if (GuiMusicPlayer.isAwake()) {
+   Canvas.popDialog(GuiMusicPlayer);
+   $GuiMusicPlayerActive = 0;
+   }
+   else
+   Canvas.pushDialog(GuiMusicPlayer);
+}
+
+function toggleGuiVideoPlayer(%val)
+{
+   if (GuiVideoPlayer.isAwake()) {
+   Canvas.popDialog(GuiVideoPlayer);
+   $GuiVideoPlayerActive = 0;
+   }
+   else
+   Canvas.pushDialog(GuiVideoPlayer);
 }
 
 // Opens a Gui ingame that displays all metrics in one window
@@ -983,7 +1032,7 @@ function stopRecordingDemo( %val )
       stopDemoRecord();
 }
 
-function recordMovie(%val)
+function toggleMovieRecording(%val)
 {
    if ( %val )
    {
@@ -996,6 +1045,18 @@ function recordMovie(%val)
          stopMovie();
       }
    }
+}
+
+function startRecordMovie( %val )
+{
+   if ( %val )
+      makeMovie();
+}
+
+function stopRecordMovie( %val )
+{
+   if ( %val )
+      stopMovie();
 }
 
 //------------------------------------------------------------------------------
@@ -1100,8 +1161,8 @@ moveMap.bind( keyboard, "s", movebackward );
 moveMap.bind( keyboard, "d", moveright );
 moveMap.bind( keyboard, "up", moveforward );
 moveMap.bind( keyboard, "down", movebackward );
-moveMap.bind( keyboard, "left", moveleft);
-moveMap.bind( keyboard, "right", moveright);
+moveMap.bind( keyboard, "left", turnLeft);
+moveMap.bind( keyboard, "right", turnRight);
 //moveMap.bind( keyboard, "home", panUp );
 //moveMap.bind( keyboard, "end", panDown );
 moveMap.bind( keyboard, "space", jump );
@@ -1144,20 +1205,20 @@ moveMap.bind( keyboard, "m", autoMountVehicle );
 // Camera and View
 //moveMap.bind( mouse, button1, toggleZoom );
 moveMap.bind( mouse, button1, toggleIronSights );
-moveMap.bind( keyboard, "z", toggleZoomFOV );
+moveMap.bind( keyboard, "f", toggleZoomFOV );
 moveMap.bind( keyboard, "v", toggleFreeLook );
-moveMap.bind( keyboard, "F3", toggleFirstPerson );
+moveMap.bind( keyboard, "F1", toggleFirstPerson );
 
 //-----------------------------------------------------------------------------
 // Misc
 //moveMap.bind( keyboard, "l", celebrationWave );
-//moveMap.bind( keyboard, "rctrl l", celebrationSalute );
+//moveMap.bind( keyboard, "k", celebrationSalute );
 moveMap.bind( keyboard, "ctrl k", doSuicide );
 //moveMap.bind( keyboard, "ctrl f", throwFlag );
 
 //-----------------------------------------------------------------------------
 // Huds
-moveMap.bind( keyboard, "F2", showPlayerList );
+//moveMap.bind( keyboard, "F2", showPlayerList );
 moveMap.bind( keyboard, "tab", showScoreBoard );
 moveMap.bind( keyboard, "t", toggleMessageHud );
 moveMap.bind( keyboard, "y", teamMessageHud );
@@ -1166,12 +1227,12 @@ moveMap.bind( keyboard, "pageUp", pageMessageHudUp );
 moveMap.bind( keyboard, "pageDown", pageMessageHudDown );
 moveMap.bind( keyboard, "p", resizeMessageHud );
 moveMap.bind( keyboard, "c", toggleQuickChatHud );
-moveMap.bind( keyboard, "F8", bringUpOptions );
+//moveMap.bind( keyboard, "F8", bringUpOptions );
 moveMap.bind( keyboard, "insert", voteYes );
 moveMap.bind( keyboard, "delete", voteNo );
-moveMap.bind( keyboard, "i", toggleArmoryDlg );
-moveMap.bind( keyboard, "=", cycleLoadoutNext );
-moveMap.bind( keyboard, "-", cycleLoadoutPrev );
+//moveMap.bind( keyboard, "i", toggleArmoryDlg );
+moveMap.bind( keyboard, ".", cycleLoadoutNext );
+moveMap.bind( keyboard, ",", cycleLoadoutPrev );
 moveMap.bind( keyboard, "n", toggleNetGraph );
 //moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
 //moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???

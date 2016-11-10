@@ -22,38 +22,6 @@
 
 // A very simple video player.
 
-//---------------------------------------------------------------------------------------------
-// Prerequisites.
-
-if( !isObject( GuiVideoPlayer ) )
-   exec( "./guiVideoPlayer.gui" );
-
-//---------------------------------------------------------------------------------------------
-// Functions.
-
-function toggleVideoPlayer(%val)
-{
-   if ( %val )
-   {
-      if( !GuiVideoPlayer.isAwake() )
-      {
-         GuiVideoPlayer.setExtent( Canvas.getExtent() );
-         GuiVideoPlayer.setPosition( 0, 0 );
-
-         Canvas.pushDialog( GuiVideoPlayer );
-      }
-      else
-         Canvas.popDialog( GuiVideoPlayer );
-   }
-}
-
-//---------------------------------------------------------------------------------------------
-// Methods.
-
-function GuiVideoPlayer::onWake( %this )
-{
-   GuiMusicPlayerMusicList.load();
-
    //TheoraVideo.setFile( "art/movies/file.ogv);
    //TheoraVideo.play();
    //TheoraVideo.pause();
@@ -61,21 +29,44 @@ function GuiVideoPlayer::onWake( %this )
    //TheoraVideo.getCurrentTime();
    //TheoraVideo.isPlaybackDone();
 
-   if ( isObject( hudMap ) )
-   {
-      hudMap.pop();
-      hudMap.delete();
-   }
-   new ActionMap( hudMap );
-   hudMap.blockBind( moveMap, bringUpOptions );
-   hudMap.blockBind( moveMap, toggleTeamChoose );
-   hudMap.blockBind( moveMap, showScoreBoard );
-   hudMap.push();
+//---------------------------------------------------------------------------------------------
+// Prerequisites.
+
+if( !isObject( GuiVideoPlayer ) )
+   exec( "./guiVideoPlayer.gui" );
+
+//---------------------------------------------------------------------------------------------
+// Methods.
+
+function GuiVideoPlayer::onWake( %this )
+{
+    GuiVideoPlayerVideoList.clear();
+    
+   %i = 0;
+   %filespec = $HomePath @ "/movies/*.ogv";
+   //echo(%filespec);
+   for(%file = findFirstFile(%filespec); %file !$= ""; %file = findNextFile(%filespec)) 
+      GuiVideoPlayerVideoList.addRow(%i++, fileBase(%file));
+   GuiVideoPlayerVideoList.sort(0);
+   GuiVideoPlayerVideoList.setSelectedRow(0);
+   GuiVideoPlayerVideoList.scrollVisible(0);
 }
 
-function GuiMusicPlayer::onSleep(%this)
+function GuiVideoPlayer::onSleep(%this)
 {
    TheoraVideo.stop();
-   // Make sure the proper key maps are pushed
-   tge.updateKeyMaps();
+}
+
+function  GuiVideoPlayerVideoList::onSelect(%this)
+{
+   %sel = GuiVideoPlayerVideoList.getSelectedId();
+   %rowText = GuiVideoPlayerVideoList.getRowTextById(%sel);
+   %file = $HomePath @ "/movies/" @ getField(%rowText, 0) @ ".ogv";
+   $SelectedVideo = %file;
+}
+
+function StartSelectedVideo()
+{
+   TheoraVideo.setFile($SelectedVideo);
+   TheoraVideo.play($SelectedVideo);
 }

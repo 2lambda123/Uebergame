@@ -176,7 +176,7 @@ function QuickChatMenuHud::selectObject( %this, %object )
 
 // -----------------------------------------------------------------------------
 
-if ( isFile( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/quickChat.cs" ) )
-   exec( GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/quickChat.cs" );
+if ( isFile( $HomePath @ "/quickChat.cs" ) )
+   exec( $HomePath @ "/quickChat.cs" );
 else
    exec("./quickChat.cs");

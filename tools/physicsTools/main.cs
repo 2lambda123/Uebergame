@@ -47,9 +47,9 @@ function initializePhysicsTools()
       echo( "No physics plugin exists." );
       return;
    }
-      
-   globalactionmap.bindCmd( keyboard, "alt t", "physicsToggleSimulation();", "" );      
-   globalactionmap.bindCmd( keyboard, "alt r", "physicsRestoreState();", "" );   
+   // unused ?!
+   //globalactionmap.bindCmd( keyboard, "alt t", "physicsToggleSimulation();", "" );      
+   //globalactionmap.bindCmd( keyboard, "alt r", "physicsRestoreState();", "" );   
       
    new ScriptObject( PhysicsEditorPlugin )
    {

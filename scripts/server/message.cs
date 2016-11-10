@@ -276,4 +276,4 @@ function filterChat(%string)
 }
 
 // Bad words are stored in a file so the admin can add or remove from the list
-exec(GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/badWordList.cs");
+exec( $HomePath @ "/badWordList.cs");

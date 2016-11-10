@@ -58,7 +58,7 @@
          profile = "GuiMenuButtonProfile";
          visible = "1";
          active = "1";
-         command = "Canvas.pushDialog(RecordingsDlg);";
+         command = "toggleRecordingsDlg();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -78,7 +78,7 @@
          profile = "GuiMenuButtonProfile";
          visible = "1";
          active = "1";
-         command = "Canvas.pushDialog(guiMusicPlayer);";
+         command = "toggleGuiMusicPlayer();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
@@ -98,7 +98,7 @@
          profile = "GuiMenuButtonProfile";
          visible = "1";
          active = "1";
-         command = "Canvas.pushDialog(guiVideoPlayer);";
+         command = "toggleGuiVideoPlayer();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";

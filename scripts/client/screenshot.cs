@@ -32,8 +32,8 @@ function formatImageNumber(%number)
       %number = "0" @ %number;
    if(%number < 1000)
       %number = "0" @ %number;
-   if(%number < 10000)
-      %number = "0" @ %number;
+   //if(%number < 10000)
+   //   %number = "0" @ %number;
    return %number;
 }
 
@@ -55,6 +55,8 @@ function formatSessionNumber(%number)
 // Records a movie file from the Canvas content using the specified fps.
 // Possible encoder values are "PNG" and "THEORA" (default).
 //---------------------------------------------------------------------------------------------
+$movieNumber = 0;
+
 $MovieEncodeActive = false;
 function makeMovie(%movieName, %fps, %encoder)
 {
@@ -65,6 +67,9 @@ function makeMovie(%movieName, %fps, %encoder)
 
    if ( $pref::Video::movieSession $= "" )
       $pref::Video::movieSession = 0;
+   
+   if ( $movieNumber == 0 )
+      $pref::Video::movieSession++;
             
    if ( $pref::Video::movieSession > 999 )
       $pref::Video::movieSession = 1;
@@ -75,7 +80,10 @@ function makeMovie(%movieName, %fps, %encoder)
    if ( %encoder $= "" ) 
       %encoder = "THEORA";
 
-   %movieName = "movie_" @ $Client::MissionName @ formatSessionNumber($pref::Video::screenShotSession);
+   %movieName = $HomePath @ "/movies/" @ "movie_" @ $Client::MissionName @ "_" @ formatSessionNumber($pref::Video::movieSession) @ "-" @ formatImageNumber($movieNumber);
+   %movieName = expandFileName( %movieName );
+   
+   $movieNumber++;
 
    %resolution = Canvas.getVideoMode();
    startVideoCapture(Canvas, %movieName, %encoder, %fps);
@@ -115,7 +123,7 @@ function _screenShot( %tiles, %overlap )
    if ( $pref::Video::screenShotSession > 999 )
       $pref::Video::screenShotSession = 1;
                   
-   %name = "screenshot_" @ $Client::MissionName @ formatSessionNumber($pref::Video::screenShotSession) @ "-" @ formatImageNumber($screenshotNumber);
+   %name = "screenshot_" @ $Client::MissionName @ "_" @ formatSessionNumber($pref::Video::screenShotSession) @ "-" @ formatImageNumber($screenshotNumber);
    %name = expandFileName( %name );
    
    $screenshotNumber++;
