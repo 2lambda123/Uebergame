@@ -602,7 +602,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
    //if ( %obj.getClassname() $= "Player" || %obj.getClassname() $= "AiPlayer" )
    if ( %obj.isMemberOfClass( "Player" ) )
       %obj.setInvincible( false ); // fire your weapon and your invincibility goes away.
-
+/* //cloaking needs to be reworked and a cloaking item as special device for the player
    if( %obj.inStation $= "" && %obj.isCloaked() )
    {
       if( %obj.respawnCloakThread !$= "" )
@@ -620,6 +620,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
          }
       }   
    }
+   */
    if (isObject(%obj.lastProjectile) && %obj.deleteLastProjectile)
       %obj.lastProjectile.delete();
 
@@ -768,7 +769,7 @@ function ShapeBaseImageData::onThrowGrenade(%data, %obj, %slot)
 
    %data.lightStart = $Sim::Time;
    %obj.setInvincible( false ); // Throw a grenade and your invincibility goes away.
-
+/*
    if( %obj.inStation $= "" && %obj.isCloaked() )
    {
       if( %obj.respawnCloakThread !$= "" )
@@ -786,7 +787,7 @@ function ShapeBaseImageData::onThrowGrenade(%data, %obj, %slot)
          }
       }   
    }
-
+*/
    // Create the grenade to throw
    %thrownItem = %data.thrownItem.create();
    %thrownItem.static = false;

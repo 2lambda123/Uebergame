@@ -942,8 +942,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 
       %client.respawns--;
       %player.setInvincible( true );
-      %player.setCloaked(true);
-      %player.respawnCloakThread = %player.schedule(1 * 1000, "setRespawnCloakOff");
+      //%player.setCloaked(true); //no respawn cloak for now
+      //%player.respawnCloakThread = %player.schedule(1 * 1000, "setRespawnCloakOff");
 	   %player.schedule( $InvincibleTime, "setInvincibleOff" );	  
    }
 

@@ -402,7 +402,7 @@ function ShotgunWeaponImage::onFire(%data, %obj, %slot)
    %obj.decInventory( %data.ammo, 1 );
 
    %data.lightStart = $Sim::Time;
-
+/*
    if( %obj.inStation $= "" && %obj.isCloaked() )
    {
       if( %obj.respawnCloakThread !$= "" )
@@ -420,7 +420,7 @@ function ShotgunWeaponImage::onFire(%data, %obj, %slot)
          }
       }   
    }
-
+*/
    if (isObject(%obj.lastProjectile) && %obj.deleteLastProjectile)
       %obj.lastProjectile.delete();
 

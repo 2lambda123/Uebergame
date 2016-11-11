@@ -1573,7 +1573,7 @@ function Armor::onDisabled(%this, %player, %state)
 
    //cancel( %player.scanMissileSchedule ); //unused?!
    cancel( %player.progressMeter );
-   cancel( %player.reCloak );
+   //cancel( %player.reCloak );
 
    %player.clearDamageDt();
 

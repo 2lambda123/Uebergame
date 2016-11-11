@@ -255,6 +255,7 @@ function TripMineImage::onThrowGrenade(%data, %obj, %slot)
    %data.lightStart = $Sim::Time;
    %obj.setInvincible( false ); // Throw a grenade and your invincibility goes away.
 
+   /*
    if ( %obj.inStation $= "" && %obj.isCloaked() )
    {
       if ( %obj.respawnCloakThread !$= "" )
@@ -272,6 +273,7 @@ function TripMineImage::onThrowGrenade(%data, %obj, %slot)
          }
       }
    }
+   */
 
    // Create the item
    %item = %data.thrownItem.create();
