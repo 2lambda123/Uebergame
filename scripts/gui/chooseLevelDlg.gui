@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "100 152";
+      position = "0 240";
       extent = "640 480";
       minExtent = "640 200";
       horizSizing = "right";
@@ -108,7 +108,7 @@
          color = "255 255 255 255";
          wrap = "0";
          position = "277 145";
-         extent = "83 16";
+         extent = "90 16";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -273,7 +273,7 @@
          range = "0 63";
          ticks = "62";
          snap = "1";
-         value = "15";
+         value = "0";
          position = "278 162";
          extent = "320 20";
          minExtent = "8 2";
@@ -315,7 +315,7 @@
          sbUsesNAColor = "0";
          reverseTextList = "0";
          bitmapBounds = "16 16";
-         text = "Team Deathmatch";
+         text = "Deathmatch";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -338,7 +338,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(SOP_AiCountText) {
-         text = "AI Count (15)";
+         text = "Bot Count (63)";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -347,7 +347,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "280 145";
-         extent = "77 18";
+         extent = "88 18";
          minExtent = "58 18";
          horizSizing = "right";
          vertSizing = "bottom";

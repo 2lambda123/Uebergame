@@ -24,6 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "loading program, use this when creating new levels";
          enabled = "1";
          levelName = "Construct";
+         MissionTypes = "DM TDM PBDM PBTDM";
    };
    new SkyBox(theSky) {
       Material = "Mat_BlankWhite";

@@ -69,6 +69,15 @@ datablock SFXProfile(DeathCrySound)
    preload = true;
 };
 
+datablock SFXPlayList(DeathCrySoundList)
+{
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClose3D";
+   track[ 0 ] = DeathCrySound;
+   pitchScaleVariance[0] = "-0.5 0.1";
+};
+
 datablock SFXProfile(PainCrySound)
 {
    fileName = "art/sound/player/pain/orc_pain";
@@ -894,8 +903,8 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    shadowSize = "512";
    
    //BadBot AI settings
-   VisionRange = 80;
-   VisionFov = 180;
+   VisionRange = 100;
+   VisionFov = 120;
    findItemRange = 20;
    targetObjectTypes = $TypeMasks::PlayerObjectType;
    itemObjectTypes = $TypeMasks::itemObjectType;
@@ -910,17 +919,18 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    optimalRange["GrenadeLauncher"] = 25;
    burstLength["GrenadeLauncher"] = 2000;
    rangeTolerance = 3;
-   switchTargetProbability = 0.5;
+   switchTargetProbability = 0.3;
 };
 
 datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
 {
+   // stuff that transforms the default player into a paintballer
    shapeFile = "art/shapes/actors/paintball_player/paintball_player.dts";
    shapeNameFP[0] = "";
    boundingBox = "0.75 0.75 1.8";
    crouchBoundingBox = "0.75 0.75 1.25";
    renderFirstPerson = "1";
-   
+   //fixes the head clipping, since the paintballer uses real first person
    groundImpactMinSpeed    = "4.1";
    groundImpactShakeFreq   = "3 3 3";
    groundImpactShakeAmp    = "0.2 0.2 0.2";
@@ -930,8 +940,8 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    maxInvRyder = "0";
    
    //BadBot AI settings
-   VisionRange = 80;
-   VisionFov = 180;
+   VisionRange = 90;
+   VisionFov = 120;
    findItemRange = 20;
    targetObjectTypes = $TypeMasks::PlayerObjectType;
    itemObjectTypes = $TypeMasks::itemObjectType;
@@ -944,7 +954,7 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    optimalRange["PaintballMarkerYellow"] = 10;
    burstLength["PaintballMarkerYellow"] = 2000;
    rangeTolerance = 5;
-   switchTargetProbability = 0.5;
+   switchTargetProbability = 0.3;
 };
 
 //-----------------------------------------------------------------------------
@@ -1948,7 +1958,7 @@ function Player::playCelAnimation(%this, %anim)
 
 function Player::playDeathCry(%this)
 {
-   %this.playAudio( 0, DeathCrySound );
+   %this.playAudio( 0, DeathCrySoundList );
 }
 
 function Player::playPain(%this)

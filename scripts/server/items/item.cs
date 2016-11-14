@@ -37,7 +37,7 @@ $Item::RespawnTime = 60 * 1000;
 
 // Poptime represents how long dynamic items (those that are thrown or
 // dropped) will last in the world before being deleted.
-$Item::PopTime = 120 * 1000;
+$Item::PopTime = 30 * 1000;
 
 //-----------------------------------------------------------------------------
 

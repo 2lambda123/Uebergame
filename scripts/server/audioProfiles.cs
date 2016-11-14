@@ -30,7 +30,7 @@
 datablock SFXProfile(ThrowSnd)
 {
    filename = "art/sound/player/throw";
-   description = AudioClose3d;
+   description = AudioClosest3D;
    preload = false;
 };
 

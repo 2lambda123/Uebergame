@@ -25,13 +25,13 @@ function ScoreGui::configure(%this, %gameType)
       profile = "ScoreHudTextWhiteProfile";
       horizSizing = "center";
       vertSizing = "bottom";
-      position = "56 315";
-      extent = "500 160";
-      minExtent = "500 160";
+      position = "195 340";
+      extent = "100 100";
+      minExtent = "100 100";
       visible = "1";
       enumerate = "1";
       resizeCell = "1";
-      columns = "0 250";
+      columns = "0 120";
       fitParentWidth = "0";
       clipColumnText = "0";
       noDuplicates = "true";
@@ -46,7 +46,7 @@ function ScoreGui::configure(%this, %gameType)
       visible = "1";
       enumerate = "1";
       resizeCell = "1";
-      columns = "0 120";
+      columns = "0 145";
       fitParentWidth = "0";
       clipColumnText = "0";
       noDuplicates = "true";
@@ -61,7 +61,7 @@ function ScoreGui::configure(%this, %gameType)
       visible = "1";
       enumerate = "1";
       resizeCell = "1";
-      columns = "0 120";
+      columns = "0 145";
       fitParentWidth = "0";
       clipColumnText = "0";
       noDuplicates = "true";

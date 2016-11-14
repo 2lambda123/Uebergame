@@ -67,7 +67,7 @@ function ChooseLevelDlg::onWake(%this)
       %sliderValue = $pref::Server::AiCount;
    
    SOP_AiCountSlider.setValue(%sliderValue);
-   SOP_AiCountText.setValue( "AI Count ("@%sliderValue@")" );
+   SOP_AiCountText.setValue( "Bot Count ("@%sliderValue@")" );
 }
 
 function ChooseLevelDlg::onSleep( %this )
@@ -91,43 +91,29 @@ function buildMissionTypePopup(%popup)
 // not have a lingering mouseUp event lingering in the ether.
 
 function ChooseLevelDlgGoBtn::onMouseUp( %this )
-
 {
    // if we are in a game and try to join another, quit the current game
    if (PlayGui.isAwake())
    disconnect();
 
    // So we can't fire the button when loading is in progress.
-
    if ( isObject( ServerGroup ) )
-
       return;
 
    %id = CL_LevelList.getSelectedId();
    %mission = $HostMissionFile[%id];
 
    // Launch the chosen level with the editor open?
-
    if ( ChooseLevelDlg.launchInEditor )
-
    {
-
       activatePackage( "BootEditor" );
-
       ChooseLevelDlg.launchInEditor = false;
- 
      StartLevel( %mission, "SinglePlayer" );
-
    }
-
    else
-
    {
-
       StartLevel( %mission, "" );
- 
-  }
-
+   }
 }
 
 function StartLevel(%mission, %serverType)
@@ -148,7 +134,6 @@ function StartLevel(%mission, %serverType)
    }
 
    //LogEcho("CL_StartLevel selected id:" SPC %id SPC "Mission:" SPC %mission);
-
    if ( $pref::Server::Password !$= "" )
       $Client::Password = $pref::Server::Password;
 
@@ -225,7 +210,6 @@ function CL_LevelType::onSelect(%this, %id, %text)
 function CL_LevelList::getMissionInfo(%this, %mission)
 {
    //LogEcho("CL_LevelList::getMissionInfo(" SPC %this.getName() @", "@ %mission SPC ")");
-
    // Clear out the old
    for ( %i = 0; %i < %SMInfoLineCount; %i++ )
       $SMInfoLine[%i] = "";

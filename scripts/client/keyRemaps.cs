@@ -199,14 +199,14 @@ $RemapCount++;
 //-----------------------------------------------------------------------------
 // Huds
 
-$RemapName[$RemapCount] = "Bring up Options Dialog";
-$RemapCmd[$RemapCount] = "bringUpOptions";
+//$RemapName[$RemapCount] = "Bring up Options Dialog";
+//$RemapCmd[$RemapCount] = "bringUpOptions";
+//$RemapCount++;
+$RemapName[$RemapCount] = "Show Scores";
+$RemapCmd[$RemapCount] = "showScoreBoard";
 $RemapCount++;
 $RemapName[$RemapCount] = "Show Player list/Admin";
 $RemapCmd[$RemapCount] = "showPlayerList";
-$RemapCount++;
-$RemapName[$RemapCount] = "Show Scores";
-$RemapCmd[$RemapCount] = "showScoreBoard";
 $RemapCount++;
 $RemapName[$RemapCount] = "Show/Hide Armory Screen";
 $RemapCmd[$RemapCount] = "toggleArmoryDlg";
@@ -235,6 +235,9 @@ $RemapCount++;
 //$RemapCount++;
 $RemapName[$RemapCount] = "Toggle Demo Recording";
 $RemapCmd[$RemapCount] = "toggleDemoRecording";
+$RemapCount++;
+$RemapName[$RemapCount] = "Toggle Movie Recording";
+$RemapCmd[$RemapCount] = "toggleMovieRecording";
 $RemapCount++;
 //$RemapName[$RemapCount] = "Throw Flag"; //not in use yet
 //$RemapCmd[$RemapCount] = "throwFlag";

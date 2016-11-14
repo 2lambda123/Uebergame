@@ -92,6 +92,7 @@ addBotName("Slave");
 addBotName("Master Slave");
 addBotName("Ballerman");
 addBotName("Schrotti");
+addBotName("Schrottkopf");
 addBotName("Kaputnik");
 addBotName("Number 5");
 addBotName("Kork");
@@ -124,7 +125,57 @@ addBotName("Dummy");
 addBotName("Ai Commander");
 addBotName("Ai Fish");
 addBotName("Turing Test");
+addBotName("Turing Complete");
+addBotName("Turing Incomplete");
 addBotName("Artificial");
+addBotName("Weird Ai");
+addBotName("iBot");
+addBotName("Rob Oter");
+addBotName("Roh Bot");
+addBotName("RoBo");
+addBotName("Otto");
+addBotName("Autobot");
+addBotName("I the Machine");
+addBotName("Servus ex Machina");
+addBotName("Scrap Man");
+addBotName("Scrap Head");
+addBotName("Ai Gear");
+addBotName("Botzkrieg");
+addBotName("Motorschwein");
+addBotName("Motorbot");
+addBotName("kAizer");
+addBotName("UeberBot");
+addBotName("UnterBot");
+addBotName("MegaBot");
+addBotName("MiniBot");
+addBotName("Al Aine");
+addBotName("Weltver Bot");
+addBotName("Talbot");
+addBotName("A. Trappe");
+addBotName("Nick Echt");
+addBotName("Pro Grammar");
+addBotName("John Roh");
+addBotName("Kick Botter");
+addBotName("Bot Kicker");
+addBotName("Filthy Casual");
+addBotName("Ey Ei");
+addBotName("Zervus");
+addBotName("Bot Anicus");
+addBotName("Swagbot");
+addBotName("Fagbot");
+addBotName("Rie Tardo");
+addBotName("Zoidbot");
+addBotName("Row Boat");
+addBotName("B Team");
+addBotName("The Machinist");
+addBotName("Bort");
+addBotName("Robort");
+addBotName("Aborter");
+addBotName("Robo Sapien");
+addBotName("U-Bot");
+addBotName("Saibot");
+addBotName("Run Bot");
+addBotName("Run Botrun");
 
 function getRandomBotName()
 {
@@ -230,7 +281,7 @@ function AIConnection::onConnect(%client, %name)
    %client.setBotFav( %client.getRandomLoadout() );
    }
    // A bit of random timer to simulate more human behavior when the bots join the game
-   %randomJoinTime = getRandom( 1000, 15000 );   
+   %randomJoinTime = getRandom( 1000, 20000 );   
    Game.schedule( %randomJoinTime, "onClientEnterGame", %client );
 
    $Server::BotCount++; // Master server gets this

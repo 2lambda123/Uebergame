@@ -318,6 +318,13 @@ singleton GuiControlProfile(ScoreHudTextBlueProfile)
    fontColor = "150 200 255";
 };
 
+singleton GuiControlProfile(ScoreHudTextGreenProfile)
+{
+   fontType = "ArialBold";
+   fontSize = 14;
+   fontColor = "200 255 150";
+};
+
 singleton GuiControlProfile(ScoreHudTextRedProfile)
 {
    fontType = "ArialBold";

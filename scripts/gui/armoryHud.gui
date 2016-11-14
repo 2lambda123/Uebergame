@@ -178,7 +178,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "20 157";
-         extent = "72 18";
+         extent = "88 18";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -289,6 +289,26 @@
          hovertime = "1000";
          isContainer = "0";
          hidden = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiButtonCtrl(CommitSuicide) {
+         text = "Commit Suicide";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         position = "19 432";
+         extent = "150 20";
+         minExtent = "8 2";
+         horizSizing = "center";
+         vertSizing = "top";
+         profile = "GuiButtonProfile";
+         visible = "1";
+         active = "1";
+         command = "commandToServer(\'suicide\');;";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };

@@ -57,7 +57,7 @@ new Root(BotTree) {
                canSave = "1";
                canSaveDynamicFields = "1";
             };
-			new SubTree() {
+			   new SubTree() {
                subTreeName = "huntTargetTree";
                internalName = "hunt";
                canSave = "1";

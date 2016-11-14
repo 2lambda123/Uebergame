@@ -30,8 +30,8 @@ GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 
 //GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
-GlobalActionMap.bind(keyboard, "F2", showMetrics);
-GlobalActionMap.bind(keyboard, "F3", showUeberMetrics);
+GlobalActionMap.bind(keyboard, "F1", showMetrics);
+GlobalActionMap.bind(keyboard, "F2", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
 GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 //GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );
@@ -40,7 +40,6 @@ GlobalActionMap.bind( keyboard, "alt F7", toggleMovieRecording );
 //GlobalActionMap.bind( keyboard, "F7", startRecordingDemo );
 //GlobalActionMap.bind( keyboard, "F8", stopRecordingDemo );
 GlobalActionMap.bind( keyboard, "alt F8", toggleDemoRecording );
-
 
 //------------------------------------------------------------------------------
 // Utility remap functions:
@@ -66,7 +65,6 @@ function ActionMap::copyBind( %this, %otherMap, %command )
    }
 }
 
-//------------------------------------------------------------------------------
 function ActionMap::blockBind( %this, %otherMap, %command )
 {
    if ( !isObject( %otherMap ) )
@@ -80,7 +78,6 @@ function ActionMap::blockBind( %this, %otherMap, %command )
       %this.bind( getField( %bind, 0 ), getField( %bind, 1 ), "" );
 }
 
-//------------------------------------------------------------------------------
 function ActionMap::clearBind(%this, %command)
 {
    if ( !isObject( %this ) )
@@ -1150,7 +1147,7 @@ if ( isObject( moveMap ) )
 new ActionMap(moveMap);
 
 //-----------------------------------------------------------------------------
-// Movment
+// Movement
 moveMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 
 moveMap.bind( mouse, xaxis, yaw );
@@ -1163,8 +1160,8 @@ moveMap.bind( keyboard, "up", moveforward );
 moveMap.bind( keyboard, "down", movebackward );
 moveMap.bind( keyboard, "left", turnLeft);
 moveMap.bind( keyboard, "right", turnRight);
-//moveMap.bind( keyboard, "home", panUp );
-//moveMap.bind( keyboard, "end", panDown );
+moveMap.bind( keyboard, "home", panUp );
+moveMap.bind( keyboard, "end", panDown );
 moveMap.bind( keyboard, "space", jump );
 moveMap.bind( keyboard, "lcontrol", doCrouch );
 //moveMap.bind( keyboard, "x", doProne );
@@ -1177,8 +1174,8 @@ moveMap.bind( mouse, button0, mouseFire );
 moveMap.bind( keyboard, "r", reloadWeapon );
 //moveMap.bindCmd(keyboard, "e", "commandToServer('PickupFacing');", "");
 moveMap.bind( mouse, zaxis, cycleWeaponAxis );
-moveMap.bind( keyboard, "+", nextWeapon );
-moveMap.bind( keyboard, "minus", prevWeapon );
+//moveMap.bind( keyboard, "+", nextWeapon );
+//moveMap.bind( keyboard, "minus", prevWeapon );
 moveMap.bind( keyboard, "1", useFirstWeaponSlot );
 //moveMap.bindCmd(keyboard, "1", "commandToServer('selectWeaponSlot', 0);", ""); //alternative method
 moveMap.bind( keyboard, "2", useSecondWeaponSlot );
@@ -1207,7 +1204,7 @@ moveMap.bind( keyboard, "m", autoMountVehicle );
 moveMap.bind( mouse, button1, toggleIronSights );
 moveMap.bind( keyboard, "f", toggleZoomFOV );
 moveMap.bind( keyboard, "v", toggleFreeLook );
-moveMap.bind( keyboard, "F1", toggleFirstPerson );
+moveMap.bind( keyboard, "F3", toggleFirstPerson );
 
 //-----------------------------------------------------------------------------
 // Misc
@@ -1218,7 +1215,8 @@ moveMap.bind( keyboard, "ctrl k", doSuicide );
 
 //-----------------------------------------------------------------------------
 // Huds
-//moveMap.bind( keyboard, "F2", showPlayerList );
+moveMap.bind( keyboard, "i", toggleArmoryDlg );
+//moveMap.bind( keyboard, "m", showPlayerList );
 moveMap.bind( keyboard, "tab", showScoreBoard );
 moveMap.bind( keyboard, "t", toggleMessageHud );
 moveMap.bind( keyboard, "y", teamMessageHud );
@@ -1230,9 +1228,8 @@ moveMap.bind( keyboard, "c", toggleQuickChatHud );
 //moveMap.bind( keyboard, "F8", bringUpOptions );
 moveMap.bind( keyboard, "insert", voteYes );
 moveMap.bind( keyboard, "delete", voteNo );
-//moveMap.bind( keyboard, "i", toggleArmoryDlg );
-moveMap.bind( keyboard, ".", cycleLoadoutNext );
-moveMap.bind( keyboard, ",", cycleLoadoutPrev );
+//moveMap.bind( keyboard, "=", cycleLoadoutNext );
+//moveMap.bind( keyboard, "-", cycleLoadoutPrev );
 moveMap.bind( keyboard, "n", toggleNetGraph );
 //moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
 //moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???
@@ -1244,17 +1241,17 @@ moveMap.bind( gamepad, thumbry, "D", "-0.23 0.23", gamepadPitch );
 moveMap.bind( gamepad, thumblx, "D", "-0.23 0.23", gamePadMoveX );
 moveMap.bind( gamepad, thumbly, "D", "-0.23 0.23", gamePadMoveY );
 
-moveMap.bind( gamepad, btn_a, jump );
-moveMap.bind( gamepad, btn_back, showPlayerList );
+moveMap.bind( gamepad, triggerr, gamepadFire );
+moveMap.bind( gamepad, triggerl, gamepadAltTrigger );
 
-moveMap.bind( gamepad, dpadl, nextWeapon);
-moveMap.bind( gamepad, dpadu, prevWeapon);
+moveMap.bind( gamepad, btn_a, jump );
+moveMap.bind( gamepad, btn_b, doCrouch );
 moveMap.bindCmd( gamepad, dpadd, reloadWeapon );
 moveMap.bind( gamepad, dpadr, doSprint);
 
-moveMap.bind( gamepad, triggerr, gamepadFire );
-moveMap.bind( gamepad, triggerl, gamepadAltTrigger );
-moveMap.bind( gamepad, btn_b, doCrouch );
+moveMap.bind( gamepad, dpadl, nextWeapon);
+moveMap.bind( gamepad, dpadu, prevWeapon);
+
 moveMap.bind( gamepad, btn_back,  showScoreBoard );
 
 //------------------------------------------------------------------------------

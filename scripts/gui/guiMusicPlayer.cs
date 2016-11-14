@@ -195,7 +195,7 @@ function GuiMusicPlayerMusicListClass::load( %this )
       eval( "%filePattern = " @ %filePatternVarName @ ";" );
       
    // Find all files matching the pattern.
-   %search = "art/music/"@%filePattern;
+   %search = $HomePath @ "/music/"@%filePattern;
    for( %file = findFirstFileMultiExpr( %search ); %file !$= ""; %file = findNextFileMultiExpr( %search ) )
       %this.addItem( makeRelativePath( %file, getMainDotCsDir() ) );
 

@@ -20,7 +20,7 @@ new Root(huntTargetTree) {
          class = "huntTargetTask";
          canSave = "1";
          canSaveDynamicFields = "1";
-      };
+      };  
    };
 };
 //--- OBJECT WRITE END ---

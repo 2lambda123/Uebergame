@@ -191,7 +191,7 @@ function BadBot::getMuzzleVector(%this, %slot)
 function BadBot::moveTo(%obj, %dest, %slowDown)
 {
    %pos = isObject(%dest) ? %dest.getPosition() : %dest;
-   /*
+   
    if ( %obj.getNavMesh() ) 
    { 
       %obj.setPathDestination(%pos); //setPath uses navMesh
@@ -200,10 +200,10 @@ function BadBot::moveTo(%obj, %dest, %slowDown)
    { 
       %obj.setMoveDestination(%pos); //old function wihtout navMesh
    } 
-   */
+   
    // above function is broken, sometimes bots do not find navMesh at the beginning
    // and get stuck on their first spawn, so only use navMesh for now until this is figured out
-   %obj.setPathDestination(%pos);
+   //%obj.setPathDestination(%pos);
    %obj.atDestination = false;
 }
 
@@ -246,7 +246,7 @@ function BotDefaultPlayerData::onDisabled(%this, %obj, %state)
 
 function BotDefaultPlayerData::onMoveStuck(%this, %obj)
 {
-   %obj.setShapeName("onMoveStuck"); //debug feature
+   //%obj.setShapeName("onMoveStuck"); //debug feature
    
    %obj.clearAim();
    %basePoint = %obj.position;
@@ -260,7 +260,7 @@ function BotDefaultPlayerData::onReachDestination(%data, %obj)
       %obj.behaviorTree.postSignal("onReachDestination");
       
    %obj.atDestination = true;
-   %obj.setShapeName("onReachDestination"); //debug feature
+   //%obj.setShapeName("onReachDestination"); //debug feature
 }
 
 // forward animationDone callback to the behavior tree as a signal
@@ -390,7 +390,7 @@ function RandomPointOnCircle(%center, %radius)
 //==============================================================================
 function wanderTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(wanderTask); //debug feature
+   //%obj.setShapeName(wanderTask); //debug feature
    // stop aiming at things
    %obj.clearAim();
    
@@ -422,7 +422,7 @@ function moveToClosestNodeTask::onEnter(%this, %obj)
 
 function moveToClosestNodeTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(moveToClosestNodeTask); //debug feature
+   //%obj.setShapeName(moveToClosestNodeTask); //debug feature
    // get the closest node
    %obj.currentNode = %obj.getClosestNodeOnPath(%obj.path);
    
@@ -448,7 +448,7 @@ function patrolTask::onEnter(%this, %obj)
 
 function patrolTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(patrolTask); //debug feature
+   //%obj.setShapeName(patrolTask); //debug feature
    // hook into the standard AIPlayer path following
    %obj.moveToNextNode();
    return SUCCESS;
@@ -459,7 +459,7 @@ function patrolTask::behavior(%this, %obj)
 //=============================================================================
 function findHealthTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(findHealthTask); //debug feature
+   //%obj.setShapeName(findHealthTask); //debug feature
    // get the objects datablock
    %db = %obj.dataBlock;
    
@@ -500,7 +500,7 @@ function getHealthTask::onEnter(%this, %obj)
 
 function getHealthTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(getHealthTask); //debug feature
+   //%obj.setShapeName(getHealthTask); //debug feature
    // succeed when we reach the item
    if(!%obj.atDestination)
       return RUNNING;
@@ -575,12 +575,13 @@ function huntTargetTask::onEnter(%this, %obj)
 
 function huntTargetTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(huntTargetTask); //debug feature
+   //%obj.setShapeName(huntTargetTask); //debug feature
 
    %target = %obj.targetObject;
 
    //%obj.followObject(%target, 1);
    %obj.moveTo(%target);
+   //%obj.moveTo(RandomPointOnCircle(%target, 15) ); //do not exactly move to target // not working yet
    
    return SUCCESS;
 }
@@ -596,7 +597,7 @@ function aimAtTargetTask::precondition(%this, %obj)
 
 function aimAtTargetTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(aimAtTargetTask); //debug feature
+   //%obj.setShapeName(aimAtTargetTask); //debug feature
    // calculate an aim offset
    %targetPos = %obj.targetObject.getWorldBoxCenter();
    %weaponImage = %obj.getMountedImage($WeaponSlot);
@@ -629,12 +630,12 @@ function shootAtTargetTask::precondition(%this, %obj)
 
 function shootAtTargetTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(shootAtTargetTask); //debug feature
+   //%obj.setShapeName(shootAtTargetTask); //debug feature
    if(!isEventPending(%obj.triggerSchedule))
    {
       %obj.setImageTrigger($WeaponSlot, true);
       //%burstLength = %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item]
-	  %burstRandomLength = getRandom ( 100, %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item] );
+	  %burstRandomLength = getRandom ( 20, %obj.dataBlock.burstLength[%obj.getMountedImage($WeaponSlot).item] );
 	  //echo( "Burst length: " @ %burstRandomLength );
       %obj.triggerSchedule = %obj.schedule(%burstRandomLength, setImageTrigger, $WeaponSlot, false);
    }
@@ -658,7 +659,7 @@ function reloadWeaponTask::precondition(%this, %obj)
 
 function reloadWeaponTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(reloadWeaponTask); //debug feature
+   //%obj.setShapeName(reloadWeaponTask); //debug feature
    if(!isEventPending(%obj.triggerSchedule))
    {
 	  //%reload = commandToServer( 'reloadWeapon' );
@@ -674,7 +675,7 @@ function reloadWeaponTask::behavior(%this, %obj)
 //=============================================================================
 function combatMoveTask::behavior(%this, %obj)
 {
-   %obj.setShapeName(combatMoveTask); //debug feature
+   //%obj.setShapeName(combatMoveTask); //debug feature
    %image = %obj.getMountedImage($WeaponSlot);
    %db = %obj.getDatablock();
    %optimalRange = %db.optimalRange[%image.item.description];

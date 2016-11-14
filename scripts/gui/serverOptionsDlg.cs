@@ -86,6 +86,6 @@ function setBotCount()
       %value = $pref::Server::MaxPlayers - 1;
 
    $pref::Server::AICount = %value;
-   SOP_AiCountText.setValue( "AI Count ("@%value@")" );
+   SOP_AiCountText.setValue( "Bot Count ("@%value@")" );
    SOP_AiCountSlider.setValue(%value);
 }

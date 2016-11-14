@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ServerOptionsDlg) {
    position = "0 0";
-   extent = "1920 1080";
+   extent = "1024 768";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -32,10 +32,10 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "376 340";
+      position = "192 240";
       extent = "640 480";
       minExtent = "8 2";
-      horizSizing = "right";
+      horizSizing = "center";
       vertSizing = "bottom";
       profile = "GuiWindowProfile";
       visible = "1";
