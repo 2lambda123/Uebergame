@@ -7,12 +7,12 @@ new SimGroup(MissionGroup) {
 
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
-      visibleDistance = "1000";
+      visibleDistance = "3000";
       visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.6 0.6 0.7 1";
-      fogDensity = "0.005";
-      fogDensityOffset = "80";
+      fogDensity = "0.004";
+      fogDensityOffset = "50";
       fogAtmosphereHeight = "50";
       canvasClearColor = "39 48 76 255";
       ambientLightBlendPhase = "1";
@@ -35,7 +35,7 @@ new SimGroup(MissionGroup) {
       rayleighScattering = "0.0035";
       sunScale = "0.862745 0.815686 0.698039 1";
       ambientScale = "0.306 0.306 0.306 1";
-      fogScale = "0.435 0.494 0.247 1";
+      fogScale = "0.259 0.306 0.133 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "150";
@@ -43,8 +43,8 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
-      staticRefreshFreq = "128";
-      dynamicRefreshFreq = "8";
+      staticRefreshFreq = "64";
+      dynamicRefreshFreq = "15";
       brightness = "1";
       flareType = "SunFlareExample2";
       flareScale = "1";
@@ -3333,8 +3333,8 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "143.607 208.638 1.30118";
-         rotation = "0.740164 0.0924446 -0.666041 171.241";
+         position = "143.657 208.45 1.30118";
+         rotation = "0.725596 -0.0423691 -0.686815 184.444";
          scale = "1 1 1.3625";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3894,7 +3894,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "196.088 199.662 0.152294";
-         rotation = "-0.90227 -0.303413 0.30635 95.4353";
+         rotation = "-0.90227 -0.303413 0.30635 95.4357";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3954,7 +3954,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "157.867 198.949 -0.627831";
-         rotation = "0.986165 -0.103945 0.129132 80.1444";
+         rotation = "0.986165 -0.103945 0.129132 80.1448";
          scale = "1.26476 1.28864 1.37413";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4100,7 +4100,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "200.522 239.583 0.651882";
-         rotation = "0.0333559 -0.0550458 0.997927 79.7521";
+         rotation = "0.0333559 -0.0550458 0.997927 79.7525";
          scale = "1 1 1.04733";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4753,6 +4753,38 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
       };
+   };
+   new NavMesh(Nav) {
+      fileName = "levels/Training_Grounds/TG_DirtPit/TG_DirtPit.nav";
+      waterMethod = "Ignore";
+      cellSize = "0.1";
+      cellHeight = "0.2";
+      tileSize = "2";
+      actorHeight = "1.9";
+      actorClimb = "0.3";
+      actorRadius = "0.4";
+      walkableSlope = "37";
+      smallCharacters = "0";
+      regularCharacters = "1";
+      largeCharacters = "0";
+      vehicles = "0";
+      innerCover = "0";
+      coverDist = "1";
+      peekDist = "0.7";
+      alwaysRender = "0";
+      borderSize = "1";
+      detailSampleDist = "0";
+      detailSampleError = "1";
+      maxEdgeLen = "4";
+      simplificationError = "1.3";
+      minRegionArea = "8";
+      mergeRegionArea = "20";
+      maxPolysPerTile = "128";
+      position = "182 214 0";
+      rotation = "1 0 0 0";
+      scale = "100 100 20";
+      canSave = "1";
+      canSaveDynamicFields = "1";
    };
 };
 //--- OBJECT WRITE END ---

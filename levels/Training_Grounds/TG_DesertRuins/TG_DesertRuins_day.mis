@@ -11,7 +11,7 @@ new SimGroup(MissionGroup) {
       visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.501961 0.678431 0.835294 1";
-      fogDensity = "0.002";
+      fogDensity = "0.0012";
       fogDensityOffset = "50";
       fogAtmosphereHeight = "50";
       canvasClearColor = "39 48 55 255";
@@ -33,9 +33,9 @@ new SimGroup(MissionGroup) {
       colorizeAmount = "0";
       colorize = "0.00392157 0.00392157 0.00392157 1";
       rayleighScattering = "0.0035";
-      sunScale = "0.886275 0.87451 0.596078 1";
-      ambientScale = "0.996078 0.996078 0.996078 1";
-      fogScale = "0.667 0.584 0.376 1";
+      sunScale = "0.996 0.992 0.882 1";
+      ambientScale = "0.729 0.698 0.639 1";
+      fogScale = "0.518 0.451 0.298 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "50";
@@ -43,8 +43,8 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
-      staticRefreshFreq = "80";
-      dynamicRefreshFreq = "8";
+      staticRefreshFreq = "64";
+      dynamicRefreshFreq = "15";
       brightness = "0.9";
       flareType = "SunFlareExample2";
       flareScale = "1";
@@ -89,6 +89,10 @@ new SimGroup(MissionGroup) {
       rotation = "1 0 0 0";
       canSave = "1";
       canSaveDynamicFields = "1";
+         efficiency = "30";
+         kills = "3";
+         killsImpact = "3";
+         score = "30.0";
    };
    new BasicClouds(wolks) {
       layerEnabled[0] = "1";
@@ -9783,8 +9787,8 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-6.5342 2.68343 0.708619";
-            rotation = "0.129136 -0.129136 -0.983182 90.972";
+            position = "-6.5342 2.68343 0.406792";
+            rotation = "0.0704189 -0.0704186 -0.995029 90.2857";
             scale = "1.22625 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -9844,7 +9848,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2019";
+            rotation = "0.0590455 0.0590455 0.996508 90.2033";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -9903,7 +9907,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-12.816 13.1103 -0.152514";
+            position = "-12.5599 13.1103 -0.152514";
             rotation = "0 0 1 180";
             scale = "1.20617 1 1";
             canSave = "1";
@@ -9983,7 +9987,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-19.8436 -8.94666 -0.0202452";
+            position = "-19.7745 -8.94666 -0.0202452";
             rotation = "1 0 0 0";
             scale = "1.35288 1 1";
             canSave = "1";
@@ -10003,7 +10007,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-10.7531 3.13305 0";
+            position = "-10.7531 2.70646 -0.11569";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -10024,7 +10028,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-10.5648 4.88764 -1.99791";
-            rotation = "-0.100589 0.100589 -0.98983 90.5857";
+            rotation = "-0.0651254 0.0651253 -0.99575 90.2441";
             scale = "1.45188 1 1.3848";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10069,7 +10073,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "67.7047 -70.3833 -0.509963";
+            position = "67.6378 -70.3833 -0.706161";
             rotation = "0 1 0 9.03176";
             scale = "1 1 1";
             canSave = "1";
@@ -10089,7 +10093,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "61.8371 -70.0654 -0.459406";
+            position = "61.4276 -70.0654 -0.459406";
             rotation = "0.943137 4.12258e-008 0.332405 180";
             scale = "1.24155 0.883038 1";
             canSave = "1";
@@ -10289,7 +10293,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "73.3577 -75.9159 -0.974209";
+            position = "73.3577 -75.7017 -0.974209";
             rotation = "-0.0825757 0.0822125 -0.993188 90.6441";
             scale = "1 1 1";
             canSave = "1";
@@ -10409,7 +10413,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "73.3323 -80.8831 0";
+            position = "73.3323 -81.07 0";
             rotation = "0 0 -1 90.2524";
             scale = "1.30684 1 1";
             canSave = "1";
@@ -10777,7 +10781,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -12 0";
-         rotation = "0.00366813 0.00366805 -0.999987 90.0015";
+         rotation = "0.00366813 0.00366805 -0.999987 90.0029";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -11670,13 +11674,13 @@ new SimGroup(MissionGroup) {
    new NavMesh(Nav) {
       fileName = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins.nav";
       waterMethod = "Ignore";
-      cellSize = "0.2";
+      cellSize = "0.1";
       cellHeight = "0.2";
       tileSize = "10";
       actorHeight = "1.4";
       actorClimb = "0.3";
-      actorRadius = "0.2";
-      walkableSlope = "40";
+      actorRadius = "0.4";
+      walkableSlope = "37";
       smallCharacters = "0";
       regularCharacters = "1";
       largeCharacters = "0";
@@ -11693,9 +11697,10 @@ new SimGroup(MissionGroup) {
       minRegionArea = "8";
       mergeRegionArea = "20";
       maxPolysPerTile = "128";
-      position = "22 -36 0";
+      position = "0 0 0";
       rotation = "1 0 0 0";
-      scale = "150 150 20";
+      scale = "1000 1000 75";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "1";
    };

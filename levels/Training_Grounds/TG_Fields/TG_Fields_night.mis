@@ -7,12 +7,12 @@ new SimGroup(MissionGroup) {
 
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
-      visibleDistance = "5000";
+      visibleDistance = "3000";
       visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.067 0.086 0.11 1";
       fogDensity = "0.015";
-      fogDensityOffset = "20";
+      fogDensityOffset = "0";
       fogAtmosphereHeight = "20";
       canvasClearColor = "12 16 22 255";
       ambientLightBlendPhase = "1";
@@ -3024,16 +3024,16 @@ new SimGroup(MissionGroup) {
       moonElevation = "30";
       castShadows = "1";
       staticRefreshFreq = "8";
-      dynamicRefreshFreq = "8";
+      dynamicRefreshFreq = "15";
       brightness = "1";
       flareType = "NullLightFlare";
       flareScale = "1";
       nightColor = "0.059 0.063 0.098 1";
-      nightFogColor = "0.027 0.039 0.051 1";
+      nightFogColor = "0.027 0.039 0.055 1";
       moonEnabled = "1";
       moonMat = "Moon_Glow_Mat";
       moonScale = "0.1";
-      moonLightColor = "0.09 0.122 0.165 1";
+      moonLightColor = "0.247 0.322 0.42 1";
       useNightCubemap = "1";
       nightCubemap = "NightCubemap";
       attenuationRatio = "0 1 1";
@@ -3871,7 +3871,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "231.05 50.1554 -3.31106";
+         position = "231.05 50.9989 -3.31106";
          rotation = "0.233135 0.0264146 0.972086 170.138";
          scale = "2 2 2";
          canSave = "1";
@@ -4211,7 +4211,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "102.576 128.006 0.600652";
+         position = "102.366 128.204 0.600652";
          rotation = "0.291284 -0.1193 -0.949169 46.6804";
          scale = "2 2 2";
          canSave = "1";
@@ -5915,6 +5915,39 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
       };
+   };
+   new NavMesh(Nav) {
+      fileName = "levels/Training_Grounds/TG_Fields/TG_Fields.nav";
+      waterMethod = "Ignore";
+      cellSize = "0.1";
+      cellHeight = "0.2";
+      tileSize = "5";
+      actorHeight = "2";
+      actorClimb = "0.3";
+      actorRadius = "0.4";
+      walkableSlope = "36";
+      smallCharacters = "0";
+      regularCharacters = "1";
+      largeCharacters = "0";
+      vehicles = "0";
+      innerCover = "0";
+      coverDist = "1";
+      peekDist = "0.7";
+      alwaysRender = "0";
+      borderSize = "1";
+      detailSampleDist = "0";
+      detailSampleError = "1";
+      maxEdgeLen = "12";
+      simplificationError = "1.3";
+      minRegionArea = "8";
+      mergeRegionArea = "20";
+      maxPolysPerTile = "128";
+      position = "160.5 158.5 0";
+      rotation = "1 0 0 0";
+      scale = "240 245 12";
+      hidden = "1";
+      canSave = "1";
+      canSaveDynamicFields = "1";
    };
 };
 //--- OBJECT WRITE END ---
