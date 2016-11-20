@@ -1,0 +1,130 @@
+<just:left><lmargin%:5><rmargin%:95><font:ArialBold:26>
+Uebergame Manual
+<font:ArialBold:16>
+Remember when games had manuals? This is one of those manuals. If you read it you can understand how it all works, can you imagine that?
+Ok many things are pretty self explanatory or at least should be and the rest you can look up here.
+
+<font:ArialBold:22>
+Main Menu:
+<font:ArialBold:22><color:43bd43>
+"Join"<font:ArialBold:16><color:c4c4c4> will let you connect to games running on the internet.
+
+<font:ArialBold:16>"Query Master"<font:Arial:16> refreshes the internet server list,
+alternatively you can open the Join menu again, it will also refresh the list.
+
+<font:ArialBold:16>"Cancel Query"<font:Arial:16> will cancel the refreshing of the servers list.
+
+<font:ArialBold:16>"Query LAN"<font:Arial:16> searches for games in a local network.
+
+<font:ArialBold:16>"Join IP"<font:Arial:16> will let you connect manually to a server by IP.
+Syntax is: 123.123.123.123:28000 , first IP address, then port number, which can vary as well if multiple servers are launched
+it will count up like 28000, 28001, 28003, 28004 etc, 28002 is already used for the master server.
+
+<font:ArialBold:14>Right click on a server will<font:Arial:16> open a popup menu with the following options:
+<font:ArialBold:14>"Refresh Server"<font:Arial:16> will refresh only the selected server in the list.
+<font:ArialBold:14>"Server Info"<font:Arial:16> will display detailed server informations.
+<font:ArialBold:14>"Mark Favorite"<font:Arial:16> will add the servers to your favorites list. (feature may be broken right now)
+
+<font:ArialBold:22><color:c2c400>
+"Host"<font:ArialBold:16><color:c4c4c4> will let you start your own game.
+<font:Arial:16>
+Chose a map, a mission type, adjust the server options and press "Load Level".
+Adjust the <font:ArialBold:16>"Bot Count"<font:Arial:16> slider if you want to play against Bots or have some in your match,
+if the "Bot Count" slider gets stuck at a certain number you have to go to server options and increase max players first.
+The <font:ArialBold:16>"Multiplayer"<font:Arial:16> checkbox has to be enabled, if you want your game to be listed publicly, 
+turn it off, if you want to play singleplayer offline.
+
+<font:ArialBold:16>"Server Options"<font:Arial:16>
+The server options menu offers lots of settings for hosting your own server, the options should be self explanatory.
+<font:ArialBold:16>"Super Admin"<font:Arial:16> password is only for dedicated servers, since on localy hosted servers, the host is always super admin by default.
+<font:ArialBold:16>"Admin password"<font:Arial:16> offers admin roles with lesser privileges.
+Admin passwords have to be entered in the Admin menu in game.
+
+<font:ArialBold:22><color:3bb7b3>
+"Editor"<font:ArialBold:16><color:c4c4c4> will do the same as "Host" but starts the level with editor open.
+<font:Arial:16>
+If the editor button is pressed from inside the game, it will toggle to the editor mode, but be careful when editing the level
+while other players are in it, some changes will crash the game for other players, like the terrain, material, datablock and shape editor,
+however adding/removing/moving/changing objects works perfectly fine while people are playing on the server.
+
+<font:ArialBold:22><color:468ed2>
+"Options"<font:ArialBold:16><color:c4c4c4> Opens the options menu for player settings, graphics, audio, controls and network settings.
+<font:ArialBold:16>
+"Player Tab"<font:Arial:16>
+Set your player name, choose a skin and change your field of view (FOV) here, but the default FOV of 90 gives the best gaming experience.
+The player skin preview window is a bit bugged sometimes and does not always respond, but better than having no preview at all.
+<font:ArialBold:16>
+"Graphics Tab"<font:Arial:16>
+You should adjust the graphic settings before you play, try auto adjust, it gives good defaults, then adjust it to your needs.
+
+If you want to play on highest settings, but it runs too slow, try setting shader quality to "high" and
+disable SSAO and/or HDR, those options give the greatest performance increase, without impacting the graphics much.
+
+For really slow computers like laptops you probably have to chose low settings, where setting lighting quality
+to lowest will give the greatest performance boost, but will also give the biggest graphic quality loss.
+
+For games with lots of players you should reduce the decal lifetime very low, otherwise the game will lag after time or even crash,
+for example if you play with 63 bot players, otherwise having long decal lifetime is fine and
+will give better immersion as the battlefield gets messed up over time.
+<font:ArialBold:16>
+"Audio Tab"<font:Arial:16>
+Will let you set your audio device and will let you adjust the volume, as well as volume for the different channels.
+<font:ArialBold:16>
+"Controls Tab"<font:Arial:16>
+Controls shows you the keybindings and lets you rebind them to keys of your choice.
+You can also change mouse sensitivity and mouse wheel binding.
+<font:ArialBold:14>"Restore Defaults"<font:Arial:16> will reset your config and restore the default keybinds.
+<font:ArialBold:16>
+"Network Tab"<font:Arial:16>
+<font:ArialBold:14>"Display on MasterServer"<font:Arial:16> checkbox lists your server on the master server list, which you can see in the "Join" menu.
+Deactivate this only if you want to host private games, that can be accessed by "connect through IP address" directly, but are not listed
+in the "Join" menu. Alternatively you can also just set a password for the server in "server options" in the "Join" menu.
+<font:ArialBold:14>"Master Server Address"<font:Arial:16> This should not be changed, otherwise you will not find any games in the "Join" menu list.
+If you know how to operate your own master server, you can change it to that for experimental reasons.
+<font:ArialBold:14>"Local Server Port"<font:Arial:16> The port of your server when you host one, if you change that take that into account for the
+"Join IP" instructions for joining a server directly through the IP address and tell people the correct port.
+<font:ArialBold:14>"Network Settings Sliders:"<font:Arial:16> These are advanced network settings when hosting your own server, only change those
+if you know what you are doing or for experimentation purposes.
+<font:ArialBold:14>"PacketSize"<font:Arial:16> The size of the packets in bytes. Default is: 450.
+<font:ArialBold:14>"PacketRateToServer"<font:Arial:16> The frequency of the packets per second send to server from client. Default is: 32.
+<font:ArialBold:14>"PacketRateToClient"<font:Arial:16> The frequency of the packets per second send to client from server. Default is: 32.
+<font:ArialBold:14>"LagThreshold"<font:Arial:16> Buffer for lag in milliseconds. Default is: 250.
+
+<font:Arial:16>Some Guidelines: Take into account that when hosting a server it is the upload bandwidth that counts,
+which is usually much lower for end user consumers, which also has to be multiplied by the number of players connected, since the data has to
+be send to each connected client. The default settings are highest since the official dedicated servers have no bandwidth problems.
+The math goes as follows 32x450 packet size = 14 400 bytes or 14.4 kilobytes per client, so a person with 100kB/s upload can host about 7 player games
+smoothly, above that it still may work, but occasional lags will happen or the ping goes up. According to my experience up to 10 players still works with
+100kB/s bandwith, sometimes even up to 16, but it does not run very smooth and lags occur, so for those cases you can adjust the network settings.
+Go to "User/Documents/My Games/Uebergame/config.cs" file if you want to adjust the settings exactly or see what they are set to.
+<font:Arial:14>
+14.4K Modem (Minimum):              PacketSize = 100;   PacketRateToServer = 8;    PacketRateToClient = 10;
+28.8K Modem:                               PacketSize = 200;   PacketRateToServer = 16;   PacketRateToClient = 12;
+56.6K Modem:                               PacketSize = 240;   PacketRateToServer = 20;   PacketRateToClient = 16;
+DSL/ ADSL Connection:                PacketSize = 350;   PacketRateToServer = 24;   PacketRateToClient = 20;
+Cable Connection:                         PacketSize = 400;   PacketRateToServer = 24;   PacketRateToClient = 24;
+T1/ LAN Connection (Maximum):   PacketSize = 450;   PacketRateToServer = 32;   PacketRateToClient = 32;
+
+<font:ArialBold:22><color:9b3bbf>
+"Extras"<font:ArialBold:16><color:c4c4c4> offers some players:
+<font:Arial:16>
+<font:ArialBold:16>"Recordings"<font:Arial:16> will open a player which lists the recorded demos, the "alt F8" -hotkey by default, toggles demo recording on/off,
+recorded demos are placed in "User/Documents/My Games/Uebergame/recordings/*", but can only be played from inside the game.
+<font:ArialBold:14>Warning<font:Arial:16> playing a demo will disconnect you, if you are in a game already.
+
+<font:ArialBold:16>"MusicPlayer"<font:Arial:16> opens a simple audio player, which can play music from ingame.
+This is an experimental feature for now, if you want to use it, you can place music files into the games settings folder:
+"User/Documents/My Games/Uebergame/music/*" the player will then grab those files and offer them in the list. 
+As this is an open source game, .mp3 is not supported, only .ogg vorbis files.
+
+<font:ArialBold:16>"MoviePlayer"<font:Arial:16> opens a simple movie player, which plays recorded movies using the build in recording function,
+the movie recording can be toggled on/off with "alt F7" hotkey by default, the keybind can also be changed in options/controls menu,
+the recorded movies will be placed in "User/Documents/My Games/Uebergame/movies/*".
+<font:ArialBold:14>Warning<font:Arial:16> this is a very simple video recording with bad optimization and sound may not work as well.
+
+<font:ArialBold:22><color:c6833c>
+"Help"<font:ArialBold:16><color:c4c4c4> opens this dialog.
+<font:ArialBold:22><color:bf484b>
+"Disconnect"<font:ArialBold:16><color:c4c4c4> This button appears only when you are in a game, it will disconnect you and bring you back to the main menu.
+<font:ArialBold:22><color:cd0005>
+"Exit"<font:ArialBold:16><color:c4c4c4> The power button on the top right exits the game immediately without prompting, so be careful.

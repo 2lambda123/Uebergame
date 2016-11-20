@@ -1,0 +1,68 @@
+<lmargin%:5><rmargin%:95><font:ArialBold:24>
+Default Controls
+<tab:105,200>
+<font:Arial:16>These are the default controls, including some more detailed description.
+
+<font:ArialBold:20>Movement<font:Arial:16>
+<font:ArialBold:16>W<font:Arial:16>		Move Forward
+<font:ArialBold:16>S<font:Arial:16>		Move Backward
+<font:ArialBold:16>A<font:Arial:16>		Strafe Left
+<font:ArialBold:16>D<font:Arial:16>		Strafe Right
+<font:ArialBold:16>Space<font:Arial:16>		Jump
+<font:ArialBold:16>Ctrl<font:Arial:16>		Crouch, makes you smaller, but also enables sneaking mode where footstep noises are removed.
+<font:ArialBold:16>Left Shift<font:Arial:16>		Sprint, if have to go faster.
+
+<font:ArialBold:20>Weapons<font:Arial:16>
+<font:ArialBold:16>Mouse Button<font:Arial:16>		Fire
+<font:ArialBold:16>Mouse Button 2<font:Arial:16>		Aim, this toggles iron sights or sniper scope, depending on weapon.
+<font:ArialBold:16>1-8<font:Arial:16>		Weapon Slots, 1 switches to first weapon slot, 2 to second weapon slot etc.
+<font:ArialBold:16>R<font:Arial:16>		Reload Weapon
+<font:ArialBold:16>G<font:Arial:16>		Throw Grenade, throws your grenade, if it is the shape charge, press G again to detonate it after it armed itself.
+<font:ArialBold:16>Alt G<font:Arial:16>		Throw Grenade as ammo for pickup by others.
+<font:ArialBold:16>B<font:Arial:16>		Use Special, use your special ability.
+<font:ArialBold:16>Alt B<font:Arial:16>		Throw Special as pickup for others, throws away your special ability so others can pick it up.
+<font:ArialBold:16>F<font:Arial:16>		Toggle Zoom level, increases the zoom level, good for sniping, if the highest zoom level is reached it will reset back to normal zoom level.
+<font:ArialBold:16>I<font:Arial:16>		Open Armory Hud, you can choose your weapons, grenades and special ability here, depending on server rules, you can also save loadouts for later use.
+
+<font:ArialBold:20>Messages<font:Arial:16>
+<font:ArialBold:16>Tab<font:Arial:16>		Show scoreboard, shows the scores of all players.
+<font:ArialBold:16>T<font:Arial:16>		Chat All, chat to everyone.
+<font:ArialBold:16>Y<font:Arial:16>		Chat Team, chat only to team members.
+<font:ArialBold:16>U<font:Arial:16>		Chat FireTeam, message to your fire team members only, fire teams can be created in the Admin Menu.
+<font:ArialBold:16>C<font:Arial:16>		Quick Chat Hud, this offers pre-defined chat messages for quick use, it can also be customized, by copying the file scripts/gui/quickChat.cs into
+your user home directory "User/Documents/My Games/Uebergame/quickChat.cs" and editing it, then the game will use your modded file for quickChat instead.
+<font:ArialBold:16>O<font:Arial:16>		Open Admin Menu, this is admin features as well as for voting and has a player list where you can private message other players or manage fire teams.
+<font:ArialBold:16>P<font:Arial:16>		Resize Message HUD, this changes the size of the message HUD in the upper left corner, useful if you want a better overview of the last messages.
+<font:ArialBold:16>Pageup<font:Arial:16>		Scroll up messages, if a chat message is already gone, you can scroll back up with this key and find it again.
+<font:ArialBold:16>Pagedown<font:Arial:16>		Scroll down messages, scrolls back down to the most recent messages again.
+
+<font:ArialBold:20>Other functions<font:Arial:16>
+<font:ArialBold:16>Alt K<font:Arial:16>		Suicide, kill yourself, good if you got stuck or want to update your equipment quicker, can also be done in the armory Hud.
+<font:ArialBold:16>N<font:Arial:16>		Net graph, shows ping etc.
+<font:ArialBold:16>Alt Enter<font:Arial:16>		Fullscreen, can also be set in options menu.
+<font:ArialBold:16>Alt H<font:Arial:16>		Hides the HUD (also hides exit menu, so put back on, if you want to exit).
+<font:ArialBold:16>V<font:Arial:16>		Vanity, enables free look in third person.
+<font:ArialBold:16>insert<font:Arial:16>		Vote Yes, votes yes when a vote has been initiated by someone.
+<font:ArialBold:16>delete<font:Arial:16>		Vote No, votes no when a vote has been initiated by someone, but does not matter that much since, if you don't vote it counts as no as well.
+
+<font:ArialBold:16>F1<font:Arial:16>		Show metrics (Frames per second).
+<font:ArialBold:16>F2<font:Arial:16>		Show ueber metrics (Frames per second, polycount and much more).
+<font:ArialBold:16>F3<font:Arial:16>		Third Person, switches to third person view.
+
+<font:ArialBold:16>F5<font:Arial:16>		Screenshot, makes a screenshot and save it to "User/Documents/My Games/Uebergame/screenshots/*".
+<font:ArialBold:16>F6<font:Arial:16>		Screenshot without HUD, quickly hides the HUD, makes a screenshot without HUD and brings the HUD back.
+<font:ArialBold:16>Alt F7<font:Arial:16>		toggle Movie recording, records a movie using the amazing build in video recording feature (do not use, it sucks).
+<font:ArialBold:16>Alt F8<font:Arial:16>		toggle Demo recording, records a demo of the game, so you can watch your game later in the recordings player in the Extras menu.
+
+<font:ArialBold:16>F9<font:Arial:16>		Console, opens the console, developer feature for debugging and entering manual commands.
+<font:ArialBold:16>F11<font:Arial:16>		World Editor, opens the editor to edit the current level, it works when people are playing in it, but be careful, some changes make the game
+crash for other players, the terrain, material, datablock and shape editor should not be used while other players are connected, but with the object editor
+or the sketch tool for example you can have lots of fun building levels while people are playing in the level.
+
+<font:ArialBold:16>ESC<font:Arial:16>		Opens the main menu, press disconnect, if you want to quit the current game or press the power button to instantly exit the whole program.
+
+
+
+
+
+			

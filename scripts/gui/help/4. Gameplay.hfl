@@ -1,0 +1,45 @@
+<lmargin%:5><rmargin%:95><font:ArialBold:24>
+Gameplay
+
+<font:ArialBold:16>Uebergame currently has 4 different game types:
+
+<font:ArialBold:20>
+Deathmatch:
+<font:Arial:16>
+Deathmatch is an all vs all gamemode. After you started or joined a game you will be spawned into the level on a random location.
+Make sure to checkout your loadout (armory dialog that opens with "i" button), you can chose different weapons, grenades and special abilities, depending on server settings.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Your goal is to kill the other players, each kill gives you 10 score, one death gives -5 and after the match the player with the highest score wins.
+The scoring system rewards you for staying alive, by calculating your efficiency, so you can more quickly raise up in scores than others, if you do not die that often.
+The game will end after the time limit is hit ( 15 minutes by default), there is currently no score limit for deathmatch implemented.
+
+<font:ArialBold:20>
+Paintball Deathmatch:
+<font:Arial:16>
+Same as regular Deathmatch but with paintball players and paintball markers.
+The loadout is not that complex as in the default deathmatch here, but you can chose a marker with a different color, you can chose between, blue, red, green and yellow marker.
+The gameplay is much faster, since one hit "kills", this is also known as insta gib gamemode.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Same as in regular Deathmatch.
+
+<font:ArialBold:20>
+Team Deathmatch:
+<font:Arial:16>
+Team Deathmatch is a blue team vs red team gamemode. Each team has it's own starting area where player get spawned. Usually the map is divided into two sides, where
+each team has their starting location. But there may be exceptions.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Your goal is to kill the other team, each kill gives you 10 score, one death -5 and after the match the team with the most kills wins.
+The difference here is that the game ends when one team has hit the kill limit, which is calculated by the number of players in the game multiplied by 5, so a 4 player game
+has a kill limit of 20 on which the game ends, or if the timelimit is hit the game will also end. The individual score is just to see who is the best player,
+but does not count into which team wins.
+
+<font:ArialBold:20>
+Paintball Team Deathmatch:
+<font:Arial:16>
+Same as regular Team Deathmatch.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Same as in regular Team Deathmatch.

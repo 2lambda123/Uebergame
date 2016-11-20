@@ -39,7 +39,7 @@ GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 GlobalActionMap.bind( keyboard, "alt F7", toggleMovieRecording );
 //GlobalActionMap.bind( keyboard, "F7", startRecordingDemo );
 //GlobalActionMap.bind( keyboard, "F8", stopRecordingDemo );
-GlobalActionMap.bind( keyboard, "alt F8", toggleDemoRecording );
+GlobalActionMap.bind( keyboard, "alt f8", toggleDemoRecording );
 
 //------------------------------------------------------------------------------
 // Utility remap functions:
@@ -1174,8 +1174,8 @@ moveMap.bind( mouse, button0, mouseFire );
 moveMap.bind( keyboard, "r", reloadWeapon );
 //moveMap.bindCmd(keyboard, "e", "commandToServer('PickupFacing');", "");
 moveMap.bind( mouse, zaxis, cycleWeaponAxis );
-//moveMap.bind( keyboard, "+", nextWeapon );
-//moveMap.bind( keyboard, "minus", prevWeapon );
+moveMap.bind( keyboard, "+", nextWeapon );
+moveMap.bind( keyboard, "minus", prevWeapon );
 moveMap.bind( keyboard, "1", useFirstWeaponSlot );
 //moveMap.bindCmd(keyboard, "1", "commandToServer('selectWeaponSlot', 0);", ""); //alternative method
 moveMap.bind( keyboard, "2", useSecondWeaponSlot );
@@ -1185,7 +1185,7 @@ moveMap.bind( keyboard, "5", useFifthWeaponSlot );
 moveMap.bind( keyboard, "6", useSixthWeaponSlot );
 moveMap.bind( keyboard, "7", useSeventhWeaponSlot );
 moveMap.bind( keyboard, "8", useEighthWeaponSlot );
-moveMap.bind( keyboard, "alt w", throwWeapon );
+moveMap.bind( keyboard, "alt r", throwWeapon );
 //moveMap.bind( keyboard, "alt a", tossAmmo ); //needs update to clips
 
 moveMap.bind( keyboard, "b", triggerSpecial );
@@ -1216,7 +1216,7 @@ moveMap.bind( keyboard, "ctrl k", doSuicide );
 //-----------------------------------------------------------------------------
 // Huds
 moveMap.bind( keyboard, "i", toggleArmoryDlg );
-//moveMap.bind( keyboard, "m", showPlayerList );
+moveMap.bind( keyboard, "o", showPlayerList );
 moveMap.bind( keyboard, "tab", showScoreBoard );
 moveMap.bind( keyboard, "t", toggleMessageHud );
 moveMap.bind( keyboard, "y", teamMessageHud );
@@ -1225,15 +1225,15 @@ moveMap.bind( keyboard, "pageUp", pageMessageHudUp );
 moveMap.bind( keyboard, "pageDown", pageMessageHudDown );
 moveMap.bind( keyboard, "p", resizeMessageHud );
 moveMap.bind( keyboard, "c", toggleQuickChatHud );
-//moveMap.bind( keyboard, "F8", bringUpOptions );
+//moveMap.bind( keyboard, "alt o", bringUpOptions );
 moveMap.bind( keyboard, "insert", voteYes );
 moveMap.bind( keyboard, "delete", voteNo );
-//moveMap.bind( keyboard, "=", cycleLoadoutNext );
-//moveMap.bind( keyboard, "-", cycleLoadoutPrev );
+moveMap.bind( keyboard, ".", cycleLoadoutNext );
+moveMap.bind( keyboard, ",", cycleLoadoutPrev );
 moveMap.bind( keyboard, "n", toggleNetGraph );
 //moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
 //moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???
-moveMap.bind( keyboard, "F6", toggleMusicPlayer );
+//moveMap.bind( keyboard, "F4", toggleMusicPlayer );
 moveMap.bind(keyboard, "alt h", hideHUDs);
 
 moveMap.bind( gamepad, thumbrx, "D", "-0.23 0.23", gamepadYaw );

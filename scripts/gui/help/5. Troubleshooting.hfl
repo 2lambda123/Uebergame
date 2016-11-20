@@ -1,0 +1,49 @@
+<lmargin%:5><rmargin%:95><font:ArialBold:24>
+Troubleshooting
+
+<font:ArialBold:18>Bad Performance:
+<font:Arial:16>Try reducing the graphics settings until it's acceptable.
+Some tips:
+Try reducing the shader quality level to "High" only if you had it on "Ueber" before, this will disable parallax, wich gives a good performance boost, without much negative visual impact.
+Disabling SSAO and/or HDR also give good performance boost, with moderate negative visual impact.
+Greatest performance increase is achieved in general by reducing the games resolution, but this may not be desired, as people are used to full HD now.
+Reducing lighting quality gives the greatest performance increase, especially on lowest settings, but it will look very ugly. So this should be your last resort, for example if you are running on a slow laptop.
+
+<font:ArialBold:18>Video Issues:
+<font:Arial:16>Make sure you have the latest stable drivers for your video card.
+You can get video drivers from your card manufacturers website.
+
+<font:ArialBold:18>Sound does not work:
+<font:Arial:16>Go into options menu to the "Audio" tab and chose your audio provider and audio device. If nothing of those is available or working, you probably have to check 
+your systems audio settings and eventually install needed drivers.
+
+<font:ArialBold:18>My game is not on the server list:
+<font:Arial:16>Make sure the "multiplayer" checkbox was checked, when you started the game, as well as the "display on master server" under options.
+If you still do not get listed, you likely have your ports blocked, Uebergame needs the ports 28000 and 28002 to be open on your firewall/router.
+
+<font:ArialBold:18>The game lags:
+<font:Arial:16>People usually refer to two different issues as "lag" usually lag comes from slow internet connection speed, but people also refer to lag as having bad framerate.
+In case of bad framerate look under the "Bad Performance" point above, you can check your framerate by pressing F1, if your framerate is around 30 continue with the next point.
+So when the game lags and your framerate is good, then the issue is most likely the connection speed. It does not have to be your fault, you also get bad connection speed, 
+when the server is far away from you, which increases latency. The official Duion.com Servers are located in Germany, so if you live very very far away from that location, like in Australia
+you will not have a very good gaming experience, but overall the official servers are very fast and relatively tolerant, if you live further away.
+If you are playing on private servers, it is probably the server hosts fault, since private servers are usually slower, additionally the game lags, if the host is tabbed out of the game,
+since less CPU is assigned to the game and this will slow down the game for all others, so if you notice your ping being around 300 and you are on a private server, chances are high,
+that the host is AFK and tabbed out of the game to do something else.
+And if everything did not help, maybe your home internet connection speed is not fast enough, but most people have fast DSL now, so this should not be a problem anymore.
+
+<font:ArialBold:18>Game crashes:
+<font:Arial:16>When the game crashes and you don't know why, have a look into the console.log file, it is created in your game folder, maybe the contents will give you a hint what went wrong.
+If you want to do a bug report, create a copy of it, since it gets overwritten the next time you start the game and contact the developers for a bug report, or post an issue on the Uebergame github-repository.
+You can also post into "Bug report" or "Support" forum in the Steam discussions for Uebergame.
+
+<font:ArialBold:18>Game does not launch from Steam on Linux:
+<font:Arial:16>Steam is currently not supported on Linux, but the issue is only the Steam overlay, so when you disable it the game should work.
+
+<font:ArialBold:18>Game does start on Linux:
+<font:Arial:16> The game is compiled and tested on the latest stable Ubuntu, as this is what steam supports. It also has been tested and found to run on OpenSUSE, for example the Duion.com official servers
+run on an OpenSUSE server.
+If you have an exotic Linux distribution, there may be problems, but I cannot offer support for everything, so you have to lookup yourself what is the issue, which is in most cases missing libraries or drivers.
+
+<font:ArialBold:18>I want to request a feature:
+<font:Arial:16>You can post feature requests in the "Feature requests" Steam discussions for Uebergame.
