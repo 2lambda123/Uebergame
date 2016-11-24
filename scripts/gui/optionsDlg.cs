@@ -322,7 +322,7 @@ function OptionsDlg::onSleep(%this)
    spectatorMap.save($HomePath @ "/bindings.cs", true);
    vehicleMap.save($HomePath @ "/bindings.cs", true);
    
-   //export settings directly in case the game is not existed regularly and settings are lost
+   //export settings directly in case the game is not exited regularly and settings are lost
    export("$pref::*", $HomePath @ "/config.cs", false);
 }
 
@@ -361,6 +361,8 @@ function _makePrettyResString( %resString )
    {
       case "1.33":
          %aspect = "4:3";
+      case "1.6":
+         %aspect = "16:10";
       case "1.78":
          %aspect = "16:9";
       default:

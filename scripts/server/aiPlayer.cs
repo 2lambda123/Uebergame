@@ -437,7 +437,7 @@ function AIPlayer::getVectorTo(%this, %target)
 // Waypoints
 //-----------------------------------------------------------------------------
 
-MoveMap.bindCmd(keyboard, "x", "commandToServer(\'setWanderPosition\');", "");
+//MoveMap.bindCmd(keyboard, "x", "commandToServer(\'setWanderPosition\');", "");
 
 $BotWander::PosCount = 0;
 function serverCmdsetWanderPosition(%client)

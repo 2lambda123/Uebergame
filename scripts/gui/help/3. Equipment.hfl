@@ -28,6 +28,8 @@ you need at least 50 stamina to use it and it drains 40 stamina per use.
 Medical: Medic class, indicated by a medpack on your back. Spawns a medpack on use, which refills 30 health (you can collect it yourself as well),
 you need at least 70 stamina to use it and it drains 60 stamina per use.
 
+There are only two special abilities yet, since it is work in progress, so they are disabled  by default, you can enable them in the server options, when you host a game yourself.
+
 <font:ArialBold:16>Available Weapons for the Paintball Player:<font:Arial:16>
 Blue Marker: A paintball marker with a blue skin, which shoots blue paintballs.
 Red Marker: A paintball marker with a red skin, which shoots red paintballs.

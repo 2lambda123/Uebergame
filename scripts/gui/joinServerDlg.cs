@@ -104,7 +104,7 @@ function JoinServerDlg::query(%this)
       $Client::MissionTypeQuery,    // missionType
       0,                            // minPlayers
       128,                          // maxPlayers
-      32,                           // maxBots
+      63,                           // maxBots
       $pref::Net::RegionMask,       // regionMask
       0,                            // maxPing
       0,                          // minCPU
@@ -125,7 +125,7 @@ function JoinServerDlg::queryLan(%this)
       $Client::MissionTypeQuery,    // missionType
       0,                            // minPlayers
       128,                          // maxPlayers
-      32,                           // maxBots
+      63,                           // maxBots
       0,                            // regionMask
       0,                            // maxPing
       0,                          // minCPU
@@ -193,7 +193,7 @@ function JoinServerDlg::update(%this)
          ($ServerInfo::Password? "Yes": "No") TAB 
          $ServerInfo::Name TAB
          $ServerInfo::Ping TAB
-         $ServerInfo::PlayerCount @ "/" @ $ServerInfo::MaxPlayers TAB
+         ($ServerInfo::PlayerCount + $ServerInfo::BotCount) @ "/" @ $ServerInfo::MaxPlayers TAB
          $ServerInfo::Version TAB
          //$ServerInfo::GameType TAB
 		 $ServerInfo::MissionName TAB

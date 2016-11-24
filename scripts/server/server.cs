@@ -149,7 +149,11 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    %this.destroyServer();
 
    $missionSequence = 0;
-   $Server::PlayerCount = 0;
+   
+   //commenting these out is just a workaround, the issue is probably heap corruption in C++ source code
+   //$Server::PlayerCount = 0; //this caused the player count on the server list being wrong
+   //$Server::BotCount = 0; //this caused the bot count on the server list being wrong
+   
    $Server::ServerType = %serverType;
    // Server::GameType is sent to the master server.
 

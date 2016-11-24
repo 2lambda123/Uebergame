@@ -56,6 +56,8 @@ function GameConnection::onConnect( %client, %name, %skin )
 
    // Send mission information to the client
    sendLoadInfoToClient( %client );
+   
+   %client.isConnected = true; //playerCount fix
 
    // Simulated client lag for testing...
    // %client.setSimulatedNetParams(0.1, 30);
@@ -318,6 +320,7 @@ function GameConnection::onDrop(%client, %reason)
    removeTaggedString(%client.skin);
 
    echo("CDROP: " @ %client @ " " @ %client.getAddress());
+   if(%client.isConnected) //playerCount fix
    $Server::PlayerCount--;
 
    // Reset the server if everyone has left the game

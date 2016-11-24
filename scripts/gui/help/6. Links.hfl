@@ -1,0 +1,34 @@
+<lmargin%:5><rmargin%:95><font:ArialBold:24>
+Links
+<font:ArialBold:18>
+Official Homepage:
+<font:Arial:16>
+<a:www.uebergame.com>Uebergame.com</a>
+
+<font:ArialBold:16>Uebergame on Patreon:
+<font:Arial:16><a:www.patreon.com/duion>www.patreon.com/duion</a>
+You can donate here, if you want to support Uebergame.
+
+<font:ArialBold:16>Uebergame on Liberapay:
+<font:Arial:16><a:www.liberapay.com/Duion>www.liberapay.com/Duion</a>
+Similar to patreon, but for free software hipsters.
+
+<font:ArialBold:16>Uebergame on Mod DB:
+<font:Arial:16><a:www.moddb.com/games/uebergame>www.moddb.com/games/uebergame</a>
+You will occasionally find latest development screenshots there.
+
+<font:ArialBold:16>Uebergame Github repository:
+<font:Arial:16> <a:www.github.com/Duion/Uebergame>www.github.com/Duion/Uebergame</a>
+The official source repository of Uebergame on Github in case you want to contribute and/or submit bugfixes.
+
+<font:ArialBold:16>Uebergame-Engine Github repository:
+<font:Arial:16> <a:www.github.com/Duion/Torque3D/tree/ueberengine-master>www.github.com/Duion/Torque3D/tree/ueberengine-master</a>
+The official source repository of the Uebergame-Engine on Github, you need this, if you want to compile the game yourself.
+
+<font:ArialBold:16>Tutorial how to compile Uebergame on Linux:
+<font:Arial:16> <a:www.wiki.torque3d.org/coder:compiling-in-linux>www.wiki.torque3d.org/coder:compiling-in-linux</a>
+Follow this tutorial if you want to compile Uebergame yourself on Linux. Compile the "ueberengine-master" branch for the latest stable release.
+
+<font:ArialBold:16>Torque3D documentation:
+<font:Arial:16> <a:www.roostertailgames.com/TorqueRef/index.html>www.roostertailgames.com/TorqueRef/index.html</a>
+This documentation is for Torque3D, but for large parts it also works for Uebergame, you can learn about the editor there for example.

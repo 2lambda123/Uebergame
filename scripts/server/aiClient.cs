@@ -37,6 +37,8 @@
 //%client.getLocation();
 //%client.moveForward(); // Test function
 
+//unused
+/*
 $Bot::ThinkTime = 500;         // The time frequency at which the AI scans for player targets
 $Bot::DetectionDistance = 50;   // The distance from the AI that it will search for other players
 $Bot::LoseTargetDistance = 75; // The distance from the AI that it will break off its chase
@@ -46,6 +48,7 @@ $Bot::FireDelay = 1000;         // Default Time AI can start shooting again afte
 $Bot::GrenadeDelay = 3000;      // Default Time AI can start throwing a grenade again after its tossed one
 $Bot::MeleeDelay = 2000;        // Default Time AI can start melee again after its done its last
 $Bot::FireTimeout = 500;        // Default time after pressing fire that the AI stops firing
+*/
 $Bot::MoveSpeed = 1;
 
 //-----------------------------------------------------------------------------
@@ -170,12 +173,16 @@ addBotName("B Team");
 addBotName("The Machinist");
 addBotName("Bort");
 addBotName("Robort");
+addBotName("Rebot");
 addBotName("Aborter");
 addBotName("Robo Sapien");
 addBotName("U-Bot");
 addBotName("Saibot");
 addBotName("Run Bot");
 addBotName("Run Botrun");
+addBotName("Ben Der");
+addBotName("Blender");
+
 
 function getRandomBotName()
 {
@@ -231,7 +238,7 @@ function AIConnection::onConnect(%client, %name)
    //echo("\c5AIClient::onConnect(" SPC %client SPC %name SPC ")");
    %client.isAdmin = false;
    %client.isSuperAdmin = false;
-
+   %client.isConnected = true; //playerCount fix
    // Get the client's unique id:
    %client.guid = $Server::BotCount;//%client.getAddress();
    addToServerGuidList( %client.guid );
@@ -310,7 +317,7 @@ function AIConnection::onDrop(%client, %reason)
    removeTaggedString( %client.skin );
 
    echo("CDROP: " @ %client @ " " @ %client.getAddress());
-
+   if(%client.isConnected) //playerCount fix
    $Server::BotCount--; // Master server gets this
 }
 

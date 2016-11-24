@@ -9,5 +9,12 @@ function MainMenuGui::onWake(%this)
 	Version_Number.setText(%header);
 }
 
-function MainMenuGui::DuioncomLink() {gotoWebPage("http://www.duion.com");}
-function MainMenuGui::Torque3DorgLink() {gotoWebPage("http://www.torque3d.org");}
+function MainMenuGui::DuioncomLink()
+{
+   gotoWebPage("http://www.duion.com");
+}
+
+function MainMenuGui::Torque3DorgLink()
+{
+   gotoWebPage("http://www.torque3d.org");
+}

@@ -54,7 +54,7 @@ datablock StaticShapeData(ShapeChargeDeployed : StaticShapeDamageScale)
    destroyedLevel = 49;
    directDamage = 0;
    radiusDamage = 250.0;
-   damageRadius = 8;
+   damageRadius = 6;
    damageType = $DamageType::ShapeCharge;
 
    renderWhenDestroyed = false;

@@ -16,7 +16,7 @@ Default Controls
 <font:ArialBold:16>Mouse Button<font:Arial:16>		Fire
 <font:ArialBold:16>Mouse Button 2<font:Arial:16>		Aim, this toggles iron sights or sniper scope, depending on weapon.
 <font:ArialBold:16>1-8<font:Arial:16>		Weapon Slots, 1 switches to first weapon slot, 2 to second weapon slot etc.
-<font:ArialBold:16>R<font:Arial:16>		Reload Weapon
+<font:ArialBold:16>R<font:Arial:16>		Reload Weapon, remember this game uses hard clip system, so any ammo left in the current clip is thrown away with the clip, like in real life.
 <font:ArialBold:16>G<font:Arial:16>		Throw Grenade, throws your grenade, if it is the shape charge, press G again to detonate it after it armed itself.
 <font:ArialBold:16>Alt G<font:Arial:16>		Throw Grenade as ammo for pickup by others.
 <font:ArialBold:16>B<font:Arial:16>		Use Special, use your special ability.
@@ -55,9 +55,9 @@ your user home directory "User/Documents/My Games/Uebergame/quickChat.cs" and ed
 <font:ArialBold:16>Alt F8<font:Arial:16>		toggle Demo recording, records a demo of the game, so you can watch your game later in the recordings player in the Extras menu.
 
 <font:ArialBold:16>F9<font:Arial:16>		Console, opens the console, developer feature for debugging and entering manual commands.
-<font:ArialBold:16>F11<font:Arial:16>		World Editor, opens the editor to edit the current level, it works when people are playing in it, but be careful, some changes make the game
-crash for other players, the terrain, material, datablock and shape editor should not be used while other players are connected, but with the object editor
-or the sketch tool for example you can have lots of fun building levels while people are playing in the level.
+<font:ArialBold:16>F11<font:Arial:16>		World Editor, only works when you are the host of the game, it opens the editor to edit the current level, it works when people are playing in it,
+but be careful, some changes make the game crash for other players, the terrain, material, datablock and shape editor should not be used while other players are connected, but with the
+object editor or the sketch tool for example you can have lots of fun building levels while people are playing in the level.
 
 <font:ArialBold:16>ESC<font:Arial:16>		Opens the main menu, press disconnect, if you want to quit the current game or press the power button to instantly exit the whole program.
 
