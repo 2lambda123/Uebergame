@@ -267,9 +267,9 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "154 3";
-            extent = "50 20";
-            minExtent = "50 20";
+            position = "128 3";
+            extent = "64 20";
+            minExtent = "64 20";
             horizSizing = "relative";
             vertSizing = "relative";
             profile = "GuiButtonProfile";

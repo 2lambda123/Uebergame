@@ -25,8 +25,7 @@ it will count up like 28000, 28001, 28003, 28004 etc, 28002 is already used for 
 <font:ArialBold:14>"Server Info"<font:Arial:16> will display detailed server informations.
 <font:ArialBold:14>"Mark Favorite"<font:Arial:16> will add the servers to your favorites list. (feature may be broken right now)
 
-<font:ArialBold:22><color:c2c400>
-"Host"<font:ArialBold:16><color:c4c4c4> will let you start your own game.
+<font:ArialBold:22><color:c2c400>"Host"<font:ArialBold:16><color:c4c4c4> will let you start your own game.
 <font:Arial:16>
 Chose a map, a mission type, adjust the server options and press "Load Level".
 Adjust the <font:ArialBold:16>"Bot Count"<font:Arial:16> slider if you want to play against Bots or have some in your match,
@@ -36,12 +35,17 @@ turn it off, if you want to play singleplayer offline.
 
 <font:ArialBold:16>"Server Options"<font:Arial:16>
 The server options menu offers lots of settings for hosting your own server, the options should be self explanatory.
-<font:ArialBold:16>"Super Admin"<font:Arial:16> password is only for dedicated servers, since on localy hosted servers, the host is always super admin by default.
-<font:ArialBold:16>"Admin password"<font:Arial:16> offers admin roles with lesser privileges.
+<font:ArialBold:14>"Super Admin"<font:Arial:16> password is only for dedicated servers, since on localy hosted servers, the host is always super admin by default.
+<font:ArialBold:14>"Admin password"<font:Arial:16> offers admin roles with lesser privileges.
 Admin passwords have to be entered in the Admin menu in game.
 
-<font:ArialBold:22><color:3bb7b3>
-"Editor"<font:ArialBold:16><color:c4c4c4> will do the same as "Host" but starts the level with editor open.
+<font:ArialBold:16>"Admin Menu"<font:Arial:16> When you are ingame you have the admin menu button in the bottom left, it gives you some control over the server.
+You can change map, kick/ban players and much more. You should use the admin menu when a game is running, for example if you want to change the map, since
+when you click on host and choose another map, you will kill the current server and all players will drop out of the game, which is not nice.
+Many options in the admin menu are for when you are admin or super admin, but even when you are a regular player you can still use it, to initiate votes,
+create fire teams or private message players.
+
+<font:ArialBold:22><color:3bb7b3>"Editor"<font:ArialBold:16><color:c4c4c4> will do the same as "Host" but starts the level with editor open.
 <font:Arial:16>
 If the editor button is pressed from inside the game, it will toggle to the editor mode, but be careful when editing the level
 while other players are in it, some changes will crash the game for other players, like the terrain, material, datablock and shape editor,

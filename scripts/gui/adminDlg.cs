@@ -284,6 +284,10 @@ function ESC_VoteMenu::onRightMouseDown(%this, %column, %row, %mousePos)
             case "VoteChangeTimeLimit":
                %this.fillTimeLimitMenu();
                return;
+			   
+			case "VoteAddBots":
+               %this.fillAddBotsMenu();
+               return;
 
             //case "VoteResetServer":
 
@@ -330,6 +334,11 @@ function ESC_VoteMenu::onRightMouseDown(%this, %column, %row, %mousePos)
 
       case "timeLimit":
          %this.startVote("VoteChangeTimeLimit", $Client::VoteCmd[%id]);
+         %this.reset();
+         return;
+		 
+      case "addBots":
+         %this.startVote("VoteAddBots", $Client::VoteCmd[%id]);
          %this.reset();
          return;
 
@@ -393,6 +402,16 @@ function ESC_VoteMenu::fillTimeLimitMenu(%this)
    %this.clear();
    %this.type = "timeLimit";
    commandToServer('GetTimeLimitList', %this.key);
+   VoteCancelBtn.setVisible(true);
+}
+
+function ESC_VoteMenu::fillAddBotsMenu(%this)
+{
+   // Get the add bots list from the server
+   %this.key++;
+   %this.clear();
+   %this.type = "addBots";
+   commandToServer('GetAddBotsList', %this.key);
    VoteCancelBtn.setVisible(true);
 }
 

@@ -183,7 +183,6 @@ addBotName("Run Botrun");
 addBotName("Ben Der");
 addBotName("Blender");
 
-
 function getRandomBotName()
 {
    %index = getRandom( $RandomBotNameCount-1 );
@@ -196,13 +195,31 @@ function getRandomBotName()
 function connectAiClients(%num)
 {
    //error("connectAiClients(" SPC %num SPC ")");
-   if ( %num $= "" || %num < 1 )
+   if ( %num $= "" || %num < 1)
       return;
 
    // Make sure bots never exceed the max players
    if ( %num > 63 || %num > $pref::Server::MaxPlayers - 1 )
       %num = ($pref::Server::MaxPlayers - 1);
+  
+   // This in turn in C++ code calls aiConnect which sets up a new AIConnection
+   for ( %i = 1; %i <= %num; %i++ )
+   {
+      aiAddPlayer( getRandomBotName() );
+   }
+}
 
+function connectBots(%num)
+{
+   %numTotal = (%num + $Server::PlayerCount + $Server::BotCount);
+   //error("connectAiClients(" SPC %num SPC ")");
+   if ( %num $= "" || %num < 1 )
+      return;
+
+   // Prevent overfilling of the server.
+   if ( %numTotal > $pref::Server::MaxPlayers)
+      %num = $pref::Server::MaxPlayers - ($Server::PlayerCount + $Server::BotCount);
+  
    // This in turn in C++ code calls aiConnect which sets up a new AIConnection
    for ( %i = 1; %i <= %num; %i++ )
    {

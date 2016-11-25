@@ -2271,6 +2271,8 @@ function CoreGame::sendServerVoteMenu(%game, %client, %key)
          // Actual vote options:
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteChangeMission', 'Vote to Change the Mission');
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteSkipMission', 'Vote to Skip Mission');
+		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteAddBots', 'Vote to add Bots');
+		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteKickAllBots', 'Vote to kick all Bots');
 
          if ( $pref::Server::TournamentMode )
          {   
@@ -2300,6 +2302,8 @@ function CoreGame::sendServerVoteMenu(%game, %client, %key)
          // Actual vote options:
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteChangeMission', 'Change the Mission');
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteSkipMission', 'Skip the Mission');
+		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteAddBots', 'Add Bots');
+		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteKickAllBots', 'Kick all Bots');
 
          if ( $pref::Server::TournamentMode )
          {
@@ -2344,6 +2348,8 @@ $Vote::DisallowVote["VoteBaseSacking"] = $pref::Server::DisallowVoteBaseSacking;
 $Vote::DisallowVote["VoteTournamentMode"] = $pref::Server::DisallowVoteServerMode;
 $Vote::DisallowVote["VoteMatchStart"] = $pref::Server::DisallowVoteStartMatch;
 $Vote::DisallowVote["VoteChangeTimeLimit"] = $pref::Server::DisallowVoteTimeLimit;
+$Vote::DisallowVote["VoteAddBots"] = $pref::Server::DisallowAddBots;
+$Vote::DisallowVote["VoteKickAllBots"] = $pref::Server::DisallowVoteKickAllBots;
 
 $Vote::TypeToDesc["VoteAdminPlayer"] = "Admin Player";
 $Vote::TypeToDesc["VoteChangeMission"] = "change the mission to";
@@ -2353,6 +2359,8 @@ $Vote::TypeToDesc["VoteBaseSacking"] = $BaseSacking ? "enable protected objects"
 $Vote::TypeToDesc["VoteTournamentMode"] = $pref::Server::TournamentMode ? "change to free for all mode" : "change to tournament mode";
 $Vote::TypeToDesc["VoteMatchStart"] = "start the match";
 $Vote::TypeToDesc["VoteChangeTimeLimit"] = "change the time limit to";
+$Vote::TypeToDesc["VoteAddBots"] = "Add bots:";
+$Vote::TypeToDesc["VoteKickAllBots"] = "Kick all bots";
 
 function CoreGame::InitVote(%game, %client, %typeName, %val1, %val2, %val3, %val4, %playerVote)
 {
@@ -2906,6 +2914,55 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
             }
             else
                messageAll('MsgVoteFailed', '\c2%1 mode vote did not pass: %2 percent.', %setting, mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+         }
+		 
+      case "VoteAddBots":
+	     %display = %val1;
+		 %playersTotal = $Server::PlayerCount + $Server::BotCount;
+		 
+         if ( %admin )
+         {	
+            if (%playersTotal >= $pref::Server::MaxPlayers) 
+			{
+		       messageClient( %client, 'MsgVoteFailed', '\c2Max Bots reached, try lower number.' );  
+	              return; 	
+			}			   
+			messageAll( 'MsgAdminForce', '\c2%1 added %2 bots.', %client.playerName, %display );
+            connectBots(%val1);
+         }
+         else
+         {
+            %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePasspercent / 100) )
+            {
+		       if (%playersTotal >= $pref::Server::MaxPlayers) 
+			   {
+		          messageClient( %client, 'MsgVoteFailed', '\c2Max Bots reached, try lower number.' );  
+	                 return; 	
+			   }
+               messageAll('MsgVotePassed', '\c2Vote passed to add %1 bots.' );
+			   connectBots(%val1);
+            }
+            else
+               messageAll('MsgVoteFailed', '\c2The vote to add %1 bots did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+         }
+		 
+      case "VoteKickAllBots":
+         if ( %admin )
+         {
+			messageAll( 'MsgAdminForce', '\c2%1 kicked all bots.', %client.playerName );
+            kickAllBots();
+         }
+         else
+         {
+            %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePasspercent / 100) )
+            {
+               messageAll('MsgVotePassed', '\c2Vote passed to kick all bots.' );
+               kickAllBots();
+            }
+            else
+               messageAll('MsgVoteFailed', '\c2The vote to kick all bots did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
          }
    }
 }

@@ -97,8 +97,9 @@ function serverCmdGetRemoteCmdMenu(%client)
    if(%client.isAdmin)
    {
       // Populate the drop down menu with options seperated by \t (tab deliniated list).
-      %setOne = "Set Max Players\tSend Bottomprint Message\tSend Centerprint Message\tConsole Command";
-      %setTwo = "\tEnter Admin Password\tEnter Super Admin Password\tSet Join Password\tSet Admin Password\tSet Super Admin Password";
+      %setOne   = "Set Max Players\tSend Bottomprint Message\tSend Centerprint Message\tConsole Command";
+      %setTwo   = "\tEnter Admin Password\tEnter Super Admin Password\tSet Join Password\tSet Admin Password\tSet Super Admin Password";
+	  
       %list = %setOne @ %setTwo;
       commandToClient(%client, 'FillCmdMenuDropdown', addTaggedString(%list));
    }
@@ -159,6 +160,39 @@ function serverCmdGetTimeLimitList(%client, %key)
    messageClient(%client, 'MsgVoteItem', "", %key, 45, '45 minutes');
    messageClient(%client, 'MsgVoteItem', "", %key, 60, '60 minutes');
    messageClient(%client, 'MsgVoteItem', "", %key, 999, 'No time limit');
+}
+
+function serverCmdGetAddBotsList(%client, %key)
+{
+   messageClient(%client, 'MsgVoteItem', "", %key, 1, '1 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 2, '2 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 3, '3 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 4, '4 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 5, '5 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 6, '6 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 7, '7 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 8, '8 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 9, '9 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 10, '10 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 11, '11 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 12, '12 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 13, '13 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 14, '14 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 15, '15 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 16, '16 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 17, '17 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 18, '18 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 19, '19 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 20, '20 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 25, '25 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 30, '30 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 35, '35 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 40, '40 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 45, '45 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 50, '50 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 55, '55 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 60, '60 bots');
+   messageClient(%client, 'MsgVoteItem', "", %key, 63, '63 bots');
 }
 
 function AdminCommand(%client, %typename, %val1, %val2, %val3, %val4)
@@ -500,6 +534,22 @@ function clearserver(%client)
             }
 	      BanList::add(%cl.guid, "0", 120);
          }
+      }
+   }
+}
+
+function kickAllBots(%client)
+{
+   for(%i = 0; %i < ClientGroup.getCount(); )
+   {
+   %Bot = ClientGroup.getobject(%i);
+      if (%Bot.isAIControlled())
+      {
+         %Bot.delete();
+      } 
+      else
+      {
+         %i++;
       }
    }
 }
