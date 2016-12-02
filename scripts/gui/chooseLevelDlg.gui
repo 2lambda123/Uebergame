@@ -24,7 +24,7 @@
       canMinimize = "0";
       canMaximize = "1";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(ChooseLevelDlg);";
+      closeCommand = "Canvas.popDialog(ChooseLevelDlg);$ChooseLevelDlgActive = 0;";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";

@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ExtrasDlg) {
    position = "0 0";
-   extent = "1280 1024";
+   extent = "1024 768";
    minExtent = "8 2";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -16,14 +16,14 @@
 
    new GuiWindowCtrl() {
       text = "Extras";
-      resizeWidth = "1";
-      resizeHeight = "1";
+      resizeWidth = "0";
+      resizeHeight = "0";
       canMove = "1";
       canClose = "1";
       canMinimize = "0";
       canMaximize = "0";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(ExtrasDlg);";
+      closeCommand = "Canvas.popDialog(ExtrasDlg);$ExtrasDlgActive = 0;";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -31,7 +31,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "540 100";
+      position = "412 100";
       extent = "200 216";
       minExtent = "160 128";
       horizSizing = "center";

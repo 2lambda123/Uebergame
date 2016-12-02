@@ -24,7 +24,7 @@
       canMinimize = "0";
       canMaximize = "1";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(GuiVideoPlayer);";
+      closeCommand = "Canvas.popDialog(GuiVideoPlayer);$GuiVideoPlayerActive = 0;";
       edgeSnap = "1";
       docking = "None";
       margin = "0 0 0 0";

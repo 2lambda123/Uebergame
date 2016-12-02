@@ -24,7 +24,7 @@
       canMinimize = "0";
       canMaximize = "0";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(JoinServerDlg);";
+      closeCommand = "Canvas.popDialog(JoinServerDlg);$JoinServerDlgActive = 0;";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";

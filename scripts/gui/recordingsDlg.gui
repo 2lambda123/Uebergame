@@ -24,7 +24,7 @@
       canMinimize = "0";
       canMaximize = "1";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(recordingsDlg);";
+      closeCommand = "Canvas.popDialog(recordingsDlg);$recordingsDlgActive = 0;";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";

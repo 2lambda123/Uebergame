@@ -26,7 +26,7 @@
       canMinimize = "0";
       canMaximize = "0";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(AdminDlg);";
+      closeCommand = "Canvas.popDialog(AdminDlg);$AdminDlgActive = 0;";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -267,8 +267,8 @@
             groupNum = "-1";
             buttonType = "PushButton";
             useMouseEvents = "0";
-            position = "128 3";
-            extent = "64 20";
+            position = "122 3";
+            extent = "66 20";
             minExtent = "64 20";
             horizSizing = "relative";
             vertSizing = "relative";
