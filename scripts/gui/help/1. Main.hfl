@@ -6,6 +6,14 @@ Ok many things are pretty self explanatory or at least should be and the rest yo
 
 <font:ArialBold:22>
 Main Menu:
+
+<font:Arial:16> The main menu lets you access all functions of the game, even when you are in game. While in-game it is
+accessed by pressing the "esc" key and also closed when pressing "esc" again. All main menu items are toggle buttons,
+so to open them you press the button and to close it, you press it again.
+In-game the menu remembers which windows you had open and opens them again by pressing "esc" the next time, this can be practical
+in some cases. For example with the admin menu or the armory menu where you pick your weapons, so you can keep them both open for making
+quick changes, but those additional menu items that are only available in-game also have hotkeys on their own, so you can chose what to use.
+
 <font:ArialBold:22><color:43bd43>
 "Join"<font:ArialBold:16><color:c4c4c4> will let you connect to games running on the internet.
 
@@ -28,8 +36,15 @@ it will count up like 28000, 28001, 28003, 28004 etc, 28002 is already used for 
 <font:ArialBold:22><color:c2c400>"Host"<font:ArialBold:16><color:c4c4c4> will let you start your own game.
 <font:Arial:16>
 Chose a map, a mission type, adjust the server options and press "Load Level".
+
 Adjust the <font:ArialBold:16>"Bot Count"<font:Arial:16> slider if you want to play against Bots or have some in your match,
 if the "Bot Count" slider gets stuck at a certain number you have to go to server options and increase max players first.
+Max bot count is currently 63 since 64 is supposed the highest possible server size, so one space left for a human player.
+You probably want to leave a few more slots open for human players than one, but one is minimum, since if a game runs and no human
+is there to observe it, does the game really exist?
+However you can increase the "Max Players" in server options menu up to 255 max and also add more bots later from inside the game
+in the "Admin Menu" until it is all filled up, but the game will likely run extremely slow or crash then, so use at your own risk.
+
 The <font:ArialBold:16>"Multiplayer"<font:Arial:16> checkbox has to be enabled, if you want your game to be listed publicly, 
 turn it off, if you want to play singleplayer offline.
 
@@ -37,13 +52,14 @@ turn it off, if you want to play singleplayer offline.
 The server options menu offers lots of settings for hosting your own server, the options should be self explanatory.
 <font:ArialBold:14>"Super Admin"<font:Arial:16> password is only for dedicated servers, since on localy hosted servers, the host is always super admin by default.
 <font:ArialBold:14>"Admin password"<font:Arial:16> offers admin roles with lesser privileges.
-Admin passwords have to be entered in the Admin menu in game.
+Admin passwords have to be entered in the Admin menu in game and of course previously defined in the server options before hosting them.
 
 <font:ArialBold:16>"Admin Menu"<font:Arial:16> When you are ingame you have the admin menu button in the bottom left, it gives you some control over the server.
-You can change map, kick/ban players and much more. You should use the admin menu when a game is running, for example if you want to change the map, since
-when you click on host and choose another map, you will kill the current server and all players will drop out of the game, which is not nice.
+You can change map, kick/ban players, add/remove bots and much more. You should use the admin menu when a game is running, for example if you want to change the map,
+since when you click on host and choose another map, you will kill the current server and all players will drop out of the game, which is not nice.
 Many options in the admin menu are for when you are admin or super admin, but even when you are a regular player you can still use it, to initiate votes,
 create fire teams or private message players.
+The voting system lets you pretty much control the server when you are alone, you can chose which map or gamemode to switch to or adding bots and some other stuff.
 
 <font:ArialBold:22><color:3bb7b3>"Editor"<font:ArialBold:16><color:c4c4c4> will do the same as "Host" but starts the level with editor open.
 <font:Arial:16>

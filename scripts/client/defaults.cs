@@ -116,7 +116,7 @@ $pref::Video::disableCubemapping = false;
 ///
 $pref::Video::disableParallaxMapping = true;
 
-$pref::Video::Gamma = 2.2;
+$pref::Video::Gamma = 2.25;
 $pref::Video::Contrast = 1.0;
 $pref::Video::Brightness = 0.0;
 

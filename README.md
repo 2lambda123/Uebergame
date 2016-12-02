@@ -1,5 +1,5 @@
 Übergame v1.0.7.0
-===============
+=================
 
 Übergame is a free open source, realism like, multi-purpose,
 multiplayer, casual, first-person-shooter game, based on the Torque3D MIT engine.
@@ -16,15 +16,38 @@ for nightly builds if available, or compile them yourself using the engine Repos
 
 
 Source Code:
-===============
+=================
 
-Game source directory: https://github.com/Duion/Uebergame
+Game source directory: 
 
-Engine source directory: https://github.com/Duion/Torque3D
+https://github.com/Duion/Uebergame/tree/master //latest stable release
+https://github.com/Duion/Uebergame/tree/development //latest development status
+https://github.com/Duion/Uebergame/releases //quick access to all release builds
+
+Engine source directory: 
+
+https://github.com/Duion/Torque3D/tree/ueberengine-master //latest stable release
+https://github.com/Duion/Torque3D/tree/ueberengine-dev //latest development status
+https://github.com/Duion/Torque3D/releases //quick access to all release builds
+
+
+Running Servers:
+=================
+
+If you want to run dedicated servers you can use the dedicated server scripts:
+
+Uebergame-dedicated.sh for running a Linux dedicated server.
+Uebergame-dedicated.bat for running a Windows dedicated server.
+
+You may want to adjust the scripts for your needs, but basically what they do
+is running the game as a dedicated server with the needed parameters and provide
+a restart loop, since in the past the dedicated servers used to get lost from
+the server list after a while or they crashed, so you can put a time where they
+automatically restart in case you want to run them long time and not care about them.
 
 
 License:
-===============
+=================
 Copyright (c) 2012 GarageGames, LLC
 Copyright (c) 2016 Christian Femmer aka Duion
 

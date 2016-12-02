@@ -124,6 +124,9 @@ addBotName("Mechanical Turk");
 addBotName("Databot");
 addBotName("BotOMat");
 addBotName("BotMaster");
+addBotName("Botman");
+addBotName("Bot Omat");
+addBotName("Boten Anar");
 addBotName("Dummy");
 addBotName("Ai Commander");
 addBotName("Ai Fish");
@@ -146,7 +149,6 @@ addBotName("Ai Gear");
 addBotName("Botzkrieg");
 addBotName("Motorschwein");
 addBotName("Motorbot");
-addBotName("kAizer");
 addBotName("UeberBot");
 addBotName("UnterBot");
 addBotName("MegaBot");
@@ -157,6 +159,7 @@ addBotName("Talbot");
 addBotName("A. Trappe");
 addBotName("Nick Echt");
 addBotName("Pro Grammar");
+addBotName("Pro Gaymar");
 addBotName("John Roh");
 addBotName("Kick Botter");
 addBotName("Bot Kicker");
@@ -182,6 +185,7 @@ addBotName("Run Bot");
 addBotName("Run Botrun");
 addBotName("Ben Der");
 addBotName("Blender");
+addBotName("Buster");
 
 function getRandomBotName()
 {
@@ -192,23 +196,6 @@ function getRandomBotName()
 //-----------------------------------------------------------------------------
 
 // Called from server.cs function Torque::buildServer() before loadMission()
-function connectAiClients(%num)
-{
-   //error("connectAiClients(" SPC %num SPC ")");
-   if ( %num $= "" || %num < 1)
-      return;
-
-   // Make sure bots never exceed the max players
-   if ( %num > 63 || %num > $pref::Server::MaxPlayers - 1 )
-      %num = ($pref::Server::MaxPlayers - 1);
-  
-   // This in turn in C++ code calls aiConnect which sets up a new AIConnection
-   for ( %i = 1; %i <= %num; %i++ )
-   {
-      aiAddPlayer( getRandomBotName() );
-   }
-}
-
 function connectBots(%num)
 {
    %numTotal = (%num + $Server::PlayerCount + $Server::BotCount);

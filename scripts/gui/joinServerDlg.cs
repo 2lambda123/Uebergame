@@ -103,8 +103,8 @@ function JoinServerDlg::query(%this)
       $Client::GameTypeQuery,       // gameTypes
       $Client::MissionTypeQuery,    // missionType
       0,                            // minPlayers
-      128,                          // maxPlayers
-      63,                           // maxBots
+      255,                          // maxPlayers
+      254,                           // maxBots
       $pref::Net::RegionMask,       // regionMask
       0,                            // maxPing
       0,                          // minCPU
@@ -124,8 +124,8 @@ function JoinServerDlg::queryLan(%this)
       $Client::GameTypeQuery,       // gameTypes
       $Client::MissionTypeQuery,    // missionType
       0,                            // minPlayers
-      128,                          // maxPlayers
-      63,                           // maxBots
+      255,                          // maxPlayers
+      254,                           // maxBots
       0,                            // regionMask
       0,                            // maxPing
       0,                          // minCPU

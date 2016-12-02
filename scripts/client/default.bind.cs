@@ -670,7 +670,7 @@ function toggleZoomFOV(%val)
    {
       $Player::CurrentFOV = $Player::CurrentFOV / 2;
 
-      if($Player::CurrentFOV < 5)
+      if($Player::CurrentFOV < 10)
          resetCurrentFOV();
 
       if(ServerConnection.zoomed)

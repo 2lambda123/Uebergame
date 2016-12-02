@@ -241,7 +241,7 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    if ( $pref::Server::AiCount > 0 )
    {
       //addAiPlayers( $pref::Server::AiCount );
-      connectAiClients( $pref::Server::AiCount );
+      connectBots( $pref::Server::AiCount );
    }
 
    $LoadingMission = false;

@@ -15,7 +15,7 @@ shaders/procedural/*
 
 #compiler garbage
 *.exp
-*.bat
+#*.bat
 
 #debug garbage
 *.ilk

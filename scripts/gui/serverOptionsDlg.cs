@@ -39,7 +39,10 @@ function ServerOptionsDlg::onSleep(%this)
 {
    $pref::Server::Name = SOP_ServerName.getValue();
    $pref::Server::Info = SOP_ServerInfo.getValue();
-
+   
+   //255 is max player number the server list can display
+   if ( SOP_MaxPlayers.getValue() > 255 )
+      SOP_MaxPlayers.setValue(255);
    if ( checkIsNumber( SOP_MaxPlayers.getValue() ) )
       $pref::Server::MaxPlayers = SOP_MaxPlayers.getValue();
 
