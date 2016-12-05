@@ -186,6 +186,7 @@ addBotName("Run Botrun");
 addBotName("Ben Der");
 addBotName("Blender");
 addBotName("Buster");
+addBotName("Borot");
 
 function getRandomBotName()
 {
@@ -292,7 +293,7 @@ function AIConnection::onConnect(%client, %name)
    %client.setBotFav( %client.getRandomLoadout() );
    }
    // A bit of random timer to simulate more human behavior when the bots join the game
-   %randomJoinTime = getRandom( 1000, 20000 );   
+   %randomJoinTime = ( getRandom ( 1000, 20000 ) + ( $pref::Server::warmupTime * 1000) );   
    Game.schedule( %randomJoinTime, "onClientEnterGame", %client );
 
    $Server::BotCount++; // Master server gets this

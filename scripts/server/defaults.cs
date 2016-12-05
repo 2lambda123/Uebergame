@@ -82,6 +82,7 @@ $pref::Server::teamName[0] = "Spectator";
 $pref::Server::teamName[1] = "Blue Team";
 $pref::Server::teamName[2] = "Red Team";
 $pref::Server::warmupTime = 0;
+$pref::Server::RespawnTime = 10;
 $pref::Server::FriendlyFire = 0;
 $pref::Server::TournamentMode = 0;
 $pref::Server::DisallowVoteMission = 0;

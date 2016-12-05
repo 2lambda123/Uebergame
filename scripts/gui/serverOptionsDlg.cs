@@ -32,6 +32,7 @@ function ServerOptionsDlg::onWake(%this)
    SOP_BanTime.setValue( $pref::Server::BanTime );
    SOP_TimeLimit.setValue( $pref::Server::TimeLimit );
    SOP_WarmupTime.setValue( $pref::Server::warmupTime );
+   SOP_RespawnTime.setValue( $pref::Server::RespawnTime );
    SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
 }
 
@@ -61,6 +62,9 @@ function ServerOptionsDlg::onSleep(%this)
 
    if ( checkIsNumber( SOP_WarmupTime.getValue() ) )
       $pref::Server::warmupTime = SOP_WarmupTime.getValue();
+  
+   if ( checkIsNumber( SOP_RespawnTime.getValue() ) )
+      $pref::Server::RespawnTime = SOP_RespawnTime.getValue();
   
    if ( checkIsNumber( SOP_MaxWeapons.getValue() ) )
       $pref::Server::MaxWeapons = SOP_MaxWeapons.getValue();

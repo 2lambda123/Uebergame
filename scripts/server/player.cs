@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 
 // Timeouts for corpse deletion.
-$CorpseTimeoutValue = 10 * 1000;
+$CorpseTimeoutValue = $pref::Server::RespawnTime * 1000;
 $InvincibleTime = 2 * 1000;
 
 // Damage Rate for entering Liquid
