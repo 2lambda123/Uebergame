@@ -316,17 +316,30 @@ if ( isObject( DecalQualityGroup ) )
  
 new SimGroup( MeshQualityGroup )
 { 
+   new ArrayObject( [Potato] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::TS::detailAdjust"] = 0.7;
+      key["$pref::TS::skipRenderDLs"] = 0;
+	  key["$pref::TS::smallestVisiblePixelSize"] = 12;	  
+      key["$pref::Terrain::lodScale"] = 8.0;
+      key["$pref::decalMgr::enabled"] = false;
+      key["$pref::GroundCover::densityScale"] = 0;
+   };
+   
    new ArrayObject( [Lowest] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
       
-      key["$pref::TS::detailAdjust"] = 0.5;
+      key["$pref::TS::detailAdjust"] = 0.8;
       key["$pref::TS::skipRenderDLs"] = 0;
-	  key["$pref::TS::smallestVisiblePixelSize"] = 10;	  
+	  key["$pref::TS::smallestVisiblePixelSize"] = 8;	  
       key["$pref::Terrain::lodScale"] = 4.0;
-      key["$pref::decalMgr::enabled"] = false;
-      key["$pref::GroundCover::densityScale"] = 0.5;
+      key["$pref::decalMgr::enabled"] = true;
+      key["$pref::GroundCover::densityScale"] = 0;
    };
    
    new ArrayObject( [Low] )
@@ -334,12 +347,12 @@ new SimGroup( MeshQualityGroup )
       class = "GraphicsQualityLevel";
       caseSensitive = true;
             
-      key["$pref::TS::detailAdjust"] = 0.75;
+      key["$pref::TS::detailAdjust"] = 0.9;
       key["$pref::TS::skipRenderDLs"] = 0;
-	  key["$pref::TS::smallestVisiblePixelSize"] = 8;	  
+	  key["$pref::TS::smallestVisiblePixelSize"] = 6;	  
       key["$pref::Terrain::lodScale"] = 3.0;
       key["$pref::decalMgr::enabled"] = true;
-      key["$pref::GroundCover::densityScale"] = 0.75;
+      key["$pref::GroundCover::densityScale"] = 0.6;
    };
    
    new ArrayObject( [Normal] )
@@ -384,6 +397,16 @@ new SimGroup( MeshQualityGroup )
 
 new SimGroup( TextureQualityGroup )
 {
+   new ArrayObject( [Potato] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::Video::textureReductionLevel"] = 3;
+      key["$pref::Reflect::refractTexScale"] = 0.25;
+      key["$pref::Terrain::detailScale"] = 0.25;      
+   };
+   
    new ArrayObject( [Lowest] )
    {
       class = "GraphicsQualityLevel";
@@ -443,12 +466,23 @@ function TextureQualityGroup::onApply( %this, %level )
 
 new SimGroup( LightingQualityGroup )
 { 
-   new ArrayObject( [Lowest] )
+   new ArrayObject( [Potato] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
       
       key["$pref::lightManager"] = "Basic Lighting";
+      key["$pref::Shadows::disable"] = true;
+      key["$pref::Shadows::textureScalar"] = 0.5;
+      key["$pref::Shadows::filterMode"] = "None";     
+   };
+
+   new ArrayObject( [Lowest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::lightManager"] = "Advanced Lighting";
       key["$pref::Shadows::disable"] = true;
       key["$pref::Shadows::textureScalar"] = 0.5;
       key["$pref::Shadows::filterMode"] = "None";     
@@ -509,7 +543,7 @@ function LightingQualityGroup::onApply( %this, %level )
 // TODO: Reduce shader complexity of water and the scatter sky here!
 new SimGroup( ShaderQualityGroup )
 {
-   new ArrayObject( [Lowest] )
+   new ArrayObject( [Potato] )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
@@ -522,6 +556,19 @@ new SimGroup( ShaderQualityGroup )
 	  key["$pref::windEffectRadius"] = 0;
    };
    
+   new ArrayObject( [Lowest] )
+   {
+      class = "GraphicsQualityLevel";
+      caseSensitive = true;
+      
+      key["$pref::Video::disablePixSpecular"] = true;
+      key["$pref::Video::disableNormalmapping"] = true;
+      key["$pref::Video::disableParallaxMapping"] = true;
+      key["$pref::Water::disableTrueReflections"] = true;
+	  
+	  key["$pref::windEffectRadius"] = 8;
+   };
+   
    new ArrayObject( [Low] )
    {
       class = "GraphicsQualityLevel";
@@ -532,7 +579,7 @@ new SimGroup( ShaderQualityGroup )
       key["$pref::Video::disableParallaxMapping"] = true;
       key["$pref::Water::disableTrueReflections"] = true;
 	  
-	  key["$pref::windEffectRadius"] = 10;
+	  key["$pref::windEffectRadius"] = 16;
    };
    
    new ArrayObject( [Normal] )
