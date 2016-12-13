@@ -20,8 +20,8 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 #include "../../../gl/hlslCompat.glsl"
-#include "shadergen:/autogenConditioners.h"
 
+in vec2 uv0;
 uniform sampler2D matinfoTex;
 
 out vec4 OUT_FragColor0;

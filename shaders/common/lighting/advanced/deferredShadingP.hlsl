@@ -47,7 +47,7 @@ float4 main( PFXVertToPix IN ) : TORQUE_TARGET0
       colorBuffer *= (1.0 - colorBuffer.a);
    }
 
-   colorBuffer += float4(specular, specular, specular, 1.0); //flipped, was below the next line before
+   colorBuffer += float4(specular, specular, specular, 1.0);
    colorBuffer *= float4(lightBuffer.rgb, 1.0);
    
    return hdrEncode( float4(colorBuffer.rgb, 1.0) );   

@@ -42,15 +42,11 @@ void main()
    float depth = prepassUncondition( prepassTex, uv0 ).w;
    //return vec4( depth, 0, 0, 0.7 );
    
-   // Skip fogging the extreme far plane so that 
-   // the canvas clear color always appears.
-   //clip( 0.9999 - depth );  //disabled, since fog atmosphere height seems to work now
-   
    float factor = computeSceneFog( eyePosWorld,
                                    eyePosWorld + ( wsEyeRay * depth ),
                                    fogData.x, 
                                    fogData.y, 
                                    fogData.z );
 
-   OUT_col = hdrEncode( vec4( fogColor.rgb, 1.0 - saturate( factor ) ) );     
+   OUT_col = hdrEncode( vec4( toLinear(fogColor.rgb), 1.0 - saturate( factor ) ) );     
 }

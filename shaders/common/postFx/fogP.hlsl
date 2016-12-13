@@ -37,15 +37,11 @@ float4 main( PFXVertToPix IN ) : TORQUE_TARGET0
    float depth = TORQUE_PREPASS_UNCONDITION( prepassTex, IN.uv0 ).w;
    //return float4( depth, 0, 0, 0.7 );
    
-   // Skip fogging the extreme far plane so that 
-   // the canvas clear color always appears.
-   //clip( 0.9999 - depth );  //disabled, since fog atmosphere height seems to work now
-
    float factor = computeSceneFog( eyePosWorld,
                                    eyePosWorld + ( IN.wsEyeRay * depth ),
                                    fogData.x, 
                                    fogData.y, 
                                    fogData.z );
 
-   return hdrEncode( float4( fogColor.rgb, 1.0 - saturate( factor ) ) );     
+   return hdrEncode( float4( toLinear(fogColor.rgb), 1.0 - saturate( factor ) ) );     
 }

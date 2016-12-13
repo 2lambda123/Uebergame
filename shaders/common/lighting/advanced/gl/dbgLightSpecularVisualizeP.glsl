@@ -21,7 +21,6 @@
 //-----------------------------------------------------------------------------
 
 #include "../../../gl/hlslCompat.glsl"
-#include "shadergen:/autogenConditioners.h"
 
 in vec2 uv0;
 uniform sampler2D lightPrePassTex;
