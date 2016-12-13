@@ -7,10 +7,10 @@ Gameplay
 Deathmatch:
 <font:Arial:16>
 Deathmatch is an all vs all gamemode. After you started or joined a game you will be spawned into the level on a random location.
-Make sure to checkout your loadout (armory dialog that opens with "i" button), you can chose different weapons, grenades and special abilities, depending on server settings.
+Make sure to checkout your loadout (Armory dialog that opens with "i" button), you can chose different weapons, grenades and special abilities, depending on server settings.
 <font:ArialBold:16>
 Goal:
-<font:Arial:16>Your goal is to kill the other players, each kill gives you 10 score, one death gives -5 and after the match the player with the highest score wins.
+<font:Arial:16>Your goal is to kill the other players and after the match the player with the highest score wins.
 The scoring system rewards you for staying alive, by calculating your efficiency, so you can more quickly raise up in scores than others, if you do not die that often.
 The game will end after the time limit is hit ( 15 minutes by default), there is currently no score limit for deathmatch implemented.
 
@@ -29,9 +29,13 @@ Team Deathmatch:
 <font:Arial:16>
 Team Deathmatch is a blue team vs red team gamemode. Each team has it's own starting area where player get spawned. Usually the map is divided into two sides, where
 each team has their starting location. But there may be exceptions.
+At the beginning of the match you can either just click fire which will auto assign you to a team or join a team manually through the Armory.
+If you switch teams through the Armory when you are in the game, your score gets reset, so your score only counts as long as you are in the game, so do not switch all the time.
+When friendly fire is enabled you can shoot and kill your own teammates, but you will receive some of the damage you inflict on yourself as punishment and it will costs you some score.
+If you repeatetly kill teammates you will be killed as punishment in addition, there is also the possibility to vote kick or ban people through the voting function in the Admin Menu.
 <font:ArialBold:16>
 Goal:
-<font:Arial:16>Your goal is to kill the other team, each kill gives you 10 score, one death -5 and after the match the team with the most kills wins.
+<font:Arial:16>Your goal is to kill the other team and after the match the team with the most kills wins.
 The difference here is that the game ends when one team has hit the kill limit, which is calculated by the number of players in the game multiplied by 5, so a 4 player game
 has a kill limit of 20 on which the game ends, or if the timelimit is hit the game will also end. The individual score is just to see who is the best player,
 but does not count into which team wins.

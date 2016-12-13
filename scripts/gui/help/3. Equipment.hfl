@@ -2,7 +2,7 @@
 Equipment
 
 <font:ArialBold:20> Weapons:
-<font:Arial:16> Press "i" to open the armory, there you can chose your loadout, depending on what is allowed by the server. If you are the Soldier you start with a pistol
+<font:Arial:16> In the Armory ( also "i" hotkey by default) you can chose your loadout, depending on what is allowed by the server. If you are the Soldier you start with a pistol
 and additionally you can chose a primary weapon, a grenade type and a special device. The paintball player instead just can chose one paintball marker in different colors.
 You can select your class, which will display "Soldier" or "Paintballer" but it is overwritten by the game type, however you can define loadouts for them and save them for later.
 Normally just 1 primary weapon is allowed, since it is more balanced, but in the server settings you can allow up to 4 primary weapons, so you can carry all weapons at the same time.

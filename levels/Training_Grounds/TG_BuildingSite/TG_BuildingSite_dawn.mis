@@ -28,13 +28,13 @@ new SimGroup(MissionGroup) {
          MissionTypes = "DM TDM PBDM PBTDM";
    };
    new ScatterSky(Himmel) {
-      skyBrightness = "20";
+      skyBrightness = "25";
       sunSize = "0.4";
       colorizeAmount = "1.2";
       colorize = "0.152941 0.364706 0.552941 1";
       rayleighScattering = "0.0035";
-      sunScale = "0.705882 0.639216 0.415686 1";
-      ambientScale = "0.659 0.576 0.38 1";
+      sunScale = "0.776 0.71 0.494 1";
+      ambientScale = "0.698 0.612 0.42 1";
       fogScale = "0.267 0.333 0.435 1";
       exposure = "1";
       zOffset = "0";

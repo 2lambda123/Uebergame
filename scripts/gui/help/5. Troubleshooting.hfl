@@ -7,7 +7,9 @@ Some tips:
 Try reducing the shader quality level to "High" only if you had it on "Ueber" before, this will disable parallax, wich gives a good performance boost, without much negative visual impact.
 Disabling SSAO and/or HDR also give good performance boost, with moderate negative visual impact.
 Greatest performance increase is achieved in general by reducing the games resolution, but this may not be desired, as people are used to full HD now.
-Reducing lighting quality gives the greatest performance increase, especially on lowest settings, but it will look very ugly. So this should be your last resort, for example if you are running on a slow laptop.
+Reducing lighting quality gives the greatest performance increase, especially on lowest settings, but it will look very ugly. As a last resort you can try the "Potato" graphic quality level,
+it gives the best performance possible, but reduces the visual quality the most. Use this if you are running the game on a Laptop or a very old Potato PC.
+You don't have to set everything to "Potato" some combinations give you good performance with decent visuals.
 
 <font:ArialBold:18>Video Issues:
 <font:Arial:16>Make sure you have the latest stable drivers for your video card.

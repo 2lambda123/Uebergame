@@ -323,7 +323,7 @@ new SimGroup( MeshQualityGroup )
       
       key["$pref::TS::detailAdjust"] = 0.7;
       key["$pref::TS::skipRenderDLs"] = 0;
-	  key["$pref::TS::smallestVisiblePixelSize"] = 12;	  
+      key["$pref::TS::smallestVisiblePixelSize"] = 6;	  
       key["$pref::Terrain::lodScale"] = 8.0;
       key["$pref::decalMgr::enabled"] = false;
       key["$pref::GroundCover::densityScale"] = 0;
@@ -336,10 +336,10 @@ new SimGroup( MeshQualityGroup )
       
       key["$pref::TS::detailAdjust"] = 0.8;
       key["$pref::TS::skipRenderDLs"] = 0;
-	  key["$pref::TS::smallestVisiblePixelSize"] = 8;	  
+      key["$pref::TS::smallestVisiblePixelSize"] = 6;	  
       key["$pref::Terrain::lodScale"] = 4.0;
       key["$pref::decalMgr::enabled"] = true;
-      key["$pref::GroundCover::densityScale"] = 0;
+      key["$pref::GroundCover::densityScale"] = 0.3;
    };
    
    new ArrayObject( [Low] )
