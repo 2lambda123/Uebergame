@@ -35,7 +35,7 @@ new SimGroup(MissionGroup) {
       rayleighScattering = "0.0035";
       sunScale = "0.996078 0.960784 0.611765 1";
       ambientScale = "0.556863 0.529412 0.380392 1";
-      fogScale = "0.478 0.369 0.133 1";
+      fogScale = "0.808 0.69 0.471 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "70";
@@ -5271,7 +5271,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "14.4651 -12.6064 -4.54747e-013";
+            position = "14.4651 -12.6064 -4.54747e-13";
             rotation = "0 0 -1 90";
             scale = "1 1.08881 1";
             canSave = "1";
@@ -5291,7 +5291,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "18.4243 -12.3865 1.90735e-006";
+            position = "18.4243 -12.3865 1.90735e-06";
             rotation = "0 0 1 180";
             scale = "1 1 1";
             canSave = "1";
@@ -5411,7 +5411,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "6.67184 -8.79548 1.90735e-006";
+            position = "6.67184 -8.79548 1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1.10732";
             canSave = "1";
@@ -5472,7 +5472,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "15.3249 11.5499 -1.44509";
-            rotation = "0.159461 6.97024e-009 0.987204 180";
+            rotation = "0.159461 6.97024e-09 0.987204 180";
             scale = "1 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -5531,7 +5531,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "6.50188 11.5424 -2.86102e-006";
+            position = "6.50188 11.5424 -2.86102e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -5551,7 +5551,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "30.5579 11.1413 -1.90735e-006";
+            position = "30.5579 11.1413 -1.90735e-06";
             rotation = "0 0 1 180";
             scale = "1 1 1";
             canSave = "1";
@@ -5617,7 +5617,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "57.6923 3.38253 1.90735e-006";
+            position = "57.6923 3.38253 1.90735e-06";
             rotation = "0 0 1 180";
             scale = "1 1 1";
             canSave = "1";
@@ -5677,7 +5677,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "41.5882 -5.07932 -4.76837e-007";
+            position = "41.5882 -5.07932 -4.76837e-07";
             rotation = "0 0 -1 90";
             scale = "1.11583 1 1";
             canSave = "1";
@@ -5823,7 +5823,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-19.5942 -30.1463 -2.38419e-006";
+            position = "-19.5942 -30.1463 -2.38419e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -5883,7 +5883,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-16.2451 -42.9108 -4.54747e-013";
+            position = "-16.2451 -42.9108 -4.54747e-13";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -6023,7 +6023,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-6.66086 -34.8312 9.53674e-007";
+            position = "-6.66086 -34.8312 9.53674e-07";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -6043,7 +6043,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-22.574 -38.7002 1.90735e-006";
+            position = "-22.574 -38.7002 1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -6083,7 +6083,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-22.5066 -30.6666 -4.76837e-006";
+            position = "-22.5066 -30.6666 -4.76837e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -6369,7 +6369,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "14.2355 -27.8668 -4.76837e-007";
+            position = "14.2355 -27.8668 -4.76837e-07";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -6469,7 +6469,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "14.2355 -31.8118 -4.76837e-007";
+            position = "14.2355 -31.8118 -4.76837e-07";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -6489,7 +6489,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "18.5609 -23.7173 1.90735e-006";
+            position = "18.5609 -23.7173 1.90735e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -6615,7 +6615,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "30.4407 -35.1539 -1.90735e-006";
+            position = "30.4407 -35.1539 -1.90735e-06";
             rotation = "0.00175266 -0.00133089 0.999998 89.1684";
             scale = "0.735788 1 1";
             canSave = "1";
@@ -6655,7 +6655,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "35.9845 -31.4951 1.90735e-006";
+            position = "35.9845 -31.4951 1.90735e-06";
             rotation = "1 0 0 0";
             scale = "0.613797 1 0.899699";
             canSave = "1";
@@ -6755,7 +6755,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "26.392 -27.4132 9.53674e-007";
+            position = "26.392 -27.4132 9.53674e-07";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -6815,7 +6815,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "24.9576 -27.2836 -1.90735e-006";
+            position = "24.9576 -27.2836 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -6855,7 +6855,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "25.7119 -31.5 -1.90735e-006";
+            position = "25.7119 -31.5 -1.90735e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1.05111";
             canSave = "1";
@@ -7021,7 +7021,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.5074 -39.634 9.53674e-007";
+            position = "49.5074 -39.634 9.53674e-07";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -7061,7 +7061,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "57.3461 -35.4346 -1.90735e-006";
+            position = "57.3461 -35.4346 -1.90735e-06";
             rotation = "0.289717 0.672163 0.681367 207.635";
             scale = "1 1 1";
             canSave = "1";
@@ -7081,7 +7081,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "56.3735 -30 -1.90735e-006";
+            position = "56.3735 -30 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7101,7 +7101,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "56.9539 -27.9097 -1.90735e-006";
+            position = "56.9539 -27.9097 -1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7121,7 +7121,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "57.3461 -39.5506 -1.90735e-006";
+            position = "57.3461 -39.5506 -1.90735e-06";
             rotation = "-0.285719 0.709113 0.644611 141.658";
             scale = "1 1 1";
             canSave = "1";
@@ -7141,7 +7141,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "57.3944 -43.91 -1.90735e-006";
+            position = "57.3944 -43.91 -1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7161,7 +7161,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "56.8887 -46.6817 -1.90735e-006";
+            position = "56.8887 -46.6817 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7181,7 +7181,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "56.8887 -51.164 -1.90735e-006";
+            position = "56.8887 -51.164 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7201,7 +7201,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "56.122 -23.3242 -1.90735e-006";
+            position = "56.122 -23.3242 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7221,7 +7221,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "52.6958 -23.3242 -1.90735e-006";
+            position = "52.6958 -23.3242 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1.01";
             canSave = "1";
@@ -7241,7 +7241,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -23.3242 -1.90735e-006";
+            position = "49.2799 -23.3242 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7261,7 +7261,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -27 -1.90735e-006";
+            position = "49.2799 -27 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7281,7 +7281,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -30 -1.90735e-006";
+            position = "49.2799 -30 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7301,7 +7301,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -34.5 -1.90735e-006";
+            position = "49.2799 -34.5 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7321,7 +7321,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -39 -1.90735e-006";
+            position = "49.2799 -39 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7341,7 +7341,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -42.9519 -1.90735e-006";
+            position = "49.2799 -42.9519 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7361,7 +7361,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -46.6817 -1.90735e-006";
+            position = "49.2799 -46.6817 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7381,7 +7381,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -51.164 -1.90735e-006";
+            position = "49.2799 -51.164 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7421,7 +7421,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "65.6622 -31.1221 3.8147e-006";
+            position = "65.6622 -31.1221 3.8147e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7461,7 +7461,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.4051 -39.6401 4.76837e-007";
+            position = "49.4051 -39.6401 4.76837e-07";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7501,7 +7501,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.6051 -30.9645 1.90735e-006";
+            position = "49.6051 -30.9645 1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7561,7 +7561,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "56.9759 -54.5989 -1.90735e-006";
+            position = "56.9759 -54.5989 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7621,7 +7621,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "53.4108 -54.5989 -1.90735e-006";
+            position = "53.4108 -54.5989 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7641,7 +7641,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.4978 -55.5362 3.8147e-006";
+            position = "49.4978 -55.5362 3.8147e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -7661,7 +7661,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "49.2799 -54.5989 -1.90735e-006";
+            position = "49.2799 -54.5989 -1.90735e-06";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -7967,7 +7967,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "16.3037 -43.6282 -1.90735e-006";
+            position = "16.3037 -43.6282 -1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -8067,7 +8067,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "12.8337 -39.4618 4.76837e-007";
+            position = "12.8337 -39.4618 4.76837e-07";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -8187,7 +8187,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "9.02016 -39.6193 -1.90735e-006";
+            position = "9.02016 -39.6193 -1.90735e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1.03938";
             canSave = "1";
@@ -8313,7 +8313,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "34.5283 -51.1504 1.90735e-006";
+            position = "34.5283 -51.1504 1.90735e-06";
             rotation = "0 0 1 180";
             scale = "1 1 1";
             canSave = "1";
@@ -8333,7 +8333,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "35.3764 -51.449 1.90735e-006";
+            position = "35.3764 -51.449 1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -8393,7 +8393,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "38.3409 -44.4714 9.53674e-007";
+            position = "38.3409 -44.4714 9.53674e-07";
             rotation = "0 0 1 180";
             scale = "1 1 1";
             canSave = "1";
@@ -8479,7 +8479,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "11.0996 -73.7024 -1.90735e-006";
+            position = "11.0996 -73.7024 -1.90735e-06";
             rotation = "0 0 1 180";
             scale = "1.12833 1 1";
             canSave = "1";
@@ -8499,7 +8499,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "21.6548 -82.51 9.53674e-007";
+            position = "21.6548 -82.51 9.53674e-07";
             rotation = "0 0 1 180";
             scale = "0.86891 1 1";
             canSave = "1";
@@ -8539,7 +8539,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "14.7178 -82.6801 -1.90735e-006";
+            position = "14.7178 -82.6801 -1.90735e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -8679,7 +8679,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "21.6287 -74.2202 4.76837e-007";
+            position = "21.6287 -74.2202 4.76837e-07";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -8739,7 +8739,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "9.91691 -66.6641 4.76837e-007";
+            position = "9.91691 -66.6641 4.76837e-07";
             rotation = "1 0 0 0";
             scale = "1.01124 1 1.07889";
             canSave = "1";
@@ -8779,7 +8779,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "6.37408 -82.5849 4.76837e-007";
+            position = "6.37408 -82.5849 4.76837e-07";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -8805,7 +8805,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "37.9646 -74.1004 -9.53674e-007";
+            position = "37.9646 -74.1004 -9.53674e-07";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -8845,7 +8845,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "46.6971 -78.0074 -4.76837e-007";
+            position = "46.6971 -78.0074 -4.76837e-07";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -9025,7 +9025,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "34.8705 -66.3986 -4.76837e-007";
+            position = "34.8705 -66.3986 -4.76837e-07";
             rotation = "0 0 1 180";
             scale = "1 1 1.12027";
             canSave = "1";
@@ -9145,7 +9145,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "34.8647 -88.9969 1.90735e-006";
+            position = "34.8647 -88.9969 1.90735e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -9271,7 +9271,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-15.1812 -67.5697 -2.38419e-007";
+            position = "-15.1812 -67.5697 -2.38419e-07";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -9311,7 +9311,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-22.4535 -64.3086 -1.43051e-006";
+            position = "-22.4535 -64.3086 -1.43051e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -9371,7 +9371,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-19.3377 -56.9588 2.86102e-006";
+            position = "-19.3377 -56.9588 2.86102e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -9431,7 +9431,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-6.32375 -60.0092 -1.90735e-006";
+            position = "-6.32375 -60.0092 -1.90735e-06";
             rotation = "0 0 -1 92.5209";
             scale = "1 1 1";
             canSave = "1";
@@ -9471,7 +9471,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-22.6026 -56.7779 -4.76837e-007";
+            position = "-22.6026 -56.7779 -4.76837e-07";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -9511,7 +9511,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-16.7073 -52.245 -4.54747e-013";
+            position = "-16.7073 -52.245 -4.54747e-13";
             rotation = "0 -1 0 6.57781";
             scale = "1 1 1";
             canSave = "1";
@@ -9551,7 +9551,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-12.9971 -52.2973 -4.54747e-013";
+            position = "-12.9971 -52.2973 -4.54747e-13";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -9658,7 +9658,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-6.02856 -12.3153 -2.03671";
-            rotation = "0.116626 5.09787e-009 0.993176 180";
+            rotation = "0.116626 5.09787e-09 0.993176 180";
             scale = "1.34098 1 1.27789";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -9677,7 +9677,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-6.49725 -12.6636 -2.38419e-006";
+            position = "-6.49725 -12.6636 -2.38419e-06";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -9757,7 +9757,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-6.68627 -4.92339 9.53674e-007";
+            position = "-6.68627 -4.92339 9.53674e-07";
             rotation = "0 0 1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -9877,7 +9877,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "-22.2977 13.2306 -3.8147e-006";
+            position = "-22.2977 13.2306 -3.8147e-06";
             rotation = "0 0 1 90";
             scale = "1 0.907623 1";
             canSave = "1";
@@ -9898,7 +9898,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2032";
+            rotation = "0.0590455 0.0590455 0.996508 90.2033";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10078,7 +10078,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-10.5648 4.88764 -1.99791";
-            rotation = "-0.0651254 0.0651253 -0.99575 90.2441";
+            rotation = "-0.0651254 0.0651253 -0.99575 90.2442";
             scale = "1.45188 1 1.3848";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10144,7 +10144,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "61.4276 -70.0654 -0.459406";
-            rotation = "0.943137 4.12258e-008 0.332405 180";
+            rotation = "0.943137 4.12258e-08 0.332405 180";
             scale = "1.24155 0.883038 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10183,7 +10183,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "61.1706 -88.7224 1.90735e-006";
+            position = "61.1706 -88.7224 1.90735e-06";
             rotation = "1 0 0 0";
             scale = "1 1 1";
             canSave = "1";
@@ -10203,7 +10203,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "73.2358 -88.7084 9.53674e-007";
+            position = "73.2358 -88.7084 9.53674e-07";
             rotation = "0 0 -1 90";
             scale = "1 1 1";
             canSave = "1";
@@ -10303,7 +10303,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "57.3508 -81.7153 9.53674e-007";
+            position = "57.3508 -81.7153 9.53674e-07";
             rotation = "0 0 -1 90.2524";
             scale = "1 1 1";
             canSave = "1";
@@ -10423,7 +10423,7 @@ new SimGroup(MissionGroup) {
             alphaFadeInverse = "0";
             renderNormals = "0";
             forceDetail = "-1";
-            position = "73.1721 -92.1159 -3.8147e-006";
+            position = "73.1721 -92.1159 -3.8147e-06";
             rotation = "0 0 -1 90.2524";
             scale = "1 0.907623 1";
             canSave = "1";
@@ -10630,7 +10630,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "-21.8697 -23.25 9.53674e-007";
+         position = "-21.8697 -23.25 9.53674e-07";
          rotation = "0 0 1 180";
          scale = "1 1 1";
          canSave = "1";
@@ -10831,7 +10831,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -12 0";
-         rotation = "0.00366813 0.00366805 -0.999987 90.0028";
+         rotation = "0.00366813 0.00366805 -0.999987 90.0029";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -11070,7 +11070,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "49 -54.5 2.38419e-007";
+         position = "49 -54.5 2.38419e-07";
          rotation = "0.00759702 0.0637599 0.997936 90.2333";
          scale = "1 1 1";
          canSave = "1";
@@ -11090,7 +11090,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "49 -41 2.38419e-007";
+         position = "49 -41 2.38419e-07";
          rotation = "0 0 1 90";
          scale = "1 1 1";
          canSave = "1";
@@ -11210,7 +11210,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "-22 -13 9.53674e-007";
+         position = "-22 -13 9.53674e-07";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -11230,7 +11230,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "14.25 -13 9.53674e-007";
+         position = "14.25 -13 9.53674e-07";
          rotation = "0 -1 0 4.9317";
          scale = "1 1 1";
          canSave = "1";
@@ -11250,7 +11250,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "14.25 -23.25 9.53674e-007";
+         position = "14.25 -23.25 9.53674e-07";
          rotation = "0 0 1 180";
          scale = "1 1 1";
          canSave = "1";
@@ -11270,7 +11270,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "26 -13 9.53674e-007";
+         position = "26 -13 9.53674e-07";
          rotation = "1 0 0 0";
          scale = "1 1 1";
          canSave = "1";
@@ -11310,7 +11310,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "56.5 -13 9.53674e-007";
+         position = "56.5 -13 9.53674e-07";
          rotation = "-1 0 0 3.17293";
          scale = "1 1 1";
          canSave = "1";
@@ -11330,7 +11330,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "56 -23.25 9.53674e-007";
+         position = "56 -23.25 9.53674e-07";
          rotation = "0 0 1 180";
          scale = "1 1 1";
          canSave = "1";
@@ -11390,7 +11390,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "30.25 -54.5 2.38419e-007";
+         position = "30.25 -54.5 2.38419e-07";
          rotation = "0 0 1 90";
          scale = "1 1 1";
          canSave = "1";
@@ -11430,7 +11430,7 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "30.25 -39.2101 2.38419e-007";
+         position = "30.25 -39.2101 2.38419e-07";
          rotation = "0 0 1 90";
          scale = "1 1 1";
          canSave = "1";

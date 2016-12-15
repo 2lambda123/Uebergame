@@ -12,7 +12,7 @@ new SimGroup(MissionGroup) {
       decalBias = "0.0015";
       fogColor = "0.176471 0.207843 0.286275 1";
       fogDensity = "0.03";
-      fogDensityOffset = "0";
+      fogDensityOffset = "1";
       fogAtmosphereHeight = "50";
       canvasClearColor = "11 15 22 255";
       ambientLightBlendPhase = "1";
@@ -49,7 +49,7 @@ new SimGroup(MissionGroup) {
       flareType = "NullLightFlare";
       flareScale = "1.5";
       nightColor = "0.051 0.067 0.094 1";
-      nightFogColor = "0.047 0.067 0.106 1";
+      nightFogColor = "0.149 0.2 0.302 1";
       moonEnabled = "1";
       moonMat = "Moon_Glow_Mat";
       moonScale = "0.06";

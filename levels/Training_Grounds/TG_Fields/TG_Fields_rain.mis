@@ -3014,8 +3014,8 @@ new SimGroup(MissionGroup) {
       colorize = "0.992157 0.992157 0.996078 1";
       rayleighScattering = "0.0035";
       sunScale = "0.533 0.518 0.463 1";
-      ambientScale = "0.31 0.408 0.384 1";
-      fogScale = "0.509804 0.568627 0.607843 1";
+      ambientScale = "0.463 0.604 0.569 1";
+      fogScale = "0.722 0.757 0.78 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "80";
@@ -4252,7 +4252,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.0898";
+         rotation = "-0.140172 0.140328 0.980133 91.0899";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";

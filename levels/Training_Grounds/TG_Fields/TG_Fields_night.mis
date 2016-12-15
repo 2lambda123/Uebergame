@@ -3028,8 +3028,8 @@ new SimGroup(MissionGroup) {
       brightness = "1";
       flareType = "NullLightFlare";
       flareScale = "1";
-      nightColor = "0.059 0.063 0.098 1";
-      nightFogColor = "0.027 0.039 0.055 1";
+      nightColor = "0.133 0.141 0.231 1";
+      nightFogColor = "0.145 0.216 0.29 1";
       moonEnabled = "1";
       moonMat = "Moon_Glow_Mat";
       moonScale = "0.1";
@@ -4252,7 +4252,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.0898";
+         rotation = "-0.140172 0.140328 0.980133 91.0899";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -5945,7 +5945,6 @@ new SimGroup(MissionGroup) {
       position = "160.5 158.5 0";
       rotation = "1 0 0 0";
       scale = "240 245 12";
-      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "1";
    };

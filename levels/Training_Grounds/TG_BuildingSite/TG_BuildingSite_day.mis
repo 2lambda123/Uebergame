@@ -35,7 +35,7 @@ new SimGroup(MissionGroup) {
       rayleighScattering = "0.0035";
       sunScale = "0.858824 0.831373 0.756863 1";
       ambientScale = "0.364706 0.345098 0.278431 1";
-      fogScale = "0.612 0.659 0.729 1";
+      fogScale = "0.855 0.863 0.875 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "320";

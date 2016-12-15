@@ -35,7 +35,7 @@ new SimGroup(MissionGroup) {
       rayleighScattering = "0.0035";
       sunScale = "0.776 0.71 0.494 1";
       ambientScale = "0.698 0.612 0.42 1";
-      fogScale = "0.267 0.333 0.435 1";
+      fogScale = "0.612 0.686 0.796 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "240";
@@ -3685,6 +3685,7 @@ new SimGroup(MissionGroup) {
       position = "319 320 19";
       rotation = "1 0 0 0";
       scale = "476 476 40";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "1";
    };

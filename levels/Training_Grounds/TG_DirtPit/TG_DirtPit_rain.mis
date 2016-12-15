@@ -35,7 +35,7 @@ new SimGroup(MissionGroup) {
       rayleighScattering = "0.0035";
       sunScale = "0.529 0.506 0.435 1";
       ambientScale = "0.784314 0.839216 0.870588 1";
-      fogScale = "0.541 0.675 0.729 1";
+      fogScale = "0.89 0.965 0.996 1";
       exposure = "1";
       zOffset = "0";
       azimuth = "180";
@@ -2008,7 +2008,7 @@ new SimGroup(MissionGroup) {
       foamRippleInfluence = "0.05";
       cubemap = "BlueSkyCubemap";
       fullReflect = "1";
-      reflectivity = "0.5";
+      reflectivity = "0.3";
       reflectPriority = "1";
       reflectMaxRateMs = "15";
       reflectDetailAdjust = "1";
@@ -2235,7 +2235,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "152.574 210.179 3.35787";
-         rotation = "-0.641212 0.767364 2.80283e-008 180";
+         rotation = "-0.641212 0.767364 2.80283e-08 180";
          scale = "1.2 1.2 1.2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3921,7 +3921,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "196.088 199.662 0.152294";
-         rotation = "-0.90227 -0.303413 0.30635 95.4358";
+         rotation = "-0.90227 -0.303413 0.30635 95.4359";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3981,7 +3981,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "157.867 198.949 -0.627831";
-         rotation = "0.986165 -0.103945 0.129132 80.1449";
+         rotation = "0.986165 -0.103945 0.129132 80.145";
          scale = "1.26476 1.28864 1.37413";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4127,7 +4127,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "200.522 239.583 0.651882";
-         rotation = "0.0333559 -0.0550458 0.997927 79.7526";
+         rotation = "0.0333559 -0.0550458 0.997927 79.7527";
          scale = "1 1 1.04733";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4810,6 +4810,7 @@ new SimGroup(MissionGroup) {
       position = "182 214 0";
       rotation = "1 0 0 0";
       scale = "100 100 20";
+      hidden = "1";
       canSave = "1";
       canSaveDynamicFields = "1";
    };
