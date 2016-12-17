@@ -1174,8 +1174,8 @@ moveMap.bind( mouse, button0, mouseFire );
 moveMap.bind( keyboard, "r", reloadWeapon );
 //moveMap.bindCmd(keyboard, "e", "commandToServer('PickupFacing');", "");
 moveMap.bind( mouse, zaxis, cycleWeaponAxis );
-moveMap.bind( keyboard, "+", nextWeapon );
-moveMap.bind( keyboard, "minus", prevWeapon );
+//moveMap.bind( keyboard, "+", nextWeapon );
+//moveMap.bind( keyboard, "minus", prevWeapon );
 moveMap.bind( keyboard, "1", useFirstWeaponSlot );
 //moveMap.bindCmd(keyboard, "1", "commandToServer('selectWeaponSlot', 0);", ""); //alternative method
 moveMap.bind( keyboard, "2", useSecondWeaponSlot );
@@ -1304,8 +1304,8 @@ vehicleMap.copyBind( moveMap, toggleFirstPerson );
 vehicleMap.copyBind( moveMap, toggleFreeLook );
 
 vehicleMap.bind( mouse, zaxis, cycleVehicleWeapon );
-vehicleMap.bind(keyboard, "+", nextVehicleWeapon );
-vehicleMap.bind(keyboard, "minus", prevVehicleWeapon );
+//vehicleMap.bind(keyboard, "+", nextVehicleWeapon );
+//vehicleMap.bind(keyboard, "minus", prevVehicleWeapon );
 vehicleMap.bind( keyboard, "1", useVehicleWeaponOne );
 vehicleMap.bind( keyboard, "2", useVehicleWeaponTwo );
 vehicleMap.bind( keyboard, "3", useVehicleWeaponThree );
