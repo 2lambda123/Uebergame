@@ -264,7 +264,7 @@ datablock ExplosionData(UnderwaterGrenadeExplosion)
    subExplosion[1] = UnderwaterGrenadeSubExplosion2;
    
    shakeCamera = true;
-   camShakeFreq = "12.0 13.0 11.0";
+   camShakeFreq = "8.0 9.0 7.0";
    camShakeAmp = "35.0 35.0 35.0";
    camShakeDuration = 1.0;
    camShakeRadius = 10.0;
@@ -381,7 +381,7 @@ datablock ExplosionData(GrenadeExplosion)
    subExplosion[1] = GrenadeSubExplosion2;
    
    shakeCamera = true;
-   camShakeFreq = "12.0 13.0 11.0";
+   camShakeFreq = "9.0 10.0 8.0";
    camShakeAmp = "35.0 35.0 35.0";
    camShakeDuration = 1.0;
    camShakeRadius = 12.0;

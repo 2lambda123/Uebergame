@@ -729,7 +729,7 @@ datablock ExplosionData(VehicleExplosion)
    debrisVelocityVariance = 0.5;
 
    shakeCamera = true;
-   camShakeFreq = "11.0 13.0 9.0";
+   camShakeFreq = "8.0 10.0 6.0";
    camShakeAmp = "40.0 40.0 40.0";
    camShakeDuration = 0.7;
    camShakeRadius = 25.0;
