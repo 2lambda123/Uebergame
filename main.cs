@@ -29,6 +29,9 @@ $defaultGame = "scripts";
 // Set profile directory
 $pref::Video::ProfilePath = "scripts/client/profile";
 
+$Core::windowIcon = "art/gui/core/uebergame-icon.png";
+$Core::splashWindowImage = "art/gui/splash.bmp";
+
 function createCanvas(%windowTitle)
 {
    if ($isDedicated)
