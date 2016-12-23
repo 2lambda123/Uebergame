@@ -278,7 +278,7 @@
       canSaveDynamicFields = "0";
    };
    new GuiBitmapButtonCtrl() {
-      bitmap = "art/gui/mainMenu/GMButton_AdminMenu";
+      bitmap = "art/gui/mainMenu/GMButton_adminMenu";
       bitmapMode = "Stretched";
       autoFitExtents = "0";
       useModifiers = "0";

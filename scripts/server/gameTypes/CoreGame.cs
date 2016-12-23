@@ -2535,7 +2535,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100))
+            if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100))
             {
                messageAll('MsgVotePassed', '\c2The mission was changed to %1 ( %2 ) by vote.', %val1, $HostTypeDisplayName[%type]);
                if(isEventPending($Game::Schedule))
@@ -2547,7 +2547,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
                echo("mission changed to "@%val1@"/"@$HostTypeDisplayName[%type]@" (vote)");
             }
             else
-               messageAll('MsgVoteFailed', '\c2Change mission vote did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2Change mission vote did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
 
       case "VoteSkipMission":
@@ -2563,7 +2563,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100))
+            if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100))
             {
                messageAll('MsgVotePassed', '\c2The mission was skipped by vote.');
                if(isEventPending($Game::Schedule))
@@ -2574,7 +2574,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
                echo("mission changed to "@%val1@"/"@$HostTypeDisplayName[%type]@" (vote)");
             }
             else
-               messageAll('MsgVoteFailed', '\c2Skip mission vote did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2Skip mission vote did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
 
       case "VoteMatchStart":
@@ -2604,13 +2604,13 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
             else
             {
                %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-               if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100))
+               if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100))
                {
-                  messageAll('MsgVotePassed', '\c2The match has been started by vote: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+                  messageAll('MsgVotePassed', '\c2The match has been started by vote: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
                   %game.Countdown();
                }
                else
-                  messageAll('MsgVoteFailed', '\c2Start Match vote did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+                  messageAll('MsgVoteFailed', '\c2Start Match vote did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
             }
          }
          if ( %cause !$= "" )
@@ -2632,14 +2632,14 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100))
+            if(%totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100))
             {
                messageAll('MsgVotePassed', '\c2The mission time limit was set to %1 minutes by vote.', %display);
                $pref::Server::TimeLimit = %val1;
                %cause = "(vote)";
             }
             else
-               messageAll('MsgVoteFailed', '\c2The vote to change the mission time limit did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2The vote to change the mission time limit did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
 
          //if the time limit was actually changed...
@@ -2675,14 +2675,14 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100) )
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100) )
             {
                messageAll('MsgVotePassed', '\c2The Server has been reset by vote.' );
                resetServerDefaults();
                %cause = "(vote)";
             }
             else
-               messageAll('MsgVoteFailed', '\c2The vote to reset Server to defaults did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2The vote to reset Server to defaults did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
          if ( %cause !$= "" )
             echo("server reset "@%cause);
@@ -2738,7 +2738,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100) )
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100) )
             {
                messageAll('MsgAdminPlayer', '\c2%3 was made an admin by vote.', %client, %val1, %val1.playerName, 0);
                %val1.isAdmin = 1;
@@ -2788,7 +2788,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else 
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100) )
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100) )
             {
                if ( $FriendlyFire ) 
                {
@@ -2806,7 +2806,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
             }
             else 
             {
-               %pct = mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100);
+               %pct = mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100);
                if ( $FriendlyFire )
                   messageAll('MsgVoteFailed', '\c2Disable friendly fire vote did not pass: %1 percent.', %pct);  
                else 
@@ -2838,7 +2838,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else 
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100))
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100))
             {
                if ( $BaseSacking ) 
                {
@@ -2856,7 +2856,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
             }
             else 
             {
-               %pct = mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100);
+               %pct = mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100);
                if ( $BaseSacking )
                   messageAll('MsgVoteFailed', '\c2Enable protected objects vote did not pass: %1 percent.', %pct);  
                else 
@@ -2902,7 +2902,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100) )
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100) )
             {
                messageAll('MsgVotePassed', '\c2Server mode switched to %1 mode %2 ( %3 ) by vote.', %setting, %val1, $HostTypeDisplayName[%type]);
                if ( isEventPending( $Game::Schedule ) )
@@ -2913,7 +2913,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
                tge.schedule($Game::EndGamePause, "loadMission", $HostMissionFile[%val3], $HostTypeName[%type], false);
             }
             else
-               messageAll('MsgVoteFailed', '\c2%1 mode vote did not pass: %2 percent.', %setting, mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2%1 mode vote did not pass: %2 percent.', %setting, mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
 		 
       case "VoteAddBots":
@@ -2929,11 +2929,15 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
 			}			   
 			messageAll( 'MsgAdminForce', '\c2%1 added %2 bots.', %client.playerName, %display );
             connectBots(%val1);
+            $pref::Server::AiCount = ( $pref::Server::AiCount + (%val1) );
+			
+			   if($pref::Server::AiCount > $pref::Server::MaxPlayers - 1)
+            $pref::Server::AiCount = $pref::Server::MaxPlayers - 1;
          }
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100) )
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100) )
             {
 		       if (%playersTotal >= $pref::Server::MaxPlayers) 
 			   {
@@ -2942,9 +2946,13 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
 			   }
                messageAll('MsgVotePassed', '\c2Vote passed to add %1 bots.' );
 			   connectBots(%val1);
+               $pref::Server::AiCount = ( $pref::Server::AiCount + (%val1) );
+			   
+			      if($pref::Server::AiCount > $pref::Server::MaxPlayers - 1)
+               $pref::Server::AiCount = $pref::Server::MaxPlayers - 1;
             }
             else
-               messageAll('MsgVoteFailed', '\c2The vote to add %1 bots did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2The vote to add %1 bots did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
 		 
       case "VoteKickAllBots":
@@ -2952,17 +2960,19 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
          {
 			messageAll( 'MsgAdminForce', '\c2%1 kicked all bots.', %client.playerName );
             kickAllBots();
+            $pref::Server::AiCount = 0;
          }
          else
          {
             %totalVotes = %game.totalVotesFor + %game.totalVotesAgainst;
-            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $pref::Server::AiCount)) > ($pref::Server::VotePassPercent / 100) )
+            if ( %totalVotes > 0 && (%game.totalVotesFor / (ClientGroup.getCount() - $Server::BotCount)) > ($pref::Server::VotePassPercent / 100) )
             {
                messageAll('MsgVotePassed', '\c2Vote passed to kick all bots.' );
                kickAllBots();
+               $pref::Server::AiCount = 0;
             }
             else
-               messageAll('MsgVoteFailed', '\c2The vote to kick all bots did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $pref::Server::AiCount) * 100));
+               messageAll('MsgVoteFailed', '\c2The vote to kick all bots did not pass: %1 percent.', mFloor(%game.totalVotesFor/(ClientGroup.getCount() - $Server::BotCount) * 100));
          }
    }
 }

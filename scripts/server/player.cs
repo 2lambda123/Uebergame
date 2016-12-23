@@ -1623,7 +1623,7 @@ function Armor::onDisabled(%this, %player, %state)
    //Canvas.popDialog (missionAreaWarningHud); //broken
    
    // Schedule corpse fade out
-   %player.schedule( $CorpseTimeoutValue - 3000, "startFade", 3000, 0, true );
+   %player.schedule( $CorpseTimeoutValue - 2000, "startFade", 2000, 0, true );
 
    // Schedule corpse removal.  Just keeping the place clean.
    %player.schedule( $CorpseTimeoutValue, "delete" );

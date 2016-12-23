@@ -90,7 +90,7 @@ function ShapeBase::throwObject( %this, %obj )
    %srcCorpse = ( %this.getState() $= "Dead" );
    if ( %srcCorpse )
    {
-      %vec = (-1.0 + getRandom() * 2.0) SPC (-1.0 + getRandom() * 2.0) SPC getRandom();
+      %vec = (-1.0 + getRandom() * 2.0) SPC (-1.0 + getRandom() * 2.0) SPC (-1.0 + getRandom() * 0.5);
       %vec = VectorScale(%vec, 10);
    }
    else

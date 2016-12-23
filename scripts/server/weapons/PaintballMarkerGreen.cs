@@ -100,7 +100,7 @@ datablock ProjectileData( PaintballProjectileGreen )
    explosion           = PaintExplosionGreen;
    decal               = greenPaintSplatterDecal;
 
-   muzzleVelocity      = 33;
+   muzzleVelocity      = 40;
    velInheritFactor    = 0.25;
 
    armingDelay         = 0;

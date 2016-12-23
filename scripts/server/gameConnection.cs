@@ -325,7 +325,7 @@ function GameConnection::onDrop(%client, %reason)
 
    // Reset the server if everyone has left the game
    if( $Server::PlayerCount == 0 && $Server::Dedicated && !$resettingServer && !$LoadingMission )
-      schedule(10, 0, "resetServerDefaults");
+      schedule(50, 0, "resetServerDefaults");
 }
 
 //-----------------------------------------------------------------------------
