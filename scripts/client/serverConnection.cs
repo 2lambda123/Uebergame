@@ -74,9 +74,27 @@ function GameConnection::setLagIcon(%this, %state)
    LagIcon.setVisible(%state $= "true");
 }
 
+function GameConnection::onFlash(%this, %state)
+{
+   if (isObject(FlashFx))
+   {
+      if (%state)
+      {
+         FlashFx.enable();
+      }
+      else
+      {
+         FlashFx.disable();
+      }
+   }
+}
+
 // Called on the new connection object after connect() succeeds.
 function GameConnection::onConnectionAccepted(%this)
 {
+   // Called on the new connection object after connect() succeeds.
+   LagIcon.setVisible(false);
+   
    // Startup the physX world on the client before any
    // datablocks and objects are ghosted over.
    physicsInitWorld( "client" );   
@@ -183,7 +201,8 @@ function Torque::disconnectedCleanup(%this)
    
    $lightingMission = false;
    $sceneLighting::terminateLighting = true;
-
+   
+   LagIcon.setVisible(false);
    PlayerListGui.clear();
 
    // ZOD: Delete the player list group
@@ -191,7 +210,7 @@ function Torque::disconnectedCleanup(%this)
       PlayerListGroup.delete();
 
    // Clear all print messages
-   clientCmdclearBottomPrint();
+   clientCmdClearBottomPrint();
    clientCmdClearCenterPrint();
 
    // Back to the launch screen

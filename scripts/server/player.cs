@@ -1493,14 +1493,11 @@ function Armor::onDamage(%this, %obj, %delta)
 {
    //LogEcho("Armor::onDamage(" SPC %this.getName() @", "@ %obj.client.nameBase @", "@ %delta SPC ")");
 
-   // This method is invoked by the ShapeBase code whenever the 
-   // object's damage level changes.
+   // This method is invoked by the ShapeBase code whenever the object's damage level changes.
    if (%delta > 0 && %obj.getState() !$= "Dead")
    {
-      // Increment the flash based on the amount.
-      %flash = %obj.getDamageFlash() + ((%delta / %this.maxDamage) * 2);
-      if (%flash > 0.70)
-         %flash = 0.70;
+      // Increment the flash based on the amount. 50 gives highest flash of 1.
+      %flash = %delta / 50; // If it is higher than 1 there is a function in C++ to reset it to 1.
 
       %obj.setDamageFlash(%flash);
 
