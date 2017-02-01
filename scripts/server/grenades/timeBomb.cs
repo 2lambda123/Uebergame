@@ -33,7 +33,7 @@ datablock ItemData(TimeBombThrown : DefaultAmmo)
    destroyedLevel = 0.2;
 
    directDamage = 0;
-   radiusDamage = 200;
+   radiusDamage = 180;
    damageRadius = 10;
 
    damageType = $DamageType::Explosion;
@@ -150,8 +150,8 @@ function serverCmdsetBombTimer(%client, %time)
    {
       if ( %time < 5 )
          %time = 5;
-      if ( %time > 30 )
-         %time = 30;
+      if ( %time > 120 )
+         %time = 120;
 
       %player.bombThrown.armed = true;
       %player.bombThrown.detThread = %player.bombThrown.getDataBlock().schedule(%time * 1000, "detonate", %player.bombThrown);
@@ -171,7 +171,7 @@ function TimeBombImage::onThrowGrenade(%data, %obj, %slot)
       %obj.bombThrown = %thrownItem;
       %thrownItem.armed = false;
       //commandToClient( %obj.client, 'OpenBombTimer' );
-	  %thrownItem.schedulePop(); //add item pop to remove undetonated timebombs   
+	  %thrownItem.schedulePopLong(); //add item pop to remove undetonated timebombs   
    }
    else
       Parent::onThrowGrenade(%data, %obj, %slot);
