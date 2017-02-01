@@ -5,6 +5,13 @@ singleton Material( Grid512_OrangeLines_Mat )
    materialTag0 = "TestMaterial";
 };
 
+singleton Material( Grid512_forestgreen_lines_Mat )
+{
+   mapTo = "Grid512_forestgreen_lines_Mat";
+   diffuseMap[0] = "512_forestgreen_lines";
+   materialTag0 = "TestMaterial";
+};
+
 singleton Material( Mat_grid_01_white )
 {
    mapTo = "grid_01_white";

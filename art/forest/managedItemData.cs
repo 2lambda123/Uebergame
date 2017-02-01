@@ -23,8 +23,6 @@
 // This is the default save location for any TSForestItemData(s) created in the
 // Forest Editor Editor (this script is executed from onServerCreated())
 
-
-
 datablock TSForestItemData(fir_01_15m_a)
 {
    internalName = "fir_01_15m_a";
@@ -139,4 +137,49 @@ datablock TSForestItemData(fern_01_b)
    branchAmp = "0.02";
    detailAmp = "0.05";
    detailFreq = "0.02";
+};
+
+
+datablock TSForestItemData(palm_01_short)
+{
+   internalName = "palm_01_short";
+   shapeFile = "art/shapes/trees/palm/palm_01/palm_01_short.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(palm_01_tall)
+{
+   internalName = "palm_01_tall";
+   shapeFile = "art/shapes/trees/palm/palm_01/palm_01_tall.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(palm_01_tall_leaning)
+{
+   internalName = "palm_01_tall_leaning";
+   shapeFile = "art/shapes/trees/palm/palm_01/palm_01_tall_leaning.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(palm_01_bush)
+{
+   internalName = "palm_01_bush";
+   shapeFile = "art/shapes/trees/palm/palm_01/palm_01_bush.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
 };

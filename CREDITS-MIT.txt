@@ -1,0 +1,3 @@
+MIT licensed assets
+
+art/shapes/trees/palm/palm_01 -by garagegames -ported by duion

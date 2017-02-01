@@ -221,5 +221,83 @@ new SimGroup(ForestBrushGroup) {
          elevationMax = "10000";
       };
    };
+   new ForestBrush() {
+      internalName = "palm_01";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+
+      new ForestBrushElement() {
+         internalName = "palm_01_bush";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "palm_01_bush";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "0";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "30";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "palm_01_short";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "palm_01_short";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "0.2";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "40";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "palm_01_tall";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "palm_01_tall";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "45";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "palm_01_tall_leaning";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "palm_01_tall_leaning";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "45";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+   };
 };
 //--- OBJECT WRITE END ---
