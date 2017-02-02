@@ -749,12 +749,12 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    maxBackwardSpeed = "2";
    maxSideSpeed = "2.5";
 
-   sprintForce = "1100"; //low force to give some acceleration time
+   sprintForce = "1250"; //low force to give some acceleration time
    sprintEnergyDrain = "0.512";
    minSprintEnergy = "1";
    maxSprintForwardSpeed = "8"; //28.8 kph, average sprinting speed of a man
    maxSprintBackwardSpeed = "4";
-   maxSprintSideSpeed = "5";
+   maxSprintSideSpeed = "6";
    sprintStrafeScale = "0.417"; // 8/3.33 , sprint is 2.4 times faster so scale mouse accordingly
    sprintYawScale = "0.417";
    sprintPitchScale = "0.417";
@@ -776,9 +776,9 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    maxUnderwaterSideSpeed = "1";
 
    jumpForce = "720";
-   jumpEnergyDrain = "10";
-   minJumpEnergy = "15";
-   jumpDelay = "3";
+   jumpEnergyDrain = "9";
+   minJumpEnergy = "12";
+   jumpDelay = "2";
    airControl = "0.3";
 /*
    jetJumpForce = 140;
@@ -1455,7 +1455,7 @@ function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
          %damage = %damage*2; // 2 times the damage for a headshot
       case "torso":
       case "legs":
-         %damage = %damage/1.6; // about two third damage for legs
+         %damage = %damage*0.7; // about two third damage for legs
    }
    
    DamageTypeCollision(%obj, %damage, %damageType, %position);

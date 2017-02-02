@@ -36,7 +36,7 @@ datablock ItemData(GrenadeThrown : DefaultAmmo)
 
    directDamage = 0;
    radiusDamage = 165;
-   damageRadius = 5.0;
+   damageRadius = 6.0;
    damageType = $DamageType::Grenade;
    areaImpulse = 1500;
    detonationTime = 3000;

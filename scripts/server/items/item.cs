@@ -63,6 +63,15 @@ function Item::schedulePop(%this)
    %this.schedule($Item::PopTime, "delete");
 }
 
+function Item::schedulePopLong(%this)
+{
+   // This method deletes the object after a default duration. Dynamic
+   // items such as thrown or drop weapons are usually popped to avoid
+   // world clutter.
+   %this.schedule(62000 - 1000, "startFade", 1000, 0, true);
+   %this.schedule(62000, "delete");
+}
+
 function ItemData::onEnterLiquid(%data, %obj, %coverage, %type)
 {    
    switch(%type)

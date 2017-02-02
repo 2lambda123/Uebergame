@@ -181,8 +181,8 @@ datablock ProjectileData( GrenadeProjectile )
    projectileShapeName = "art/shapes/weapons/shared/rocket.dts";
    //sound               = "";
    directDamage        = 0;
-   radiusDamage        = 100;
-   damageRadius        = 4;
+   radiusDamage        = 120;
+   damageRadius        = 4.5;
    areaImpulse         = 1;
    impactForce         = 5;
 
