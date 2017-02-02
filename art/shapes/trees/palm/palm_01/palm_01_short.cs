@@ -1,11 +1,10 @@
 
-singleton TSShapeConstructor(Palm_01_shortDae)
+singleton TSShapeConstructor(Palm_01_shortDts)
 {
-   baseShape = "./palm_01_short.dae";
-   loadLights = "0";
+   baseShape = "./palm_01_short.dts";
 };
 
-function Palm_01_shortDae::onLoad(%this)
+function Palm_01_shortDts::onLoad(%this)
 {
-   %this.addImposter("32", "6", "0", "0", "128", "1", "0");
+   %this.addImposter("1", "6", "0", "0", "128", "1", "0");
 }

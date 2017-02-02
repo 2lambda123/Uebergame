@@ -1,11 +1,10 @@
 
-singleton TSShapeConstructor(Palm_01_bushDae)
+singleton TSShapeConstructor(Palm_01_bushDts)
 {
-   baseShape = "./palm_01_bush.dae";
-   loadLights = "0";
+   baseShape = "./palm_01_bush.dts";
 };
 
-function Palm_01_bushDae::onLoad(%this)
+function Palm_01_bushDts::onLoad(%this)
 {
-   %this.addImposter("32", "6", "0", "0", "64", "1", "0");
+   %this.addImposter("1", "6", "0", "0", "64", "1", "0");
 }

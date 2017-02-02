@@ -1,5 +1,5 @@
 
-singleton Material(palm_01_branch)
+singleton Material(Mat_palm_01_branch)
 {
    mapTo = "palm_01_branch";
    materialTag0 = "trees";
@@ -17,7 +17,7 @@ singleton Material(palm_01_branch)
    subSurface[0] = "1";
 };
 
-singleton Material(palm_01_bark)
+singleton Material(Mat_palm_01_bark)
 {
    mapTo = "palm_01_bark";
    materialTag0 = "trees";
