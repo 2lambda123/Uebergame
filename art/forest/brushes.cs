@@ -395,5 +395,107 @@ new SimGroup(ForestBrushGroup) {
          elevationMax = "10000";
       };
    };
+   new ForestBrush() {
+      internalName = "banana_01";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+
+      new ForestBrushElement() {
+         internalName = "banana_01_a";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "banana_01_a";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "2";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "40";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+   };
+   new ForestBrushElement() {
+      internalName = "fern_tropical_01_a";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+      ForestItemData = "fern_tropical_01_a";
+      probability = "1";
+      rotationRange = "360";
+      scaleMin = "1";
+      scaleMax = "1";
+      scaleExponent = "1";
+      sinkMin = "0";
+      sinkMax = "0";
+      sinkRadius = "1";
+      slopeMin = "0";
+      slopeMax = "90";
+      elevationMin = "-10000";
+      elevationMax = "10000";
+   };
+   new ForestBrush() {
+      internalName = "thintree_01";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+
+      new ForestBrushElement() {
+         internalName = "thintree_01_a";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "thintree_01_a";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "1";
+         scaleMax = "1.5";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "50";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "thintree_01_b";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "thintree_01_b";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "1";
+         scaleMax = "1.5";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "50";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "thintree_01_c";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "thintree_01_c";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "1";
+         scaleMax = "1.5";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "50";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+   };
 };
 //--- OBJECT WRITE END ---

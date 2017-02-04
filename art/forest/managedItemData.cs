@@ -236,3 +236,59 @@ datablock TSForestItemData(canopy_01_c)
    detailAmp = "0.1";
    detailFreq = "0.1";
 };
+
+
+datablock TSForestItemData(banana_01_a)
+{
+   internalName = "banana_01_a";
+   shapeFile = "art/shapes/trees/palm/banana_01/banana_01_a.dts";
+   windScale = "1";
+   trunkBendScale = "0.01";
+   branchAmp = "0.03";
+   detailAmp = "0.1";
+   detailFreq = "0.05";
+};
+
+datablock TSForestItemData(fern_tropical_01_a)
+{
+   internalName = "fern_tropical_01_a";
+   shapeFile = "art/shapes/plants/ferns/fern_tropical_01/fern_tropical_01_a.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.07";
+};
+
+datablock TSForestItemData(thintree_01_b)
+{
+   internalName = "thintree_01_b";
+   shapeFile = "art/shapes/trees/generic/thintree_01/thintree_01_b.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(thintree_01_c)
+{
+   internalName = "thintree_01_c";
+   shapeFile = "art/shapes/trees/generic/thintree_01/thintree_01_c.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
+
+datablock TSForestItemData(thintree_01_a)
+{
+   internalName = "thintree_01_a";
+   shapeFile = "art/shapes/trees/generic/thintree_01/thintree_01_a.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.1";
+   detailAmp = "0.1";
+   detailFreq = "0.1";
+};
