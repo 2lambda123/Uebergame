@@ -292,3 +292,39 @@ datablock TSForestItemData(thintree_01_a)
    detailAmp = "0.1";
    detailFreq = "0.1";
 };
+
+datablock TSForestItemData(deadbush_01_a)
+{
+   internalName = "deadbush_01_a";
+   shapeFile = "art/shapes/bushes/dead/deadbush_01/deadbush_01_a.dts";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.05";
+   detailAmp = "0.05";
+   detailFreq = "0.03";
+   radius = "0.3";
+};
+
+datablock TSForestItemData(deadbush_01_c)
+{
+   internalName = "deadbush_01_c";
+   shapeFile = "art/shapes/bushes/dead/deadbush_01/deadbush_01_c.dts";
+   radius = "0.5";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.05";
+   detailAmp = "0.05";
+   detailFreq = "0.03";
+};
+
+datablock TSForestItemData(deadbush_01_b)
+{
+   internalName = "deadbush_01_b";
+   shapeFile = "art/shapes/bushes/dead/deadbush_01/deadbush_01_b.dts";
+   radius = "0.3";
+   windScale = "1";
+   trunkBendScale = "0.02";
+   branchAmp = "0.05";
+   detailAmp = "0.05";
+   detailFreq = "0.03";
+};
