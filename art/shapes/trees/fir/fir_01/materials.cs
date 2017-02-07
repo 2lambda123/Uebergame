@@ -16,7 +16,6 @@ singleton Material(Mat_fir_01_branch)
    normalMap[0] = "art/shapes/trees/fir/fir_01/fir_01_branch_N.dds";
    useAnisotropic[0] = "1";
    showFootprints = "0";
-   materialTag0 = "Miscellaneous";
    specular[1] = "1 1 1 1";
 };
 
