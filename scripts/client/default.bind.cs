@@ -166,6 +166,14 @@ function toggleGameMenuGui()
       Canvas.popDialog(GuiVideoPlayer);
       $GuiVideoPlayerActive = 1;
       }
+      if (CreditsDlg.isAwake()) {
+      Canvas.popDialog(CreditsDlg);
+      $CreditsDlgActive = 1;
+      }
+      if (DevToolsDlg.isAwake()) {
+      Canvas.popDialog(DevToolsDlg);
+      $DevToolsDlgActive = 1;
+      }
       
    Canvas.popDialog( GameMenuGui );
    }
@@ -195,6 +203,10 @@ function toggleGameMenuGui()
       Canvas.pushDialog(GuiMusicPlayer);
       if ( $GuiVideoPlayerActive == 1 )
       Canvas.pushDialog(GuiVideoPlayer);
+      if ( $CreditsDlgActive == 1 )
+      Canvas.pushDialog(CreditsDlg);
+      if ( $DevToolsDlgActive == 1 )
+      Canvas.pushDialog(DevToolsDlg);
    }
 }
 
@@ -315,9 +327,27 @@ function toggleGuiVideoPlayer(%val)
    Canvas.pushDialog(GuiVideoPlayer);
 }
 
-// Opens a Gui ingame that displays all metrics in one window
-// #issue: still needs function to be toggled off when pressing the key again
-// currently the gui does close when pressing esc
+function toggleCreditsDlg(%val)
+{
+   if (CreditsDlg.isAwake()) {
+   Canvas.popDialog(CreditsDlg);
+   $GuiVideoPlayerActive = 0;
+   }
+   else
+   Canvas.pushDialog(CreditsDlg);
+}
+
+function toggleDevToolsDlg(%val)
+{
+   if (DevToolsDlg.isAwake()) {
+   Canvas.popDialog(DevToolsDlg);
+   $DevToolsDlgActive = 0;
+   }
+   else
+   Canvas.pushDialog(DevToolsDlg);
+}
+
+/// Opens a Gui ingame that displays all metrics in one window
 function showMetrics(%val)
 {
    if(%val)
@@ -711,8 +741,8 @@ function toggleZoom(%val)
       ServerConnection.zoomed = true;
       setFov($Player::CurrentFOV);
 
-      //zoomReticle.setBitmap( "art/gui/weaponHud/zoomHair12.png" );
-      //zoomReticle.setBitmap( "art/gui/weaponHud/bino.png" );
+      //zoomReticle.setBitmap( "art/gui/playGui/zoomHair_filled.png" );
+      //zoomReticle.setBitmap( "art/gui/playGui/bino.png" );
       reticle.setVisible(false);
       zoomReticle.setVisible(true);
 
@@ -1230,7 +1260,7 @@ moveMap.bind( keyboard, "insert", voteYes );
 moveMap.bind( keyboard, "delete", voteNo );
 moveMap.bind( keyboard, ".", cycleLoadoutNext );
 moveMap.bind( keyboard, ",", cycleLoadoutPrev );
-moveMap.bind( keyboard, "n", toggleNetGraph );
+//moveMap.bind( keyboard, "n", toggleNetGraph );
 //moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
 //moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???
 //moveMap.bind( keyboard, "F4", toggleMusicPlayer );
@@ -1326,7 +1356,7 @@ vehicleMap.copyBind( moveMap, voteYes );
 vehicleMap.copyBind( moveMap, voteNo );
 vehicleMap.copyBind( moveMap, showPlayerList );
 vehicleMap.copyBind( moveMap, showScoreBoard );
-vehicleMap.copyBind( moveMap, toggleNetGraph );
+//vehicleMap.copyBind( moveMap, toggleNetGraph );
 vehicleMap.copyBind( moveMap, toggleArmoryDlg );
 vehicleMap.copyBind( moveMap, bringUpOptions );
 

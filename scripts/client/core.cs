@@ -64,6 +64,7 @@ function Torque::initializeCore(%this)
    
    // Gui Helper Scripts.
    exec("scripts/gui/helpDlg.cs");
+   exec("scripts/gui/creditsDlg.cs");
    exec("scripts/gui/console.cs");
    exec("scripts/gui/consoleVarDlg.cs");
    //exec("scripts/gui/netGraphGui.cs"); //scripts are in .gui file

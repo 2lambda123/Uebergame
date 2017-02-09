@@ -1,9 +1,9 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiControl(ExtrasDlg) {
+%guiContent = new GuiControl(DevToolsDlg) {
    position = "0 0";
    extent = "1024 768";
    minExtent = "8 2";
-   horizSizing = "relative";
+   horizSizing = "width";
    vertSizing = "height";
    profile = "GuiModelessDialogProfile";
    visible = "1";
@@ -13,10 +13,9 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      fixedAspectRatio = "0";
 
    new GuiWindowCtrl() {
-      text = "Extras";
+      text = "Dev-Tools";
       resizeWidth = "0";
       resizeHeight = "0";
       canMove = "1";
@@ -24,7 +23,6 @@
       canMinimize = "0";
       canMaximize = "0";
       canCollapse = "0";
-      closeCommand = "Canvas.popDialog(ExtrasDlg);$ExtrasDlgActive = 0;";
       edgeSnap = "1";
       margin = "0 0 0 0";
       padding = "0 0 0 0";
@@ -32,9 +30,9 @@
       anchorBottom = "0";
       anchorLeft = "0";
       anchorRight = "1";
-      position = "384 80";
-      extent = "640 80";
-      minExtent = "640 80";
+      position = "899 160";
+      extent = "124 316";
+      minExtent = "8 2";
       horizSizing = "left";
       vertSizing = "bottom";
       profile = "GuiWindowProfile";
@@ -46,100 +44,120 @@
       canSave = "1";
       canSaveDynamicFields = "0";
 
-      new GuiButtonCtrl() {
-         text = "Recordings";
+      new GuiButtonCtrl(ConsoleButton) {
+         text = "Console";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "2 26";
-         extent = "124 48";
+         position = "8 25";
+         extent = "108 42";
          minExtent = "8 2";
-         horizSizing = "left";
+         horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiMenuButtonProfile";
+         profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
-         command = "toggleRecordingsDlg();";
+         command = "toggleConsole(1);";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiButtonCtrl() {
-         text = "MusicPlayer";
+      new GuiButtonCtrl(FpsButton) {
+         text = "FPS";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "130 26";
-         extent = "124 48";
+         position = "8 73";
+         extent = "108 42";
          minExtent = "8 2";
-         horizSizing = "left";
+         horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiMenuButtonProfile";
+         profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
-         command = "toggleGuiMusicPlayer();";
+         command = "showMetrics(1);";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiButtonCtrl() {
-         text = "VideoPlayer";
+      new GuiButtonCtrl(UeberFpsButton) {
+         text = "Ueber-FPS";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "258 26";
-         extent = "124 48";
+         position = "8 121";
+         extent = "108 42";
          minExtent = "8 2";
-         horizSizing = "left";
+         horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiMenuButtonProfile";
+         profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
-         command = "toggleGuiVideoPlayer();";
+         command = "showUeberMetrics(1);";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiButtonCtrl() {
-         text = "Credits";
+      new GuiButtonCtrl(NetGraphButton) {
+         text = "Net-Graph";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "386 26";
-         extent = "124 48";
+         position = "8 169";
+         extent = "108 42";
          minExtent = "8 2";
-         horizSizing = "left";
+         horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiMenuButtonProfile";
+         profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
-         command = "toggleCreditsDlg();";
+         command = "toggleNetGraph(1);";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiButtonCtrl() {
-         text = "Dev-Tools";
+      new GuiButtonCtrl(GuiEditorButton) {
+         text = "Gui-Editor";
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "514 26";
-         extent = "124 48";
+         position = "8 217";
+         extent = "108 42";
          minExtent = "8 2";
-         horizSizing = "left";
+         horizSizing = "right";
          vertSizing = "bottom";
-         profile = "GuiMenuButtonProfile";
+         profile = "GuiButtonProfile";
          visible = "1";
          active = "1";
-         command = "toggleDevToolsDlg();";
+         command = "toggleGuiEditor(1);";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiButtonCtrl(AiEditorButton) {
+         text = "Ai-Editor";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         position = "8 265";
+         extent = "108 42";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiButtonProfile";
+         visible = "1";
+         active = "1";
+         command = "toggleBehaviorTreeEditor(1);";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";

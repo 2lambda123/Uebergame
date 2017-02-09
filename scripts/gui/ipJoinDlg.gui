@@ -1,11 +1,11 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(IpJoinDlg) {
    position = "0 0";
-   extent = "1280 1024";
+   extent = "1024 768";
    minExtent = "8 8";
    horizSizing = "right";
    vertSizing = "bottom";
-   profile = "GuiDefaultProfile";
+   profile = "GuiModelessDialogProfile";
    visible = "1";
    active = "1";
    tooltipProfile = "GuiToolTipProfile";
@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "0 424";
+      position = "0 296";
       extent = "300 175";
       minExtent = "8 8";
       horizSizing = "right";
@@ -55,8 +55,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "30 50";
-         extent = "67 18";
+         position = "10 50";
+         extent = "90 18";
          minExtent = "33 18";
          horizSizing = "relative";
          vertSizing = "relative";
@@ -106,8 +106,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "17 84";
-         extent = "81 18";
+         position = "10 84";
+         extent = "100 18";
          minExtent = "53 18";
          horizSizing = "relative";
          vertSizing = "relative";

@@ -117,7 +117,6 @@ function clientCmdSetHudMode(%mode)
          objectiveHud.setVisible(true);
          mainVoteHud.setVisible(true);
          LagIcon.setVisible(true);
-         toggleNetGraph(1);
          metrics("fps");
 
       case "Play":

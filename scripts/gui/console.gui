@@ -24,7 +24,7 @@
       canClose = "1";
       canMinimize = "0";
       canMaximize = "1";
-      closeCommand = "ToggleConsole(1);";
+      closeCommand = "toggleConsole(1);";
 
       new GuiScrollCtrl() {
          profile = "ConsoleScrollProfile";

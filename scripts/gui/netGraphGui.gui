@@ -453,23 +453,23 @@ new GuiControlProfile (NetGraphPacketLossProfile)
 //--- OBJECT WRITE END ---
 
 // Functions
+
 function toggleNetGraph()
 {
-    if(!$NetGraph::isInitialized)
-    {
+   if (NetGraphGui.isAwake())
+   {
+   Canvas.popDialog(NetGraphGui);
+   netSimulateLag( 0, 0 );
+   }
+   else
+   {
+   Canvas.pushDialog(NetGraphGui);
+   if(!$NetGraphGui::isInitialized)
+      {
         NetGraph::updateStats();
-        $NetGraph::isInitialized = true;
-    }
-
-    if(!Canvas.isMember(NetGraphGui))
-    {
-        Canvas.add(NetGraphGui);
-    }
-    else
-    {
-      Canvas.remove(NetGraphGui);
-      netSimulateLag( 0, 0 ); 
-    }
+        $NetGraphGui::isInitialized = true;
+      }
+   }
 }
 
 function NetGraph::updateStats()

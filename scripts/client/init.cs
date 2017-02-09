@@ -60,11 +60,11 @@ function Torque::initClient(%this)
    switch( $pref::MainGui::LastBackground )
    {
       case 0:
-         $MainGuiBackground = "art/gui/space_background_big.dds";
+         $MainGuiBackground = "art/gui/core/space_background_big.dds";
       case 1:
-         $MainGuiBackground = "art/gui/space_background_big.dds";
+         $MainGuiBackground = "art/gui/core/space_background_big.dds";
       default:
-         $MainGuiBackground = "art/gui/space_background_big.dds";
+         $MainGuiBackground = "art/gui/core/space_background_big.dds";
    }
    $pref::MainGui::LastBackground++;
 
@@ -127,6 +127,8 @@ function Torque::initClient(%this)
    exec("~/gui/endGameGui.cs");
    exec("~/gui/extrasDlg.gui");
    exec("~/gui/helpDlg.gui");
+   exec("~/gui/creditsDlg.gui");
+   exec("~/gui/devToolsDlg.gui");
 
    // Load up the Game GUI
    exec("~/gui/playGui.gui");

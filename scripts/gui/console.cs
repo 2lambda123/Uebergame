@@ -80,7 +80,7 @@ function ConsoleEntry::eval()
       echo( %result );
 }
 
-function ToggleConsole(%make)
+function toggleConsole(%make)
 {
    if (%make)
    {

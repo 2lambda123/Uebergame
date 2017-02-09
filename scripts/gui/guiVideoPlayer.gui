@@ -33,7 +33,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 144";
+      position = "192 160";
       extent = "640 480";
       minExtent = "512 256";
       horizSizing = "center";
@@ -48,7 +48,6 @@
       canSaveDynamicFields = "0";
 
       new GuiTheoraCtrl(TheoraVideo) {
-         theoraFile = "";
          backgroundColor = "0 0 0 255";
          playOnWake = "0";
          Loop = "0";
@@ -119,7 +118,7 @@
                fitParentWidth = "1";
                clipColumnText = "0";
                position = "1 1";
-               extent = "291 72";
+               extent = "291 108";
                minExtent = "8 20";
                horizSizing = "right";
                vertSizing = "bottom";

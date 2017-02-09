@@ -16,6 +16,7 @@ singleton Material(Mat_groundcover_foxtails_01_small)
    alphaTest = "1";
    alphaRef = "60";
    doubleSided = "1";
+   diffuseColor[0] = "0.616 0.612 0.612 1";
 };
 
 singleton Material(Mat_groundcover_grass_01_dry)
