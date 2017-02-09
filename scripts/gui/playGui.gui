@@ -32,7 +32,7 @@
       damageFrameColor = "1 1 1 1";
       damageRect = "0 0";
       damageOffset = "512 512";
-      bitmap = "art/gui/weaponHud/zoomHair_filled";
+      bitmap = "art/gui/playGui/zoomHair_filled";
       wrap = "0";
       position = "0 0";
       extent = "1440 880";
@@ -355,7 +355,7 @@
       damageFrameColor = "1 1 1 1";
       damageRect = "0 0";
       damageOffset = "512 512";
-      bitmap = "art/gui/weaponHud/crossHair256";
+      bitmap = "art/gui/playGui/crossHair256";
       wrap = "0";
       position = "384 256";
       extent = "256 256";

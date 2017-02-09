@@ -330,7 +330,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiBitmapCtrl(OP_CrosshairPreview) {
-               bitmap = "art/gui/weaponHud/crossHair256.png";
+               bitmap = "art/gui/playGui/crossHair256.png";
                color = "255 255 255 255";
                wrap = "0";
                position = "356 120";

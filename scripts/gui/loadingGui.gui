@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiChunkedBitmapCtrl(LoadingGui) {
-   bitmap = "art/gui/space_background_big.dds";
+   bitmap = "art/gui/core/space_background_big.dds";
    useVariable = "0";
    tile = "0";
    position = "0 0";
@@ -18,7 +18,7 @@
    canSaveDynamicFields = "1";
 
    new GuiBitmapCtrl(LOAD_MapPic) {
-      bitmap = "art/gui/space_background_big.dds";
+      bitmap = "art/gui/core/space_background_big.dds";
       color = "255 255 255 255";
       wrap = "0";
       position = "0 0";
