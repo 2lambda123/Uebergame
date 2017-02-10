@@ -210,3 +210,31 @@ new TerrainMaterial()
    detailSize = "4";
    useSideProjection = "1";
 };
+
+singleton Material(TerrainFX_ter_rock_ocean_01)    
+{    
+   mapTo = "ter_rock_ocean_01_B";    
+   footstepSoundId = "0";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Rock";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_ocean_01_B";
+   diffuseSize = "250";
+   detailMap = "art/terrains/rock/ter_rock_ocean_01_D";
+   detailDistance = "100";
+   internalName = "ter_rock_ocean_01";
+   macroSize = "35";
+   macroStrength = "0.7";
+   macroMap = "art/terrains/rock/ter_rock_ocean_01_M";
+   normalMap = "art/terrains/rock/ter_rock_ocean_01_N";
+   parallaxScale = "0";
+   detailSize = "3";
+   useSideProjection = "0";
+};

@@ -52,6 +52,34 @@ new TerrainMaterial()
    internalName = "ter_forest_grass_01";
 };
 
+singleton Material(TerrainFX_ter_forest_mixed_01)    
+{    
+   mapTo = "ter_forest_mixed_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Forest";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/forest/ter_forest_mixed_01_B";
+   diffuseSize = "100";
+   detailMap = "art/terrains/forest/ter_forest_mixed_01_D";
+   detailStrength = "1";
+   detailDistance = "70";
+   macroMap = "art/terrains/forest/ter_forest_mixed_01_M";
+   macroSize = "45";
+   macroStrength = "0.5";
+   parallaxScale = "0";
+   internalName = "ter_forest_mixed_01";
+   detailSize = "4";
+   normalMap = "art/terrains/forest/ter_forest_mixed_01_N";
+};
+
 singleton Material(TerrainFX_ter_forest_plants_01)    
 {    
    mapTo = "ter_forest_plants_01_B";    
