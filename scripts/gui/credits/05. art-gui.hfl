@@ -1,1 +1,39 @@
-art/gui
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+core/
+space_background_big.dds	CC0	Duion
+uebergame-icon.png	CC0	Duion
+
+mainMenu/
+duioncom-logo_small	CC0	Duion
+GMButton_adminMenu	CC0	Duion
+GMButton_armory	CC0	Duion
+MMButton_disconnect	CC0	Duion
+MMButton_editor	CC0	Duion
+MMButton_exit	CC0	Duion
+MMButton_extras	CC0	Duion
+MMButton_help	CC0	Duion
+MMButton_host	CC0	Duion
+MMButton_join	CC0	Duion
+MMButton_options	CC0	Duion
+Torque-3D-logo_alt2_button
+vignette_01_grey	CC0	Duion
+
+playGui/
+cautionwindow_red.png	CC0	Duion
+crossHair256.png	CC0	Duion
+damageBottom.png	CC0	Duion
+damageFront.png	CC0	Duion
+damageLeft.png	CC0	Duion
+damageRight.png	CC0	Duion
+damageTop.png	CC0	Duion
+lagIcon.png	MIT	Garagegames
+zoomHair_filled.png	MIT	Garagegames ?
+
+no-preview.png	CC0	Duion
+splash.bmp	CC0	Nendor & Duion
+
+treeView/
+all files:	MIT	Garagegame
+
+all other files in root gui/* folder:	MIT	Garagegames

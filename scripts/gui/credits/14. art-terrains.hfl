@@ -1,1 +1,73 @@
-art/terrains
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+asphalt/
+ter_asphalt_concrete_01	CC0	Duion
+ter_asphalt_decay_01	CC0	Duion
+ter_asphalt_street_01	CC0	Duion
+ter_asphalt_street_02	CC0	Duion
+
+dirt/
+ter_dirt_ash_01	CC0	Duion
+ter_dirt_ash_02	CC0	Duion
+ter_dirt_gravel_01	CC0	Duion
+ter_dirt_gravel_02	CC0	Duion
+ter_dirt_gravel_03	CC0	Duion
+ter_dirt_gravel_04	CC0	Duion
+ter_dirt_gravel_05	CC0	Duion
+
+forest/
+ter_forest_dirt_01	CC0	Duion
+ter_forest_grass_01	CC0	Duion
+ter_forest_mixed_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+ter_forest_plants_01	CC0	Duion
+
+grass/
+ter_grass_flowers_01	CC0	Duion
+ter_grass_flowers_02	CC0	Duion
+ter_grass_lush_01	CC0	Duion
+ter_grass_short_01	CC0	Duion
+ter_grass_sparse_01	CC0	Duion
+
+gravel/
+ter_gravel_plain_01	CC0	Duion
+ter_gravel_rough_01	CC0	Duion
+ter_gravel_sparse_01	CC0	Duion
+
+mulch/
+ter_mulch_dirt_01	CC0	Duion
+
+pavement/
+ter_pavement_largestone_01	CC0	Duion
+
+rock/
+ter_rock_ocean_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+ter_rock_rough_01	CC0	Duion
+ter_rock_rough_02	CC0	Duion
+ter_rock_rugged_01	CC0	Duion
+ter_rock_shale_01	CC0	Duion
+ter_rock_spotted_01	CC0	Duion
+
+rubble/
+ter_rubble_waste_01	CC0	Duion
+
+sand/
+ter_sand_bumpy_01	CC0	Duion
+ter_sand_dirty_01	CC0	Duion
+ter_sand_dirty_02	CC0	Duion
+ter_sand_dirty_03	CC0	Duion
+ter_sand_dirty_04	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+ter_sand_dirty_05	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+ter_sand_mixed_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+ter_sand_rough_01	CC0	Duion
+ter_sand_wet_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
+slope/
+ter_slope_rubble_01	CC0	Duion
+
+soil/
+ter_soil_dark_01	CC0	Duion
+ter_soil_dark_02	CC0	Duion
+ter_soil_mixed_01	CC0	Duion
+
+vegetation/
+ter_vegetation_hedge_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion

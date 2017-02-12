@@ -1,1 +1,123 @@
-art/textures
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+asphalt/
+asphalt_decay_01	CC0	Duion
+asphalt_floor_01	CC0	Duion
+asphalt_street_03	CC0	Duion
+
+bricks/
+bricks_cinder_01	CC0	Duion
+bricks_classic_01	CC0	Duion
+bricks_classic_02	CC0	Duion
+bricks_clean_01	CC0	Duion
+bricks_clean_02	CC0	Duion
+bricks_decay_01	CC0	Duion
+bricks_facade_01	CC0	Duion
+
+camo/
+camo_net_01	CC0	Duion
+camo_net_02	CC0	Duion
+
+ceiling/
+ceiling_bare_01	CC0	Duion
+
+colors/
+team_black_01	CC0	Duion
+team_blue_01	CC0	Duion
+team_green_01	CC0	Duion
+team_red_01	CC0	Duion
+team_yellow_01	CC0	Duion
+
+concrete/
+concrete_cracks_01	CC0	Duion
+concrete_dirty_01	CC0	Duion
+concrete_mossy_01	CC0	Duion
+concrete_panels_01	CC0	Duion
+concrete_pebble_01	CC0	Duion
+concrete_pebble_02	CC0	Duion
+concrete_plain_02	CC0	Duion
+concrete_plain_03	CC0	Duion
+concrete_plaster_01	CC0	Duion
+concrete_rough_01	CC0	Duion
+concrete_stripes_01	CC0	Duion
+concrete_stripes_02	CC0	Duion
+concrete_stripes_03	CC0	Duion
+
+door/
+door_garage_01	CC0	Duion
+door_warehouse_01	CC0	Duion
+
+facade/
+facade_slabs_01	CC0	Duion
+facade_wood_01	CC0	Duion
+
+lights/
+
+marble/
+marble_blotchy_01	CC0	Duion
+
+metal/
+metal_bare_01	CC0	Duion
+metal_corrugated_01	CC0	Duion
+metal_floor_01	CC0	Duion
+metal_panels_01	CC0	Duion
+metal_panels_02	CC0	Duion
+metal_rusted_01	CC0	Duion
+metal_rusted_02	CC0	Duion
+metal_stripes_01	CC0	Duion
+
+pavement/
+pavement_blocks_01	CC0	Duion
+pavement_regular_01	CC0	Duion
+pavement_slabs_01	CC0	Duion
+pavement_slabs_02	CC0	Duion
+pavement_slabs_03	CC0	Duion
+
+plaster/
+plaster_decay_01	CC0	Duion
+plaster_dirty_01	CC0	Duion
+plaster_plain_01	CC0	Duion
+plaster_sprinkled_01	CC0	Duion
+plaster_stucco_01	CC0	Duion
+
+plastic/
+plastic_nubs_01	CC0	Duion
+
+rock/
+rock_rough_01	CC0	Duion
+rock_rough_02	CC0	Duion
+rock_rugged_01	CC0	Duion
+rock_shale_01	CC0	Duion
+rock_spotted_01	CC0	Duion
+
+roof/
+roof_tar_01	CC0	Duion
+roof_tiles_01	CC0	Duion
+roof_tiles_02	CC0	Duion
+roof_tiles_03	CC0	Duion
+
+terrain/
+
+tiles/
+tiles_floor_01	CC0	Duion
+tiles_wall_01	CC0	Duion
+tiles_wall_02	CC0	Duion
+tiles_wall_03	CC0	Duion
+
+vents/
+vent_louver_01	CC0	Duion
+vent_louver_02	CC0	Duion
+
+wallpaper/
+wallpaper_odd_01	CC0	Duion
+
+wood/
+wood_chipboard_01	CC0	Duion
+wood_chipboard_02	CC0	Duion
+wood_dirty_01	CC0	Duion
+wood_dirty_02	CC0	Duion
+wood_laminate_01	CC0	Duion
+wood_planks_01	CC0	Duion
+wood_planks_02	CC0	Duion
+wood_planks_03	CC0	Duion
+wood_planks_04	CC0	Duion

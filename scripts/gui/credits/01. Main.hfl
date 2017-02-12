@@ -1,3 +1,26 @@
 <just:left><lmargin%:5><rmargin%:95><font:ArialBold:26>
 Uebergame Credits
 <font:ArialBold:16>
+This credits menu is designed to help you keep track of the license, author and source of all the content of Uebergame to avoid unclarities.
+
+<font:Arial:16>The art assets added to the game are almost all licensed under CC0 (Creative Commons 0) License,
+however many assets come from the original Torque3D MIT release and therefore are licensed as MIT license and even derivative works of
+them will stay under this license, since that is part of that licenses condition.
+
+CC0 / Public Domain assets do not require attribution, but they will get a mention anyway to be nice to the original creators and help others verify the source and license.
+
+Code information:
+The MIT license requires to keep the original license text, when the source code is distributed.
+This can get problematic, if other people work on that code and add their license to it, which leads to a constantly growing license
+header which always has to be kept. This then can lead to confusion, if everyone has to scroll through pages of credits and license information before getting to the real code.
+
+That is why the Author of Uebergame has decided to only keep the original Garagegames MIT license and not add further credits into the code, but instead give attribution through this menu.
+
+So if you read in the code the copyright notice from Garagegames this does not mean Garagegames produced all the code alone, but in the meantime lots of other
+people worked on it and improved it, but did not add their name to it. It is very difficult to keep track of who did what, but if possible contributors get an entry in this credits menu in the future.
+
+
+License references:
+
+MIT License:   <a:https://mit-license.org/>https://mit-license.org/</a>
+CC0 License:   <a:https://creativecommons.org/publicdomain/zero/1.0/>Summary</a>  License text:   <a:https://creativecommons.org/publicdomain/zero/1.0/legalcode>creativecommons.org/publicdomain/zero/1.0/legalcode</a>

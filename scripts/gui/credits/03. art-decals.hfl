@@ -1,1 +1,12 @@
-art/decals
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+bulletHoles/
+bullet_hole_01.dds	MIT	Garagegames
+
+paintball/
+pb_splatter_01_D.dds	CC0	Duion
+
+blood_splatter_01.png	CC0	Duion
+defaultblobshadow.png	MIT	Garagegames
+rBlast.png	MIT	Garagegames
+scorch_decal.png	MIT	Garagegames

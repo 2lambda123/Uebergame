@@ -1,1 +1,101 @@
-art/sound
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+cheetah/	MIT	Garagegames
+
+environment/forest/
+wind_forest_01.ogg	CC0	MrAuralization   Source:  <a:https://www.freesound.org/people/MrAuralization/sounds/243617/>freesound.org/people/MrAuralization/sounds/243617</a>
+wind_forest_birds_01.ogg	CC0	bolland   Source:  <a:https://www.freesound.org/people/bolland/sounds/196005/>www.freesound.org/people/bolland/sounds/196005</a>
+
+environment/night/
+night_crickets_01.ogg	CC0	icuttv   Source:  <a:https://www.freesound.org/people/icuttv/sounds/181362/>freesound.org/people/icuttv/sounds/181362</a>  -edited by Duion
+
+environment/rain/
+rain_forest_01.ogg	CC0	kvgarlic   Source:  <a:https://www.freesound.org/people/kvgarlic/sounds/196585/>freesound.org/people/kvgarlic/sounds/196585</a> -edited by Duion
+
+environment/wind/
+wind_basic_01.ogg	CC0	klangfabrik   Source:  <a:https://www.freesound.org/people/klangfabrik/sounds/26714/>freesound.org/people/klangfabrik/sounds/26714</a>  -edited by Duion
+wind_medium_01.ogg	CC0	worthahep88   Source:  <a:https://www.freesound.org/people/worthahep88/sounds/319211/>freesound.org/people/worthahep88/sounds/319211</a> -edited by Duion
+wind_storm_01.ogg	CC0	asbestos bill   Source:  <a:https://www.freesound.org/people/asbestos%20bill/sounds/181287/>freesound.org/people/asbestos%20bill/sounds/181287</a> -edited by Duion
+
+environment/
+amb.ogg	MIT	Garagegames
+thunder1.ogg	MIT	Garagegames
+thunder2.ogg	MIT	Garagegames
+thunder3.ogg	MIT	Garagegames
+thunder4.ogg	MIT	Garagegames
+
+footsteps/
+hvystep_ mono_01.wav	MIT	Garagegames
+lgtStep_mono_01.wav	MIT	Garagegames
+metalstep_mono_01.ogg	MIT	Garagegames
+snowstep_mono_01.ogg	MIT	Garagegames
+waterstep_mono_01.ogg	MIT	Garagegames
+
+gui/
+button_accept_01.wav	CC0	farpro   Source:  <a:https://www.freesound.org/people/farpro/sounds/264762/>freesound.org/people/farpro/sounds/264762</a>
+button_cancel_01.wav	CC0	farpro   Source:  <a:https://www.freesound.org/people/farpro/sounds/264763/>freesound.org/people/farpro/sounds/264763</a>
+button_over_01.wav	CC0	Andreas.Mustola   Source:  <a:https://www.freesound.org/people/Andreas.Mustola/sounds/255764/>freesound.org/people/Andreas.Mustola/sounds/255764</a>
+check_box_check_01.wav	CC0	loafdv   Source:  <a:https://www.freesound.org/people/loafdv/sounds/238290/>freesound.org/people/loafdv/sounds/238290</a>
+deploy_error.wav	CC0	Isaac200000 Source:  <a:https://www.freesound.org/people/Isaac200000/sounds/188013/>freesound.org/people/Isaac200000/sounds/188013</a>
+menu_item_hover_01.wav	CC0	qubodup   Source:  <a:https://www.freesound.org/people/qubodup/sounds/159698/>freesound.org/people/qubodup/sounds/159698</a>
+volumeTest.wav	MIT	Garagegames
+
+impacts/
+impact_concrete_01.ogg	CC0	Yoyodaman234   Source:  <a:https://www.freesound.org/people/Yoyodaman234/sounds/166508/>freesound.org/people/Yoyodaman234/sounds/166508</a> -edited by Duion
+
+items/
+health_mono_01.ogg	MIT	Garagegames
+
+player/hit/
+player_hit_08.wav	CC0	editor_adp   Source:  <a:https://www.freesound.org/people/editor_adp/sounds/269485/>freesound.org/people/editor_adp/sounds/269485</a> -edited by Duion
+player_hit_09.wav	CC0	editor_adp   Source:  <a:https://www.freesound.org/people/editor_adp/sounds/269485/>freesound.org/people/editor_adp/sounds/269485</a> -edited by Duion
+player_hit_10.wav	CC0	editor_adp   Source:  <a:https://www.freesound.org/people/editor_adp/sounds/269485/>freesound.org/people/editor_adp/sounds/269485</a> -edited by Duion
+player_hit_11.wav	CC0	editor_adp   Source:  <a:https://www.freesound.org/people/editor_adp/sounds/269485/>freesound.org/people/editor_adp/sounds/269485</a> -edited by Duion
+
+player/pain/
+orc_death.ogg	MIT	Garagegames
+orc_pain.ogg	MIT	Garagegames
+
+player/
+throw.ogg	MIT	Garagegames
+
+weapons/grenades/
+smokeGrenade.ogg	CC0	univ_lyon3   Source:  <a:https://www.freesound.org/people/univ_lyon3/sounds/201848/>freesound.org/people/univ_lyon3/sounds/201848</a> -edited by Duion
+
+weapons/paintball/
+paintball_impact_1.wav	CC0	rombart   Source:  <a:https://www.freesound.org/people/rombart/sounds/186747/>freesound.org/people/rombart/sounds/186747</a> -edited by Duion
+paintball_impact_2.wav	CC0	Duion, remix of paintball_impact_1 & paintball_impact_3
+paintball_impact_3.wav	CC0	minian89   Source:  <a:https://www.freesound.org/people/minian89/sounds/195955/>freesound.org/people/minian89/sounds/195955</a> -edited by Duion
+paintball_shot_1.wav	CC0	fabianofa Source:  <a:https://www.freesound.org/people/fabianofa/sounds/98188/>freesound.org/people/fabianofa/sounds/98188</a> -edited by Duion
+
+weapons/ricochet/
+bullet_ricochet_01.wav ?
+
+weapons/turret/
+wpn_turret_deploy.wav	MIT	Garagegames
+wpn_turret_fire.wav	MIT	Garagegames
+wpn_turret_scan.wav	MIT	Garagegames
+wpn_turret_switchin.wav	MIT	Garagegames
+
+weapons/
+Crossbow_explosion.wav	MIT	Garagegames
+D_32P_01_end.wav	CC0	Source:  <a:http://www.airbornesound.com/downloads/free-firearm-sound-effects-library-expanded-edition/>airbornesound.com</a> -edited by Duion
+D_32P_01_loop.wav	CC0	Source:  <a:http://www.airbornesound.com/downloads/free-firearm-sound-effects-library-expanded-edition/>airbornesound.com</a> -edited by Duion	
+dry_fire_01.wav	CC0	brianhanson2nd   Source:  <a:https://www.freesound.org/people/brianhanson2nd/sounds/171211/>freesound.org/people/brianhanson2nd/sounds/171211</a> -edited by Duion
+GRENADELAND.wav	MIT	Garagegames
+mine_armed.ogg	MIT	Garagegames
+mine_trigger.ogg	MIT	Garagegames
+shotgun_fire.wav	MIT	Garagegames   Source:  FPS Tutorial art/sound/
+shotgun_reload.wav	MIT	Garagegames   Source:  from wpn_lurker_grenadelaunch.wav edited by Duion
+sniper_fire.wav	MIT	Garagegames	  Source:  FPS Tutorial art/sound/weapons/shot.ogg 
+sniper_reload.wav	MIT	Garagegames   Source:  a variation of wpn_ryder_reload.wav edited by Duion
+V_22P_01.wav	CC0	Source:  <a:http://www.airbornesound.com/downloads/free-firearm-sound-effects-library-expanded-edition/>airbornesound.com</a> -edited by Duion
+Weapon_pickup.ogg	MIT	Garagegames
+Weapon_switch.ogg	MIT	Garagegames
+wpn_lurker_grenadelaunch.wav	MIT	Garagegames
+wpn_lurker_reload.wav	MIT	Garagegames
+wpn_lurker_switchin.wav	MIT	Garagegames
+wpn_proximitymine_switchin.wav	MIT	Garagegames
+wpn_ryder_reload.wav	MIT	Garagegames
+wpn_ryder_switchin.wav	MIT	Garagegames
+

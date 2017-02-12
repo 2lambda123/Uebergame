@@ -1,1 +1,141 @@
-art/shapes
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+actors/common/
+footprint.png	MIT	Garagegames
+splash.png	MIT	Garagegames
+
+actors/paintball_player/*	CC0	Duion
+
+actors/Soldier/*	MIT	Garagegames   New skins by Duion based on the originals
+
+barriers/inflatable/
+inflatable_barriers_01/*	CC0	Duion
+
+barriers/poles/*	CC0	Duion
+
+barriers/sandbags/
+sandbags_01/* 	CC0	Duion
+
+barriers/street/* 	CC0	Duion
+
+buildings/camouflage/
+camo_stand_01/* 	CC0	Duion
+
+bushes/dead/deadbush_01/
+deadbush_01_a 	CC0	Duion   Info: Only the mesh, not the texture
+deadbush_01_b 	CC0	Duion   Info: Only the mesh, not the texture
+deadbush_01_c 	CC0	Duion   Info: Only the mesh, not the texture
+deadbush_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
+items/ammo/
+futuristic_ammo_box_01 	CC0	Duion   Source: Original from Nobiax
+
+items/bags/suitcases/ 	CC0	Duion   Source: Original from Nobiax
+suitcase_01_bomb 	CC0	Duion   Source: Original from Nobiax
+suitcase_01_closed 	CC0	Duion   Source: Original from Nobiax
+suitcase_01_money 	CC0	Duion   Source: Original from Nobiax
+suitcase_01_open 	CC0	Duion   Source: Original from Nobiax
+suitcase_01 	CC0	Duion   Source: Original from Nobiax
+
+items/health/
+medpack_01.dts 	CC0	Duion
+medpack_01 	CC0	Duion
+
+items/kit/*	MIT	Garagegames
+
+objectives/flag_stands/
+flag_stand_01.dts 	CC0	Duion
+flag_stand_01 	CC0	Duion
+
+objectives/flags/
+flag_01.dts 	CC0	Duion
+flag_01 	CC0	Duion
+
+plants/ferns/
+fern_01/* 	CC0	Duion
+fern_tropical_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
+rocks/cliffs/cliffs_brown_01/* 	CC0	Duion
+
+rocks/crags_folded/
+crags_folded_01/* 	CC0	Duion
+
+rocks/
+boulder.dts	MIT	Garagegames
+MossyRock02.png	MIT	Garagegames
+
+storage/barrels/metal/
+barrel_oil_01.dts 	CC0	Duion   Source: Original from Nobiax
+barrel_oil_01 	CC0	Duion   Source: Original from Nobiax
+barrel_oil_02.dts 	CC0	Duion   Source: Original from Nobiax
+barrel_oil_02_blue 	CC0	Duion   Source: Original from Nobiax
+barrel_oil_03.dts 	CC0	Duion
+barrel_oil_03 	CC0	Duion
+
+storage/barrels/plastic/
+barrel_plastic_01 	CC0	Duion   Source: Original from Nobiax
+
+storage/barrels/wood/
+barrel_wood_01_a 	CC0	Duion
+barrel_wood_01_b 	CC0	Duion
+barrel_wood_02_big 	CC0	Duion   Source: Original from Nobiax
+barrel_wood_02_small 	CC0	Duion   Source: Original from Nobiax
+
+storage/cartons/
+carton_01 	CC0	Duion   Source: Original from Nobiax
+
+storage/crates/generic/
+generic_crate_01_a 	CC0	Duion   Source: Original from Nobiax
+generic_crate_01_b 	CC0	Duion
+
+storage/crates/weapons/
+weapon_box_01 	CC0	Duion   Source: Original from Nobiax
+weapon_crate_old_01 	CC0	Duion
+
+storage/pallets/
+pallet_01 	CC0	Duion   Source: Original from groemk <a:http://opengameart.org/content/eurpallet>opengameart.org/content/eurpallet</a>
+pallet_02 	CC0	Duion   Source: Original from Nobiax
+pallet_03 	CC0	Duion   Source: Original from Nobiax
+
+storage/tanks/
+propane_tank_01 	CC0	Duion   Source: Original from Nobiax
+
+trees/birch/
+birch_01/* 	CC0	Duion
+
+trees/canopy/
+canopy_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
+trees/fir/
+fir_01/* 	CC0	Duion
+
+trees/generic/
+thintree_01	MIT	Garagegames  Source:Pacific Demo, ported and redesigned by Duion
+
+trees/palm/
+banana_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+palm_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
+vehicles/
+buggy/*	MIT	Garagegames
+Cheetah/*	MIT	Garagegames
+
+walls/invisible/
+invisible_cube_1x1 	CC0	Duion   Info: It's just a cube.
+
+weapons/explosives/
+plastique/* 	CC0	Duion   Source: Original from Nobiax
+time_bomb/* 	CC0	Duion   Source: Original from Nobiax
+
+weapons/Grenade/*	MIT	Garagegames
+
+weapons/Lurker	MIT	Garagegames   Info: New Skin by Duion
+weapons/Lurker_brown	MIT	Garagegames   Info: New Skin by Duion
+weapons/Lurker_dark	MIT	Garagegames   Info: New Skin by Duion
+
+weapons/paintball/* 	CC0	Duion
+weapons/ProxMine/*	MIT	Garagegames
+weapons/Ryder/*	MIT	Garagegames
+weapons/shared/*	MIT	Garagegames
+weapons/shotgun/* 	CC0	Jason Campbell <a:http://opengameart.org/content/semi-auto-shotgun-with-magazine>opengameart.org/content/semi-auto-shotgun-with-magazine</a>
+weapons/Turret/*	MIT	Garagegames

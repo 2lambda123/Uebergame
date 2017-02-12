@@ -1,1 +1,42 @@
-art/environment
+<just:left><lmargin%:2><rmargin%:98><tab:164,224><font:ArialBold:16>File	License	Author/Source/Info<font:Arial:14><tab:180,224>
+
+flowers/
+beargrass_01_white.dds	CC0	Duion
+beargrass_01_yellow.dds	CC0	Duion
+crocus_01_purple.dds	CC0	Duion
+crocus_01_white.dds	CC0	Duion
+crocus_01_yellow.dds	CC0	Duion
+royal_catchfly_01_red.dds	CC0	Duion
+tulip_01_orange.dds	CC0	Duion
+tulip_01_purple.dds	CC0	Duion
+tulip_01_red.dds	CC0	Duion
+tulip_01_white.dds	CC0	Duion
+tulip_01_yellow.dds	CC0	Duion
+
+grasses/
+foxtails_01.dds	CC0	Duion
+foxtails_01_small.dds	CC0	Duion
+grass_01.dds	CC0	Duion
+grass_01_dry.dds	CC0	Duion
+grass_02_low.dds	CC0	Duion
+grass_03_medium.dds	CC0	Duion
+grass_03_short.dds	CC0	Duion
+grass_03_tall.dds	CC0	Duion
+J_Grass02_dry.dds	CC0	Ron Kapaun
+Weed01.dds	MIT	Garagegames
+
+herbs/
+anise_01_a.dds	CC0	Duion
+anise_01_b.dds	CC0	Duion
+blazing_star_01.dds	CC0	Duion
+goldenrod_01.dds	CC0	Duion
+sorrel_01_a.dds	CC0	Duion
+sorrel_01_b.dds	CC0	Duion
+
+mushrooms/
+fly_agaric_01.dds	CC0	Duion
+
+precipitation/
+rain.png	MIT	Garagegames
+stormcloud_01.png	CC0	Duion
+water_splash.png	MIT	Garagegames
