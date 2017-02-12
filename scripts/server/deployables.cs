@@ -263,7 +263,7 @@ function ShapeBaseImageData::displayErrorMsg(%data, %plyr, %slot, %error)
 {
    deactivateDeploySensor(%plyr);
    
-   %errorSnd = '~wdeploy_error.wav';
+   %errorSnd = 'art/sound/gui/deploy_error.wav';
    switch (%error)
    {
       case $NotDeployableReason::None:

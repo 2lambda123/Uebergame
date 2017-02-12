@@ -58,7 +58,7 @@ datablock SFXProfile(DirtKickup)
 datablock SFXProfile(CheetahTurretFireSound)
 {
    //filename = "art/sound/cheetah/turret_firing.wav";
-   filename = "art/sound/turret/wpn_turret_fire.wav";
+   filename = "art/sound/weapons/turret/wpn_turret_fire.wav";
    description = BulletFireDesc;
    preload = true;
 };

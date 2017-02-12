@@ -973,7 +973,7 @@ function OptAudioUpdateMasterVolume( %volume )
    $pref::SFX::masterVolume = %volume;
    
    if( !isObject( $AudioTestHandle ) )
-      $AudioTestHandle = sfxPlayOnce( AudioChannel, "art/sound/ui/volumeTest.wav" );
+      $AudioTestHandle = sfxPlayOnce( AudioChannel, "art/sound/gui/volumeTest.wav" );
 }
 
 function OptAudioUpdateChannelVolume( %description, %volume )
@@ -989,7 +989,7 @@ function OptAudioUpdateChannelVolume( %description, %volume )
    if( !isObject( $AudioTestHandle ) )
    {
       $AudioTestDescription.volume = %volume;
-      $AudioTestHandle = sfxPlayOnce( $AudioTestDescription, "art/sound/ui/volumeTest.wav" );
+      $AudioTestHandle = sfxPlayOnce( $AudioTestDescription, "art/sound/gui/volumeTest.wav" );
    }
 }
 

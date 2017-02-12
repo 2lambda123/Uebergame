@@ -21,7 +21,7 @@ new TerrainMaterial()
    detailStrength = "1";
    detailSize = "3";
    diffuseSize = "500";
-   macroMap = "art/terrains/asphalt/asphalt_street_plain_01_M";
+   macroMap = "art/terrains/asphalt/ter_asphalt_street_01_M";
    parallaxScale = "0";
    normalMap = "art/terrains/asphalt/ter_asphalt_street_01_N";
 };
@@ -45,7 +45,7 @@ new TerrainMaterial()
    detailMap = "art/terrains/asphalt/ter_asphalt_street_02_D";
    detailStrength = "1";
    detailDistance = "100";
-   macroMap = "art/terrains/asphalt/asphalt_street_plain_02_M";
+   macroMap = "art/terrains/asphalt/ter_asphalt_street_02_M";
    macroSize = "200";
    internalName = "ter_asphalt_street_02";
    macroStrength = "0.5";

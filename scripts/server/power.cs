@@ -24,7 +24,7 @@
 
 datablock SFXProfile(BasePowerOn)
 {
-   filename    = "art/sound/turret/wpn_turret_deploy.wav";
+   filename    = "art/sound/weapons/turret/wpn_turret_deploy.wav";
    description = Audio2D;
    preload = true;
 };
@@ -38,7 +38,7 @@ datablock SFXProfile(BasePowerOff)
 
 datablock SFXProfile(BasePowerHum)
 {
-   filename    = "art/sound/turret/wpn_turret_scan.wav";
+   filename    = "art/sound/weapons/turret/wpn_turret_scan.wav";
    description = AudioLooping2D;
    preload = true;
 };

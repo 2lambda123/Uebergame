@@ -59,28 +59,28 @@ datablock SFXProfile(TurretThrown)
 
 datablock SFXProfile(TurretFireSound)
 {
-   filename = "art/sound/turret/wpn_turret_fire";
+   filename = "art/sound/weapons/turret/wpn_turret_fire";
    description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(TurretActivatedSound)
 {
-   filename = "art/sound/turret/wpn_turret_deploy";
+   filename = "art/sound/weapons/turret/wpn_turret_deploy";
    description = AudioClose3D;
    preload = true;
 };
 
 datablock SFXProfile(TurretScanningSound)
 {
-   filename = "art/sound/turret/wpn_turret_scan";
+   filename = "art/sound/weapons/turret/wpn_turret_scan";
    description = AudioCloseLoop3D;
    preload = true;
 };
 
 datablock SFXProfile(TurretSwitchinSound)
 {
-   filename = "art/sound/turret/wpn_turret_switchin";
+   filename = "art/sound/weapons/turret/wpn_turret_switchin";
    description = AudioClosest3D;
    preload = true;
 };
