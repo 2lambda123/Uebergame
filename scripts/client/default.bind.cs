@@ -30,8 +30,8 @@ GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 
 //GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
-GlobalActionMap.bind(keyboard, "F1", showMetrics);
-GlobalActionMap.bind(keyboard, "F2", showUeberMetrics);
+//GlobalActionMap.bind(keyboard, "F1", showMetrics);
+//GlobalActionMap.bind(keyboard, "F2", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
 GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 //GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );

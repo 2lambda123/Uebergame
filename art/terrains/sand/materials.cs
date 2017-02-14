@@ -165,10 +165,10 @@ new TerrainMaterial(ter_sand_dirty_05)
    diffuseSize = "250";
    detailMap = "art/terrains/sand/ter_sand_dirty_05_D";
    detailDistance = "100";
-   macroSize = "16";
+   macroSize = "22";
    internalName = "ter_sand_dirty_05";
    macroMap = "art/terrains/sand/ter_sand_dirty_04_M";
-   macroStrength = "1.2";
+   macroStrength = "2";
    parallaxScale = "0";
    detailSize = "3";
    detailStrength = "1";
@@ -257,7 +257,7 @@ new TerrainMaterial()
    macroStrength = "0.3";
    parallaxScale = "0";
    detailSize = "3";
-   macroDistance = "250";
+   macroDistance = "350";
    macroMap = "art/terrains/sand/ter_sand_wet_01_D";
    normalMap = "art/terrains/sand/ter_sand_wet_01_N";
 };

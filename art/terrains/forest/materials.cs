@@ -103,6 +103,6 @@ new TerrainMaterial()
    macroStrength = "0.5";
    normalMap = "art/terrains/forest/ter_forest_plants_01_N";
    parallaxScale = "0";
-   detailSize = "5";
+   detailSize = "4";
    macroMap = "art/terrains/forest/ter_forest_plants_01_M";
 };

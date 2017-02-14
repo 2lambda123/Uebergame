@@ -98,13 +98,14 @@ new TerrainMaterial()
    internalName = "ter_rock_rugged_01";
    diffuseSize = "250";
    macroSize = "64";
-   macroStrength = "1";
+   macroStrength = "0.5";
    detailDistance = "100";
    detailMap = "art/terrains/rock/ter_rock_rugged_01_D";
    macroMap = "art/terrains/rock/ter_rock_rugged_01_M";
    normalMap = "art/terrains/rock/ter_rock_rugged_01_N";
    parallaxScale = "0.1";
    useSideProjection = "0";
+   detailStrength = "1";
 };
 
 new TerrainMaterial()
