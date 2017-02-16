@@ -270,8 +270,11 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateName[1]                     = "Activate";
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
-   stateTimeoutValue[1]             = 1.0;
-   stateSequence[1]                 = "switch_in";
+   stateTimeoutValue[1]             = 0.5;
+   stateWaitForTimeout[1]           = true;
+   stateScaleAnimation[1]           = false;
+   stateScaleAnimationFP[1]         = false;
+   stateSequence[1]                 = "idle";
    //stateSound[1]                    = RyderSwitchinSound;
 
    // Ready to fire, just waiting for the trigger
@@ -382,14 +385,14 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateTransitionGeneric0Out[11]   = "SprintExit";
    stateTransitionOnTimeout[11]     = "Sprinting";
    stateWaitForTimeout[11]          = false;
-   stateTimeoutValue[11]            = 0.5;
+   stateTimeoutValue[11]            = 0.2;
    stateWaitForTimeout[11]          = false;
    stateScaleAnimation[11]          = false;
    stateScaleAnimationFP[11]        = false;
    stateSequenceTransitionIn[11]    = true;
    stateSequenceTransitionOut[11]   = true;
    stateAllowImageChange[11]        = false;
-   stateSequence[11]                = "sprint";
+   stateSequence[11]                = "Run";
 
    // Sprinting
    stateName[12]                    = "Sprinting";
@@ -400,18 +403,18 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    stateSequenceTransitionIn[12]    = true;
    stateSequenceTransitionOut[12]   = true;
    stateAllowImageChange[12]        = false;
-   stateSequence[12]                = "sprint";
+   stateSequence[12]                = "Run";
    
    // Stop Sprinting
    stateName[13]                    = "SprintExit";
    stateTransitionGeneric0In[13]    = "SprintEnter";
    stateTransitionOnTimeout[13]     = "Ready";
    stateWaitForTimeout[13]          = false;
-   stateTimeoutValue[13]            = 0.15;
+   stateTimeoutValue[13]            = 0.1;
    stateSequenceTransitionIn[13]    = true;
    stateSequenceTransitionOut[13]   = true;
    stateAllowImageChange[13]        = false;
-   stateSequence[13]                = "sprint";
+   stateSequence[13]                = "Run";
    
    stateName[14]                     = "ReloadFinish";
    stateTimeoutValue[14]             = 0.1;
@@ -434,7 +437,7 @@ datablock ShapeBaseImageData( RyderIronSightImage: RyderWeaponImage )
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1]             = 0.25;
+   stateTimeoutValue[1]             = 0.4;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]     = "idle";
    stateSound[1]        = "";

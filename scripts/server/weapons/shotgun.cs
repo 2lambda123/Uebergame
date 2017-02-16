@@ -215,7 +215,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
    stateWaitForTimeout[1]           = true;
-   stateSequence[1]                 = "switch_in";
+   stateSequence[1]                 = "idle";
    //stateSound[1]                    = ShotgunSwitchinSound;
 
    stateName[2]                     = "Ready";
@@ -381,7 +381,7 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    eyeOffset = "-0.16 0 0.05";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
-   projectileSpread = 0.015;
+   projectileSpread = 0.02;
    parentImage = "ShotgunWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.

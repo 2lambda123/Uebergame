@@ -336,7 +336,10 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
-   stateSequence[1]                 = "switch_in";
+   stateSequence[1]                 = "idle";
+   stateWaitForTimeout[1]           = true;
+   stateScaleAnimation[1]           = false;
+   stateScaleAnimationFP[1]         = false;
    //stateSound[1]                    = LurkerSwitchinSound;
 
    stateName[2]                     = "Ready";
@@ -505,7 +508,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
 
    // Called when the weapon is first mounted and there is ammo.
    // We want a smooth transition from datablocks, change Activate params
-   stateTimeoutValue[1]             = 0.7;
+   stateTimeoutValue[1]             = 0.8;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]                 = "idle";
    stateSound[1]                    = "";
