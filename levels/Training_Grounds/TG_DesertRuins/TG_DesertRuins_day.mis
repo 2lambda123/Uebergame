@@ -89,10 +89,6 @@ new SimGroup(MissionGroup) {
       rotation = "1 0 0 0";
       canSave = "1";
       canSaveDynamicFields = "1";
-         efficiency = "30";
-         kills = "3";
-         killsImpact = "3";
-         score = "30.0";
    };
    new BasicClouds(wolks) {
       layerEnabled[0] = "1";

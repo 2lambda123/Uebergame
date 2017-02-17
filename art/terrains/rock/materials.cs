@@ -58,12 +58,13 @@ new TerrainMaterial()
    diffuseSize = "250";
    detailMap = "art/terrains/rock/ter_rock_rough_02_D";
    detailDistance = "100";
-   macroSize = "100";
+   macroSize = "72";
    internalName = "ter_rock_rough_02";
    normalMap = "art/terrains/rock/ter_rock_rough_02_N";
    parallaxScale = "0.1";
    useSideProjection = "0";
    macroMap = "art/terrains/rock/ter_rock_rough_02_M";
+   macroStrength = "0.5";
 };
 
 new TerrainMaterial()

@@ -672,7 +672,7 @@ function ObjectBuilderGui::buildCloudLayer(%this)
 {
    OBObjectName.setValue( "" );      
    %this.objectClassName = "CloudLayer";
-   %this.addField( "texture", "TypeImageFilename", "Texture", "art/skies/clouds/clouds_normal_displacement" );   
+   %this.addField( "texture", "TypeImageFilename", "Texture", "art/clouds/clouds_normal_displacement" );   
 	%this.process();
 }
 
@@ -944,14 +944,23 @@ function ObjectBuilderGui::buildPlayerDropPoint(%this)
    %this.addField("radius",       "TypeFloat",     "Radius",        1);
    %this.addField("sphereWeight", "TypeFloat",     "Sphere Weight", 1);
 
-   %this.addField("spawnClass",     "TypeString",    "Spawn Class", "Player");
-   %this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "PlayerData DefaultPlayerData");
+   //%this.addField("spawnClass",     "TypeString",    "Spawn Class", "Player");
+   //%this.addField("spawnDatablock", "TypeDataBlock", "Spawn Data", "PlayerData DefaultPlayerData");
 
+	// Create player spawn point SimGroup, if it does not exist
    if( EWCreatorWindow.objectGroup.getID() == MissionGroup.getID() )
    {
-      if( !isObject("PlayerDropPoints") )
-         MissionGroup.add( new SimGroup("PlayerDropPoints") );
-      %this.objectGroup = "PlayerDropPoints";
+	   %group = nameToID("MissionGroup/Teams");
+      if( !isObject(%group) )
+         MissionGroup.add( new SimGroup("Teams") );
+		%group = nameToID("MissionGroup/Teams");
+		%group.add( new SimGroup("Team0") );
+		%group = nameToID("MissionGroup/Teams/Team0");
+      %group.add( new SimGroup("SpawnSpheres0") );
+		%group = nameToID("MissionGroup/Teams/Team0/SpawnSpheres0");	
+
+		// The groups do get created, but the new SpawnSphere does not get placed in it automatically yet
+      %this.objectGroup = %group;
    }
 
    %this.process();

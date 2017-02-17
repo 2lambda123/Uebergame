@@ -74,7 +74,7 @@ function DMGame::setUpTeams(%game)
 
    %dropSet = new SimSet("TeamDrops0");
    MissionCleanup.add(%dropSet);
-   %spawns = nameToID("MissionGroup/Teams/team0/SpawnSpheres0");
+   %spawns = nameToID("MissionGroup/Teams/Team0/SpawnSpheres0");
    if(%spawns != -1)
    {
       %count = %spawns.getCount();

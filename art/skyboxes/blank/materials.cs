@@ -33,7 +33,7 @@ singleton CubemapData( BlackSkyCubemap )
 singleton Material( BlackSkyMat )
 {
    cubemap = BlackSkyCubemap;
-   materialTag0 = "Skies";
+   materialTag0 = "Skyboxes";
    isSky = true;
 };
 
@@ -50,7 +50,7 @@ singleton CubemapData( BlueSkyCubemap )
 singleton Material( BlueSkyMat )
 {
    cubemap = BlueSkyCubemap;
-   materialTag0 = "Skies";
+   materialTag0 = "Skyboxes";
    isSky = true;
 };
 
@@ -67,6 +67,26 @@ singleton CubemapData( GreySkyCubemap )
 singleton Material( GreySkyMat )
 {
    cubemap = GreySkyCubemap;
-   materialTag0 = "Skies";
+   materialTag0 = "Skyboxes";
    isSky = true;
+};
+
+singleton CubemapData( WhiteSkyCubemap )
+{
+   cubeFace[0] = "./solidsky_white";
+   cubeFace[1] = "./solidsky_white";
+   cubeFace[2] = "./solidsky_white";
+   cubeFace[3] = "./solidsky_white";
+   cubeFace[4] = "./solidsky_white";
+   cubeFace[5] = "./solidsky_white";
+};
+
+singleton Material( WhiteSkyMat )
+{
+   cubemap = WhiteSkyCubemap;
+   materialTag0 = "Skyboxes";
+   isSky = 1;
+   showFootprints = "0";
+   footstepSoundId = "0";
+   impactSoundId = "1";
 };

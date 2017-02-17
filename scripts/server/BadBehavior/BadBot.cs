@@ -168,7 +168,7 @@ function BadBot::spawn(%name, %startPos)
    }
    else if(%startPos $= "")
    {
-      %spawnPoint = pickPlayerSpawnPoint(PlayerDropPoints);
+      %spawnPoint = nameToID("MissionGroup/Teams/Team0/SpawnSpheres0");
       if(isObject(%spawnPoint))
          %startPos = %spawnPoint.getPosition();
    }

@@ -199,7 +199,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1776 x 1000  (16:9)";
+               text = "1280 x 800  (16:10)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -303,7 +303,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -565,7 +565,7 @@
                groupNum = "-1";
                buttonType = "PushButton";
                useMouseEvents = "0";
-               position = "422 103";
+               position = "422 124";
                extent = "180 32";
                minExtent = "8 2";
                horizSizing = "right";
@@ -779,8 +779,8 @@
                groupNum = "-1";
                buttonType = "PushButton";
                useMouseEvents = "0";
-               position = "465 10";
-               extent = "160 48";
+               position = "465 26";
+               extent = "160 64";
                minExtent = "8 8";
                horizSizing = "right";
                vertSizing = "bottom";
@@ -852,7 +852,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "2";
+               text = "0.5";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1627,7 +1627,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.17234";
+                  value = "0.142553";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
