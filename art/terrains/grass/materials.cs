@@ -73,8 +73,8 @@ new TerrainMaterial()
    internalName = "ter_grass_lush_01";
    detailSize = "4";
    detailDistance = "100";
-   macroSize = "50";
-   macroStrength = "1";
+   macroSize = "35";
+   macroStrength = "0.9";
    diffuseSize = "250";
    macroMap = "art/terrains/grass/ter_grass_lush_01_M";
    detailStrength = "1.5";
@@ -97,7 +97,7 @@ singleton Material(TerrainFX_ter_grass_short_01)
 new TerrainMaterial()
 {
    diffuseMap = "art/terrains/grass/ter_grass_short_01_B";
-   diffuseSize = "250";
+   diffuseSize = "200";
    detailMap = "art/terrains/grass/ter_grass_short_01_D";
    detailDistance = "100";
    macroSize = "30";
