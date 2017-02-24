@@ -361,7 +361,7 @@ function serverCmdReloadWeapon(%client)
       %image.clearAmmoClip( %player, $WeaponSlot );
       %image.startReloadAmmoClip(%player, $WeaponSlot);
       %player.isReloading = true;
-	  %player.allowSprinting(false);
+      %player.allowSprinting(false);
    }
 }
 
@@ -492,8 +492,7 @@ function serverCmdClientJoinTeam(%client, %team, %admin)
             else
             {
                if ( isObject( %client.player ) )
-                  //%client.player.kill($DamageType::ScriptDamage);
-			    %client.player.schedule(50,"delete"); //better solution
+               %client.player.schedule(50,"delete");
             }
 			
             Game.clientJoinTeam( %client, %team, %teamed );
@@ -696,6 +695,8 @@ function serverCmdDoIronSights(%client, %val)
       return;
    if ( %player.isReloading == true)
 	  return;
+   if ( %player.getPose() $= "Swim" )
+      return;
 
    %curWeapon = %player.getMountedImage( $WeaponSlot );
    %image = %curWeapon.ironSight;
@@ -708,8 +709,8 @@ function serverCmdDoIronSights(%client, %val)
       %player.allowJumping(false);
       %player.allowJetJumping(false);
       %player.allowSprinting(false);
-      %player.allowSwimming(false);
-	  %player.isInIronSights = true;
+      %player.allowSwimming(true);
+      %player.isInIronSights = true;
    }
    else
    {
@@ -721,6 +722,8 @@ function serverCmdUndoIronSights(%client, %val)
 {
    %player = %client.player;
    if ( !isObject( %player ) || %player.getState() $= "Dead" )
+      return;
+   if ( %player.getPose() $= "Swim" )
       return;
    
    %curWeapon = %player.getMountedImage($WeaponSlot);
@@ -735,6 +738,6 @@ function serverCmdUndoIronSights(%client, %val)
       %player.allowJetJumping(true);
       %player.allowSprinting(true);
       %player.allowSwimming(true);
-	  %player.isInIronSights = false;
+      %player.isInIronSights = false;
    }
 }
