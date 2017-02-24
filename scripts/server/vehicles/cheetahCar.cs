@@ -145,10 +145,10 @@ datablock ProjectileData(CheetahTurretProjectile)
    waterExplosion      = UnderwaterGrenadeExplosion;
 
    particleEmitter     = GrenadeTrailEmitter;
-   particleWaterEmitter = UWGrenadeTrailEmitter;
+   //particleWaterEmitter = UWGrenadeTrailEmitter;
 
    decal = ScorchRXDecal;
-   splash = RocketSplash;
+   splash = "";
 
    muzzleVelocity = 250;
    velInheritFactor = 0.7;

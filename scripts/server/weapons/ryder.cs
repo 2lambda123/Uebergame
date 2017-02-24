@@ -137,9 +137,9 @@ datablock ProjectileData( RyderProjectile )
    decal               = BulletHoleDecal;
 
    //particleEmitter     = "BulletTrailEmitter";
-   particleWaterEmitter = "UWBulletTrailEmitter";
+   //particleWaterEmitter = "UWBulletTrailEmitter";
 
-   Splash              = BulletSplash;
+   Splash              = "";
    muzzleVelocity      = 300;
    velInheritFactor    = 0;
 

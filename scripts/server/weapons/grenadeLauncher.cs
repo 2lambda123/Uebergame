@@ -196,7 +196,7 @@ datablock ProjectileData( GrenadeProjectile )
    particleEmitter     = GrenadeTrailEmitter;
    particleWaterEmitter = UWGrenadeTrailEmitter;
 
-   Splash              = GrenadeSplash;
+   Splash              = "";
    muzzleVelocity      = 50;
    velInheritFactor    = 0.4;
 

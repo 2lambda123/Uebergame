@@ -46,9 +46,9 @@ datablock ProjectileData( TurretBulletProjectile )
    decal               = BulletHoleDecal;
 
    //particleEmitter     = "BulletTrailEmitter";
-   particleWaterEmitter = "UWBulletTrailEmitter";
+   //particleWaterEmitter = "UWBulletTrailEmitter";
 
-   Splash              = BulletSplash;
+   Splash              = "";
    muzzleVelocity      = 500;
    velInheritFactor    = 0;
 

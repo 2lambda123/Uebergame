@@ -137,9 +137,9 @@ datablock ProjectileData( SniperProjectile )
    decal               = BulletHoleDecal;
 
    particleEmitter     = "BulletTrailEmitter";
-   particleWaterEmitter = "UWBulletTrailEmitter";
+   //particleWaterEmitter = "UWBulletTrailEmitter";
 
-   Splash              = BulletSplash;
+   Splash              = "";
    muzzleVelocity      = 600;
    velInheritFactor    = 0;
 

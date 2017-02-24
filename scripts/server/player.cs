@@ -822,7 +822,7 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    decalOffset = 0.25;
    dustEmitter = "LightPuffEmitter";
 
-   splash = PlayerSplash;
+   splash = "";
    splashVelocity = 4.0;
    splashAngle = 67.0;
    splashFreqMod = 300.0;
