@@ -117,6 +117,8 @@ function Torque::initClient(%this)
    exec("~/gui/mainMenuGui.gui");
    exec("~/gui/gameMenuGui.gui");
    exec("~/gui/chooseLevelDlg.gui");
+	exec("~/gui/startEditorGui.gui");
+   exec("~/gui/startEditorGui.cs");
    exec("~/gui/serverOptionsDlg.gui");
    exec("~/gui/joinServerDlg.gui");
    exec("~/gui/ipJoinDlg.gui");

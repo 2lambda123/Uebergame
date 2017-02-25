@@ -391,6 +391,37 @@ new GuiControlProfile( GuiButtonProfile )
    fontType = "ArialBold";
 };
 
+if( !isObject( GuiButtonProfile2 ) )
+new GuiControlProfile( GuiButtonProfile2 )
+{
+   opaque = true;
+   border = "1";
+	 
+   fontColor = "254 132 3 255";
+   fontColorHL = "25 88 231 255";
+	 fontColorNA = "64 64 64 255";
+	 //fontColorSEL ="0 0 0";
+   fixedExtent = 0;
+   justify = "center";
+   canKeyFocus = false;
+   hasBitmapArray = false;
+   category = "Core";
+   fillColor = "32 32 32 255";
+   fontColors[0] = "254 132 3 255";
+   fontColors[2] = "64 64 64 255";
+   fillColorHL = "20 18 14 255";
+   fillColorNA = "20 20 20 255";
+   fillColorSEL = "90 90 90 255";
+   borderThickness = "3";
+   fontColors[1] = "25 88 231 255";
+   fontSize = "18";
+   fontColors[8] = "Fuchsia";
+   borderColor = "80 80 80 255";
+   borderColorHL = "64 54 45 255";
+   bevelColorHL = "30 30 30 255";
+   fontType = "ArialBold";
+};
+
 if( !isObject( GuiMenuButtonProfile ) )
 new GuiControlProfile( GuiMenuButtonProfile )
 {

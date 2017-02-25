@@ -31,7 +31,7 @@ GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenTogg
 
 //GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
 //GlobalActionMap.bind(keyboard, "F1", showMetrics);
-//GlobalActionMap.bind(keyboard, "F2", showUeberMetrics);
+GlobalActionMap.bind(keyboard, "F4", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
 GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 //GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );
@@ -345,6 +345,16 @@ function toggleDevToolsDlg(%val)
    }
    else
    Canvas.pushDialog(DevToolsDlg);
+}
+
+function toggleStartEditorGui(%val)
+{
+   if (StartEditorGui.isAwake()) {
+   Canvas.popDialog(StartEditorGui);
+   //$StartEditorGuiActive = 0;
+   }
+   else
+   Canvas.pushDialog(StartEditorGui);
 }
 
 /// Opens a Gui ingame that displays all metrics in one window

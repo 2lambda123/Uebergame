@@ -19,6 +19,7 @@ singleton Material( Mat_grid_01_white )
    materialTag0 = "TestMaterial";
    useAnisotropic[0] = "1";
    showFootprints = "0";
+   footstepSoundId = "0";
 };
 
 singleton Material( Mat_grid_01_black )
@@ -28,4 +29,6 @@ singleton Material( Mat_grid_01_black )
    materialTag0 = "TestMaterial";
    useAnisotropic[0] = "1";
    showFootprints = "0";
+   impactSoundId = "-1";
+   footstepSoundId = "0";
 };
