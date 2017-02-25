@@ -33,7 +33,7 @@ singleton CubemapData( NightCubemap )
 singleton Material( NightSkyMat )
 {
    cubemap = NightCubemap;
-   materialTag0 = "Skies";
+   materialTag0 = "Skyboxes";
    isSky = true;
 };
 

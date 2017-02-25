@@ -33,6 +33,6 @@ singleton CubemapData( DesertSkyCubemap )
 singleton Material( DesertSkyMat )
 {
    cubemap = DesertSkyCubemap;
-   materialTag0 = "Skies";
+   materialTag0 = "Skyboxes";
    isSky = true;
 };
