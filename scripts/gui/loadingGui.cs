@@ -82,7 +82,7 @@ function handleLoadInfoMessage(%msgType, %msgString, %misFile, %mapName, %typeNa
    // Need to pop up the loading gui to display this stuff.
    // But if we are using a lobby, this would overload that so we rem it.
    // Show the loading screen immediately if it isn't current already.
-   if ( isObject( LoadingGui ) )
+   if ( !$UsingMainMenuLevel &&  isObject( LoadingGui ) )
    {
       if(Canvas.getContent() != LoadingGui.getId())
       {

@@ -1,13 +1,20 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiChunkedBitmapCtrl(MainMenuGui) {
-   bitmap = "art/gui/core/space_background_big.dds";
-   useVariable = "0";
-   tile = "1";
+%guiContent = new GameTSCtrl(MainMenuGui) {
+   cameraZRot = "0";
+   forceFOV = "0";
+   reflectPriority = "1";
+   renderStyle = "standard";
+   margin = "0 0 0 0";
+   padding = "0 0 0 0";
+   anchorTop = "1";
+   anchorBottom = "0";
+   anchorLeft = "1";
+   anchorRight = "0";
    position = "0 0";
    extent = "1024 768";
    minExtent = "8 8";
-   horizSizing = "left";
-   vertSizing = "height";
+   horizSizing = "right";
+   vertSizing = "bottom";
    profile = "GuiDefaultProfile";
    visible = "1";
    active = "1";
@@ -17,7 +24,8 @@
    canSave = "1";
    canSaveDynamicFields = "1";
       enabled = "1";
-      isDecoy = "0";
+      helpTag = "0";
+      noCursor = "0";
 
    new GuiControl() {
       position = "0 0";

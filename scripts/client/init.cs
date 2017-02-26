@@ -67,7 +67,7 @@ function Torque::initClient(%this)
          $MainGuiBackground = "art/gui/core/space_background_big.dds";
    }
    $pref::MainGui::LastBackground++;
-
+     
    // Make sure this variable reflects the correct state.
    // Obviously the gui is loading/loaded, so no way should we be dedicated.
    $Server::Dedicated = $pref::Server::Dedicated = false;
@@ -114,6 +114,7 @@ function Torque::initClient(%this)
    loadMaterials();
    
    // Load up the shell GUIs
+   exec("~/gui/backgroundGui.gui");
    exec("~/gui/mainMenuGui.gui");
    exec("~/gui/gameMenuGui.gui");
    exec("~/gui/chooseLevelDlg.gui");
@@ -211,10 +212,12 @@ function Torque::initClient(%this)
    }
    else
    {
+
       // Otherwise go to the splash screen.
       Canvas.setCursor("DefaultCursor");
       tge.loadMainMenu();
       //loadStartup();
+
    }   
 }
 
@@ -223,10 +226,10 @@ function Torque::initClient(%this)
 function Torque::loadMainMenu(%this)
 {
    // Startup the client with the Main menu...
-   if (isObject( MainMenuGui ))
-      Canvas.setContent( MainMenuGui );
+   //if (isObject( MainMenuGui ))
+   //   Canvas.setContent( MainMenuGui );
    
-   Canvas.setCursor("DefaultCursor");
+   //Canvas.setCursor("DefaultCursor");
 
    // first check if we have a level file to load
    if ($levelToLoad !$= "")
@@ -238,8 +241,7 @@ function Torque::loadMainMenu(%this)
       else
          %levelFile = %levelFile @ $levelToLoad;
 
-      // Clear out the $levelToLoad so we don't attempt to load the level again
-      // later on.
+      // Clear out the $levelToLoad so we don't attempt to load the level again later on.
       $levelToLoad = "";
       
       // let's make sure the file exists
@@ -248,10 +250,25 @@ function Torque::loadMainMenu(%this)
       if(%file !$= "")
          createAndConnectToLocalServer("SinglePlayer", %file, $pref::Server::MissionType);
    }
+   else
+   {
+      if( $UsingMainMenuLevel )
+         disconnect(); 
+
+      $UsingMainMenuLevel = true;
+      
+      Canvas.setContent("backgroundGui");
+      Canvas.repaint();
+
+      schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" );   
+   }
 }
 
 function Torque::loadLoadingGui(%this)
 {
+   if($UsingMainMenuLevel )
+      return; // no level loading gui for loading the main menu
+ 
    Canvas.setContent("LoadingGui");
    LoadingProgress.setValue(1);
 

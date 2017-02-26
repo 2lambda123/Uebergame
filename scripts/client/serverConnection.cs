@@ -52,8 +52,14 @@ function GameConnection::initialControlSet(%this)
    // first check if the editor is active
    if (!isToolBuild() || !Editor::checkActiveLoadDone())
    {
-      if (Canvas.getContent() != PlayGui.getId())
+      
+      if ( !$UsingMainMenuLevel && (Canvas.getContent() != PlayGui.getId()) )
+      {
          Canvas.setContent(PlayGui);
+      }
+      
+      if($UsingMainMenuLevel)
+        Canvas.setContent( MainMenuGui );
    }
 }
 
@@ -185,6 +191,16 @@ function disconnect()
 
    // Call destroyServer in case we're hosting
    tge.destroyServer();
+   
+   if(!$UsingMainMenuLevel )
+   {
+      if( $UsingMainMenuLevel )
+         disconnect(); 
+      
+      $UsingMainMenuLevel = true;
+      
+      schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" ); 
+   }
 }
 
 function Torque::disconnectedCleanup(%this)

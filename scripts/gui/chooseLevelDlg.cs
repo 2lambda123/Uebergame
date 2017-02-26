@@ -92,6 +92,10 @@ function buildMissionTypePopup(%popup)
 
 function ChooseLevelDlgGoBtn::onMouseUp( %this )
 {
+   // disconnect from main menu level first
+   if($UsingMainMenuLevel )
+      disconnect();
+   
    // if we are in a game and try to join another, quit the current game
    if (PlayGui.isAwake())
    disconnect();
@@ -99,6 +103,8 @@ function ChooseLevelDlgGoBtn::onMouseUp( %this )
    // So we can't fire the button when loading is in progress.
    if ( isObject( ServerGroup ) )
       return;
+   
+   $UsingMainMenuLevel = false; // loading mission so we are no longer in main menu
 
    %id = CL_LevelList.getSelectedId();
    %mission = $HostMissionFile[%id];
@@ -138,7 +144,7 @@ function StartLevel(%mission, %serverType)
       $Client::Password = $pref::Server::Password;
 
    // Show the loading screen immediately.
-   if ( isObject( LoadingGui ) )
+   if ( !$UsingMainMenuLevel &&  isObject( LoadingGui ) )
    {
       Canvas.setContent("LoadingGui");
       LoadingProgress.setValue(1);

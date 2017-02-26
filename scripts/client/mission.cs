@@ -132,7 +132,7 @@ function loadLevel( %missionNameOrFile )
       return false;
 
    // Show the loading screen immediately.
-   if ( isObject( LoadingGui ) )
+   if ( !$UsingMainMenuLevel && isObject( LoadingGui ) )
    {
       Canvas.setContent("LoadingGui");
       LoadingProgress.setValue(1);
