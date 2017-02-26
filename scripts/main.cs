@@ -67,12 +67,12 @@ function Torque::onStart(%this)
 
    // Set our saves directory
    %this.getHomePath();
-
+   
    // Load up default settings
    exec( "./gui/profiles.cs" );
    exec( "./client/defaults.cs" );
    exec( "./server/defaults.cs" );
-
+   
    //config update function
    exec( "./client/updatePrefs.cs" );
    
@@ -103,7 +103,7 @@ function Torque::onStart(%this)
 
    exec("./gui/guiTreeViewCtrl.cs");
    exec("./gui/messageBoxes/messageBox.ed.cs");
-
+   
    // Server gets loaded for all sessions, since clients
    // can host in-game servers.
    %this.initServer();
@@ -114,6 +114,7 @@ function Torque::onStart(%this)
       %this.initDedicated();
    }
    else
+      
       %this.initClient();
 }
 

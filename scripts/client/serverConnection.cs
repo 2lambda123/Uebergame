@@ -192,15 +192,27 @@ function disconnect()
    // Call destroyServer in case we're hosting
    tge.destroyServer();
    
-   if(!$UsingMainMenuLevel )
-   {
-      if( $UsingMainMenuLevel )
-         disconnect(); 
-      
-      $UsingMainMenuLevel = true;
-      
+   if ( !$UsingMainMenuLevel )
+   {     
       schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" ); 
+      $UsingMainMenuLevel = true;
    }
+}
+
+function disconnectIngame()
+{
+   // We need to stop the client side simulation
+   // else physics resources will not cleanup properly.
+   physicsStopSimulation( "client" );
+
+   // Delete the connection if it's still there.
+   if (isObject(ServerConnection))
+      ServerConnection.delete();
+      
+   tge.disconnectedCleanup();
+
+   // Call destroyServer in case we're hosting
+   tge.destroyServer();
 }
 
 function Torque::disconnectedCleanup(%this)

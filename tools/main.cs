@@ -41,8 +41,6 @@ package Tools
    function loadKeybindings()
    {
       Parent::loadKeybindings();
-      
-
    }
    
    // Start-up.

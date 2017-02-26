@@ -93,19 +93,20 @@ function buildMissionTypePopup(%popup)
 function ChooseLevelDlgGoBtn::onMouseUp( %this )
 {
    // disconnect from main menu level first
-   if($UsingMainMenuLevel )
+   if ( $UsingMainMenuLevel )
+   {
       disconnect();
-   
+      $UsingMainMenuLevel = false; // loading mission so we are no longer in main menu   
+   }
+      
    // if we are in a game and try to join another, quit the current game
    if (PlayGui.isAwake())
-   disconnect();
+   disconnectIngame();
 
    // So we can't fire the button when loading is in progress.
    if ( isObject( ServerGroup ) )
       return;
    
-   $UsingMainMenuLevel = false; // loading mission so we are no longer in main menu
-
    %id = CL_LevelList.getSelectedId();
    %mission = $HostMissionFile[%id];
 

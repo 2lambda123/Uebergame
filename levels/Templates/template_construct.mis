@@ -23,7 +23,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Empty loading program start your level with.";
          enabled = "1";
          levelName = "template_construct";
-         MissionTypes = "DM TDM PBDM PBTDM";
+         MissionTypes = "";
    };
    new SkyBox(theSkybox) {
       Material = "WhiteSkyMat";

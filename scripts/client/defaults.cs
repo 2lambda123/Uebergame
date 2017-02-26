@@ -120,15 +120,6 @@ $pref::Video::Gamma = 2.25;
 $pref::Video::Contrast = 1.0;
 $pref::Video::Brightness = 0.0;
 
-// Console-friendly defaults
-if($platform $= "xenon")
-{
-   // Save some fillrate on the X360, and take advantage of the HW scaling
-   $pref::Video::Resolution = "1152 640";
-   $pref::Video::mode = $pref::Video::Resolution SPC "true 32 60 0";
-   $pref::Video::fullScreen = 1;
-}
-
 /// This is the path used by ShaderGen to cache procedural
 /// shaders.  If left blank ShaderGen will only cache shaders
 /// to memory and not to disk.

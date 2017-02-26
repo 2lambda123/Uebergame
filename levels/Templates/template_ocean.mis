@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "An infinite ocean empty template to start your level with";
          enabled = "1";
          levelName = "template_ocean";
-         MissionTypes = "DM TDM PBDM PBTDM";
+         MissionTypes = "";
    };
    new ScatterSky(theSky) {
       skyBrightness = "25";

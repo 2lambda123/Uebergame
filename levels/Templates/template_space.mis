@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Empty space start your level with.";
          enabled = "1";
          levelName = "template_space";
-         MissionTypes = "DM TDM PBDM PBTDM";
+         MissionTypes = "";
    };
    new SkyBox(theSkybox) {
       Material = "sky_space_01_Mat";

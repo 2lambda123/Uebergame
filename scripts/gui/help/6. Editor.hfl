@@ -1,0 +1,61 @@
+<lmargin%:5><rmargin%:95><font:ArialBold:24>
+Editor
+<font:ArialBold:18>
+Templates
+<font:Arial:16>
+When you click on the "Editor" button you will be able to choose a template to begin your new level with.
+Those templates have all the important things already setup to help you get started and show you what a basic level setup looks like.
+
+<font:ArialBold:18>
+General
+<font:Arial:16>
+Make sure to save your level under a different name and save often in case of a crash. If you save your level make sure it is somewhere in the levels/ folder,
+best practise is to create a subfolder which contains all the files necessary for your level, so you can easily send it to others to play it in multiplayer.
+
+<font:ArialBold:18>
+Real time editing:
+<font:Arial:16>
+The engine allows you to edit the level while people are playing on it in multiplayer, however some things you should not edit while doing that,
+since they may cause a crash or other problems, those are in general the same things listed under "Things to not change in the world editor:"
+
+What also causes a crash is if you save the level under a different name while people are playing on it, so if you want to edit levels in realtime and save them later
+make sure to make a backup copy of the level and launch the server with the backup copy, which then you can savely overwrite, alternatively just save it under a different
+name and kick the other players if you are done playing anyway.
+
+<font:ArialBold:18>
+How to make the level work with a certain mission type:
+<font:Arial:16>
+Since there are different mission types, you have to setup the levels to work with them, this is done by simply adding the mission type name into the mission files.
+
+To do that there are two ways to do that:
+
+One is through the world editor, where you go to the "theLevelInfo" object and scroll all the way down in the object inspector until you come to "dynamic fields" 
+where you see for example "levelName", there you have to add "MissionTypes" and set it to DM, TDM, PBDM or PBTDM or whatever gametypes your level is for.
+
+The other way is to simply open the .mis file you created with a code/text editor and enter the MissionTypes manually.
+
+While you are doing that you also can edit the "levelName" since this is very important, otherwise you will have dublicated names and you don't know which is which,
+optionally you can enter some level descriptions there.
+
+Remember that each mission type has some prerequisites, DM mission types need spawns for team0 and TDM mission types need spawns for team1 and team2, but the templates
+already have some of each spawns as an example, you just have to move them, or delete them and create new ones in case you edit the level.
+
+When you have done that your levels will show up in the level selection window.
+
+<font:ArialBold:18>
+Things to not change in the world editor:
+<font:Arial:16>
+There are certain tools you should not use in the world editor, since they will change the whole game and not just the level you are working on, those are:
+
+-Material Editor (F4)
+-Datablock Editor (F6)
+-Shape Editor
+
+Some editors have sub menus where you can make changes to the whole game, but are otherwise fine to use:
+
+-Terrain Painer (F3) // Fine to use, but not edit the numbers of the materials after you click on "edit" since this will change the terrain textures of the whole game.
+-Forest Editor (F8) // Painting forest is fine, but not edit the meshes in the "meshes" tab, since this will change them across the whole game.
+
+This is just to advise you what not to use, if you just want to make a level.
+The other functions are for advanced users, for example if you want to mod the game. 
+Best thing to do is to make a copy of the game you can mess around with and a clean copy you play with on the internet.

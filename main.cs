@@ -308,7 +308,6 @@ function Torque::displayHelp(%this)
 // Default to a new logfile each session.
 if( !$logModeSpecified )
 {
-   if( $platform !$= "xbox" && $platform !$= "xenon" )
       setLogMode(6);
 }
 
@@ -372,21 +371,6 @@ else
       // This keeps things looking nice, instead of having a blank window
       closeSplashWindow();
       Canvas.showWindow();
-   }
-   
-   // Auto-load on the 360
-   if( $platform $= "xenon" )
-   {
-      %mission = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day.mis";
-      
-      echo("Xbox360 Autoloading level: '" @ %mission @ "'");
-      
-      if ($pref::Server::Multiplayer)
-         %serverType = "MultiPlayer";
-      else
-         %serverType = "SinglePlayer";
-
-	  createAndConnectToLocalServer(%serverType, %mission, $pref::Server::MissionType);
    }
 }
 

@@ -106,6 +106,10 @@ function portInit(%port)
 /// @return true if successful.
 function createAndConnectToLocalServer( %serverType, %level, %missionType )
 {
+   // prevent screen going blank
+   Canvas.setContent("backgroundGui"); 
+   Canvas.repaint();
+      
    if( !tge.createServer( %serverType, %level, %missionType ) )
       return false;
    

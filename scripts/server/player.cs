@@ -1340,46 +1340,34 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
    %abNormal[5] = "0.0 2.0 2.0";
    
    %clientCount = ClientGroup.getCount();
+   
    for (%i=0;%i<6;%i++)
    {
-       	%normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood splatters
+      %normalScaled = VectorScale(%normal[%i],-1); //distance to walls the blood splatters
 		%targetPoint = VectorAdd(%centerpoint,%normalScaled);
 		%mask = $TypeMasks::StaticObjectType | $TypeMasks::TerrainObjectType;
 		%hitObject = ContainerRayCast(%centerpoint, %targetPoint, %mask, %obj);
         
-        if (%hitObject)
-        {
-            %splatterPoint = getWords(%hitObject,1,3);
+      if (%hitObject)
+      {
+         %splatterPoint = getWords(%hitObject,1,3);
 			%splatterNorm = getWords(%hitObject,4,6);
 			%splatterScaling = getRandom()*1.5 + %damage/30;
-            %splatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
+         %splatterVary = getRandom()*getword(%abNormal[%i],0)-getword(%abNormal[%i],0)/2 
 			SPC getRandom()*getword(%abNormal[%i],1)-getword(%abNormal[%i],1)/2 SPC getRandom()*getword(%abNormal[%i],2)-getword(%abNormal[%i],2)/2;            
-            %Decalposition = VectorAdd(%splatterPoint, %splatterVary);
+         %Decalposition = VectorAdd(%splatterPoint, %splatterVary);
+            
 			if (%splatterScaling > 8)
 			{ %splatterScaling = 8;} 
 			   
 			for (%clientIndex = 0; %clientIndex < %clientCount; %clientIndex++)
-            {
-                %client = ClientGroup.getObject(%clientIndex);
-                %ghostIndex = %client.getGhostID(%obj);
-       
-                commandToClient(%client,'Spatter', %Decalposition, %splatterNorm, %splatterScaling);
-            }
-        }
+         {
+            %client = ClientGroup.getObject(%clientIndex);
+            %ghostIndex = %client.getGhostID(%obj);
+            commandToClient(%client,'Spatter', %Decalposition, %splatterNorm, %splatterScaling);
+         }
+      }
    }
-   /*
-   %particles = new ParticleEmitterNode()   
-{
-      position = %position;  
-      rotation = "1 0 0 0";  
-      scale = "1 1 1";  
-      dataBlock = "SmokeEmitterNode";  
-      emitter = "bloodBulletDirtSprayEmitter";  
-      velocity = "1";  
-   };  
-   MissionCleanup.add(%particles);  
-   %particles.schedule(1000, "delete");
-   */
 }
 
 //----------------------------------------------------------------------------

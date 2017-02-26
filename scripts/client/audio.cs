@@ -108,26 +108,6 @@ singleton SFXDescription( AudioMusic )
 /// the defaults in the $pref::SFX:: globals.
 function sfxStartup()
 {   
-   // The console builds should re-detect, by default, so that it plays nicely 
-   // along side a PC build in the same script directory.
-   
-   if( $platform $= "xenon" )
-   {
-      if( $pref::SFX::provider $= "DirectSound" || 
-          $pref::SFX::provider $= "OpenAL" )
-      {
-         $pref::SFX::provider = "";
-      }
-      
-      if( $pref::SFX::provider $= "" )
-      {
-         $pref::SFX::autoDetect = 1;
-         
-         warn( "Xbox360 is auto-detecting available sound providers..." ); 
-         warn( "   - You may wish to alter this functionality before release (scripts/client/audio.cs)" );
-      }
-   }
-
    echo( "sfxStartup..." );
    
    // If we have a provider set, try initialize a device now.
@@ -144,13 +124,11 @@ function sfxStartup()
    }
 
    // If enabled autodetect a safe device.
-
    if( ( !isDefined( "$pref::SFX::autoDetect" ) || $pref::SFX::autoDetect ) &&
        sfxAutodetect() )
       return;
    
    // Failure.
-
    error( "   Failed to initialize device!\n\n" );
    
    $pref::SFX::provider = "";
@@ -159,9 +137,7 @@ function sfxStartup()
    return;
 }
 
-
-/// This initializes the sound system device from
-/// the defaults in the $pref::SFX:: globals.
+/// This initializes the sound system device from the defaults in the $pref::SFX:: globals.
 function sfxInit()
 {
    // If already initialized, shut down the current device first.
@@ -207,7 +183,6 @@ function sfxInit()
    return true;
 }
 
-
 /// Destroys the current sound system device.
 function sfxShutdown()
 {
@@ -225,7 +200,6 @@ function sfxShutdown()
 
    sfxDeleteDevice();
 }
-
 
 /// Determines which of the two SFX providers is preferable.
 function sfxCompareProvider( %providerA, %providerB )
@@ -263,7 +237,6 @@ function sfxCompareProvider( %providerA, %providerB )
          return -1;
    }
 }
-
 
 /// Try to detect and initalize the best SFX device available.
 function sfxAutodetect()
@@ -323,7 +296,6 @@ function sfxAutodetect()
    
    return false;
 }
-
 
 //-----------------------------------------------------------------------------
 //    Backwards-compatibility with old channel system.

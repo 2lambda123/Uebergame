@@ -256,10 +256,6 @@ function Torque::loadMainMenu(%this)
          disconnect(); 
 
       $UsingMainMenuLevel = true;
-      
-      Canvas.setContent("backgroundGui");
-      Canvas.repaint();
-
       schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" );   
    }
 }

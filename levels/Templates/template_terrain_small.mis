@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "A small terrain base template to start your level with. (512x512 meters)";
          enabled = "1";
          levelName = "template_terrain_small";
-         MissionTypes = "DM TDM PBDM PBTDM";
+         MissionTypes = "";
    };
    new ScatterSky(theSky) {
       skyBrightness = "25";
