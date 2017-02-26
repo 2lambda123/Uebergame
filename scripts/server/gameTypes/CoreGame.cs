@@ -85,6 +85,7 @@ function CoreGame::onMissionLoaded(%game)
    %game.setupGameParams();
 
    //set up the teams
+   if ( !$UsingMainMenuLevel )
    %game.setUpTeams();
 
    %game.setupObjectCounts();

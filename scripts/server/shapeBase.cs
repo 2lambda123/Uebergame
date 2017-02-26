@@ -139,7 +139,7 @@ function ShapeBase::use(%player, %data)
       %conn = %player.getControllingClient();
       if (%conn)
       {
-         %defaultFov = ($pref::Player::Fov);
+         %defaultFov = (90);
          %fov = %conn.getControlCameraFov();
          if (%fov != %defaultFov)
             return false;

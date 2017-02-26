@@ -29,8 +29,6 @@
 //    (c) Client::MissionFile             Mission file name
 //    ( ) Client::Password                Password for server join
 
-//    (?) Pref::Player::CurrentFOV
-//    (?) Pref::Player::DefaultFov
 //    ( ) Pref::Input::KeyboardTurnSpeed
 
 //    (c) pref::Master[n]                 List of master servers
@@ -187,7 +185,7 @@ function Torque::initClient(%this)
    setNetPort(0);
 
    // Copy saved script prefs into C++ code.
-   setDefaultFov( $pref::Player::defaultFov );
+   setDefaultFov( 90 );
    setZoomSpeed(500);
 
    if( isScriptFile( expandFilename("./audioData.cs") ) )
