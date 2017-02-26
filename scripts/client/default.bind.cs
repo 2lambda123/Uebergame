@@ -697,7 +697,7 @@ function gamepadAltTrigger(%val)
 //------------------------------------------------------------------------------
 
 if($Player::CurrentFOV $= "")
-   $Player::CurrentFOV = 90 / 2;
+   $Player::CurrentFOV = $pref::Player::DefaultFOV / 2;
 
 // toggleZoomFOV() works by dividing the CurrentFOV by 2.  Each time that this
 // toggle is hit it simply divides the CurrentFOV by 2 once again.  If the

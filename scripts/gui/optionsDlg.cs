@@ -146,6 +146,7 @@ function OptionsDlg::onWake(%this)
 
    // Player Pane
    OptPlayerNameInput.setValue(getField($pref::Player, 0));
+   OP_FovSlider.setValue( $pref::Player::Fov );
    OptPlayerSkinMenu.init();
 
    // KeyMaps and Mouse Pane
@@ -1203,4 +1204,14 @@ function OptPlayerSkinMenu::onSelect(%this, %id, %text)
    PlayerPreview.setSkin( %text );
    PlayerPreview.setMountSkin( "Lurker_D" );
    //PlayerPreview.setSeq( "Celebrate_01" );
+}
+
+function updateFieldOfView()
+{
+   %value = OP_FovSlider.getValue();
+   //warn("updateFieldOfView" SPC mFloor(%value));
+   $pref::Player::Fov = mFloor( %value );
+
+   if ( Canvas.getContent() == PlayGui.getId() )
+      setFov( mFloor( %value ) );
 }

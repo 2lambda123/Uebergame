@@ -62,6 +62,8 @@ $pref::SFX::dopplerFactor = "0.75";
 $pref::SFX::rolloffFactor = "0.25";
 
 $pref::Player = "Player\tbase";
+$pref::Player::defaultFov = 90;
+$pref::Player::Fov = 90;
 //$pref::Player::FriendlyColor = "0.000000 1.000000 0.000000 1.000000"; //not in use
 //$pref::Player::EnemyColor = "1.000000 0.000000 0.000000 1.000000"; //not in use
 //$pref::Player::SelectedVehicle = "Cheetah"; //vehicles not ready yet
