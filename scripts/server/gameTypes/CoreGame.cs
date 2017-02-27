@@ -85,6 +85,7 @@ function CoreGame::onMissionLoaded(%game)
    %game.setupGameParams();
 
    //set up the teams
+   if ( !$UsingMainMenuLevel )
    %game.setUpTeams();
 
    %game.setupObjectCounts();
@@ -372,19 +373,22 @@ function CoreGame::startGame(%game)
    // Keep track of when the game started
    $Game::StartTime = $Sim::Time;
 
-   // Start the game timer
-   if ( $pref::Server::TimeLimit > 0 )
-      %curTimeLeftMS = ($pref::Server::TimeLimit * 60 * 1000);
-   else
-      %curTimeLeftMS = (15 * 60 * 1000);
+   if (!$UsingMainMenuLevel) // No time limit for main menu levels
+   {
+      // Start the game timer
+      if ( $pref::Server::TimeLimit > 0 )
+         %curTimeLeftMS = ($pref::Server::TimeLimit * 60 * 1000);
+      else
+         %curTimeLeftMS = (15 * 60 * 1000);
 
-   $Game::Schedule = %game.schedule(%curTimeLeftMS, "onGameDurationEnd");
+      $Game::Schedule = %game.schedule(%curTimeLeftMS, "onGameDurationEnd");
 
-   //schedule the end of match countdown
-   %game.EndCountdown(%curTimeLeftMS);
-
-   messageAll('MsgSyncClock', "", (%curTimeLeftMS / 1000), true, false);
-   //messageAll('MsgSyncClock', "", 0);
+      //schedule the end of match countdown
+      %game.EndCountdown(%curTimeLeftMS);
+    
+      messageAll('MsgSyncClock', "", (%curTimeLeftMS / 1000), true, false);
+      //messageAll('MsgSyncClock', "", 0);
+   }
 
    $Game::Running = true;
 

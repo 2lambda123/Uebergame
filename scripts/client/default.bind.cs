@@ -30,8 +30,8 @@ GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 
 //GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
-//GlobalActionMap.bind(keyboard, "F1", showMetrics);
-GlobalActionMap.bind(keyboard, "F4", showUeberMetrics);
+GlobalActionMap.bind(keyboard, "F1", showMetrics);
+GlobalActionMap.bind(keyboard, "alt F1", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
 GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 //GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );
@@ -104,17 +104,23 @@ function ActionMap::clearBind(%this, %command)
 
 function escapeFromGame()
 {
-	/*
-   if ( $Server::ServerType $= "SinglePlayer" )
-      //MessageBoxYesNo( "Exit", "Exit from this Mission?", "disconnect();", "");
-	  Canvas.pushDialog(exitGameGui);
-   else
-      //MessageBoxYesNo( "Disconnect", "Disconnect from the server?", "disconnect();", "");
-	  Canvas.pushDialog(exitGameGui);
-	  */
-	  
-	  //Canvas.pushDialog(gameMenuGui);
+   if (PlayGui.isAwake())
 	  toggleGameMenuGui();
+}
+
+function toggleMainMenuGui()
+{
+   if (MainMenuGui.isAwake()) {
+   Canvas.popDialog(MainMenuGui);
+   if ($pref::Menu::Ads)
+   Canvas.popDialog(MainMenuAdsGui);
+   }
+   else
+   {
+   Canvas.pushDialog(MainMenuGui);
+   if ($pref::Menu::Ads)
+   Canvas.pushDialog(MainMenuAdsGui);
+   }
 }
 
 // functions for toggling menus, reopons previously active menus

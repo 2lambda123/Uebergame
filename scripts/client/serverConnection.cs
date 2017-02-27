@@ -45,10 +45,8 @@ function handleConnectionErrorMessage(%msgType, %msgString, %msgError)
 function GameConnection::initialControlSet(%this)
 {
    echo ("*** Initial Control Object");
+   // The first control object has been set by the server and we are now ready to go.
 
-   // The first control object has been set by the server
-   // and we are now ready to go.
-   
    // first check if the editor is active
    if (!isToolBuild() || !Editor::checkActiveLoadDone())
    {
@@ -59,7 +57,13 @@ function GameConnection::initialControlSet(%this)
       }
       
       if($UsingMainMenuLevel)
-        Canvas.setContent( MainMenuGui );
+      {
+         Canvas.setContent( backgroundLevelGui );
+         Canvas.pushDialog( MainMenuGui );
+         
+         if ($pref::Menu::Ads)
+            Canvas.pushDialog( MainMenuAdsGui );
+      }
    }
 }
 

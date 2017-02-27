@@ -115,7 +115,10 @@ function Torque::initClient(%this)
    
    // Load up the shell GUIs
    exec("~/gui/backgroundGui.gui");
+   exec("~/gui/backgroundLevelGui.gui");
    exec("~/gui/mainMenuGui.gui");
+   exec("~/gui/mainMenuAdsGui.gui");
+   exec("~/gui/mainMenuAdsGui.cs");
    exec("~/gui/gameMenuGui.gui");
    exec("~/gui/chooseLevelDlg.gui");
 	exec("~/gui/startEditorGui.gui");
@@ -252,11 +255,22 @@ function Torque::loadMainMenu(%this)
    }
    else
    {
-      if( $UsingMainMenuLevel )
-         disconnect(); 
+      if ($pref::Menu::Level)
+      {
+         if( $UsingMainMenuLevel )
+            disconnect(); 
 
-      $UsingMainMenuLevel = true;
-      schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" );   
+         $UsingMainMenuLevel = true;
+         schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" ); 
+      }
+      else
+      {
+         Canvas.setContent("backgroundGui");
+         Canvas.pushDialog( MainMenuGui );
+         
+         if ($pref::Menu::Ads)
+            Canvas.pushDialog( MainMenuAdsGui );
+      }       
    }
 }
 

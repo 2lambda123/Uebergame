@@ -147,8 +147,10 @@ function handleEscape()
       }
    }
 
-   if (PlayGui.isAwake())	
-      escapeFromGame();	
+   if ($UsingMainMenuLevel)
+      toggleMainMenuGui();
+   else 
+      escapeFromGame();
 }
 
 //-----------------------------------------------------------------------------

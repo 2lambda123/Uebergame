@@ -5,9 +5,9 @@
    position = "0 0";
    extent = "1024 768";
    minExtent = "8 8";
-   horizSizing = "left";
-   vertSizing = "height";
-   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   profile = "GuiModelessDialogProfile";
    visible = "1";
    active = "1";
    tooltipProfile = "GuiToolTipProfile";
