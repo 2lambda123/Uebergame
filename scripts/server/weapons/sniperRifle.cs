@@ -277,8 +277,8 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateName[2]                     = "Ready";
    stateTransitionGeneric0In[2]     = "SprintEnter";
    stateTransitionOnMotion[2]       = "ReadyMotion";
-   stateTransitionOnTimeout[2]      = "ReadyFidget";
-   stateTimeoutValue[2]             = 10;
+   //stateTransitionOnTimeout[2]      = "ReadyFidget";
+   //stateTimeoutValue[2]             = 10;
    stateWaitForTimeout[2]           = false;
    stateScaleAnimation[2]           = false;
    stateScaleAnimationFP[2]         = false;
