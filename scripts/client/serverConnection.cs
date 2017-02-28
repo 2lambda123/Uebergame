@@ -198,7 +198,7 @@ function disconnect()
    
    if ( !$UsingMainMenuLevel )
    {     
-      schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Templates/template_ocean.mis" ); 
+      schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", "levels/Ambience/ambience_space_01_a.mis" ); 
       $UsingMainMenuLevel = true;
    }
 }

@@ -34,7 +34,7 @@ datablock ItemData(TimeBombThrown : DefaultAmmo)
 
    directDamage = 0;
    radiusDamage = 180;
-   damageRadius = 10;
+   damageRadius = 9;
 
    damageType = $DamageType::Explosion;
    areaImpulse = 2000;
