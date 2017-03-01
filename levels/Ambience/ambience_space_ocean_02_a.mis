@@ -23,7 +23,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "An infinite ocean empty template to start your level with";
          enabled = "1";
-         levelName = "ambience_space_02_b";
+         levelName = "ambience_space_ocean_02_a";
    };
    new GroundPlane(theGround) {
       zOffset = "0";
@@ -55,14 +55,14 @@ new SimGroup(MissionGroup) {
       waveMagnitude[0] = "0.3";
       waveMagnitude[1] = "0.2";
       waveMagnitude[2] = "0.15";
-      overallWaveMagnitude = "1.5";
+      overallWaveMagnitude = "1.2";
       rippleTex = "art/water/ripple";
       rippleDir[0] = "0.75 0.5";
       rippleDir[1] = "0.8 0.6";
       rippleDir[2] = "0.7 0.8";
       rippleSpeed[0] = "0.02";
-      rippleSpeed[1] = "0.006";
-      rippleSpeed[2] = "0.0001";
+      rippleSpeed[1] = "0.003";
+      rippleSpeed[2] = "0.001";
       rippleTexScale[0] = "1 1";
       rippleTexScale[1] = "10 15";
       rippleTexScale[2] = "32 32";
@@ -169,7 +169,7 @@ new SimGroup(MissionGroup) {
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
          position = "313 87.4904 32.2861";
-         rotation = "0.0187253 0.0490308 0.998622 221.751";
+         rotation = "-0.0322837 0.0490139 0.998276 113.348";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";

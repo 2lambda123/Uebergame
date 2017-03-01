@@ -49,6 +49,24 @@ function Torque::getHomePath(%this)
    return( $HomePath );
 }
 
+/// Used to get a random main menu level
+function getMainMenuLevel(%levelName)
+{
+   %list = new ArrayObject();
+   %list.add("0", "levels/Ambience/ambience_space_ocean_01_a.mis");
+   %list.add("1", "levels/Ambience/ambience_space_ocean_01_b.mis");
+   %list.add("2", "levels/Ambience/ambience_space_ocean_02_a.mis");
+   %list.add("3", "levels/Ambience/ambience_space_ocean_02_b.mis");
+   %list.add("4", "levels/Ambience/ambience_space_ocean_03_a.mis");
+   %list.add("5", "levels/Ambience/ambience_space_ocean_03_b.mis");
+   
+   %random = getRandom(0, 5);
+   %levelName = %list.getValue(%random);
+   echo ( "chosen main menu level: " @ %levenName);
+   
+   return (%levelName);
+}
+
 //---------------------------------------------------------------------------------------------
 // CorePackage
 // Adds functionality for this mod to some standard functions.

@@ -23,7 +23,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "An infinite ocean empty template to start your level with";
          enabled = "1";
-         levelName = "ambience_space_01_a";
+         levelName = "ambience_space_ocean_01_a";
    };
    new GroundPlane(theGround) {
       zOffset = "0";

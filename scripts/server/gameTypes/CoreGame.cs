@@ -538,7 +538,7 @@ function CoreGame::onClientEnterGame(%game, %client)
    //LogEcho("\c4CoreGame::onClientEnterGame(" SPC %game.class SPC %client.nameBase SPC ")");
    
    // Setup zee bots
-   if ( %client.isAiControlled() )
+   if ( %client.isAiControlled() && !$UsingMainMenuLevel )
    {
       %game.assignClientTeam(%client);
       %game.spawnPlayer(%client, 0);

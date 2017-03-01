@@ -108,25 +108,10 @@ function escapeFromGame()
 	  toggleGameMenuGui();
 }
 
-function toggleMainMenuGui()
-{
-   if (MainMenuGui.isAwake()) {
-   Canvas.popDialog(MainMenuGui);
-   if ($pref::Menu::Ads)
-   Canvas.popDialog(MainMenuAdsGui);
-   }
-   else
-   {
-   Canvas.pushDialog(MainMenuGui);
-   if ($pref::Menu::Ads)
-   Canvas.pushDialog(MainMenuAdsGui);
-   }
-}
-
 // functions for toggling menus, reopons previously active menus
 function toggleGameMenuGui()
 {
-   if( GameMenuGui.isAwake() )
+   if( GameMenuGui.isAwake() || MainMenuGui.isAwake() )
    {
       if (JoinServerDlg.isAwake()) {
       Canvas.popDialog(JoinServerDlg);
@@ -180,12 +165,21 @@ function toggleGameMenuGui()
       Canvas.popDialog(DevToolsDlg);
       $DevToolsDlgActive = 1;
       }
+      if (StartEditorGui.isAwake()) {
+      Canvas.popDialog(StartEditorGui);
+      $StartEditorGuiActive = 1;
+      }
       
    Canvas.popDialog( GameMenuGui );
+   if( $UsingMainMenuLevel )
+   Canvas.popDialog( MainMenuGui );
    }
    else
-   {      
+   { 
+   if( !$UsingMainMenuLevel )
    Canvas.pushDialog( GameMenuGui );
+   else
+      Canvas.pushDialog( MainMenuGui );
    
       if ( $JoinServerDlgActive == 1 )
       Canvas.pushDialog(JoinServerDlg);
@@ -197,9 +191,9 @@ function toggleGameMenuGui()
       Canvas.pushDialog(ExtrasDlg);
       if ( $HelpDlgActive == 1 )
       Canvas.pushDialog(HelpDlg);
-      if ( $AdminDlgActive == 1 )
+      if (( $AdminDlgActive == 1 ) && ( !$UsingMainMenuLevel ))
       Canvas.pushDialog(AdminDlg);
-      if ( $ArmoryDlgActive == 1 )
+      if (( $ArmoryDlgActive == 1 ) && ( !$UsingMainMenuLevel ))
       Canvas.pushDialog(ArmoryDlg);
       if ( $ServerOptionsDlgActive == 1 )
       Canvas.pushDialog(ServerOptionsDlg);
@@ -213,6 +207,8 @@ function toggleGameMenuGui()
       Canvas.pushDialog(CreditsDlg);
       if ( $DevToolsDlgActive == 1 )
       Canvas.pushDialog(DevToolsDlg);
+      if ( $StartEditorGuiActive == 1 && $UsingMainMenuLevel )
+      Canvas.pushDialog(StartEditorGui);
    }
 }
 
@@ -357,7 +353,7 @@ function toggleStartEditorGui(%val)
 {
    if (StartEditorGui.isAwake()) {
    Canvas.popDialog(StartEditorGui);
-   //$StartEditorGuiActive = 0;
+   $StartEditorGuiActive = 0;
    }
    else
    Canvas.pushDialog(StartEditorGui);

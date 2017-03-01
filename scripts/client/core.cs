@@ -148,7 +148,7 @@ function handleEscape()
    }
 
    if ($UsingMainMenuLevel)
-      toggleMainMenuGui();
+      toggleGameMenuGui();
    else 
       escapeFromGame();
 }

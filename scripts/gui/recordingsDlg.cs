@@ -41,7 +41,7 @@ function recordingsDlg::onWake()
 function StartSelectedDemo()
 {
    // quit the current game since playing recordings does not work when in a mission
-   if (PlayGui.isAwake())
+   if ( PlayGui.isAwake() || $UsingMainMenuLevel )
    disconnect();
 	
    // first unit is filename
@@ -147,8 +147,22 @@ function demoPlaybackComplete()
    // handling functionality.
    clientEndMission();
 
-   if (isObject( MainMenuGui ))
-      Canvas.setContent( MainMenuGui );
+      if ($pref::Menu::Level)
+      {
+         if( $UsingMainMenuLevel )
+            disconnect(); 
+
+         $UsingMainMenuLevel = true;
+         schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", getMainMenuLevel() ); 
+      }
+      else
+      {
+         Canvas.setContent("backgroundGui");
+         Canvas.pushDialog( MainMenuGui );
+         
+         if ($pref::Menu::Ads)
+            Canvas.pushDialog( MainMenuAdsGui );
+      }   
 
    Canvas.pushDialog(RecordingsDlg);
 }

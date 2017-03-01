@@ -238,7 +238,7 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    MissionCleanup.add( $Bot::Set );
 
    // Add the aiPlayer bots and aiClients
-   if ( $pref::Server::AiCount > 0 )
+   if ( $pref::Server::AiCount > 0 && !$UsingMainMenuLevel )
    {
       //addAiPlayers( $pref::Server::AiCount );
       connectBots( $pref::Server::AiCount );
