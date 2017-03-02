@@ -41,8 +41,12 @@ function recordingsDlg::onWake()
 function StartSelectedDemo()
 {
    // quit the current game since playing recordings does not work when in a mission
-   if ( PlayGui.isAwake() || $UsingMainMenuLevel )
+   if ( PlayGui.isAwake() )
+   disconnectIngame();
+   if ( $UsingMainMenuLevel )
    disconnect();
+
+   $UsingMainMenuLevel = 0;
 	
    // first unit is filename
    %sel = RecordingsDlgList.getSelectedId();
@@ -171,7 +175,7 @@ function deleteDemoRecord()
 {
    %sel = RecordingsDlgList.getSelectedId();
    %rowText = RecordingsDlgList.getRowTextById(%sel);
-   %file = $currentMod @ "/recordings/" @ getField(%rowText, 0) @ ".rec";
+   %file = $HomePath @ "/recordings/" @ getField(%rowText, 0) @ ".rec";
    
    if(!isfile(%file))
    {

@@ -106,9 +106,19 @@ function portInit(%port)
 /// @return true if successful.
 function createAndConnectToLocalServer( %serverType, %level, %missionType )
 {
-   // prevent screen going blank
+   // prevent screen going blank and set loading screen only on first launch
+   if ( $GameLaunched == 0 )
+   {
+   Canvas.setContent("startupGui"); 
+   Canvas.repaint();
+   $GameLaunched = 1;
+   }
+   else
+   {
    Canvas.setContent("backgroundGui"); 
    Canvas.repaint();
+   } 
+
       
    if( !tge.createServer( %serverType, %level, %missionType ) )
       return false;

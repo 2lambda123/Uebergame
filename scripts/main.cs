@@ -62,7 +62,6 @@ function getMainMenuLevel(%levelName)
    
    %random = getRandom(0, 5);
    %levelName = %list.getValue(%random);
-   echo ( "chosen main menu level: " @ %levenName);
    
    return (%levelName);
 }
@@ -83,6 +82,7 @@ function Torque::onStart(%this)
 
    Parent::onStart(%this);
 
+   $GameLaunched = 0;
    // Set our saves directory
    %this.getHomePath();
    

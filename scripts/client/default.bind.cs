@@ -170,16 +170,26 @@ function toggleGameMenuGui()
       $StartEditorGuiActive = 1;
       }
       
-   Canvas.popDialog( GameMenuGui );
-   if( $UsingMainMenuLevel )
-   Canvas.popDialog( MainMenuGui );
+      Canvas.popDialog( GameMenuGui );
+   
+      if ( $UsingMainMenuLevel )
+      {
+         Canvas.popDialog( MainMenuGui );
+         Canvas.popDialog( MainMenuAdsGui );
+      }
+
    }
    else
    { 
-   if( !$UsingMainMenuLevel )
-   Canvas.pushDialog( GameMenuGui );
-   else
-      Canvas.pushDialog( MainMenuGui );
+      if( !$UsingMainMenuLevel )
+      Canvas.pushDialog( GameMenuGui );
+
+      if ( $UsingMainMenuLevel )
+      {
+         Canvas.pushDialog( MainMenuGui );
+         if ($pref::Menu::Ads)
+         Canvas.pushDialog( MainMenuAdsGui );
+      }
    
       if ( $JoinServerDlgActive == 1 )
       Canvas.pushDialog(JoinServerDlg);
@@ -191,9 +201,9 @@ function toggleGameMenuGui()
       Canvas.pushDialog(ExtrasDlg);
       if ( $HelpDlgActive == 1 )
       Canvas.pushDialog(HelpDlg);
-      if (( $AdminDlgActive == 1 ) && ( !$UsingMainMenuLevel ))
+      if ( $AdminDlgActive == 1 && !$UsingMainMenuLevel )
       Canvas.pushDialog(AdminDlg);
-      if (( $ArmoryDlgActive == 1 ) && ( !$UsingMainMenuLevel ))
+      if ( $ArmoryDlgActive == 1 && !$UsingMainMenuLevel )
       Canvas.pushDialog(ArmoryDlg);
       if ( $ServerOptionsDlgActive == 1 )
       Canvas.pushDialog(ServerOptionsDlg);

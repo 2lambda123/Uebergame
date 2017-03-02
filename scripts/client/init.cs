@@ -114,6 +114,8 @@ function Torque::initClient(%this)
    loadMaterials();
    
    // Load up the shell GUIs
+   exec("~/gui/startupGui.gui");
+   exec("~/gui/startupGui.cs");
    exec("~/gui/backgroundGui.gui");
    exec("~/gui/backgroundLevelGui.gui");
    exec("~/gui/mainMenuGui.gui");

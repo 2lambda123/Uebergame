@@ -80,7 +80,7 @@
             fitParentWidth = "1";
             clipColumnText = "0";
             position = "1 1";
-            extent = "495 126";
+            extent = "366 234";
             minExtent = "8 20";
             horizSizing = "right";
             vertSizing = "bottom";
@@ -108,6 +108,26 @@
          visible = "1";
          active = "1";
          command = "StartSelectedDemo();";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiButtonCtrl(DR_DeleteDemoBtn) {
+         text = "Delete";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         position = "291 218";
+         extent = "64 32";
+         minExtent = "8 8";
+         horizSizing = "right";
+         vertSizing = "top";
+         profile = "GuiButtonProfile";
+         visible = "1";
+         active = "1";
+         command = "deleteDemoRecord();";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";

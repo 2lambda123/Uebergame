@@ -1,0 +1,99 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiChunkedBitmapCtrl(startupGui) {
+   bitmap = "art/gui/core/space_background_big.dds";
+   useVariable = "0";
+   tile = "0";
+   position = "0 0";
+   extent = "1024 768";
+   minExtent = "8 2";
+   horizSizing = "width";
+   vertSizing = "height";
+   profile = "GuiModelessDialogProfile";
+   visible = "1";
+   active = "1";
+   tooltipProfile = "GuiToolTipProfile";
+   hovertime = "1000";
+   isContainer = "1";
+   canSave = "1";
+   canSaveDynamicFields = "1";
+
+   new GuiControl() {
+      position = "128 192";
+      extent = "768 384";
+      minExtent = "8 2";
+      horizSizing = "center";
+      vertSizing = "center";
+      profile = "GuiDefaultProfile";
+      visible = "1";
+      active = "1";
+      tooltipProfile = "GuiToolTipProfile";
+      hovertime = "1000";
+      isContainer = "1";
+      canSave = "1";
+      canSaveDynamicFields = "0";
+
+      new GuiBitmapCtrl() {
+         bitmap = "art/gui/mainMenu/uebergame-logo.dds";
+         color = "255 255 255 255";
+         wrap = "0";
+         position = "0 4";
+         extent = "768 288";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiBitmapBarCtrl() {
+         percent = "100";
+         vertical = "0";
+         flipClip = "0";
+         bitmap = "art/gui/mainMenu/bar_tube_01_alt.dds";
+         color = "255 255 255 255";
+         position = "4 309";
+         extent = "758 54";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiTextCtrl(startupGuiText) {
+         text = "";
+         maxLength = "1024";
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "37 316";
+         extent = "704 38";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "ScoreHeaderTextProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         internalName = "startupGuiText";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+   };
+};
+//--- OBJECT WRITE END ---
