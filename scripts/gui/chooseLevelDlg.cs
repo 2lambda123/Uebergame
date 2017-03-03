@@ -98,9 +98,7 @@ function ChooseLevelDlgGoBtn::onMouseUp( %this )
       disconnect();
       $UsingMainMenuLevel = false; // loading mission so we are no longer in main menu   
    }
-      
-   // if we are in a game and try to join another, quit the current game
-   if (PlayGui.isAwake())
+   else if (PlayGui.isAwake())
    disconnectIngame();
 
    // So we can't fire the button when loading is in progress.

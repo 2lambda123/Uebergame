@@ -196,11 +196,19 @@ function disconnect()
    // Call destroyServer in case we're hosting
    tge.destroyServer();
    
-   if ( !$UsingMainMenuLevel )
+   if ( !$UsingMainMenuLevel && $pref::Menu::Level )
    {     
       schedule(50,0, "createAndConnectToLocalServer","SinglePlayer", getMainMenuLevel() ); 
       $UsingMainMenuLevel = true;
    }
+   else
+   {
+      Canvas.setContent("backgroundGui");
+      Canvas.pushDialog( MainMenuGui );
+         
+      if ($pref::Menu::Ads)
+         Canvas.pushDialog( MainMenuAdsGui );
+   } 
 }
 
 function disconnectIngame()

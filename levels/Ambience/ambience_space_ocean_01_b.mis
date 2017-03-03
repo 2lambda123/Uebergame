@@ -25,15 +25,6 @@ new SimGroup(MissionGroup) {
          enabled = "1";
          levelName = "ambience_space_ocean_01_b";
    };
-   new GroundPlane(theGround) {
-      zOffset = "0";
-      squareSize = "128";
-      scaleU = "16";
-      scaleV = "16";
-      Material = "Mat_spotted_01_rock_main";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-   };
    new WaterPlane(theOcean) {
       gridSize = "128";
       gridElementSize = "1";

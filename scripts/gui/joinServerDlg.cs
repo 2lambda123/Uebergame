@@ -144,9 +144,16 @@ function JoinServerDlg::cancel(%this)
 //----------------------------------------
 function JoinServerDlg::join(%this)
 {
+   // disconnect from main menu level first
+   if ( $UsingMainMenuLevel )
+   {
+      disconnect();
+      $UsingMainMenuLevel = false; // loading mission so we are no longer in main menu   
+   }
+      
    // if we are in a game and try to join another, quit the current game
    if (PlayGui.isAwake())
-   disconnect();
+   disconnectIngame();
 
    cancelServerQuery();
    %id = JS_serverList.getSelectedId();

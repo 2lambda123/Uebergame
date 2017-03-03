@@ -20,13 +20,13 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-$PostFXManager::Settings::EnableVignette = "0";
+$PostFXManager::Settings::EnableVignette = "1";
 $PostFXManager::Settings::EnableSunBokeh = "0";
 $PostFXManager::Settings::EnableDOF = "0";
 $PostFXManager::Settings::EnableSSAO = "0";
-$PostFXManager::Settings::EnableHDR = "0";
+$PostFXManager::Settings::EnableHDR = "1";
 $PostFXManager::Settings::EnableLightRays = "0";
-$PostFXManager::Settings::EnablePostFX = "0";
+$PostFXManager::Settings::EnablePostFX = "1";
 $PostFXManager::Settings::Vignette::VMax = "2.0";
 $PostFXManager::Settings::DOF::BlurCurveFar = "";
 $PostFXManager::Settings::DOF::BlurCurveNear = "";
@@ -41,7 +41,7 @@ $PostFXManager::Settings::HDR::blueShiftColor = "1.05 0.97 1.27";
 $PostFXManager::Settings::HDR::brightPassThreshold = "1";
 $PostFXManager::Settings::HDR::enableBloom = "1";
 $PostFXManager::Settings::HDR::enableBlueShift = "0";
-$PostFXManager::Settings::HDR::enableToneMapping = "1";
+$PostFXManager::Settings::HDR::enableToneMapping = "0";
 $PostFXManager::Settings::HDR::gaussMean = "0";
 $PostFXManager::Settings::HDR::gaussMultiplier = "0.3";
 $PostFXManager::Settings::HDR::gaussStdDev = "0.8";

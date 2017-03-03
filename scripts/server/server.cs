@@ -107,7 +107,7 @@ function portInit(%port)
 function createAndConnectToLocalServer( %serverType, %level, %missionType )
 {
    // prevent screen going blank and set loading screen only on first launch
-   if ( $GameLaunched == 0 )
+   if ( $GameLaunched == 0 && $pref::Menu::Level ) // loading screen is only necessary for 3D menu
    {
    Canvas.setContent("startupGui"); 
    Canvas.repaint();
@@ -117,9 +117,9 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
    {
    Canvas.setContent("backgroundGui"); 
    Canvas.repaint();
+   $GameLaunched = 1;
    } 
-
-      
+   
    if( !tge.createServer( %serverType, %level, %missionType ) )
       return false;
    

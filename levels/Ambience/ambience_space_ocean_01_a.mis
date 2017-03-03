@@ -6,7 +6,7 @@ new SimGroup(MissionGroup) {
 
    new LevelInfo(theLevelInfo) {
       nearClip = "0.1";
-      visibleDistance = "500";
+      visibleDistance = "2000";
       visibleGhostDistance = "0";
       decalBias = "0.0015";
       fogColor = "0.196 0.184 0.137 1";
@@ -24,15 +24,6 @@ new SimGroup(MissionGroup) {
          desc0 = "An infinite ocean empty template to start your level with";
          enabled = "1";
          levelName = "ambience_space_ocean_01_a";
-   };
-   new GroundPlane(theGround) {
-      zOffset = "0";
-      squareSize = "128";
-      scaleU = "16";
-      scaleV = "16";
-      Material = "Mat_spotted_01_rock_main";
-      canSave = "1";
-      canSaveDynamicFields = "1";
    };
    new WaterPlane(theOcean) {
       gridSize = "128";
