@@ -223,13 +223,14 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    item = SniperRifle;
    ammo = SniperAmmo;
    clip = SniperMag;
+   scopeSight = SniperRifleScopeImage;
 
    usesEnergy = 0;
    minEnergy = 0;
 
    projectile = SniperProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.0015;
+   projectileSpread = 0.02;
 
    //altProjectile = GrenadeLauncherProjectile;
    //altProjectileSpread = "0.02";
@@ -271,7 +272,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
-   stateSequence[1]                 = "switch_in";
+   stateSequence[1]                 = "idle";
    //stateSound[1]                    = SniperSwitchinSound;
 
    stateName[2]                     = "Ready";
@@ -413,6 +414,30 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    stateTransitionOnAmmo[15]         = "Ready";
    stateScript[15]                   = "onReloadFinish";      
 };
+
+datablock ShapeBaseImageData( SniperRifleScopeImage : SniperRifleWeaponImage )
+{
+   
+   firstPerson = false;
+   useEyeNode = false;
+   animateOnServer = false;
+   useEyeOffset = false;
+   
+   eyeOffset = "-0.161 -0.36 -0.55";
+   eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
+
+   projectileSpread = "0.0015";
+   parentImage = "SniperRifleWeaponImage";
+
+   // Called when the weapon is first mounted and there is ammo.
+   // We want a smooth transition from datablocks, change Activate params
+   stateTimeoutValue[1]             = 0.8;
+   stateWaitForTimeout[1]           = true;
+   stateSequence[1]                 = "idle";
+   stateSound[1]                    = "";
+   stateTransitionOnTimeout[1]      = "Ready";
+   stateAllowImageChange[1]         = false; 
+}; 
 
 //-----------------------------------------------------------------------------
 // SMS Inventory

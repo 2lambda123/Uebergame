@@ -173,8 +173,8 @@ function OptionsDlg::onWake(%this)
          %selId = 2;
       case "cycleNextWeaponOnly":
          %selId = 3;
-      case "toggleZoomFOV":
-         %selId = 4;
+      //case "toggleZoomFOV":
+        // %selId = 4;
    }
    MouseZActionMenu.setSelected( %selId );
 
@@ -310,8 +310,8 @@ function OptionsDlg::onSleep(%this)
                moveMap.bind( mouse, zaxis, cycleWeaponAxis );
             case 3:
                moveMap.bind( mouse, zaxis, cycleNextWeaponOnly );
-            case 4:
-               moveMap.bind( mouse, zaxis, toggleZoomFOV );
+            //case 4:
+            //   moveMap.bind( mouse, zaxis, toggleZoomFOV );
             default:
                moveMap.unbind( mouse, zaxis );
          }

@@ -164,7 +164,7 @@ function clientCmdHideReticle()
 {
    reticle.setVisible(false);
    $ZoomOn = false;
-   toggleZoomFOV();
+   //toggleZoomFOV();
    zoomReticle.setVisible(false);
 }
 

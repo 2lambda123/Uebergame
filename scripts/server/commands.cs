@@ -700,6 +700,7 @@ function serverCmdDoIronSights(%client, %val)
 
    %curWeapon = %player.getMountedImage( $WeaponSlot );
    %image = %curWeapon.ironSight;
+   %scope = %curWeapon.scopeSight;
 
    // Unmount image and replace it with iron sighted version
    if ( isObject( %image ) )
@@ -711,10 +712,18 @@ function serverCmdDoIronSights(%client, %val)
       %player.allowSprinting(false);
       %player.allowSwimming(true);
       %player.isInIronSights = true;
+      commandToClient ( %client, 'toggleIronZoom', 1 );
    }
    else
    {
-      commandToClient( %client, 'DoZoomReticle', 1 );
+      %player.unmountImage( $WeaponSlot );
+      %player.mountImage( %scope, $WeaponSlot );
+      %player.allowJumping(false);
+      %player.allowJetJumping(false);
+      %player.allowSprinting(false);
+      %player.allowSwimming(true);
+      %player.isInIronSights = true;
+      commandToClient ( %client, 'toggleScopeZoom', 1 );
    }
 }
 
@@ -731,6 +740,16 @@ function serverCmdUndoIronSights(%client, %val)
 
    // Unmount image and replace it with standard sighted version
    if ( isObject( %image ) )
+   {
+      %player.unmountImage( $WeaponSlot );
+      %player.mountImage( %image, $WeaponSlot );
+      %player.allowJumping(true);
+      %player.allowJetJumping(true);
+      %player.allowSprinting(true);
+      %player.allowSwimming(true);
+      %player.isInIronSights = false;
+   }
+   else
    {
       %player.unmountImage( $WeaponSlot );
       %player.mountImage( %image, $WeaponSlot );

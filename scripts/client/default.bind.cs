@@ -715,7 +715,7 @@ if($Player::CurrentFOV $= "")
 // toggle is hit it simply divides the CurrentFOV by 2 once again.  If the
 // FOV is reduced below a certain threshold then it resets to equal half of the
 // DefaultFOV value.  This gives us 4 zoom levels to cycle through.
-
+/*
 function toggleZoomFOV(%val)
 {
    if ( %val )
@@ -731,6 +731,39 @@ function toggleZoomFOV(%val)
       {
          setFov($pref::Player::Fov);
       }
+   }
+}
+*/
+function clientCmdtoggleScopeZoom(%val)
+{
+   reticle.setVisible(false);
+   
+   if ( %val )
+   {
+      $Player::CurrentFOV = $pref::Player::Fov / 4;
+      
+      if(ServerConnection.zoomed)
+      {
+         setFOV($Player::CurrentFOV);
+         zoomReticle.setVisible(true);
+      }
+      else
+         setFov($pref::Player::Fov);
+   }
+}
+
+function clientCmdtoggleIronZoom(%val)
+{
+   reticle.setVisible(false);
+   
+   if ( %val )
+   {
+      $Player::CurrentFOV = $pref::Player::Fov / 2;
+      
+      if(ServerConnection.zoomed)
+         setFOV($Player::CurrentFOV);
+      else
+         setFov($pref::Player::Fov);
    }
 }
 
@@ -751,33 +784,7 @@ function turnOffZoom()
    reticle.setVisible(true);
    zoomReticle.setVisible(false);
 }
-//tpggleZoom not in use, we have toggleIronSights instead
-/*
-function toggleZoom(%val)
-{
-   if ( Canvas.getContent() != PlayGui.getId() )
-      return;
 
-   if ( %val )
-   {
-      ServerConnection.zoomed = true;
-      setFov($Player::CurrentFOV);
-
-      //zoomReticle.setBitmap( "art/gui/playGui/zoomHair_filled.png" );
-      //zoomReticle.setBitmap( "art/gui/playGui/bino.png" );
-      reticle.setVisible(false);
-      zoomReticle.setVisible(true);
-
-      DOFPostEffect.setAutoFocus( true );
-      DOFPostEffect.setFocusParams( 0.5, 0.5, 50, 500, -5, 5 );
-      DOFPostEffect.enable();
-   }
-   else
-   {
-      turnOffZoom();
-   }
-}
-*/
 //------------------------------------------------------------------------------
 // Iron sights functions
 // Scripted by: ZOD, idea by deepscratch
@@ -792,12 +799,12 @@ function toggleIronSights( %val )
    if ( %val )
    {
       ServerConnection.zoomed = true;
-      setFov($Player::CurrentFOV);
+      //setFov($Player::CurrentFOV);
       //DOFPostEffect.setAutoFocus( true );
       //DOFPostEffect.setFocusParams( 0.5, 0.5, 50, 500, -5, 5 );
       //DOFPostEffect.enable();
       commandToServer( 'DoIronSights' );
-      reticle.setVisible(false);
+      //reticle.setVisible(false);
    }
    else
    {
@@ -1252,9 +1259,8 @@ moveMap.bind( keyboard, "m", autoMountVehicle );
 
 //-----------------------------------------------------------------------------
 // Camera and View
-//moveMap.bind( mouse, button1, toggleZoom );
 moveMap.bind( mouse, button1, toggleIronSights );
-moveMap.bind( keyboard, "f", toggleZoomFOV );
+//moveMap.bind( keyboard, "f", toggleZoomFOV );
 moveMap.bind( keyboard, "v", toggleFreeLook );
 moveMap.bind( keyboard, "F3", toggleFirstPerson );
 
@@ -1429,8 +1435,8 @@ function Torque::updateKeyMaps(%this)
          spectatorBlockMap.blockBind( moveMap, mouseFire );
          spectatorBlockMap.blockBind( moveMap, mouseJet );
          spectatorBlockMap.blockBind( moveMap, toggleQuickChatHud );
-         spectatorBlockMap.blockBind( moveMap, toggleZoom );
-         spectatorBlockMap.blockBind( moveMap, setZoomFOV );
+         //spectatorBlockMap.blockBind( moveMap, toggleZoom );
+         //spectatorBlockMap.blockBind( moveMap, setZoomFOV );
          spectatorBlockMap.blockBind( moveMap, toggleIronSights );
          spectatorBlockMap.push();
          spectatorMap.push();

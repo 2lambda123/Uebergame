@@ -276,13 +276,15 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    item = GrenadeLauncher;
    ammo = GrenadeLauncherAmmo;
    clip = GrenadeLauncherClip;
+   scopeSight = GrenadeLauncherScopeImage;
+   
 
    usesEnergy = 0;
    minEnergy = 0;
 
    projectile = GrenadeProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.008;
+   projectileSpread = 0.03;
 
    //altProjectile = GrenadeProjectileAlt;
    //altProjectileSpread = "0.02";
@@ -320,7 +322,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateTransitionGeneric0In[1]     = "SprintEnter";
    stateTransitionOnTimeout[1]      = "Ready";
    stateTimeoutValue[1]             = 0.5;
-   stateSequence[1]                 = "switch_in";
+   stateSequence[1]                 = "idle";
    //stateSound[1]                    = GLSwitchinSound;
 
    // Ready to fire, just waiting for the trigger
@@ -461,6 +463,30 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    stateTimeoutValue[15]             = 0.1;
    stateTransitionOnAmmo[15]         = "Ready";
    stateScript[15]                   = "onReloadFinish";  
+};
+
+datablock ShapeBaseImageData( GrenadeLauncherScopeImage : GrenadeLauncherImage )
+{
+   
+   firstPerson = false;
+   useEyeNode = false;
+   animateOnServer = false;
+   useEyeOffset = false;
+   
+   eyeOffset = "-0.161 -0.36 -0.55";
+   eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
+
+   projectileSpread = "0.007";
+   parentImage = "GrenadeLauncherImage";
+
+   // Called when the weapon is first mounted and there is ammo.
+   // We want a smooth transition from datablocks, change Activate params
+   stateTimeoutValue[1]             = 0.8;
+   stateWaitForTimeout[1]           = true;
+   stateSequence[1]                 = "idle";
+   stateSound[1]                    = "";
+   stateTransitionOnTimeout[1]      = "Ready";
+   stateAllowImageChange[1]         = false; 
 };
 
 //SMS Inventory----------------------------------------------------------------
