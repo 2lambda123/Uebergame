@@ -75,7 +75,22 @@ function toggleGuiEditor( %make )
       if( EditorIsActive() && !GuiEditor.toggleIntoEditorGui )
          toggleEditor( true );
          
-      GuiEdit();
+      if( !isObject( GuiEditCanvas ) )
+         new GuiControl( GuiEditCanvas, EditorGuiGroup );
+      
+      if( GuiEditorIsActive() )
+      {
+         GuiEditor.close();
+      }
+      else
+      {
+         GuiEditor.open();
+      
+         // Cancel the scheduled event to prevent
+         // the level from cycling after it's duration
+         // has elapsed.
+         cancel($Game::Schedule);
+      }
       
 	  // Cancel the scheduled event to prevent
 	  // the level from cycling after it's duration
@@ -97,6 +112,26 @@ package GuiEditor_BlockDialogs
 };
 
 //---------------------------------------------------------------------------------------------
+
+function GuiEditor::open(%this)
+{
+   GuiEditCanvas.onCreateMenu();
+
+   GuiEditContent(Canvas.getContent());
+}
+
+function GuiEditor::close(%this)
+{
+   // prevent the mission editor from opening while the GuiEditor is open.
+   if(Canvas.getContent() != GuiEditorGui.getId())
+      return;
+
+   GuiGroup.add(GuiEditorGui);
+   
+   Canvas.setContent(GuiEditor.lastContent);
+   
+   GuiEditCanvas.onDestroyMenu();
+}
 
 function GuiEditor::openForEditing( %this, %content )
 {   

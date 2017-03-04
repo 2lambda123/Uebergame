@@ -29,7 +29,6 @@ uniform sampler2D sceneTex;
 uniform sampler2D luminanceTex;
 uniform sampler2D bloomTex;
 uniform sampler1D colorCorrectionTex;
-uniform sampler2D prepassTex;
 
 uniform vec2 texSize0;
 uniform vec2 texSize2;
@@ -76,6 +75,9 @@ void main()
       bloom.rgb = mix( bloom.rgb, rodColor, coef );
    }
 
+   // Add the bloom effect.
+   _sample += g_fBloomScale * bloom;
+   
    // Map the high range of color values into a range appropriate for
    // display, taking into account the user's adaptation level, 
    // white point, and selected value for for middle gray.
@@ -87,18 +89,13 @@ void main()
       _sample.rgb = mix( _sample.rgb, _sample.rgb * toneScalar, g_fEnableToneMapping );
    }
 
-   // Add the bloom effect.
-   float depth = prepassUncondition( prepassTex, IN_uv0 ).w;
-   if (depth>0.9999)
-   _sample += g_fBloomScale * bloom;
-
    // Apply the color correction.
    _sample.r = texture( colorCorrectionTex, _sample.r ).r;
    _sample.g = texture( colorCorrectionTex, _sample.g ).g;
    _sample.b = texture( colorCorrectionTex, _sample.b ).b;
 
    // Apply gamma correction
-   _sample.rgb = pow( abs(_sample.rgb), vec3(g_fOneOverGamma) );
+   _sample.rgb = pow( _sample.rgb, vec3(g_fOneOverGamma) );
    
    // Apply contrast
    _sample.rgb = ((_sample.rgb - 0.5f) * Contrast) + 0.5f;

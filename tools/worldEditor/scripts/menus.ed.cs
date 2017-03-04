@@ -44,6 +44,8 @@ function EditorGui::buildMenus(%this)
    // Sub menus (temporary, until MenuBuilder gets updated)
       // The speed increments located here are overwritten in EditorCameraSpeedMenu::setupDefaultState.
       // The new min/max for the editor camera speed range can be set in each level's levelInfo object.
+   if(!isObject(EditorCameraSpeedOptions))
+   {
    %this.cameraSpeedMenu = new PopupMenu(EditorCameraSpeedOptions)
    {
       superClass = "MenuBuilder";
@@ -57,6 +59,9 @@ function EditorGui::buildMenus(%this)
       item[5] = "Fast" TAB %cmdCtrl @ "-Shift 6" TAB "165";
       item[6] = "Fastest" TAB %cmdCtrl @ "-Shift 7" TAB "200";
    };
+   }
+   if(!isObject(EditorFreeCameraTypeOptions))
+   {
    %this.freeCameraTypeMenu = new PopupMenu(EditorFreeCameraTypeOptions)
    {
       superClass = "MenuBuilder";
@@ -68,6 +73,9 @@ function EditorGui::buildMenus(%this)
       item[3] = "Smoothed" TAB "" TAB "EditorGuiStatusBar.setCamera(\"Smooth Camera\");";
       item[4] = "Smoothed Rotate" TAB "" TAB "EditorGuiStatusBar.setCamera(\"Smooth Rot Camera\");";
    };
+   }
+   if(!isObject(EditorPlayerCameraTypeOptions))
+   {
    %this.playerCameraTypeMenu = new PopupMenu(EditorPlayerCameraTypeOptions)
    {
       superClass = "MenuBuilder";
@@ -76,6 +84,9 @@ function EditorGui::buildMenus(%this)
       Item[0] = "First Person" TAB "" TAB "EditorGuiStatusBar.setCamera(\"1st Person Camera\");";
       Item[1] = "Third Person" TAB "" TAB "EditorGuiStatusBar.setCamera(\"3rd Person Camera\");";
    };
+   }
+   if(!isObject(EditorCameraBookmarks))
+   {
    %this.cameraBookmarksMenu = new PopupMenu(EditorCameraBookmarks)
    {
       superClass = "MenuBuilder";
@@ -83,6 +94,7 @@ function EditorGui::buildMenus(%this)
       
       //item[0] = "None";
    };
+   }
    %this.viewTypeMenu = new PopupMenu()
    {
       superClass = "MenuBuilder";
@@ -98,7 +110,7 @@ function EditorGui::buildMenus(%this)
    };
       
    // Menu bar
-   %this.menuBar = new MenuBar()
+   %this.menuBar = new MenuBar(WorldEditorMenubar)
    {
       dynamicItemInsertPos = 3;
    };
@@ -263,7 +275,8 @@ function EditorGui::buildMenus(%this)
          
       item[0] = "Network Graph" TAB "n" TAB "toggleNetGraph();";
       item[1] = "Profiler" TAB "ctrl F2" TAB "showMetrics(true);";
-      item[2] = "Make Selected a Mesh" TAB "" TAB "makeSelectedAMesh();";
+	  item[2] = "Torque SimView" TAB "" TAB "tree();";
+      item[3] = "Make Selected a Mesh" TAB "" TAB "makeSelectedAMesh();";
    };
    %this.menuBar.insert(%toolsMenu, %this.menuBar.getCount());
       

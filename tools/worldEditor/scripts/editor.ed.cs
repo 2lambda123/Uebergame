@@ -99,25 +99,12 @@ function Editor::checkActiveLoadDone()
 //------------------------------------------------------------------------------
 function toggleEditor(%make)
 {
-   //close the dialog if already open and cancel the function
-   if (ChooseLevelDlg.isAwake()) 
-   {
-      Canvas.popDialog(ChooseLevelDlg);
-	  return;
-   }
-	 
-   if (Canvas.isFullscreen())
-   {
-      MessageBoxOK("Windowed Mode Required", "Please switch to windowed mode to access the Mission Editor.");
-      return;
-   }
-   
    if (%make)
    {      
       %timerId = startPrecisionTimer();
       
-      if( $InGuiEditor )
-         GuiEdit();
+      if( GuiEditorIsActive() )
+         toggleGuiEditor(1);
          
       if( !$missionRunning || $UsingMainMenuLevel )
       {
@@ -150,15 +137,8 @@ function toggleEditor(%make)
          }
          else 
          {
-            if ( !$GuiEditorBtnPressed )
-            {
                canvas.pushDialog( EditorLoadingGui );
                canvas.repaint();
-            }
-            else
-            {
-               $GuiEditorBtnPressed = false;
-            }
             
             Editor.open();
 			
@@ -170,7 +150,6 @@ function toggleEditor(%make)
             if (theLevelInfo.type $= "DemoScene")
                commandToServer('dropCameraAtPlayer', true);
                
-            
             canvas.popDialog(EditorLoadingGui);
          }
          

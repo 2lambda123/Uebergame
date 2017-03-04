@@ -208,6 +208,8 @@ datablock LightningData(LightningStorm)
    thunderSounds[1] = ThunderCrash2Sound;
    thunderSounds[2] = ThunderCrash3Sound;
    thunderSounds[3] = ThunderCrash4Sound;
+   
+   strikeTextures[0] = "art/environment/lightning";
 
    damageType = $DamageType::Lightning;
    directDamage = 50;

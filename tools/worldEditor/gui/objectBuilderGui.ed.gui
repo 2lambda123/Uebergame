@@ -765,7 +765,7 @@ function ObjectBuilderGui::buildLightning(%this)
 {
    %this.objectClassName = "Lightning";
 
-   %this.addField("dataBlock", "TypeDataBlock", "Data block", "LightningData DefaultStorm");
+   %this.addField("dataBlock", "TypeDataBlock", "Data block", "LightningData LightningStorm");
 
    %this.process();
 }
