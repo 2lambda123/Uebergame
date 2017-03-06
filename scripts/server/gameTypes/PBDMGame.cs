@@ -27,6 +27,8 @@ $HostGameRules["PBDM", 0] = "Eliminate the competition.";
 $HostGameRules["PBDM", 1] = "Player with the best kill to death ratio wins!";
 //--- GAME RULES END ---
 
+$DM:TeamCount = 5; //start off DM team count at 5, so we can use 1-4 for teams
+
 package PBDMGame
 {
    function PBDMdummy()
@@ -136,7 +138,10 @@ function PBDMGame::assignClientTeam(%game, %client)
    // plus four, we plus four because the index starts at zero.
    // Team zero is always spectators.
    // However, this may cause a problem if a gametype has more then x teams and we swicth to it..
-   %client.team = (%game.getClientIndex(%client) + 4);
+   //%client.team = (%game.getClientIndex(%client) + 4);
+
+   %client.team = $DM:TeamCount;
+   $DM:TeamCount ++; //make sure a new unique team is created for every player, workaround improve later
    %client.lastTeam = %client.team;
 
    // Let everybody know this client joined the game
