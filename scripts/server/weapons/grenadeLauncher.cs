@@ -284,7 +284,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
 
    projectile = GrenadeProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.03;
+   projectileSpread = 0.025;
 
    //altProjectile = GrenadeProjectileAlt;
    //altProjectileSpread = "0.02";
@@ -471,9 +471,9 @@ datablock ShapeBaseImageData( GrenadeLauncherScopeImage : GrenadeLauncherImage )
    firstPerson = false;
    useEyeNode = false;
    animateOnServer = false;
-   useEyeOffset = false;
+   useEyeOffset = true;
    
-   eyeOffset = "-0.161 -0.36 -0.55";
+   eyeOffset = "0 -0.36 -0.25";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
    projectileSpread = "0.007";
