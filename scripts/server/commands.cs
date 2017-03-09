@@ -714,7 +714,7 @@ function serverCmdDoIronSights(%client, %val)
       %player.isInIronSights = true;
       commandToClient ( %client, 'toggleIronZoom', 1 );
    }
-   else
+   if ( isObject( %scope ) )
    {
       %player.unmountImage( $WeaponSlot );
       %player.mountImage( %scope, $WeaponSlot );
@@ -732,6 +732,8 @@ function serverCmdUndoIronSights(%client, %val)
    %player = %client.player;
    if ( !isObject( %player ) || %player.getState() $= "Dead" )
       return;
+   if ( %player.isReloading == true)
+	  return;
    if ( %player.getPose() $= "Swim" )
       return;
    
@@ -749,7 +751,7 @@ function serverCmdUndoIronSights(%client, %val)
       %player.allowSwimming(true);
       %player.isInIronSights = false;
    }
-   else
+   if ( isObject( %scope ) )
    {
       %player.unmountImage( $WeaponSlot );
       %player.mountImage( %image, $WeaponSlot );
