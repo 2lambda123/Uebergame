@@ -887,7 +887,7 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
 
    observeParameters = "0.5 4.5 4.5";
 
-   pickupRadius = 1.5;
+   pickupRadius = 1.6;
 
    // Allowable Inventory Items
 
