@@ -39,15 +39,15 @@ singleton SFXSource( AudioChannelDefault )
 {
    description = AudioChannel;
 };
-singleton SFXSource( AudioChannelGui )
-{
-   description = AudioChannel;
-};
 singleton SFXSource( AudioChannelEffects )
 {
    description = AudioChannel;
 };
 singleton SFXSource( AudioChannelMessages )
+{
+   description = AudioChannel;
+};
+singleton SFXSource( AudioChannelGui )
 {
    description = AudioChannel;
 };
@@ -72,13 +72,6 @@ AudioChannelEffects.stop();
 //    Master SFXDescriptions.
 //-----------------------------------------------------------------------------
 
-// Master description for interface audio.
-singleton SFXDescription( AudioGui )
-{
-   volume         = 1.0;
-   sourceGroup    = AudioChannelGui;
-};
-
 // Master description for game effects audio.
 singleton SFXDescription( AudioEffect )
 {
@@ -91,6 +84,13 @@ singleton SFXDescription( AudioMessage )
 {
    volume         = 1.0;
    sourceGroup    = AudioChannelMessages;
+};
+
+// Master description for interface audio.
+singleton SFXDescription( AudioGui )
+{
+   volume         = 1.0;
+   sourceGroup    = AudioChannelGui;
 };
 
 // Master description for music.

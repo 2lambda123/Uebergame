@@ -163,7 +163,7 @@ function OptionsDlg::onWake(%this)
    MouseZActionMenu.add( "Nothing", 1 );
    MouseZActionMenu.add( "Cycle Weapon", 2 );
    MouseZActionMenu.add( "Next Weapon Only", 3 );
-   MouseZActionMenu.add( "Cycle Zoom Level", 4 );
+   //MouseZActionMenu.add( "Cycle Zoom Level", 4 );
 
    %bind = moveMap.getCommand( "mouse", "zaxis" );
    %selId = 1;

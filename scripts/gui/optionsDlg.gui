@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Misc";
+      pane = "Audio";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "5";
+         selectedPage = "2";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -387,7 +387,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Lowest";
+               text = "Low";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -516,7 +516,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "4X";
+               text = "Off";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -608,7 +608,7 @@
                range = "2 2.5";
                ticks = "9";
                snap = "0";
-               value = "2.25295";
+               value = "2.25492";
                position = "107 276";
                extent = "518 15";
                minExtent = "8 2";
@@ -853,7 +853,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "0.1";
+               text = "0.5";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -949,7 +949,7 @@
                range = "-0.25 0.25";
                ticks = "9";
                snap = "0";
-               value = "0.00295275";
+               value = "0.00492126";
                position = "107 308";
                extent = "518 15";
                minExtent = "8 2";
@@ -969,7 +969,7 @@
                range = "0.75 1.25";
                ticks = "9";
                snap = "0";
-               value = "1.00295";
+               value = "1.00394";
                position = "107 339";
                extent = "518 15";
                minExtent = "8 2";
@@ -1138,7 +1138,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "green";
+               text = "urban";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1162,7 +1162,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "green";
+               skin = "urban";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -1396,18 +1396,17 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptAudioPane";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
             new GuiControl() {
-               position = "16 208";
+               position = "16 115";
                extent = "600 16";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1421,29 +1420,8 @@
                canSave = "1";
                canSaveDynamicFields = "0";
 
-               new GuiSliderCtrl() {
-                  range = "0 1";
-                  ticks = "0";
-                  snap = "0";
-                  value = "1";
-                  position = "108 0";
-                  extent = "480 13";
-                  minExtent = "8 8";
-                  horizSizing = "right";
-                  vertSizing = "bottom";
-                  profile = "GuiSliderProfile";
-                  visible = "1";
-                  active = "1";
-                  altCommand = "OptAudioUpdateChannelVolume(AudioMusic, $thisControl.value);";
-                  tooltipProfile = "GuiToolTipProfile";
-                  hovertime = "1000";
-                  isContainer = "0";
-                  internalName = "OptAudioVolumeMusic";
-                  canSave = "1";
-                  canSaveDynamicFields = "0";
-               };
                new GuiTextCtrl() {
-                  text = "Music Volume:";
+                  text = "Master Volume:";
                   maxLength = "255";
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
@@ -1451,8 +1429,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "0 -3";
-                  extent = "93 18";
+                  position = "1 -2";
+                  extent = "98 18";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -1465,9 +1443,30 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
                };
+               new GuiSliderCtrl() {
+                  range = "0 1";
+                  ticks = "0";
+                  snap = "0";
+                  value = "0.474468";
+                  position = "108 0";
+                  extent = "480 14";
+                  minExtent = "8 8";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiSliderProfile";
+                  visible = "1";
+                  active = "1";
+                  altCommand = "OptAudioUpdateMasterVolume( $thisControl.value );";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  internalName = "OptAudioVolumeMaster";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
             };
             new GuiControl() {
-               position = "16 177";
+               position = "16 146";
                extent = "600 16";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1527,7 +1526,7 @@
                };
             };
             new GuiControl() {
-               position = "16 146";
+               position = "16 177";
                extent = "600 16";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1587,7 +1586,7 @@
                };
             };
             new GuiControl() {
-               position = "16 115";
+               position = "16 208";
                extent = "600 16";
                minExtent = "8 2";
                horizSizing = "right";
@@ -1601,8 +1600,29 @@
                canSave = "1";
                canSaveDynamicFields = "0";
 
+               new GuiSliderCtrl() {
+                  range = "0 1";
+                  ticks = "0";
+                  snap = "0";
+                  value = "1";
+                  position = "108 0";
+                  extent = "480 13";
+                  minExtent = "8 8";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  profile = "GuiSliderProfile";
+                  visible = "1";
+                  active = "1";
+                  altCommand = "OptAudioUpdateChannelVolume(AudioMusic, $thisControl.value);";
+                  tooltipProfile = "GuiToolTipProfile";
+                  hovertime = "1000";
+                  isContainer = "0";
+                  internalName = "OptAudioVolumeMusic";
+                  canSave = "1";
+                  canSaveDynamicFields = "0";
+               };
                new GuiTextCtrl() {
-                  text = "Master Volume:";
+                  text = "Music Volume:";
                   maxLength = "255";
                   margin = "0 0 0 0";
                   padding = "0 0 0 0";
@@ -1610,8 +1630,8 @@
                   anchorBottom = "0";
                   anchorLeft = "1";
                   anchorRight = "0";
-                  position = "1 -2";
-                  extent = "98 18";
+                  position = "0 -3";
+                  extent = "93 18";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -1621,27 +1641,6 @@
                   tooltipProfile = "GuiToolTipProfile";
                   hovertime = "1000";
                   isContainer = "0";
-                  canSave = "1";
-                  canSaveDynamicFields = "0";
-               };
-               new GuiSliderCtrl() {
-                  range = "0 1";
-                  ticks = "0";
-                  snap = "0";
-                  value = "1";
-                  position = "108 0";
-                  extent = "480 14";
-                  minExtent = "8 8";
-                  horizSizing = "right";
-                  vertSizing = "bottom";
-                  profile = "GuiSliderProfile";
-                  visible = "1";
-                  active = "1";
-                  altCommand = "OptAudioUpdateMasterVolume( $thisControl.value );";
-                  tooltipProfile = "GuiToolTipProfile";
-                  hovertime = "1000";
-                  isContainer = "0";
-                  internalName = "OptAudioVolumeMaster";
                   canSave = "1";
                   canSaveDynamicFields = "0";
                };
@@ -2065,7 +2064,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Cycle Zoom Level";
+               text = "Cycle Weapon";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -2167,7 +2166,7 @@
                   fitParentWidth = "1";
                   clipColumnText = "0";
                   position = "1 1";
-                  extent = "345 976";
+                  extent = "345 960";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2733,12 +2732,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptMiscPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 

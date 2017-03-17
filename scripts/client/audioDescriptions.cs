@@ -136,6 +136,33 @@ singleton SFXDescription( AudioStreamLoop2D : AudioEffect )
 };
 
 //-----------------------------------------------------------------------------
+// Gui sounds
+//-----------------------------------------------------------------------------
+
+// Used for non-looping Gui sounds
+singleton SFXDescription( AudioGui2D : AudioGui )
+{
+   isLooping         = false;
+};
+
+// Used for Looping Gui sounds
+singleton SFXDescription( AudioLoopGui2D : AudioGui )
+{
+   isLooping         = true;
+};
+
+singleton SFXDescription( AudioStreamGui2D : AudioGui )
+{
+   isStreaming       = true;
+};
+
+singleton SFXDescription( AudioStreamLoopGui2D : AudioGui )
+{
+   isLooping         = true;
+   isStreaming       = true;
+};
+
+//-----------------------------------------------------------------------------
 // Music
 //-----------------------------------------------------------------------------
 

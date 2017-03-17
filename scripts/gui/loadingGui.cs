@@ -33,12 +33,19 @@ function LoadingGui::onWake(%this)
    %this.reset();
    LOAD_MessageVector.attach(HudMessageVector);
    LOAD_ScrollHud.scrollToBottom();
+   
+   // play some music in the loading screen
+   %this.sfxSource = sfxPlayOnce ( AudioLoadingGui);
+   %this.sfxSource.play();
 }
 
 //------------------------------------------------------------------------------
 function LoadingGui::onSleep(%this)
 {
    %this.reset();
+   
+   // stop the music from the loading screen, fade out in 3 secs when ingame
+   %this.sfxSource.stop(3);
 }
 
 function LoadingGui::reset(%this)
