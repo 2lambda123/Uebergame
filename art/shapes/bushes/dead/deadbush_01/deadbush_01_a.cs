@@ -7,4 +7,5 @@ singleton TSShapeConstructor(Deadbush_01_aDts)
 function Deadbush_01_aDts::onLoad(%this)
 {
    %this.addImposter("1", "4", "0", "0", "128", "0", "0");
+   %this.setDetailLevelSize("96", "64");
 }
