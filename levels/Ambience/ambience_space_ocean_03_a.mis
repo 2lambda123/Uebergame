@@ -561,5 +561,29 @@ new SimGroup(MissionGroup) {
          };
       };
    };
+      new SFXEmitter(backgroundMusic) {
+      fileName = "art/music/space_drone_01.ogg";
+      playOnAdd = "1";
+      useTrackDescriptionOnly = "0";
+      isLooping = "1";
+      isStreaming = "0";
+      sourceGroup = "AudioChannelMusic";
+      volume = "0.5";
+      pitch = "1";
+      fadeInTime = "0";
+      fadeOutTime = "0";
+      is3D = "0";
+      referenceDistance = "1";
+      maxDistance = "100";
+      scatterDistance = "0 0 0";
+      coneInsideAngle = "360";
+      coneOutsideAngle = "360";
+      coneOutsideVolume = "1";
+      position = "235.793 29.8725 23.1763";
+      rotation = "1 0 0 0";
+      scale = "100 100 100";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+   };
 };
 //--- OBJECT WRITE END ---
