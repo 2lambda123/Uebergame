@@ -136,7 +136,7 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
       tge.destroyServer();
       
       return false;
-   }
+   }   
 
    return true;
 }

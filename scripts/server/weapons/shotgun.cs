@@ -68,7 +68,7 @@ datablock ProjectileData( ShotgunProjectile )
 {
    projectileShapeName = "";
    //sound               = "";
-   directDamage        = 13;
+   directDamage        = 12;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;
@@ -282,7 +282,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    stateTransitionOnNoAmmo[7]       = "NoAmmo";
    stateTransitionOnTimeout[7]      = "Ready";
    stateWaitForTimeout[7]           = true;
-   stateTimeoutValue[7]             = 0.65;
+   stateTimeoutValue[7]             = 0.60;
    stateSequence[7]                 = "fire_alt";
    stateScaleAnimation[7]           = true;
    stateAllowImageChange[7]         = false;

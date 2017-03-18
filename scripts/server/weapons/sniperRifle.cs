@@ -426,7 +426,7 @@ datablock ShapeBaseImageData( SniperRifleScopeImage : SniperRifleWeaponImage )
    eyeOffset = "0 -0.36 -0.2";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
-   projectileSpread = "0.0015";
+   projectileSpread = "0.002";
    parentImage = "SniperRifleWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.

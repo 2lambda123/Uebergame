@@ -53,9 +53,10 @@ datablock SFXProfile(LurkerIdleSound)
 */
 datablock SFXProfile(LurkerSwitchinSound)
 {
-   filename = "art/sound/weapons/wpn_lurker_switchin";
+   filename = "art/sound/weapons/Weapon_switch";
    description = AudioClosest3D;
    preload = true;
+   volume = 0.8;
 };
 
 datablock SFXProfile(LurkerGrenadeFireSound)
@@ -200,7 +201,7 @@ datablock ProjectileData( LurkerProjectile )
 {
    projectileShapeName = "";
 
-   directDamage        = 20;
+   directDamage        = 22;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;
@@ -513,7 +514,7 @@ datablock ShapeBaseImageData( LurkerIronSightImage : LurkerWeaponImage )
    stateSequence[1]                 = "idle";
    stateSound[1]                    = "";
    stateTransitionOnTimeout[1]      = "Ready";
-   stateAllowImageChange[1]         = false; 
+   stateAllowImageChange[1]         = false;
 }; 
 
 //-----------------------------------------------------------------------------
