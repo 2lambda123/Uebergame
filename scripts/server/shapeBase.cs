@@ -814,9 +814,12 @@ function ShapeBaseImageData::onThrowGrenade(%data, %obj, %slot)
 
 function GrenadeImage::onDryFire(%this, %obj, %slot)
 {
+   // disabled since this can trigger an endless loop
+   /*
    if ( %obj.inv[%obj.lastWeapon] )
       %obj.use( %obj.lastWeapon );
    else
       %obj.use( %obj.weaponSlot[0] );
+   */
 }
 

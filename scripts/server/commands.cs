@@ -395,7 +395,7 @@ function serverCmdThrowGrenade(%client, %val)
    if ( !isObject( %player ) || %player.getState() $= "Dead" || !$Game::Running || %outOfGrenade || %player.isInIronSights == true )
       return;
   
-   %player.isReloading = true; //workaround to prevent zoom crosshair from showing 
+   //%player.isReloading = true; //workaround to prevent zoom crosshair from showing , no longer needed I hope
 
    if ( !%player.isMounted() )
    {
