@@ -10,7 +10,9 @@ singleton Material(deadbush_01_a_deadbush_01)
    normalMap[0] = "art/shapes/bushes/dead/deadbush_01/deadbush_01_N.dds";
    specularMap[0] = "art/shapes/bushes/dead/deadbush_01/deadbush_01_S.dds";
    alphaTest = "1";
-   alphaRef = "50";
+   alphaRef = "40";
    doubleSided = "1";
    showFootprints = "0";
+   materialTag0 = "shapes";
+   materialTag1 = "bushes";
 };
