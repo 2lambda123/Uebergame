@@ -9,7 +9,7 @@ function getRandomStartupText(%text)
 {
    %list = new ArrayObject();
    %list.add("0", "Loading");
-   %list.add("1", "Moar Loading");
+   %list.add("1", "More Loading");
    %list.add("2", "Ueber-Loading-Screen");
    %list.add("3", "Still Loading");
    %list.add("4", "Loading fancy graphics");
@@ -34,8 +34,15 @@ function getRandomStartupText(%text)
    %list.add("23", "Prepare for the ultimate experience");
    %list.add("24", "You will be in the Main Menu soon");
    %list.add("25", "Energize");
+   %list.add("26", "Loading harder");
+   %list.add("27", "Loading intensifies");
+   %list.add("28", "Loadingception");
+   %list.add("29", "Hello");
+   %list.add("30", "I see you");
+   %list.add("31", "Boring startup screen");
+   %list.add("32", "Replace me");
    
-   %random = getRandom(0, 25);
+   %random = getRandom(0, 32);
    %text = %list.getValue(%random);
    
    return (%text);

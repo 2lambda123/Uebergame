@@ -35,7 +35,7 @@ function LoadingGui::onWake(%this)
    LOAD_ScrollHud.scrollToBottom();
    
    // play some music in the loading screen
-   %this.sfxSource = sfxPlayOnce ( AudioLoadingGui);
+   %this.sfxSource = sfxPlayOnce ( AudioLoadingGui );
    %this.sfxSource.play();
 }
 

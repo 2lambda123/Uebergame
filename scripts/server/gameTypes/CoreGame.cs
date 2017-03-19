@@ -805,6 +805,7 @@ function CoreGame::spawnPlayer(%game, %client, %respawn)
    // Combination create player and drop him somewhere
    %spawnPoint = %game.pickSpawnPoint(%client.team);
    %game.createPlayer(%client, %spawnPoint, %respawn);
+   //echo ( "team= " @ %client.team ); //activate to check which team the player is in
 }
 
 function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
@@ -957,7 +958,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    %player.setTransform(%spawnPoint);
    %player.setShapeName(%client.playerName);
    %player.isInIronSights = false;
-   %player.isReloading = true; //workaround to prevent crosshair showing, if no weapon is equipped
+   %player.isReloading = false; // init reloading variable
    
    if ( %client.team == 0 )
       %player.setSkinName( %client.skin );

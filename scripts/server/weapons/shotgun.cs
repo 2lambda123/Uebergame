@@ -178,7 +178,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
 
    projectile = ShotgunProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.025;
+   projectileSpread = 0.023;
    projectileNum = 8;
 
    altProjectile = GrenadeLauncherProjectile;
@@ -381,7 +381,7 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    eyeOffset = "-0.16 0 0.05";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
-   projectileSpread = 0.02;
+   projectileSpread = 0.018;
    parentImage = "ShotgunWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.

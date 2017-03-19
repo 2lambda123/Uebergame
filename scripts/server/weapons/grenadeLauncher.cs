@@ -181,7 +181,7 @@ datablock ProjectileData( GrenadeProjectile )
    projectileShapeName = "art/shapes/weapons/shared/rocket.dts";
    //sound               = "";
    directDamage        = 0;
-   radiusDamage        = 120;
+   radiusDamage        = 130;
    damageRadius        = 4.5;
    areaImpulse         = 1;
    impactForce         = 5;
@@ -200,7 +200,7 @@ datablock ProjectileData( GrenadeProjectile )
    muzzleVelocity      = 50;
    velInheritFactor    = 0.4;
 
-   armingDelay         = 800; // How long it should not detonate on impact
+   armingDelay         = 600; // How long it should not detonate on impact
    lifetime            = 15000; // How long the projectile should exist before deleting itself
    fadeDelay           = 10000; // Brief Amount of time, in milliseconds, before the projectile begins to fade out.
 
