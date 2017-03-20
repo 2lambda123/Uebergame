@@ -537,8 +537,8 @@ new SimGroup(MissionGroup) {
       useWind = "1";
       minSpeed = "0.1";
       maxSpeed = "0.4";
-      minMass = "0.01";
-      maxMass = "0.1";
+      minMass = "0.4";
+      maxMass = "5";
       useTurbulence = "1";
       maxTurbulence = "0.1";
       turbulenceSpeed = "0.2";
@@ -550,16 +550,16 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
    };
    new ForestWindEmitter() {
-      position = "-20 -18.6371 1.62937";
+      position = "4.18575 -46.0484 -54.5209";
       rotation = "1 0 0 0";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
       windEnabled = "1";
       radialEmitter = "0";
-      strength = "0.06";
+      strength = "2";
       radius = "0";
-      gustStrength = "0.35";
+      gustStrength = "0.8";
       gustFrequency = "5";
       gustYawAngle = "10";
       gustYawFrequency = "4";
@@ -9898,7 +9898,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-22.3974 0.105076 -0.369138";
-            rotation = "0.0590455 0.0590455 0.996508 90.2033";
+            rotation = "0.0590455 0.0590455 0.996508 90.2039";
             scale = "1.19645 1 1";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10078,7 +10078,7 @@ new SimGroup(MissionGroup) {
             renderNormals = "0";
             forceDetail = "-1";
             position = "-10.5648 4.88764 -1.99791";
-            rotation = "-0.0651254 0.0651253 -0.99575 90.2442";
+            rotation = "-0.0651254 0.0651253 -0.99575 90.2444";
             scale = "1.45188 1 1.3848";
             canSave = "1";
             canSaveDynamicFields = "1";
@@ -10831,7 +10831,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "-6.25 -12 0";
-         rotation = "0.00366813 0.00366805 -0.999987 90.0029";
+         rotation = "0.00366813 0.00366805 -0.999987 90.0035";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -11535,7 +11535,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.35";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11559,7 +11559,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.35";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11583,7 +11583,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.35";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11607,7 +11607,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.4";
+         volume = "0.35";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11631,7 +11631,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.5";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11655,7 +11655,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.5";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11679,7 +11679,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.5";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11703,7 +11703,7 @@ new SimGroup(MissionGroup) {
          isLooping = "1";
          isStreaming = "0";
          sourceGroup = "AudioChannelEffects";
-         volume = "0.5";
+         volume = "0.4";
          pitch = "1";
          fadeInTime = "0";
          fadeOutTime = "0";
@@ -11752,6 +11752,15 @@ new SimGroup(MissionGroup) {
       scale = "1000 1000 75";
       canSave = "1";
       canSaveDynamicFields = "1";
+   };
+   new Forest(theForest) {
+      position = "0 0 0";
+      rotation = "1 0 0 0";
+      scale = "1 1 1";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+      dataFile = "levels/Training_Grounds/TG_DesertRuins/TG_DesertRuins_day.forest";
+      lodReflectScalar = "2";
    };
 };
 //--- OBJECT WRITE END ---
