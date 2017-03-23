@@ -273,7 +273,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.25";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.5";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "45";
@@ -291,7 +291,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.25";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.5";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "45";
@@ -453,7 +453,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.5";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.3";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "50";
@@ -471,7 +471,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.5";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.3";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "50";
@@ -489,7 +489,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.5";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.3";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "50";
@@ -573,7 +573,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.1";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.5";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "35";
@@ -591,7 +591,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.1";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.5";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "35";
@@ -609,7 +609,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.1";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.5";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "35";
@@ -627,7 +627,7 @@ new SimGroup(ForestBrushGroup) {
          scaleMax = "1.1";
          scaleExponent = "1";
          sinkMin = "0";
-         sinkMax = "1";
+         sinkMax = "0.5";
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "35";

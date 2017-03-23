@@ -29,7 +29,8 @@ singleton Material(birch_01_a_birch_01_leaves)
    alphaTest = "1";
    alphaRef = "100";
    useAnisotropic[0] = "1";
-   subSurface[0] = "1";
+   subSurface[0] = "0";
    showFootprints = "0";
    normalMap[0] = "art/shapes/trees/birch/birch_01/birch_01_leaves_N.dds";
+   accuCoverage[0] = "1";
 };
