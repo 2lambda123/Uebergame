@@ -60,15 +60,15 @@ singleton Material(Mat_redblue_inflatable_barrier_01 : Mat_inflatable_barrier_01
    normalMap[1] = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_N.dds";
 };
 
-singleton Material(Mat_greenblack_inflatable_barrier_01 : Mat_inflatable_barrier_01)
+singleton Material(Mat_blackyellow_inflatable_barrier_01 : Mat_inflatable_barrier_01)
 {
-   mapTo = "greenblack_inflatable_barrier_01";
-   diffuseMap[0] = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_greenblack_D.dds";
+   mapTo = "blackyellow_inflatable_barrier_01";
+   diffuseMap[0] = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_blackyellow_D.dds";
    cubemap = "sky_day_01_Cubemap";
    pixelSpecular[0] = "1";
    alphaRef = "1";
    diffuseColor[1] = "1 1 1 0.8";
-   diffuseMap[1] = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_greenblack_D.dds";
+   diffuseMap[1] = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_blackyellow_D.dds";
    specular[1] = "0.6 0.6 0.6 1";
    specularPower[1] = "16";
    specularStrength[1] = "0.7";
@@ -94,4 +94,5 @@ singleton Material(Mat_greenblack_inflatable_barrier_01 : Mat_inflatable_barrier
    footstepSoundId = "0";
    specularPower[0] = "50";
    specularStrength[0] = "3";
+   normalMap[1] = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_N.dds";
 };
