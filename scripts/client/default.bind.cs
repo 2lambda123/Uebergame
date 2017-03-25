@@ -715,55 +715,42 @@ if($Player::CurrentFOV $= "")
 // toggle is hit it simply divides the CurrentFOV by 2 once again.  If the
 // FOV is reduced below a certain threshold then it resets to equal half of the
 // DefaultFOV value.  This gives us 4 zoom levels to cycle through.
-/*
-function toggleZoomFOV(%val)
-{
-   if ( %val )
-   {
-      $Player::CurrentFOV = $Player::CurrentFOV / 2;
 
-      if($Player::CurrentFOV < 10)
-         resetCurrentFOV();
-
-      if(ServerConnection.zoomed)
-         setFOV($Player::CurrentFOV);
-      else
-      {
-         setFov($pref::Player::Fov);
-      }
-   }
-}
-*/
 function clientCmdtoggleScopeZoom(%val)
 {
-   reticle.setVisible(false);
-   
    if ( %val )
-   {
-      $Player::CurrentFOV = $pref::Player::Fov / 4;
-      
+   {   
       if(ServerConnection.zoomed)
       {
+         $Player::CurrentFOV = $pref::Player::Fov / 4;
          setFOV($Player::CurrentFOV);
+         reticle.setVisible(false);
          zoomReticle.setVisible(true);
       }
       else
+      {
          setFov($pref::Player::Fov);
+         zoomReticle.setVisible(false);
+         reticle.setVisible(true);
+      }
    }
 }
 
 function clientCmdtoggleIronZoom(%val)
-{
-   reticle.setVisible(false);
-   
+{   
    if ( %val )
-   {
-      $Player::CurrentFOV = $pref::Player::Fov / 2;
-      
+   { 
       if(ServerConnection.zoomed)
+      {
+         $Player::CurrentFOV = $pref::Player::Fov / 2;
          setFOV($Player::CurrentFOV);
-      else
+         reticle.setVisible(false);
+      }
+      else 
+      {
          setFov($pref::Player::Fov);
+         reticle.setVisible(true);
+      }
    }
 }
 
@@ -781,8 +768,8 @@ function turnOffZoom()
    // preset values.
    //DOFPostEffect.disable();
    ppOptionsUpdateDOFSettings();
-   reticle.setVisible(true);
-   zoomReticle.setVisible(false);
+   //reticle.setVisible(true);
+   //zoomReticle.setVisible(false);
 }
 
 //------------------------------------------------------------------------------
