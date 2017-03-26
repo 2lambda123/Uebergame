@@ -30,7 +30,7 @@ $defaultGame = "scripts";
 $pref::Video::ProfilePath = "scripts/client/profile";
 
 $Core::windowIcon = "art/gui/core/uebergame-icon.png";
-$Core::splashWindowImage = "art/gui/splash.bmp";
+$Core::splashWindowImage = "art/gui/splash.png";
 
 function createCanvas(%windowTitle)
 {
