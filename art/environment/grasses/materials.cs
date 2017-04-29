@@ -25,7 +25,7 @@ singleton Material(Mat_groundcover_grass_01_dry)
    diffuseMap[0] = "art/environment/grasses/grass_01_dry.dds";
    materialTag0 = "groundcover";
    alphaTest = "1";
-   alphaRef = "60";
+   alphaRef = "40";
    doubleSided = "1";
 };
 
@@ -35,7 +35,7 @@ singleton Material(Mat_groundcover_grass_01)
    diffuseMap[0] = "art/environment/grasses/grass_01.dds";
    materialTag0 = "groundcover";
    alphaTest = "1";
-   alphaRef = "60";
+   alphaRef = "40";
    doubleSided = "1";
 };
 
