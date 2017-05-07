@@ -2062,9 +2062,9 @@ new SimGroup(MissionGroup) {
    };
    new Precipitation(regen) {
       numDrops = "2048";
-      boxWidth = "64";
-      boxHeight = "20";
-      dropSize = "0.2";
+      boxWidth = "50";
+      boxHeight = "25";
+      dropSize = "2";
       splashSize = "0.06";
       splashMS = "150";
       animateSplashes = "1";
@@ -3921,7 +3921,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "196.088 199.662 0.152294";
-         rotation = "-0.90227 -0.303413 0.30635 95.436";
+         rotation = "-0.90227 -0.303413 0.30635 95.4361";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -3981,7 +3981,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "157.867 198.949 -0.627831";
-         rotation = "0.986165 -0.103945 0.129132 80.1451";
+         rotation = "0.986165 -0.103945 0.129132 80.1452";
          scale = "1.26476 1.28864 1.37413";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -4127,7 +4127,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "200.522 239.583 0.651882";
-         rotation = "0.0333559 -0.0550458 0.997927 79.7528";
+         rotation = "0.0333559 -0.0550458 0.997927 79.7529";
          scale = "1 1 1.04733";
          canSave = "1";
          canSaveDynamicFields = "1";

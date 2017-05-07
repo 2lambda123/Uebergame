@@ -66,25 +66,18 @@ datablock PrecipitationData(HeavyRain3)
 
 datablock PrecipitationData(HeavyRain)
 {
-
-   dropTexture = "art/environment/precipitation/rain";
+   dropTexture = "art/environment/precipitation/drops_big_01";
    splashTexture = "art/environment/precipitation/water_splash";
-   dropSize = 0.2;
+   dropSize = 3;
    splashSize = 0.1;
    useTrueBillboards = 0;
-   splashMS = 500;
+   splashMS = 250;
 };
 
 datablock PrecipitationData(Rain)
 {
-   soundProfile = "HeavyRainSound";
-
-   dropTexture = "art/environment/precipitation/bigRain";
+   dropTexture = "art/environment/precipitation/rain";
    splashTexture = "art/environment/precipitation/water_splash";
-   dropSize = 0.15;
-   splashSize = 0.1;
-   useTrueBillboards = false;
-   splashMS = 250;
 };
 
 datablock PrecipitationData(Snow)

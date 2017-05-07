@@ -465,7 +465,7 @@ new SimGroup(MissionGroup) {
       useTurbulence = "1";
       maxTurbulence = "0.1";
       turbulenceSpeed = "0.2";
-      dataBlock = "HeavyRain";
+      dataBlock = "Rain";
       position = "709 544 3";
       rotation = "1 0 0 0";
       scale = "1 1 1";

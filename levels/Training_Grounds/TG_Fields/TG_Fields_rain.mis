@@ -4252,7 +4252,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.0899";
+         rotation = "-0.140172 0.140328 0.980133 91.09";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -5538,9 +5538,9 @@ new SimGroup(MissionGroup) {
    };
    new Precipitation(regen) {
       numDrops = "2048";
-      boxWidth = "64";
-      boxHeight = "32";
-      dropSize = "0.15";
+      boxWidth = "50";
+      boxHeight = "25";
+      dropSize = "2";
       splashSize = "0.08";
       splashMS = "250";
       animateSplashes = "1";
@@ -5557,13 +5557,13 @@ new SimGroup(MissionGroup) {
       hitVehicles = "0";
       followCam = "1";
       useWind = "1";
-      minSpeed = "1.5";
-      maxSpeed = "2";
+      minSpeed = "0.75";
+      maxSpeed = "1.25";
       minMass = "3";
       maxMass = "4";
       useTurbulence = "1";
-      maxTurbulence = "0.1";
-      turbulenceSpeed = "0.2";
+      maxTurbulence = "0.5";
+      turbulenceSpeed = "0.5";
       dataBlock = "HeavyRain";
       position = "483 418 -17";
       rotation = "1 0 0 0";
