@@ -154,8 +154,6 @@ function ShapeBase::use(%player, %data)
       if ( %player.hasInventory( %data ) )
       {
          %data.onUse(%player);
-         //play sound for switching weapons here, since in the state machine it interferes with iron sight
-         serverPlay3D( LurkerSwitchinSound, %player.getTransform() );
          return true;  
       }
       return false;

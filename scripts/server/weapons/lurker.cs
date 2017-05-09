@@ -56,7 +56,6 @@ datablock SFXProfile(LurkerSwitchinSound)
    filename = "art/sound/weapons/Weapon_switch";
    description = AudioClosest3D;
    preload = true;
-   volume = 0.8;
 };
 
 datablock SFXProfile(LurkerGrenadeFireSound)
