@@ -279,9 +279,9 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Make Screenshot";
 $RemapCmd[$RemapCount] = "doScreenShot";
 $RemapCount++;
-$RemapName[$RemapCount] = "Make Screenshot without HUD";
-$RemapCmd[$RemapCount] = "doScreenShotHudless";
-$RemapCount++;
+//$RemapName[$RemapCount] = "Make Screenshot without HUD";
+//$RemapCmd[$RemapCount] = "doScreenShotHudless";
+//$RemapCount++;
 
 //-----------------------------------------------------------------------------
 // Spectator Map

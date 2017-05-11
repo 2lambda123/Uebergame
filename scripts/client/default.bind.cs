@@ -33,7 +33,7 @@ GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenTogg
 GlobalActionMap.bind(keyboard, "F1", showMetrics);
 GlobalActionMap.bind(keyboard, "alt F1", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
-GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
+//GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 //GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );
 //GlobalActionMap.bind( keyboard, "alt F6", stopRecordMovie );
 GlobalActionMap.bind( keyboard, "alt F7", toggleMovieRecording );
@@ -453,7 +453,9 @@ function hideHUDs(%val)
    if (%val)
       HudlessPlayGui.toggle();
 }
-
+// disabled hudless screenshot since it messes with main menu level
+// you still can hide the hud manually for screenshot, it is probably the better solution
+/*
 function doScreenShotHudless(%val)
 {
    if(%val)
@@ -465,7 +467,7 @@ function doScreenShotHudless(%val)
    else
       canvas.setContent(PlayGui);
 }
-
+*/
 //------------------------------------------------------------------------------
 // Movement Keys
 //------------------------------------------------------------------------------
