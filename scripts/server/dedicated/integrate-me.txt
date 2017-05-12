@@ -1,0 +1,7 @@
+This is a dedicated server framework from Max Gaming Technologies, LLC
+
+I planned to integrate this system, since it will allow you to set up multiple dedicated servers 
+with different config files and map rotations from one instance.
+
+This is currently not integrated, so I have no idea if and how good it works and if it needs to be adapted to cover Uebergame features.
+In case anyone ever reads this and wants to help integrate it, you can try it, also read the README.txt in this folder for further instructions.
