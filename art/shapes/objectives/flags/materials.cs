@@ -12,6 +12,7 @@ singleton Material(Mat_flag_01)
    specularStrength[0] = "0.8";
    showFootprints = "0";
    castDynamicShadows = "1";
+   useAnisotropic[0] = "1";
 };
 
 singleton Material(Mat_blue_flag_01 : Mat_flag_01)
@@ -44,3 +45,8 @@ singleton Material(Mat_black_flag_01 : Mat_flag_01)
    diffuseMap[0] = "flag_01_D_black.dds";
 };
 
+singleton Material(Mat_white_flag_01 : Mat_flag_01)
+{
+   mapTo = "white_flag_01";
+   diffuseMap[0] = "flag_01_D_white.dds";
+};

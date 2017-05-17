@@ -270,9 +270,9 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Toggle Movie Recording";
 $RemapCmd[$RemapCount] = "toggleMovieRecording";
 $RemapCount++;
-//$RemapName[$RemapCount] = "Throw Flag"; //not in use yet
-//$RemapCmd[$RemapCount] = "throwFlag";
-//$RemapCount++;
+$RemapName[$RemapCount] = "Throw Flag"; //not in use yet
+$RemapCmd[$RemapCount] = "throwFlag";
+$RemapCount++;
 $RemapName[$RemapCount] = "Hide HUDs";
 $RemapCmd[$RemapCount] = "hideHUDs";
 $RemapCount++;

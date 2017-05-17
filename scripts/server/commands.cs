@@ -415,7 +415,7 @@ function serverCmdThrowFlag(%client, %val)
       if ( %player.getMountedImage( $FlagSlot ) != 0 )
       {
          %player.setImageTrigger( $FlagSlot, %val );
-         echo( "Throw Flag" );
+         //echo( "Throw Flag" );
       }
    }
 }

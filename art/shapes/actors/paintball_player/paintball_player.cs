@@ -59,4 +59,5 @@ function Paintball_playerDae::onLoad(%this)
    %this.setSequenceCyclic("reload", "0");
    %this.setSequencePriority("reload", "1");
    %this.setSequenceBlend("reload", "1", "root", "0");
+   %this.addNode("mount1", "chest-1", "-0.197412 -0.152363 1.32498 1 0 0 0", "1");
 }

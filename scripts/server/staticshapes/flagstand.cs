@@ -28,7 +28,7 @@ datablock StaticShapeData(FlagStand)
    computeCRC = false;
    emap = true;
    dynamicType = $TypeMasks::StaticShapeObjectType;
-   scale = "4 4 0.2"; // 3 3 0.1
+   scale = "2 2 1";
    isInvincible = true;
 
    // Script access
@@ -41,31 +41,21 @@ datablock StaticShapeData(FlagStand)
 
 function FlagStand::initializeObjective(%data, %obj)
 {
-   //%obj.emitter = new ParticleEmitterNode() {
-   //   scale = "1 1 1";
-   //   dataBlock = "DefaultEmitterNode";
-   //   emitter = "Team" @ %obj.team @ "Emitter";
-   //   velocity = "1";
-   //};
-   //MissionCleanup.add( %obj.emitter );
-
-   //%pos = VectorAdd( %obj.getBoxCenter(), "0 0 0.1" );
-   //%obj.emitter.setTransform( %pos SPC "1 0 0 0" );
-
    // Trigger does the work
    %obj.trigger = new Trigger()
    {
       dataBlock = GameTrigger;
       polyhedron = "0 0 0 1 0 0 0 -1 0 0 0 1";
-      scale = "2 2 3";
+      scale = "1 1 2";
       parent = %obj;
       team = %obj.team;
    };
+   
    MissionCleanup.add( %obj.trigger );
    //%pos = MatrixMulPoint( %obj.getTransform(), "-1 1.3 0" ); //"-0.5 0.8 0" if scale 1 1 1
-   %pos = MatrixMulPoint( %obj.getTransform(), "-1 1.2 0" );
+   %pos = MatrixMulPoint( %obj.getTransform(), "-0.5 0.5 0.2" );
    %obj.trigger.setTransform( %pos SPC %obj.rotFromTransform() );
-
+   /*
    %blocker = new VehicleBlocker()
    {
       position = %obj.getPosition();
@@ -85,9 +75,15 @@ function FlagStand::initializeObjective(%data, %obj)
       locked = "true";
    };
    missionCleanup.add(%waypoint);
-
+   */
    if ( %obj.team > 0 && %obj.team <= Game.numTeams )
-      %obj.setSkinName("base" @ %obj.team);
+   {
+      if ( %obj.team == 1)
+         %obj.setSkinName ("blue");
+      if ( %obj.team == 2)
+         %obj.setSkinName ("red");
+   }
+
 }
 
 function FlagStand::onCollision(%this, %obj, %col)

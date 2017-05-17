@@ -27,14 +27,14 @@ datablock ItemData(Flag)
    computeCRC = false;
    emap = false;
 
-   mass = 20;
+   mass = 25;
    drag = 0.5;
    density = 2;
    elasticity = 0.2;
    friction = 0.6;
    sticky = false;
    gravityMod = 1;
-   maxVelocity = 20;
+   maxVelocity = 16;
    dynamicType = $TypeMasks::ItemObjectType;
 
    image = FlagImage;
@@ -58,9 +58,13 @@ datablock ShapeBaseImageData(FlagImage)
    emap = false;
    cloakable = false;
 
-   mountPoint = 2;
-   offset = "-0.15 -0.2 0.7"; // L/R - F/B - T/B
+   mountPoint = 1;
+   offset     = "0.1 -0.1 -0.4"; // L/R - F/B - T/B
    rotation = "0 0 1 180";
+   //rotation   = "-0.616949 0.628951 0.473069 80.6613";
+   //mountPoint = 2;
+   //offset = "-0.15 -0.22 0.7"; // L/R - F/B - T/B
+   //rotation = "-0.0353276 0.202168 0.978714 199.41";
    firstPerson = true;
    useEyeNode = true;
    animateOnServer = true;
@@ -147,10 +151,9 @@ function FlagImage::onActivate(%data, %obj, %slot)
    // Should handle un-hide of item
    %obj.throwObject( %obj.holdingFlag );
 
-
    // We have to schedule image dismount to avoid engine crash.. this is very annoying
    // Function reside in shapebase.cs
-   %obj.schedule( 50, "dismountImage", %obj, %slot );
+   %obj.schedule( 50, "dismountImage", %slot );
 
    // Tell the game
    Game.onFlagDropped( %obj, %obj.holdingFlag );
