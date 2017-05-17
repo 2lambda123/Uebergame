@@ -127,3 +127,27 @@ datablock DecalData(yellowPaintSplatterDecal)
    screenStartRadius = "200";
    screenEndRadius = "100";  
 }; 
+
+datablock DecalData(text_blaue_basis_01)  
+{  
+   Material = "decal_text_blaue_basis_01";  
+   size = "3";
+   lifeSpan = "10000";
+   fadeTime = "50000";
+   clippingAngle = "66";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+   textureCoordCount = "0";
+};
+
+datablock DecalData(text_rote_basis_01)  
+{  
+   Material = "decal_text_rote_basis_01";  
+   size = "3";
+   lifeSpan = "10000";
+   fadeTime = "50000";
+   clippingAngle = "66";
+   screenStartRadius = "200";
+   screenEndRadius = "100";  
+   textureCoordCount = "0";
+}; 
