@@ -233,6 +233,43 @@ datablock ProjectileData( LurkerProjectile )
    lightDesc           = "";
 };
 
+datablock ProjectileData( LurkerUnderWaterProjectile )
+{
+   projectileShapeName = "";
+
+   directDamage        = 22;
+   radiusDamage        = 0;
+   damageRadius        = 0;
+   areaImpulse         = 0.01;
+   impactForce         = 1;
+   damageType          = $DamageType::Rifle;
+
+   explosion           = BulletExplosion;
+   waterExplosion      = BulletWaterExplosion;
+   playerExplosion     = PlayerBloodExplosion;
+   decal               = BulletHoleDecal;
+
+   //particleEmitter     = "BulletTrailEmitter";
+   particleWaterEmitter = "UWBulletTrailEmitter";
+
+   Splash              = "";
+   muzzleVelocity      = 6;
+   velInheritFactor    = 0;
+
+   armingDelay         = 0; // How long it should not detonate on impact
+   lifetime            = 200; // How long the projectile should exist before deleting itself
+   fadeDelay           = 0; // Brief Amount of time, in milliseconds, before the projectile begins to fade out.
+
+   bounceElasticity    = 0;
+   bounceFriction      = 0;
+   isBallistic         = false;
+   bounceElasticity    = 0;
+   bounceFriction      = 0;
+   gravityMod          = 1;
+
+   lightDesc           = "";
+};
+
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------
@@ -307,6 +344,8 @@ datablock ShapeBaseImageData(LurkerWeaponImage)
    projectileType = Projectile;
    projectileSpread = "0.02";
    projectileNum = 1;
+   
+   underWaterProjectile = LurkerUnderWaterProjectile;
 
    casing = BulletShell;
    shellExitDir        = "1.0 0.3 1.0";

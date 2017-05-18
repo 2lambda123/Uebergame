@@ -92,7 +92,7 @@ datablock ParticleData(UWBulletTrailParticle)
 
 datablock ParticleEmitterData(UWBulletTrailEmitter)
 {
-   ejectionPeriodMS = 1;
+   ejectionPeriodMS = 5;
    periodVarianceMS = 0;
    ejectionVelocity = 1;
    velocityVariance = 0;

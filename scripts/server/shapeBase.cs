@@ -639,11 +639,43 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       %muzzleVector = MatrixMulVector("0 0 0 0 0 1 0", %obj.getMuzzleVector(%slot));
    }
 
+   /* //uncomment when ballistics features and blocking shooting into water are ready, this will activate under water shooting with slowed bullets
+   // check if the weapon is underwater and if so, spawn an under water projectile, otherwise spawn a regular projectile
+   if ( %obj.weaponUnderwater == true )
+   {
+   // Determin initial projectile velocity based on the 
+   // gun's muzzle point and the object's current velocity
+   %objectVelocity = %obj.getVelocity();
+   %muzzleVelocity = VectorAdd(VectorScale(%muzzleVector, %data.underWaterProjectile.muzzleVelocity), VectorScale(%objectVelocity, %data.underWaterProjectile.velInheritFactor));
+   
+   // Create the projectile object
+   %p = new (%data.projectileType)() {
+      dataBlock        = %data.underWaterProjectile;
+      initialVelocity  = %muzzleVelocity;
+      initialPosition  = %obj.getMuzzlePoint(%slot);
+      // This parameter is deleted about 7 ticks into the projectiles flight
+      sourceObject     = %obj;
+      sourceSlot       = %slot;
+      // We use this for the source object when applying damage because it isn't deleted
+      origin           = %obj;
+      client           = %obj.client;
+   };
+
+   %obj.lastProjectile = %p;
+   %obj.deleteLastProjectile = %data.deleteLastProjectile;
+   if(%obj.client)
+      %obj.client.projectile = %p;
+
+   MissionCleanup.add(%p);
+   }
+   else
+   */
+   //{
    // Determin initial projectile velocity based on the 
    // gun's muzzle point and the object's current velocity
    %objectVelocity = %obj.getVelocity();
    %muzzleVelocity = VectorAdd(VectorScale(%muzzleVector, %data.projectile.muzzleVelocity), VectorScale(%objectVelocity, %data.projectile.velInheritFactor));
-
+   
    // Create the projectile object
    %p = new (%data.projectileType)() {
       dataBlock        = %data.projectile;
@@ -663,7 +695,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       %obj.client.projectile = %p;
 
    MissionCleanup.add(%p);
-
+   //}
    //%p.mountPointLight( 10, "LightFlareExample1", 1, "FireLightAnim", 1, "DualParaboloidSinglePass" );
 
    return %p;

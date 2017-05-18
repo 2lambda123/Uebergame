@@ -1004,7 +1004,7 @@ function checkUnderwater(%obj)
       if (ContainerRayCast(%start, %end, %searchMasks))
       {   
          // If the player is underwater increment a "holding breath" counter.
-         %obj.holdingbreath++;
+         %obj.holdingbreath++; 
 
          // A GuiProgressCtrl expects values 0-1.  We're just calculating a 
          // percentage in order to generate the appropriate range of values
@@ -1028,6 +1028,38 @@ function checkUnderwater(%obj)
 
       // We're still in the water and not dead yet, so do it again.
       %obj.drowning = schedule($Drowning::TickTime, 0, "checkUnderwater", %obj);
+   }
+}
+
+function checkWeaponUnderwater(%obj)
+{
+   if (!isObject(%obj)) return;  //prevent console spam, returns when object ID is not valid
+   if (%obj.getState() $= "Dead")
+   {
+      // If we get here and the player is dead we should hide the breath meter
+      // and make sure that the next underWater check is cancelled. 
+      cancel(%obj.weaponDrowning);
+   }
+   else
+   {
+      // If a ray cast straight up from the eye point of the player intersects
+      // the surface of a waterblock then the player is obviously underwater.
+      %start = %obj.getMuzzlePoint(%slot);
+      %end = VectorAdd(%start, "0 0 100"); // change if water is deeper than 100
+      %searchMasks = $TypeMasks::WaterObjectType;
+      if (ContainerRayCast(%start, %end, %searchMasks)) 
+      {   
+         //%obj.setManualImageState(%slot, "Swimming"); 
+         %obj.weaponUnderwater = true;
+      }
+      else 
+      {
+         //%obj.setManualImageState(%slot, "ReadyMotion"); 
+         %obj.weaponUnderwater = false;
+      }
+
+      // We're still in the water and not dead yet, so do it again.
+      %obj.weaponDrowning = schedule($Drowning::TickTime, 0, "checkWeaponUnderwater", %obj);
    }
 }
 
@@ -1678,7 +1710,8 @@ function Armor::onEnterLiquid(%this, %obj, %coverage, %type)
 {
    //echo("\c4this:"@ %this @" object:"@ %obj @" just entered water of type:"@ %type @" for "@ %coverage @"coverage");
    %obj.drowning = schedule($Drowning::TickTime, 0, "checkUnderwater", %obj);
-   
+   %obj.weaponDrowning = schedule($Drowning::TickTime, 0, "checkWeaponUnderwater", %obj);
+
    //LogEcho("\c4this:"@ %this @" object:"@ %obj @" just entered water of type:"@ %type @" for "@ %coverage @"coverage");
    switch(%type)
    {
@@ -1706,6 +1739,7 @@ function Armor::onEnterLiquid(%this, %obj, %coverage, %type)
 function Armor::onLeaveLiquid(%this, %obj, %type)
 {
    cancel(%obj.drowning); //stop drowning script
+   cancel(%obj.weaponDrowning); //stop weapon drowning script
    %obj.clearDamageDt();
    %obj.isInWater = 0;
 }
@@ -1786,12 +1820,14 @@ function Armor::onPoseChange(%this, %obj, %oldPose, %newPose)
 
 function Armor::onStartSwim(%this, %obj)
 {
-   %obj.setImageGenericTrigger($WeaponSlot, 0, true);
+   //disabled swimming motion since we can shoot underwater now
+   //%obj.setImageGenericTrigger($WeaponSlot, 0, true);
 }
 
 function Armor::onStopSwim(%this, %obj)
 {
-   %obj.setImageGenericTrigger($WeaponSlot, 0, false);
+   //disabled swimming motion since we can shoot underwater now
+   //%obj.setImageGenericTrigger($WeaponSlot, 0, false);
 }
 
 function Armor::onStartSprintMotion(%this, %obj)
