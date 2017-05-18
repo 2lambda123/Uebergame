@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "A Paintball field in a pit";
          enabled = "1";
          levelName = "PB_Gummigrube_3";
-         MissionTypes = "PBTDM";
+         MissionTypes = "PBTDM PBRtF";
    };
    new ScatterSky(theSky) {
       skyBrightness = "30";
@@ -215,6 +215,62 @@ new SimGroup(MissionGroup) {
             canSave = "1";
             canSaveDynamicFields = "1";
          };
+         new SimGroup(PBRtF0) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new Item() {
+               static = "1";
+               rotate = "0";
+               isAIControlled = "0";
+               dataBlock = "Flag";
+               position = "78.815 81.0602 48.2216";
+               rotation = "0 0 -1 17";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  lastTransForm = "78.815 81.0602 48.2216 1 0 0 0";
+                  team = "0";
+            };
+            new SimGroup(Flagstands) {
+               canSave = "1";
+               canSaveDynamicFields = "1";
+
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "76.8196 99.1928 47.9789";
+                  rotation = "0 0 -1 5.11315";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "32242";
+               };
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "78.815 81.0602 47.9789";
+                  rotation = "0 0 1 180.4";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "32243";
+               };
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "80.3834 63.164 47.9476";
+                  rotation = "0 0 1 180.4";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "32244";
+               };
+            };
+         };
       };
       new SimGroup(Team1) {
          canSave = "1";
@@ -233,7 +289,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "37.3776 120.222 48.4359";
+               position = "37.0747 121.252 48.4359";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -263,7 +319,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "45.7713 115.42 48.75";
+               position = "46.2114 116.661 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -278,7 +334,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "41.468 119.994 48.75";
+               position = "42.2624 121.258 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -293,7 +349,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "45.7965 119.81 48.75";
+               position = "45.9641 121.066 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -458,7 +514,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "36.2642 111.276 48.5334";
+               position = "39.0582 112.922 48.5334";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -473,7 +529,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "36.5568 115.788 48.75";
+               position = "38.5391 118.475 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -488,7 +544,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "40.6492 111.232 48.75";
+               position = "43.0199 112.884 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -503,7 +559,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "40.5752 115.484 48.75";
+               position = "42.0338 117.045 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -518,7 +574,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "45.4943 111.406 48.75";
+               position = "46.5864 112.801 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";
@@ -583,6 +639,23 @@ new SimGroup(MissionGroup) {
                scale = "1 1 1";
                canSave = "1";
                canSaveDynamicFields = "1";
+            };
+         };
+         new SimGroup(PBRtF1) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "blue";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "36.3481 116.097 47.9789";
+               rotation = "0 0 -1 62.9028";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  team = "1";
+                  Trigger = "32245";
             };
          };
       };
@@ -953,6 +1026,23 @@ new SimGroup(MissionGroup) {
                scale = "1 1 1";
                canSave = "1";
                canSaveDynamicFields = "1";
+            };
+         };
+         new SimGroup(PBRtF2) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "red";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "121.397 46.1702 47.9789";
+               rotation = "0 0 1 101.401";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  team = "2";
+                  Trigger = "32246";
             };
          };
       };

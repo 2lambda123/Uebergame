@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "A Paintball field in a pit";
          enabled = "1";
          levelName = "PB_Gummigrube_4";
-         MissionTypes = "PBTDM";
+         MissionTypes = "PBTDM PBRtF";
    };
    new ScatterSky(theSky) {
       skyBrightness = "30";
@@ -214,6 +214,54 @@ new SimGroup(MissionGroup) {
          new SimGroup(SpawnSpheres0) {
             canSave = "1";
             canSaveDynamicFields = "1";
+         };
+         new SimGroup(PBRtF0) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new Item() {
+               static = "0";
+               rotate = "0";
+               isAIControlled = "0";
+               dataBlock = "Flag";
+               position = "78.5012 80.5987 48.2222";
+               rotation = "0 0 1 147";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+            new SimGroup(Flagstands) {
+               canSave = "1";
+               canSaveDynamicFields = "1";
+
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "114.75 81.2212 47.981";
+                  rotation = "0 0 1 90";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+               };
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "78.5012 80.5987 47.981";
+                  rotation = "0 0 1 90";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+               };
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "41.7957 80.8309 47.981";
+                  rotation = "0 0 -1 90";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+               };
+            };
          };
       };
       new SimGroup(Team1) {
@@ -720,6 +768,29 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
             };
          };
+         new SimGroup(PBRtF1) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "60.3842 122.145 47.981";
+               rotation = "1 0 0 0";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+            new StaticShape() {
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "96.3913 122.145 47.981";
+               rotation = "1 0 0 0";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+         };
       };
       new SimGroup(Team2) {
          canSave = "1";
@@ -1221,6 +1292,29 @@ new SimGroup(MissionGroup) {
                position = "78.8068 50.8735 48.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+         };
+         new SimGroup(PBRtF2) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "96.823 40.7424 47.981";
+               rotation = "0 0 1 180";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+            };
+            new StaticShape() {
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "60.5551 40.7424 47.981";
+               rotation = "0 0 1 180";
+               scale = "2 2 1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };

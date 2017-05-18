@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "A Paintball field in a pit";
          enabled = "1";
          levelName = "PB_Gummigrube_1";
-         MissionTypes = "PBTDM";
+         MissionTypes = "PBTDM PBRtF";
    };
    new ScatterSky(theSky) {
       skyBrightness = "30";
@@ -177,6 +177,30 @@ new SimGroup(MissionGroup) {
       canSave = "1";
       canSaveDynamicFields = "1";
    };
+   new SFXEmitter() {
+      fileName = "art/sound/environment/wind/wind_medium_01.ogg";
+      playOnAdd = "1";
+      useTrackDescriptionOnly = "0";
+      isLooping = "1";
+      isStreaming = "0";
+      sourceGroup = "AudioChannelEffects";
+      volume = "0.2";
+      pitch = "1";
+      fadeInTime = "0";
+      fadeOutTime = "0";
+      is3D = "0";
+      referenceDistance = "1";
+      maxDistance = "100";
+      scatterDistance = "0 0 0";
+      coneInsideAngle = "360";
+      coneOutsideAngle = "360";
+      coneOutsideVolume = "1";
+      position = "538.481 408.345 32.658";
+      rotation = "1 0 0 0";
+      scale = "100 100 100";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+   };
    new SimGroup(ObserverDropPoints) {
       canSave = "1";
       canSaveDynamicFields = "1";
@@ -210,6 +234,70 @@ new SimGroup(MissionGroup) {
          new SimGroup(SpawnSpheres0) {
             canSave = "1";
             canSaveDynamicFields = "1";
+         };
+         new SimGroup(PBRtF0) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new SimGroup(Flagstands) {
+               canSave = "1";
+               canSaveDynamicFields = "1";
+
+               new StaticShape() {
+                  skin = "base";
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "79.7093 80.4118 52.7559";
+                  rotation = "1 0 0 0";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     collisionType = "Collision Mesh";
+                     decalType = "Visible Mesh";
+                     gameTypesList = "PBRtF";
+                     team = "0";
+                     Trigger = "24205";
+               };
+               new StaticShape() {
+                  skin = "base";
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "110.132 81.5874 51.2941";
+                  rotation = "0 0 1 180";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     gameTypesList = "PBRtF";
+                     team = "0";
+                     Trigger = "24206";
+               };
+               new StaticShape() {
+                  skin = "base";
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "47.5178 79.9298 51.3097";
+                  rotation = "1 0 0 0";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     gameTypesList = "PBRtF";
+                     team = "0";
+                     Trigger = "24207";
+               };
+            };
+            new Item() {
+               static = "1";
+               rotate = "0";
+               isAIControlled = "0";
+               dataBlock = "Flag";
+               position = "79.7093 80.4118 52.809";
+               rotation = "0 0 -1 71.9615";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  lastTransForm = "79.7093 80.4118 52.809 0 0 -1 1.25596";
+                  team = "0";
+            };
          };
       };
       new SimGroup(Team1) {
@@ -761,6 +849,24 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
             };
          };
+         new SimGroup(PBRtF1) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "blue";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "78.2924 119.858 48.001";
+               rotation = "1 0 0 0";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  gameTypesList = "PBRtF";
+                  team = "1";
+                  Trigger = "24208";
+            };
+         };
       };
       new SimGroup(Team2) {
          canSave = "1";
@@ -1309,6 +1415,24 @@ new SimGroup(MissionGroup) {
                scale = "1 1 1";
                canSave = "1";
                canSaveDynamicFields = "1";
+            };
+         };
+         new SimGroup(PBRtF2) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "red";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "79.7077 42.8777 48.001";
+               rotation = "0 0 1 180";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  gameTypesList = "PBRtF";
+                  team = "2";
+                  Trigger = "24209";
             };
          };
       };
@@ -2346,6 +2470,27 @@ new SimGroup(MissionGroup) {
          canSave = "1";
          canSaveDynamicFields = "1";
       };
+      new TSStatic() {
+         shapeName = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_rocket.dts";
+         skin = "greenblack";
+         playAmbient = "0";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Collision Mesh";
+         decalType = "Visible Mesh";
+         allowPlayerStep = "1";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "40.5084 93.5196 47.9439";
+         rotation = "0 0 -1 43.8184";
+         scale = "1.5 1.5 1.5";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
    };
    new SimGroup(fortressLeft) {
       canSave = "1";
@@ -2583,8 +2728,8 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_rocket.dts";
-         skin = "greenblack";
+         shapeName = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_beam.dts";
+         skin = "redblue";
          playAmbient = "0";
          meshCulling = "0";
          originSort = "0";
@@ -2597,9 +2742,9 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "40.5084 93.5196 47.9439";
-         rotation = "0 0 -1 43.8184";
-         scale = "1.5 1.5 1.5";
+         position = "47.5061 79.4978 49.9373";
+         rotation = "0 0 -1 88.0158";
+         scale = "1.75 1.5 1.75";
          canSave = "1";
          canSaveDynamicFields = "1";
       };
@@ -2752,6 +2897,27 @@ new SimGroup(MissionGroup) {
          position = "118.298 94.4139 48.0463";
          rotation = "0 0 1 2.76082";
          scale = "1 1 1.2";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_rocket.dts";
+         skin = "greenblack";
+         playAmbient = "0";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Collision Mesh";
+         decalType = "Visible Mesh";
+         allowPlayerStep = "1";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "116.433 67.5458 48.0539";
+         rotation = "0 0 -1 43.8184";
+         scale = "1.5 1.5 1.5";
          canSave = "1";
          canSaveDynamicFields = "1";
       };
@@ -2992,8 +3158,8 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
       new TSStatic() {
-         shapeName = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_rocket.dts";
-         skin = "greenblack";
+         shapeName = "art/shapes/barriers/inflatable/inflatable_barriers_01/inflatable_barrier_01_beam.dts";
+         skin = "redblue";
          playAmbient = "0";
          meshCulling = "0";
          originSort = "0";
@@ -3006,9 +3172,9 @@ new SimGroup(MissionGroup) {
          alphaFadeInverse = "0";
          renderNormals = "0";
          forceDetail = "-1";
-         position = "116.433 67.5458 48.0539";
-         rotation = "0 0 -1 43.8184";
-         scale = "1.5 1.5 1.5";
+         position = "110.111 82.0783 49.9371";
+         rotation = "0 0 1 92.2183";
+         scale = "1.75 1.5 1.75";
          canSave = "1";
          canSaveDynamicFields = "1";
       };
@@ -3485,109 +3651,90 @@ new SimGroup(MissionGroup) {
          canSaveDynamicFields = "1";
       };
    };
-   new TSStatic() {
-      shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate.dts";
-      playAmbient = "0";
-      meshCulling = "0";
-      originSort = "0";
-      collisionType = "Visible Mesh";
-      decalType = "Visible Mesh";
-      allowPlayerStep = "1";
-      alphaFadeEnable = "0";
-      alphaFadeStart = "100";
-      alphaFadeEnd = "150";
-      alphaFadeInverse = "0";
-      renderNormals = "0";
-      forceDetail = "-1";
-      position = "79.75 57.5267 48";
-      rotation = "0 0 1 90";
-      scale = "1 1 1";
+   new SimGroup(gates) {
       canSave = "1";
       canSaveDynamicFields = "1";
-   };
-   new TSStatic() {
-      shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate_nets.dts";
-      playAmbient = "0";
-      meshCulling = "0";
-      originSort = "0";
-      collisionType = "Visible Mesh";
-      decalType = "None";
-      allowPlayerStep = "1";
-      alphaFadeEnable = "0";
-      alphaFadeStart = "100";
-      alphaFadeEnd = "150";
-      alphaFadeInverse = "0";
-      renderNormals = "0";
-      forceDetail = "-1";
-      position = "79.75 57.5267 48";
-      rotation = "0 0 1 90";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-   };
-   new TSStatic() {
-      shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate.dts";
-      playAmbient = "0";
-      meshCulling = "0";
-      originSort = "0";
-      collisionType = "Visible Mesh";
-      decalType = "Visible Mesh";
-      allowPlayerStep = "1";
-      alphaFadeEnable = "0";
-      alphaFadeStart = "100";
-      alphaFadeEnd = "150";
-      alphaFadeInverse = "0";
-      renderNormals = "0";
-      forceDetail = "-1";
-      position = "78.3006 104.74 48";
-      rotation = "-0 0 -1 90";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-   };
-   new TSStatic() {
-      shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate_nets.dts";
-      playAmbient = "0";
-      meshCulling = "0";
-      originSort = "0";
-      collisionType = "Visible Mesh";
-      decalType = "None";
-      allowPlayerStep = "1";
-      alphaFadeEnable = "0";
-      alphaFadeStart = "100";
-      alphaFadeEnd = "150";
-      alphaFadeInverse = "0";
-      renderNormals = "0";
-      forceDetail = "-1";
-      position = "78.3006 104.74 48";
-      rotation = "-0 0 -1 90";
-      scale = "1 1 1";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-   };
-   new SFXEmitter() {
-      fileName = "art/sound/environment/wind/wind_medium_01.ogg";
-      playOnAdd = "1";
-      useTrackDescriptionOnly = "0";
-      isLooping = "1";
-      isStreaming = "0";
-      sourceGroup = "AudioChannelEffects";
-      volume = "0.2";
-      pitch = "1";
-      fadeInTime = "0";
-      fadeOutTime = "0";
-      is3D = "0";
-      referenceDistance = "1";
-      maxDistance = "100";
-      scatterDistance = "0 0 0";
-      coneInsideAngle = "360";
-      coneOutsideAngle = "360";
-      coneOutsideVolume = "1";
-      position = "538.481 408.345 32.658";
-      rotation = "1 0 0 0";
-      scale = "100 100 100";
-      canSave = "1";
-      canSaveDynamicFields = "1";
+
+      new TSStatic() {
+         shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate_nets.dts";
+         playAmbient = "0";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Visible Mesh";
+         decalType = "None";
+         allowPlayerStep = "1";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "78.3006 104.74 48";
+         rotation = "-0 0 -1 90";
+         scale = "1 1 1";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate.dts";
+         playAmbient = "0";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Visible Mesh";
+         decalType = "Visible Mesh";
+         allowPlayerStep = "1";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "79.75 57.5267 48";
+         rotation = "0 0 1 90";
+         scale = "1 1 1";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate_nets.dts";
+         playAmbient = "0";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Visible Mesh";
+         decalType = "None";
+         allowPlayerStep = "1";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "79.75 57.5267 48";
+         rotation = "0 0 1 90";
+         scale = "1 1 1";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
+      new TSStatic() {
+         shapeName = "levels/Paintball/PB_Gummigrube/PB_Gummigrube_gate.dts";
+         playAmbient = "0";
+         meshCulling = "0";
+         originSort = "0";
+         collisionType = "Visible Mesh";
+         decalType = "Visible Mesh";
+         allowPlayerStep = "1";
+         alphaFadeEnable = "0";
+         alphaFadeStart = "100";
+         alphaFadeEnd = "150";
+         alphaFadeInverse = "0";
+         renderNormals = "0";
+         forceDetail = "-1";
+         position = "78.3006 104.74 48";
+         rotation = "-0 0 -1 90";
+         scale = "1 1 1";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+      };
    };
 };
 //--- OBJECT WRITE END ---
