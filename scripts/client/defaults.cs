@@ -317,7 +317,7 @@ new SimGroup( MeshQualityGroup )
       
       key["$pref::TS::detailAdjust"] = 0.7;
       key["$pref::TS::skipRenderDLs"] = 0;
-      key["$pref::TS::smallestVisiblePixelSize"] = 6;	  
+      key["$pref::TS::smallestVisiblePixelSize"] = 6;    
       key["$pref::Terrain::lodScale"] = 8.0;
       key["$pref::decalMgr::enabled"] = false;
       key["$pref::GroundCover::densityScale"] = 0;
@@ -330,7 +330,7 @@ new SimGroup( MeshQualityGroup )
       
       key["$pref::TS::detailAdjust"] = 0.8;
       key["$pref::TS::skipRenderDLs"] = 0;
-      key["$pref::TS::smallestVisiblePixelSize"] = 6;	  
+      key["$pref::TS::smallestVisiblePixelSize"] = 6;	
       key["$pref::Terrain::lodScale"] = 4.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 0.3;
@@ -343,7 +343,7 @@ new SimGroup( MeshQualityGroup )
             
       key["$pref::TS::detailAdjust"] = 0.9;
       key["$pref::TS::skipRenderDLs"] = 0;
-	  key["$pref::TS::smallestVisiblePixelSize"] = 6;	  
+      key["$pref::TS::smallestVisiblePixelSize"] = 6;  
       key["$pref::Terrain::lodScale"] = 3.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 0.6;
@@ -356,7 +356,7 @@ new SimGroup( MeshQualityGroup )
 
       key["$pref::TS::detailAdjust"] = 1.0;
       key["$pref::TS::skipRenderDLs"] = 0;  
-	  key["$pref::TS::smallestVisiblePixelSize"] = 4;		  
+      key["$pref::TS::smallestVisiblePixelSize"] = 4;
       key["$pref::Terrain::lodScale"] = 2.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 1.0;
@@ -369,7 +369,7 @@ new SimGroup( MeshQualityGroup )
 
       key["$pref::TS::detailAdjust"] = 1.5;
       key["$pref::TS::skipRenderDLs"] = 0; 
-	  key["$pref::TS::smallestVisiblePixelSize"] = 2;		  
+      key["$pref::TS::smallestVisiblePixelSize"] = 2; 
       key["$pref::Terrain::lodScale"] = 1.5;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 1.5;
@@ -382,7 +382,7 @@ new SimGroup( MeshQualityGroup )
 
       key["$pref::TS::detailAdjust"] = 2.0;
       key["$pref::TS::skipRenderDLs"] = 0; 
-	  key["$pref::TS::smallestVisiblePixelSize"] = 1;		  
+      key["$pref::TS::smallestVisiblePixelSize"] = 1;
       key["$pref::Terrain::lodScale"] = 1.0;
       key["$pref::decalMgr::enabled"] = true;
       key["$pref::GroundCover::densityScale"] = 2.0;
@@ -468,7 +468,8 @@ new SimGroup( LightingQualityGroup )
       key["$pref::lightManager"] = "Basic Lighting";
       key["$pref::Shadows::disable"] = true;
       key["$pref::Shadows::textureScalar"] = 0.5;
-      key["$pref::Shadows::filterMode"] = "None";     
+      key["$pref::Shadows::filterMode"] = "None";
+      key["$pref::PSSM::smallestVisiblePixelSize"] = 32;      
    };
 
    new ArrayObject( [Lowest] )
@@ -479,7 +480,8 @@ new SimGroup( LightingQualityGroup )
       key["$pref::lightManager"] = "Advanced Lighting";
       key["$pref::Shadows::disable"] = true;
       key["$pref::Shadows::textureScalar"] = 0.5;
-      key["$pref::Shadows::filterMode"] = "None";     
+      key["$pref::Shadows::filterMode"] = "None";
+      key["$pref::PSSM::smallestVisiblePixelSize"] = 32;      
    };
    
    new ArrayObject( [Low] )
@@ -490,7 +492,8 @@ new SimGroup( LightingQualityGroup )
       key["$pref::lightManager"] = "Advanced Lighting";
       key["$pref::Shadows::disable"] = false;
       key["$pref::Shadows::textureScalar"] = 0.5;
-      key["$pref::Shadows::filterMode"] = "SoftShadow";     
+      key["$pref::Shadows::filterMode"] = "SoftShadow";
+      key["$pref::PSSM::smallestVisiblePixelSize"] = 16;
    };
    
    new ArrayObject( [Normal] )
@@ -501,7 +504,8 @@ new SimGroup( LightingQualityGroup )
       key["$pref::lightManager"] = "Advanced Lighting";
       key["$pref::Shadows::disable"] = false;
       key["$pref::Shadows::textureScalar"] = 1.0;
-      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";     
+      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";
+      key["$pref::PSSM::smallestVisiblePixelSize"] = 8;      
    };
 
    new ArrayObject( [High] )
@@ -512,7 +516,8 @@ new SimGroup( LightingQualityGroup )
       key["$pref::lightManager"] = "Advanced Lighting";
       key["$pref::Shadows::disable"] = false;
       key["$pref::Shadows::textureScalar"] = 2.0;
-      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";          
+      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";
+      key["$pref::PSSM::smallestVisiblePixelSize"] = 4;      
    };  
 
    new ArrayObject( [Ueber] )
@@ -523,7 +528,8 @@ new SimGroup( LightingQualityGroup )
       key["$pref::lightManager"] = "Advanced Lighting";
       key["$pref::Shadows::disable"] = false;
       key["$pref::Shadows::textureScalar"] = 3.0;
-      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";          
+      key["$pref::Shadows::filterMode"] = "SoftShadowHighQuality";
+      key["$pref::PSSM::smallestVisiblePixelSize"] = 2;      
    };   
 };
 
