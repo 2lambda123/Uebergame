@@ -285,9 +285,13 @@ function AIConnection::onConnect(%client, %name)
    %client.setBotFav( %client.getRandomLoadout() );
       case "TDMGame":
    %client.setBotFav( %client.getRandomLoadout() );
+      case "RtFGame":
+   %client.setBotFav( %client.getRandomLoadout() );
       case "PBDMGame":
    %client.setBotFav( %client.getRandomLoadout2() );
       case "PBTDMGame":
+   %client.setBotFav( %client.getRandomLoadout2() );
+      case "PBRtFGame":
    %client.setBotFav( %client.getRandomLoadout2() );
       default:
    %client.setBotFav( %client.getRandomLoadout() );

@@ -339,6 +339,7 @@ function LogEcho(%string)
 // This can be easily overloaded for more types.
 function Torque::getMissionTypeDisplayNames(%this)
 {
+   //maybe this can be done better though a switch case statement or so
    for ( %type = 0; %type < $HostTypeCount; %type++ )
    {
       if ( $HostTypeName[%type] $= DM )
@@ -353,6 +354,8 @@ function Torque::getMissionTypeDisplayNames(%this)
          $HostTypeDisplayName[%type] = "Paintball Deathmatch";
 	   else if ( $HostTypeName[%type] $= PBTDM )
          $HostTypeDisplayName[%type] = "Paintball Team Deathmatch";
+      else if ( $HostTypeName[%type] $= PBRtF )
+         $HostTypeDisplayName[%type] = "Paintball Retrieve the Flag";
 	 
       else
          $HostTypeDisplayName[%type] = $HostTypeName[%type];

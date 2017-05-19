@@ -66,7 +66,7 @@ function PBDMGame::setUpTeams(%game)
    if(%group == -1)
       return;
    
-   // create a team0 if it does not exist
+   // create a Team0 if it does not exist
    %team = nameToID("MissionGroup/Teams/Team0");
    if(%team == -1)
    {
@@ -76,7 +76,7 @@ function PBDMGame::setUpTeams(%game)
 
    %dropSet = new SimSet("TeamDrops0");
    MissionCleanup.add(%dropSet);
-   %spawns = nameToID("MissionGroup/Teams/team0/SpawnSpheres0");
+   %spawns = nameToID("MissionGroup/Teams/Team0/SpawnSpheres0");
    if(%spawns != -1)
    {
       %count = %spawns.getCount();

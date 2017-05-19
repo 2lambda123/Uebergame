@@ -28,7 +28,7 @@ $HostGameRules["RtF", 1] = "Find the flag and retrieve it for your team by placi
 $HostGameRules["RtF", 2] = "Team with the most retrieves wins!";
 //--- GAME RULES END ---
 
-package RtFGame
+package PBRtFGame
 {
    function Flag::initializeObjective(%data, %flag)
    {
@@ -43,12 +43,12 @@ package RtFGame
    }
 };
 
-function RtFGame::setupGameParams(%game)
+function PBRtFGame::setupGameParams(%game)
 {
-   //echo("RtFGame::setupGameParams(" SPC %game.class SPC ")");
+   //echo("PBRtFGame::setupGameParams(" SPC %game.class SPC ")");
    
-   %game.playerType = "DefaultPlayerData";
-   $gameMode = RtFGame;
+   %game.playerType = "Paintball";
+   $gameMode = PBRtFGame;
    
    CoreGame::setupGameParams(%game);
 
@@ -66,9 +66,9 @@ function RtFGame::setupGameParams(%game)
    %game.flagReturnTimer = "";
 }
 
-function RtFGame::onMissionLoaded(%game)
+function PBRtFGame::onMissionLoaded(%game)
 {
-   //echo("RtFGame::onMissionLoaded(" SPC %game.class SPC ")");
+   //echo("PBRtFGame::onMissionLoaded(" SPC %game.class SPC ")");
    CoreGame::onMissionLoaded(%game);
 
    // Start the team scores at zero
@@ -76,9 +76,9 @@ function RtFGame::onMissionLoaded(%game)
       $TeamScore[%i] = 0;
 }
 
-function RtFGame::setUpTeams(%game)
+function PBRtFGame::setUpTeams(%game)
 {
-   //echo("RtFGame::setUpTeams(" SPC %game.class SPC ")");
+   //echo("PBRtFGame::setUpTeams(" SPC %game.class SPC ")");
 
    // Need this group! This is how we create teams.
    %group = nameToID("MissionGroup/Teams");
@@ -129,7 +129,7 @@ function RtFGame::setUpTeams(%game)
    }
 }
 
-function RtFGame::getTeamName(%game, %team)
+function PBRtFGame::getTeamName(%game, %team)
 {
    // Send the client the friendly name of this team id
    return addTaggedString($pref::Server::teamName[%team]);
@@ -137,9 +137,9 @@ function RtFGame::getTeamName(%game, %team)
 
 //-----------------------------------------------------------------------------
 
-function RtFGame::onClientEnterGame(%game, %client)
+function PBRtFGame::onClientEnterGame(%game, %client)
 {
-   //echo("RtFGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //echo("PBRtFGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    CoreGame::onClientEnterGame(%game, %client);
 
    // setup client score etc.
@@ -163,18 +163,18 @@ function RtFGame::onClientEnterGame(%game, %client)
    messageAll( 'MsgRtFFlagStatus', "", 0, $Game::FlagStatus );
 }
 
-function RtFGame::onClientLeaveGame(%game, %client)
+function PBRtFGame::onClientLeaveGame(%game, %client)
 {
-   //echo("RtFGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //echo("PBRtFGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    %game.clearClientVaribles(%client); // Just cause I said so.
    %game.updateScore(%client); // Read above
 
    CoreGame::onClientLeaveGame(%game, %client);
 }
 
-function RtFGame::assignClientTeam(%game, %client, %respawn)
+function PBRtFGame::assignClientTeam(%game, %client, %respawn)
 {
-   //echo("RtFGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %respawn SPC ")");
+   //echo("PBRtFGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %respawn SPC ")");
 
    // Pick a team so as not to be uneven sides
    %numPlayers = ClientGroup.getCount();
@@ -209,9 +209,9 @@ function RtFGame::assignClientTeam(%game, %client, %respawn)
    echo(%client.nameBase @ " (cl " @ %client @ ") joined team " @ %client.team);
 }
 
-function RtFGame::clientJoinTeam(%game, %client, %team, %respawn)
+function PBRtFGame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   //echo("RtFGame::clientJoinTeam(" SPC %game.class @", "@ %team @", "@ %respawn SPC ")");
+   //echo("PBRtFGame::clientJoinTeam(" SPC %game.class @", "@ %team @", "@ %respawn SPC ")");
    // Probbly client request to join from spectator
    if ( %team < 1 || %team > %game.numTeams )
       return;
@@ -234,7 +234,7 @@ function RtFGame::clientJoinTeam(%game, %client, %team, %respawn)
    echo(%client.nameBase@" (cl "@%client@") joined team "@%client.team);
 }
 
-function RtFGame::pushChooseTeamMenu(%game, %client)
+function PBRtFGame::pushChooseTeamMenu(%game, %client)
 {
    // Send client the list of available team choices. This is not dynamic
    // This list MUST be sent in order so that it is sync with the clients drop down menu.
@@ -244,7 +244,7 @@ function RtFGame::pushChooseTeamMenu(%game, %client)
 
 //-----------------------------------------------------------------------------
 
-function RtFGame::createPlayer(%game, %client, %spawnPoint, %respawn)
+function PBRtFGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 {
    %player = CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn);
 
@@ -254,9 +254,9 @@ function RtFGame::createPlayer(%game, %client, %spawnPoint, %respawn)
    %player.holdingFlag = ""; // Doesn't have the flag
 }
 
-function RtFGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
+function PBRtFGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   //echo("RtFGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   //echo("PBRtFGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    if ( isObject( %client ) )
    {
@@ -289,9 +289,9 @@ function RtFGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient,
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
 }
 
-function RtFGame::updateScore(%game, %cl)
+function PBRtFGame::updateScore(%game, %cl)
 {
-   //echo("RtFGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   //echo("PBRtFGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -317,7 +317,7 @@ function RtFGame::updateScore(%game, %cl)
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
 
-function RtFGame::awardScoreCarrierKill(%game, %client)
+function PBRtFGame::awardScoreCarrierKill(%game, %client)
 {
    %client.carrierKills++;
    messageClient(%client, 'MsgCarrierKill', '\c1You received a %1 point bonus for killing the flag carier.', %game.SCORE_PER_CARRIER_KILL);
@@ -326,7 +326,7 @@ function RtFGame::awardScoreCarrierKill(%game, %client)
 
 //-----------------------------------------------------------------------------
 
-function RtFGame::onTouchFlag(%game, %player, %flag)
+function PBRtFGame::onTouchFlag(%game, %player, %flag)
 {
    // If the flag was in the middle of being reset, cancel it
    if ( isEventPending( %game.flagReturnTimer ) )
@@ -355,7 +355,7 @@ function RtFGame::onTouchFlag(%game, %player, %flag)
    serverPlay3D( WeaponUseSound, %player.getTransform());
 }
 
-function RtFGame::onFlagDropped(%game, %player, %flag)
+function PBRtFGame::onFlagDropped(%game, %player, %flag)
 {
    // Let the objective hud know the deal
    $Game::FlagStatus = "<Dropped>";
@@ -374,7 +374,7 @@ function RtFGame::onFlagDropped(%game, %player, %flag)
       %game.flagReturnTimer = %game.schedule( %game.FLAG_RETURN_DELAY - %game.FADE_FLAG_TIME, "flagReturnFade", %flag, true);
 }
 
-function RtFGame::flagReturnFade(%game, %flag, %dropped)
+function PBRtFGame::flagReturnFade(%game, %flag, %dropped)
 {
    // Cancel our call to this function if it is still pending
    if ( isEventPending( %game.flagReturnTimer ) )
@@ -387,7 +387,7 @@ function RtFGame::flagReturnFade(%game, %flag, %dropped)
    %flag.startFade(%game.FADE_FLAG_TIME, 0, true);
 }
 
-function RtFGame::resetFlag(%game, %flag, %dropped)
+function PBRtFGame::resetFlag(%game, %flag, %dropped)
 {
    // Cancel our call to this function if it is still pending
    if ( isEventPending( %game.flagReturnTimer ) )
@@ -395,7 +395,7 @@ function RtFGame::resetFlag(%game, %flag, %dropped)
 
    if ( !%dropped )
    {
-      %group = nameToID("MissionGroup/Teams/Team0/RtF0/Flagstands");
+      %group = nameToID("MissionGroup/Teams/Team0/PBRtF0/Flagstands");
       if( %group != -1 )
       {
          %count = %group.getCount();
@@ -434,16 +434,16 @@ function RtFGame::resetFlag(%game, %flag, %dropped)
    messageAll( 'MsgRtFFlagStatus', "", 0, $Game::FlagStatus );
 }
 
-function RtFGame::resetFlagTossWait(%game, %player)
+function PBRtFGame::resetFlagTossWait(%game, %player)
 {
    %player.flagTossWait = false;
 }
 
 //-----------------------------------------------------------------------------
 
-function RtFGame::onEnterTrigger(%game, %data, %trigger, %colObj)
+function PBRtFGame::onEnterTrigger(%game, %data, %trigger, %colObj)
 {
-   //echo("RtFGame::onEnterTrigger(" SPC %game.class @", "@ %data @", "@ %trigger @", "@ %colObj SPC ")");
+   //echo("PBRtFGame::onEnterTrigger(" SPC %game.class @", "@ %data @", "@ %trigger @", "@ %colObj SPC ")");
 
    // Make sure we deserve to trigger it
    if ( ( %colObj.getClassName() !$= "Player" && %colObj.getClassName() !$= "AiIPlayer" ) || 
@@ -454,7 +454,7 @@ function RtFGame::onEnterTrigger(%game, %data, %trigger, %colObj)
    %game.onFlagStandCollision( %trigger.parent, %colObj );
 }
 
-function RtFGame::onFlagStandCollision(%game, %stand, %player)
+function PBRtFGame::onFlagStandCollision(%game, %stand, %player)
 {
    // Make sure player actually has a flag
    if ( %player.team != %stand.team || %player.holdingFlag $= "" )
@@ -474,7 +474,7 @@ function RtFGame::onFlagStandCollision(%game, %stand, %player)
    %game.checkScoreLimit( %client.team );
 }
 
-function RtFGame::onLeaveMissionArea(%game, %player)
+function PBRtFGame::onLeaveMissionArea(%game, %player)
 {
    if ( %player.holdingFlag !$= "" )
    {
@@ -521,16 +521,16 @@ function RtFGame::onLeaveMissionArea(%game, %player)
    }
 }
 
-function RtFGame::onEnterMissionArea(%game, %player)
+function PBRtFGame::onEnterMissionArea(%game, %player)
 {
 
 }
 
 //-----------------------------------------------------------------------------
 
-function RtFGame::checkScoreLimit(%game, %team)
+function PBRtFGame::checkScoreLimit(%game, %team)
 {
-   //echo("RtFGame::checkScoreLimit(" SPC %game.class @", "@ %team SPC ")");
+   //echo("PBRtFGame::checkScoreLimit(" SPC %game.class @", "@ %team SPC ")");
    %retrieveLimit = MissionGroup.scoreLimit;
    if(%retrieveLimit !$= "")
       %scoreLimit = %retrieveLimit * %game.SCORE_PER_TEAM_FLAG_CAP;
@@ -541,16 +541,16 @@ function RtFGame::checkScoreLimit(%game, %team)
       %game.onGameScoreLimit();
 }
 
-function RtFGame::onGameScoreLimit(%game)
+function PBRtFGame::onGameScoreLimit(%game)
 {
-   //echo("RtFGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   //echo("PBRtFGame::onGameScoreLimit(" SPC %game.class SPC ")");
    echo("Game over (scorelimit)");
    %game.cycleGame();
 }
 
-function RtFGame::endGame(%game)
+function PBRtFGame::endGame(%game)
 {
-   //echo("RtFGame::endGame(" SPC %game SPC ")");
+   //echo("PBRtFGame::endGame(" SPC %game SPC ")");
    if ( $Game::Running )
    {
       // send the winner message.
@@ -584,23 +584,23 @@ function RtFGame::endGame(%game)
    CoreGame::endGame(%game);
 }
 
-function RtFGame::clearClientVaribles(%game, %client)
+function PBRtFGame::clearClientVaribles(%game, %client)
 {
-   //echo("RtFGame::clearClientVaribles(" SPC %game.class SPC %client.nameBase SPC ")");
+   //echo("PBRtFGame::clearClientVaribles(" SPC %game.class SPC %client.nameBase SPC ")");
    CoreGame::clearClientVaribles(%game, %client);
 
    %client.flagRetrieves = 0;
    %client.carrierKills = 0;
 }
 
-function RtFGame::pushChooseTeamMenu(%game, %client)
+function PBRtFGame::pushChooseTeamMenu(%game, %client)
 {
    // This list MUST be sent in order so that it is sync with the clients drop down menu.
    %list = strupr($pref::Server::teamName[0] TAB "AUTOMATIC" TAB $pref::Server::teamName[1] TAB $pref::Server::teamName[2]);
    commandToClient(%client, 'PushTeamMenu', addTaggedString(%list));
 }
 
-function RtFGame::pushChooseSpawnMenu(%game, %client)
+function PBRtFGame::pushChooseSpawnMenu(%game, %client)
 {
    %list = "Castra";
    commandToClient(%client, 'PushSpawnMenu', addTaggedString(%list));

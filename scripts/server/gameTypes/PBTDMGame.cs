@@ -68,7 +68,7 @@ function PBTDMGame::setUpTeams(%game)
    if ( %group == -1 )
       return;
 
-   // create a team0 if it does not exist
+   // create a Team0 if it does not exist
    %team = nameToID("MissionGroup/Teams/Team0");
    if(%team == -1)
    {
@@ -76,7 +76,7 @@ function PBTDMGame::setUpTeams(%game)
       %group.add(%team);
    }
 
-   // 'team0' is not counted as a team here
+   // 'Team0' is not counted as a team here
    %game.numTeams = 0;
    while( %team != -1 )
    {

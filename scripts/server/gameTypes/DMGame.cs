@@ -66,7 +66,7 @@ function DMGame::setUpTeams(%game)
    if(%group == -1)
       return;
    
-   // create a team0 if it does not exist
+   // create a Team0 if it does not exist
    %team = nameToID("MissionGroup/Teams/Team0");
    if(%team == -1)
    {
