@@ -297,6 +297,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   lastTransForm = "79.7093 80.4118 52.809 0 0 -1 1.25596";
                   team = "0";
+                  gameTypesList = "PBRtF";
             };
          };
       };

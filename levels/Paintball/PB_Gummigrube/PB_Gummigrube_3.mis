@@ -231,6 +231,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   lastTransForm = "78.815 81.0602 48.2216 1 0 0 0";
                   team = "0";
+                  gameTypesList = "PBRtF";
             };
             new SimGroup(Flagstands) {
                canSave = "1";
@@ -246,6 +247,7 @@ new SimGroup(MissionGroup) {
                   canSaveDynamicFields = "1";
                      team = "0";
                      Trigger = "32242";
+                     gameTypesList = "PBRtF";
                };
                new StaticShape() {
                   isAIControlled = "0";
@@ -257,6 +259,7 @@ new SimGroup(MissionGroup) {
                   canSaveDynamicFields = "1";
                      team = "0";
                      Trigger = "32243";
+                     gameTypesList = "PBRtF";
                };
                new StaticShape() {
                   isAIControlled = "0";
@@ -268,6 +271,7 @@ new SimGroup(MissionGroup) {
                   canSaveDynamicFields = "1";
                      team = "0";
                      Trigger = "32244";
+                     gameTypesList = "PBRtF";
                };
             };
          };
@@ -656,6 +660,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   team = "1";
                   Trigger = "32245";
+                  gameTypesList = "PBRtF";
             };
          };
       };
@@ -1043,6 +1048,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   team = "2";
                   Trigger = "32246";
+                  gameTypesList = "PBRtF";
             };
          };
       };

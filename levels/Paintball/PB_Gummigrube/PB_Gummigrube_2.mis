@@ -227,6 +227,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   lastTransForm = "79.0409 81.5292 51.2459 0 0 1 0.498309";
                   team = "0";
+                  gameTypesList = "PBRtF";
             };
             new SimGroup(Flagstands) {
                canSave = "1";
@@ -242,6 +243,7 @@ new SimGroup(MissionGroup) {
                   canSaveDynamicFields = "1";
                      team = "0";
                      Trigger = "28264";
+                     gameTypesList = "PBRtF";
                };
                new StaticShape() {
                   isAIControlled = "0";
@@ -253,6 +255,7 @@ new SimGroup(MissionGroup) {
                   canSaveDynamicFields = "1";
                      team = "0";
                      Trigger = "28265";
+                     gameTypesList = "PBRtF";
                };
                new StaticShape() {
                   isAIControlled = "0";
@@ -264,6 +267,7 @@ new SimGroup(MissionGroup) {
                   canSaveDynamicFields = "1";
                      team = "0";
                      Trigger = "28266";
+                     gameTypesList = "PBRtF";
                };
             };
          };
@@ -832,6 +836,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   team = "1";
                   Trigger = "28267";
+                  gameTypesList = "PBRtF";
             };
             new StaticShape() {
                skin = "blue";
@@ -844,6 +849,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   team = "1";
                   Trigger = "28267";
+                  gameTypesList = "PBRtF";
             };
          };
       };
@@ -1411,6 +1417,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   team = "2";
                   Trigger = "28268";
+                  gameTypesList = "PBRtF";
             };
             new StaticShape() {
                skin = "red";
@@ -1423,6 +1430,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
                   team = "2";
                   Trigger = "28268";
+                  gameTypesList = "PBRtF";
             };
          };
       };
