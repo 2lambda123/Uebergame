@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Level in the desert ruins at dawn";
          enabled = "1";
          levelName = "TG_DesertRuins_dawn";
-         MissionTypes = "DM TDM PBDM PBTDM";
+         MissionTypes = "DM TDM RtF PBDM PBTDM PBRtF";
    };
    new ScatterSky(Himmel) {
       skyBrightness = "25";
@@ -1556,6 +1556,66 @@ new SimGroup(MissionGroup) {
                   lockCount = "0";
             };
          };
+         new SimGroup(RtF0) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new Item() {
+               static = "1";
+               rotate = "0";
+               isAIControlled = "0";
+               dataBlock = "Flag";
+               position = "25.5472 -36.2769 0.162575";
+               rotation = "0 0 1 51";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  lastTransForm = "25.5472 -36.2769 0.162575 0 0 1 0.872665";
+                  team = "0";
+                  gameTypesList = "RtF PBRtF";
+            };
+            new SimGroup(Flagstands) {
+               canSave = "1";
+               canSaveDynamicFields = "1";
+
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "61.1012 5.93741 0.0682118";
+                  rotation = "0 0 -1 48.8873";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "21533";
+                     gameTypesList = "RtF PBRtF";
+               };
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "25.5472 -36.2769 -0.0783735";
+                  rotation = "0 0 1 46.3693";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "21534";
+                     gameTypesList = "RtF PBRtF";
+               };
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "-6.09626 -76.3771 0.000972167";
+                  rotation = "0 0 1 230.91";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "21535";
+                     gameTypesList = "RtF PBRtF";
+               };
+            };
+         };
       };
       new SimGroup(Team1) {
          canSave = "1";
@@ -2048,6 +2108,24 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "0";
             };
          };
+         new SimGroup(RtF1) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "blue";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "-16.8468 -2.3438 0.000972167";
+               rotation = "0 0 1 138.541";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  team = "1";
+                  Trigger = "21536";
+                  gameTypesList = "RtF PBRtF";
+            };
+         };
       };
       new SimGroup(Team2) {
          canSave = "1";
@@ -2538,6 +2616,24 @@ new SimGroup(MissionGroup) {
                scale = "1 1 1";
                canSave = "1";
                canSaveDynamicFields = "0";
+            };
+         };
+         new SimGroup(RtF2) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "red";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "66.8033 -76.0268 0.000972174";
+               rotation = "0 0 -1 25.749";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  team = "2";
+                  Trigger = "21537";
+                  gameTypesList = "RtF PBRtF";
             };
          };
       };

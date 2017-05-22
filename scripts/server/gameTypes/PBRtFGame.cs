@@ -395,7 +395,7 @@ function PBRtFGame::resetFlag(%game, %flag, %dropped)
 
    if ( !%dropped )
    {
-      %group = nameToID("MissionGroup/Teams/Team0/PBRtF0/Flagstands");
+      %group = nameToID("MissionGroup/Teams/Team0/RtF0/Flagstands");
       if( %group != -1 )
       {
          %count = %group.getCount();

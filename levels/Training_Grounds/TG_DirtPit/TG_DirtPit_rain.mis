@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Grounds - Dirt Pit Arena by rain";
          enabled = "1";
          levelName = "TG_DirtPit_rain";
-         MissionTypes = "DM TDM PBDM PBTDM";
+         MissionTypes = "DM TDM RtF PBDM PBTDM PBRtF";
    };
    new ScatterSky(Himmel) {
       skyBrightness = "8";
@@ -741,6 +741,42 @@ new SimGroup(MissionGroup) {
                   lockCount = "0";
             };
          };
+         new SimGroup(RtF0) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new Item() {
+               static = "1";
+               rotate = "0";
+               isAIControlled = "0";
+               dataBlock = "Flag";
+               position = "178.346 209.733 0.492147";
+               rotation = "0 0 -1 96";
+               scale = "1 1 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  lastTransForm = "178.346 209.733 0.492147 0 0 -1 1.69297";
+                  team = "0";
+                  gameTypesList = "RtF PBRtF";
+            };
+            new SimGroup(Flagstands) {
+               canSave = "1";
+               canSaveDynamicFields = "1";
+
+               new StaticShape() {
+                  isAIControlled = "0";
+                  dataBlock = "FlagStand";
+                  position = "178.368 209.742 0.461466";
+                  rotation = "0 0 1 46.2544";
+                  scale = "2 2 1";
+                  canSave = "1";
+                  canSaveDynamicFields = "1";
+                     team = "0";
+                     Trigger = "55361";
+                     gameTypesList = "RtF PBRtF";
+               };
+            };
+         };
       };
       new SimGroup(Team1) {
          canSave = "1";
@@ -1327,6 +1363,24 @@ new SimGroup(MissionGroup) {
                   lockCount = "0";
             };
          };
+         new SimGroup(RtF1) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "blue";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "223.402 193.923 0.342673";
+               rotation = "0 0 -1 50.7313";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  team = "1";
+                  Trigger = "55362";
+                  gameTypesList = "RtF PBRtF";
+            };
+         };
       };
       new SimGroup(Team2) {
          canSave = "1";
@@ -1911,6 +1965,24 @@ new SimGroup(MissionGroup) {
                   enabled = "1";
                   homingCount = "0";
                   lockCount = "0";
+            };
+         };
+         new SimGroup(RtF2) {
+            canSave = "1";
+            canSaveDynamicFields = "1";
+
+            new StaticShape() {
+               skin = "red";
+               isAIControlled = "0";
+               dataBlock = "FlagStand";
+               position = "150.787 244.766 0.136899";
+               rotation = "0 0 1 136.008";
+               scale = "2 2 1";
+               canSave = "1";
+               canSaveDynamicFields = "1";
+                  team = "2";
+                  Trigger = "55363";
+                  gameTypesList = "RtF PBRtF";
             };
          };
       };

@@ -215,7 +215,7 @@ new SimGroup(MissionGroup) {
             canSave = "1";
             canSaveDynamicFields = "1";
          };
-         new SimGroup(PBRtF0) {
+         new SimGroup(RtF0) {
             canSave = "1";
             canSaveDynamicFields = "1";
 
@@ -780,7 +780,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
             };
          };
-         new SimGroup(PBRtF1) {
+         new SimGroup(RtF1) {
             canSave = "1";
             canSaveDynamicFields = "1";
 
@@ -1316,7 +1316,7 @@ new SimGroup(MissionGroup) {
                canSaveDynamicFields = "1";
             };
          };
-         new SimGroup(PBRtF2) {
+         new SimGroup(RtF2) {
             canSave = "1";
             canSaveDynamicFields = "1";
 

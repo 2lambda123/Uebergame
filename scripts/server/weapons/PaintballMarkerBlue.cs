@@ -482,7 +482,7 @@ datablock ShapeBaseImageData( PaintballMarkerBlueIronSightImage : PaintballMarke
    useEyeNode = true;
    animateOnServer = false;
    useEyeOffset = false;
-   eyeOffset = "0 0.18 -0.147";
+   eyeOffset = "0 0.17 -0.147";
    eyeRotation = "0 0 0 0";
 
    projectileSpread = "0.005";
