@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// DisplayName = Deathmatch
+// DisplayName = Paintball Deathmatch
 
 //--- GAME RULES BEGIN ---
 $HostGameRules["PBDM", 0] = "Eliminate the competition.";
@@ -227,6 +227,7 @@ function PBDMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient
          if( %sourceClient.team != %client.team && %sourceClient != %client )
          {
             messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
+            %game.checkScoreLimit(%sourceClient);
          }
       }
    }
@@ -250,6 +251,19 @@ function PBDMGame::updateScore(%game, %cl)
 
    messageAll('MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
+}
+
+function PBDMGame::checkScoreLimit(%game, %sourceClient)
+{
+   if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
+      %game.onGameScoreLimit();
+}
+
+function PBDMGame::onGameScoreLimit(%game)
+{
+   //echo("PBDMGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   echo("Game over (scorelimit)");
+   %game.cycleGame();
 }
 
 function PBDMGame::endGame(%game)

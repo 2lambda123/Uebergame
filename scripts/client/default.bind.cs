@@ -1258,7 +1258,7 @@ moveMap.bind( keyboard, "F3", toggleFirstPerson );
 //moveMap.bind( keyboard, "l", celebrationWave );
 //moveMap.bind( keyboard, "k", celebrationSalute );
 moveMap.bind( keyboard, "ctrl k", doSuicide );
-moveMap.bind( keyboard, "ctrl f", throwFlag );
+moveMap.bind( keyboard, "f", throwFlag );
 
 //-----------------------------------------------------------------------------
 // Huds

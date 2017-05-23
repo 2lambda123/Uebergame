@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// DisplayName = Team Deathmatch
+// DisplayName = Paintball Team Deathmatch
 
 //--- GAME RULES BEGIN ---
 $HostGameRules["PBTDM", 0] = "Kill the enemy and don't get killed.";
@@ -274,21 +274,19 @@ function PBTDMGame::updateScore(%game, %cl)
 
 function PBTDMGame::getScoreLimit(%game)
 {
-   %scoreLimit = MissionGroup.scoreLimit;
-   if(%scoreLimit $= "")
+   %scoreLimit = $pref::Server::TDMScoreLimit;
+   %count = ClientGroup.getCount();
+   %players = 0;
+   
+   for ( %i = 0; %i < %count; %i++ )
    {
-      %count = ClientGroup.getCount();
-      %players = 0;
-      for ( %i = 0; %i < %count; %i++ )
-      {
-         %cl = ClientGroup.getObject(%i);
-         if ( %cl.team == 0 )
-            continue;
+      %cl = ClientGroup.getObject(%i);
+      if ( %cl.team == 0 )
+         continue;
 
-         %players++;
-      }
-      return( %players * 5 );
+      %players++;
    }
+   return( %players * %scoreLimit );
 }
 
 function PBTDMGame::checkScoreLimit(%game, %team)

@@ -20,7 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// DisplayName = Retrieve the Flag
+// DisplayName = Paintball Retrieve the Flag
 
 //--- GAME RULES BEGIN ---
 $HostGameRules["RtF", 0] = "Flag may be positioned on the map in randomly selected areas.";
@@ -531,7 +531,7 @@ function PBRtFGame::onEnterMissionArea(%game, %player)
 function PBRtFGame::checkScoreLimit(%game, %team)
 {
    //echo("PBRtFGame::checkScoreLimit(" SPC %game.class @", "@ %team SPC ")");
-   %retrieveLimit = MissionGroup.scoreLimit;
+   %retrieveLimit = $pref::Server::RtFScoreLimit;
    if(%retrieveLimit !$= "")
       %scoreLimit = %retrieveLimit * %game.SCORE_PER_TEAM_FLAG_CAP;
    else

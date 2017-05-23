@@ -1,4 +1,4 @@
-Übergame v1.0.8.0
+Übergame v1.0.9.0
 =================
 
 Übergame is a free open source, realism like, multi-purpose,
@@ -31,7 +31,7 @@ https://github.com/Duion/Torque3D/tree/ueberengine-dev //latest development stat
 https://github.com/Duion/Torque3D/releases //quick access to all release builds
 
 
-Running Servers:
+Running dedicated servers:
 =================
 
 If you want to run dedicated servers you can use the dedicated server scripts:

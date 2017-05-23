@@ -33,6 +33,10 @@ function ServerOptionsDlg::onWake(%this)
    SOP_TimeLimit.setValue( $pref::Server::TimeLimit );
    SOP_WarmupTime.setValue( $pref::Server::warmupTime );
    SOP_RespawnTime.setValue( $pref::Server::RespawnTime );
+   SOP_EndGamePause.setValue( $pref::Server::EndGamePause );
+   SOP_DMScoreLimit.setValue( $pref::Server::DMScoreLimit );
+   SOP_TDMScoreLimit.setValue( $pref::Server::TDMScoreLimit );
+   SOP_RtFScoreLimit.setValue( $pref::Server::RtFScoreLimit );
    SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
 }
 
@@ -65,6 +69,18 @@ function ServerOptionsDlg::onSleep(%this)
   
    if ( checkIsNumber( SOP_RespawnTime.getValue() ) )
       $pref::Server::RespawnTime = SOP_RespawnTime.getValue();
+   
+   if ( checkIsNumber( SOP_EndGamePause.getValue() ) )
+      $pref::Server::EndGamePause = SOP_EndGamePause.getValue();
+   
+   if ( checkIsNumber( SOP_DMScoreLimit.getValue() ) )
+      $pref::Server::DMScoreLimit = SOP_DMScoreLimit.getValue();
+   
+   if ( checkIsNumber( SOP_TDMScoreLimit.getValue() ) )
+      $pref::Server::TDMScoreLimit = SOP_TDMScoreLimit.getValue();
+   
+   if ( checkIsNumber( SOP_RtFScoreLimit.getValue() ) )
+      $pref::Server::RtFScoreLimit = SOP_RtFScoreLimit.getValue();
   
    if ( checkIsNumber( SOP_MaxWeapons.getValue() ) )
       $pref::Server::MaxWeapons = SOP_MaxWeapons.getValue();

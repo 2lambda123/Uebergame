@@ -20,8 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// List of master servers to query, each one is tried in order
-// until one responds
+// List of master servers to query, each one is tried in order until one responds
 $pref::Net::DisplayOnMaster = 1; //list hosted games by default on master server
 $pref::Server::RegionMask = 2;
 $pref::Master[0] = "2:duion.com:28002";
@@ -30,8 +29,7 @@ $pref::Master[0] = "2:duion.com:28002";
 $pref::Server::Name = "Uebergame server";
 $pref::Server::Info = "This is an Uebergame server.";
 
-// Text to appear on loading screen
-// Multiple lines possible just add more varibles
+// Text to appear on loading screen, multiple lines possible just add more varibles
 $pref::Server::Message0 = "Server Information";
 $pref::Server::Message1 = "Welcome to the Uebergame server!";
 $pref::Server::Message2 = "Let the game begin.";
@@ -45,8 +43,7 @@ $pref::Server::ConnectionError =
 // overrides pref::net::port for dedicated servers
 $pref::Server::Port = 28000;
 
-// If the password is set, clients must provide it in order
-// to connect to the server
+// If the password is set, clients must provide it in order to connect to the server
 $pref::Server::Password = "";
 
 $pref::Server::Dedicated = 0;
@@ -54,14 +51,6 @@ $pref::Server::Dedicated = 0;
 // Password for admin clients
 $pref::Server::AdminPassword = "changeme";
 $pref::Server::SuperAdminPassword = "changemetoo";
-
-// outdated settings, needs checking
-
-//$pref::Game::Duration = 900;                 // specified in seconds
-//$pref::Game::EndGameScore = 20;
-//$pref::Game::EndGamePause = 5;               // specified in seconds
-//$pref::Game::AllowCycling = 1;
-//$pref::Server::EnableAI = 0;
 
 // Misc server settings.
 $pref::Server::BadWordFilter = 1;
@@ -71,18 +60,22 @@ $pref::Server::ConnectLog = 0;
 $pref::Server::MissionFile = "levels/TG_DesertRuins/TG_DesertRuins_day.mis";
 $pref::Server::ConnLogPath = "logs";
 $pref::Server::MissionType = "DM";
-$pref::Server::RandomMissions = 1;
+$pref::Server::RandomMissions = 1; // random map cycle
 $pref::Server::MaxPlayers = 64;
-$pref::Server::TimeLimit = 15;               // In minutes
-$pref::Server::KickBanTime = 300;            // specified in seconds
-$pref::Server::BanTime = 1800;               // specified in seconds
+$pref::Server::TimeLimit = 10; // minutes
+$pref::Server::KickBanTime = 300; // seconds
+$pref::Server::BanTime = 1800; // seconds
 $pref::Server::FloodProtectionEnabled = 1;
 $pref::Server::MaxChatLen = 120;
 $pref::Server::teamName[0] = "Spectator";
 $pref::Server::teamName[1] = "Blue Team";
 $pref::Server::teamName[2] = "Red Team";
-$pref::Server::warmupTime = 0;
-$pref::Server::RespawnTime = 8;
+$pref::Server::warmupTime = 0; // seconds
+$pref::Server::RespawnTime = 8; // seconds
+$pref::Server::EndGamePause = 8; // seconds
+$pref::Server::DMScoreLimit = 100; // score
+$pref::Server::TDMScoreLimit = 5; // kills multiplied by players on server
+$pref::Server::RtFScoreLimit = 5; // flag capture limit
 $pref::Server::FriendlyFire = 0;
 $pref::Server::TournamentMode = 0;
 $pref::Server::DisallowVoteMission = 0;
@@ -96,8 +89,8 @@ $pref::Server::DisallowAddBots = 0;
 $pref::Server::DisallowVoteKickAllBots = 0;
 $pref::Server::DisallowVoteAdmin = 1;
 $pref::Server::VotePassPercent = 51;
-$pref::Server::VoteTime = 20;
-$pref::Server::MaxWeapons = 1;
-$pref::Server::MaxSpecials = 0;
-$pref::Server::MaxGrenades = 1;
-$pref::Server::MaxMines = 0;
+$pref::Server::VoteTime = 20; // seconds
+$pref::Server::MaxWeapons = 1; // 1-4
+$pref::Server::MaxSpecials = 0; // on/off
+$pref::Server::MaxGrenades = 1; // on/off
+$pref::Server::MaxMines = 0; // on/off

@@ -27,7 +27,7 @@ $HostGameRules["DM", 0] = "Eliminate the competition.";
 $HostGameRules["DM", 1] = "Player with the best kill to death ratio wins!";
 //--- GAME RULES END ---
 
-$DM:TeamCount = 5; //start off DM team count at 5, so we can use 1-4 for teams
+$DM:TeamCount = 5; // start off DM team count at 5, so we can use 1-4 for teams
 
 package DMGame
 {
@@ -227,6 +227,7 @@ function DMGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, 
          if( %sourceClient.team != %client.team && %sourceClient != %client )
          {
             messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
+            %game.checkScoreLimit(%sourceClient);
          }
       }
    }
@@ -250,6 +251,19 @@ function DMGame::updateScore(%game, %cl)
 
    messageAll('MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
+}
+
+function DMGame::checkScoreLimit(%game, %sourceClient)
+{
+   if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
+      %game.onGameScoreLimit();
+}
+
+function DMGame::onGameScoreLimit(%game)
+{
+   //echo("TDMGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   echo("Game over (scorelimit)");
+   %game.cycleGame();
 }
 
 function DMGame::endGame(%game)

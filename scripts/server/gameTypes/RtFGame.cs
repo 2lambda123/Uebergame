@@ -531,7 +531,7 @@ function RtFGame::onEnterMissionArea(%game, %player)
 function RtFGame::checkScoreLimit(%game, %team)
 {
    //echo("RtFGame::checkScoreLimit(" SPC %game.class @", "@ %team SPC ")");
-   %retrieveLimit = MissionGroup.scoreLimit;
+   %retrieveLimit = $pref::Server::RtFScoreLimit;
    if(%retrieveLimit !$= "")
       %scoreLimit = %retrieveLimit * %game.SCORE_PER_TEAM_FLAG_CAP;
    else

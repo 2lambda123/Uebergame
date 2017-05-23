@@ -55,7 +55,7 @@ $HostGameRules["Core", 2] = "player with most kills at timelimit.";
 //-----------------------------------------------------------------------------
 
 // Pause while looking over the end game screen (in secs)
-$Game::EndGamePause = 10 * 1000;
+$Game::EndGamePause = $pref::Server::EndGamePause * 1000;
 
 function CoreGame::activatePackages(%game)
 {
