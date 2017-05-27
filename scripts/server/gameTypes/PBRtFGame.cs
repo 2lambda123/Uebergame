@@ -53,12 +53,12 @@ function PBRtFGame::setupGameParams(%game)
    CoreGame::setupGameParams(%game);
 
    // Setup some scoring and timing
-   %game.SCORE_PER_KILL = 5;
-   %game.SCORE_PER_DEATH = 0;
-   %game.SCORE_PER_SUICIDE = -5;
-   %game.SCORE_PER_TEAMKILL = -5;
-   %game.SCORE_PER_CARRIER_KILL = 5;
-   %game.SCORE_PER_PLYR_FLAG_CAP = 10;
+   %game.SCORE_PER_KILL = 10;
+   %game.SCORE_PER_DEATH = -10;
+   %game.SCORE_PER_SUICIDE = -10;
+   %game.SCORE_PER_TEAMKILL = -10;
+   %game.SCORE_PER_CARRIER_KILL = 10;
+   %game.SCORE_PER_PLYR_FLAG_CAP = 20;
    %game.SCORE_PER_TEAM_FLAG_CAP = 1;
 
    %game.FADE_FLAG_TIME = 2000;
@@ -311,7 +311,7 @@ function PBRtFGame::updateScore(%game, %cl)
 
    %cl.defenseScore = %cl.carrierKills * %game.SCORE_PER_CARRIER_KILL;
 
-   %cl.score = mFloor(%cl.offenseScore + %cl.defenseScore);
+   %cl.score = mFloatLength((%cl.offenseScore + %cl.defenseScore),1);
 
    messageAll('MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
