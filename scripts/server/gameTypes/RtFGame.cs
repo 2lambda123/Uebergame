@@ -168,6 +168,21 @@ function RtFGame::onClientLeaveGame(%game, %client)
    //echo("RtFGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    %game.clearClientVaribles(%client); // Just cause I said so.
    %game.updateScore(%client); // Read above
+   
+   %player = %client.player;
+
+   // Remove the flag if we had it. Let the game know
+   if ( %player.holdingFlag !$= "" )
+   {
+      // Should handle un-hide of item
+      %player.throwObject( %player.holdingFlag );
+
+      // We won't be needing this anymore..
+      %player.unmountImage( $FlagSlot );
+
+      // Tell the game
+      %game.onFlagDropped( %player, %player.holdingFlag );
+   }
 
    CoreGame::onClientLeaveGame(%game, %client);
 }
@@ -619,4 +634,91 @@ function DnHGame::clientChooseSpawn(%game, %client, %option, %value)
          %msg = '\c2Drop zone: Castra.';
    }
    messageClient( %client, 'MsgDropZone', %msg, "", %value);
+}
+
+// RtF game specific spectator function to drop the flag when becoming spectator
+function RtFGame::forceSpectator(%game, %client, %reason)
+{
+   //LogEcho("\c4CoreGame::forceSpectator(" SPC %game.class SPC %client.nameBase SPC %reason SPC ")");
+   //make sure we have a valid client...
+   if (%client <= 0)
+      return;
+
+   if(!$Game::Running) // Make sure the game has started
+      return;
+      
+   %player = %client.player;
+   
+   // Remove the flag if we had it. Let the game know
+   if ( %player.holdingFlag !$= "" )
+   {
+      // Should handle un-hide of item
+      %player.throwObject( %player.holdingFlag );
+
+      // We won't be needing this anymore..
+      %player.unmountImage( $FlagSlot );
+
+      // Tell the game
+      %game.onFlagDropped( %player, %player.holdingFlag );
+   }
+
+   // first kill this player
+   if(%client.player)
+      //%client.player.kill($DamageType::ScriptDamage);
+      %client.player.schedule(50,"delete"); //better solution
+
+   //if(isEventPending(%client.respawnTimer))
+   //   cancel(%client.respawnTimer);
+
+   //%client.respawnTimer = "";
+
+   // place them in spectator mode
+   %game.clearRespawnWait(%client);
+   %client.lastObserverSpawn = -1;
+   %client.observerStartTime = $Sim::Time;
+   %adminForce = 0;
+
+   // switch client to team 0 (spectator) and save off the last team they were on
+   %client.lastTeam = %client.team;
+   %client.team = 0;
+   //%client.player.team = 0;
+   //%client.player.setTeam(0);
+   %client.notready = 1;
+   %client.notReadyCount = "";
+
+   switch$ (%reason)
+   {
+      case "playerChoose":
+         %client.camera.getDataBlock().setMode( %client.camera, "SpectatorFly" );
+         messageClient(%client, 'MsgClientJoinTeam', '\c1You have joined the %3.', %client, %client.team, %game.getTeamName(0) );
+         echo(%client.nameBase@" (cl "@%client@") entered spectator mode");
+
+      case "AdminForce":
+         %client.camera.getDataBlock().setMode( %client.camera, "SpectatorFly" );
+         messageClient(%client, 'MsgClientJoinTeam', '\c1You have been forced into spectator mode by the admin.', %client, %client.team, %game.getTeamName(0) );
+         echo(%client.nameBase@" (cl "@%client@") was forced into spectator mode by admin");
+         %adminForce = 1;
+
+      case "spawnTimeout":
+         %client.camera.getDataBlock().setMode( %client.camera, "SpectatorFly" );
+         messageClient(%client, 'MsgClientJoinTeam', '\c1You have been placed in spectator mode due to delay in respawning.', %client, %client.team, %game.getTeamName(0) );
+         echo(%client.nameBase@" (cl "@%client@") was placed in spectator mode due to spawn delay");
+   }
+
+   // set their control to the obs. cam
+   %client.setControlObject( %client.camera );
+
+   // display the hud and clear any previous prints
+   clearBottomPrint(%client);
+   clearCenterPrint(%client);
+   //commandToClient(%client, 'setHudMode', 'Spectator');
+   updateSpectatorHud(%client);
+
+   // message everyone about this event
+   if(!%adminForce)
+      messageAllExcept(%client, -1, 'MsgClientJoinTeam', '\c2%4 has become a %3.', %client, %client.team, %game.getTeamName(0), %client.playerName );
+   else
+      messageAllExcept(%client, -1, 'MsgClientJoinTeam', '\c2The admin has forced %4 to become an spectator.', %client, %client.team, %game.getTeamName(0), %client.playerName );
+
+   %game.onClientBecomeSpectator(%client);
 }
