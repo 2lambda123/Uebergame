@@ -181,6 +181,11 @@ function clientCmdDoZoomReticle(%val)
    }
 }
 
+function clientCmdStopZooming()
+{
+   turnOffZoom();
+}
+
 // ----------------------------------------------------------------------------
 // splatter Support
 // ----------------------------------------------------------------------------

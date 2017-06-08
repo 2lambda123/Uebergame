@@ -765,13 +765,8 @@ function turnOffZoom()
 {
    ServerConnection.zoomed = false;
    setFov($pref::Player::Fov);
-
-   // Rather than just disable the DOF effect, we want to set it to the level's
-   // preset values.
-   //DOFPostEffect.disable();
-   ppOptionsUpdateDOFSettings();
-   //reticle.setVisible(true);
-   //zoomReticle.setVisible(false);
+   reticle.setVisible(true);
+   zoomReticle.setVisible(false);
 }
 
 //------------------------------------------------------------------------------

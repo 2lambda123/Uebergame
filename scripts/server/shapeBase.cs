@@ -134,6 +134,7 @@ function ShapeBase::use(%player, %data)
 {
    if ( isObject(%player) && %data !$= "" )
    {
+      /*
       // Need to prevent weapon changing when zooming, but only shapes
       // that have a connection.
       %conn = %player.getControllingClient();
@@ -143,17 +144,36 @@ function ShapeBase::use(%player, %data)
          %fov = %conn.getControlCameraFov();
          if (%fov != %defaultFov)
             return false;
+      
+         // workaround method
+         //if ( %fov < 60)
+         //   return false;
       }
-
+      */
+      // may be junk code
       // Cannot use anything while in a station
-      if( %player.inStation )
-         return false;
+      //if( %player.inStation )
+      //   return false;
 
       //echo("\c3ShapeBase::use( " @ %player.client.nameBase @ ", " @ %data @ " )");
 
       if ( %player.hasInventory( %data ) )
       {
          %data.onUse(%player);
+         
+         // turn off zoom in case we were in iron sight/zoom mode
+         %client = %player.client;
+         if(%client)
+         {
+            commandToClient(%client, 'StopZooming');
+               
+            // set all player stats like in serverCmdUndoIronSights
+            %player.allowJumping(true);
+            %player.allowJetJumping(true);
+            %player.allowSprinting(true);
+            %player.allowSwimming(true);
+            %player.isInIronSights = false;
+         }
          return true;  
       }
       return false;
