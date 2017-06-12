@@ -20,23 +20,6 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//Functions which allow you to query the LAN or a master server for online games
-//queryLanServers
-//queryMasterServer
-//querySingleServer(Address, Flags)
-//cancelServerQuery
-//stopServerQuery
-//startHeartbeat
-//stopHeartbeat
-//getServerCount
-//setServerInfo(index)
-
-// Filter Flags:
-//Dedicated      (0)
-//NotPassworded  (1)
-//Linux          (2)
-//CurrentVersion (7)
-
 function JoinServerDlg::onWake()
 {
    // Add the server option menu:
@@ -94,7 +77,6 @@ function JoinServerDlg::onWake()
    JS_sort.setSelected(1);
 }
 
-//----------------------------------------
 function JoinServerDlg::query(%this)
 {
    JS_cancelQuery.setActive(1);
@@ -114,7 +96,6 @@ function JoinServerDlg::query(%this)
       );
 }
 
-//----------------------------------------
 function JoinServerDlg::queryLan(%this)
 {
    JS_cancelQuery.setActive(1);
@@ -133,7 +114,6 @@ function JoinServerDlg::queryLan(%this)
       );
 }
 
-//----------------------------------------
 function JoinServerDlg::cancel(%this)
 {
    cancelServerQuery();
@@ -141,7 +121,6 @@ function JoinServerDlg::cancel(%this)
    JS_statusText.setText("Query Canceled");
 }
 
-//----------------------------------------
 function JoinServerDlg::join(%this)
 {
    // disconnect from main menu level first
@@ -179,14 +158,12 @@ function JoinServerDlg::join(%this)
       MessageBoxOk("No Server Selected","You need to select an available server. Press the Query button to list available servers.");
 }
 
-//----------------------------------------
 function JoinServerDlg::exit(%this)
 {
    cancelServerQuery();
    Canvas.popDialog(JoinServerDlg);
 }
 
-//----------------------------------------
 function JoinServerDlg::update(%this)
 {
    // Copy the servers into the server list.
@@ -235,7 +212,7 @@ function JS_serverList::onRightMouseDown(%this, %column, %row, %mousePos)
    // Force the opening of the drop down, this is for ease of use
    ServerPopupMenu.forceOnAction();
 }
-//queryFavoriteServers(0);
+
 function ServerPopupMenu::onSelect(%this, %id, %text)
 {
    switch(%id)
@@ -315,7 +292,6 @@ function JS_sort::onSelect(%this, %id, %text)
    }
 }
 
-//----------------------------------------
 function onServerQueryStatus(%status, %msg, %value)
 {
    // Update query status

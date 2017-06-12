@@ -19,6 +19,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
+
 AdminDlg.initialized = false; //set variable to fix non-initiated PlayerPopupMenu
 
 function AdminDlg::toggle(%this, %val)
@@ -68,9 +69,6 @@ function AdminDlg::onWake(%this)
       %this.initialized = true;
    }
 
-   // Start off the player list update schedule
-   //commandToServer('SendPlayerListUpdate');
-
    %headerStyle = "<font:Arial:14><color:7777ff>";
    %statusText = "<spop><spush>" @ %headerStyle @ "SERVER NAME:<spop>" SPC $Client::ServerName
          NL "<spush>" @ %headerStyle @ "MISSION TYPE:<spop>" SPC $Client::MissionTypeName 
@@ -111,17 +109,9 @@ function AdminDlg::onSleep(%this)
    // Make sure the proper key maps are pushed
    tge.updateKeyMaps();
 }
-/*
-function AdminDlg::onOption(%this)
-{
-   Canvas.popDialog( AdminDlg );
-   OptionsDlg.setVisible(true);
-   Canvas.pushDialog( OptionsDlg );
-}
-*/
-//-----------------------------------------------------------------------------
-// Player pop-up stuffs
 
+// Player pop-up stuffs
+//-----------------------------------------------------------------------------
 function PlayerListGuiList::onSelect(%this, %id, %text)
 {
    //LogEcho("PlayerListGuiList::onSelect(" SPC %this.getName() SPC %id SPC %text SPC ")");
@@ -167,8 +157,6 @@ function LobbyPlayerActionDlg::onSleep(%this)
 {
 
 }
-
-//-----------------------------------------------------------------------------
 
 function PlayerPopupMenu::onSelect(%this, %id, %text)
 {
@@ -241,8 +229,6 @@ function PlayerPopupMenu::onCancel(%this)
 {
    Canvas.popDialog(PlayerAdminActionDlg);
 }
-
-//-----------------------------------------------------------------------------
 
 function ESC_ServerListPane::onWake(%this)
 {
@@ -456,6 +442,7 @@ function ClientCmdVoteSubmitted(%type)
 {
    clientCmdClearBottomPrint();
    
+   // #investigage and decide if these sound effects should be used or not
    //if(%type)
    //   alxPlay(VoteNoSound, 0, 0, 0);
    //else
@@ -468,8 +455,6 @@ function PrivateMessage(%clientId)
    %notice = "\c2Next message you send will be private to: " @ $PlayerList[%clientId].playerName;
    onChatMessage(%notice);
 }
-
-//-----------------------------------------------------------------------------
 
 function ClientCmdFillCmdMenuDropdown(%text)
 {

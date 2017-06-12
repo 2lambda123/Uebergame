@@ -20,6 +20,8 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// Custom cursors seem to be broken #cleanup
+// search for all "Canvas.setCursor" to see where else it is used
 if($platform $= "macos")
 {
    new GuiCursor(DefaultCursor)

@@ -35,10 +35,6 @@ function PlayGui::onWake(%this)
       chatHud.attach(HudMessageVector);
    }
 
-   // Add the cluster and objective huds.
-   // Adding keeps them in the foreground in case we are zoomed.
-   //%this.add(ClusterHud);
-
    // Add the FireTeam hud
    %this.add(FireTeamHud);
 
@@ -75,8 +71,6 @@ function PlayGui::onSleep(%this)
       hudMap.pop();
       hudMap.delete();
    }
-
-   //chatHud.detach(HudMessageVector);
 }
 
 function PlayGui::clearHud( %this )
@@ -86,8 +80,6 @@ function PlayGui::clearHud( %this )
    while ( %this.getCount() > 0 )
       %this.getObject( 0 ).delete();
 }
-
-//-----------------------------------------------------------------------------
 
 function PlayGui::refreshElements(%this)
 {
@@ -105,7 +97,6 @@ function PlayGui::refreshElements(%this)
    //echo( "NEW RETICLE POSITION:" SPC %subX SPC %subY );
    //reticle.setPosition( %subX, %subY );
 
-
    //%x = ( getWord( Canvas.getVideoMode(), 0 ) * 0.5 );
    //%y = ( getWord( Canvas.getVideoMode(), 1 ) * 0.5 );
    //echo( "CANVAS CENTER:" SPC %x SPC %y );
@@ -114,7 +105,7 @@ function PlayGui::refreshElements(%this)
    zoomReticle.extent = getWord(Canvas.getVideoMode(), 0) SPC getWord(Canvas.getVideoMode(), 1);
    BottomPrintText.position = "0 0";
    CenterPrintText.position = "0 0";
-   //HudRadar.position = "10 10";
+
    //LagIcon.position = "10 165";
 }
 
@@ -133,17 +124,3 @@ function PlayGui::onRightMouseDragged(%this){ }
 function PlayGui::onMiddleMouseDown(%this){ }
 function PlayGui::onMiddleMouseUp(%this){ }
 function PlayGui::onMiddleMouseDragged(%this){ }
-/*
-function PlayGui::onRightMouseDown(%this, %pos, %start, %ray)
-{   
-   if( Canvas.isCursorOn() )
-      Canvas.cursorOff();
-   else
-      Canvas.cursorOn();
-
-   if( Canvas.isCursorShown() )
-      Canvas.hideCursor();
-   else
-      Canvas.showCursor();
-}
-*/

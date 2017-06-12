@@ -20,13 +20,11 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
 function LoadingGui::onAdd(%this)
 {
    %this.qLineCount = 0;
 }
 
-//------------------------------------------------------------------------------
 function LoadingGui::onWake(%this)
 {
    CloseMessagePopup();
@@ -39,7 +37,6 @@ function LoadingGui::onWake(%this)
    %this.sfxSource.play();
 }
 
-//------------------------------------------------------------------------------
 function LoadingGui::onSleep(%this)
 {
    %this.reset();
@@ -74,15 +71,12 @@ function LOAD_MessageVector::addLine(%this, %text)
 // Before downloading a mission, the server transmits the mission
 // information through these messages.
 //------------------------------------------------------------------------------
-
 addMessageCallback('MsgLoadInfo', handleLoadInfoMessage);
 addMessageCallback('MsgLoadDescLine', handleLoadDescriptionMessage);
 addMessageCallback('MsgLoadRulesLine', handleLoadRulesLineMessage);
 addMessageCallback('MsgLoadServerInfoLine', handleLoadServerInfoMessage);
 addMessageCallback('MsgLoadInfoDone', handleLoadInfoDoneMessage);
 addMessageCallback('MsgLoadFailed', handleLoadFailedMessage);
-
-//------------------------------------------------------------------------------
 
 function handleLoadInfoMessage(%msgType, %msgString, %misFile, %mapName, %typeName, %missionType)
 {
@@ -127,8 +121,6 @@ function handleLoadInfoMessage(%msgType, %msgString, %misFile, %mapName, %typeNa
    LOAD_MissionType.setText( "<color:ffffff><shadowcolor:000000><shadow:3:3><font:ArialBold:24>" @ %typeName );
 }
 
-//------------------------------------------------------------------------------
-
 function handleLoadDescriptionMessage(%msgType, %msgString, %line)
 {
    %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
@@ -140,16 +132,12 @@ function handleLoadDescriptionMessage(%msgType, %msgString, %line)
    AdminDlg.qLineCount++;
 }
 
-//------------------------------------------------------------------------------
-
 function handleLoadRulesLineMessage(%msgType, %msgString, %line)
 {
    %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_GameText.addtext( %text @ "\n\n", true );
 }
-
-//------------------------------------------------------------------------------
 
 function handleLoadServerInfoMessage(%msgType, %msgString, %line)
 {
@@ -158,14 +146,10 @@ function handleLoadServerInfoMessage(%msgType, %msgString, %line)
    LOAD_ServerInfo.addtext( %text @ "\n\n", true );
 }
 
-//------------------------------------------------------------------------------
-
 function handleLoadInfoDoneMessage(%msgType, %msgString)
 {
    // This will get called after the last description line is sent.
 }
-
-//------------------------------------------------------------------------------
 
 function handleLoadFailedMessage( %msgType, %msgString )
 {

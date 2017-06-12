@@ -569,9 +569,8 @@ function swapTeamLines()
    }
 }
 
-//-----------------------------------------------------------------------------
 //Generic msg callbacks...
-
+//-----------------------------------------------------------------------------
 addMessageCallback('MsgYourRankIs', yourRankIs);
 
 function yourRankIs(%msgType, %msgString, %a1, %a2, %a3, %a4, %a5, %a6)
@@ -621,9 +620,8 @@ function handleYourKills(%msgType, %msgString, %kills)
       objectiveHud.yourKills.setValue(%kills);
 }
 
-//-----------------------------------------------------------------------------
 // Team Deathmatch - Hud Messages
-
+//-----------------------------------------------------------------------------
 function tdmAddTeam(%msgType, %msgString, %teamNum, %team)
 {
    %teamName = detag(%team);
@@ -640,9 +638,8 @@ function tdmTeamDeaths(%msgType, %msgString, %teamNum, %deaths, %a3, %a4, %a5, %
 addMessageCallback('MsgTDMAddTeam', tdmAddTeam);
 addMessageCallback('MsgTDMTeamDeaths', tdmTeamDeaths);
 
-//-----------------------------------------------------------------------------
 // Marked for Death - Hud Messages
-
+//-----------------------------------------------------------------------------
 function mfdAddTeam(%msgType, %msgString, %teamNum, %team)
 {
    %teamName = detag(%team);
@@ -660,9 +657,8 @@ function mfdMarkName(%msgType, %msgString, %teamNum, %mark, %a3, %a4, %a5, %a6)
 addMessageCallback('MsgMfDAddTeam', mfdAddTeam);
 addMessageCallback('MsgMfDMarkName', mfdMarkName);
 
-//-----------------------------------------------------------------------------
 // Retrieve the Flag - Hud Messages
-
+//-----------------------------------------------------------------------------
 function rtfAddTeam(%msgType, %msgString, %teamNum, %team)
 {
    %teamName = detag(%team);

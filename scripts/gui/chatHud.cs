@@ -89,7 +89,6 @@ function playMessageSound(%message, %voice, %pitch)
    return %wavStart;
 }
 
-
 // All messages are stored in this HudMessageVector, the actual
 // MainChatHud only displays the contents of this vector.
 
@@ -97,7 +96,6 @@ new MessageVector(HudMessageVector);
 GuiGroup.add(HudMessageVector);
 $LastHudTarget = 0;
 
-//-----------------------------------------------------------------------------
 function onChatMessage(%message, %voice, %pitch)
 {
    // XXX Client objects on the server must have voiceTag and voicePitch
@@ -139,13 +137,11 @@ function onServerMessage(%message)
 //-----------------------------------------------------------------------------
 // MainChatHud methods
 //-----------------------------------------------------------------------------
-
 function MainChatHud::onWake( %this )
 {
    // set the chat hud to the users pref
    %this.setChatHudLength( $pref::ChatHudLength );
 }
-//------------------------------------------------------------------------------
 
 function MainChatHud::setChatHudLength( %this, %length )
 {
@@ -168,8 +164,6 @@ function MainChatHud::setChatHudLength( %this, %length )
    ChatScrollHud.scrollToBottom();
    ChatPageDown.setVisible(false);
 }
-
-//------------------------------------------------------------------------------
 
 function MainChatHud::nextChatHudLen( %this )
 {
@@ -220,8 +214,6 @@ function ChatHud::addLine(%this,%text)
       chatPageDown.setVisible(false);
 }
 
-//-----------------------------------------------------------------------------
-
 function ChatHud::pageUp(%this)
 {
    // Find out the text line height
@@ -255,8 +247,6 @@ function ChatHud::pageUp(%this)
    // Display the pageup icon
    chatPageDown.setVisible(true);
 }
-
-//-----------------------------------------------------------------------------
 
 function ChatHud::pageDown(%this)
 {
@@ -298,7 +288,6 @@ function ChatHud::pageDown(%this)
 //-----------------------------------------------------------------------------
 // Support functions
 //-----------------------------------------------------------------------------
-
 function pageUpMessageHud()
 {
    ChatHud.pageUp();
@@ -313,4 +302,3 @@ function cycleMessageHudSize()
 {
    MainChatHud.nextChatHudLen();
 }
-

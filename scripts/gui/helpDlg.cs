@@ -70,8 +70,6 @@ function getHelp(%helpName)
          }
       }
       HelpFileList.setSelectedRow(%index);
-      //%index = HelpFileList.findTextIndex(%helpName);
-      //HelpFileList.setSelectedRow(%index);
    }
 }
 

@@ -22,22 +22,16 @@
 
 // A very simple music player.
 
-//---------------------------------------------------------------------------------------------
 // Prerequisites.
-
 if( !isObject( GuiMusicPlayer ) )
    exec( "./guiMusicPlayer.gui" );
 
-//---------------------------------------------------------------------------------------------
 // Preferences.
-
 $pref::GuiMusicPlayer::filePattern = "*.ogg\t*.wav";
 $pref::GuiMusicPlayer::filePatternFMOD = "*.aiff\t*.asf\t*.flac\t*.it\t*.mid\t*.mod\t*.mp2\t*.mp3\t*.ogg\t*.s3m\t*.vag\t*.wav\t*.wma\t*.xm";
 $pref::GuiMusicPlayer::fadeTime = "3.0";
 
-//---------------------------------------------------------------------------------------------
 // Datablocks.
-
 singleton SFXDescription( GuiMusicPlayerStream : AudioMusic2D )
 {
    volume = 1.0;
@@ -54,9 +48,7 @@ singleton SFXDescription( GuiMusicPlayerLoopingStream : AudioMusic2D )
    is3D = false;
 };
 
-//---------------------------------------------------------------------------------------------
 // Methods.
-
 function GuiMusicPlayer_onSFXSourceStatusChange( %id, %status )
 {
    if( %status $= "Stopped" )

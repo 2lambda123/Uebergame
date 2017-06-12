@@ -70,8 +70,6 @@ function getCredits(%creditsName)
          }
       }
       CreditsFileList.setSelectedRow(%index);
-      //%index = HelpFileList.findTextIndex(%helpName);
-      //HelpFileList.setSelectedRow(%index);
    }
 }
 

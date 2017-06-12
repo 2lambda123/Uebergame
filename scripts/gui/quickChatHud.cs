@@ -116,8 +116,6 @@ function parentChatGroup()
    QuickChatMenuHud.selectObject($CurrentChatMenu.parent);
 }
 
-// -----------------------------------------------------------------------------
-
 function QuickChatMenuHud::onWake( %this )
 {
    %this.readObject(ChatMenuGroup);
@@ -173,8 +171,6 @@ function QuickChatMenuHud::selectObject( %this, %object )
       canvas.popdialog(%this);
    }
 }
-
-// -----------------------------------------------------------------------------
 
 if ( isFile( $HomePath @ "/quickChat.cs" ) )
    exec( $HomePath @ "/quickChat.cs" );

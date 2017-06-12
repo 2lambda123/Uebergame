@@ -39,7 +39,6 @@ if( isObject( MessageBoxOKDlg ) )
 if( isObject( IODropdownDlg ) )
    IODropdownDlg.delete();
    
-
 // Load Editor Dialogs
 exec("./messageBoxOk.ed.gui");
 exec("./messageBoxYesNo.ed.gui");
@@ -49,11 +48,12 @@ exec("./MessageBoxOKCancelDetailsDlg.ed.gui");
 exec("./messagePopup.ed.gui");
 exec("./IODropdownDlg.ed.gui");
 
-
-
 // --------------------------------------------------------------------
 // Message Sound
 // --------------------------------------------------------------------
+// #investigate #fixit See if this is used or useful and eventually fix it or remove it
+// messages sounds may be nice but also have potential of being annoying, but they could be
+// turned off through an extra audio channel
 /*new SFXDescription(MessageBoxAudioDescription)
 {
    volume      = 1.0;
@@ -69,9 +69,6 @@ new SFXProfile(messageBoxBeep)
    preload     = true;
 };*/
 
-
-
-
 //---------------------------------------------------------------------------------------------
 // messageCallback
 // Calls a callback passed to a message box.
@@ -82,8 +79,7 @@ function messageCallback(%dlg, %callback)
    eval(%callback);
 }
 
-//The # in the function passed replaced with the output 
-//of the preset menu.
+//The # in the function passed replaced with the output of the preset menu.
 function IOCallback(%dlg, %callback)
 {
    %id = IODropdownMenu.getSelected();
@@ -132,7 +128,6 @@ function MBSetText(%text, %frame, %msg)
 // Various message box display functions. Each one takes a window title, a message, and a
 // callback for each button.
 //---------------------------------------------------------------------------------------------
-
 function MessageBoxOK(%title, %message, %callback)
 {
    MBOKFrame.text = %title;
@@ -277,7 +272,6 @@ function MessagePopup(%title, %message, %delay)
 // By passing in a simgroup or simset, the user will be able to choose a child of that group
 // through a guiPopupMenuCtrl
 //---------------------------------------------------------------------------------------------
-
 function IODropdown(%title, %message, %simgroup, %callback, %cancelCallback)
 {
    IODropdownFrame.text = %title;
@@ -313,7 +307,6 @@ function CloseMessagePopup()
 //---------------------------------------------------------------------------------------------
 // "Old" message box function aliases for backwards-compatibility.
 //---------------------------------------------------------------------------------------------
-
 function MessageBoxOKOld( %title, %message, %callback )
 {
    MessageBoxOK( %title, %message, %callback );

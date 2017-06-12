@@ -1,4 +1,5 @@
 // Bind - Team - Menu name - Displayed Text - Wav file - Animation - Play3D Audio
+// #extend #improve , this feature needs a rework with better categories and messages
 openChatRoot();
 
 openChatGroup("1", "Global");
@@ -58,4 +59,3 @@ openChatGroup("5", "Defense");
    addChatItem("8", true, "Incomming E", "INCOMING EAST!", 0);
    addChatItem("9", true, "Incomming W", "INCOMING WEST!", 0);
 closeChatGroup();
-

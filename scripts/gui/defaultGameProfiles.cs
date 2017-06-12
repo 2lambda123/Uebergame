@@ -20,8 +20,8 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
 // Override base controls
+//-----------------------------------------------------------------------------
 GuiMenuButtonProfile.soundButtonOver = "AudioButtonOverSoundList";
 GuiMenuButtonProfile.soundButtonDown = "AudioButtonAcceptSoundList"; //positive sound for all else
 GuiMenuButtonProfile2.soundButtonOver = "AudioButtonOverSoundList";
@@ -34,12 +34,11 @@ GuiPopUpMenuProfile.soundButtonOver = "AudioMenuItemHoverSoundList"; //hover sou
 GuiPopUpMenuProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
 GuiCheckBoxProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
 GuiCheckBoxProfile.soundButtonDown = "AudioCheckboxCheckSoundList";
-//GuiTabBookProfile.soundButtonOver = "AudioMenuItemHoverSoundList";
-//GuiTabBookProfile.soundButtonDown = "AudioMenuItemHoverSoundList";
+//GuiTabBookProfile.soundButtonOver = "AudioMenuItemHoverSoundList"; // Those do not work, missing callback in source code
+//GuiTabBookProfile.soundButtonDown = "AudioMenuItemHoverSoundList"; // Those do not work, missing callback in source code
 
-//-----------------------------------------------------------------------------
 // Chat Hud profiles
-
+//-----------------------------------------------------------------------------
 singleton GuiControlProfile (ChatHudEditProfile)
 {
    fontType = "Arial";
@@ -108,6 +107,8 @@ singleton GuiControlProfile ("ChatHudMessageProfile")
    autoSizeHeight = true;
 };
 */
+// #improve chatHud colors could be improved so they can be easily read and do not hurt in the eyes
+// and also so that every event has a distinct color for easy separation
 singleton GuiControlProfile(ChatHudMessageProfile)
 {
    fontType = "Arial";
@@ -154,8 +155,6 @@ singleton GuiControlProfile(GuiShapeNameProfile)
    fontSize = "14";
 };
 
-//-----------------------------------------------------------------------------
-
 singleton GuiControlProfile(GuiTextNoKeyEditProfile)
 {
    opaque = true;
@@ -180,7 +179,6 @@ singleton GuiControlProfile(GuiTextNoKeyEditProfile)
 // -----------------------------------------------------------------------------
 // Load Screen
 // -----------------------------------------------------------------------------
-
 singleton GuiControlProfile(GuiLoadPaneProfile)
 {
    opaque = true;
@@ -190,9 +188,8 @@ singleton GuiControlProfile(GuiLoadPaneProfile)
    fillColor = "128 0 0 200";
 };
 
-//-----------------------------------------------------------------------------
 // Score Hud profiles
-
+//-----------------------------------------------------------------------------
 singleton GuiControlProfile(GameOverHeaderProfile)
 {
    opaque = false;
@@ -233,8 +230,8 @@ singleton GuiControlProfile(BloodStreakProfile)
    fillColor = "128 0 0";
 };
 
-//-----------------------------------------------------------------------------
 // Objective Hud profiles
+//-----------------------------------------------------------------------------
 
 //Bottom
 singleton GuiControlProfile(ObjTextLeftProfile)
@@ -267,9 +264,8 @@ singleton GuiControlProfile(ObjTextTeamCenterProfile : ObjTextLeftProfile)
    fontColors[0] = "0 224 0 255";
 };
 
-//-----------------------------------------------------------------------------
 // Name coloring for OptionsDlg
-
+//-----------------------------------------------------------------------------
 singleton GuiControlProfile(FriendNameTextProfile : GuiTextProfile)
 {
    fontColor = "0 224 0";
@@ -282,9 +278,8 @@ singleton GuiControlProfile(EnemyNameTextProfile : GuiTextProfile)
    justify = "center";
 };
 
-//-----------------------------------------------------------------------------
 // ScoreHud
-
+//-----------------------------------------------------------------------------
 singleton GuiControlProfile(ScoreHudHeaderProfile)
 {
    fontType = "ArialBold";
@@ -360,7 +355,7 @@ singleton GuiControlProfile( GuiPopUpMenuProfile2)
    fillColorNA = "18 18 18 255";
    fillColorSEL = "116 116 116 255";
    
-      // sounds
+   // sounds
    soundButtonDown = "AudioButtonOverSoundList";
    soundButtonOver = "AudioButtonOverSoundList";
 };

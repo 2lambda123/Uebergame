@@ -26,9 +26,7 @@ function ConsoleEntry::eval()
    if( %text $= "" )
       return;
    
-   // If it's missing a trailing () and it's not a variable,
-   // append the parentheses.
-
+   // If it's missing a trailing () and it's not a variable, append the parentheses.
    if( strpos(%text, "(") == -1 && !isDefined( %text ) )
    {
       if(strpos(%text, "=") == -1 && strpos(%text, " ") == -1)
@@ -41,16 +39,13 @@ function ConsoleEntry::eval()
    }
    
    // Append a semicolon if need be.
-
    %pos = strlen(%text) - 1;
    if(strpos(%text, ";", %pos) == -1 && strpos(%text, "}") == -1)
    {
       %text = %text @ ";";
    }
    
-   // Turn off warnings for assigning from void
-   // and evaluate the snippet.
-   
+   // Turn off warnings for assigning from void and evaluate the snippet.
    if( !isDefined( "$Con::warnVoidAssignment" ) )
       %oldWarnVoidAssignment = true;
    else
@@ -75,7 +70,6 @@ function ConsoleEntry::eval()
    ConsoleEntry.setValue("");
    
    // Echo result.
-   
    if( %result !$= "" )
       echo( %result );
 }
@@ -156,7 +150,6 @@ function updateConsoleErrorWindow()
    if($ScriptErrorHash != $ScriptErrorHashDisplayed && $ScriptErrorHash != 0)
    {
       // Hash was different so there must be a new error. Update the display!
-
       %oldText = ConsoleErrorDisplay.getText();
       
       if(%oldText !$= "")

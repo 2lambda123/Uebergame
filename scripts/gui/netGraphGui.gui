@@ -1,3 +1,5 @@
+// functions have to be included in the .gui file for the netgraph for some reason, otherwise it will not work
+
 function execNetGraphGuiGUI()
 {
    if ( isObject( NetGraphGui ) )

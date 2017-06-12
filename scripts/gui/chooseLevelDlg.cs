@@ -72,8 +72,7 @@ function ChooseLevelDlg::onWake(%this)
 
 function ChooseLevelDlg::onSleep( %this )
 {
-   // This is set from the outside, only stays true for a single wake/sleep
-   // cycle.
+   // This is set from the outside, only stays true for a single wake/sleep cycle.
    %this.launchInEditor = false;
 }
 
@@ -87,9 +86,7 @@ function buildMissionTypePopup(%popup)
 }
 
 // Do this onMouseUp not via Command which occurs onMouseDown so we do
-
 // not have a lingering mouseUp event lingering in the ether.
-
 function ChooseLevelDlgGoBtn::onMouseUp( %this )
 {
    // disconnect from main menu level first
@@ -175,14 +172,7 @@ function CL_LevelList::onSelect(%this, %row)
    {
       CL_Preview.setBitmap( "levels/load_mission.jpg" );
    }
-/*
-   // Set the preview bitmap which is the mission name.jpg
-   %image = filePath(%mission) @ "/load_" @ fileBase(%mission) @ ".jpg";
-   if ( isFile( %image ) )
-      CL_Preview.setBitmap( %image );
-   else
-      CL_Preview.setBitmap( "levels/load_mission.jpg" );
-*/
+
    // Extract mission description from the mission file and stuff into a global array.
    %this.getMissionInfo(%mission);
 

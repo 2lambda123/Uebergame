@@ -57,9 +57,8 @@ function StartSelectedDemo()
    new GameConnection(ServerConnection);
    RootGroup.add(ServerConnection);
   
-   // Start up important client-side stuff, such as the group
-   // for particle emitters.  This doesn't get launched during a demo
-   // as we short circuit the whole mission loading sequence.
+   // Start up important client-side stuff, such as the group for particle emitters.
+   // This doesn't get launched during a demo as we short circuit the whole mission loading sequence.
    clientStartMission();
 
    if(ServerConnection.playDemo(%file))
@@ -99,22 +98,7 @@ function startDemoRecord()
    %file = expandFileName( %file );
      
    $recordingNumber++;
-   /*
-   for(%i = 0; %i < 1000; %i++)
-   {
-      %num = %i;
-      if(%num < 10)
-         %num = "0" @ %num;
-      if(%num < 100)
-         %num = "0" @ %num;
 
-      %file = GetUserHomeDirectory() @ "/My Games/" @ $AppName @ "/recordings/demo" @ %num @ ".rec";
-      if(!isfile(%file))
-         break;
-   }
-   if(%i == 1000)
-      return;
-*/
    $DemoFileName = %file;
 
    ChatHud.AddLine( "\c4Recording to file \c2[" @ $DemoFileName @ "\cr]");
@@ -145,10 +129,8 @@ function demoPlaybackComplete()
 {
    disconnect();
 
-   // Clean up important client-side stuff, such as the group
-   // for particle emitters and the decal manager.  This doesn't get 
-   // launched during a demo as we short circuit the whole mission 
-   // handling functionality.
+   // Clean up important client-side stuff, such as the group for particle emitters and the decal manager.
+   // This doesn't get launched during a demo as we short circuit the whole mission handling functionality.
    clientEndMission();
 
       if ($pref::Menu::Level)

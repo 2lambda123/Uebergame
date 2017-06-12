@@ -20,13 +20,10 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-/// Returns true if the current quality settings equal
-/// this graphics quality level.
+/// Returns true if the current quality settings equal this graphics quality level.
 function GraphicsQualityLevel::isCurrent( %this )
 {
-   // Test each pref to see if the current value
-   // equals our stored value.
-   
+   // Test each pref to see if the current value equals our stored value.
    for ( %i=0; %i < %this.count(); %i++ )
    {
       %pref = %this.getKey( %i );
@@ -35,13 +32,11 @@ function GraphicsQualityLevel::isCurrent( %this )
       if ( getVariable( %pref ) !$= %value )
          return false;
    }
-   
    return true;
 }
 
-/// Applies the graphics quality settings and calls 
-/// 'onApply' on itself or its parent group if its 
-/// been overloaded.
+/// Applies the graphics quality settings and calls 'onApply' on itself
+/// or its parent group if its been overloaded.
 function GraphicsQualityLevel::apply( %this )
 {
    for ( %i=0; %i < %this.count(); %i++ )
@@ -50,9 +45,7 @@ function GraphicsQualityLevel::apply( %this )
       %value = %this.getValue( %i );
       setVariable( %pref, %value );
    }
-   
-   // If we have an overloaded onApply method then
-   // call it now to finalize the changes.
+   // If we have an overloaded onApply method then call it now to finalize the changes.
    if ( %this.isMethod( "onApply" ) )   
       %this.onApply();
    else
@@ -291,33 +284,29 @@ function OptionsDlg::onWake(%this)
 
 function OptionsDlg::onSleep(%this)
 {  
-         // Player
-         OptPlayerNameInput.setField();
-         %playerName = OptPlayerNameInput.getValue();
-         %skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
-         $pref::Player = %playerName TAB %skin;
+   // Player
+   OptPlayerNameInput.setField();
+   %playerName = OptPlayerNameInput.getValue();
+   %skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
+   $pref::Player = %playerName TAB %skin;
 
-	  	 // Mouse
-         %xSens = MouseXSlider.getValue();
-         %ySens = MouseYSlider.getValue();
-         moveMap.bind( mouse, xaxis, "S", %xSens, "yaw" );
-         %yFlags = InvertMouseTgl.getValue() ? "SI" : "S";
-         moveMap.bind( mouse, yaxis, %yFlags, %ySens, "pitch" );
+   // Mouse
+   %xSens = MouseXSlider.getValue();
+   %ySens = MouseYSlider.getValue();
+   moveMap.bind( mouse, xaxis, "S", %xSens, "yaw" );
+   %yFlags = InvertMouseTgl.getValue() ? "SI" : "S";
+   moveMap.bind( mouse, yaxis, %yFlags, %ySens, "pitch" );
 	 
-         switch ( MouseZActionMenu.getSelected() )
-         {
-            case 2:
-               moveMap.bind( mouse, zaxis, cycleWeaponAxis );
-            case 3:
-               moveMap.bind( mouse, zaxis, cycleNextWeaponOnly );
-            //case 4:
-            //   moveMap.bind( mouse, zaxis, toggleZoomFOV );
-            default:
-               moveMap.unbind( mouse, zaxis );
-         }
-		 
+   switch ( MouseZActionMenu.getSelected() )
+   {
+      case 2:
+         moveMap.bind( mouse, zaxis, cycleWeaponAxis );
+      case 3:
+         moveMap.bind( mouse, zaxis, cycleNextWeaponOnly );
+      default:
+         moveMap.unbind( mouse, zaxis );
+   }
    // write out the control config files into the user home directory
-
    moveMap.save($HomePath @ "/bindings.cs", false);
    spectatorMap.save($HomePath @ "/bindings.cs", true);
    vehicleMap.save($HomePath @ "/bindings.cs", true);
@@ -382,8 +371,7 @@ function OptionsDlg::initResMenu( %this )
    %resMenu = %this-->OptGraphicsResolutionMenu;	   
    %resMenu.clear();
    
-   // If we are in a browser then we can't change our resolution through
-   // the options dialog
+   // If we are in a browser then we can't change our resolution through the options dialog
    if (getWebDeployment())
    {
       %count = 0;
@@ -441,8 +429,7 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
    // Gather the new video mode.
    if ( isFunction("getWebDeployment") && getWebDeployment() )
    {
-      // Under web deployment, we use the custom resolution rather than a Canvas
-      // defined one.
+      // Under web deployment, we use the custom resolution rather than a Canvas defined one.
       %newRes = %this-->OptGraphicsResolutionMenu.getText();
    }
    else
@@ -463,8 +450,7 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
    }
    else if ( %newFullScreen $= "false" )
    {
-      // If we're in windowed mode switch the fullscreen check
-      // if the resolution is bigger than the desktop.
+      // If we're in windowed mode switch the fullscreen check, if the resolution is bigger than the desktop.
       %deskRes    = getDesktopResolution();      
       %deskResX   = getWord(%deskRes, $WORD::RES_X);
       %deskResY   = getWord(%deskRes, $WORD::RES_Y);
@@ -507,8 +493,7 @@ function OptionsDlg::applyGraphics( %this, %testNeedApply )
       $pref::Video::defaultAnisotropy = %aniLevel;
    }
    
-   // If we're applying the state then recheck the 
-   // state to update the apply button.
+   // If we're applying the state then recheck the state to update the apply button.
    if ( !%testNeedApply )
       %this._updateApplyState();
       
@@ -537,9 +522,8 @@ function OptionsDlg::_autoDetectQuality( %this )
    }
 }
 
-//------------------------------------------------------------------------------
 // Keymaps
-
+//------------------------------------------------------------------------------
 function restoreDefaultMappings()
 {
    moveMap.delete();
@@ -762,8 +746,7 @@ function findRemapCmdIndex( %command )
    return( -1 );	
 }
 
-/// This unbinds actions beyond %count associated to the
-/// particular moveMap %commmand.
+/// This unbinds actions beyond %count associated to the particular moveMap %commmand.
 function unbindExtraActions( %command, %count )
 {
    switch$ ( OptControlsPane.group )
@@ -847,15 +830,13 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
       }
    }
 
-   // Grab the friendly display name for this action
-   // which we'll use when prompting the user below.
+   // Grab the friendly display name for this action which we'll use when prompting the user below.
    %mapName = getMapDisplayName( %device, %action );
    
    // Get the current command this action is mapped to.
    %prevMap = %actionMap.getCommand( %device, %action );
 
-   // If nothing was mapped to the previous command 
-   // mapping then it's easy... just bind it.
+   // If nothing was mapped to the previous command mapping then it's easy... just bind it.
    if ( %prevMap $= "" )
    {
       unbindExtraActions( %cmd, 1 );
@@ -864,9 +845,8 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
       return;
    }
 
-   // If the previous command is the same as the 
-   // current then they hit the same input as what
-   // was already assigned.
+   // If the previous command is the same as the current
+   // then they hit the same input as what was already assigned.
    if ( %prevMap $= %cmd )
    {
       unbindExtraActions( %cmd, 0 );
@@ -878,9 +858,8 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
    // Look for the index of the previous mapping.
    %prevMapIndex = findRemapCmdIndex( %prevMap );
    
-   // If we get a negative index then the previous 
-   // mapping was to an item that isn't included in
-   // the mapping list... so we cannot unmap it.
+   // If we get a negative index then the previous mapping was to an item
+   // that isn't included in the mapping list... so we cannot unmap it.
    if ( %prevMapIndex == -1 )
    {
       MessageBoxOK( "Remap Failed", "\"" @ %mapName @ "\" is already bound to a non-remappable command!" );
@@ -891,8 +870,7 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
    %callback = "redoMapping(" @ %device @ ", \"" @ %action @ "\", \"" @
                               %cmd @ "\", " @ %prevMapIndex @ ", " @ %this.index @ ");";
    
-   // Warn that we're about to remove the old mapping and
-   // replace it with another.
+   // Warn that we're about to remove the old mapping and replace it with another.
    switch$ ( OptControlsPane.group )
    {
       case "Spectator":
@@ -909,9 +887,8 @@ function OptRemapInputCtrl::onInputEvent( %this, %device, %action )
        %callback, "" );
 }
 
-//------------------------------------------
 // Mouse
-
+//------------------------------------------
 function MouseXSlider::sync( %this )
 {
    %thisValue = %this.getValue();
@@ -952,8 +929,8 @@ function toggleInvertYAxis()
    }
 }
 
-//------------------------------------------------------------------------------
 // Audio
+//------------------------------------------------------------------------------
 $AudioTestHandle = 0;
 // Description to use for playing the volume test sound.  This isn't
 // played with the description of the channel that has its volume changed
@@ -1071,8 +1048,6 @@ function OptAudioUpdate()
    }
 }
 
-//-----------------------------------------------------------------------------
-
 function Tgl_9::onAction(%this)
 {
    if ( %this.getValue() )
@@ -1157,9 +1132,8 @@ function Tgl_14::onAction(%this)
    }
 }
 
-//------------------------------------------------------------------------------
 // Player Pane
-
+//------------------------------------------------------------------------------
 function OptPlayerNameInput::setField(%this)
 {
    // called when you type in text input field

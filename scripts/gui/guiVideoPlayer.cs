@@ -29,15 +29,11 @@
    //TheoraVideo.getCurrentTime();
    //TheoraVideo.isPlaybackDone();
 
-//---------------------------------------------------------------------------------------------
 // Prerequisites.
-
 if( !isObject( GuiVideoPlayer ) )
    exec( "./guiVideoPlayer.gui" );
 
-//---------------------------------------------------------------------------------------------
 // Methods.
-
 function GuiVideoPlayer::onWake( %this )
 {
     GuiVideoPlayerVideoList.clear();

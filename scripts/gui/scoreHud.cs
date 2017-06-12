@@ -19,6 +19,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
+
 function ScoreGui::configure(%this, %gameType)
 {
    ScoreHud.PlayerScore[0] = new GuiTextListCtrl() {
@@ -96,8 +97,6 @@ function ScoreGui::onSleep(%this)
    tge.updateKeyMaps(); 
 }
 
-//------------------------------------------------------------------------------
-
 function clientCmdToggleScoreHud(%val)
 {
    %hud = ScoreGui.getId();
@@ -123,7 +122,6 @@ function clientCmdCloseScoreHud()
       Canvas.popDialog( %hud );
 }
 
-//------------------------------------------------------------------------------
 addMessageCallBack( 'SetTeamScores', handleSetTeamScores );
 
 function handleSetTeamScores(%msgType, %msgString, %a1, %a2)
@@ -165,4 +163,3 @@ function updatePlayerScoreList(%this, %player)
       ScoreHud.PlayerScore[%player.teamId].sortNumerical(1, false);
    }
 }
-
