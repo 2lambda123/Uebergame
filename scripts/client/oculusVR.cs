@@ -24,15 +24,11 @@
 if(!isFunction(isOculusVRDeviceActive))
    return;
 
-//-----------------------------------------------------------------------------
-
 function oculusSensorMetricsCallback()
 {
    return "  | OVR Sensor 0 |" @ 
           "  rot: " @ getOVRSensorEulerRotation(0);
 }
-
-//-----------------------------------------------------------------------------
 
 // Call this function from createCanvas() to have the Canvas attach itself
 // to the Rift's display.  The Canvas' window will still open on the primary
@@ -43,8 +39,6 @@ function pointCanvasToOculusVRDisplay()
 {
    $pref::Video::displayOutputDevice = getOVRHMDDisplayDeviceName(0);
 }
-
-//-----------------------------------------------------------------------------
 
 // Call this function from GameConnection::initialControlSet() just before
 // your "Canvas.setContent(PlayGui);" call, or at any time you wish to switch
@@ -110,8 +104,6 @@ function setStandardOculusVRControlScheme(%gameConnection)
    }
 }
 
-//-----------------------------------------------------------------------------
-
 // Helper function to set the resolution for the Rift.
 // Parameters:
 // %fullscreen - If true then the display will be forced to full screen.  If
@@ -123,10 +115,7 @@ function setVideoModeForOculusVRDisplay(%fullscreen)
    Canvas.setVideoMode(%res.x, %res.y, %fullscreen, 32, 4);
 }
 
-//-----------------------------------------------------------------------------
-
-// Reset all Oculus Rift sensors.  This will make the Rift's current heading
-// be considered the origin.
+// Reset all Oculus Rift sensors.  This will make the Rift's current heading be considered the origin.
 function resetOculusVRSensors()
 {
    ovrResetAllSensors();

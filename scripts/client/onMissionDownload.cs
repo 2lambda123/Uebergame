@@ -36,7 +36,6 @@
 //----------------------------------------------------------------------------
 // Phase 1
 //----------------------------------------------------------------------------
-
 function onMissionDownloadPhase1(%missionName, %musicTrack)
 {
    %path = "levels/" @ fileBase( %missionName ) @ $PostFXManager::fileExtension;
@@ -54,15 +53,6 @@ function onMissionDownloadPhase1(%missionName, %musicTrack)
 
    if( !%found )
       PostFXManager::settingsApplyDefaultPreset();
-
-/*
-   // Load the post effect presets for this mission.
-   %path = "levels/" @ fileBase( %missionName ) @ $PostFXManager::fileExtension;
-   if ( isScriptFile( %path ) )
-      postFXManager::loadPresetHandler( %path ); 
-   else
-      PostFXManager::settingsApplyDefaultPreset();
-*/
 
    // Close and clear the message hud (in case it's open)
    if ( isObject( MessageHud ) )
@@ -103,7 +93,6 @@ function onPhase1Complete()
 //----------------------------------------------------------------------------
 // Phase 2
 //----------------------------------------------------------------------------
-
 function onMissionDownloadPhase2(%missionFile)
 {
    // Clear the console
@@ -136,8 +125,9 @@ function onPhase2Complete()
    else
       commandToServer( 'setClientLoadout', addTaggedString($pref::Player::Loadout[$pref::Player::SelectedLoadout]) );
 
+   // #fixit
    // Send selected vehicle //vehicles not ready yet
-   //commandToServer('SelectVehicle', addTaggedString($pref::Player::SelectedVehicle));
+   // commandToServer('SelectVehicle', addTaggedString($pref::Player::SelectedVehicle));
 
    if ( isObject( LoadingProgress ) )
    {
@@ -158,7 +148,6 @@ function onFileChunkReceived(%fileName, %ofs, %size)
 //----------------------------------------------------------------------------
 // Phase 3
 //----------------------------------------------------------------------------
-
 function onMissionDownloadPhase3(%missionFile)
 {
    if ( isObject( LoadingProgress ) )
@@ -193,7 +182,6 @@ function onPhase3Complete()
 //----------------------------------------------------------------------------
 // Mission loading done!
 //----------------------------------------------------------------------------
-
 function onMissionDownloadComplete()
 {
    // Client will shortly be dropped into the game, so this is

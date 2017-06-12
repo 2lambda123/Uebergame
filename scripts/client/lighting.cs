@@ -20,16 +20,11 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
-//---------------------------------------------------------------------------------------------
-
 function initLightingSystems()
 {
    echo( "\n--------- Initializing Lighting Systems ---------" );
 
-   // First exec the scripts for the different light managers
-   // in the lighting folder.
-   
+   // First exec the scripts for the different light managers in the lighting folder.   
    %pattern = "./lighting/*/init.cs";   
    %file = findFirstFile( %pattern );
    if ( %file $= "" )
@@ -72,26 +67,20 @@ function initLightingSystems()
    echo( "\n" );
 }
 
-//---------------------------------------------------------------------------------------------
-
 function onLightManagerActivate( %lmName )
 {
    $pref::lightManager = %lmName;
    echo( "Using " @ $pref::lightManager );
    
    // Call activation callbacks.
-   
    %activateNewFn = "onActivate" @ getWord( %lmName, 0 ) @ "LM";   
    if( isFunction( %activateNewFn ) )
       eval( %activateNewFn @ "();" );
 }
 
-//---------------------------------------------------------------------------------------------
-
 function onLightManagerDeactivate( %lmName )
 {
    // Call deactivation callback.
-   
    %deactivateOldFn = "onDeactivate" @ getWord( %lmName, 0 ) @ "LM";
    if( isFunction( %deactivateOldFn ) )
       eval( %deactivateOldFn @ "();" );

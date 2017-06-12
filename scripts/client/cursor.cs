@@ -46,56 +46,52 @@ function hideCursor()
 //---------------------------------------------------------------------------------------------
 package CanvasCursorPackage
 {
-
-//---------------------------------------------------------------------------------------------
-// checkCursor
-// The checkCursor method iterates through all the root controls on the canvas checking each
-// ones noCursor property. If the noCursor property exists as anything other than false or an
-// empty string on every control, the cursor will be hidden.
-//---------------------------------------------------------------------------------------------
-function GuiCanvas::checkCursor(%this)
-{
-   %count = %this.getCount();
-   for(%i = 0; %i < %count; %i++)
+   // The checkCursor method iterates through all the root controls on the canvas checking each
+   // ones noCursor property. If the noCursor property exists as anything other than false or an
+   // empty string on every control, the cursor will be hidden.
+   function GuiCanvas::checkCursor(%this)
    {
-      %control = %this.getObject(%i);
-      if ((%control.noCursor $= "") || !%control.noCursor)
+      %count = %this.getCount();
+      for(%i = 0; %i < %count; %i++)
       {
-         showCursor();
-         return;
+         %control = %this.getObject(%i);
+         if ((%control.noCursor $= "") || !%control.noCursor)
+            {
+            showCursor();
+            return;
+         }
       }
+      // If we get here, every control requested a hidden cursor, so we oblige.
+      hideCursor();
    }
-   // If we get here, every control requested a hidden cursor, so we oblige.
-   hideCursor();
-}
 
-//---------------------------------------------------------------------------------------------
-// The following functions override the GuiCanvas defaults that involve changing the content
-// of the Canvas. Basically, all we are doing is adding a call to checkCursor to each one.
-//---------------------------------------------------------------------------------------------
-function GuiCanvas::setContent(%this, %ctrl)
-{
-   Parent::setContent(%this, %ctrl);
-   %this.checkCursor();
-}
+   //---------------------------------------------------------------------------------------------
+   // The following functions override the GuiCanvas defaults that involve changing the content
+   // of the Canvas. Basically, all we are doing is adding a call to checkCursor to each one.
+   //---------------------------------------------------------------------------------------------
+   function GuiCanvas::setContent(%this, %ctrl)
+   {
+      Parent::setContent(%this, %ctrl);
+      %this.checkCursor();
+   }
 
-function GuiCanvas::pushDialog(%this, %ctrl, %layer, %center)
-{
-   Parent::pushDialog(%this, %ctrl, %layer, %center);
-   %this.checkCursor();
-}
+   function GuiCanvas::pushDialog(%this, %ctrl, %layer, %center)
+   {
+      Parent::pushDialog(%this, %ctrl, %layer, %center);
+      %this.checkCursor();
+   }
 
-function GuiCanvas::popDialog(%this, %ctrl)
-{
-   Parent::popDialog(%this, %ctrl);
-   %this.checkCursor();
-}
+   function GuiCanvas::popDialog(%this, %ctrl)
+   {
+      Parent::popDialog(%this, %ctrl);
+      %this.checkCursor();
+   }
 
-function GuiCanvas::popLayer(%this, %layer)
-{
-   Parent::popLayer(%this, %layer);
-   %this.checkCursor();
-}
+   function GuiCanvas::popLayer(%this, %layer)
+   {
+      Parent::popLayer(%this, %layer);
+      %this.checkCursor();
+   }
 
 };
 

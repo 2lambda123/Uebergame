@@ -20,12 +20,9 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
-
 //-----------------------------------------------------------------------------
 // Water
 //-----------------------------------------------------------------------------
-
 singleton ShaderData( WaterShader )
 {
    DXVertexShaderFile 	= "shaders/common/water/waterV.hlsl";
@@ -100,7 +97,6 @@ singleton CustomMaterial( WaterMat )
 //-----------------------------------------------------------------------------
 // Underwater
 //-----------------------------------------------------------------------------
-
 singleton ShaderData( UnderWaterShader : WaterShader )
 {
    defines = "UNDERWATER";   
@@ -128,7 +124,6 @@ singleton CustomMaterial( UnderwaterMat )
 //-----------------------------------------------------------------------------
 // Basic Water
 //-----------------------------------------------------------------------------
-
 singleton ShaderData( WaterBasicShader )
 {
    DXVertexShaderFile 	= "shaders/common/water/waterBasicV.hlsl";
@@ -184,7 +179,6 @@ singleton CustomMaterial( WaterBasicMat )
 //-----------------------------------------------------------------------------
 // Basic UnderWater
 //-----------------------------------------------------------------------------
-
 singleton ShaderData( UnderWaterBasicShader : WaterBasicShader)
 {
    defines = "UNDERWATER";   

@@ -23,7 +23,6 @@
 //-----------------------------------------------------------------------------
 // Server Admin Commands
 //-----------------------------------------------------------------------------
-
 function SAD(%password)
 {
    if (%password !$= "")
@@ -47,7 +46,6 @@ function resetClientDefaults()
 //----------------------------------------------------------------------------
 // Misc server commands
 //----------------------------------------------------------------------------
-
 function GameConnection::prepDemoRecord(%this)
 {
    %this.demoChatLines = HudMessageVector.getNumLines();
@@ -83,7 +81,6 @@ function serverToClientObject( %serverObject )
 //----------------------------------------------------------------------------
 // Debug commands
 //----------------------------------------------------------------------------
-
 function netSimulateLag( %msDelay, %packetLossPercent )
 {
    if ( %packetLossPercent $= "" )
@@ -91,4 +88,3 @@ function netSimulateLag( %msDelay, %packetLossPercent )
                   
    commandToServer( 'NetSimulateLag', %msDelay, %packetLossPercent );
 }
-

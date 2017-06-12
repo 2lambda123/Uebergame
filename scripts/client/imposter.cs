@@ -20,6 +20,9 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// #optimize 
+// this could be placed somewhere else among other similar callbacks,
+// this probably does not need its own file
 
 function imposterMetricsCallback()
 {

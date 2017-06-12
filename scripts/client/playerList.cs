@@ -24,7 +24,6 @@
 // Hook into the client update messages to maintain our player list
 // and scoreboard.
 //-----------------------------------------------------------------------------
-
 addMessageCallback( 'MsgYourInfo', handleGetMyInfo ); // Sent in ::onConnect
 addMessageCallback( 'MsgClientJoin', handleClientJoin );
 addMessageCallback( 'MsgClientDrop', handleClientDrop );

@@ -22,11 +22,7 @@
 
 // Functions dealing with connecting to a server
 
-
-//-----------------------------------------------------------------------------
-// Server connection error
-//-----------------------------------------------------------------------------
-
+/// Server connection error
 addMessageCallback( 'MsgConnectionError', handleConnectionErrorMessage );
 
 function handleConnectionErrorMessage(%msgType, %msgString, %msgError)
@@ -38,10 +34,7 @@ function handleConnectionErrorMessage(%msgType, %msgString, %msgError)
    $ServerConnectionErrorMessage = %msgError;
 }
 
-//----------------------------------------------------------------------------
-// GameConnection client callbacks
-//----------------------------------------------------------------------------
-
+/// GameConnection client callbacks
 function GameConnection::initialControlSet(%this)
 {
    echo ("*** Initial Control Object");
@@ -71,8 +64,7 @@ function GameConnection::onControlObjectChange(%this)
 {
    echo ("*** Control Object Changed");
    
-   // Reset the current FOV to match the new object
-   // and turn off any current zoom.
+   // Reset the current FOV to match the new object and turn off any current zoom.
    resetCurrentFOV();
    turnOffZoom();
 }
@@ -99,14 +91,13 @@ function GameConnection::onFlash(%this, %state)
    }
 }
 
-// Called on the new connection object after connect() succeeds.
+/// Called on the new connection object after connect() succeeds.
 function GameConnection::onConnectionAccepted(%this)
 {
    // Called on the new connection object after connect() succeeds.
    LagIcon.setVisible(false);
    
-   // Startup the physX world on the client before any
-   // datablocks and objects are ghosted over.
+   // Startup the physX world on the client before any datablocks and objects are ghosted over.
    physicsInitWorld( "client" );   
 }
 
@@ -136,7 +127,6 @@ function GameConnection::onConnectionDropped(%this, %msg)
 //----------------------------------------------------------------------------
 // Connection Failed Events
 //----------------------------------------------------------------------------
-
 function GameConnection::onConnectRequestRejected( %this, %msg )
 {
    switch$(%msg)
@@ -180,7 +170,6 @@ function GameConnection::onConnectRequestTimedOut(%this)
 //-----------------------------------------------------------------------------
 // Disconnect
 //-----------------------------------------------------------------------------
-
 function disconnect()
 {
    // We need to stop the client side simulation
@@ -238,7 +227,6 @@ function Torque::disconnectedCleanup(%this)
       
    // Disable mission lighting if it's going, this is here
    // in case we're disconnected while the mission is loading.
-   
    $lightingMission = false;
    $sceneLighting::terminateLighting = true;
    

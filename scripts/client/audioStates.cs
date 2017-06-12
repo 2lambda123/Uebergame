@@ -20,8 +20,11 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-// Some state presets.
+// These probably may not work currently,
+// they are intended to be used with fmod, not the default sound system
+// #cleanup
 
+// Some state presets.
 
 /// Return the first active SFXState in the given SimSet/SimGroup.
 function sfxGetActiveStateInGroup( %group )
@@ -40,11 +43,9 @@ function sfxGetActiveStateInGroup( %group )
    return 0;
 }
 
-
 //-----------------------------------------------------------------------------
-// Special audio state that will always and only be active when no other
-// state is active.  Useful for letting slots apply specifically when no
-// other slot in a list applies.
+// Special audio state that will always and only be active when no other state is active.
+// Useful for letting slots apply specifically when no other slot in a list applies.
 
 singleton SFXState( AudioStateNone ) {};
 
@@ -64,9 +65,7 @@ function SFXState::onDeactivate( %this )
 
 //-----------------------------------------------------------------------------
 // AudioStateExclusive class.
-//
-// Automatically deactivates sibling SFXStates in its parent SimGroup
-// when activated.
+// Automatically deactivates sibling SFXStates in its parent SimGroup when activated.
 
 function AudioStateExclusive::onActivate( %this )
 {

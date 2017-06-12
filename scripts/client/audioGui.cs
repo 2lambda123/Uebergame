@@ -1,3 +1,7 @@
+//-----------------------------------------------------------------------------
+// Sound effects for Guis
+//-----------------------------------------------------------------------------
+
 //hover effect for main menu buttons
 singleton SFXProfile(AudioButtonOver)
 {

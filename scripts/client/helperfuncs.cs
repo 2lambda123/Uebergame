@@ -57,7 +57,6 @@ function validateDatablockName(%name)
 //--------------------------------------------------------------------------
 // Finds location of %word in %text, starting at %start.  Works just like strPos
 //--------------------------------------------------------------------------
-
 function wordPos(%text, %word, %start)
 {
    if (%start $= "") %start = 0;
@@ -75,7 +74,6 @@ function wordPos(%text, %word, %start)
 //--------------------------------------------------------------------------
 // Finds location of %field in %text, starting at %start.  Works just like strPos
 //--------------------------------------------------------------------------
-
 function fieldPos(%text, %field, %start)
 {
    if (%start $= "") %start = 0;
@@ -93,7 +91,6 @@ function fieldPos(%text, %field, %start)
 //--------------------------------------------------------------------------
 // returns the text in a file with "\n" at the end of each line
 //--------------------------------------------------------------------------
-
 function loadFileText(%file)
 {
    %fo = new FileObject();
@@ -136,7 +133,6 @@ function shareValueSafeDelay(%source, %dest, %delayMs)
 {
    schedule(%delayMs, 0, shareValueSafe, %source, %dest);
 }
-
 
 //------------------------------------------------------------------------------
 // An Aggregate Control is a plain GuiControl that contains other controls, 
@@ -263,7 +259,6 @@ function parseMissionGroupForIds( %className, %childGroup )
 //------------------------------------------------------------------------------
 // Altered Version of TGB's QuickEditDropDownTextEditCtrl
 //------------------------------------------------------------------------------
-
 function QuickEditDropDownTextEditCtrl::onRenameItem( %this )
 {
 }

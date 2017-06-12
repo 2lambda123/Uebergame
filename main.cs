@@ -64,8 +64,6 @@ $displayHelp = false;
 // Packages Bug fix Package
 // From Martin "Founder" Hoover.
 // http://www.garagegames.com/community/forums/viewthread/19617/1#comment-151672
-
-
 $TotalNumberOfPackages = 0;
 package PackageFix
 {
@@ -188,8 +186,7 @@ if (isToolBuild())
     $userDirs = "tools;" @ $userDirs;
 
 
-// Parse the executable arguments with the standard
-// function from scripts/parseArgs.cs
+// Parse the executable arguments with the standard function from scripts/parseArgs.cs
 defaultParseArgs();
 
 
@@ -208,7 +205,6 @@ if($dirCount == 0) {
 //-----------------------------------------------------------------------------
 // The displayHelp, onStart, onExit and parseArgs function are overriden
 // by mod packages to get hooked into initialization and cleanup.
-
 function Torque::onStart(%this)
 {
    // Default startup function
@@ -216,14 +212,12 @@ function Torque::onStart(%this)
 
 function onExit()
 {
-   // OnExit is called directly from C++ code, whereas onStart is
-   // invoked at the end of this file.
+   // OnExit is called directly from C++ code, whereas onStart is invoked at the end of this file.
 }
 
 function Torque::parseArgs(%this)
 {
-   // Here for mod override, the arguments have already
-   // been parsed.
+   // Here for mod override, the arguments have already been parsed.
 }
 
 function compileFiles(%pattern)
@@ -302,7 +296,6 @@ function Torque::displayHelp(%this)
    );
 }
 
-
 //--------------------------------------------------------------------------
 
 // Default to a new logfile each session.
@@ -311,8 +304,7 @@ if( !$logModeSpecified )
       setLogMode(6);
 }
 
-// Get the first dir on the list, which will be the last to be applied... this
-// does not modify the list.
+// Get the first dir on the list, which will be the last to be applied... this does not modify the list.
 nextToken($userDirs, currentMod, ";");
 
 // Execute startup scripts for each mod, starting at base and working up
@@ -366,9 +358,8 @@ else
 
    if( !$isDedicated )
    {
-      // As we know at this point that the initial load is complete,
-      // we can hide any splash screen we have, and show the canvas.
-      // This keeps things looking nice, instead of having a blank window
+      // As we know at this point that the initial load is complete, we can hide any splash screen
+      // we have, and show the canvas. This keeps things looking nice, instead of having a blank window.
       closeSplashWindow();
       Canvas.showWindow();
    }

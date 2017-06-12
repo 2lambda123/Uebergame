@@ -21,8 +21,7 @@
 //-----------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------
-// initializeCanvas
-// Constructs and initializes the default canvas window.
+// initializeCanvas Constructs and initializes the default canvas window.
 //---------------------------------------------------------------------------------------------
 $canvasCreated = false;
 
@@ -137,8 +136,7 @@ function initializeCanvas()
 }
 
 //---------------------------------------------------------------------------------------------
-// resetCanvas
-// Forces the canvas to redraw itself.
+// resetCanvas forces the canvas to redraw itself.
 //---------------------------------------------------------------------------------------------
 function resetCanvas()
 {
@@ -149,7 +147,6 @@ function resetCanvas()
 //---------------------------------------------------------------------------------------------
 // Callbacks for window events.
 //---------------------------------------------------------------------------------------------
-
 function GuiCanvas::onLoseFocus(%this)
 {
 }
@@ -157,7 +154,6 @@ function GuiCanvas::onLoseFocus(%this)
 //---------------------------------------------------------------------------------------------
 // Full screen handling
 //---------------------------------------------------------------------------------------------
-
 function GuiCanvas::attemptFullscreenToggle(%this)
 {
    // If the Editor is running then we cannot enter full screen mode
@@ -178,10 +174,8 @@ function GuiCanvas::attemptFullscreenToggle(%this)
 }
 
 //---------------------------------------------------------------------------------------------
-// Editor Checking
-// Needs to be outside of the tools directory so these work in non-tools builds
+// EditorChecking, needs to be outside of the tools directory so these work in non-tools builds
 //---------------------------------------------------------------------------------------------
-
 function EditorIsActive()
 {
    return ( isObject(EditorGui) && Canvas.getContent() == EditorGui.getId() );

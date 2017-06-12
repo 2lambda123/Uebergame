@@ -20,13 +20,13 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// Warning materials, those are needed in case materials are not found
 singleton Material( WarningMaterial )
 {
    diffuseMap[0] = "art/editor/warnMat";
    emissive[0] = false;
    translucent = false;
 };
-
 
 singleton CubemapData( WarnMatCubeMap )
 {

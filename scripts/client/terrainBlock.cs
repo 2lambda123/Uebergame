@@ -20,6 +20,9 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// #optimize, maybe this could be placed somewhere else in a file 
+// where all similar things are combined
+
 /// Used when generating the blended base texture.
 singleton ShaderData( TerrainBlendShader )
 {

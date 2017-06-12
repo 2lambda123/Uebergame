@@ -30,7 +30,6 @@ function clientCmdSyncEditorGui()
 //----------------------------------------------------------------------------
 // Game start / end events sent from the server
 //----------------------------------------------------------------------------
-
 function clientCmdGameStart(%seq)
 {
    PlayerListGui.zeroScores();
@@ -43,31 +42,32 @@ function clientCmdGameEnd(%seq)
 
    if ((!EditorIsActive() && !GuiEditorIsActive()))
    {
-   // Copy the current scores from the player list into the
-   // end game gui (bit of a hack for now).
+   // Copy the current scores from the player list into the end game gui (bit of a hack for now).
    EndGameGuiListLabel.clear();
    %header = "NAME" TAB "TEAM" TAB "SCORE";
    EndGameGuiListLabel.addRow(0, %header);
    EndGameGuiListLabel.setSelectedRow(0);
 
    EndGameGuiList.clear();
+   
    for (%i = 0; %i < PlayerListGuiList.rowCount(); %i++)
-   {
-      //error("PlayerListGuiList.rowCount loop at: " @ %i);
-      %text = PlayerListGuiList.getRowText(%i);
-      %id = PlayerListGuiList.getRowId(%i);
-      EndGameGuiList.addRow(%id, %text);
-   }
+      {
+         //error("PlayerListGuiList.rowCount loop at: " @ %i);
+         %text = PlayerListGuiList.getRowText(%i);
+         %id = PlayerListGuiList.getRowId(%i);
+         EndGameGuiList.addRow(%id, %text);
+      }
+      
    EndGameGuiList.sortNumerical(2, false);
 
    // Display the end-game screen
    Canvas.setContent(EndGameGui);
+   }
 }
-}
+
 //-----------------------------------------------------------------------------
 // Damage Direction Indicator
 //-----------------------------------------------------------------------------
-
 function clientCmdSetDamageDirection(%direction)
 {
    eval("%ctrl = DamageHUD-->damage_" @ %direction @ ";");
@@ -82,6 +82,7 @@ function clientCmdSetDamageDirection(%direction)
 
 //-----------------------------------------------------------------------------
 // Show/Hide specific gui elements
+//-----------------------------------------------------------------------------
 
 // Default to Spectator mode
 $HudMode = "Spectator";
@@ -157,9 +158,10 @@ function clientCmdSetHudMode(%mode)
             mainVoteHud.setVisible(0);
    }
 }
+
 //-----------------------------------------------------------------------------
 // Show/Hide reticle
-
+//-----------------------------------------------------------------------------
 function clientCmdHideReticle()
 {
    reticle.setVisible(false);
@@ -187,7 +189,7 @@ function clientCmdStopZooming()
 }
 
 // ----------------------------------------------------------------------------
-// splatter Support
+// blood spatter Support
 // ----------------------------------------------------------------------------
 function clientCMDSpatter(%Decalposition, %splatterNorm, %splatterScaling)
 {

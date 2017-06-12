@@ -57,10 +57,8 @@ singleton SFXSource( AudioChannelMusic )
 };
 
 // Set default playback states of the channels.
-
 AudioChannelMaster.play();
 AudioChannelDefault.play();
-
 AudioChannelGui.play();
 AudioChannelMusic.play();
 AudioChannelMessages.play();
@@ -104,14 +102,12 @@ singleton SFXDescription( AudioMusic )
 //    SFX Functions.
 //-----------------------------------------------------------------------------
 
-/// This initializes the sound system device from
-/// the defaults in the $pref::SFX:: globals.
+/// This initializes the sound system device from the defaults in the $pref::SFX:: globals.
 function sfxStartup()
 {   
    echo( "sfxStartup..." );
    
    // If we have a provider set, try initialize a device now.
-   
    if( $pref::SFX::provider !$= "" )
    {
       if( sfxInit() )
@@ -141,7 +137,6 @@ function sfxStartup()
 function sfxInit()
 {
    // If already initialized, shut down the current device first.
-   
    if( sfxGetDeviceInfo() !$= "" )
       sfxShutdown();
       
@@ -150,8 +145,7 @@ function sfxInit()
    if ( !sfxCreateDevice( $pref::SFX::provider, $pref::SFX::device, $pref::SFX::useHardware, %maxBuffers ) )
       return false;
 
-   // This returns a tab seperated string with
-   // the initialized system info.
+   // This returns a tab seperated string with the initialized system info.
    %info = sfxGetDeviceInfo();
    $pref::SFX::provider       = getField( %info, 0 );
    $pref::SFX::device         = getField( %info, 1 );
@@ -172,11 +166,9 @@ function sfxInit()
       sfxSetRolloffFactor( $pref::SFX::rolloffFactor );
 
    // Restore master volume.
-   
    sfxSetMasterVolume( $pref::SFX::masterVolume );
 
    // Restore channel volumes.
-   
    for( %channel = 0; %channel <= 8; %channel ++ )
       sfxSetChannelVolume( %channel, $pref::SFX::channelVolume[ %channel ] );
       
@@ -187,14 +179,12 @@ function sfxInit()
 function sfxShutdown()
 {
    // Store volume prefs.
-   
    $pref::SFX::masterVolume = sfxGetMasterVolume();
    
    for( %channel = 0; %channel <= 8; %channel ++ )
       $pref::SFX::channelVolume[ %channel ] = sfxGetChannelVolume( %channel );
    
-   // We're assuming here that a null info 
-   // string means that no device is loaded.
+   // We're assuming here that a null info string means that no device is loaded.
    if( sfxGetDeviceInfo() $= "" )
       return;
 
@@ -242,11 +232,9 @@ function sfxCompareProvider( %providerA, %providerB )
 function sfxAutodetect()
 {
    // Get all the available devices.
-   
    %devices = sfxGetAvailableDevices();
 
    // Collect and sort the devices by preferentiality.
-   
    %deviceTrySequence = new ArrayObject();
    %bestMatch = -1;
    %count = getRecordCount( %devices );
@@ -261,7 +249,6 @@ function sfxAutodetect()
    %deviceTrySequence.sortfkd( "sfxCompareProvider" );
          
    // Try the devices in order.
-   
    %count = %deviceTrySequence.count();
    for( %i = 0; %i < %count; %i ++ )
    {
@@ -272,8 +259,7 @@ function sfxAutodetect()
       $pref::SFX::device         = getField( %info, 1 );
       $pref::SFX::useHardware    = getField( %info, 2 );
       
-      // By default we've decided to avoid hardware devices as
-      // they are buggy and prone to problems.
+      // By default we've decided to avoid hardware devices as they are buggy and prone to problems.
       $pref::SFX::useHardware = false;
 
       if( sfxInit() )
@@ -285,7 +271,6 @@ function sfxAutodetect()
    }
    
    // Found no suitable device.
-   
    error( "sfxAutodetect - Could not initialize a valid SFX device." );
    
    $pref::SFX::provider = "";
@@ -302,7 +287,6 @@ function sfxAutodetect()
 //-----------------------------------------------------------------------------
 
 // Volume channel IDs for backwards-compatibility.
-
 $GuiAudioType        = 1;  // Interface.
 $SimAudioType        = 2;  // Game.
 $MessageAudioType    = 3;  // Notifications.
@@ -343,9 +327,7 @@ function sfxGetMasterVolume( %volume )
 
 function sfxStopAll( %channel )
 {
-   // Don't stop channel itself since that isn't quite what the function
-   // here intends.
-   
+   // Don't stop channel itself since that isn't quite what the function here intends.
    %channel = sfxOldChannelToGroup( %channel );
    if (isObject(%channel))
    {
@@ -369,7 +351,6 @@ function sfxSetChannelVolume( %channel, %volume )
 }
 
 singleton SimSet( SFXPausedSet );
-
 
 /// Pauses the playback of active sound sources.
 /// 
@@ -421,12 +402,13 @@ function sfxResume( %pauseSet )
       %source.play();
    }
 
-   // Clear our pause set... the caller is left
-   // to clear his own if he passed one.
+   // Clear our pause set... the caller is left to clear his own if he passed one.
    %pauseSet.clear();
 }
 
-//--------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//    Music player functions
+//-----------------------------------------------------------------------------
 
 new ScriptObject(MusicPlayer)
 {

@@ -32,7 +32,6 @@ $wave   = 4;
 $scale  = 8;
 $sequence = 16;
 
-
 // Common stateblock definitions
 new GFXSamplerStateData(SamplerClampLinear)
 {

@@ -20,6 +20,9 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// These probably do not work currently,
+// they are intended to be used with fmod, not the default sound system
+// #cleanup
 
 singleton SFXAmbience( AudioAmbienceDefault )
 {

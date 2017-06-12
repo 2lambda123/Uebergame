@@ -22,8 +22,8 @@
 
 // moveMap
 $RemapCount = 0;
-//-----------------------------------------------------------------------------
 // Movment
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Forward";
 $RemapCmd[$RemapCount] = "moveforward";
 $RemapCount++;
@@ -64,9 +64,8 @@ $RemapCount++;
 //$RemapCmd[$RemapCount] = "doProne";
 //$RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Weapons
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Fire Weapon";
 $RemapCmd[$RemapCount] = "mouseFire";
 $RemapCount++;
@@ -111,16 +110,14 @@ $RemapName[$RemapCount] = "Toss Weapon";
 $RemapCmd[$RemapCount] = "throwWeapon";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Ammo
-
+//-----------------------------------------------------------------------------
 //$RemapName[$RemapCount] = "Toss Ammo";
 //$RemapCmd[$RemapCount] = "tossAmmo";
 //$RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Specials
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Use Special";
 $RemapCmd[$RemapCount] = "triggerSpecial";
 $RemapCount++;
@@ -128,9 +125,8 @@ $RemapName[$RemapCount] = "Toss Special";
 $RemapCmd[$RemapCount] = "tossSpecial";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Grenades
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Throw Grenade";
 $RemapCmd[$RemapCount] = "throwGrenade";
 $RemapCount++;
@@ -138,9 +134,8 @@ $RemapName[$RemapCount] = "Toss Grenade Ammo";
 $RemapCmd[$RemapCount] = "tossGrenade";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Vehicles
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Enter Vehicle";
 $RemapCmd[$RemapCount] = "autoMountVehicle";
 $RemapCount++;
@@ -148,8 +143,8 @@ $RemapCount++;
 //$RemapCmd[$RemapCount] = "createVehicle";
 //$RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Inventory
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Next Weapon";
 $RemapCmd[$RemapCount] = "nextWeapon";
 $RemapCount++;
@@ -164,15 +159,11 @@ $RemapName[$RemapCount] = "Choose Previous Loadout";
 $RemapCmd[$RemapCount] = "cycleLoadoutPrev";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Camera and View
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Aim Down Sights";
 $RemapCmd[$RemapCount] = "toggleIronSights";
 $RemapCount++;
-//$RemapName[$RemapCount] = "Adjust Zoom";
-//$RemapCmd[$RemapCount] = "toggleZoomFOV";
-//$RemapCount++;
 $RemapName[$RemapCount] = "Free Look";
 $RemapCmd[$RemapCount] = "toggleFreeLook";
 $RemapCount++;
@@ -180,9 +171,8 @@ $RemapName[$RemapCount] = "Switch 1st/3rd person view";
 $RemapCmd[$RemapCount] = "toggleFirstPerson";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Messaging
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Quick Chat Menu";
 $RemapCmd[$RemapCount] = "toggleQuickChatHud";
 $RemapCount++;
@@ -202,34 +192,17 @@ $RemapName[$RemapCount] = "Resize Message Hud";
 $RemapCmd[$RemapCount] = "resizeMessageHud";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Huds
-
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Show Scores";
 $RemapCmd[$RemapCount] = "showScoreBoard";
 $RemapCount++;
-//$RemapName[$RemapCount] = "Show/Hide Vehicle Screen";
-//$RemapCmd[$RemapCount] = "toggleVehicleHud";
-//$RemapCount++;
 $RemapName[$RemapCount] = "Vote Yes";
 $RemapCmd[$RemapCount] = "voteYes";
 $RemapCount++;
 $RemapName[$RemapCount] = "Vote No";
 $RemapCmd[$RemapCount] = "voteNo";
 $RemapCount++;
-$RemapName[$RemapCount] = "Show Player list/Admin";
-$RemapCmd[$RemapCount] = "showPlayerList";
-$RemapCount++;
-$RemapName[$RemapCount] = "Show/Hide Armory Screen";
-$RemapCmd[$RemapCount] = "toggleArmoryDlg";
-$RemapCount++;
-//$RemapName[$RemapCount] = "Show/Hide Music Player";
-//$RemapCmd[$RemapCount] = "toggleMusicPlayer";
-//$RemapCount++;
-//$RemapName[$RemapCount] = "Bring up Options Dialog";
-//$RemapCmd[$RemapCount] = "bringUpOptions";
-//$RemapCount++;
-
 $RemapName[$RemapCount] = "Chat to all";
 $RemapCmd[$RemapCount] = "toggleMessageHud";
 $RemapCount++;
@@ -239,22 +212,43 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Chat to fireteam";
 $RemapCmd[$RemapCount] = "fireTeamMessageHud";
 $RemapCount++;
-$RemapName[$RemapCount] = "Show/Hide Quick Chat HUD";
+$RemapName[$RemapCount] = "Messages page up";
 $RemapCmd[$RemapCount] = "pageMessageHudUp";
 $RemapCount++;
-$RemapName[$RemapCount] = "Show/Hide Quick Chat HUD";
+$RemapName[$RemapCount] = "Messages page down";
 $RemapCmd[$RemapCount] = "pageMessageHudDown";
 $RemapCount++;
-$RemapName[$RemapCount] = "Show/Hide Quick Chat HUD";
+$RemapName[$RemapCount] = "Toggle Message Hud size";
 $RemapCmd[$RemapCount] = "resizeMessageHud";
 $RemapCount++;
 $RemapName[$RemapCount] = "Show/Hide Quick Chat HUD";
 $RemapCmd[$RemapCount] = "toggleQuickChatHud";
 $RemapCount++;
 
-//-----------------------------------------------------------------------------
-// Misc
+// Hotkeys to game menu sub Guis
+$RemapName[$RemapCount] = "Show Player list/Admin";
+$RemapCmd[$RemapCount] = "showPlayerList";
+$RemapCount++;
+$RemapName[$RemapCount] = "Show/Hide Armory Screen";
+$RemapCmd[$RemapCount] = "toggleArmoryDlg";
+$RemapCount++;
+//$RemapName[$RemapCount] = "Show/Hide Vehicle Screen";
+//$RemapCmd[$RemapCount] = "toggleVehicleHud";
+//$RemapCount++;
 
+// Hotkeys to Main Menu sub Guis, #extend later maybe so every sub menu has a hotkey
+$RemapName[$RemapCount] = "Bring up Options Dialog";
+$RemapCmd[$RemapCount] = "bringUpOptions";
+$RemapCount++;
+$RemapName[$RemapCount] = "Show/Hide Music Player";
+$RemapCmd[$RemapCount] = "toggleGuiMusicPlayer";
+$RemapCount++;
+$RemapName[$RemapCount] = "Show/Hide Net Graph";
+$RemapCmd[$RemapCount] = "toggleNetGraph";
+$RemapCount++;
+
+// Misc
+//-----------------------------------------------------------------------------
 $RemapName[$RemapCount] = "Commit Suicide";
 $RemapCmd[$RemapCount] = "doSuicide";
 $RemapCount++;
@@ -270,7 +264,7 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Toggle Movie Recording";
 $RemapCmd[$RemapCount] = "toggleMovieRecording";
 $RemapCount++;
-$RemapName[$RemapCount] = "Throw Flag"; //not in use yet
+$RemapName[$RemapCount] = "Throw Flag";
 $RemapCmd[$RemapCount] = "throwFlag";
 $RemapCount++;
 $RemapName[$RemapCount] = "Hide HUDs";
@@ -279,12 +273,9 @@ $RemapCount++;
 $RemapName[$RemapCount] = "Make Screenshot";
 $RemapCmd[$RemapCount] = "doScreenShot";
 $RemapCount++;
-//$RemapName[$RemapCount] = "Make Screenshot without HUD";
-//$RemapCmd[$RemapCount] = "doScreenShotHudless";
-//$RemapCount++;
 
-//-----------------------------------------------------------------------------
 // Spectator Map
+//-----------------------------------------------------------------------------
 $SpecRemapCount = 0;
 $SpecRemapName[$SpecRemapCount] = "Move Up";
 $SpecRemapCmd[$SpecRemapCount] = "moveup";
@@ -302,8 +293,8 @@ $SpecRemapName[$SpecRemapCount] = "Cycle Camera/Next";
 $SpecRemapCmd[$SpecRemapCount] = "mouseJet";
 $SpecRemapCount++;
 
-//-----------------------------------------------------------------------------
 // Vehicle Map
+//-----------------------------------------------------------------------------
 $VehRemapCount = 0;
 $VehRemapName[$VehRemapCount] = "Forward";
 $VehRemapCmd[$VehRemapCount] = "moveforward";

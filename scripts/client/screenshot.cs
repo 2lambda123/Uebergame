@@ -96,8 +96,7 @@ function stopMovie()
    $MovieEncodeActive = false;
 }
 
-/// This is bound in initializeCommon() to take
-/// a screenshot on a keypress.
+/// This is bound in initializeCommon() to take a screenshot on a keypress.
 function doScreenShot( %val )
 {
    // This can be bound, so skip key up events.
@@ -110,8 +109,7 @@ function doScreenShot( %val )
 /// A counter for screen shots used by _screenShot().
 $screenshotNumber = 0;
 
-/// Internal function which generates unique filename
-/// and triggers a screenshot capture.
+/// Internal function which generates unique filename and triggers a screenshot capture.
 function _screenShot( %tiles, %overlap )
 {
    if ( $pref::Video::screenShotSession $= "" )
@@ -134,12 +132,9 @@ function _screenShot( %tiles, %overlap )
       screenShot( $HomePath @ "/screenshots/" @%name, "PNG", %tiles, %overlap );
 }
 
-/// This will close the console and take a large format
-/// screenshot by tiling the current backbuffer and save
-/// it to the root game folder.
-///
-/// For instance a tile setting of 4 with a window set to
-/// 800x600 will output a 3200x2400 screenshot.
+/// This will close the console and take a large format screenshot by tiling the current backbuffer
+/// and save it to the root game folder.
+/// For instance a tile setting of 4 with a window set to 800x600 will output a 3200x2400 screenshot.
 function tiledScreenShot( %tiles, %overlap )
 {
    // Pop the console off before we take the shot.

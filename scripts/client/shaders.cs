@@ -24,7 +24,6 @@
 //  This file contains shader data necessary for various engine utility functions
 //-----------------------------------------------------------------------------
 
-
 singleton ShaderData( ParticlesShaderData )
 {
    DXVertexShaderFile     = "shaders/common/particlesV.hlsl";
@@ -53,6 +52,7 @@ singleton ShaderData( OffscreenParticleCompositeShaderData )
    
    pixVersion = 2.0;
 };
+
 //-----------------------------------------------------------------------------
 // Planar Reflection
 //-----------------------------------------------------------------------------
@@ -112,6 +112,7 @@ singleton ShaderData( VolumetricFogPrePassShader )
    
    pixVersion = 3.0;
 };
+
 singleton ShaderData( VolumetricFogShader )
 {
    DXVertexShaderFile = "shaders/common/VolumetricFog/VFogV.hlsl";
@@ -127,6 +128,7 @@ singleton ShaderData( VolumetricFogShader )
    
    pixVersion = 3.0;
 };
+
 singleton ShaderData( VolumetricFogReflectionShader )
 {
    DXVertexShaderFile = "shaders/common/VolumetricFog/VFogPreV.hlsl";

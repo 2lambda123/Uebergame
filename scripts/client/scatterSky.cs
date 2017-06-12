@@ -48,4 +48,3 @@ singleton ShaderData( ScatterSkyShaderData )
    
    pixVersion = 2.0;
 };
-

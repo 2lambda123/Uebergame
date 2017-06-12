@@ -20,15 +20,14 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-/// Shortcut for typing dbgSetParameters with the default values torsion uses.
+// Shortcut for typing dbgSetParameters with the default values torsion uses.
 function dbgTorsion()
 {
    dbgSetParameters( 6060, "password", false );
 }
 
-/// Reset the input state to a default of all-keys-up.
-/// A helpful remedy for when Torque misses a button up event do to your breakpoints
-/// and can't stop shooting / jumping / strafing.
+// Reset the input state to a default of all-keys-up. A helpful remedy for when Torque misses
+// a button up event do to your breakpoints and can't stop shooting / jumping / strafing.
 function mvReset()
 {
    for ( %i = 0; %i < 6; %i++ )

@@ -1,3 +1,8 @@
+/// This function force update all pref variables for clients who had the game installed already
+/// The function needs to be manually edited whenever some pref variables have changed
+/// and the game would no longer work properly for people who stil have settings from older versions in their config files
+/// for example the $pref::Video::missingTexturePath is necessary to work,
+/// otherwise the editor will crash when a texture is not found
 function updatePrefs()
 {
 	//update changed prefs for older versions

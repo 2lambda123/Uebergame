@@ -131,7 +131,6 @@ function SetVehicleCount(%msgType, %msgString, %vehicle, %left)
 //-----------------------------------------------------------------------------
 // Game callbacks
 //-----------------------------------------------------------------------------
-
 addMessageCallback( 'MsgEnterGameInfo', handleGameInfoMessage );
 
 function handleGameInfoMessage(%msgType, %msgString, %map, %game, %gameName, %server)
@@ -277,4 +276,3 @@ function clearVoteHud(%msgType, %msgString)
    voteHudYes.setText(0);
    voteHudNo.setText(0);
 }
-

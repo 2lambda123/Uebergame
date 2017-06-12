@@ -20,7 +20,6 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
 singleton GFXStateBlockData( PFX_DefaultStateBlock )
 {
    zDefined = true;
@@ -46,9 +45,7 @@ singleton ShaderData( PFX_PassthruShader )
 
 function initPostEffects()
 {
-   // First exec the scripts for the different light managers
-   // in the lighting folder.
-   
+   // First exec the scripts for the different light managers in the lighting folder.
    %pattern = "./postFx/*.cs";   
    %file = findFirstFile( %pattern );
    if ( %file $= "" )

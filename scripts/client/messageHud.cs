@@ -23,7 +23,6 @@
 //----------------------------------------------------------------------------
 // Enter Chat Message Hud
 //----------------------------------------------------------------------------
-
 function MessageHud::open(%this)
 {
    %offset = 6;
@@ -62,8 +61,6 @@ function MessageHud::open(%this)
    hudMap.push();
 }
 
-//------------------------------------------------------------------------------
-
 function MessageHud::close(%this)
 {
    if(!%this.isVisible())
@@ -81,8 +78,6 @@ function MessageHud::close(%this)
    tge.updateKeyMaps();
 }
 
-//------------------------------------------------------------------------------
-
 function MessageHud::toggleState(%this)
 {
    if(%this.isVisible())
@@ -91,14 +86,10 @@ function MessageHud::toggleState(%this)
       %this.open();
 }
 
-//------------------------------------------------------------------------------
-
 function MessageHud_Edit::onEscape(%this)
 {
    MessageHud.close();
 }
-
-//------------------------------------------------------------------------------
 
 function MessageHud_Edit::eval(%this)
 {
@@ -121,14 +112,11 @@ function MessageHud_Edit::eval(%this)
             commandToServer('MessageSent', %text);
       }
    }
-
    MessageHud.close();
 }
 
-   
-//----------------------------------------------------------------------------
 // MessageHud key handlers
-
+//----------------------------------------------------------------------------
 function toggleMessageHud(%make)
 {
    if(%make)

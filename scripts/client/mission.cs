@@ -20,36 +20,29 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
 // Whether the local client is currently running a mission.
 $Client::missionRunning = false;
 
 // Sequence number for currently running mission.
 $Client::missionSeq = -1;
 
-
-// Called when mission is started.
+/// Called when mission is started.
 function clientStartMission()
 {
-   // The client recieves a mission start right before
-   // being dropped into the game.
+   // The client recieves a mission start right before being dropped into the game.
    physicsStartSimulation( "client" );
    
    // Start game audio effects channels.
-   
    AudioChannelEffects.play();
    
    // Create client mission cleanup group.
-      
    new SimGroup( ClientMissionCleanup );
 
    // Done.
-      
    $Client::missionRunning = true;
 }
 
-// Called when mission is ended (either through disconnect or
-// mission end client command).
+/// Called when mission is ended (either through disconnect or mission end client command).
 function clientEndMission()
 {
    // Stop physics simulation on client.
@@ -75,7 +68,6 @@ function clientEndMission()
 //----------------------------------------------------------------------------
 // Mission start / end events sent from the server
 //----------------------------------------------------------------------------
-
 function clientCmdMissionStart(%seq)
 {
    clientStartMission();
@@ -91,8 +83,7 @@ function clientCmdMissionEnd( %seq )
    }
 }
 
-/// Expands the name of a mission into the full 
-/// mission path and extension.
+/// Expands the name of a mission into the full mission path and extension.
 function expandMissionFileName( %missionFile )
 {         
    // Expand any escapes in it.
@@ -118,7 +109,6 @@ function expandMissionFileName( %missionFile )
 
       %missionFile = %newMission;
    }
-   
    return %missionFile;
 }
 

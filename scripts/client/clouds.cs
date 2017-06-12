@@ -23,7 +23,6 @@
 //------------------------------------------------------------------------------
 // CloudLayer
 //------------------------------------------------------------------------------
-
 singleton ShaderData( CloudLayerShader )
 {
    DXVertexShaderFile   = "shaders/common/cloudLayerV.hlsl";
@@ -40,7 +39,6 @@ singleton ShaderData( CloudLayerShader )
 //------------------------------------------------------------------------------
 // BasicClouds
 //------------------------------------------------------------------------------
-
 singleton ShaderData( BasicCloudsShader )
 {
    DXVertexShaderFile   = "shaders/common/basicCloudsV.hlsl";

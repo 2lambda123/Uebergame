@@ -23,11 +23,9 @@
 // load gui used to display various metric outputs
 exec("scripts/gui/FrameOverlayGui.gui");
 
-// Note:  To implement your own metrics overlay 
-// just add a function with a name in the form 
-// XXXXMetricsCallback which can be enabled via
+// Note:  To implement your own metrics overlay just add a function with a name
+// in the form XXXXMetricsCallback which can be enabled via
 // metrics( XXXX )
-
 function fpsMetricsCallback()
 {
    return "  | FPS |" @ 
@@ -192,7 +190,6 @@ function partMetricsCallback()
    return particleMetricsCallback();
 }
 
-
 // alias
 function audioMetricsCallback()
 {
@@ -211,7 +208,6 @@ function videoMetricsCallback()
 // of each function are stringed together.
 //
 // Example: metrics( "fps gfx" );
-
 function metrics( %expr )
 {
    %metricsExpr = "";

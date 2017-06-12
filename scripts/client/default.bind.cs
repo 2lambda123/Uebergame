@@ -23,17 +23,15 @@
 //-----------------------------------------------------------------------------
 // Global Non-remapable binds
 //-----------------------------------------------------------------------------
-
 GlobalActionMap.bindCmd(keyboard, "escape", "", "handleEscape();");
-GlobalActionMap.bind(keyboard, "F9", toggleConsole);
 GlobalActionMap.bindCmd(keyboard, "alt k", "cls();","");
 GlobalActionMap.bindCmd(keyboard, "alt enter", "", "Canvas.attemptFullscreenToggle();");
 
-//GlobalActionMap.bind(keyboard, "F5", doProfile); // Debug mode only
+// #optimize, some of those could be moved into regular remappable binds
+//GlobalActionMap.bind(keyboard, "F4", doProfile); // Debug mode only
 GlobalActionMap.bind(keyboard, "F1", showMetrics);
 GlobalActionMap.bind(keyboard, "alt F1", showUeberMetrics);
 GlobalActionMap.bind( keyboard, "F5", doScreenShot );
-//GlobalActionMap.bind( keyboard, "F6", doScreenShotHudless);
 //GlobalActionMap.bind( keyboard, "alt F5", startRecordMovie );
 //GlobalActionMap.bind( keyboard, "alt F6", stopRecordMovie );
 GlobalActionMap.bind( keyboard, "alt F7", toggleMovieRecording );
@@ -41,10 +39,11 @@ GlobalActionMap.bind( keyboard, "alt F7", toggleMovieRecording );
 //GlobalActionMap.bind( keyboard, "F8", stopRecordingDemo );
 GlobalActionMap.bind( keyboard, "alt f8", toggleDemoRecording );
 
+GlobalActionMap.bind(keyboard, "F9", toggleConsole);
+
 //------------------------------------------------------------------------------
 // Utility remap functions:
 //------------------------------------------------------------------------------
-
 function ActionMap::copyBind( %this, %otherMap, %command )
 {
    if ( !isObject( %otherMap ) )
@@ -101,7 +100,6 @@ function ActionMap::clearBind(%this, %command)
 //------------------------------------------------------------------------------
 // Command functions
 //------------------------------------------------------------------------------
-
 function escapeFromGame()
 {
    if (PlayGui.isAwake())
@@ -177,7 +175,6 @@ function toggleGameMenuGui()
          Canvas.popDialog( MainMenuGui );
          Canvas.popDialog( MainMenuAdsGui );
       }
-
    }
    else
    { 
@@ -415,7 +412,6 @@ function doProfile(%val)
 //------------------------------------------------------------------------------
 // GUI Hud binds
 //------------------------------------------------------------------------------
-
 function showPlayerList(%val)
 {
    if(%val)
@@ -453,25 +449,10 @@ function hideHUDs(%val)
    if (%val)
       HudlessPlayGui.toggle();
 }
-// disabled hudless screenshot since it messes with main menu level
-// you still can hide the hud manually for screenshot, it is probably the better solution
-/*
-function doScreenShotHudless(%val)
-{
-   if(%val)
-   {
-      canvas.setContent(HudlessPlayGui);
-      //doScreenshot(%val);
-      schedule(10, 0, "doScreenShot", %val);
-   }
-   else
-      canvas.setContent(PlayGui);
-}
-*/
+
 //------------------------------------------------------------------------------
 // Movement Keys
 //------------------------------------------------------------------------------
-
 $movementSpeed = 1; // m/s
 
 function setSpeed(%speed)
@@ -631,7 +612,6 @@ function gamepadPitch(%val)
 //------------------------------------------------------------------------------
 // Triggers
 //------------------------------------------------------------------------------
-
 function mouseFire(%val)
 {
    $mvTriggerCount0 += (($mvTriggerCount0 & 1) == %val) ? 2 : 1;
@@ -665,7 +645,6 @@ function doSprint(%val)
 function throwGrenade( %val )
 {
    commandToServer( 'ThrowGrenade', %val );
-
    //$mvTriggerCount6 += (($mvTriggerCount6 & 1) == %val) ? 2 : 1;
 }
 
@@ -674,10 +653,10 @@ function throwFlag( %val )
    commandToServer( 'ThrowFlag', %val );
    //$mvTriggerCount7 += (($mvTriggerCount7 & 1) == %val) ? 2 : 1;
 }
+
 //------------------------------------------------------------------------------
 // Gamepad Trigger
 //------------------------------------------------------------------------------
-
 function gamepadFire(%val)
 {
    if(%val > 0.1 && !$gamepadFireTriggered)
@@ -709,52 +688,8 @@ function gamepadAltTrigger(%val)
 //------------------------------------------------------------------------------
 // Zoom and FOV functions
 //------------------------------------------------------------------------------
-
 if($Player::CurrentFOV $= "")
    $Player::CurrentFOV = $pref::Player::DefaultFOV / 2;
-
-// toggleZoomFOV() works by dividing the CurrentFOV by 2.  Each time that this
-// toggle is hit it simply divides the CurrentFOV by 2 once again.  If the
-// FOV is reduced below a certain threshold then it resets to equal half of the
-// DefaultFOV value.  This gives us 4 zoom levels to cycle through.
-
-function clientCmdtoggleScopeZoom(%val)
-{
-   if ( %val )
-   {   
-      if(ServerConnection.zoomed)
-      {
-         $Player::CurrentFOV = $pref::Player::Fov / 4;
-         setFOV($Player::CurrentFOV);
-         reticle.setVisible(false);
-         zoomReticle.setVisible(true);
-      }
-      else
-      {
-         setFov($pref::Player::Fov);
-         zoomReticle.setVisible(false);
-         reticle.setVisible(true);
-      }
-   }
-}
-
-function clientCmdtoggleIronZoom(%val)
-{   
-   if ( %val )
-   { 
-      if(ServerConnection.zoomed)
-      {
-         $Player::CurrentFOV = $pref::Player::Fov / 2;
-         setFOV($Player::CurrentFOV);
-         reticle.setVisible(false);
-      }
-      else 
-      {
-         setFov($pref::Player::Fov);
-         reticle.setVisible(true);
-      }
-   }
-}
 
 function resetCurrentFOV()
 {
@@ -801,10 +736,49 @@ function toggleIronSights( %val )
    }
 }
 
+// For sniper rifles etc with scopes, divides the FOV by 4 for far zoom
+function clientCmdtoggleScopeZoom(%val)
+{
+   if ( %val )
+   {   
+      if(ServerConnection.zoomed)
+      {
+         $Player::CurrentFOV = $pref::Player::Fov / 4;
+         setFOV($Player::CurrentFOV);
+         reticle.setVisible(false);
+         zoomReticle.setVisible(true);
+      }
+      else
+      {
+         setFov($pref::Player::Fov);
+         zoomReticle.setVisible(false);
+         reticle.setVisible(true);
+      }
+   }
+}
+
+// For iron sight weapons without scope, divices the FOV by 2, for slight zoom
+function clientCmdtoggleIronZoom(%val)
+{   
+   if ( %val )
+   { 
+      if(ServerConnection.zoomed)
+      {
+         $Player::CurrentFOV = $pref::Player::Fov / 2;
+         setFOV($Player::CurrentFOV);
+         reticle.setVisible(false);
+      }
+      else 
+      {
+         setFov($pref::Player::Fov);
+         reticle.setVisible(true);
+      }
+   }
+}
+
 //------------------------------------------------------------------------------
 // Camera & View functions
 //------------------------------------------------------------------------------
-
 function toggleFreeLook( %val )
 {
    if ( %val )
@@ -830,7 +804,6 @@ function toggleCamera(%val)
 //------------------------------------------------------------------------------
 // Misc. Player stuff
 //------------------------------------------------------------------------------
-
 function celebrationWave(%val)
 {
    if(%val)
@@ -852,7 +825,6 @@ function doSuicide(%val)
 //------------------------------------------------------------------------------
 // Item manipulation
 //------------------------------------------------------------------------------
-
 function triggerSpecial(%val)
 {
    commandToServer( 'UseSpecial', %val );
@@ -879,7 +851,6 @@ function tossAmmo( %val )
 //------------------------------------------------------------------------------
 // Message HUD functions
 //------------------------------------------------------------------------------
-
 function pageMessageHudUp( %val )
 {
    if ( %val )
@@ -901,6 +872,7 @@ function resizeMessageHud( %val )
 //------------------------------------------------------------------------------
 // Weapon functions
 //------------------------------------------------------------------------------
+// Currently unused, needs to be fixed so the animations for it work or maybe #cleanup
 /*
 function melee( %val )
 {
@@ -994,9 +966,9 @@ function useEighthWeaponSlot( %val )
       commandToServer( 'selectWeaponSlot', 7 );
 }
 
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // Vehicle related
-
+//------------------------------------------------------------------------------
 function useVehicleWeaponOne(%val)
 {
    if(%val)
@@ -1042,9 +1014,8 @@ function cycleNextVehicleWeaponOnly( %val )
 }
 
 //------------------------------------------------------------------------------
-// Demo recording functions
+// Demo and movie recording functions
 //------------------------------------------------------------------------------
-
 function toggleDemoRecording(%val)
 {
    if ( %val )
@@ -1102,7 +1073,6 @@ function stopRecordMovie( %val )
 //------------------------------------------------------------------------------
 // Helper Functions
 //------------------------------------------------------------------------------
-
 function dropCameraAtPlayer(%val)
 {
    if (%val)
@@ -1124,7 +1094,6 @@ function bringUpOptions(%val)
 //------------------------------------------------------------------------------
 // VOTING FUNCTIONS:
 //------------------------------------------------------------------------------
-
 function voteYes(%val)
 {
    if(%val)
@@ -1140,7 +1109,6 @@ function voteNo(%val)
 //------------------------------------------------------------------------------
 // Inventory functions
 //------------------------------------------------------------------------------
-
 function cycleLoadoutNext(%val) { if(%val) CycleLoadout(1); }
 function cycleLoadoutPrev(%val) { if(%val) CycleLoadout(2); }
 
@@ -1166,7 +1134,6 @@ function cycleLoadout(%val)
 //------------------------------------------------------------------------------
 // Misc.
 //------------------------------------------------------------------------------
-
 function autoMountVehicle(%val)
 {
    if ( %val )
@@ -1179,18 +1146,16 @@ function createVehicle(%val)
       commandToServer( 'CreateVehicle', $pref::Player::SelectedVehicle );
 }
 
-
 //------------------------------------------------------------------------------
 // Default actionmap
 //------------------------------------------------------------------------------
-
 if ( isObject( moveMap ) )
    moveMap.delete();
 
 new ActionMap(moveMap);
 
-//-----------------------------------------------------------------------------
 // Movement
+//------------------------------------------------------------------------------
 moveMap.bindCmd(keyboard, "escape", "", "handleEscape();");
 
 moveMap.bind( mouse, xaxis, yaw );
@@ -1207,11 +1172,12 @@ moveMap.bind( keyboard, "home", panUp );
 moveMap.bind( keyboard, "end", panDown );
 moveMap.bind( keyboard, "space", jump );
 moveMap.bind( keyboard, "lcontrol", doCrouch );
-//moveMap.bind( keyboard, "x", doProne );
+//moveMap.bind( keyboard, "x", doProne ); // no prone position yet, missing animations
 moveMap.bind( keyboard, "lshift", doSprint );
 //moveMap.bind( keyboard, "e", mouseJet ); //no jetpacking yet
-//-----------------------------------------------------------------------------
+
 // Weapons
+//-----------------------------------------------------------------------------
 moveMap.bind( mouse, button0, mouseFire );
 //moveMap.bind( keyboard, "q", melee ); //melee not working correctly yet
 moveMap.bind( keyboard, "r", reloadWeapon );
@@ -1220,7 +1186,7 @@ moveMap.bind( mouse, zaxis, cycleWeaponAxis );
 //moveMap.bind( keyboard, "+", nextWeapon );
 //moveMap.bind( keyboard, "minus", prevWeapon );
 moveMap.bind( keyboard, "1", useFirstWeaponSlot );
-//moveMap.bindCmd(keyboard, "1", "commandToServer('selectWeaponSlot', 0);", ""); //alternative method
+//moveMap.bindCmd(keyboard, "1", "commandToServer('selectWeaponSlot', 0);", ""); //alternative method #cleanup
 moveMap.bind( keyboard, "2", useSecondWeaponSlot );
 moveMap.bind( keyboard, "3", useThirdWeaponSlot );
 moveMap.bind( keyboard, "4", useFourthWeaponSlot );
@@ -1229,36 +1195,33 @@ moveMap.bind( keyboard, "6", useSixthWeaponSlot );
 moveMap.bind( keyboard, "7", useSeventhWeaponSlot );
 moveMap.bind( keyboard, "8", useEighthWeaponSlot );
 moveMap.bind( keyboard, "alt r", throwWeapon );
-//moveMap.bind( keyboard, "alt a", tossAmmo ); //needs update to clips
+//moveMap.bind( keyboard, "alt a", tossAmmo ); //needs to be updated to use clips
 
 moveMap.bind( keyboard, "b", triggerSpecial );
 moveMap.bind( keyboard, "alt b", tossSpecial );
 moveMap.bind( keyboard, "g", throwGrenade );
 moveMap.bind( keyboard, "alt g", tossGrenade );
 
-//-----------------------------------------------------------------------------
 // Vehicle
+//-----------------------------------------------------------------------------
 //moveMap.bind( keyboard, "x", createVehicle );
 moveMap.bind( keyboard, "m", autoMountVehicle );
 
-//-----------------------------------------------------------------------------
 // Camera and View
+//-----------------------------------------------------------------------------
 moveMap.bind( mouse, button1, toggleIronSights );
-//moveMap.bind( keyboard, "f", toggleZoomFOV );
 moveMap.bind( keyboard, "v", toggleFreeLook );
 moveMap.bind( keyboard, "F3", toggleFirstPerson );
 
-//-----------------------------------------------------------------------------
 // Misc
+//-----------------------------------------------------------------------------
 //moveMap.bind( keyboard, "l", celebrationWave );
 //moveMap.bind( keyboard, "k", celebrationSalute );
 moveMap.bind( keyboard, "ctrl k", doSuicide );
 moveMap.bind( keyboard, "f", throwFlag );
 
-//-----------------------------------------------------------------------------
 // Huds
-moveMap.bind( keyboard, "i", toggleArmoryDlg );
-moveMap.bind( keyboard, "o", showPlayerList );
+//-----------------------------------------------------------------------------
 moveMap.bind( keyboard, "tab", showScoreBoard );
 moveMap.bind( keyboard, "t", toggleMessageHud );
 moveMap.bind( keyboard, "y", teamMessageHud );
@@ -1267,17 +1230,24 @@ moveMap.bind( keyboard, "pageUp", pageMessageHudUp );
 moveMap.bind( keyboard, "pageDown", pageMessageHudDown );
 moveMap.bind( keyboard, "p", resizeMessageHud );
 moveMap.bind( keyboard, "c", toggleQuickChatHud );
-//moveMap.bind( keyboard, "alt o", bringUpOptions );
 moveMap.bind( keyboard, "insert", voteYes );
 moveMap.bind( keyboard, "delete", voteNo );
 moveMap.bind( keyboard, ".", cycleLoadoutNext );
 moveMap.bind( keyboard, ",", cycleLoadoutPrev );
-//moveMap.bind( keyboard, "n", toggleNetGraph );
-//moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
-//moveMap.bind( keyboard, "F8", toggleOverheadMap ); //???
-//moveMap.bind( keyboard, "F4", toggleMusicPlayer );
-moveMap.bind(keyboard, "alt h", hideHUDs);
+moveMap.bind( keyboard, "alt h", hideHUDs);
 
+// Hotkeys to Game Menu sub Guis
+moveMap.bind( keyboard, "i", toggleArmoryDlg );
+moveMap.bind( keyboard, "o", showPlayerList );
+//moveMap.bind( keyboard, "/", toggleVehicleHud ); //not in use yet
+
+// Hotkeys to Main Menu sub Guis
+moveMap.bind( keyboard, "alt o", bringUpOptions );
+moveMap.bind( keyboard, "alt m", toggleGuiMusicPlayer );
+moveMap.bind( keyboard, "alt n", toggleNetGraph );
+
+// Game pad/ Steam controller binds, needs #testing
+//-----------------------------------------------------------------------------
 moveMap.bind( gamepad, thumbrx, "D", "-0.23 0.23", gamepadYaw );
 moveMap.bind( gamepad, thumbry, "D", "-0.23 0.23", gamepadPitch );
 moveMap.bind( gamepad, thumblx, "D", "-0.23 0.23", gamePadMoveX );
@@ -1299,7 +1269,6 @@ moveMap.bind( gamepad, btn_back,  showScoreBoard );
 //------------------------------------------------------------------------------
 // Spectator actionmap
 //------------------------------------------------------------------------------
-
 if(isObject(spectatorMap))
    spectator.delete();
 
@@ -1314,7 +1283,6 @@ spectatorMap.copyBind( moveMap, mouseJet);
 //------------------------------------------------------------------------------
 // Vehicle actionmap
 //------------------------------------------------------------------------------
-
 // Starting vehicle action map code
 if ( isObject( vehicleMap ) )
    vehicleMap.delete();
@@ -1372,11 +1340,9 @@ vehicleMap.copyBind( moveMap, showScoreBoard );
 vehicleMap.copyBind( moveMap, toggleArmoryDlg );
 vehicleMap.copyBind( moveMap, bringUpOptions );
 
-
 //------------------------------------------------------------------------------
 // Push the proper key bind map. This is called by clientCmdSetHudMode
 //------------------------------------------------------------------------------
-
 function Torque::updateKeyMaps(%this)
 {
    echo( "Torque::updateKeyMaps(" SPC $HudMode SPC ")" );
@@ -1420,7 +1386,6 @@ function Torque::updateKeyMaps(%this)
          spectatorBlockMap.blockBind( moveMap, mouseJet );
          spectatorBlockMap.blockBind( moveMap, toggleQuickChatHud );
          //spectatorBlockMap.blockBind( moveMap, toggleZoom );
-         //spectatorBlockMap.blockBind( moveMap, setZoomFOV );
          spectatorBlockMap.blockBind( moveMap, toggleIronSights );
          spectatorBlockMap.push();
          spectatorMap.push();
@@ -1455,7 +1420,6 @@ function Torque::updateKeyMaps(%this)
 // ----------------------------------------------------------------------------
 // Oculus Rift
 // ----------------------------------------------------------------------------
-
 function OVRSensorRotEuler(%pitch, %roll, %yaw)
 {
    //echo("Sensor euler: " @ %pitch SPC %roll SPC %yaw);

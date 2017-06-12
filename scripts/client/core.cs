@@ -20,10 +20,7 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------------------------
-// initializeCore
-// Initializes core game functionality.
-//---------------------------------------------------------------------------------------------
+/// Initializes core game functionality.
 function Torque::initializeCore(%this)
 {
    // Not Reentrant
@@ -36,7 +33,6 @@ function Torque::initializeCore(%this)
    exec("scripts/gui/cursors.cs");
    exec("./cursor.cs");
    exec("./persistenceManagerTest.cs");
-   
    exec( "./audioEnvironments.cs" );
    exec( "./audioDescriptions.cs" );
    exec( "./audioStates.cs" );
@@ -67,7 +63,6 @@ function Torque::initializeCore(%this)
    exec("scripts/gui/creditsDlg.cs");
    exec("scripts/gui/console.cs");
    exec("scripts/gui/consoleVarDlg.cs");
-   //exec("scripts/gui/netGraphGui.cs"); //scripts are in .gui file
 
    // Random Scripts.
    exec("./screenshot.cs");
@@ -80,8 +75,8 @@ function Torque::initializeCore(%this)
    exec("./metrics.cs");
    exec("./centerPrint.cs");
 
-   // Materials and Shaders for rendering various object types
-   loadCoreMaterials();
+   // core materials like the warning material for texture errors
+   exec("./materials.cs");
 
    exec("./commonMaterialData.cs");
    exec("./shaders.cs");
@@ -107,18 +102,14 @@ function Torque::initializeCore(%this)
    $coreInitialized = true;
 }
 
-//---------------------------------------------------------------------------------------------
-// shutdownCore
-// Shuts down core game functionality.
-//---------------------------------------------------------------------------------------------
+/// Shuts down core game functionality.
 function shutdownCore()
 {      
-   // Stop file change events.
-   stopFileChangeNotifications();
-   
-   sfxShutdown();
+   stopFileChangeNotifications(); // Stop file change events.
+   sfxShutdown(); // Stop sounds
 }
 
+/// This is what happens when you press Esc button
 function handleEscape()
 {
    if (isObject(EditorGui))
@@ -153,86 +144,15 @@ function handleEscape()
       escapeFromGame();
 }
 
-//-----------------------------------------------------------------------------
-// loadMaterials - load all materials.cs files
-//-----------------------------------------------------------------------------
-function loadCoreMaterials()
-{
-   // Load any materials files for which we only have DSOs.
-
-   for( %file = findFirstFile( "scripts/materials.cs.dso" );
-        %file !$= "";
-        %file = findNextFile( "scripts/materials.cs.dso" ))
-   {
-      // Only execute, if we don't have the source file.
-      %csFileName = getSubStr( %file, 0, strlen( %file ) - 4 );
-      if( !isFile( %csFileName ) )
-         exec( %csFileName );
-   }
-
-   // Load all source material files.
-
-   for( %file = findFirstFile( "scripts/materials.cs" );
-        %file !$= "";
-        %file = findNextFile( "scripts/materials.cs" ))
-   {
-      exec( %file );
-   }
-}
-
-function reloadCoreMaterials()
-{
-   reloadTextures();
-   loadCoreMaterials();
-   reInitMaterials();
-}
-
-//-----------------------------------------------------------------------------
-// loadMaterials - load all materials.cs files
-//-----------------------------------------------------------------------------
+/// loadMaterials - load all materials.cs files
 function loadMaterials()
 {
-   // Load any materials files for which we only have DSOs.
-
-   for( %file = findFirstFile( "*/materials.cs.dso" );
-        %file !$= "";
-        %file = findNextFile( "*/materials.cs.dso" ))
-   {
-      // Only execute, if we don't have the source file.
-      %csFileName = getSubStr( %file, 0, strlen( %file ) - 4 );
-      if( !isFile( %csFileName ) )
-         exec( %csFileName );
-   }
-
-   // Load all source material files.
-
+   // Load all material.cs files in all directories
    for( %file = findFirstFile( "*/materials.cs" );
         %file !$= "";
         %file = findNextFile( "*/materials.cs" ))
    {
       exec( %file );
-   }
-
-   // Load all materials created by the material editor if
-   // the folder exists
-   if( IsDirectory( "materialEditor" ) )
-   {
-      for( %file = findFirstFile( "materialEditor/*.cs.dso" );
-           %file !$= "";
-           %file = findNextFile( "materialEditor/*.cs.dso" ))
-      {
-         // Only execute, if we don't have the source file.
-         %csFileName = getSubStr( %file, 0, strlen( %file ) - 4 );
-         if( !isFile( %csFileName ) )
-            exec( %csFileName );
-      }
-
-      for( %file = findFirstFile( "materialEditor/*.cs" );
-           %file !$= "";
-           %file = findNextFile( "materialEditor/*.cs" ))
-      {
-         exec( %file );
-      }
    }
 }
 
@@ -243,8 +163,7 @@ function reloadMaterials()
    reInitMaterials();
 }
 
-// From Martin "Founder" Hoover.
-// http://www.garagegames.com/my/home/view.profile.php?qid=5055
+// From Martin "Founder" Hoover. http://www.garagegames.com/my/home/view.profile.php?qid=5055
 function cropXDecimals(%num, %count)
 {
    %length = strlen(%num);

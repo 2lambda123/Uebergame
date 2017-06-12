@@ -34,7 +34,6 @@
 //----------------------------------------------------------------------------
 // Phase 1 
 //----------------------------------------------------------------------------
-
 function clientCmdMissionStartPhase1(%seq, %missionName, %musicTrack)
 {
    // These need to come after the cls.
@@ -52,7 +51,6 @@ function onDataBlockObjectReceived(%index, %total)
 //----------------------------------------------------------------------------
 // Phase 2
 //----------------------------------------------------------------------------
-
 function clientCmdMissionStartPhase2(%seq, %missionFile)
 {
    onPhase1Complete();
@@ -76,7 +74,6 @@ function onGhostAlwaysObjectReceived()
 //----------------------------------------------------------------------------
 // Phase 3
 //----------------------------------------------------------------------------
-
 function clientCmdMissionStartPhase3(%seq, %missionFile)
 {
    onPhase2Complete();
@@ -124,7 +121,6 @@ function sceneLightingComplete()
 //----------------------------------------------------------------------------
 // Helper functions
 //----------------------------------------------------------------------------
-
 function connect(%server)
 {
    %conn = new GameConnection(ServerConnection);
