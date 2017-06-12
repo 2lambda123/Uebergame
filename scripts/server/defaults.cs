@@ -46,9 +46,10 @@ $pref::Server::Port = 28000;
 // If the password is set, clients must provide it in order to connect to the server
 $pref::Server::Password = "";
 
+// Not dedicated by default of course, this is just for professionals
 $pref::Server::Dedicated = 0;
 
-// Password for admin clients
+// Password for admin clients, should be changed, otherwise anyone can enter with those
 $pref::Server::AdminPassword = "changeme";
 $pref::Server::SuperAdminPassword = "changemetoo";
 

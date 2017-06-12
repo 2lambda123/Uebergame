@@ -220,7 +220,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./sms.cs");
 
    // Load up any objects or datablocks
-      %datablockFiles = new ArrayObject();
+   %datablockFiles = new ArrayObject();
    %datablockFiles.add( "art/particles/managedParticleData.cs" );
    %datablockFiles.add( "art/particles/managedParticleEmitterData.cs" );
    %datablockFiles.add( "art/decals/managedDecalData.cs" );
@@ -243,8 +243,6 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./markers.cs");
    exec("./triggers.cs");
    exec("./player.cs");
-   exec("./aiClient.cs");
-   exec("./aiPlayer.cs");
    exec("./environment.cs");
    exec("./lights.cs");
 
@@ -338,11 +336,12 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 	  }
    }
    
-   // setup the behavior tree framework
-   //exec("./BadBehavior/main.cs"); //main.cs seems to make problems by getting executed too often
-   exec("./BadBehavior/behaviorTreeManager.cs");
-   exec("./BadBehavior/BadBot.cs");
-   //exec("./botMatch.cs");
+   // Ai functionality
+   exec("./ai/aiClient.cs");
+   exec("./ai/botNames.cs");
+   exec("./ai/botLoadouts.cs");
+   exec("./ai/behaviorTreeManager.cs");
+   exec("./ai/BadBot.cs");
    
    //Entity/Component stuff
    if(isFile("./components/game/camera.cs"))

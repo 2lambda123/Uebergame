@@ -1114,7 +1114,8 @@ function Armor::onAdd(%this, %obj)
          $Bot::Set.add( %obj );
       else
          error( "Failed to add new AiPlayer object to Bot Set!" );
-	 
+      
+	 // Activate the bot by starting the bot behavior tree
 	 %obj.setbehavior(BotTree, $BotTickFrequency);
    }
 }

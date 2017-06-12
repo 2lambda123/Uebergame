@@ -1037,7 +1037,6 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          %client.camera.getDataBlock().setMode( %client.camera, "pre-game", %player );
       }
    }
-
    // Setup the bot
    if ( ( $Game::Running || %respawn ) && %client.isAiControlled() )
    {
@@ -1055,16 +1054,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          %client.setBotFav(%client.getRandomLoadout());
          %player.use( %player.weaponSlot[1] );
       }
-	  //BadBot
-      //%player.setbehavior(BotTree, $BotTickFrequency); //is in BadBotData::onAdd now
-      // Give the bot something to do
-      //%client.setUpTasks();
-
-      // Give the client control of the bot
-	  // Normally you would do this but we want to use AiPlayer class functions which are more robust that AiClient
-      //%client.setControlObject(%player);
    }
-
    // update anyone spectating this client we dont worry about bots here because 
    // their cam mode would always be NULL.
    %count = ClientGroup.getCount();

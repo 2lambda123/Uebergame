@@ -231,7 +231,7 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    }
 
    //re-execute BadBehaviorTreeManager, since it gets removed by mission cleanup somehow
-   exec("./BadBehavior/behaviorTreeManager.cs");
+   exec("./ai/behaviorTreeManager.cs");
    
    // Need a group to put all the aiPlayer's in so we can index them etc.
    $Bot::Set = new SimSet( "BotSet" );

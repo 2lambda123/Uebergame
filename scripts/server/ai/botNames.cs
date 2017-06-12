@@ -1,0 +1,143 @@
+//-----------------------------------------------------------------------------
+// Bot client naming functions, used for aiConnection::onConnect()
+//-----------------------------------------------------------------------------
+$RandomBotNameCount = 0;
+function addBotName(%name)
+{
+   $RandomBotName[$RandomBotNameCount] = %name;
+   $RandomBotNameCount++;
+}
+
+function getRandomBotName()
+{
+   %index = getRandom( $RandomBotNameCount-1 );
+   return($RandomBotName[%index]); 
+}
+
+// More bot names can be added below, the game will randomly pick one out of all.
+//-----------------------------------------------------------------------------
+addBotName("Bullseye");
+addBotName("Casualty");
+addBotName("Fodder");
+addBotName("Grunt");
+addBotName("Meat");
+addBotName("Tardo");
+addBotName("Roadkill");
+addBotName("SkidMark");
+addBotName("Flatline");
+addBotName("Spud");
+addBotName("WormChow");
+addBotName("Endangered");
+addBotName("Squidloaf");
+addBotName("Gimp");
+addBotName("Masochist");
+addBotName("Terminal");
+addBotName("KickMe");
+addBotName("Fred");
+addBotName("Fluffy");
+addBotName("Bunny");
+addBotName("Fluffy Bunny");
+addBotName("Carcass");
+addBotName("Spastic");
+addBotName("Bumpkin");
+addBotName("Mad Cow");
+addBotName("Oblivious");
+addBotName("Bait");
+addBotName("Master Bait");
+addBotName("Tin Can");
+addBotName("Slave");
+addBotName("Master Slave");
+addBotName("Ballerman");
+addBotName("Schrotti");
+addBotName("Schrottkopf");
+addBotName("Kaputnik");
+addBotName("Number 5");
+addBotName("Kork");
+addBotName("Default Soldier");
+addBotName("Unter Soldier");
+addBotName("Clone Krieger");
+addBotName("Min Damage");
+addBotName("Max Damage");
+addBotName("Collateral");
+addBotName("Android");
+addBotName("Das Bot");
+addBotName("Machine Soldier");
+addBotName("Automaton");
+addBotName("Dr Gadget");
+addBotName("Zeiborg");
+addBotName("Golem");
+addBotName("Sleepwalker");
+addBotName("Mario Net");
+addBotName("Pappkamerad");
+addBotName("Hans Wurst");
+addBotName("Weirdo");
+addBotName("Blechdose");
+addBotName("Ai Robot");
+addBotName("Botti");
+addBotName("Mechanical Turk");
+addBotName("Databot");
+addBotName("BotOMat");
+addBotName("BotMaster");
+addBotName("Botman");
+addBotName("Bot Omat");
+addBotName("Boten Anar");
+addBotName("Dummy");
+addBotName("Ai Commander");
+addBotName("Ai Fish");
+addBotName("Turing Test");
+addBotName("Turing Complete");
+addBotName("Turing Incomplete");
+addBotName("Artificial");
+addBotName("Weird Ai");
+addBotName("iBot");
+addBotName("Rob Oter");
+addBotName("Roh Bot");
+addBotName("RoBo");
+addBotName("Otto");
+addBotName("Autobot");
+addBotName("I the Machine");
+addBotName("Servus ex Machina");
+addBotName("Scrap Man");
+addBotName("Scrap Head");
+addBotName("Ai Gear");
+addBotName("Botzkrieg");
+addBotName("Motorschwein");
+addBotName("Motorbot");
+addBotName("UeberBot");
+addBotName("UnterBot");
+addBotName("MegaBot");
+addBotName("MiniBot");
+addBotName("Al Aine");
+addBotName("Weltver Bot");
+addBotName("Talbot");
+addBotName("A. Trappe");
+addBotName("Nick Echt");
+addBotName("Pro Grammar");
+addBotName("Pro Gaymar");
+addBotName("John Roh");
+addBotName("Kick Botter");
+addBotName("Bot Kicker");
+addBotName("Filthy Casual");
+addBotName("Ey Ei");
+addBotName("Zervus");
+addBotName("Bot Anicus");
+addBotName("Swagbot");
+addBotName("Fagbot");
+addBotName("Rie Tardo");
+addBotName("Zoidbot");
+addBotName("Row Boat");
+addBotName("B Team");
+addBotName("The Machinist");
+addBotName("Bort");
+addBotName("Robort");
+addBotName("Rebot");
+addBotName("Aborter");
+addBotName("Robo Sapien");
+addBotName("U-Bot");
+addBotName("Saibot");
+addBotName("Run Bot");
+addBotName("Run Botrun");
+addBotName("Ben Der");
+addBotName("Blender");
+addBotName("Buster");
+addBotName("Borot");
