@@ -20,8 +20,6 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-
 function kick( %client, %admin )
 {
    messageAll( 'MsgAdminForce', '\c2The Admin has kicked %1.', %client.playerName);

@@ -198,12 +198,9 @@ function GrenadeThrown::onDestroyed(%data, %obj, %prevState)
    %obj.schedule(500, "delete");
 }
 
-//-----------------------------------------------------------------------------
 // SMS Inventory
-
 SmsInv.AllowGrenade("Soldier");
 SmsInv.AddGrenade(Grenade, "Grenade");
-//             |Item| |InvGrenade| |AmmoIncrement|
-
+//    |Item| |InvGrenade| |AmmoIncrement|
 SmsInv.AllowAmmo("armor\tSoldier\t2");
 SmsInv.AddAmmo(GrenadeAmmo, 1);

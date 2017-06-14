@@ -22,11 +22,10 @@
 
 // DisplayName = Master Gametype
 
-//--- GAME RULES BEGIN ---
+// Game rules:
 $HostGameRules["Core", 0] = "Eliminate the competition.";
 $HostGameRules["Core", 1] = "Last player standing is declared the winner or";
 $HostGameRules["Core", 2] = "player with most kills at timelimit.";
-//--- GAME RULES END ---
 
 //-----------------------------------------------------------------------------
 // <> EXECUTION ORDER <>
@@ -90,11 +89,8 @@ function CoreGame::onMissionLoaded(%game)
 
    %game.setupObjectCounts();
 
-   // Setup objectives
-   MissionGroup.initializeObjective();
-
-   // Setup vehicle spawns
-   MissionGroup.setupPositionMarkers(true);
+   MissionGroup.initializeObjective(); // Setup objectives
+   MissionGroup.setupPositionMarkers(true); // Setup vehicle spawns
 
    // Setup protected objects
    if ( $pref::Server::TournamentMode )
@@ -138,9 +134,9 @@ function CoreGame::setupObjectCounts(%game)
    }
 }
 
+/// Setup scoring etc.
 function CoreGame::setupGameParams(%game)
 {
-   // Setup scoring etc.
    //LogEcho("\c4CoreGame::setupGameParams(" SPC %game.class SPC ")");
    
    $Game::Schedule = "";
@@ -355,23 +351,20 @@ function CoreGame::notifyMatchStart(%game, %time)
       messageAll('MsgMissionStart', 'Match starts in 1 second.');
 
    messageAll('MsgSyncClock', "", mFloor(%seconds * 2), true, true);
-   //messageAll('MsgSyncClock', "", %seconds);
 }
 
 function CoreGame::startGame(%game)
 {
    //LogEcho("\c4CoreGame::startGame(" SPC %game.class SPC ")");
-   // This is where the game play should start
-   // The default onMissionLoaded function starts the game.
-
+   
+   // This is where the game play should start, the default onMissionLoaded function starts the game.
    if ( $Game::Running )
    {
       error("startGame: End the game first!");
       return;
    }
 
-   // Keep track of when the game started
-   $Game::StartTime = $Sim::Time;
+   $Game::StartTime = $Sim::Time; // Keep track of when the game started
 
    if (!$UsingMainMenuLevel) // No time limit for main menu levels
    {
@@ -382,12 +375,9 @@ function CoreGame::startGame(%game)
          %curTimeLeftMS = (15 * 60 * 1000);
 
       $Game::Schedule = %game.schedule(%curTimeLeftMS, "onGameDurationEnd");
-
-      //schedule the end of match countdown
-      %game.EndCountdown(%curTimeLeftMS);
+      %game.EndCountdown(%curTimeLeftMS); //schedule the end of match countdown
     
       messageAll('MsgSyncClock', "", (%curTimeLeftMS / 1000), true, false);
-      //messageAll('MsgSyncClock', "", 0);
    }
 
    $Game::Running = true;
@@ -409,13 +399,6 @@ function CoreGame::startGame(%game)
             clearBottomPrint(%cl);
             clearCenterPrint(%cl);
          }
-      }
-      else // Set the Bots on their way..
-      {
-         //Bot start task time, incremented per bot so we dont get a pileup..
-         //%cl.setUpTasks();
-         //if ( isObject( %cl.player ) )
-         //   %cl.setControlObject(%cl.player);
       }
 
       // set all clients control to their player and anything else needed
@@ -451,9 +434,7 @@ function CoreGame::startGame(%game)
    }
 }
 
-//-----------------------------------------------------------------------------
-
-// Called from function serverCmdMissionStartPhase2Ack in commands.cs
+/// Called from function serverCmdMissionStartPhase2Ack in commands.cs
 function CoreGame::setClientState(%game, %client)
 {
    //LogEcho("\c4CoreGame::setClientState(" SPC %game.class SPC %client.nameBase SPC ")");
@@ -502,25 +483,15 @@ function CoreGame::setClientState(%game, %client)
                else
                {   
                   %game.assignClientTeam(%client);
-                  
-                  // spawn the player
-                  %game.spawnPlayer(%client, 0);
+                  %game.spawnPlayer(%client, 0); // spawn the player
                }
             }
          }
          else
          {   
             %game.assignClientTeam(%client);
-            
-            // spawn the player
-            %game.spawnPlayer(%client, 0);
-         }
-         // Not needed I don't think..
-         //if(!%spectator)
-         //{
-         //   if(!$Game::Running)
-         //      %client.camera.getDataBlock().setMode(%client.camera, "pre-game", %client.player);
-         //}   
+            %game.spawnPlayer(%client, 0); // spawn the player
+         } 
       }
    }
 
@@ -550,9 +521,6 @@ function CoreGame::onClientEnterGame(%game, %client)
    //synchronize the clock HUD
    messageClient(%client, 'MsgSyncClock', "", $Sim::Time - $Game::StartTime);
    %game.sendClientTeamList(%client);
-
-   // Setup audio
-   //commandToClient(%client, 'setPowerAudioProfiles', BasePowerOn.getId(), BasePowerOff.getId());
 
    if ( !$pref::Server::TournamentMode )
    {
@@ -604,8 +572,7 @@ function CoreGame::onClientEnterGame(%game, %client)
          else
             %damMess = "DISABLED";
          
-         //if(%game.numTeams > 1)
-            BottomPrint(%client, "Server is Running in Tournament Mode.\nPick a Team\nFriendly fire is " @ %damMess, 0, 3 ); 
+         BottomPrint(%client, "Server is Running in Tournament Mode.\nPick a Team\nFriendly fire is " @ %damMess, 0, 3 ); 
       }
       else
       {
@@ -713,7 +680,6 @@ function CoreGame::pickSpawnPoint(%game, %team)
          {
             if ( %spawn.sphereWeight > 0 )
             {
-               //%pos = VectorAdd( getValidSpawnSurface( %spawn.getPosition(), %spawn.radius ), "0 0 0.25" );
                %pos = VectorAdd( %game.pickPointInSpawnSphere( %spawn ), "0 0 0.1" );
                %rot = mDegToRad(getRandom(360));
                return( %pos SPC "0 0 1 " @ %rot );
@@ -776,19 +742,15 @@ function CoreGame::pickPointInSpawnSphere(%game, %spawnSphere)
       initContainerRadiusSearch( %sphereLocation, 3.5, ( $TypeMasks::PlayerObjectType | $TypeMasks::PlayerObjectType ) );
       while ( (%objectNearExit = containerSearchNext()) != 0 )
       {
-         // If any player is found within this radius, mark that we need to look
-         // for another spot.
+         // If any player is found within this radius, mark that we need to look for another spot.
          %SpawnLocationFound = false;
          break;
-      }
-         
-      // If the attempt at finding a clear spawn location failed
-      // try no more than 5 times.
+      }   
+      // If the attempt at finding a clear spawn location failed try no more than 5 times.
       %attemptsToSpawn++;
    }
       
-   // If we couldn't find a spawn location after 5 tries, spawn the object
-   // At the center of the sphere and give a warning.
+   // If we couldn't find a spawn location after 5 tries, spawn the object at the center of the sphere and give a warning.
    if ( !%SpawnLocationFound )
    {
       %sphereLocation = %spherePos;
@@ -810,15 +772,13 @@ function CoreGame::spawnPlayer(%game, %client, %respawn)
 
 function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 {
-   //LogEcho("\c4CoreGame::createPlayer(" SPC %game.class SPC %client.nameBase SPC %spawnPoint SPC ")");
-   // The client should not have a player currently assigned. 
-   // Assigning a new one could result in a player ghost.
+   //LogEcho("\c4CoreGame::createPlayer(" SPC %game.class SPC %client.nameBase SPC %spawnPoint SPC 
+   
+   // The client should not have a player currently assigned. Assigning a new one could result in a player ghost.
    if( isObject(%client.player) && ( %client.player.getState() !$= "Dead" ) )
-      //%client.player.kill( $DamageType::ScriptDamage );
-      %client.player.schedule(50,"delete"); //better solution
+      %client.player.schedule(50,"delete");
 	  
-   // clients and cameras can exist in team 0, but players should not
-   // Force to a valid team
+   // clients and cameras can exist in team 0, but players should not Force to a valid team
    if ( %client.team == 0 )
    {
       %game.assignClientTeam(%client, $Game::Running);
@@ -832,7 +792,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 	  switch$ (%game.playerType)
 	  {
 	   case "DefaultPlayerData":
-	     %player = new AiPlayer()
+	    %player = new AiPlayer()
 		 {
          dataBlock = DefaultPlayerData;
          class = "BadBot";
@@ -868,7 +828,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          };
 		 
 	   default:
-		 %player = new AiPlayer()
+		   %player = new AiPlayer()
          {
          dataBlock = $NameToData[%client.loadout[0]];
          class = "BadBot";
@@ -885,20 +845,18 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          allowTeleport = true;
          };
       }
-	  
-   //BadBot
-   %player.setPosition(%spawnPoint);
-   //BadBot tetherpoint will give the bot a place to call home
-   %player.tetherPoint = %spawnPoint;
-   
+      
+   %player.setPosition(%spawnPoint); //BadBot
+   %player.tetherPoint = %spawnPoint; // Tetherpoint will give the bot a place to call home
+    
    }
    else
    {
 	  switch$ (%game.playerType)
 	  {
 	   case "DefaultPlayerData":
-	     %player = new Player() 
-		 {
+	    %player = new Player() 
+         {
            dataBlock = DefaultPlayerData;
            client = %client;
            team = %client.team;
@@ -907,7 +865,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 		 
 	   case "Paintball":
 		 %player = new Player() 
-		 {
+         {
            dataBlock = PaintballPlayerData;
            client = %client;
            team = %client.team;
@@ -916,7 +874,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 		 
 	   default:
 		 %player = new Player() 
-		 {
+         {
            dataBlock = $NameToData[%client.loadout[0]];
            client = %client;
            team = %client.team;
@@ -925,9 +883,6 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 	  }
    }
    MissionCleanup.add(%player);
-
-   //if(isEventPending(%client.respawnTimer))
-   //   cancel(%client.respawnTimer);
 
    if(%respawn)
    {
@@ -947,8 +902,6 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
 
       %client.respawns--;
       %player.setInvincible( true );
-      //%player.setCloaked(true); //no respawn cloak for now
-      //%player.respawnCloakThread = %player.schedule(1 * 1000, "setRespawnCloakOff");
 	   %player.schedule( $InvincibleTime, "setInvincibleOff" );	  
    }
 
@@ -957,7 +910,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    %player.setTeamId(%client.team);
    %player.setTransform(%spawnPoint);
    %player.setShapeName(%client.playerName);
-   %player.isInIronSights = false;
+   %player.isInIronSights = false; // init iron sight aiming variable
    %player.isReloading = false; // init reloading variable
    
    if ( %client.team == 0 )
@@ -978,40 +931,40 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
    if ( !%client.isAiControlled() )
    {
    switch$ (%game.playerType)
-    {
-     case "Paintball": 
-	 //loadout a red marker by default for red team and for blue team and deathmatch a blue marker as default
-	 if ( %player.weaponSlot[0] $= "" && %client.team == 2 )
-     {
-     %player.setInventory( PaintballMarkerRed, 1, 1 );
-     %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
-     %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
-     %player.weaponCount++;
-	 }
-     else if ( %player.weaponSlot[0] $= "" )
-	 {
-     %player.setInventory( PaintballMarkerBlue, 1, 1 );
-     %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
-     %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
-     %player.weaponCount++;
-	 }
-	 //use slot 0 since this is our first weapon
-	 %player.use( %player.weaponSlot[0] );
+      {
+      case "Paintball": 
+         //loadout a red marker by default for red team and for blue team and deathmatch a blue marker as default
+      if ( %player.weaponSlot[0] $= "" && %client.team == 2 )
+      {
+         %player.setInventory( PaintballMarkerRed, 1, 1 );
+         %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
+         %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
+         %player.weaponCount++;
+      }
+      else if ( %player.weaponSlot[0] $= "" )
+      {
+         %player.setInventory( PaintballMarkerBlue, 1, 1 );
+         %player.setInventory( PaintballClip, %player.maxInventory(PaintballClip), 1 );
+         %player.setInventory( PaintballAmmo, %player.maxInventory(PaintballAmmo), 1 );
+         %player.weaponCount++;
+      }
+      
+      %player.use( %player.weaponSlot[0] ); //use slot 0 since this is our first weapon
 	 
-	 case "DefaultPlayerData": 
+      case "DefaultPlayerData": 
 	 //check if soldier did not equip a primary weapon and give Lurker Rifle as a default then
-	 if ( %player.weaponSlot[1] $= "" )
-	 {
-     %player.setInventory( Lurker, 1, 1 );
-     %player.setInventory( LurkerClip, %player.maxInventory(LurkerClip), 1 );
-     %player.setInventory( LurkerAmmo, %player.maxInventory(LurkerAmmo), 1 );
-     %player.weaponCount++;
-	 }
-	 //use slot 1 for the DefaultPlayerData, since his main weapon is on slot 1 instead of 0, since he has a pistol also
-	 %player.use( %player.weaponSlot[1] );
+      if ( %player.weaponSlot[1] $= "" )
+      {
+         %player.setInventory( Lurker, 1, 1 );
+         %player.setInventory( LurkerClip, %player.maxInventory(LurkerClip), 1 );
+         %player.setInventory( LurkerAmmo, %player.maxInventory(LurkerAmmo), 1 );
+         %player.weaponCount++;
+      }
+      //use slot 1 for the DefaultPlayerData, since his main weapon is on slot 1 instead of 0, since he has a pistol also
+      %player.use( %player.weaponSlot[1] );
 	 
-	 default: %player.use( %player.weaponSlot[0] ); //all others start with weapon slot 0 as default
-    }
+      default: %player.use( %player.weaponSlot[0] ); //all others start with weapon slot 0 as default
+      }
    }
    
    // Update the camera to start with the player.
@@ -1024,7 +977,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       if ( $Game::Running )
       {
          if ( %client.getControlObject() != %player )
-            %client.setControlObject( %player );
+         %client.setControlObject( %player );
 
          commandToClient(%client, 'setHudMode', 'Play');
       }
@@ -1032,7 +985,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       {
          // Should allready have control of the camera. Check just in case
          if ( %client.getControlObject() != %client.camera )
-            %client.setControlObject( %client.camera );
+         %client.setControlObject( %client.camera );
 
          %client.camera.getDataBlock().setMode( %client.camera, "pre-game", %player );
       }
@@ -1055,8 +1008,7 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
          %player.use( %player.weaponSlot[1] );
       }
    }
-   // update anyone spectating this client we dont worry about bots here because 
-   // their cam mode would always be NULL.
+   // update anyone spectating this client we dont worry about bots here because their cam mode would always be NULL.
    %count = ClientGroup.getCount();
    for (%i = 0; %i < %count; %i++)
    {
@@ -1084,12 +1036,12 @@ function CoreGame::loadOut(%game, %player)
       SmsInv.ProcessLoadout( %client );
 	  
 	  if (%player.PlayerData = DefaultPlayerData)
-	  {
-      //%player.setInventory( HealthKit, 1 );
-      %player.setInventory( Ryder, 1, 1 );
-      %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
-      %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );
-	  }
+      {
+         //%player.setInventory( HealthKit, 1 );
+         %player.setInventory( Ryder, 1, 1 );
+         %player.setInventory( RyderClip, %player.maxInventory(RyderClip), 1 );
+         %player.setInventory( RyderAmmo, %player.maxInventory(RyderAmmo), 1 );
+      }
       %player.weaponCount++;
    }
 }
@@ -1097,11 +1049,8 @@ function CoreGame::loadOut(%game, %player)
 function CoreGame::onClientLeaveGame(%game, %client)
 {
    //LogEcho("\c4CoreGame::onClientLeaveGame(" SPC %game.class SPC %client.nameBase SPC ")");
-   //cancel(%client.respawnTimer);
-   //%client.respawnTimer = "";
 
-   // Leave fire team if any..
-   serverCmdleaveFireTeam(%client);
+   serverCmdleaveFireTeam(%client); // Leave fire team if any..
 
    // Remove any turrets this client owns
    if ( %client.ownedTurrets )
@@ -1222,16 +1171,9 @@ function CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient
          }
          %client.respawnWait = 1;
          %game.schedule( $CorpseTimeoutValue, "clearRespawnWait", %client );
-
-         //cancel( %client.respawnTimer );
-         //%client.respawnTimer = %game.schedule(($CorpseTimeoutValue + $pref::Server::RespawnTimeout * 1000), "forceSpectator", %client, "spawnTimeout");
       }
 
       %client.player = 0;
-
-      // Decrease the player class teamcount
-      //if(!$pref::Server::TournamentMode && $LimitClasses)
-      //   $TeamClassCount[%client.team, %client.armor]--;
    }
 }
 
@@ -1259,7 +1201,6 @@ function CoreGame::clearClientVaribles(%game, %client)
 //-----------------------------------------------------------------------------
 // Games over, go home
 //-----------------------------------------------------------------------------
-
 function CoreGame::EndCountdown(%game, %timeMS)
 {
    //LogEcho("\c4CoreGame::EndCountdown(" SPC %game.class SPC %timeMS SPC ")");
@@ -1294,9 +1235,9 @@ function CoreGame::notifyMatchEnd(%game, %time)
 function CoreGame::onGameDurationEnd(%game)
 {
    //LogEcho("\c4CoreGame::onGameDurationEnd(" SPC %game.class SPC ")");
-   // This "redirect" is here so that we can abort the game cycle if
-   // the $Game::Duration variable has been cleared, without having
-   // to have a function to cancel the schedule.
+   
+   // This "redirect" is here so that we can abort the game cycle if the $Game::Duration variable
+   // has been cleared, without having to have a function to cancel the schedule.
 
    echo("Game over (timelimit)");
    %game.cycleGame();
@@ -1305,11 +1246,9 @@ function CoreGame::onGameDurationEnd(%game)
 function CoreGame::cycleGame(%game)
 {
    //LogEcho("\c4CoreGame::cycleGame(" SPC %game.class SPC ")");
-   // This is setup as a schedule so that this function can be called
-   // directly from object callbacks.  Object callbacks have to be
-   // carefull about invoking server functions that could cause
-   // their object to be deleted.
-
+   
+   // This is setup as a schedule so that this function can be called directly from object callbacks. Object callbacks
+   // have to be carefull about invoking server functions that could cause their object to be deleted.
    if ($Game::Running && (!EditorIsActive() && !GuiEditorIsActive()))
    {
       if(isEventPending($Game::Schedule))
@@ -1338,21 +1277,17 @@ function CoreGame::endGame(%game)
       %cl.lastTeam = %client.team;
       if(!%cl.isAiControlled())
       {
-         commandToClient(%cl, 'GameEnd');
-
-         // Turn the hud off
-         commandToClient(%cl, 'setHudMode', 'Spectator');
+         commandToClient(%cl, 'GameEnd'); // end the game
+         commandToClient(%cl, 'setHudMode', 'Spectator'); // Turn the hud off
       }
       else // Cleanup the ai
          %cl.onEndGame();
    }
 
    messageAll('MsgGameOver', '\c2Match has ended.');
-
    messageAll('MsgClearObjHud', "");
 
-   // Setup random teams
-   %game.setupClientTeams();
+   %game.setupClientTeams(); // Setup random teams
    $Game::Running = false;
 }
 
@@ -1439,43 +1374,8 @@ function CoreGame::onCyclePauseEnd(%game)
 
    $Game::Schedule = "";
 
-   // Just cycle through the missions for now.
-   %game.cycleMissions();
+   %game.cycleMissions(); // Just cycle through the missions for now.
 }
-
-// Alternate method just searches mis files and loads next
-//function CoreGame::onCyclePauseEnd(%game)
-//{
-//   //LogEcho("\c4CoreGame::onCyclePauseEnd(" SPC %game.class SPC ")");
-//   $Game::Cycling = false;
-//   if(isEventPending(%game.GameSchedule))
-//      cancel(%game.GameSchedule);
-
-//   %game.GameSchedule = "";
-
-   // Just cycle through the missions for now.
-   //findFirstFile and findNextFile is the file name with extension and path
-   //fileName is the file name with extension and no path
-   //fileBase is the file name with no extension or path
-//   %search = $Server::MissionFileSpec;
-//   for (%file = findFirstFile(%search); %file !$= ""; %file = findNextFile(%search))
-//   {
-//      if (fileBase(%file) $= $Server::MissionName)
-//      {
-         // Get the next one, back to the first if there is no next.
-//         %file = findNextFile(%search);
-//         if(fileName(%file) $= "newMission.mis")
-//            %file = findNextFile(%search);
-
-//         if (%file $= "")
-//           %file = findFirstFile(%search);
-
-//         break;
-//      }
-//   }
-//   messageAll('MsgClient', 'Loading %1 (%2)...', fileBase(%file), $MissionTypeDisplayName);
-//   tge.loadMission(fileBase(%file), $Server::MissionType, false);
-//}
 
 function CoreGame::getNextMission(%game, %mission, %misType)
 {
@@ -1560,26 +1460,18 @@ function CoreGame::cycleMissions(%game)
 //-----------------------------------------------------------------------------
 // Misc game functions
 //-----------------------------------------------------------------------------
-
 function CoreGame::forceSpectator(%game, %client, %reason)
 {
    //LogEcho("\c4CoreGame::forceSpectator(" SPC %game.class SPC %client.nameBase SPC %reason SPC ")");
-   //make sure we have a valid client...
-   if (%client <= 0)
+   
+   if (%client <= 0) //make sure we have a valid client...
       return;
 
    if(!$Game::Running) // Make sure the game has started
       return;
 
-   // first kill this player
    if(%client.player)
-      //%client.player.kill($DamageType::ScriptDamage);
-      %client.player.schedule(50,"delete"); //better solution
-
-   //if(isEventPending(%client.respawnTimer))
-   //   cancel(%client.respawnTimer);
-
-   //%client.respawnTimer = "";
+      %client.player.schedule(50,"delete"); // delete player object if going spectator
 
    // place them in spectator mode
    %game.clearRespawnWait(%client);
@@ -1590,8 +1482,6 @@ function CoreGame::forceSpectator(%game, %client, %reason)
    // switch client to team 0 (spectator) and save off the last team they were on
    %client.lastTeam = %client.team;
    %client.team = 0;
-   //%client.player.team = 0;
-   //%client.player.setTeam(0);
    %client.notready = 1;
    %client.notReadyCount = "";
 
@@ -1614,13 +1504,12 @@ function CoreGame::forceSpectator(%game, %client, %reason)
          echo(%client.nameBase@" (cl "@%client@") was placed in spectator mode due to spawn delay");
    }
 
-   // set their control to the obs. cam
-   %client.setControlObject( %client.camera );
+   %client.setControlObject( %client.camera ); // set their control to the obs. cam
 
    // display the hud and clear any previous prints
    clearBottomPrint(%client);
    clearCenterPrint(%client);
-   //commandToClient(%client, 'setHudMode', 'Spectator');
+   //commandToClient(%client, 'setHudMode', 'Spectator'); // #investigate if this is necessary or could be used as a feature
    updateSpectatorHud(%client);
 
    // message everyone about this event
@@ -1634,11 +1523,8 @@ function CoreGame::forceSpectator(%game, %client, %reason)
 
 function CoreGame::onClientBecomeSpectator(%game, %client)
 {
-   // Leave fire team if any..
-   serverCmdleaveFireTeam(%client);
-   
-   //reset scores for spectators, they do not deserve scores
-   %game.clearClientVaribles(%client);
+   serverCmdleaveFireTeam(%client); // Leave fire team if any..
+   %game.clearClientVaribles(%client); //reset scores for spectators, they do not deserve scores
 
    for(%i = 0; %i < ClientGroup.getCount(); %i++)
    {
@@ -1832,7 +1718,6 @@ function CoreGame::updateScoreHud(%game, %client)
 //-----------------------------------------------------------------------------
 // Camera functions
 //-----------------------------------------------------------------------------
-
 function CoreGame::SpectatorOnTrigger(%game, %data, %obj, %trigger, %state, %client)
 {
    //LogEcho("\c4CoreGame::SpectatorOnTrigger(" SPC %game.class SPC %data.getName() SPC %obj.mode SPC %trigger SPC %state SPC %client.nameBase SPC ")");
@@ -1931,9 +1816,8 @@ function CoreGame::SpectatorOnTrigger(%game, %data, %obj, %trigger, %state, %cli
                %nextClient = findNextObserveClient(%client);
                %prevObsClient = %client.observeClient;
                if (%nextClient > 0 && %nextClient != %client.observeClient)
-               {
-                  // update the observer list for this client
-                  spectatorFollowUpdate(%client, %nextClient, true);
+               { 
+                  spectatorFollowUpdate(%client, %nextClient, true); // update the observer list for this client
                
                   //set the new object
                   %transform = %nextClient.player.getTransform();
@@ -2084,12 +1968,11 @@ function CoreGame::SpectatorSetMode(%game, %data, %obj, %mode, %targetObj)
          }
 
       case "Corpse":
-         // Lock the camera down in orbit around the corpse,
-         // which should be targetObj
+         // Lock the camera down in orbit around the corpse, which should be targetObj
          commandToClient(%client, 'setHudMode', 'Corpse');
          %transform = %targetObj.getTransform();
          %pos = posFromTransform(%transform);
-         //%params = %targetObj.getDataBlock().observeParameters;
+         //%params = %targetObj.getDataBlock().observeParameters; // #investigage if this can be used instead the fixed values below
          %params = "0.5 8 1";
          %obj.setOrbitMode(%targetObj, %pos SPC "1 0 0 0", firstWord(%params), getWord(%params, 1), getWord(%params, 2), 1);
    }
@@ -2099,7 +1982,6 @@ function CoreGame::SpectatorSetMode(%game, %data, %obj, %mode, %targetObj)
 //-----------------------------------------------------------------------------
 // Trigger functions
 //-----------------------------------------------------------------------------
-
 function CoreGame::onEnterTrigger(%game, %data, %obj, %colobj)
 {
    //Do Nothing
@@ -2117,7 +1999,7 @@ function CoreGame::onTickTrigger(%game, %data, %obj)
 
 //-----------------------------------------------------------------------------
 // Voting functions
-
+//-----------------------------------------------------------------------------
 function CoreGame::sendPlayerVoteMenu(%game, %client, %targetClient, %key)
 {
    //LogEcho("\c4CoreGame::sendPlayerVoteMenu("@%game.class @", "@ %client.nameBase @", "@ %targetClient.nameBase @", "@ %key @")");
@@ -2266,8 +2148,8 @@ function CoreGame::sendServerVoteMenu(%game, %client, %key)
          // Actual vote options:
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteChangeMission', 'Vote to Change the Mission');
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteSkipMission', 'Vote to Skip Mission');
-		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteAddBots', 'Vote to add Bots');
-		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteKickAllBots', 'Vote to kick all Bots');
+         messageClient(%client, 'MsgVoteItem', "", %key, 'VoteAddBots', 'Vote to add Bots');
+         messageClient(%client, 'MsgVoteItem', "", %key, 'VoteKickAllBots', 'Vote to kick all Bots');
 
          if ( $pref::Server::TournamentMode )
          {   
@@ -2297,8 +2179,8 @@ function CoreGame::sendServerVoteMenu(%game, %client, %key)
          // Actual vote options:
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteChangeMission', 'Change the Mission');
          messageClient(%client, 'MsgVoteItem', "", %key, 'VoteSkipMission', 'Skip the Mission');
-		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteAddBots', 'Add Bots');
-		 messageClient(%client, 'MsgVoteItem', "", %key, 'VoteKickAllBots', 'Kick all Bots');
+         messageClient(%client, 'MsgVoteItem', "", %key, 'VoteAddBots', 'Add Bots');
+         messageClient(%client, 'MsgVoteItem', "", %key, 'VoteKickAllBots', 'Kick all Bots');
 
          if ( $pref::Server::TournamentMode )
          {
@@ -2495,8 +2377,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
    {
       case "VoteChangeMission":
          // Ok %val2 is the MissionTypeDisplayName. So we have to convert that to the actual gameTypeName
-         // We will loop through all types and find the index of this DisplayName. Then use this to get
-         // the proper TypeName
+         // We will loop through all types and find the index of this DisplayName. Then use this to get the proper TypeName
          for( %type = 0; %type < $HostTypeCount; %type++ )
          {
             // If this returns null, Houston we got a problem!
@@ -2974,7 +2855,7 @@ function CoreGame::evalVote(%game, %client, %typeName, %admin, %val1, %val2, %va
 
 //-----------------------------------------------------------------------------
 // Scoring
-
+//-----------------------------------------------------------------------------
 function CoreGame::vehicleDestroyed(%game, %obj, %destroyer)
 {
    //warn("CoreGame::vehicleDestroyed(" SPC %game.class @", "@ %obj.getDataBlock().getName() @", "@ %destroyer.client.nameBase SPC ")");
@@ -3056,9 +2937,7 @@ function CoreGame::awardScoreDeath(%game, %victimID, %damageType)
 
    if ( %game.SCORE_PER_DEATH != 0 )
    {      
-//     %plural = (abs(%game.SCORE_PER_DEATH) != 1 ? "s" : "");
-//     messageClient(%victimID, 'MsgScoreDeath', '\c0You have been penalized %1 point%2 for dying.', abs(%game.SCORE_PER_DEATH), %plural);
-       %game.updateScore( %victimID );
+      %game.updateScore( %victimID );
    }
 }
 
@@ -3077,9 +2956,6 @@ function CoreGame::awardScoreKill(%game, %killerID, %damageType)
 function CoreGame::awardScoreSuicide(%game, %victimID)
 {
    %victimID.suicides++;
-//    if (%game.SCORE_PER_SUICIDE != 0)
-//       messageClient(%victimID, 'MsgScoreSuicide', '\c0You have been penalized for killing yourself.');      
-
    %game.updateScore( %victimID );
 }
    
@@ -3100,9 +2976,5 @@ function CoreGame::awardScoreTeamkill(%game, %victimID, %killerID)
          bottomPrintAll("<color:ff0000>" @ %killerID.nameBase @ " Has " @ %killerID.teamKills @ " team kills. Recommend voting yes.", 4, 2);
          //LogEcho(%killerID.nameBase @ " GUID: " @ %killerID.guid @ " TKS: " @ %killerID.teamKills, 1);
       }
-      //else
-      //{
-      //   BottomPrint(%killerID, "<color:ff0000>You have " @ %killerID.teamKills @ ", watch your fire!", 2, 1 );
-      //}
    }
 }

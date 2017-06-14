@@ -20,6 +20,8 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
+// #investiage if we could need this, if yes implement it, if no remove it
+// I would say tendencially yes, since it is one more feature, but I don't know for what we could need it yet
 //-----------------------------------------------------------------------------
 
 datablock SFXProfile(BasePowerOn)

@@ -10,10 +10,9 @@
 // By GOD this is Mod support!!!
 //		-Founder
 //
-//
 // Worked so well after Founder got it up. Of course that got me interested again :x
 // So I went ahead and exploded it into an script object tabbed list using beast.
-//          - ZOD
+// - ZOD
 //------------------------------------------------------------------------------------------
 
 // This is our inventory object, we use this so mod packages can be
@@ -110,6 +109,7 @@ function SMS::AllowGrenade( %this, %list )
    }
 }
 
+// #cleanup ? #investigate
 //function SMS::AllowGrenade( %this, %list )
 //{
 //   for(%i = 1; %i < getFieldCount(%list); %i++)

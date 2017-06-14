@@ -20,13 +20,12 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-
 //-----------------------------------------------------------------------------
 // This script function is called before a client connection
 // is accepted.  Returning "" will accept the connection,
 // anything else will be sent back as an error to the client.
 // All the connect args are passed also to onConnectRequest
-//
+
 function GameConnection::onConnectRequest( %client, %netAddress, %name, %skin )
 {
    echo("Connect request from: " @ %netAddress);
@@ -43,9 +42,7 @@ function GameConnection::onConnectRequest( %client, %netAddress, %name, %skin )
    return "";
 }
 
-//-----------------------------------------------------------------------------
 // This script function is the first called on a client accept
-//
 function GameConnection::onConnect( %client, %name, %skin )
 {
    //LogEcho("GameConnection::onConnect(" SPC %client @", "@ %name @", "@ %skin SPC ")");

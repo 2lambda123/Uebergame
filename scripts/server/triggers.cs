@@ -23,7 +23,7 @@
 //-----------------------------------------------------------------------------
 // DefaultTrigger is used by the mission editor.  This is also an example
 // of trigger methods and callbacks.
-
+//-----------------------------------------------------------------------------
 datablock TriggerData(DefaultTrigger)
 {
    // The period is value is used to control how often the console
@@ -226,4 +226,3 @@ function DamageTrigger::onTickTrigger(%data, %trigger)
       }
    }
 }
-

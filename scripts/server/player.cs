@@ -29,7 +29,7 @@ $DamageLava       = 0.01;
 $DamageHotLava    = 0.01;
 $DamageCrustyLava = 0.01;
 
-// Death Animations
+// Death Animations // #investigate if we ever need this feature, it may become obsolete later if ragdolls are implemented
 $PlayerDeathAnim::Death1 = 1;
 $PlayerDeathAnim::Death2 = 2;
 //$PlayerDeathAnim::TorsoBackFallForward = 3;
@@ -84,6 +84,7 @@ datablock SFXProfile(PainCrySound)
    description = AudioClose3D;
    preload = true;
 };
+// #todo , this needs some new pain sounds and then activated
 /*
 datablock SFXProfile(PainCrySound1)
 {
@@ -257,7 +258,6 @@ datablock ParticleEmitterData(PlayerSplashMistEmitter)
    blendStyle = "NORMAL";
 };
 
-
 datablock ParticleData(PlayerBubbleParticle)
 {
    dragCoefficient      = 0.0;
@@ -335,7 +335,6 @@ datablock ParticleEmitterData(PlayerFoamEmitter)
    ambientFactor = "0.5";
    blendStyle = "NORMAL";
 };
-
 
 datablock ParticleData( PlayerFoamDropletsParticle )
 {
@@ -593,6 +592,7 @@ datablock ParticleEmitterData(LiftoffDustEmitter)
 
 //----------------------------------------------------------------------------
 // Jump Jets
+//----------------------------------------------------------------------------
 
 datablock ParticleData(JumpJetParticle)
 {
@@ -640,6 +640,7 @@ datablock ParticleEmitterData(JumpJetEmitter)
 
 //----------------------------------------------------------------------------
 // Player explosion            
+//----------------------------------------------------------------------------
 
 datablock DebrisData( PlayerDebris )
 {
@@ -969,21 +970,21 @@ SmsInv.AddArmor( PaintballPlayerData, "Paintballer", 0 );
 //----------------------------------------------------------------------------
 // Drowning script
 //----------------------------------------------------------------------------
+
 // How often to check the player's underwater status.
 $Drowning::TickTime = 1 * 1000;   
 
 // The length of the hold breath timer in number of ticks.  Used in combination
-// with $Drowning::TickTime to calculate how long a player can hold his breath
-// before taking damage.
+// with $Drowning::TickTime to calculate how long a player can hold his breath before taking damage.
 $Drowning::HoldBreathTicks = 20; 
 
-// Damage done per $Drowning::TickTime if the player is underwater and the
-// hold breath timer has expired.
+// Damage done per $Drowning::TickTime if the player is underwater and the hold breath timer has expired.
 $Drowning::DamagePerTick = 10;
 
 function checkUnderwater(%obj)
 {
    if (!isObject(%obj)) return;  //prevent console spam, returns when object ID is not valid
+   
    if (%obj.getState() $= "Dead")
    {
       // If we get here and the player is dead we should hide the breath meter
@@ -1006,23 +1007,20 @@ function checkUnderwater(%obj)
          // If the player is underwater increment a "holding breath" counter.
          %obj.holdingbreath++; 
 
-         // A GuiProgressCtrl expects values 0-1.  We're just calculating a 
-         // percentage in order to generate the appropriate range of values
-         // that will be used to adjust the lenght of the bar shown.  The
-         // bar shrinks over time until we're out of air.
+         // A GuiProgressCtrl expects values 0-1.  We're just calculating a percentage in order
+         // to generate the appropriate range of values that will be used to adjust the lenght of the bar shown.
+         // The bar shrinks over time until we're out of air.
          %remainingTime = ($Drowning::HoldBreathTicks - %obj.holdingBreath) / $Drowning::HoldBreathTicks;
          if(%remainingTime < 0)
             %remainingTime = 0;
          
-         // If the holdingbreath counter is greater than $Drowning::HoldBreathTicks
-         // then damage the player - he's choking on water!
+         // If the holdingbreath counter is greater than $Drowning::HoldBreathTicks then damage the player - he's choking on water!
          if (%obj.holdingbreath > $Drowning::HoldBreathTicks)
             %obj.damage(0, %obj.getPosition(), $Drowning::DamagePerTick, %damageType);
       }
       else
       {
-         // The player appears to have surfaced and is breathing normally.
-         // Reset the holdingbreath counter and hide the breathmeter.
+         // The player appears to have surfaced and is breathing normally. Reset the holdingbreath counter and hide the breathmeter.
          %obj.holdingbreath = 0;
       }
 
@@ -1049,12 +1047,12 @@ function checkWeaponUnderwater(%obj)
       %searchMasks = $TypeMasks::WaterObjectType;
       if (ContainerRayCast(%start, %end, %searchMasks)) 
       {   
-         //%obj.setManualImageState(%slot, "Swimming"); 
+         //%obj.setManualImageState(%slot, "Swimming"); // #investigate if we need this
          %obj.weaponUnderwater = true;
       }
       else 
       {
-         //%obj.setManualImageState(%slot, "ReadyMotion"); 
+         //%obj.setManualImageState(%slot, "ReadyMotion"); // #investigate if we need this
          %obj.weaponUnderwater = false;
       }
 
@@ -1075,6 +1073,7 @@ function sendMsgClientKilled_Drowning(%msgType, %client, %sourceClient, %damLoc)
 function Armor::onAdd(%this, %obj)
 {
    //LogEcho("Armor::onAdd(" SPC %this @", "@ %obj SPC ")");
+   
    // Seems to work ok, but some other things need to be adjusted such as movement speed.
    %scale = %this.scale $= "" ? "1 1 1" : %this.scale;
    if ( %obj.getScale() !$= %scale )
@@ -1093,8 +1092,7 @@ function Armor::onAdd(%this, %obj)
    %obj.setRechargeRate( %this.rechargeRate );
    %obj.setRepairRate( %this.repairRate );
 
-   // If the player's client has some owned turrets, make sure we let them
-   // know that we're a friend too.
+   // If the player's client has some owned turrets, make sure we let them know that we're a friend too.
    %client = %obj.client;
    if ( isObject( %client ) && %client.ownedTurrets )
    {
@@ -1122,6 +1120,7 @@ function Armor::onAdd(%this, %obj)
 
 function Armor::onRemove(%this, %obj)
 {
+// #investigate #cleanup , see if this is useful, if not remove
 //   if (%obj.client.player == %obj)
 //      %obj.client.player = 0;
 }
@@ -1132,8 +1131,6 @@ function Armor::onNewDataBlock(%this, %obj)
    if ( %obj.getScale() !$= %scale )
       %obj.setScale(%scale);
 }
-
-//----------------------------------------------------------------------------
 
 function Armor::onMount(%this, %obj, %vehicle, %node)
 {
@@ -1271,10 +1268,9 @@ function Armor::doDismount(%this, %obj, %forced)
    }
 }
 
-//----------------------------------------------------------------------------
-
 function Armor::onCollision(%this, %obj, %col)
 {
+   // #investigate what this does and if its needed
    //if ( %className $= "AIPlayer" )
    //	return;
 
@@ -1327,7 +1323,7 @@ function Armor::onCollision(%this, %obj, %col)
          }
 
          //if ( %gotSomething )
-         //   serverPlay3D( CorpseLootingSound, %obj.getTransform() );
+         //   serverPlay3D( CorpseLootingSound, %obj.getTransform() ); // #testing #investigate
       }
    }
 }
@@ -1338,10 +1334,8 @@ function Armor::onImpact(%this, %obj, %collidedObject, %vec, %vecLen)
    // This is called by the engine when a collision occurs over the minImpactSpeed player datablock parameter setting
    %this.damage(%obj, %collidedObject, VectorAdd(%obj.getPosition(),%vec), %vecLen * %this.speedDamageScale, $DamageType::Impact);
 
-   //%obj.damage(0, VectorAdd(%obj.getPosition(), %vec), %vecLen * %this.speedDamageScale, "Impact");
+   //%obj.damage(0, VectorAdd(%obj.getPosition(), %vec), %vecLen * %this.speedDamageScale, "Impact"); // #investigate what this does
 }
-
-//----------------------------------------------------------------------------
 
 //Creates blood spatter decals
 function DamageTypeCollision(%obj, %damage, %damageType, %position){
@@ -1403,8 +1397,6 @@ function DamageTypeCollision(%obj, %damage, %damageType, %position){
    }
 }
 
-//----------------------------------------------------------------------------
-
 function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
 {
    //LogEcho("Armor::damage(" SPC %this.getName() @", "@ %obj.getClassname() @", "@ %source.getClassname() @", "@ %position @", "@ %amount @", "@ $DamageText[%damageType] SPC ")");
@@ -1463,7 +1455,7 @@ function Armor::damage(%this, %obj, %source, %position, %damage, %damageType)
       %damage *= %damageScale;
    
    // locational damage modifier start
-      if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
+   if (!isObject(%obj) || %obj.getState() $= "Dead" || !%damage)
       return;    
  
    %location = %obj.getDamageLocation(%position);//"Body";
@@ -1526,7 +1518,7 @@ function Armor::onDamage(%this, %obj, %delta)
       if (%delta > 33)
          %obj.playPain();
 
-      // Send this off to the AI functions
+      // Send this off to the AI functions // #cleanup
       //if ( isObject( %obj.client ) && %obj.client.isAiControlled() )
       //   %obj.client.onDamaged( %obj, %delta );
    }
@@ -1554,29 +1546,30 @@ function Armor::onDisabled(%this, %player, %state)
    if ( %player.isMounted() )
       %this.doDismount( %player, 1 );
 
+   // #fixit , it would be nice to have the feature that player throws/loses his weapon on death
    // Toss current mounted weapon if any
    //%item = %player.getMountedImage( $WeaponSlot ).item;
    //if ( isObject( %item ) )
    //   %player.throw( %item );
 
+   // #cleanup , eventually remove this and keep the special item/ability on the player, 
+   // the ability to loot the special item/ability from the dead body should be implemented instead of "throwing" it
    //%item = %player.getMountedImage( $SpecialSlot ).item;
    //if ( isObject( %item ) )
    //   %player.throw( %item );
 
+   // #fixit , this "should" do the same as above, its commented out, but does not work it seems
+   // it currently throws a clip of the weapon the player was holding
+   // so either extend this or use/add above method
    // Toss current mounted weapon and ammo if any
    %item = %player.getMountedImage($WeaponSlot).item;
    if (isObject(%item))
    {
       %amount = %player.getInventory( %item.image.clip );
       
-      //if (!%item.image.clip)
-      //   warn("No clip exists to throw for item ", %item);
       if( %amount )
          %player.throw( %item.image.clip, %amount );
    }
-
-   // Toss out a health patch
-   //%player.tossPatch();
 
    // Remove the special effects image
    if ( %player.getMountedImage($EffectsSlot) != 0 )
@@ -1599,9 +1592,9 @@ function Armor::onDisabled(%this, %player, %state)
       %player.thrownChargeId = 0;
    }
 
-   //cancel( %player.scanMissileSchedule ); //unused?!
+   //cancel( %player.scanMissileSchedule ); //unused?! #cleanup
    cancel( %player.progressMeter );
-   //cancel( %player.reCloak );
+   //cancel( %player.reCloak ); // #investiage if this is needed
 
    %player.clearDamageDt();
 
@@ -1638,7 +1631,7 @@ function Armor::onDisabled(%this, %player, %state)
    }
 
    // Remove warning Gui in case the player was outside the mission area when he died
-   //Canvas.popDialog (missionAreaWarningHud); //broken
+   //Canvas.popDialog (missionAreaWarningHud); //broken #fixit
    
    // Schedule corpse fade out
    %player.schedule( $CorpseTimeoutValue - 2000, "startFade", 2000, 0, true );
@@ -1666,8 +1659,6 @@ function Armor::applyConcussion(%data, %player)
       %player.playPain();
    }
 }
-
-//-----------------------------------------------------------------------------
 
 function Armor::onLeaveMissionArea(%this, %obj)
 {
@@ -1704,8 +1695,6 @@ function Armor::onEnterMissionArea(%this, %obj)
    //cancel(%obj.sheduleMissionAreaDamage);
    //%obj.clearDamageDt(); 
 }
-
-//-----------------------------------------------------------------------------
 
 function Armor::onEnterLiquid(%this, %obj, %coverage, %type)
 {
@@ -1761,10 +1750,9 @@ function echoTriggers()
 function Armor::onTrigger(%this, %player, %triggerNum, %val)
 {
    //echo("Armor::onTrigger( " @ %this.getName() SPC %player.client.nameBase SPC %triggerNum SPC %val @ " )");
-   // This method is invoked when the player receives a trigger
-   // move event.  The player automatically triggers slot 0 and
-   // slot one off of triggers # 0 & 1.  Trigger # 2 is also used
-   // as the jump key.
+   
+   // This method is invoked when the player receives a trigger move event. The player automatically
+   // triggers slot 0 and slot one off of triggers # 0 & 1.  Trigger # 2 is also used as the jump key.
    switch$(%triggerNum)
    {
       case 0:
@@ -1821,12 +1809,14 @@ function Armor::onPoseChange(%this, %obj, %oldPose, %newPose)
 
 function Armor::onStartSwim(%this, %obj)
 {
+   // #cleanup
    //disabled swimming motion since we can shoot underwater now
    //%obj.setImageGenericTrigger($WeaponSlot, 0, true);
 }
 
 function Armor::onStopSwim(%this, %obj)
 {
+   // #cleanup
    //disabled swimming motion since we can shoot underwater now
    //%obj.setImageGenericTrigger($WeaponSlot, 0, false);
 }

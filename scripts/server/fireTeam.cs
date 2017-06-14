@@ -19,11 +19,11 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
+
 // Spectators cannot be in a fire team
 // Fire teams are attached to the client object
 // Need a way to handle permission. So that a fire team leader can accept/reject joins etc.
 // Unfinished
-
 function Torque::setupFireTeams(%this)
 {
    %max = 12;

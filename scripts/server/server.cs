@@ -100,9 +100,7 @@ function portInit(%port)
    }
 }
 
-/// Create a server of the given type, load the given level, and then
-/// create a local client connection to the server.
-//
+/// Create a server of the given type, load the given level, and then create a local client connection to the server.
 /// @return true if successful.
 function createAndConnectToLocalServer( %serverType, %level, %missionType )
 {
@@ -141,12 +139,10 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
    return true;
 }
 
-/// Create a server with either a "SinglePlayer" or "MultiPlayer" type
-/// Specify the level to load on the server
+/// Create a server with either a "SinglePlayer" or "MultiPlayer" type Specify the level to load on the server
 function Torque::createServer(%this, %serverType, %level, %missionType)
 {
-   // Increase the server session number.  This is used to make sure we're
-   // working with the server session we think we are.
+   // Increase the server session number.  This is used to make sure we're working with the server session we think we are.
    $Server::Session++;
 
    if (%level $= "")
@@ -155,8 +151,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
       return false;
    }
 
-   // Make sure our level name is relative so that it can send
-   // across the network correctly
+   // Make sure our level name is relative so that it can send across the network correctly
    //%relPath = makeRelativePath(%level, getWorkingDirectory());
    //echo( "c4\Relative Path:" SPC %relPath );
 
@@ -164,6 +159,8 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 
    $missionSequence = 0;
    
+   // #evilbug this is probably part of the problematic bug with the player count that occasionally removes
+   // servers from the server list since the servers return some weird numbers, its probably a bigger C++ problem
    //commenting these out is just a workaround, the issue is probably heap corruption in C++ source code
    //$Server::PlayerCount = 0; //this caused the player count on the server list being wrong
    //$Server::BotCount = 0; //this caused the bot count on the server list being wrong
@@ -171,15 +168,13 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    $Server::ServerType = %serverType;
    // Server::GameType is sent to the master server.
 
-   // Server::MissionType sent to the master server.  Clients can
-   // filter servers based on mission type.
+   // Server::MissionType sent to the master server. Clients can filter servers based on mission type.
    $Server::MissionType = %missionType;
    $Server::LoadFailMsg = "";
 
    $Physics::isSinglePlayer = true;
    
-   // Setup for multi-player, the network must have been
-   // initialized before now.
+   // Setup for multi-player, the network must have been initialized before now.
    if (%serverType $= "MultiPlayer")
    {
       $Physics::isSinglePlayer = false;
@@ -198,7 +193,6 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    $ServerGroup = new SimGroup(ServerGroup);
 
    // Let the game initialize some things now that the the server has been created
-
    // GameStartTime is the sim time the game started. Used to calculate game elapsed time.
    $Game::StartTime = 0;
 
@@ -248,11 +242,11 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 
    // Static Shapes
    exec("./staticshapes/staticShape.cs");
-//   exec("./staticshapes/crates.cs");
-//   exec("./staticshapes/doors.cs");
+//   exec("./staticshapes/crates.cs"); // #todo
+//   exec("./staticshapes/doors.cs"); // #todo
    exec("./staticshapes/flagstand.cs");
 
-   // Rigid Shapes
+   // Rigid Shapes // #todo
 //   exec("./rigidshapes/rigidShape.cs");
 //   exec("./rigidshapes/crates.cs"); // Uses some player particle data
 //   exec("./rigidshapes/boulder.cs");
@@ -269,7 +263,7 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
 
    exec("./grenades/grenade.cs");
    exec("./grenades/smokeGrenade.cs");
-   //exec("./grenades/tripMine.cs"); //broken, needs to be fixed to use ammo system
+   //exec("./grenades/tripMine.cs"); //broken, needs to be fixed to use ammo system // #fixit
    exec("./grenades/timeBomb.cs");
    exec("./grenades/shapeCharge.cs");
 
@@ -289,15 +283,16 @@ function Torque::createServer(%this, %serverType, %level, %missionType)
    exec("./weapons/PaintballMarkerRed.cs");
    exec("./weapons/PaintballMarkerGreen.cs");
    exec("./weapons/PaintballMarkerYellow.cs");
-	  
+	
+   // #fixit
    //exec("./weapons/proximityMine.cs"); //broken, needs to be fixed to use ammo system
    //exec("./weapons/deployedTurret.cs");
 
    exec("./specials/munitionsPack.cs");
    exec("./specials/firstAidPack.cs");
-   //exec("./specials/turretPack.cs"); //turret broken, it does not fire at enemies
-   //exec("./specials/vehiclePack.cs"); //needs proper vehicle first
-   //exec("./specials/platform.cs"); //fix it
+   //exec("./specials/turretPack.cs"); //turret broken, it does not fire at enemies // #fixit
+   //exec("./specials/vehiclePack.cs"); //needs proper vehicle first // #fixit
+   //exec("./specials/platform.cs"); // #fixit
 
    // Vehicles
    exec("./vehicles/vehicle.cs");
@@ -398,7 +393,7 @@ function Torque::destroyServer(%this)
       $ServerGroup.delete();
 
    // Delete all the connections:
-   // Something is wrong with aiClient that causes an infinite loop when you try to delete
+   // Something is wrong with aiClient that causes an infinite loop when you try to delete // #cleanup
    //while ( ClientGroup.getCount() )
    //{
    //   %client = ClientGroup.getObject(0);
@@ -418,8 +413,7 @@ function Torque::destroyServer(%this)
    echo( "Exporting server prefs..." );
    export("$pref::*", $HomePath @ "/config.cs", false);
 
-   // Increase the server session number.  This is used to make sure we're
-   // working with the server session we think we are.
+   // Increase the server session number.  This is used to make sure we're working with the server session we think we are.
    $Server::Session++;
 }
 
@@ -464,13 +458,11 @@ function removeFromServerGuidList( %guid )
          return;
       }
    }
-
    // Huh, didn't find it.
 }
 
-/// When the server is queried for information, the value of this function is
-/// returned as the status field of the query packet.  This information is
-/// accessible as the ServerInfo::State variable.
+/// When the server is queried for information, the value of this function is returned as the status field of the query packet.
+/// This information is accessible as the ServerInfo::State variable.
 function onServerInfoQuery()
 {
    return "Doing Ok";

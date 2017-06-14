@@ -50,15 +50,14 @@ function ProjectileData::onRemove(%data, %proj)
    //warn("ProjectileData::onRemove(" SPC %data.getName() @", "@ %proj.getClassName() SPC ")");
 }
 
-// Support function which applies damage to objects within the radius of
-// some effect, usually an explosion.  This function will also optionally 
-// apply an impulse to each object.
+// Support function which applies damage to objects within the radius of some effect, usually an explosion.
+// This function will also optionally  apply an impulse to each object.
 function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %damageType, %impulse)
 {
    //echo("radiusDamage(" SPC %sourceParent @", "@ %position @", "@ %radius @", "@ %damage @", "@ %damageType @", "@ %impulse SPC ")");
+   
    // Use the container system to iterate through all the objects
-   // within our explosion radius.  We'll apply damage to all ShapeBase
-   // objects.
+   // within our explosion radius.  We'll apply damage to all ShapeBase objects.
    InitContainerRadiusSearch( %position, %radius, $TypeMasks::ShapeBaseObjectType | $TypeMasks::DynamicShapeObjectType);
 
    // Create an array of targets to damage and or impulse
@@ -72,10 +71,9 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
       if ( %targetObject == %sourceParent && %damageType $= "Vehicle Explosion" )
          continue;
 
-      // Calculate how much exposure the current object has to
-      // the explosive force.  The object types listed are objects
-      // that will block an explosion.  If the object is totally blocked,
-      // then no damage is applied.
+      // Calculate how much exposure the current object has to the explosive force.
+      // The object types listed are objects that will block an explosion.
+      // If the object is totally blocked, then no damage is applied.
       %coverage = calcExplosionCoverage(%position, %targetObject, $TypeMasks::InteriorObjectType |
                                                                   $TypeMasks::TerrainObjectType |
                                                                   $TypeMasks::VehicleObjectType);
@@ -84,16 +82,14 @@ function radiusDamage(%source, %sourceParent, %position, %radius, %damage, %dama
       if ( %coverage <= 0 )
          continue;
 
-      // Radius distance subtracts out the length of smallest bounding
-      // box axis to return an appriximate distance to the edge of the
-      // object's bounds, as opposed to the distance to it's center.
+      // Radius distance subtracts out the length of smallest bounding box axis to return an appriximate 
+      // distance to the edge of the object's bounds, as opposed to the distance to it's center.
       %dist = containerSearchCurrRadiusDist();
 
       // Calculate a distance scale for the damage and the impulse.
-      // Full damage is applied to anything less than half the radius away,
-      // linear scale from there.
+      // Full damage is applied to anything less than half the radius away, linear scale from there.
       %distScale = (%dist < %halfRadius) ? 1.0 : 1.0 - ((%dist - %halfRadius) / %halfRadius);
-	  %distScale = mClamp(%distScale,0.0,1.0);
+      %distScale = mClamp(%distScale,0.0,1.0);
       //%amount = (1.0 - (%dist / %radius)) * %coverage * %damage;
       //error("Amount:" SPC %amount);
 

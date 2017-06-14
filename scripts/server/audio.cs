@@ -20,8 +20,6 @@
 // IN THE SOFTWARE.
 //-----------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
-
 function ServerPlay2D(%profile)
 {
    // Play the given sound profile on every client.
@@ -37,4 +35,3 @@ function ServerPlay3D(%profile,%transform)
    for(%idx = 0; %idx < ClientGroup.getCount(); %idx++)
       ClientGroup.getObject(%idx).play3D(%profile,%transform);
 }
-

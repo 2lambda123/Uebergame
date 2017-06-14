@@ -22,7 +22,7 @@
 
 //-----------------------------------------------------------------------------
 // GameBase
-
+//-----------------------------------------------------------------------------
 function GameBaseData::onAdd(%data, %obj)
 {
    //function was added to reduce console err msg spam
@@ -30,7 +30,7 @@ function GameBaseData::onAdd(%data, %obj)
 
 //-----------------------------------------------------------------------------
 // ShapeBase
-
+//-----------------------------------------------------------------------------
 function ShapeBaseData::damage(%this, %obj, %position, %source, %amount, %damageType)
 {
    // Ignore damage by default. This empty method is here to avoid console warnings.
@@ -67,7 +67,7 @@ function ShapeBase::onInventory(%this, %data, %value)
 
 //-----------------------------------------------------------------------------
 // SimObject
-
+//-----------------------------------------------------------------------------
 function SimObject::onAdd(%data, %obj)
 {
    //function was added to reduce console err msg spam
@@ -126,7 +126,7 @@ function SpawnSphere::onTrigger(%obj, %triggerId, %val)
 
 //-----------------------------------------------------------------------------
 // Interior
-
+//-----------------------------------------------------------------------------
 function VehicleBlocker::getDataBlock(%this)
 {
    return %this;
@@ -159,7 +159,7 @@ function PhysicalZone::getName(%this)
 
 //-----------------------------------------------------------------------------
 // Water
-
+//-----------------------------------------------------------------------------
 function WaterBlock::damage(%this)
 {
    // Do nothing
@@ -172,7 +172,7 @@ function TerrainBlock::damage(%this)
 
 //-----------------------------------------------------------------------------
 // Terrain
-
+//-----------------------------------------------------------------------------
 function TerrainBlock::getDataBlock(%this)
 {
    return %this;

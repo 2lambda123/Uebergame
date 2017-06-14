@@ -22,10 +22,9 @@
 
 // DisplayName = Deathmatch
 
-//--- GAME RULES BEGIN ---
+// Game rules:
 $HostGameRules["DM", 0] = "Eliminate the competition.";
 $HostGameRules["DM", 1] = "Player with the best kill to death ratio wins!";
-//--- GAME RULES END ---
 
 $DM:TeamCount = 5; // start off DM team count at 5, so we can use 1-4 for teams
 

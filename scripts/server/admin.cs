@@ -127,18 +127,6 @@ function serverCmdGetMissionTypeList(%client, %key)
 
 function serverCmdGetMissionList(%client, %key, %type)
 {
-   // Find the last selected type: - ZOD, maybe not..
-   //for(%type = 0; %type < $HostTypeCount; %type++)
-   //{
-   //   if($HostTypeName[%type] $= $Server::MissionType)
-   //      break;
-   //}
-   //for(%i = $HostMissionCount[%type] - 1; %i >= 0; %i--)
-   //{
-   //   %idx = $HostMission[%type, %i];
-   //   messageClient(%client, 'MsgVoteItem', "", %key, %idx, $HostMissionName[%idx], true);
-   //}
-
    if(%type < 0 || %type >= $HostTypeCount)
       return;
 
@@ -214,6 +202,7 @@ function AdminCommand(%client, %typename, %val1, %val2, %val3, %val4)
 function PlayerVote(%client, %typename, %arg1, %arg2, %arg3, %arg4, %clientsVoting, %teamSpecific)
 {
    //error("PlayerVote(" SPC %client.nameBase SPC %typename SPC %arg1 SPC %arg2 SPC %arg3 SPC %arg4 SPC %clientsVoting SPC %teamSpecific SPC ")");
+   
    // open the vote hud for all clients that will participate in this vote
    if(%teamSpecific)
    {
@@ -344,11 +333,11 @@ function serverCmdInitVote(%client, %typeName, %val1, %val2, %val3, %val4, %play
 function serverCmdInitAdminCommand(%client, %typeName, %target)
 {
    //error("serverCmdInitAdminCommand(" SPC %client.nameBase SPC %typeName SPC %target SPC ")");
+   
    // Admin only actions on players, no voting here
    if(%client.isAdmin)
    {
-      // Two client functions send to this, one sends a number ID, the other a string
-      // The player pop-up menu sends a string
+      // Two client functions send to this, one sends a number ID, the other a string the player pop-up menu sends a string
       switch$(%typeName)
       {
          case 0: // Server player limit

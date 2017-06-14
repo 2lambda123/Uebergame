@@ -386,11 +386,9 @@ function ShapeChargeDeployed::onDestroyed(%data, %obj, %prevState)
    %obj.schedule(50, "delete");
 }
 
-//-----------------------------------------------------------------------------
 // SMS Inventory
 SmsInv.AllowGrenade("Soldier");
 SmsInv.AddGrenade(ShapeCharge, "Shape Charge");
-//             |Item| |InvGrenade| |AmmoIncrement|
-
+//    |Item| |InvGrenade| |AmmoIncrement|
 SmsInv.AllowAmmo("armor\tSoldier\t1");
 SmsInv.AddAmmo(ShapeChargeAmmo, 1);

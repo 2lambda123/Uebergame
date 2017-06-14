@@ -41,8 +41,7 @@ function Observer::onTrigger(%this,%obj,%trigger,%state)
          // Viewing dead corpse, so we probably want to respawn.
          %client.spawnPlayer();
 
-         // Set the camera back into observer mode, since in
-         // debug mode we like to switch to it.
+         // Set the camera back into observer mode, since in debug mode we like to switch to it.
          %this.setMode(%obj,"Observer");
    }
 }
@@ -56,8 +55,7 @@ function Observer::setMode(%this,%obj,%mode,%arg1,%arg2,%arg3)
          %obj.setFlyMode();
 
       case "Corpse":
-         // Lock the camera down in orbit around the corpse,
-         // which should be arg1
+         // Lock the camera down in orbit around the corpse, which should be arg1
          %transform = %arg1.getTransform();
          %obj.setOrbitMode(%arg1, %transform, 0.5, 4.5, 4.5);
 
@@ -102,11 +100,9 @@ function Spectator::setMode(%data, %obj, %mode, %targetObj)
 //-----------------------------------------------------------------------------
 // Camera methods
 //-----------------------------------------------------------------------------
-
 function Camera::onAdd(%this, %obj)
 {
-   // Default start mode
-   %this.setMode(%this.mode);
+   %this.setMode(%this.mode); // Default start mode
 }
 
 function Camera::setMode(%this, %mode, %arg1, %arg2, %arg3)
@@ -118,7 +114,6 @@ function Camera::setMode(%this, %mode, %arg1, %arg2, %arg3)
 //-----------------------------------------------------------------------------
 // Camera server commands
 //-----------------------------------------------------------------------------
-
 function serverCmdTogglePathCamera(%client, %val)
 {
    if(%val)
@@ -292,7 +287,6 @@ function serverCmdEditorCameraAutoFit(%client, %radius)
 //-----------------------------------------------------------------------------
 // Spectator Camera
 //-----------------------------------------------------------------------------
-
 function findNextObserveClient(%client)
 {
    %index = -1;
@@ -398,12 +392,9 @@ function findPrevObserveClient(%client)
 }
 
 function observeClient(%client, %target)
-{
-   //clear the observer fly mode var...
-   %client.observeFlyClient = -1;
-
-   //cancel any scheduled update
-   cancel(%client.obsHudSchedule);
+{  
+   %client.observeFlyClient = -1; //clear the observer fly mode var...
+   cancel(%client.obsHudSchedule); //cancel any scheduled update
 
    // must be an observer when observing other clients
    if( %client.getControlObject() != %client.camera)
@@ -450,8 +441,8 @@ function observeClient(%client, %target)
       if (isObject(%client.player))
          %client.player.scriptKill(0);
 
-      //messageAllExcept(%client, -1, 'ClientNowSpectator', '\c1%1 is now a spectator.', %client.playerName);
-      //messageClient(%client, 'YouNowSpectator', '\c1You are now spectating %1.', %target.playerName);   
+      //messageAllExcept(%client, -1, 'ClientNowSpectator', '\c1%1 is now a spectator.', %client.playerName); // #investigate, use this or not?
+      //messageClient(%client, 'YouNowSpectator', '\c1You are now spectating %1.', %target.playerName); 
    }
 
    %client.camera.getDataBlock().setMode(%client.camera, "spectatorFollow", %target.player);
@@ -653,7 +644,6 @@ function resetSpectatorFollow( %client, %dismount )
 //-----------------------------------------------------------------------------
 // Path Camera
 //-----------------------------------------------------------------------------
-
 datablock PathCameraData(LoopingCam)
 {
    mode = "";

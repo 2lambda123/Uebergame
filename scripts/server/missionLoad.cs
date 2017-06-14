@@ -33,7 +33,7 @@ $MissionLoadPause = 5000;
 function Torque::loadMission(%this, %missionFile, %missionType, %isFirstMission)
 {
    // Do not allow clients to connect during loading process
-   //allowConnections(false);
+   //allowConnections(false); // #investigate if this feature is useful
 
    // cleanup
    if(!%isFirstMission)
@@ -137,12 +137,11 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
       return( false );
    }
    
-   // Calculate the mission CRC.  The CRC is used by the clients
-   // to caching mission lighting.
+   // Calculate the mission CRC.  The CRC is used by the clients to caching mission lighting.
    $missionCRC = getFileCRC( %missionFile );
 
-   // Mission cleanup group.  This is where run time components will reside.  The MissionCleanup
-   // group will be added to the ServerGroup.
+   // Mission cleanup group.  This is where run time components will reside.
+   // The MissionCleanup group will be added to the ServerGroup.
    new SimGroup(MissionCleanup);
 
    // Exec the mission.  The MissionGroup (loaded components) is added to the ServerGroup
@@ -164,7 +163,7 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    // Hide objects not associated with the current gametype
    MissionGroup.setupGameType(%missionType);
 
-   // Deal with power
+   // Deal with power // #investigate #cleanup , see if we ever need this and eventually remove this feature
    //MissionGroup.clearPower(); //decactivated since it spams and is not in use
    //MissionGroup.powerInit(0); //decactivated since it spams and is not in use
 
@@ -197,8 +196,7 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    echo("<>>>> Mission loaded <<<<>");
    $missionRunning = true;
 
-   // Mission scripting support, activate mission package
-   // the level designer has included
+   // Mission scripting support, activate mission package the level designer has included
    if ( isActivePackage( $Server::MissionName ) )
       eval($Server::MissionName @ "::mapLoaded();");
 
@@ -213,7 +211,7 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    }
 
    // Allow clients to connect
-   //allowConnections(true);
+   //allowConnections(true); // #investigate if this feature is useful
    
    // This throws away old bots so that connectAiClients can connect fresh ones
    // This is a workaround to avoid having broken and dublicated bots in the next mission
@@ -258,8 +256,7 @@ function Torque::endMission(%this)
 
    physicsStopSimulation( "server" );
 
-   // Mission scripting support, kill the mission package
-   // the level designer has included
+   // Mission scripting support, kill the mission package the level designer has included
    if ( isActivePackage( $Server::MissionName ) )
    {
       eval($Server::MissionName @ "::DeactivateMap();");
@@ -267,8 +264,7 @@ function Torque::endMission(%this)
    }
 
    // If this is first mission then the MissionGroup, MissionCleanup and game object aren't there yet.
-   // if a mission group was there, delete prior mission stuff
-   // clear out the previous mission paths
+   // if a mission group was there, delete prior mission stuff clear out the previous mission paths
    for(%clientIndex = 0; %clientIndex < ClientGroup.getCount(); %clientIndex++)
    {
       // clear ghosts and paths from all clients

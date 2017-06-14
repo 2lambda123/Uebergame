@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------------------------------------------------
 // Library Functions v2.1
 //----------------------------------------------------------------------------------------------------------------
-// These are nifty lil functions that are usefull for other things then solely supporting the functions they
+// These are nifty lil functions that are useful for other things then solely supporting the functions they
 // were written to help.
 
 //*************************************************************************************
@@ -39,13 +39,13 @@
 // getWorldBox returns box.min.x, box.min.y, box.min.z, box.max.x, box.max.y, box.max.z
 // which are two diagonaly opposiing corners of the box
 
-// Just thought someone might find this usefull :D  -Founder
+// Just thought someone might find this useful :D  -Founder
 //*************************************************************************************
 
 //-------------------------------------------------------------------------------------
 // Rotations, positions, vectors, and Matricies OH MY!
 //-------------------------------------------------------------------------------------
-//set some usefull globals
+//set some useful globals
 $Pi = 3.14159;
 $TwoPi = 6.28319;
 
@@ -455,7 +455,7 @@ function getZrise(%rot, %posOne, %posTwo)
 // %curvePoint1.y = get3PointCurveValue(%point1.y, %point2.y, %point3.y, %t)
 // %curvePoint1.z = get3PointCurveValue(%point1.z, %point2.z, %point3.z, %t)
 
-// this lil guy doesn't actually draw a curve, but rather a line, however it is very usefull for mixing
+// this lil guy doesn't actually draw a curve, but rather a line, however it is very useful for mixing
 // two values together based on a percentage of time or distance
 function get2PointLineValue(%point1, %point2, %t)
 {

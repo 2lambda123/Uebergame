@@ -26,7 +26,8 @@
 
 $DamageCount = 0;
 
-//-------------------------------------------------------------------------- Game
+// Game
+//----------------------------------------------------------------------------
 $DamageType::Default = $DamageCount;
 $DamageText[$DamageCount] = "Default";
 
@@ -66,7 +67,8 @@ $DamageText[$DamageCount] = "ScriptDamage";
 $DamageType::QuickSand = $DamageCount++;
 $DamageText[$DamageCount] = "QuickSand";
 
-//-------------------------------------------------------------------------- Weapons
+// Weapons
+//----------------------------------------------------------------------------
 $DamageType::Melee = $DamageCount++;
 $DamageText[$DamageCount] = "Melee";
 
@@ -91,7 +93,8 @@ $DamageText[$DamageCount] = "Rocket";
 $DamageType::Paintball = $DamageCount++;
 $DamageText[$DamageCount] = "Paintball";
 
-//-------------------------------------------------------------------------- Grenades - Mines etc.
+// Grenades - Mines etc.
+//----------------------------------------------------------------------------
 $DamageType::Grenade = $DamageCount++;
 $DamageText[$DamageCount] = "Grenade";
 
@@ -101,7 +104,8 @@ $DamageText[$DamageCount] = "Mine";
 $DamageType::ShapeCharge = $DamageCount++;
 $DamageText[$DamageCount] = "Shape Charge";
 
-//-------------------------------------------------------------------------- Turrets
+// Turrets
+//----------------------------------------------------------------------------
 $DamageType::Turret = $DamageCount++;
 $DamageText[$DamageCount] = "Turret";
 

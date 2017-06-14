@@ -95,15 +95,7 @@ function Weapon::onUse(%data, %obj)
       //serverPlay3D(WeaponUseSound, %obj.getTransform());
 
       %obj.mountImage(%data.image, $WeaponSlot);
-/*
-      if ( %obj.client )
-      {
-         if( %data.isField( "pickUpName" ) )
-            messageClient(%obj.client, 'MsgWeaponUsed', '\c0%1 selected.', %data.pickUpName);
-         else
-            messageClient(%obj.client, 'MsgWeaponUsed', '\c0Weapon selected');
-      }
- */
+
       // If this is a Player class object then allow the weapon to modify allowed poses
       if ( %obj.isInNamespaceHierarchy("Player") )
       {
@@ -137,9 +129,9 @@ function Weapon::onUse(%data, %obj)
 function Weapon::onPickup(%this, %obj, %shape, %amount)
 {
    //echo("\c3Weapon::onPickup(" SPC %this.getName() @", "@ %obj.getDataBlock().getName() @", "@ %shape.client.nameBase @", "@ %amount SPC ")");
+   
    // The parent Item method performs the actual pickup.
-   // For player's we automatically use the weapon if the
-   // player does not already have one in hand.
+   // For player's we automatically use the weapon if the player does not already have one in hand.
    if (Parent::onPickup(%this, %obj, %shape, %amount))
    {
       if ( %shape.getClassName() $= "Player" || %shape.getClassName() $= "AIPlayer" && %shape.getMountedImage($WeaponSlot) == 0)
@@ -187,23 +179,12 @@ function WeaponImage::onMount(%this, %obj, %slot)
          %obj.setImageAmmo( %slot, true );
          %currentAmmo = %obj.getInventory( %this.ammo );
       }
-      /*else if( %obj.getInventory( %this.clip ) > 0 )
-      {
-         // Fill the weapon up from the first clip
-         %obj.setInventory( %this.ammo, %this.ammo.maxInventory );
-         %obj.setImageAmmo( %slot, true );
-         
-         // Add any spare ammo that may be "in the player's pocket"
-         %currentAmmo = %this.ammo.maxInventory;
-         %amountInClips += %obj.getFieldValue( "remaining" @ %this.ammo.getName());
-      }*/ //above code is not working and we use a hard clip system
       else
       {
          %currentAmmo = 0 + %obj.getFieldValue( "remaining" @ %this.ammo.getName());
       }
       
       %amountInClips = %obj.getInventory(%this.clip);
-      //%amountInClips *= %this.ammo.maxInventory;
 
       if ( isObject(%obj.client) && !%obj.client.isAiControlled() )
          messageClient( %obj.client, 'MsgAmmoCnt', "", addTaggedString($DataToName[%this.item]), %slot, addTaggedString(%currentAmmo), addTaggedString(%amountInClips) );
@@ -285,9 +266,7 @@ function WeaponImage::clearAmmoClip( %this, %obj, %slot )
 {
    //echo("WeaponImage::clearAmmoClip: " SPC %this SPC %obj SPC %slot);
    
-   // if we're not empty put the remaining bullets from the current clip
-   // in to the player's "pocket".
-
+   // if we're not empty put the remaining bullets from the current clip in to the player's "pocket".
    if ( %this.isField( "clip" ) )
    {
       // Commenting out this line will use a "hard clip" system, where
@@ -341,8 +320,7 @@ function WeaponImage::onWeaponActivate(%this, %obj, %slot)
 function WeaponImage::stashSpareAmmo( %this, %player )
 {
    // If the amount in our pocket plus what we are about to add from the clip
-   // Is over a clip, add a clip to inventory and keep the remainder
-   // on the player
+   // Is over a clip, add a clip to inventory and keep the remainder on the player
    if (%player.getInventory( %this.ammo ) < %this.ammo.maxInventory )
    {
       %nameOfAmmoField = "remaining" @ %this.ammo.getName();
@@ -383,8 +361,7 @@ function AmmoClip::onPickup(%this, %obj, %shape, %amount)
    // current mounted image using this clip to reflect the new state.
    if ((%image = %shape.getMountedImage($WeaponSlot)) > 0)
    {
-      // Check if this weapon uses the clip we just picked up and if
-      // there is no ammo.
+      // Check if this weapon uses the clip we just picked up and if there is no ammo.
       if (%image.isField("clip") && %image.clip.getId() == %this.getId())
       {
          %outOfAmmo = !%shape.getImageAmmo($WeaponSlot);

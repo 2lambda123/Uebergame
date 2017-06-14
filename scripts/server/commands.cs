@@ -23,7 +23,6 @@
 //----------------------------------------------------------------------------
 // Debug commands
 //----------------------------------------------------------------------------
-
 function serverCmdNetSimulateLag( %client, %msDelay, %packetLossPercent )
 {
    if ( %client.isAdmin )
@@ -67,7 +66,6 @@ function serverCmdDoMelee(%client)
 //----------------------------------------------------------------------------
 // Server admin
 //----------------------------------------------------------------------------
-
 function serverCmdSAD( %client, %password )
 {
    if( %password !$= "" && %password $= $pref::Server::AdminPassword)
@@ -88,7 +86,6 @@ function serverCmdSADSetPassword(%client, %password)
 //-----------------------------------------------------------------------------
 // Misc. server commands avialable to clients
 //-----------------------------------------------------------------------------
-
 function serverCmdShowScoreHud(%client)
 {
    commandToClient(%client, 'OpenScoreHud');
@@ -146,7 +143,6 @@ function serverCmdPlayDeath(%client)
 //-----------------------------------------------------------------------------
 // Inventory server commands
 //-----------------------------------------------------------------------------
-
 function serverCmdUse(%client, %data)
 {
    //%player = %client.getControlObject(); // might be a camera
@@ -307,8 +303,6 @@ function serverCmdCycleWeapon(%client, %data)
       {
          // Don't cycle to Grenade, we select that specifically
          if ( %player.weaponSlot[%i] !$= "" && %player.hasInventory( %player.weaponSlot[%i] ) && %player.hasAmmo( %player.weaponSlot[%i] ) )
-         // Allow switch to empty weapon
-         //if ( %player.weaponSlot[%i] !$= "" && %player.hasInventory( %player.weaponSlot[%i] ) && %player.weaponSlot[%i] !$= "Grenade" )
          {
             // player has this weapon and it has ammo or uses energy
             %newSlot = %i;
@@ -346,10 +340,6 @@ function serverCmdReloadWeapon(%client)
    if ( %player.isReloading == true) return;
    if ( !%image.isField("clip") ) return;
    if ( %player.getInventory(%image.clip) <= 0 ) return;
-   
-   // Don't reload if the weapon's full. //function is broken since we are using the sms system.
-   //if ( %player.getInventory(%image.ammo) == %image.ammo.maxInventory )
-   //return;
  
    // No Iron Sight aiming while reloading.
    if (%player.isInIronSights == true)
@@ -394,8 +384,6 @@ function serverCmdThrowGrenade(%client, %val)
 	  
    if ( !isObject( %player ) || %player.getState() $= "Dead" || !$Game::Running || %outOfGrenade || %player.isInIronSights == true )
       return;
-  
-   //%player.isReloading = true; //workaround to prevent zoom crosshair from showing , no longer needed I hope
 
    if ( !%player.isMounted() )
    {
@@ -447,11 +435,11 @@ function serverCmdclientChooseSpawn(%client, %option, %value)
 }
 
 // function uses a waiting period when changing teams to prevent team change 
-// exploit to crash servers. Added admin varible so admins can teamchange whoever
-// they want.
+// exploit to crash servers. Added admin varible so admins can teamchange whoever they want.
 function serverCmdClientJoinTeam(%client, %team, %admin)
 {
    //warn("serverCmdClientJoinTeam(" SPC %client.nameBase @", "@ %team @", "@ %admin.nameBase SPC ")");
+   
    // If the client does not enter a team, uses a team less than -1,
    // more than the number of teams for the gametype or zero, set his team to -1 (switch)
    if ( %team <= 0 || %team > Game.numTeams )
@@ -482,7 +470,6 @@ function serverCmdClientJoinTeam(%client, %team, %admin)
          {
             %client.isWaiting = true;
             %client.waitStart = getSimTime();
-            //schedule(15000, %client, eval, "%client.isWaiting = false;");
             %client.schedule(15000, waitTimeout);
 
             %teamed = %client.team == 0 ? 0 : 1;
@@ -576,8 +563,7 @@ function serverCmdForceClientToSpectator(%clientRequesting, %client)
       {
          // Always remove the player object
          if ( isObject( %client.player ) )
-            //%client.player.kill($DamageType::ScriptDamage);
-		    %client.player.schedule(50,"delete"); //better solution
+		    %client.player.schedule(50,"delete");
 
          Game.forceSpectator(%client, "adminForce");
       }
@@ -587,8 +573,7 @@ function serverCmdForceClientToSpectator(%clientRequesting, %client)
          {
             // Always remove the player object
             if ( isObject( %client.player ) )
-               //%client.player.kill($DamageType::ScriptDamage);
-		       %client.player.schedule(50,"delete"); //better solution
+		       %client.player.schedule(50,"delete");
 
             Game.forceSpectator( %client, "playerChoose" );
          }
@@ -606,7 +591,7 @@ function serverCmdClientChooseTeam(%client, %option)
       return;
 
    // No switching to spectator in single player mode
-   //if( Game.class $= SinglePlayerGame && %option <= 0  )
+   //if( Game.class $= SinglePlayerGame && %option <= 0  )  // #investigate if we could need this in the future
    //   return;
 
    %joined = false;

@@ -72,8 +72,7 @@ function ShapeBase::throwObject( %this, %obj )
 {
    //echo("\c3ShapeBase::throwObject(" SPC %this.getName() SPC %obj.client.nameBase SPC "force:" SPC %this.throwStrength SPC ")");
    // Throw the given object in the direction the shape is looking.
-   // The force value is hardcoded according to the current default
-   // object mass and mission gravity (20m/s^2).
+   // The force value is hardcoded according to the current default object mass and mission gravity (20m/s^2).
    //%throwForce = %this.throwStrength;
 
    // Might be a hidden object such as a Flag, unhide
@@ -115,9 +114,7 @@ function ShapeBase::throwObject( %this, %obj )
    %obj.setTransform(%pos);
    %obj.applyImpulse(%pos, %vec);
 
-   // Since the object is thrown from the center of the
-   // shape, the object needs to avoid colliding with it's
-   // thrower.
+   // Since the object is thrown from the center of the shape, the object needs to avoid colliding with it's thrower.
    %obj.setCollisionTimeout(%this);
 
    serverPlay3D( ThrowSnd, %this.getTransform() );
@@ -129,32 +126,12 @@ function ShapeBase::throwObject( %this, %obj )
 
 //-----------------------------------------------------------------------------
 // ShapeBase inventory support
+//-----------------------------------------------------------------------------
 
 function ShapeBase::use(%player, %data)
 {
    if ( isObject(%player) && %data !$= "" )
    {
-      /*
-      // Need to prevent weapon changing when zooming, but only shapes
-      // that have a connection.
-      %conn = %player.getControllingClient();
-      if (%conn)
-      {
-         %defaultFov = ($pref::Player::Fov);
-         %fov = %conn.getControlCameraFov();
-         if (%fov != %defaultFov)
-            return false;
-      
-         // workaround method
-         //if ( %fov < 60)
-         //   return false;
-      }
-      */
-      // may be junk code
-      // Cannot use anything while in a station
-      //if( %player.inStation )
-      //   return false;
-
       //echo("\c3ShapeBase::use( " @ %player.client.nameBase @ ", " @ %data @ " )");
 
       if ( %player.hasInventory( %data ) )
@@ -184,9 +161,8 @@ function ShapeBase::use(%player, %data)
 function ShapeBase::pickup(%this, %obj, %amount)
 {
    // This method is called to pickup an object and add it to the inventory.
-   // The datablock onPickup method is actually responsible for doing all the
-   // work, including incrementing the inventory.
-
+   // The datablock onPickup method is actually responsible for doing all the work, including incrementing the inventory.
+   
    %data = %obj.getDatablock();
 
    // Try and pickup the max if no value was specified
@@ -227,9 +203,8 @@ function ShapeBase::incInventory(%this, %data, %amount)
       return 0;
 
    //echo("\c3ShapeBase::incInventory(" SPC %this.getClassName() SPC %data.getName() SPC %amount SPC ")");
-   // Increment the inventory by the given amount.  The return value
-   // is the amount actually added, which may be less than the
-   // requested amount due to inventory restrictions.
+   // Increment the inventory by the given amount.  The return value is the amount actually added, 
+   // which may be less than the requested amount due to inventory restrictions.
 
    %max = %this.maxInventory( %data );
    %total = %this.inv[%data.getName()];
@@ -251,9 +226,8 @@ function ShapeBase::decInventory(%this, %data, %amount)
       return 0;
 
    //echo("\c3ShapeBase::decInventory(" SPC %this.getClassName() SPC %data.getName() SPC %amount SPC ")");
-   // Decrement the inventory by the given amount. The return value
-   // is the amount actually removed.
-
+   
+   // Decrement the inventory by the given amount. The return value is the amount actually removed.
    %total = %this.inv[%data.getName()];
    if ( %total > 0 )
    {
@@ -409,17 +383,14 @@ function serverCmdGiveAll(%client)
 
 function ShapeBaseData::onUse(%this, %user)
 {
-   // Invoked when the object uses this datablock, should return
-   // true if the item was used.
+   // Invoked when the object uses this datablock, should return true if the item was used.
    return false;
 }
 
 function ShapeBaseData::onThrow(%this, %user, %amount)
 {
-   // Invoked when the object is thrown.  This method should
-   // construct and return the actual mission object to be
-   // physically thrown.  This method is also responsible for
-   // decrementing the user's inventory.
+   // Invoked when the object is thrown.  This method should construct and return the actual mission object
+   // to be physically thrown. This method is also responsible for decrementing the user's inventory.
 
    return 0;
 }
@@ -427,9 +398,8 @@ function ShapeBaseData::onThrow(%this, %user, %amount)
 function ShapeBaseData::onPickup(%this, %obj, %user, %amount)
 {
    // Invoked when the user attempts to pickup this datablock object.
-   // The %amount argument is the space in the user's inventory for
-   // this type of datablock.  This method is responsible for
-   // incrementing the user's inventory is something is addded.
+   // The %amount argument is the space in the user's inventory for this type of datablock.
+   // This method is responsible for incrementing the user's inventory is something is addded.
    // Should return true if something was added to the inventory.
 
    return false;
@@ -437,8 +407,7 @@ function ShapeBaseData::onPickup(%this, %obj, %user, %amount)
 
 function ShapeBaseData::onInventory(%this, %user, %value)
 {
-   // Invoked whenever an user's inventory total changes for
-   // this datablock.
+   // Invoked whenever an user's inventory total changes for this datablock.
 }
 
 //-----------------------------------------------------------------------------
@@ -447,12 +416,10 @@ function ShapeBaseData::onInventory(%this, %user, %value)
 
 function ShapeBase::damage(%this, %source, %position, %damage, %damageType)
 {
-   // All damage applied by one object to another should go through this
-   // method. This function is provided to allow objects some chance of
-   // overriding or processing damage values and types.  As opposed to
-   // having weapons call ShapeBase::applyDamage directly.
-   // Damage is redirected to the datablock, this is standard proceedure
-   // for many built in callbacks.
+   // All damage applied by one object to another should go through this method. 
+   // This function is provided to allow objects some chance of overriding or processing 
+   // damage values and types.  As opposed to having weapons call ShapeBase::applyDamage directly.
+   // Damage is redirected to the datablock, this is standard proceedure for many built in callbacks.
 
    //echo("\c3ShapeBase::damage(" SPC %this @", "@ %source @", "@ %position @", "@ %damage @", "@ %damageType SPC ")");
    if(isObject(%this))
@@ -542,6 +509,8 @@ function ShapeBase::dismountImage(%this, %slot)
 //-----------------------------------------------------------------------------
 // ZOD: Team functions, should be in the engine
 //-----------------------------------------------------------------------------
+// #cleanup or not?! I think there was some source code change that fixed those
+// but needs #investigate if it really did and if or if not we can remove this stuff here
 /* //removing this should make the turrets shoot again
 function ShapeBase::setTeamId(%obj, %team)
 {
@@ -604,8 +573,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       if ( %obj.getInventory( %data.ammo ) <= 0 )
          return;
 
-      // Decrement inventory ammo. The image's ammo state is update
-      // automatically by the ammo inventory hooks.
+      // Decrement inventory ammo. The image's ammo state is update automatically by the ammo inventory hooks.
       %obj.decInventory( %data.ammo, 1 );
    }
 
@@ -622,6 +590,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
    //if ( %obj.getClassname() $= "Player" || %obj.getClassname() $= "AiPlayer" )
    if ( %obj.isMemberOfClass( "Player" ) )
       %obj.setInvincible( false ); // fire your weapon and your invincibility goes away.
+   // #investigate #testing
 /* //cloaking needs to be reworked and a cloaking item as special device for the player
    if( %obj.inStation $= "" && %obj.isCloaked() )
    {
@@ -658,7 +627,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       //%muzzleVector = %obj.getMuzzleVector(%slot);
       %muzzleVector = MatrixMulVector("0 0 0 0 0 1 0", %obj.getMuzzleVector(%slot));
    }
-
+   // #todo :
    /* //uncomment when ballistics features and blocking shooting into water are ready, this will activate under water shooting with slowed bullets
    // check if the weapon is underwater and if so, spawn an under water projectile, otherwise spawn a regular projectile
    if ( %obj.weaponUnderwater == true )
@@ -715,8 +684,6 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       %obj.client.projectile = %p;
 
    MissionCleanup.add(%p);
-   //}
-   //%p.mountPointLight( 10, "LightFlareExample1", 1, "FireLightAnim", 1, "DualParaboloidSinglePass" );
 
    return %p;
 }
@@ -772,7 +739,7 @@ function ShapeBaseImageData::onAltFire(%data, %obj, %slot)
 
 //-----------------------------------------------------------------------------
 // Special cases for throwing items via mounted image
-
+//-----------------------------------------------------------------------------
 function ShapeBaseImageData::chargeStart(%data, %obj, %slot)
 {
    %obj.startTime = getSimTime();
@@ -821,6 +788,7 @@ function ShapeBaseImageData::onThrowGrenade(%data, %obj, %slot)
 
    %data.lightStart = $Sim::Time;
    %obj.setInvincible( false ); // Throw a grenade and your invincibility goes away.
+   // #todo
 /*
    if( %obj.inStation $= "" && %obj.isCloaked() )
    {
@@ -864,6 +832,7 @@ function ShapeBaseImageData::onThrowGrenade(%data, %obj, %slot)
 
 function GrenadeImage::onDryFire(%this, %obj, %slot)
 {
+   // #cleanup
    // disabled since this can trigger an endless loop
    /*
    if ( %obj.inv[%obj.lastWeapon] )
