@@ -45,7 +45,7 @@ new SimGroup(MissionGroup) {
          brakeMultiplier = "2";
          isAIControlled = "0";
          dataBlock = "Spectator";
-         position = "35.7768 167.593 15.114";
+         position = "51.3545 167.593 18.9295";
          rotation = "0.118443 -0.122854 0.985332 92.9402";
          scale = "1 1 1";
          canSave = "1";

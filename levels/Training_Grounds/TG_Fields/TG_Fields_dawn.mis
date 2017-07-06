@@ -45,7 +45,7 @@ new SimGroup(MissionGroup) {
          brakeMultiplier = "2";
          isAIControlled = "0";
          dataBlock = "Spectator";
-         position = "35.7768 167.593 15.114";
+         position = "51.3545 167.593 18.9295";
          rotation = "0.118443 -0.122854 0.985332 92.9402";
          scale = "1 1 1";
          canSave = "1";
@@ -1690,18 +1690,19 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
 
             new Item() {
-               static = "1";
+               static = "0";
                rotate = "0";
                isAIControlled = "0";
                dataBlock = "Flag";
                position = "175.382 158.824 0.0622119";
                rotation = "0 0 -1 111";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
+                  gameTypesList = "RtF PBRtF";
                   lastTransForm = "175.382 158.824 0.0622119 0 0 -1 1.93732";
                   team = "0";
-                  gameTypesList = "RtF PBRtF";
             };
             new SimGroup(Flagstands) {
                canSave = "1";
@@ -1713,11 +1714,12 @@ new SimGroup(MissionGroup) {
                   position = "175.382 158.824 0.000972167";
                   rotation = "0 0 -1 90";
                   scale = "2 2 1";
+                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "1";
-                     team = "0";
-                     Trigger = "23553";
                      gameTypesList = "RtF PBRtF";
+                     team = "0";
+                     Trigger = "21478";
                };
             };
          };
@@ -2392,11 +2394,12 @@ new SimGroup(MissionGroup) {
                position = "217.238 39.3085 0.000972167";
                rotation = "0 0 1 180";
                scale = "2 2 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
-                  team = "1";
-                  Trigger = "23554";
                   gameTypesList = "RtF PBRtF";
+                  team = "1";
+                  Trigger = "21479";
             };
          };
       };
@@ -3070,11 +3073,12 @@ new SimGroup(MissionGroup) {
                position = "173.707 277.626 0.000972167";
                rotation = "1 0 0 0";
                scale = "2 2 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
-                  team = "2";
-                  Trigger = "23555";
                   gameTypesList = "RtF PBRtF";
+                  team = "2";
+                  Trigger = "21480";
             };
          };
       };
@@ -4324,7 +4328,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.09";
+         rotation = "-0.140172 0.140328 0.980133 91.0901";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";
