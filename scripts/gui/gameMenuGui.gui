@@ -3,7 +3,7 @@
    useVariable = "0";
    tile = "1";
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -23,7 +23,7 @@
       color = "255 255 255 255";
       wrap = "0";
       position = "0 0";
-      extent = "1024 768";
+      extent = "1920 1080";
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "height";
@@ -37,8 +37,8 @@
       canSaveDynamicFields = "0";
    };
    new GuiControl() {
-      position = "0 0";
-      extent = "1024 88";
+      position = "0 -8";
+      extent = "1920 128";
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "bottom";
@@ -61,8 +61,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "1 0";
-         extent = "145 88";
+         position = "3 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -86,8 +86,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "138 0";
-         extent = "145 88";
+         position = "259 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -111,8 +111,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "274 0";
-         extent = "145 88";
+         position = "513 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -136,8 +136,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "409 0";
-         extent = "145 88";
+         position = "767 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -161,8 +161,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "547 0";
-         extent = "145 88";
+         position = "1026 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -186,8 +186,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "683 0";
-         extent = "145 88";
+         position = "1280 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -211,8 +211,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "818 0";
-         extent = "145 88";
+         position = "1533 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -236,7 +236,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "976 0";
+         position = "1872 8";
          extent = "48 48";
          minExtent = "8 2";
          horizSizing = "left";
@@ -262,8 +262,8 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "884 684";
-      extent = "145 88";
+      position = "1680 968";
+      extent = "256 128";
       minExtent = "8 2";
       horizSizing = "relative";
       vertSizing = "top";
@@ -287,8 +287,8 @@
       groupNum = "-1";
       buttonType = "PushButton";
       useMouseEvents = "0";
-      position = "-2 684";
-      extent = "145 88";
+      position = "-8 968";
+      extent = "256 128";
       minExtent = "8 2";
       horizSizing = "relative";
       vertSizing = "top";

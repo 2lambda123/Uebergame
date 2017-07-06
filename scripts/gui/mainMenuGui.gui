@@ -3,7 +3,7 @@
    useVariable = "0";
    tile = "1";
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
    horizSizing = "right";
    vertSizing = "bottom";
@@ -19,8 +19,8 @@
       isDecoy = "0";
 
    new GuiControl() {
-      position = "0 0";
-      extent = "1024 88";
+      position = "0 -8";
+      extent = "1920 128";
       minExtent = "8 2";
       horizSizing = "width";
       vertSizing = "bottom";
@@ -43,8 +43,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "1 0";
-         extent = "144 88";
+         position = "3 0";
+         extent = "258 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -68,8 +68,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "138 0";
-         extent = "144 88";
+         position = "259 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -93,8 +93,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "274 0";
-         extent = "144 88";
+         position = "513 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -118,8 +118,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "409 0";
-         extent = "144 88";
+         position = "767 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -143,8 +143,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "547 0";
-         extent = "144 88";
+         position = "1026 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -168,8 +168,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "683 0";
-         extent = "144 88";
+         position = "1280 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -193,8 +193,8 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "818 0";
-         extent = "144 88";
+         position = "1533 0";
+         extent = "256 128";
          minExtent = "8 2";
          horizSizing = "relative";
          vertSizing = "bottom";
@@ -219,7 +219,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "976 0";
+         position = "1872 8";
          extent = "48 48";
          minExtent = "8 2";
          horizSizing = "left";
@@ -234,29 +234,29 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-   };
-   new GuiTextCtrl(Version_Number) {
-      text = "Version 1.0.6.0";
-      maxLength = "1024";
-      margin = "0 0 0 0";
-      padding = "0 0 0 0";
-      anchorTop = "1";
-      anchorBottom = "0";
-      anchorLeft = "1";
-      anchorRight = "0";
-      position = "874 -1";
-      extent = "109 18";
-      minExtent = "8 2";
-      horizSizing = "left";
-      vertSizing = "bottom";
-      profile = "ScoreHudHeaderBlueProfile";
-      visible = "1";
-      active = "1";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "1";
-      canSave = "1";
-      canSaveDynamicFields = "0";
+      new GuiTextCtrl(Version_Number) {
+         text = "Version 1.0.9.0";
+         maxLength = "1024";
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "1764 10";
+         extent = "109 18";
+         minExtent = "8 2";
+         horizSizing = "left";
+         vertSizing = "bottom";
+         profile = "ScoreHudHeaderBlueProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "1";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
    };
 };
 //--- OBJECT WRITE END ---
