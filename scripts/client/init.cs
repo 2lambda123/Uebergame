@@ -84,9 +84,6 @@ function Torque::initClient(%this)
    initRenderManager();
    initLightingSystems();
 
-   // Use our prefs to configure our Canvas/Window
-   configureCanvas();
-
    loadMaterials();
    
    // Load up the shell GUIs
@@ -170,6 +167,9 @@ function Torque::initClient(%this)
    if( isScriptFile( expandFilename("./audioData.cs") ) )
       exec( "./audioData.cs" );
 
+   // Use our prefs to configure our Canvas/Window, do it a little later so splash window shows longer.
+   configureCanvas();
+   
    // Start up the main menu... this is separated out into a method for easier mod override.
    if ($startWorldEditor || $startGUIEditor) {
       // Editor GUI's will start up in the primary main.cs once engine is initialized.
