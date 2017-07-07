@@ -27,22 +27,6 @@
 function Torque::initClient(%this)
 {
    echo("\n--------- Initializing " @ $appName @ ": Client Scripts ---------");
-
-   // Set a background image for the main guis
-   if ( $pref::MainGui::LastBackground $= "" || $pref::MainGui::LastBackground >= 2 )
-      $pref::MainGui::LastBackground = 0;
-
-   // create more backgrounds later #newfeature
-   switch( $pref::MainGui::LastBackground )
-   {
-      case 0:
-         $MainGuiBackground = "art/gui/core/space_background_big.dds";
-      case 1:
-         $MainGuiBackground = "art/gui/core/space_background_big.dds";
-      default:
-         $MainGuiBackground = "art/gui/core/space_background_big.dds";
-   }
-   $pref::MainGui::LastBackground++;
      
    // Make sure this variable reflects the correct state.
    // Obviously the gui is loading/loaded, so no way should we be dedicated.
@@ -226,8 +210,10 @@ function Torque::loadMainMenu(%this)
       }
       else
       {
-         Canvas.setContent("backgroundGui");
+         Canvas.setContent("BackgroundGui");
          Canvas.pushDialog( MainMenuGui );
+         if ($pref::Menu::RandomBackgrounds)
+         BackgroundGui.setBitmap ( getRandomBackground() );
          
          if ($pref::Menu::Ads)
             Canvas.pushDialog( MainMenuAdsGui );

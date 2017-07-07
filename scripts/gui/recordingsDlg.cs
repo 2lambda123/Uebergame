@@ -145,6 +145,8 @@ function demoPlaybackComplete()
       {
          Canvas.setContent("backgroundGui");
          Canvas.pushDialog( MainMenuGui );
+         if ($pref::Menu::RandomBackgrounds)
+         BackgroundGui.setBitmap ( getRandomBackground() );
          
          if ($pref::Menu::Ads)
             Canvas.pushDialog( MainMenuAdsGui );

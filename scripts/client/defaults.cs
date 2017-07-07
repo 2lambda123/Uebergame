@@ -46,6 +46,7 @@ $pref::LogEchoEnabled = 0;
 
 $pref::Menu::Level = 1;
 $pref::Menu::Ads = 1;
+$pref::Menu::RandomBackgrounds = 1;
 
 $pref::debug::FPV = "1";
 $pref::debug::showFramerate = "1";

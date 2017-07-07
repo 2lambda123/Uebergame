@@ -66,6 +66,25 @@ function getMainMenuLevel(%levelName)
    return (%levelName);
 }
 
+/// Used to get a random 2D background image if 3D background is disabled
+function getRandomBackground(%this)
+{
+   %list = new ArrayObject();
+   %list.add("0", "art/gui/backgrounds/deep_sky_01.jpg");
+   %list.add("1", "art/gui/backgrounds/deep_space_01.jpg");
+   %list.add("2", "art/gui/backgrounds/eye_nebula_01.jpg");
+   %list.add("3", "art/gui/backgrounds/ez_space_lite_01.jpg");
+   %list.add("4", "art/gui/backgrounds/meyespace_v1_01.jpg");
+   %list.add("5", "art/gui/backgrounds/milky_way_01.jpg");
+   %list.add("6", "art/gui/backgrounds/space_nebula_01.jpg");
+   %list.add("7", "art/gui/backgrounds/spacegen_01.jpg");
+   
+   %random = getRandom(0, 7);
+   %backgroundName = %list.getValue(%random);
+   
+   return (%backgroundName);
+}
+
 //---------------------------------------------------------------------------------------------
 // CorePackage
 // Adds functionality for this mod to some standard functions.

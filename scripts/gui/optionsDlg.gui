@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(OptionsDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -13,7 +13,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      pane = "Audio";
+      pane = "Misc";
 
    new GuiWindowCtrl() {
       text = "Setup Options";
@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 80";
+      position = "640 80";
       extent = "640 480";
       minExtent = "8 8";
       horizSizing = "center";
@@ -53,7 +53,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "2";
+         selectedPage = "5";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -173,7 +173,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Intel(R) HD Graphics 4600 (D3D9)";
+               text = "NVIDIA GeForce GTX 1050 (D3D9)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -200,7 +200,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "1280 x 720  (16:9)";
+               text = "1920 x 1080  (16:9)";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -304,7 +304,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -334,7 +334,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Normal";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -387,7 +387,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Low";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -463,7 +463,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Low";
+               text = "Ueber";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -516,7 +516,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "Off";
+               text = "16X";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -608,7 +608,7 @@
                range = "2 2.5";
                ticks = "9";
                snap = "0";
-               value = "2.25492";
+               value = "2.25394";
                position = "107 276";
                extent = "518 15";
                minExtent = "8 2";
@@ -853,7 +853,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "0.5";
+               text = "5";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -949,7 +949,7 @@
                range = "-0.25 0.25";
                ticks = "9";
                snap = "0";
-               value = "0.00492126";
+               value = "0.00393701";
                position = "107 308";
                extent = "518 15";
                minExtent = "8 2";
@@ -1138,7 +1138,7 @@
                sbUsesNAColor = "0";
                reverseTextList = "0";
                bitmapBounds = "16 16";
-               text = "urban";
+               text = "water";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1162,7 +1162,7 @@
             };
             new GuiObjectView(PlayerPreview) {
                shapeFile = "art/shapes/actors/Soldier/soldier_rigged.dts";
-               skin = "urban";
+               skin = "water";
                animSequence = "Root";
                mountedShapeFile = "art/shapes/weapons/Lurker/TP_Lurker.dts";
                mountedSkin = "Lurker_D";
@@ -1396,12 +1396,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptAudioPane";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1447,7 +1448,7 @@
                   range = "0 1";
                   ticks = "0";
                   snap = "0";
-                  value = "0.474468";
+                  value = "0.502128";
                   position = "108 0";
                   extent = "480 14";
                   minExtent = "8 8";
@@ -1908,7 +1909,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl(MouseXText) {
-               text = "1";
+               text = "0.373984";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1934,7 +1935,7 @@
                range = "0 2";
                ticks = "9";
                snap = "0";
-               value = "1";
+               value = "0.373984";
                position = "374 63";
                extent = "256 34";
                minExtent = "8 8";
@@ -1952,7 +1953,7 @@
                canSaveDynamicFields = "0";
             };
             new GuiTextCtrl(MouseYText) {
-               text = "1";
+               text = "0.373984";
                maxLength = "255";
                margin = "0 0 0 0";
                padding = "0 0 0 0";
@@ -1978,7 +1979,7 @@
                range = "0 2";
                ticks = "9";
                snap = "0";
-               value = "1";
+               value = "0.373984";
                position = "374 116";
                extent = "256 34";
                minExtent = "8 8";
@@ -2166,7 +2167,7 @@
                   fitParentWidth = "1";
                   clipColumnText = "0";
                   position = "1 1";
-                  extent = "345 960";
+                  extent = "345 1008";
                   minExtent = "8 8";
                   horizSizing = "right";
                   vertSizing = "bottom";
@@ -2732,13 +2733,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             hovertime = "1000";
             isContainer = "1";
             internalName = "OptMiscPane";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -2747,7 +2747,7 @@
                groupNum = "-1";
                buttonType = "ToggleButton";
                useMouseEvents = "0";
-               position = "30 52";
+               position = "30 50";
                extent = "140 32";
                minExtent = "8 2";
                horizSizing = "right";
@@ -2767,7 +2767,7 @@
                groupNum = "-1";
                buttonType = "ToggleButton";
                useMouseEvents = "0";
-               position = "30 91";
+               position = "30 80";
                extent = "140 32";
                minExtent = "8 2";
                horizSizing = "right";
@@ -2802,6 +2802,26 @@
                tooltipProfile = "GuiToolTipProfile";
                hovertime = "1000";
                isContainer = "1";
+               canSave = "1";
+               canSaveDynamicFields = "0";
+            };
+            new GuiCheckBoxCtrl() {
+               text = "Random Background Images";
+               groupNum = "-1";
+               buttonType = "ToggleButton";
+               useMouseEvents = "0";
+               position = "30 110";
+               extent = "189 32";
+               minExtent = "8 2";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               profile = "GuiCheckBoxProfile";
+               visible = "1";
+               active = "1";
+               variable = "$pref::Menu::RandomBackgrounds";
+               tooltipProfile = "GuiToolTipProfile";
+               hovertime = "1000";
+               isContainer = "0";
                canSave = "1";
                canSaveDynamicFields = "0";
             };

@@ -113,7 +113,7 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
    }
    else
    {
-   Canvas.setContent("backgroundGui"); 
+   Canvas.setContent("backgroundGui");
    Canvas.repaint();
    $GameLaunched = 1;
    } 

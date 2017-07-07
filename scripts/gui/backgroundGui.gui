@@ -1,6 +1,6 @@
 //--- OBJECT WRITE BEGIN ---
-%guiContent = new GuiChunkedBitmapCtrl(backgroundGui) {
-   bitmap = "art/gui/core/space_background_big.dds";
+%guiContent = new GuiChunkedBitmapCtrl(BackgroundGui) {
+   bitmap = "art/gui/background.png";
    useVariable = "0";
    tile = "0";
    position = "0 0";
