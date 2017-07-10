@@ -952,8 +952,8 @@ function CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn, %team)
       %player.use( %player.weaponSlot[0] ); //use slot 0 since this is our first weapon
 	 
       case "DefaultPlayerData": 
-	 //check if soldier did not equip a primary weapon and give Lurker Rifle as a default then
-      if ( %player.weaponSlot[1] $= "" )
+	   //check if soldier did not equip a primary weapon and give Lurker Rifle as a default then
+      if (( %player.weaponSlot[1] $= "" ) && ( !%player.isMarked ))
       {
          %player.setInventory( Lurker, 1, 1 );
          %player.setInventory( LurkerClip, %player.maxInventory(LurkerClip), 1 );

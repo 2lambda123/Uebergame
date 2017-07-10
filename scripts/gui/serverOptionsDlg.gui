@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ServerOptionsDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "192 240";
+      position = "640 240";
       extent = "640 480";
       minExtent = "8 2";
       horizSizing = "center";
@@ -656,7 +656,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "15 395";
+         position = "15 390";
          extent = "98 18";
          minExtent = "8 2";
          horizSizing = "relative";
@@ -684,7 +684,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "157 395";
+         position = "157 390";
          extent = "100 18";
          minExtent = "8 2";
          horizSizing = "relative";
@@ -707,7 +707,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "15 425";
+         position = "15 411";
          extent = "109 18";
          minExtent = "8 2";
          horizSizing = "relative";
@@ -735,7 +735,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "157 422";
+         position = "157 411";
          extent = "100 18";
          minExtent = "8 2";
          horizSizing = "relative";
@@ -758,7 +758,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "15 455";
+         position = "15 432";
          extent = "109 18";
          minExtent = "8 2";
          horizSizing = "relative";
@@ -786,7 +786,58 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "157 455";
+         position = "157 432";
+         extent = "100 18";
+         minExtent = "8 2";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "GuiTextEditProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiTextCtrl() {
+         text = "MfD Score Limit:";
+         maxLength = "255";
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "15 453";
+         extent = "109 18";
+         minExtent = "8 2";
+         horizSizing = "relative";
+         vertSizing = "relative";
+         profile = "GuiTextProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiTextEditCtrl(SOP_MfDScoreLimit) {
+         historySize = "0";
+         tabComplete = "0";
+         sinkAllKeyEvents = "0";
+         password = "0";
+         passwordMask = "*";
+         text = "5";
+         maxLength = "255";
+         margin = "0 0 0 0";
+         padding = "0 0 0 0";
+         anchorTop = "1";
+         anchorBottom = "0";
+         anchorLeft = "1";
+         anchorRight = "0";
+         position = "157 453";
          extent = "100 18";
          minExtent = "8 2";
          horizSizing = "relative";

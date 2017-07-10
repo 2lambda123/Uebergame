@@ -93,20 +93,24 @@ function AIConnection::onConnect(%client, %name)
    //echo ( "game Mode = " @ $gameMode );
    switch$ ($gameMode)
    {
-      case "DMGame":
-   %client.setBotFav( %client.getRandomLoadout() );
-      case "TDMGame":
-   %client.setBotFav( %client.getRandomLoadout() );
-      case "RtFGame":
-   %client.setBotFav( %client.getRandomLoadout() );
-      case "PBDMGame":
-   %client.setBotFav( %client.getRandomLoadout2() );
-      case "PBTDMGame":
-   %client.setBotFav( %client.getRandomLoadout2() );
-      case "PBRtFGame":
-   %client.setBotFav( %client.getRandomLoadout2() );
-      default:
-   %client.setBotFav( %client.getRandomLoadout() );
+   case "DMGame":
+      %client.setBotFav( %client.getRandomLoadout() );
+   case "TDMGame":
+      %client.setBotFav( %client.getRandomLoadout() );
+   case "RtFGame":
+      %client.setBotFav( %client.getRandomLoadout() );
+   case "MfDGame":
+      %client.setBotFav( %client.getRandomLoadout() );
+   case "PBDMGame":
+      %client.setBotFav( %client.getRandomLoadout2() );
+   case "PBTDMGame":
+      %client.setBotFav( %client.getRandomLoadout2() );
+   case "PBRtFGame":
+      %client.setBotFav( %client.getRandomLoadout2() );
+   case "PBMfDGame":
+      %client.setBotFav( %client.getRandomLoadout2() );
+   default:
+      %client.setBotFav( %client.getRandomLoadout() );
    }
    // A bit of random delay for bots to join the game to prevent crashes.
    %randomJoinTime = ( getRandom ( 1000, 20000 ) + ( $pref::Server::warmupTime * 1000) );   

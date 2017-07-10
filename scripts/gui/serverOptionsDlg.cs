@@ -37,6 +37,7 @@ function ServerOptionsDlg::onWake(%this)
    SOP_DMScoreLimit.setValue( $pref::Server::DMScoreLimit );
    SOP_TDMScoreLimit.setValue( $pref::Server::TDMScoreLimit );
    SOP_RtFScoreLimit.setValue( $pref::Server::RtFScoreLimit );
+   SOP_MfDScoreLimit.setValue( $pref::Server::MfDScoreLimit );
    SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
 }
 
@@ -81,6 +82,9 @@ function ServerOptionsDlg::onSleep(%this)
    
    if ( checkIsNumber( SOP_RtFScoreLimit.getValue() ) )
       $pref::Server::RtFScoreLimit = SOP_RtFScoreLimit.getValue();
+   
+   if ( checkIsNumber( SOP_MfDScoreLimit.getValue() ) )
+      $pref::Server::MfDScoreLimit = SOP_MfDScoreLimit.getValue();
   
    if ( checkIsNumber( SOP_MaxWeapons.getValue() ) )
       $pref::Server::MaxWeapons = SOP_MaxWeapons.getValue();

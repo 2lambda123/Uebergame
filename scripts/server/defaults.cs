@@ -77,6 +77,7 @@ $pref::Server::EndGamePause = 8; // seconds
 $pref::Server::DMScoreLimit = 100; // score
 $pref::Server::TDMScoreLimit = 5; // kills multiplied by players on server
 $pref::Server::RtFScoreLimit = 5; // flag capture limit
+$pref::Server::MfDScoreLimit = 5; // marked kill limit
 $pref::Server::FriendlyFire = 0;
 $pref::Server::TournamentMode = 0;
 $pref::Server::DisallowVoteMission = 0;

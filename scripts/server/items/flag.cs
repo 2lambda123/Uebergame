@@ -50,6 +50,17 @@ datablock ItemData(Flag)
    throwSound = ThrowSnd;
 };
 
+// we need extra blue/red flag items, since items are not skinnable at the moment
+datablock ItemData(BlueFlag: Flag)
+{
+   shapeFile = "art/shapes/objectives/flags/flag_01_blue.dts";
+};
+
+datablock ItemData(RedFlag: Flag)
+{
+   shapeFile = "art/shapes/objectives/flags/flag_01_red.dts";
+};
+
 datablock ShapeBaseImageData(FlagImage)
 {
    shapeFile = "art/shapes/objectives/flags/flag_01.dts";
@@ -96,6 +107,17 @@ datablock ShapeBaseImageData(FlagImage)
    stateName[3]                    = "Activate";
    stateScript[3]                  = "onActivate";
    stateSequence[3]                = "fire";
+};
+
+// we need extra blue/red flag weaponImages, since weaponImages are not skinnable at the moment
+datablock ShapeBaseImageData(BlueFlagImage : FlagImage)
+{
+   shapeFile = "art/shapes/objectives/flags/flag_01_blue.dts";
+};
+
+datablock ShapeBaseImageData(RedFlagImage : FlagImage)
+{
+   shapeFile = "art/shapes/objectives/flags/flag_01_red.dts";
 };
 
 function Flag::onAdd(%this, %obj)

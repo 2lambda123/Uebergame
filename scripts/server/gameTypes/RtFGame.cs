@@ -664,13 +664,7 @@ function RtFGame::forceSpectator(%game, %client, %reason)
 
    // first kill this player
    if(%client.player)
-      //%client.player.kill($DamageType::ScriptDamage);
       %client.player.schedule(50,"delete"); //better solution
-
-   //if(isEventPending(%client.respawnTimer))
-   //   cancel(%client.respawnTimer);
-
-   //%client.respawnTimer = "";
 
    // place them in spectator mode
    %game.clearRespawnWait(%client);

@@ -50,3 +50,35 @@ singleton Material(Mat_white_flag_01 : Mat_flag_01)
    mapTo = "white_flag_01";
    diffuseMap[0] = "flag_01_D_white.dds";
 };
+
+singleton Material(Mat_flag_01_blue)
+{
+   mapTo = "flag_01_blue";
+   diffuseColor[0] = "1 1 1 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "1";
+   translucentBlendOp = "None";
+   diffuseMap[0] = "art/shapes/objectives/flags/flag_01_D_blue.dds";
+   normalMap[0] = "art/shapes/objectives/flags/flag_01_N.dds";
+   specularMap[0] = "art/shapes/objectives/flags/flag_01_S.dds";
+   specularStrength[0] = "0.8";
+   showFootprints = "0";
+   castDynamicShadows = "1";
+   useAnisotropic[0] = "1";
+};
+
+singleton Material(Mat_flag_01_red)
+{
+   mapTo = "flag_01_red";
+   diffuseColor[0] = "1 1 1 1";
+   specular[0] = "0.5 0.5 0.5 1";
+   specularPower[0] = "1";
+   translucentBlendOp = "None";
+   diffuseMap[0] = "art/shapes/objectives/flags/flag_01_D_red.dds";
+   normalMap[0] = "art/shapes/objectives/flags/flag_01_N.dds";
+   specularMap[0] = "art/shapes/objectives/flags/flag_01_S.dds";
+   specularStrength[0] = "0.8";
+   showFootprints = "0";
+   castDynamicShadows = "1";
+   useAnisotropic[0] = "1";
+};

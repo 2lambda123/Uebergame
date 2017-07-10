@@ -375,6 +375,8 @@ function Torque::getMissionTypeDisplayNames(%this)
          $HostTypeDisplayName[%type] = "Paintball Team Deathmatch";
       else if ( $HostTypeName[%type] $= PBRtF )
          $HostTypeDisplayName[%type] = "Paintball Retrieve the Flag";
+      else if ( $HostTypeName[%type] $= PBMfD )
+         $HostTypeDisplayName[%type] = "Paintball Marked For Death";
 	 
       else
          $HostTypeDisplayName[%type] = $HostTypeName[%type];

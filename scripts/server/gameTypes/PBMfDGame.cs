@@ -23,11 +23,11 @@
 // DisplayName = Marked For Death
 
 //--- GAME RULES BEGIN ---
-$HostGameRules["MfD", 0] = "Kill the enemy and don't get killed.";
-$HostGameRules["MfD", 1] = "Team with the most kills wins!";
+$HostGameRules["PBMfD", 0] = "Kill the enemy and don't get killed.";
+$HostGameRules["PBMfD", 1] = "Team with the most kills wins!";
 //--- GAME RULES END ---
 
-package MfDGame
+package PBMfDgame
 {
    function ArmoryCrate::onCollision(%data, %obj, %col)
    {
@@ -57,12 +57,12 @@ package MfDGame
    }
 };
 
-function MfDGame::setupGameParams(%game)
+function PBMfDgame::setupGameParams(%game)
 {
-   //echo("MfDGame::setupGameParams(" SPC %game.class SPC ")");
+   //echo("PBMfDgame::setupGameParams(" SPC %game.class SPC ")");
    
-   %game.playerType = "DefaultPlayerData";
-   $gameMode = MfDGame;
+   %game.playerType = "Paintball";
+   $gameMode = PBMfDgame;
    
    CoreGame::setupGameParams(%game);
 
@@ -74,9 +74,9 @@ function MfDGame::setupGameParams(%game)
    %game.SCORE_PER_PLYR_MARK_KILL = 30;
 }
 
-function MfDGame::onMissionLoaded(%game)
+function PBMfDgame::onMissionLoaded(%game)
 {
-   //echo("MfDGame::onMissionLoaded(" SPC %game.class SPC ")");
+   //echo("PBMfDgame::onMissionLoaded(" SPC %game.class SPC ")");
    CoreGame::onMissionLoaded(%game);
    for(%i = 1; %i <= %game.numTeams; %i++)
    {
@@ -85,9 +85,9 @@ function MfDGame::onMissionLoaded(%game)
    }
 }
 
-function MfDGame::setUpTeams(%game)
+function PBMfDgame::setUpTeams(%game)
 {
-   //echo("MfDGame::setUpTeams(" SPC %game.class SPC ")");
+   //echo("PBMfDgame::setUpTeams(" SPC %game.class SPC ")");
    %group = nameToID("MissionGroup/Teams");
    if ( %group == -1 )
       return;
@@ -136,14 +136,14 @@ function MfDGame::setUpTeams(%game)
    }
 }
 
-function MfDGame::getTeamName(%game, %team)
+function PBMfDgame::getTeamName(%game, %team)
 {
    return addTaggedString($pref::Server::teamName[%team]);
 }
 
-function MfDGame::onClientEnterGame(%game, %client)
+function PBMfDgame::onClientEnterGame(%game, %client)
 {
-   //echo("MfDGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //echo("PBMfDgame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    CoreGame::onClientEnterGame(%game, %client);
 
    // Set clients score and stats to zero
@@ -162,9 +162,9 @@ function MfDGame::onClientEnterGame(%game, %client)
    }
 }
 
-function MfDGame::onClientLeaveGame(%game, %client)
+function PBMfDgame::onClientLeaveGame(%game, %client)
 {
-   //echo("MfDGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //echo("PBMfDgame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    %game.clearClientVaribles(%client);
    %game.updateScore(%client);
    
@@ -185,9 +185,9 @@ function MfDGame::onClientLeaveGame(%game, %client)
 
 //-----------------------------------------------------------------------------
 
-function MfDGame::assignClientTeam(%game, %client, %respawn)
+function PBMfDgame::assignClientTeam(%game, %client, %respawn)
 {
-   //echo("MfDGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %respawn SPC ")");
+   //echo("PBMfDgame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %respawn SPC ")");
 
    %numPlayers = ClientGroup.getCount();
    for(%i = 0; %i <= %game.numTeams; %i++)
@@ -221,9 +221,9 @@ function MfDGame::assignClientTeam(%game, %client, %respawn)
    echo(%client.nameBase @ " (cl " @ %client @ ") joined team " @ %client.team);
 }
 
-function MfDGame::clientJoinTeam(%game, %client, %team, %respawn)
+function PBMfDgame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   //echo("MfDGame::clientJoinTeam(" SPC %game.class @", "@ %team @", "@ %respawn SPC ")");
+   //echo("PBMfDgame::clientJoinTeam(" SPC %game.class @", "@ %team @", "@ %respawn SPC ")");
    if ( %team < 1 || %team > %game.numTeams )
       return;
 
@@ -245,11 +245,11 @@ function MfDGame::clientJoinTeam(%game, %client, %team, %respawn)
    echo(%client.nameBase@" (cl "@%client@") joined team "@%client.team);
 }
 
-function MfDGame::loadOut(%game, %player)
+function PBMfDgame::loadOut(%game, %player)
 {
    //LogEcho("\c4CoreGame::loadOut(" SPC %game.class SPC %player.client.nameBase SPC ")");
    %client = %player.client;
-
+   trace(1);
    // Equip the player with their choosen weapons etc.
    if ( %player.client.isAiControlled() )
       %player.client.ProcessLoadout();
@@ -266,7 +266,7 @@ function MfDGame::loadOut(%game, %player)
       }
       %player.weaponCount++;
    }
-   
+   trace(0);
    if ((%player.team == 1) && ($Team1HasMarked == 0) && (%player.client.wasMarked == 0)) {
       %player.isMarked = 1;
       $TeamMark[1] = %client.playerName;
@@ -274,12 +274,6 @@ function MfDGame::loadOut(%game, %player)
       messageAllExcept( %client, -1, 'MsgMfDNewMark', '\c5%1 has been choosen as the target for %2.', $TeamMark[1], %game.getTeamName(1) );
       messageAll( 'MsgMfDMarkName', "", 1, $TeamMark[1] ); // Silent, update the hud
 
-      %client.player.clearInventory();
-      %client.player.setInventory( Ryder, 1, 1 );
-      %client.player.setInventory( RyderClip, %client.player.maxInventory(RyderClip), 1 );
-      %client.player.setInventory( RyderAmmo, %client.player.maxInventory(RyderAmmo), 1 );
-      %client.player.weaponCount = %client.player.getDataBlock().maxWeapons;
-      %client.player.use("Ryder");
       %client.player.setInventory( BlueFlagImage, 1 );
       %client.player.mountImage( BlueFlagImage, $FlagSlot, true );
 
@@ -293,12 +287,6 @@ function MfDGame::loadOut(%game, %player)
       messageAllExcept( %client, -1, 'MsgMfDNewMark', '\c5%1 has been choosen as the target for %2.', $TeamMark[2], %game.getTeamName(2) );
       messageAll( 'MsgMfDMarkName', "", 2, $TeamMark[2] ); // Silent, update the hud
 
-      %client.player.clearInventory();
-      %client.player.setInventory( Ryder, 1, 1 );
-      %client.player.setInventory( RyderClip, %client.player.maxInventory(RyderClip), 1 );
-      %client.player.setInventory( RyderAmmo, %client.player.maxInventory(RyderAmmo), 1 );
-      %client.player.weaponCount = %client.player.getDataBlock().maxWeapons;
-      %client.player.use("Ryder");
       %client.player.setInventory( RedFlagImage, 1 );
       %client.player.mountImage( RedFlagImage, $FlagSlot, true );
 
@@ -309,9 +297,9 @@ function MfDGame::loadOut(%game, %player)
       %player.client.wasMarked = 0; 
 }
 
-function MfDGame::pickTeamMark(%game, %team)
+function PBMfDgame::pickTeamMark(%game, %team)
 {
-   //warn("MfDGame::pickTeamMark(" SPC %game.class SPC ")");
+   //warn("PBMfDgame::pickTeamMark(" SPC %game.class SPC ")");
    %playerCount[%team] = 0;
 
    // Get a count of the clients assigned to this team that haven't been selected as a target
@@ -364,7 +352,7 @@ function MfDGame::pickTeamMark(%game, %team)
 
 //-----------------------------------------------------------------------------
 
-function MfDGame::onLeaveMissionArea(%game, %player)
+function PBMfDgame::onLeaveMissionArea(%game, %player)
 {
    if ( %player.getState() !$= "Dead" )
    {
@@ -373,13 +361,13 @@ function MfDGame::onLeaveMissionArea(%game, %player)
    }
 }
 
-function MfDGame::onEnterMissionArea(%game, %player)
+function PBMfDgame::onEnterMissionArea(%game, %player)
 {
    cancel(%player.alertThread);
    %player.alertThread = "";
 }
 
-function MfDGame::AlertPlayer(%game, %count, %player)
+function PBMfDgame::AlertPlayer(%game, %count, %player)
 {
    if(%count > 1)
       %player.alertThread = %game.schedule(1000, "AlertPlayer", %count - 1, %player);
@@ -387,7 +375,7 @@ function MfDGame::AlertPlayer(%game, %count, %player)
       %player.alertThread = %game.schedule(1000, "MissionAreaDamage", %player);
 }
 
-function MfDGame::MissionAreaDamage(%game, %player)
+function PBMfDgame::MissionAreaDamage(%game, %player)
 {
    if ( %player.getState() !$= "Dead" )
    {                                   
@@ -408,7 +396,7 @@ function MfDGame::MissionAreaDamage(%game, %player)
 
 //-----------------------------------------------------------------------------
 
-function MfDGame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %damageType)
+function PBMfDgame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %damageType)
 {
    CoreGame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %damageType);
    // If the victim is Marked for Death and is not on the attackers team, mark the attacker as a threat for x seconds
@@ -421,9 +409,9 @@ function MfDGame::onDamaged(%game, %clVictim, %clAttacker, %sourceObject, %damag
    }
 }
 
-function MfDGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
+function PBMfDgame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   //echo("MfDGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   //echo("PBMfDgame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
 
    // Call the parent.
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
@@ -466,12 +454,12 @@ function MfDGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient,
    }
 }
 
-function MfDGame::testMarkDefend(%game, %victim, %killer)
+function PBMfDgame::testMarkDefend(%game, %victim, %killer)
 {
    return (%victimID.dmgdObjective); 
 }
 
-function MfDGame::awardScoreMarkDefend(%game, %client)
+function PBMfDgame::awardScoreMarkDefend(%game, %client)
 {
    %client.markDefends++;
    %game.updateScore(%client);
@@ -479,9 +467,9 @@ function MfDGame::awardScoreMarkDefend(%game, %client)
    messageTeamExcept(%client, 'MsgObjDef', '\c1Teammate %1 received a %2 point bonus for defending your teams mark.', %client.playerName, %game.SCORE_PER_MARK_DEFEND);
 }
 
-function MfDGame::updateScore(%game, %cl)
+function PBMfDgame::updateScore(%game, %cl)
 {
-   //echo("MfDGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   //echo("PBMfDgame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -507,7 +495,7 @@ function MfDGame::updateScore(%game, %cl)
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
 
-function MfDGame::checkScoreLimit(%game, %team)
+function PBMfDgame::checkScoreLimit(%game, %team)
 {
    %markKillLimit = $pref::Server::MfDScoreLimit;
    if(%markKillLimit !$= "")
@@ -522,14 +510,14 @@ function MfDGame::checkScoreLimit(%game, %team)
       %game.onGameScoreLimit();
 }
 
-function MfDGame::onGameScoreLimit(%game)
+function PBMfDgame::onGameScoreLimit(%game)
 {
-   //echo("MfDGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   //echo("PBMfDgame::onGameScoreLimit(" SPC %game.class SPC ")");
    echo("Game over (scorelimit)");
    %game.cycleGame();
 }
 
-function MfDGame::startGame(%game)
+function PBMfDgame::startGame(%game)
 {
    CoreGame::startGame(%game); // Must call parent first otherwise pick targets will be nullified
    $Team1HasMarked = 0;
@@ -538,9 +526,9 @@ function MfDGame::startGame(%game)
    $Team2RespawnLocked = 0;
 }
 
-function MfDGame::endGame(%game)
+function PBMfDgame::endGame(%game)
 {
-   //echo("MfDGame::endGame(" SPC %game SPC ")");
+   //echo("PBMfDgame::endGame(" SPC %game SPC ")");
    if ( $Game::Running )
    {
       // send the winner message.
@@ -568,9 +556,9 @@ function MfDGame::endGame(%game)
    CoreGame::endGame(%game);
 }
 
-function MfDGame::clearClientVaribles(%game, %client)
+function PBMfDgame::clearClientVaribles(%game, %client)
 {
-   //echo("MfDGame::clearClientVaribles(" SPC %game.class SPC %client.nameBase SPC ")");
+   //echo("PBMfDgame::clearClientVaribles(" SPC %game.class SPC %client.nameBase SPC ")");
    CoreGame::clearClientVaribles(%game, %client);
 
    %client.dmgdObjective = false;
@@ -580,20 +568,20 @@ function MfDGame::clearClientVaribles(%game, %client)
    %player.isMarked = 0;
 }
 
-function MfDGame::pushChooseTeamMenu(%game, %client)
+function PBMfDgame::pushChooseTeamMenu(%game, %client)
 {
    // This list MUST be sent in order so that it is sync with the clients drop down menu.
    %list = strupr($pref::Server::teamName[0] TAB "AUTOMATIC" TAB $pref::Server::teamName[1] TAB $pref::Server::teamName[2]);
    commandToClient(%client, 'PushTeamMenu', addTaggedString(%list));
 }
 
-function MfDGame::pushChooseSpawnMenu(%game, %client)
+function PBMfDgame::pushChooseSpawnMenu(%game, %client)
 {
    %list = "Firebase";
    commandToClient( %client, 'PushSpawnMenu', %list );
 }
 
-function MfDGame::clientChooseSpawn(%game, %client, %option, %value)
+function PBMfDgame::clientChooseSpawn(%game, %client, %option, %value)
 {
    switch$ ( %option )
    {
@@ -609,7 +597,7 @@ function MfDGame::clientChooseSpawn(%game, %client, %option, %value)
 }
 
 // RtF game specific spectator function to drop the flag when becoming spectator
-function MfDGame::forceSpectator(%game, %client, %reason)
+function PBMfDgame::forceSpectator(%game, %client, %reason)
 {
    //LogEcho("\c4CoreGame::forceSpectator(" SPC %game.class SPC %client.nameBase SPC %reason SPC ")");
    //make sure we have a valid client...

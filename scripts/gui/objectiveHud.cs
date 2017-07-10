@@ -373,6 +373,82 @@ function objectiveHud::configure(%this, %gameType)
             %this.add(%this.markLabel[%i]);
             %this.add(%this.markName[%i]);
          }
+         
+      case "PBMfDGame":
+         %this.teamName[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "30 25";
+		extent = "70 16";
+		visible = "1";
+         };
+         %this.teamName[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "30 45";
+		extent = "70 16";
+		visible = "1";
+         };
+         %this.teamScore[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamCenterProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "120 25";
+		extent = "25 16";
+		visible = "1";
+         };
+         %this.teamScore[2] = new GuiTextCtrl() {
+		profile = "ObjTextCenterProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "120 45";
+		extent = "25 16";
+		visible = "1";
+         };
+         %this.markLabel[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "155 25";
+		extent = "70 16";
+		visible = "1";
+		text = "Mark:";
+         };
+         %this.markLabel[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "155 45";
+		extent = "70 16";
+		visible = "1";
+		text = "Mark:";
+         };
+         %this.markName[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "195 25";
+		extent = "125 16";
+		visible = "1";
+         };
+         %this.markName[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "195 45";
+		extent = "135 16";
+		visible = "1";
+         };
+
+         for(%i = 1; %i <= 2; %i++)
+         {
+            %this.add(%this.teamName[%i]);
+            %this.add(%this.teamScore[%i]);
+            %this.add(%this.markLabel[%i]);
+            %this.add(%this.markName[%i]);
+         }
 
       case "RtFGame":
          %this.teamName[1] = new GuiTextCtrl() {
