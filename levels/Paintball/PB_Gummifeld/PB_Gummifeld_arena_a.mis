@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Paintball Gummifeld - Deathmatch Arena A";
          enabled = "1";
          levelName = "PB_Gummifeld_arena_a";
-         MissionTypes = "PBDM PBTDM";
+         MissionTypes = "PBDM PBTDM PBMfD";
    };
    new SkyBox(theSky) {
       Material = "sky_day_01_SkyMat";

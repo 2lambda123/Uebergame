@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Grounds - Fields by rain";
          enabled = "1";
          levelName = "TG_Fields_rain";
-         MissionTypes = "DM TDM RtF PBDM PBTDM PBRtF";
+         MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD";
    };
    new SimGroup(ObserverDropPoints) {
       canSave = "1";

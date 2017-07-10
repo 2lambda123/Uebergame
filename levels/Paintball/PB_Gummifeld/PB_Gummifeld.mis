@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Paintball Gummifeld - Multiple classic paintball fields with inflatable barriers";
          enabled = "1";
          levelName = "PB_Gummifeld";
-         MissionTypes = "PBDM PBTDM PBRtF";
+         MissionTypes = "PBDM PBTDM PBRtF PBMfD";
    };
    new SkyBox(theSky) {
       Material = "sky_day_01_SkyMat";
