@@ -105,17 +105,14 @@ new SimGroup(MissionGroup) {
    new SimGroup(Teams) {
       canSave = "1";
       canSaveDynamicFields = "1";
-         powerCount = "0";
 
       new SimGroup(Team0) {
          canSave = "1";
          canSaveDynamicFields = "1";
-            powerCount = "0";
 
          new SimGroup(SpawnSpheres0) {
             canSave = "1";
             canSaveDynamicFields = "1";
-               powerCount = "0";
 
             new SpawnSphere() {
                autoSpawn = "0";
@@ -750,19 +747,18 @@ new SimGroup(MissionGroup) {
             canSaveDynamicFields = "1";
 
             new Item() {
-               static = "0";
+               static = "1";
                rotate = "0";
                isAIControlled = "0";
                dataBlock = "Flag";
                position = "178.346 209.733 0.492147";
                rotation = "0 0 -1 96";
                scale = "1 1 1";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
-                  gameTypesList = "RtF PBRtF";
                   lastTransForm = "178.346 209.733 0.492147 0 0 -1 1.69297";
                   team = "0";
+                  gameTypesList = "RtF PBRtF";
             };
             new SimGroup(Flagstands) {
                canSave = "1";
@@ -774,12 +770,11 @@ new SimGroup(MissionGroup) {
                   position = "178.368 209.742 0.461466";
                   rotation = "0 0 1 46.2544";
                   scale = "2 2 1";
-                  hidden = "1";
                   canSave = "1";
                   canSaveDynamicFields = "1";
-                     gameTypesList = "RtF PBRtF";
                      team = "0";
-                     Trigger = "23629";
+                     Trigger = "21415";
+                     gameTypesList = "RtF PBRtF";
                };
             };
          };
@@ -787,12 +782,10 @@ new SimGroup(MissionGroup) {
       new SimGroup(Team1) {
          canSave = "1";
          canSaveDynamicFields = "1";
-            powerCount = "0";
 
          new SimGroup(SpawnSpheres1) {
             canSave = "1";
             canSaveDynamicFields = "1";
-               powerCount = "0";
 
             new SpawnSphere() {
                autoSpawn = "0";
@@ -1382,24 +1375,21 @@ new SimGroup(MissionGroup) {
                position = "223.402 193.923 0.342673";
                rotation = "0 0 -1 50.7313";
                scale = "2 2 1";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
-                  gameTypesList = "RtF PBRtF";
                   team = "1";
-                  Trigger = "23630";
+                  Trigger = "21416";
+                  gameTypesList = "RtF PBRtF";
             };
          };
       };
       new SimGroup(Team2) {
          canSave = "1";
          canSaveDynamicFields = "1";
-            powerCount = "0";
 
          new SimGroup(SpawnSpheres2) {
             canSave = "1";
             canSaveDynamicFields = "1";
-               powerCount = "0";
 
             new SpawnSphere() {
                autoSpawn = "0";
@@ -1989,12 +1979,11 @@ new SimGroup(MissionGroup) {
                position = "150.787 244.766 0.136899";
                rotation = "0 0 1 136.008";
                scale = "2 2 1";
-               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
-                  gameTypesList = "RtF PBRtF";
                   team = "2";
-                  Trigger = "23631";
+                  Trigger = "21417";
+                  gameTypesList = "RtF PBRtF";
             };
          };
       };
