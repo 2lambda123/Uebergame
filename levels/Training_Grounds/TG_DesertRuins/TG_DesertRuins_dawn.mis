@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "Training Level in the desert ruins at dawn";
          enabled = "1";
-         levelName = "TG_DesertRuins_dawn";
+         levelName = "Training Grounds - Desert Ruins at dawn";
          MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD";
    };
    new ScatterSky(Himmel) {

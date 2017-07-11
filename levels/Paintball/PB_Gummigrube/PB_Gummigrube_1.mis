@@ -23,7 +23,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "A Paintball field in a pit";
          enabled = "1";
-         levelName = "PB_Gummigrube_1";
+         levelName = "Paintball - Gummigrube-1";
          MissionTypes = "PBTDM PBRtF";
    };
    new ScatterSky(theSky) {

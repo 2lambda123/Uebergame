@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "Paintball Gummifeld - Multiple classic paintball fields with inflatable barriers";
          enabled = "1";
-         levelName = "PB_Gummifeld";
+         levelName = "Paintball - Gummifeld";
          MissionTypes = "PBDM PBTDM PBRtF PBMfD";
    };
    new SkyBox(theSky) {

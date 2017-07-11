@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "Training Grounds - Fields by dawn";
          enabled = "1";
-         levelName = "TG_Fields_dawn";
+         levelName = "Training Grounds - Fields at dawn";
          MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD";
    };
    new SimGroup(ObserverDropPoints) {

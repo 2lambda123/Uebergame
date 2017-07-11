@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "Paintball Gummifeld - Deathmatch Arena B";
          enabled = "1";
-         levelName = "PB_Gummifeld_arena_b";
+         levelName = "Paintball - Gummifeld Arena-B";
          MissionTypes = "PBDM PBTDM PBMfD";
    };
    new SkyBox(theSky) {

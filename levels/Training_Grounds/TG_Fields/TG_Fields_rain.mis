@@ -22,9 +22,9 @@ new SimGroup(MissionGroup) {
       soundDistanceModel = "Linear";
       canSave = "1";
       canSaveDynamicFields = "1";
-         desc0 = "Training Grounds - Fields by rain";
+         desc0 = "Training Grounds - Fields in rain";
          enabled = "1";
-         levelName = "TG_Fields_rain";
+         levelName = "Training Grounds - Fields in rain";
          MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD";
    };
    new SimGroup(ObserverDropPoints) {

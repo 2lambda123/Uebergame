@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
          desc0 = "Paintball Gummifeld - Teamplay Field A";
          enabled = "1";
-         levelName = "PB_Gummifeld_field_a";
+         levelName = "Paintball - Gummifeld Field-A";
          MissionTypes = "PBTDM";
    };
    new SkyBox(theSky) {

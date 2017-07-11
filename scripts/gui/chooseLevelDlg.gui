@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ChooseLevelDlg) {
    position = "0 0";
-   extent = "1024 768";
+   extent = "1920 1080";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -107,8 +107,8 @@
          bitmap = "art/gui/hudfillx3.png";
          color = "255 255 255 255";
          wrap = "0";
-         position = "277 145";
-         extent = "90 16";
+         position = "278 145";
+         extent = "89 16";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -125,8 +125,8 @@
          bitmap = "art/gui/hudfillx3.png";
          color = "255 255 255 255";
          wrap = "0";
-         position = "277 161";
-         extent = "326 25";
+         position = "278 161";
+         extent = "329 25";
          minExtent = "8 2";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -143,7 +143,7 @@
          bitmap = "art/gui/hudfillx3.png";
          color = "255 255 255 255";
          wrap = "0";
-         position = "277 95";
+         position = "280 95";
          extent = "85 18";
          minExtent = "8 2";
          horizSizing = "right";
@@ -184,7 +184,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "280 94";
+         position = "282 95";
          extent = "114 18";
          minExtent = "66 18";
          horizSizing = "right";
@@ -236,8 +236,8 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "9 40";
-         extent = "265 432";
+         position = "6 40";
+         extent = "274 432";
          minExtent = "8 8";
          horizSizing = "right";
          vertSizing = "height";
@@ -254,8 +254,8 @@
             columns = "0";
             fitParentWidth = "1";
             clipColumnText = "1";
-            position = "1 1";
-            extent = "250 288";
+            position = "1 -73";
+            extent = "259 504";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -274,7 +274,7 @@
          ticks = "62";
          snap = "1";
          value = "0";
-         position = "278 162";
+         position = "284 163";
          extent = "320 20";
          minExtent = "8 2";
          horizSizing = "right";
@@ -315,7 +315,7 @@
          sbUsesNAColor = "0";
          reverseTextList = "0";
          bitmapBounds = "16 16";
-         text = "Deathmatch";
+         text = "Paintball Team Deathmatch";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -323,7 +323,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "278 114";
+         position = "282 115";
          extent = "156 25";
          minExtent = "127 23";
          horizSizing = "right";
@@ -338,7 +338,7 @@
          canSaveDynamicFields = "0";
       };
       new GuiTextCtrl(SOP_AiCountText) {
-         text = "Bot Count (63)";
+         text = "Bot Count (0)";
          maxLength = "255";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -346,7 +346,7 @@
          anchorBottom = "0";
          anchorLeft = "1";
          anchorRight = "0";
-         position = "280 145";
+         position = "282 146";
          extent = "88 18";
          minExtent = "58 18";
          horizSizing = "right";
@@ -384,7 +384,7 @@
          groupNum = "-1";
          buttonType = "PushButton";
          useMouseEvents = "0";
-         position = "280 40";
+         position = "282 41";
          extent = "148 36";
          minExtent = "8 8";
          horizSizing = "right";
