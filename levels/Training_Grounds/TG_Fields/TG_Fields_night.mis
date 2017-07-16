@@ -3191,13 +3191,13 @@ new SimGroup(MissionGroup) {
       textureLength = "5";
       breakAngle = "3";
       renderPriority = "5";
-      position = "170.282 181.348 0";
+      position = "170.637 180.97 -9.059910";
       rotation = "1 0 0 0";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
 
-      Node = "170.282394 181.347702 0.000000 7.000000";
+      Node = "170.637253 180.969772 0.000000 7.000000";
       Node = "158.171448 180.640335 0.000000 5.000000";
       Node = "121.112717 180.246643 0.000000 5.000000";
       Node = "85.848480 153.997910 0.000000 5.000000";
@@ -3208,13 +3208,13 @@ new SimGroup(MissionGroup) {
       textureLength = "5";
       breakAngle = "3";
       renderPriority = "5";
-      position = "220.674 98.0351 0";
+      position = "219.854 97.6999 4.291530";
       rotation = "1 0 0 0";
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
 
-      Node = "220.674255 98.035095 0.000000 7.000000";
+      Node = "219.854172 97.699890 0.000000 7.000000";
       Node = "230.511917 99.128197 0.000000 5.000000";
       Node = "286.698425 104.079201 0.000000 5.000000";
    };
@@ -4324,7 +4324,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "85.7325 139.07 -1.4838";
-         rotation = "-0.140172 0.140328 0.980133 91.09";
+         rotation = "-0.140172 0.140328 0.980133 91.0908";
          scale = "2 2 2";
          canSave = "1";
          canSaveDynamicFields = "1";

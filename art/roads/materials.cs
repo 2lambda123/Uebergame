@@ -51,11 +51,14 @@ singleton Material(Mat_road_asphalt_small_01)
    specularStrength[0] = "0.5";
    specularMap[0] = "art/roads/road_asphalt_small_01_S.dds";
    useAnisotropic[0] = "1";
-   alphaTest = "1";
+   alphaTest = "0";
    alphaRef = "128";
    showFootprints = "0";
    footstepSoundId = "0";
    impactSoundId = "0";
+   translucent = "1";
+   translucentZWrite = "1";
+   castShadows = "0";
 };
 
 singleton Material(Mat_road_asphalt_stripes_01)
@@ -67,8 +70,8 @@ singleton Material(Mat_road_asphalt_stripes_01)
    specularMap[0] = "art/roads/road_asphalt_stripes_01_S.dds";
    useAnisotropic[0] = "1";
    castShadows = "0";
-   translucentBlendOp = "None";
-   alphaTest = "1";
+   translucentBlendOp = "LerpAlpha";
+   alphaTest = "0";
    alphaRef = "128";
    showFootprints = "0";
    footstepSoundId = "0";
@@ -76,4 +79,84 @@ singleton Material(Mat_road_asphalt_stripes_01)
    specularPower[0] = "1";
    specularStrength[0] = "0.5";
    effectColor[0] = "InvisibleBlack";
+   translucent = "1";
+   translucentZWrite = "1";
+};
+
+singleton Material(Mat_road_sand_01)
+{
+   mapTo = "road_sand_01";
+   diffuseMap[0] = "art/roads/road_sand_01_D.dds";
+   specularPower[0] = "8";
+   specularStrength[0] = "1";
+   useAnisotropic[0] = "1";
+   alphaTest = "0";
+   alphaRef = "0";
+   showFootprints = "1";
+   footstepSoundId = "1";
+   impactSoundId = "1";
+   materialTag0 = "RoadAndPath";
+   translucent = "1";
+   castShadows = "0";
+   normalMap[0] = "art/roads/road_sand_01_N.dds";
+   specularMap[0] = "art/roads/road_sand_01_S.dds";
+   specular[2] = "1 1 1 1";
+};
+
+singleton Material(Mat_road_sand_01_wet)
+{
+   mapTo = "road_sand_01_wet";
+   diffuseMap[0] = "art/roads/road_sand_01_wet_D.dds";
+   normalMap[0] = "art/roads/road_sand_01_wet_N.dds";
+   specularPower[0] = "1";
+   specularStrength[0] = "0.5";
+   useAnisotropic[0] = "1";
+   alphaTest = "0";
+   alphaRef = "128";
+   showFootprints = "1";
+   footstepSoundId = "0";
+   impactSoundId = "0";
+   materialTag0 = "RoadAndPath";
+   translucent = "1";
+   castShadows = "0";
+   specularMap[0] = "art/roads/road_sand_01_wet_S.dds";
+};
+
+singleton Material(Mat_shore_debris_01)
+{
+   mapTo = "shore_debris_01";
+   diffuseMap[0] = "art/roads/shore_debris_01_D.dds";
+   normalMap[0] = "art/roads/shore_debris_01_N.dds";
+   specularPower[0] = "1";
+   specularStrength[0] = "2";
+   useAnisotropic[0] = "1";
+   alphaTest = "1";
+   alphaRef = "100";
+   showFootprints = "1";
+   footstepSoundId = "0";
+   impactSoundId = "0";
+   materialTag0 = "RoadAndPath";
+   translucent = "1";
+   castShadows = "0";
+   specularMap[0] = "art/roads/shore_debris_01_S.dds";
+   translucentZWrite = "0";
+};
+
+singleton Material(Mat_trail_dirt_01)
+{
+   mapTo = "trail_dirt_01";
+   diffuseMap[0] = "art/roads/trail_dirt_01_D.dds";
+   normalMap[0] = "art/roads/trail_dirt_01_N.dds";
+   specularMap[0] = "art/roads/trail_dirt_01_S.dds";
+   specularPower[0] = "1";
+   specularStrength[0] = "0.5";
+   useAnisotropic[0] = "1";
+   alphaTest = "0";
+   alphaRef = "128";
+   showFootprints = "1";
+   footstepSoundId = "0";
+   impactSoundId = "0";
+   materialTag0 = "RoadAndPath";
+   translucent = "1";
+   castShadows = "0";
 };
