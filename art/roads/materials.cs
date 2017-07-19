@@ -131,7 +131,7 @@ singleton Material(Mat_shore_debris_01)
    specularStrength[0] = "2";
    useAnisotropic[0] = "1";
    alphaTest = "1";
-   alphaRef = "100";
+   alphaRef = "42";
    showFootprints = "1";
    footstepSoundId = "0";
    impactSoundId = "0";
