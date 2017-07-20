@@ -187,4 +187,5 @@ new TerrainMaterial()
    macroStrength = "0.7";
    parallaxScale = "0";
    normalMap = "art/terrains/dirt/ter_dirt_gravel_05_N";
+   detailStrength = "1.1";
 };

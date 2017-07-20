@@ -16,16 +16,32 @@ singleton Material(Mat_rock_main)
    accuDirection[0] = "-1";
 };
 
-singleton Material(Mat_spotted_01_rock_main : Mat_rock_main)
+singleton Material(Mat_ocean_01_rock_main : Mat_rock_main)
 {
-   mapTo = "spotted_01_rock_main";
-   materialTag0 = "rock";
+   mapTo = "ocean_01_rock_main";
    specularPower[0] = "1";
    pixelSpecular[0] = "0";
    minnaertConstant[0] = "-1";
-   diffuseMap[0] = "art/textures/rock/rock_spotted_01_D.dds";
-   specularMap[0] = "art/textures/rock/rock_spotted_01_S.dds";
-   normalMap[0] = "art/textures/rock/rock_spotted_01_N.dds";
+   diffuseMap[0] = "art/textures/rock/rock_ocean_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_ocean_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_ocean_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};
+
+singleton Material(Mat_plain_01_rock_main : Mat_rock_main)
+{
+   mapTo = "plain_01_rock_main";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_plain_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_plain_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_plain_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
    showFootprints = "0";
@@ -80,6 +96,24 @@ singleton Material(Mat_shale_01_rock_main : Mat_rock_main)
    diffuseMap[0] = "art/textures/rock/rock_shale_01_D.dds";
    specularMap[0] = "art/textures/rock/rock_shale_01_S.dds";
    normalMap[0] = "art/textures/rock/rock_shale_01_N.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+   specularStrength[0] = "0.5";
+   accuDirection[0] = "-1";
+};
+
+singleton Material(Mat_spotted_01_rock_main : Mat_rock_main)
+{
+   mapTo = "spotted_01_rock_main";
+   materialTag0 = "rock";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   diffuseMap[0] = "art/textures/rock/rock_spotted_01_D.dds";
+   specularMap[0] = "art/textures/rock/rock_spotted_01_S.dds";
+   normalMap[0] = "art/textures/rock/rock_spotted_01_N.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
    showFootprints = "0";

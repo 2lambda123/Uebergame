@@ -80,6 +80,6 @@ new TerrainMaterial()
    macroSize = "64";
    macroMap = "art/terrains/soil/ter_soil_mixed_01_D";
    normalMap = "art/terrains/soil/ter_soil_mixed_01_N";
-   macroStrength = "0.6";
-   detailStrength = "0.8";
+   macroStrength = "1";
+   detailStrength = "1.2";
 };

@@ -20,10 +20,10 @@ new TerrainMaterial()
    macroSize = "42";
    internalName = "ter_slope_rubble_01";
    macroMap = "art/terrains/slope/ter_slope_rubble_01_M";
-   macroStrength = "0.5";
+   macroStrength = "1";
    parallaxScale = "0.03";
    normalMap = "art/terrains/slope/ter_slope_rubble_01_N";
-   detailStrength = "1";
+   detailStrength = "1.5";
 };
 
 singleton Material(TerrainFX_ter_slope_rubble_01_side)    
@@ -48,9 +48,10 @@ new TerrainMaterial()
    macroSize = "40";
    internalName = "ter_slope_rubble_01_side";
    macroMap = "art/terrains/slope/ter_slope_rubble_01_M";
-   macroStrength = "0.6";
+   macroStrength = "1";
    parallaxScale = "0";
    normalMap = "art/terrains/slope/ter_slope_rubble_01_N";
    useSideProjection = "1";
+   detailStrength = "1.5";
 };
 

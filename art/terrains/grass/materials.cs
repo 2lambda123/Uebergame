@@ -74,10 +74,10 @@ new TerrainMaterial()
    detailSize = "4";
    detailDistance = "100";
    macroSize = "35";
-   macroStrength = "0.9";
+   macroStrength = "1";
    diffuseSize = "250";
    macroMap = "art/terrains/grass/ter_grass_lush_01_M";
-   detailStrength = "1.5";
+   detailStrength = "2";
    parallaxScale = "0";
    normalMap = "art/terrains/grass/ter_grass_lush_01_N";
 };
@@ -135,3 +135,32 @@ new TerrainMaterial()
    normalMap = "art/terrains/grass/ter_grass_sparse_01_N";
    macroMap = "art/terrains/grass/ter_grass_sparse_01_M";
 };
+
+singleton Material(TerrainFX_ter_grass_tropic_01)    
+{    
+   mapTo = "ter_grass_tropic_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/grass/ter_grass_tropic_01_B";
+   detailMap = "art/terrains/grass/ter_grass_tropic_01_D";
+   internalName = "ter_grass_tropic_01";
+   diffuseSize = "250";
+   detailDistance = "100";
+   macroSize = "26";
+   macroStrength = "1";
+   parallaxScale = "0";
+   detailSize = "3";
+   macroMap = "art/terrains/grass/ter_grass_tropic_01_M";
+   detailStrength = "1";
+   normalMap = "art/terrains/grass/ter_grass_tropic_01_N";
+};
+

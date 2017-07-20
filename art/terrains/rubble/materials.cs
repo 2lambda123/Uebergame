@@ -24,4 +24,5 @@ new TerrainMaterial()
    normalMap = "art/terrains/rubble/ter_rubble_waste_01_N";
    parallaxScale = "0.05";
    macroMap = "art/terrains/rubble/ter_rubble_waste_01_M";
+   detailStrength = "1";
 };

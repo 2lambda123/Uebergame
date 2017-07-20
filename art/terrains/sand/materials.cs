@@ -138,7 +138,7 @@ new TerrainMaterial(ter_sand_dirty_04)
    macroSize = "20";
    internalName = "ter_sand_dirty_04";
    macroMap = "art/terrains/sand/ter_sand_dirty_04_M";
-   macroStrength = "1";
+   macroStrength = "1.5";
    parallaxScale = "0";
    detailSize = "3";
    detailStrength = "1";
@@ -168,7 +168,7 @@ new TerrainMaterial(ter_sand_dirty_05)
    macroSize = "22";
    internalName = "ter_sand_dirty_05";
    macroMap = "art/terrains/sand/ter_sand_dirty_04_M";
-   macroStrength = "2";
+   macroStrength = "2.5";
    parallaxScale = "0";
    detailSize = "3";
    detailStrength = "1";
@@ -197,7 +197,7 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "30";
    internalName = "ter_sand_mixed_01";
-   macroStrength = "0.5";
+   macroStrength = "0.8";
    parallaxScale = "0";
    detailSize = "4";
    macroMap = "art/terrains/sand/ter_sand_mixed_01_D";
@@ -254,10 +254,11 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "10";
    internalName = "ter_sand_wet_01";
-   macroStrength = "0.3";
+   macroStrength = "0.5";
    parallaxScale = "0";
    detailSize = "3";
    macroDistance = "350";
    macroMap = "art/terrains/sand/ter_sand_wet_01_D";
    normalMap = "art/terrains/sand/ter_sand_wet_01_N";
+   detailStrength = "1";
 };
