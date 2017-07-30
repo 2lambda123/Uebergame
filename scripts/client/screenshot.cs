@@ -126,10 +126,10 @@ function _screenShot( %tiles, %overlap )
    
    $screenshotNumber++;
    
-   if ( ( $pref::Video::screenShotFormat $= "JPEG" ) || ( $pref::video::screenShotFormat $= "JPG" ) )         
-      screenShot( $HomePath @ "/screenshots/" @%name, "JPG", %tiles, %overlap );      
+   if ( $pref::Video::screenShotFormat $= "1" )
+      screenShot( $HomePath @ "/screenshots/" @%name, "jpeg", %tiles, %overlap );      
    else
-      screenShot( $HomePath @ "/screenshots/" @%name, "PNG", %tiles, %overlap );
+      screenShot( $HomePath @ "/screenshots/" @%name, "png", %tiles, %overlap );
 }
 
 /// This will close the console and take a large format screenshot by tiling the current backbuffer

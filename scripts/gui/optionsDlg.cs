@@ -156,7 +156,6 @@ function OptionsDlg::onWake(%this)
    MouseZActionMenu.add( "Nothing", 1 );
    MouseZActionMenu.add( "Cycle Weapon", 2 );
    MouseZActionMenu.add( "Next Weapon Only", 3 );
-   //MouseZActionMenu.add( "Cycle Zoom Level", 4 );
 
    %bind = moveMap.getCommand( "mouse", "zaxis" );
    %selId = 1;
@@ -166,12 +165,8 @@ function OptionsDlg::onWake(%this)
          %selId = 2;
       case "cycleNextWeaponOnly":
          %selId = 3;
-      //case "toggleZoomFOV":
-        // %selId = 4;
    }
    MouseZActionMenu.setSelected( %selId );
-
-   //------------------------------------------
 
    if ( isFunction("getWebDeployment") && getWebDeployment() )
    {
@@ -186,7 +181,6 @@ function OptionsDlg::onWake(%this)
    %this-->OptGraphicsVSyncToggle.setStateOn( !$pref::Video::disableVerticalSync );
 
    %this-->Tgl_7.setStateOn( $pref::Decals::enabled );
-   
    %this-->Tgl_9.setStateOn( $pref::LightManager::Enable::sunBokeh );
    %this-->Tgl_10.setStateOn( $pref::LightManager::Enable::Vignette );
    %this-->Tgl_11.setStateOn( $pref::LightManager::Enable::HDR );
@@ -219,7 +213,6 @@ function OptionsDlg::onWake(%this)
    %this-->OptTextureQualityPopup.init( TextureQualityGroup );
    %this-->OptLightingQualityPopup.init( LightingQualityGroup );
    %this-->OptShaderQualityPopup.init( ShaderQualityGroup );
-   
    %this-->OptDecalQualityPopup.init( DecalQualityGroup );
 
    // Setup the anisotropic filtering menu.
@@ -279,7 +272,15 @@ function OptionsDlg::onWake(%this)
    %aaMenu.Add( "2x", 2 );
    %aaMenu.Add( "4x", 4 );
    %aaMenu.setSelected( getWord( $pref::Video::mode, $WORD::AA ) );
+   
    OptMouseSensitivity.value = $pref::Input::LinkMouseSensitivity;
+
+   // Populate the screenshot format popup.
+   %SshotFMenu = %this-->OptScreenshotFormatPopup;
+   %SshotFMenu.clear();
+   %SshotFMenu.Add( "PNG", 0 );
+   %SshotFMenu.Add( "JPG", 1 );
+   %SshotFMenu.setSelected( $pref::Video::screenShotFormat );
 }
 
 function OptionsDlg::onSleep(%this)
@@ -289,7 +290,12 @@ function OptionsDlg::onSleep(%this)
    %playerName = OptPlayerNameInput.getValue();
    %skin = OptPlayerSkinMenu.getTextById(OptPlayerSkinMenu.getSelected());
    $pref::Player = %playerName TAB %skin;
-
+   
+   // Misc
+   // had to use 0 and 1 values for this since "getSelected" does not pickup test somehow
+   %SshotFormat = OptScreenshotFormatPopup.getSelected();
+   $pref::Video::screenShotFormat = %SshotFormat;
+   
    // Mouse
    %xSens = MouseXSlider.getValue();
    %ySens = MouseYSlider.getValue();

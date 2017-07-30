@@ -95,7 +95,7 @@ $pref::Video::disableVerticalSync = 0;
 $pref::Video::mode = "1024 768 false 32 60 4";
 $pref::Video::defaultFenceCount = 0;
 $pref::Video::screenShotSession = 0;
-$pref::Video::screenShotFormat = "PNG";
+$pref::Video::screenShotFormat = 0; // 0=png, 1=jpg
 
 // This disables the hardware FSAA/MSAA so that we depend completely on the FXAA post effect
 // which works on all cards and in deferred mode. Note the new Intel Hybrid graphics on laptops
