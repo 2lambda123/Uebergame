@@ -19,9 +19,9 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "32";
    parallaxScale = "0";
-   macroStrength = "0.9";
+   macroStrength = "1";
    macroMap = "art/terrains/grass/ter_grass_flowers_01_M";
-   detailStrength = "1";
+   detailStrength = "1.4";
    detailSize = "5";
    normalMap = "art/terrains/grass/ter_grass_flowers_01_N";
 };
@@ -102,11 +102,12 @@ new TerrainMaterial()
    detailDistance = "100";
    macroSize = "30";
    internalName = "ter_grass_short_01";
-   macroStrength = "0.5";
+   macroStrength = "0.6";
    detailSize = "4";
    macroMap = "art/terrains/grass/ter_grass_short_01_M";
    parallaxScale = "0";
    normalMap = "art/terrains/grass/ter_grass_short_01_N";
+   detailStrength = "1.2";
 };
 
 singleton Material(TerrainFX_ter_grass_sparse_01)    
@@ -134,6 +135,7 @@ new TerrainMaterial()
    detailSize = "5";
    normalMap = "art/terrains/grass/ter_grass_sparse_01_N";
    macroMap = "art/terrains/grass/ter_grass_sparse_01_M";
+   detailStrength = "1.2";
 };
 
 singleton Material(TerrainFX_ter_grass_tropic_01)    

@@ -232,14 +232,43 @@ new TerrainMaterial()
    detailDistance = "100";
    internalName = "ter_rock_plain_01";
    macroSize = "42";
-   macroStrength = "0.7";
+   macroStrength = "0.8";
    macroMap = "art/terrains/rock/ter_rock_plain_01_M";
    parallaxScale = "0";
    detailSize = "5";
    useSideProjection = "0";
    detailMap = "art/terrains/rock/ter_rock_plain_01_D";
    normalMap = "art/terrains/rock/ter_rock_plain_01_N";
-   detailStrength = "1";
+   detailStrength = "1.4";
+};
+
+singleton Material(TerrainFX_ter_rock_plain_02)    
+{    
+   mapTo = "ter_rock_plain_02_B";    
+   footstepSoundId = "0";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Rock";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_plain_02_B";
+   diffuseSize = "350";
+   detailDistance = "100";
+   internalName = "ter_rock_plain_02";
+   macroSize = "45";
+   macroStrength = "0.8";
+   macroMap = "art/terrains/rock/ter_rock_plain_02_M";
+   parallaxScale = "0";
+   detailSize = "6";
+   useSideProjection = "0";
+   detailMap = "art/terrains/rock/ter_rock_plain_02_D";
+   detailStrength = "1.2";
+   normalMap = "art/terrains/rock/ter_rock_plain_02_N";
 };
 
 new TerrainMaterial()

@@ -419,24 +419,6 @@ new SimGroup(ForestBrushGroup) {
          elevationMax = "10000";
       };
    };
-   new ForestBrushElement() {
-      internalName = "fern_tropical_01_a";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-      ForestItemData = "fern_tropical_01_a";
-      probability = "1";
-      rotationRange = "360";
-      scaleMin = "1";
-      scaleMax = "1";
-      scaleExponent = "1";
-      sinkMin = "0";
-      sinkMax = "0";
-      sinkRadius = "1";
-      slopeMin = "0";
-      slopeMax = "90";
-      elevationMin = "-10000";
-      elevationMax = "10000";
-   };
    new ForestBrush() {
       internalName = "thintree_01";
       canSave = "1";
@@ -631,6 +613,30 @@ new SimGroup(ForestBrushGroup) {
          sinkRadius = "1";
          slopeMin = "0";
          slopeMax = "35";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+   };
+   new ForestBrush() {
+      internalName = "fern_tropical_01";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+
+      new ForestBrushElement() {
+         internalName = "fern_tropical_01_a";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "fern_tropical_01_a";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.75";
+         scaleMax = "1.25";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "0.1";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "45";
          elevationMin = "-10000";
          elevationMax = "10000";
       };

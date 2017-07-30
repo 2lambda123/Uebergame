@@ -17,12 +17,12 @@ new TerrainMaterial()
    diffuseMap = "art/terrains/rubble/ter_rubble_waste_01_B";
    detailMap = "art/terrains/rubble/ter_rubble_waste_01_D";
    internalName = "ter_rubble_waste_01";
-   macroSize = "64";
+   macroSize = "42";
    macroStrength = "0.8";
    detailSize = "5";
    diffuseSize = "200";
    normalMap = "art/terrains/rubble/ter_rubble_waste_01_N";
    parallaxScale = "0.05";
    macroMap = "art/terrains/rubble/ter_rubble_waste_01_M";
-   detailStrength = "1";
+   detailStrength = "1.2";
 };

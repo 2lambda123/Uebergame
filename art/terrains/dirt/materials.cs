@@ -23,7 +23,7 @@ new TerrainMaterial()
    normalMap = "art/terrains/dirt/ter_dirt_ash_01_N";
    macroMap = "art/terrains/dirt/ter_dirt_ash_02_M";
    detailMap = "art/terrains/dirt/ter_dirt_ash_01_D";
-   detailStrength = "1.2";
+   detailStrength = "1.3";
 };
 
 singleton Material(TerrainFX_ter_dirt_ash_02)    
@@ -49,7 +49,7 @@ new TerrainMaterial()
    macroStrength = "0.5";
    internalName = "ter_dirt_ash_02";
    parallaxScale = "0";
-   detailStrength = "0.8";
+   detailStrength = "1.3";
    normalMap = "art/terrains/dirt/ter_dirt_ash_02_N";
    macroMap = "art/terrains/dirt/ter_dirt_ash_02_M";
 };

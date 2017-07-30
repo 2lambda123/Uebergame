@@ -4,8 +4,6 @@ singleton Material(RifleShell_RifleShell)
 	mapTo = "RifleShell";
 
 	diffuseMap[0] = "art/shapes/weapons/shared/RifleShell_diff";
-	normalMap[0] = "";
-	specularMap[0] = "";
 
 	diffuseColor[0] = "1 1 1 1";
 	specular[0] = "0.996078 0.988235 0.921569 0.954";
@@ -16,6 +14,7 @@ singleton Material(RifleShell_RifleShell)
 	translucentBlendOp = "None";
    pixelSpecular[0] = "1";
    materialTag0 = "Weapon";
+   castDynamicShadows = "1";
 };
 
 singleton Material(RifleShell_ColorEffectR88G88B225_material)

@@ -43,7 +43,7 @@ new TerrainMaterial()
    diffuseSize = "100";
    normalMap = "art/terrains/forest/ter_forest_grass_01_N";
    detailMap = "art/terrains/forest/ter_forest_grass_01_D";
-   detailStrength = "1.5";
+   detailStrength = "1.8";
    detailDistance = "100";
    macroMap = "art/terrains/forest/ter_forest_grass_01_M";
    macroSize = "40";

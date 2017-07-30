@@ -186,7 +186,7 @@ datablock TSForestItemData(canopy_01_shrub)
 {
    internalName = "canopy_01_shrub";
    shapeFile = "art/shapes/trees/canopy/canopy_01/canopy_01_shrub.dts";
-   windScale = "1";
+   windScale = "0.7";
    trunkBendScale = "0.02";
    branchAmp = "0.1";
    detailAmp = "0.1";

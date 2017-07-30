@@ -43,7 +43,7 @@ new TerrainMaterial()
    diffuseMap = "art/terrains/asphalt/ter_asphalt_street_02_B";
    diffuseSize = "500";
    detailMap = "art/terrains/asphalt/ter_asphalt_street_02_D";
-   detailStrength = "1";
+   detailStrength = "1.5";
    detailDistance = "100";
    macroMap = "art/terrains/asphalt/ter_asphalt_street_02_M";
    macroSize = "200";
@@ -70,7 +70,7 @@ new TerrainMaterial()
 {
    diffuseMap = "art/terrains/asphalt/ter_asphalt_decay_01_B";
    diffuseSize = "250";
-   detailStrength = "1";
+   detailStrength = "2";
    detailDistance = "100";
    macroMap = "art/terrains/asphalt/ter_asphalt_decay_01_D";
    macroSize = "42";
@@ -103,7 +103,7 @@ new TerrainMaterial()
    macroSize = "18";
    internalName = "ter_asphalt_concrete_01";
    macroStrength = "0.6";
-   detailStrength = "0.8";
+   detailStrength = "1.2";
    parallaxScale = "0";
    detailSize = "4";
    detailMap = "art/terrains/asphalt/ter_asphalt_concrete_01_D";
