@@ -275,7 +275,7 @@ function PBRtFGame::onDeath(%game, %player, %client, %sourceObject, %sourceClien
 
    if ( isObject( %client ) )
    {
-      // Check for carier kill
+      // Check for carrier kill
       if( isObject( %sourceClient ) )
       {
          if( %sourceClient.team != %client.team && %sourceClient != %client )
@@ -335,8 +335,8 @@ function PBRtFGame::updateScore(%game, %cl)
 function PBRtFGame::awardScoreCarrierKill(%game, %client)
 {
    %client.carrierKills++;
-   messageClient(%client, 'MsgCarrierKill', '\c1You received a %1 point bonus for killing the flag carier.', %game.SCORE_PER_CARRIER_KILL);
-   messageTeamExcept(%client, 'MsgCarrierKill', '\c1Teammate %1 received a %2 point bonus for killing the flag carrier.', %client.playerName, %game.SCORE_PER_CARRIER_KILL);
+   messageClient(%client, 'MsgCarrierKill', '\c1You received a %1 point bonus for killing the flag carrier.', %game.SCORE_PER_CARRIER_KILL);
+   //messageTeamExcept(%client, 'MsgCarrierKill', '\c1Teammate %1 received a %2 point bonus for killing the flag carrier.', %client.playerName, %game.SCORE_PER_CARRIER_KILL);
 }
 
 //-----------------------------------------------------------------------------

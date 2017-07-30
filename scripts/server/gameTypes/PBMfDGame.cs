@@ -464,7 +464,7 @@ function PBMfDgame::awardScoreMarkDefend(%game, %client)
    %client.markDefends++;
    %game.updateScore(%client);
    messageClient(%client, 'MsgObjDef', '\c1You received a %1 point bonus for defending your teams mark.', %game.SCORE_PER_MARK_DEFEND);
-   messageTeamExcept(%client, 'MsgObjDef', '\c1Teammate %1 received a %2 point bonus for defending your teams mark.', %client.playerName, %game.SCORE_PER_MARK_DEFEND);
+   //messageTeamExcept(%client, 'MsgObjDef', '\c1Teammate %1 received a %2 point bonus for defending your teams mark.', %client.playerName, %game.SCORE_PER_MARK_DEFEND);
 }
 
 function PBMfDgame::updateScore(%game, %cl)

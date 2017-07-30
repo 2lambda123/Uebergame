@@ -2867,8 +2867,8 @@ function CoreGame::vehicleDestroyed(%game, %obj, %destroyer)
       if ( %destroyer.team != %obj.team )
       {
          %destroyer.client.vehicleDestroys++;
-         messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
-         messageClient(%destroyer.client, %msgType, '\c0You received a %1 point bonus for destroying an enemy %2', %game.SCORE_PER_DESTROY_VEHICLE, %shapeName);
+         //messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
+         //messageClient(%destroyer.client, %msgType, '\c0You received a %1 point bonus for destroying an enemy %2', %game.SCORE_PER_DESTROY_VEHICLE, %shapeName);
          %game.updateScore(%destroyer.client);
       }
    }
@@ -2885,8 +2885,8 @@ function CoreGame::staticShapeDestroyed(%game, %obj, %destroyer)
       if ( %destroyer.team != %obj.team )
       {
          %destroyer.client.shapeDestroys++;
-         messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
-         messageClient(%destroyer.client, %msgType, "", %game.SCORE_PER_DESTROY_SHAPE, %shapeName); //needs to be fixed (especially the shapecharge) and properly integrated
+         //messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
+         //messageClient(%destroyer.client, %msgType, "", %game.SCORE_PER_DESTROY_SHAPE, %shapeName); //needs to be fixed (especially the shapecharge) and properly integrated
          %game.updateScore(%destroyer.client);
       }
    }
@@ -2903,8 +2903,8 @@ function CoreGame::turretDestroyed(%game, %obj, %destroyer)
       if ( %destroyer.team != %obj.team )
       {
          %destroyer.client.turretDestroys++;
-         messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
-         messageClient(%destroyer.client, %msgType, '\c0You received a %1 point bonus for destroying an enemy %2', %game.SCORE_PER_DESTROY_TURRET, %shapeName);
+         //messageTeamExcept(%destroyer.client, 'MsgDestroyed', '\c0%1 destroyed an enemy %2', %destroyer.client.playerName, %shapeName);
+         //messageClient(%destroyer.client, %msgType, '\c0You received a %1 point bonus for destroying an enemy %2', %game.SCORE_PER_DESTROY_TURRET, %shapeName);
          %game.updateScore(%destroyer.client);
       }
    }
