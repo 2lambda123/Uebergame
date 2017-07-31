@@ -101,25 +101,8 @@ singleton Material(Mat_road_sand_01)
    normalMap[0] = "art/roads/road_sand_01_N.dds";
    specularMap[0] = "art/roads/road_sand_01_S.dds";
    specular[2] = "1 1 1 1";
-};
-
-singleton Material(Mat_road_sand_01_wet)
-{
-   mapTo = "road_sand_01_wet";
-   diffuseMap[0] = "art/roads/road_sand_01_wet_D.dds";
-   normalMap[0] = "art/roads/road_sand_01_wet_N.dds";
-   specularPower[0] = "1";
-   specularStrength[0] = "0.5";
-   useAnisotropic[0] = "1";
-   alphaTest = "0";
-   alphaRef = "128";
-   showFootprints = "1";
-   footstepSoundId = "0";
-   impactSoundId = "0";
-   materialTag0 = "RoadAndPath";
-   translucent = "1";
-   castShadows = "0";
-   specularMap[0] = "art/roads/road_sand_01_wet_S.dds";
+   accuSpecular[0] = "0.9";
+   translucentZWrite = "1";
 };
 
 singleton Material(Mat_shore_debris_01)
@@ -139,7 +122,7 @@ singleton Material(Mat_shore_debris_01)
    translucent = "1";
    castShadows = "0";
    specularMap[0] = "art/roads/shore_debris_01_S.dds";
-   translucentZWrite = "0";
+   translucentZWrite = "1";
 };
 
 singleton Material(Mat_trail_dirt_01)
