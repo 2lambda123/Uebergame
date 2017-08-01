@@ -62,11 +62,11 @@ datablock ParticleData(UWBulletTrailParticle)
    textureName = "art/particles/bubble";
    animTexName = "art/particles/bubble";
 
-   gravityCoefficient = 0;
+   gravityCoefficient = "-0.2";
    inheritedVelFactor = 0;
    constantAcceleration = 0.0;
-   lifetimeMS = 700;
-   lifetimeVarianceMS = 150;
+   lifetimeMS = "901";
+   lifetimeVarianceMS = "900";
    useInvAlpha = true;
    spinRandomMin = -60;
    spinRandomMax = 60;
@@ -78,7 +78,7 @@ datablock ParticleData(UWBulletTrailParticle)
    colors[3] = "1 1 1 0";
 
    sizes[0] = "0.0976622";
-   sizes[1] = "0.0976622";
+   sizes[1] = "0.16";
    sizes[2] = "0";
    sizes[3] = "0";
 
@@ -87,13 +87,13 @@ datablock ParticleData(UWBulletTrailParticle)
    times[2] = "1";
    times[3] = "1";
 
-   dragCoefficient = "0.2";
+   dragCoefficient = "0";
 };
 
 datablock ParticleEmitterData(UWBulletTrailEmitter)
 {
-   ejectionPeriodMS = 5;
-   periodVarianceMS = 0;
+   ejectionPeriodMS = "12";
+   periodVarianceMS = "6";
    ejectionVelocity = 1;
    velocityVariance = 0;
    thetaMin = 0.0;

@@ -86,7 +86,7 @@ datablock ExplosionData(PaintExplosionRed)
 //-----------------------------------------------------------------------------
 // Projectile Object
 //-----------------------------------------------------------------------------
-datablock ProjectileData( PaintballProjectileRed )
+datablock ProjectileData( PaintballRedProjectile )
 {
    projectileShapeName = "art/shapes/weapons/paintball/paintball_red.dts";
 
@@ -110,6 +110,13 @@ datablock ProjectileData( PaintballProjectileRed )
    bounceFriction      = 0;
    isBallistic         = true;
    gravityMod          = 0.66;
+};
+
+datablock ProjectileData( PaintballRedUnderWaterProjectile : PaintballRedProjectile )
+{
+   particleWaterEmitter = "UWBulletTrailEmitter";
+   muzzleVelocity       = 5;
+   gravityMod           = 0.5;
 };
 
 //--------------------------------------------------------------------------
@@ -152,7 +159,8 @@ datablock ShapeBaseImageData(PaintballMarkerRedWeaponImage : PaintballMarkerBlue
    
    ironSight = PaintballMarkerRedIronSightImage;
 
-   projectile = PaintballProjectileRed;
+   projectile = PaintballRedProjectile;
+   underWaterProjectile = PaintballRedUnderWaterProjectile;
 };
 
 datablock ShapeBaseImageData( PaintballMarkerRedIronSightImage : PaintballMarkerRedWeaponImage )

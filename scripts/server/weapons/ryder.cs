@@ -155,6 +155,12 @@ datablock ProjectileData( RyderProjectile )
    lightDesc           = "";
 };
 
+datablock ProjectileData( RyderUnderWaterProjectile : RyderProjectile )
+{
+   particleWaterEmitter = "UWBulletTrailEmitter";
+   muzzleVelocity       = 12;
+};
+
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------
@@ -235,6 +241,7 @@ datablock ShapeBaseImageData(RyderWeaponImage)
    minEnergy = 0;
 
    projectile = RyderProjectile;
+   underWaterProjectile = RyderUnderWaterProjectile;
    projectileType = Projectile;
    projectileSpread = "0.016";
 

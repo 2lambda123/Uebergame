@@ -194,7 +194,7 @@ datablock ProjectileData( GrenadeProjectile )
    decal               = ScorchRXDecal;
 
    particleEmitter     = GrenadeTrailEmitter;
-   particleWaterEmitter = UWGrenadeTrailEmitter;
+   particleWaterEmitter= UWGrenadeTrailEmitter;
 
    Splash              = "";
    muzzleVelocity      = 50;
@@ -210,6 +210,13 @@ datablock ProjectileData( GrenadeProjectile )
    gravityMod          = 1;
 
    lightDesc           = "";
+};
+
+datablock ProjectileData( GrenadeUnderWaterProjectile : GrenadeProjectile )
+{
+   particleWaterEmitter= "UWBulletTrailEmitter";
+   muzzleVelocity      = 8;
+   gravityMod          = 0.5;
 };
 
 //-----------------------------------------------------------------------------
@@ -283,6 +290,7 @@ datablock ShapeBaseImageData(GrenadeLauncherImage)
    minEnergy = 0;
 
    projectile = GrenadeProjectile;
+   underWaterProjectile = GrenadeUnderWaterProjectile;
    projectileType = Projectile;
    projectileSpread = 0.025;
 

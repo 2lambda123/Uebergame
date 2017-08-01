@@ -680,8 +680,8 @@ function serverCmdDoIronSights(%client, %val)
       return;
    if ( %player.isReloading == true)
 	  return;
-   if ( %player.getPose() $= "Swim" )
-      return;
+   //if ( %player.getPose() $= "Swim" )
+   //   return;
 
    %curWeapon = %player.getMountedImage( $WeaponSlot );
    %image = %curWeapon.ironSight;
@@ -719,8 +719,8 @@ function serverCmdUndoIronSights(%client, %val)
       return;
    if ( %player.isReloading == true)
 	  return;
-   if ( %player.getPose() $= "Swim" )
-      return;
+   //if ( %player.getPose() $= "Swim" )
+   //   return;
    
    %curWeapon = %player.getMountedImage($WeaponSlot);
    %image = %curWeapon.parentImage;

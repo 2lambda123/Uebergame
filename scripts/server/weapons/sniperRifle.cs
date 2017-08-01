@@ -155,6 +155,13 @@ datablock ProjectileData( SniperProjectile )
    lightDesc           = "";
 };
 
+datablock ProjectileData( SniperUnderWaterProjectile : SniperProjectile )
+{
+   particleWaterEmitter = "UWBulletTrailEmitter";
+   lifetime             = 150;
+   muzzleVelocity       = 25;
+};
+
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------
@@ -229,6 +236,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    minEnergy = 0;
 
    projectile = SniperProjectile;
+   underWaterProjectile = SniperUnderWaterProjectile;
    projectileType = Projectile;
    projectileSpread = 0.02;
 

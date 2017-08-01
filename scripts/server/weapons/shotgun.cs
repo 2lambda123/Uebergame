@@ -101,6 +101,13 @@ datablock ProjectileData( ShotgunProjectile )
    lightDesc           = "";
 };
 
+datablock ProjectileData( ShotgunUnderWaterProjectile : ShotgunProjectile )
+{
+   particleWaterEmitter = "UWBulletTrailEmitter";
+   lifetime             = 400;
+   muzzleVelocity       = 10;
+};
+
 //-----------------------------------------------------------------------------
 // Ammo Item
 //-----------------------------------------------------------------------------
@@ -177,6 +184,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    minEnergy = 0;
 
    projectile = ShotgunProjectile;
+   underWaterProjectile = ShotgunUnderWaterProjectile;
    projectileType = Projectile;
    projectileSpread = 0.023;
    projectileNum = 8;
@@ -434,6 +442,34 @@ function ShotgunWeaponImage::onFire(%data, %obj, %slot)
       %mat = MatrixCreateFromEuler(%x @ " " @ %y @ " " @ %z);
       %muzzleVector = MatrixMulVector(%mat, %vec);
 
+      if ( %obj.weaponUnderwater == true )
+      {
+      // Determin initial projectile velocity based on the gun's muzzle point and the object's current velocity
+      %objectVelocity = %obj.getVelocity();
+      %muzzleVelocity = VectorAdd(VectorScale(%muzzleVector, %data.underWaterProjectile.muzzleVelocity), VectorScale(%objectVelocity, %data.underWaterProjectile.velInheritFactor));
+   
+      // Create the projectile object
+      %p = new (%data.projectileType)() {
+         dataBlock        = %data.underWaterProjectile;
+         initialVelocity  = %muzzleVelocity;
+         initialPosition  = %obj.getMuzzlePoint(%slot);
+         // This parameter is deleted about 7 ticks into the projectiles flight
+         sourceObject     = %obj;
+         sourceSlot       = %slot;
+         // We use this for the source object when applying damage because it isn't deleted
+         origin           = %obj;
+         client           = %obj.client;
+         };
+
+      %obj.lastProjectile = %p;
+      %obj.deleteLastProjectile = %data.deleteLastProjectile;
+      if(%obj.client)
+         %obj.client.projectile = %p;
+
+      MissionCleanup.add(%p);
+      }
+      else 
+      {
       %objectVelocity = %obj.getVelocity();
       %muzzleVelocity = VectorAdd(VectorScale(%muzzleVector, %data.projectile.muzzleVelocity), VectorScale(%objectVelocity, %data.projectile.velInheritFactor));
 
@@ -447,13 +483,15 @@ function ShotgunWeaponImage::onFire(%data, %obj, %slot)
          // We use this for the source object when applying damage because it isn't deleted
          origin           = %obj;
          client           = %obj.client;
-      };
+         };
+ 
+      %obj.lastProjectile = %p;
+      if(%obj.client)
+         %obj.client.projectile = %p;
+   
       MissionCleanup.add(%p);
+      }
    }
-   %obj.lastProjectile = %p;
-   if(%obj.client)
-      %obj.client.projectile = %p;
-
    return %p;
 }
 

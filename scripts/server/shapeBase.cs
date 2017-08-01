@@ -627,13 +627,11 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       //%muzzleVector = %obj.getMuzzleVector(%slot);
       %muzzleVector = MatrixMulVector("0 0 0 0 0 1 0", %obj.getMuzzleVector(%slot));
    }
-   // #todo :
-   /* //uncomment when ballistics features and blocking shooting into water are ready, this will activate under water shooting with slowed bullets
+   
    // check if the weapon is underwater and if so, spawn an under water projectile, otherwise spawn a regular projectile
    if ( %obj.weaponUnderwater == true )
    {
-   // Determin initial projectile velocity based on the 
-   // gun's muzzle point and the object's current velocity
+   // Determine initial projectile velocity based on the gun's muzzle point and the object's current velocity
    %objectVelocity = %obj.getVelocity();
    %muzzleVelocity = VectorAdd(VectorScale(%muzzleVector, %data.underWaterProjectile.muzzleVelocity), VectorScale(%objectVelocity, %data.underWaterProjectile.velInheritFactor));
    
@@ -657,11 +655,9 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
 
    MissionCleanup.add(%p);
    }
-   else
-   */
-   //{
-   // Determin initial projectile velocity based on the 
-   // gun's muzzle point and the object's current velocity
+   else 
+   {
+   // Determine initial projectile velocity based on the gun's muzzle point and the object's current velocity
    %objectVelocity = %obj.getVelocity();
    %muzzleVelocity = VectorAdd(VectorScale(%muzzleVector, %data.projectile.muzzleVelocity), VectorScale(%objectVelocity, %data.projectile.velInheritFactor));
    
@@ -684,7 +680,7 @@ function ShapeBaseImageData::onFire(%data, %obj, %slot)
       %obj.client.projectile = %p;
 
    MissionCleanup.add(%p);
-
+   }
    return %p;
 }
 
