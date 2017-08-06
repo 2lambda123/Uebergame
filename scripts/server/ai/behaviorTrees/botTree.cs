@@ -64,8 +64,8 @@ new Root(BotTree) {
                canSaveDynamicFields = "1";
             };
             new SubTree() {
-               subTreeName = "patrolTree";
-               internalName = "patrol";
+               subTreeName = "WanderPointTree";
+               internalName = "wanderPoint";
                canSave = "1";
                canSaveDynamicFields = "1";
             };

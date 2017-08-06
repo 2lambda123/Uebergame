@@ -28,7 +28,7 @@ datablock MissionMarkerData(WayPointMarker)
 
 datablock MissionMarkerData(SpawnSphereMarker)
 {
-   category = "Misc";
+   category = "Spawns";
    shapeFile = "art/editor/octahedron.dts";
 };
 

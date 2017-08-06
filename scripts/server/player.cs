@@ -146,6 +146,7 @@ datablock SFXProfile(FootLightHardSound)
    description = AudioClosest3D;
    preload = true;
 };
+
 datablock SFXPlayList(FootLightHardSoundList)
 {
    random = "StrictRandom";
@@ -165,7 +166,7 @@ datablock SFXPlayList(FootLightHardSoundList)
 datablock SFXProfile(FootLightMetalSound)
 {
    filename    = "art/sound/footsteps/metalstep_mono_01";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -179,14 +180,30 @@ datablock SFXProfile(FootLightSnowSound)
 datablock SFXProfile(FootLightShallowSplashSound)
 {
    filename    = "art/sound/footsteps/waterstep_mono_01";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
+};
+
+datablock SFXPlayList(FootLightShallowSplashSoundList)
+{
+   random = "StrictRandom";
+   loopMode = "Single";
+   numSlotsToPlay = "1";
+   description = "AudioClosest3D";
+   track[0] = "FootLightShallowSplashSound";
+   track[1] = "FootLightShallowSplashSound";
+   track[2] = "FootLightShallowSplashSound";
+   track[3] = "FootLightShallowSplashSound";
+   pitchScaleVariance[0] = "-0.2 0.2";
+   pitchScaleVariance[1] = "-0.2 0.2";
+   pitchScaleVariance[2] = "-0.2 0.2";
+   pitchScaleVariance[3] = "-0.2 0.2";
 };
 
 datablock SFXProfile(FootLightWadingSound)
 {
    filename    = "art/sound/footsteps/waterstep_mono_01";
-   description = AudioClose3D;
+   description = AudioClosest3D;
    preload = true;
 };
 
@@ -859,9 +876,9 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    FootHardSound        = FootLightHardSoundList;
    FootMetalSound       = FootLightMetalSound;
    FootSnowSound        = FootLightSnowSound;
-   FootShallowSound     = FootLightShallowSplashSound;
-   FootWadingSound      = FootLightWadingSound;
-   FootUnderwaterSound  = FootLightUnderwaterSound;
+   FootShallowSound     = FootLightShallowSplashSoundList;
+   FootWadingSound      = FootLightShallowSplashSoundList;
+   //FootUnderwaterSound  = FootLightUnderwaterSound;
 
    //FootBubblesSound     = FootLightBubblesSound;
    //movingBubblesSound   = ArmorMoveBubblesSound;
@@ -906,9 +923,12 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    //BadBot AI settings
    VisionRange = 100;
    VisionFov = 120;
-   findItemRange = 20;
+   findItemRange = 30;
+   WaypointRange = 120;
+   WaypointFov = 90;
    targetObjectTypes = $TypeMasks::PlayerObjectType;
    itemObjectTypes = $TypeMasks::itemObjectType;
+   wanderPointObjectTypes = $TypeMasks::StaticObjectType;
    optimalRange["Ryder"] = 12;
    burstLength["Ryder"] = 100;
    optimalRange["Lurker"] = 16;
@@ -943,9 +963,9 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    //BadBot AI settings
    VisionRange = 90;
    VisionFov = 120;
-   findItemRange = 20;
-   targetObjectTypes = $TypeMasks::PlayerObjectType;
-   itemObjectTypes = $TypeMasks::itemObjectType;
+   findItemRange = 30;
+   WaypointRange = 120;
+   WaypointFov = 90;
    optimalRange["PaintballMarkerBlue"] = 10;
    burstLength["PaintballMarkerBlue"] = 2000;
    optimalRange["PaintballMarkerRed"] = 10;

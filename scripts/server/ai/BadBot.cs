@@ -322,6 +322,69 @@ function getHealthTask::behavior(%this, %obj)
 }
 
 //=============================================================================
+// findWanderpoint task
+//=============================================================================
+function findWanderPointTask::behavior(%this, %obj)
+{
+   //%obj.setShapeName(findWanderPointTask); //debug feature
+   // get the objects datablock
+   %db = %obj.dataBlock;
+   
+   // these are the points that should only be used, if using the team spawns as well
+   // bots behave a bit weird on spawns, later there should be also a function below
+   // to check if the %marker isMember of %validPoints but no idea how that works yet
+   // for now we can just hide them in the editor, then this function will ignore them
+   // but they will still work for spawning players
+   //%validPoints = nameToID("MissionGroup/Teams/Team0/SpawnSpheres0");
+   
+   // do a container search for items
+   initContainerRadiusSearch( %obj.position, %db.WaypointRange, %db.wanderPointObjectTypes );
+   while ( (%marker = containerSearchNext()) != 0 )
+   {
+      // filter out irrelevant items
+      if(%marker.dataBlock.category !$= "Spawns" || !%marker.isEnabled() || %marker.isHidden())
+         continue;
+      
+      // check that the item is within the bots view cone
+      if(%obj.checkInFov(%marker, %db.WaypointFov))
+      {
+         // set the targetMarker field on the bot
+         %obj.targetMarker = %marker;
+         break;
+      }
+   }
+   
+   return isObject(%obj.targetMarker) ? SUCCESS : FAILURE;
+}
+
+//=============================================================================
+// goToWanderPoint task
+//=============================================================================
+function goToWanderPointTask::precondition(%this, %obj)
+{
+   // check that we have a valid health item to go for
+   return (isObject(%obj.targetMarker) && %obj.targetMarker.isEnabled() && !%obj.targetMarker.isHidden());  
+}
+
+function goToWanderPointTask::onEnter(%this, %obj)
+{
+   %obj.clearAim();
+}
+
+function goToWanderPointTask::behavior(%this, %obj)
+{
+   //%obj.setShapeName(goToWanderPointTask); //debug feature
+
+   %wanderPoint = (%obj.targetMarker.position);
+   
+   // move to wander point 
+   %obj.moveTo(RandomPointOnCircle(%wanderPoint, 15));
+   //%obj.moveTo(%obj.targetMarker.position);
+   
+   return SUCCESS;
+}
+
+//=============================================================================
 // pickTarget task
 //=============================================================================
 function pickTargetTask::precondition(%this, %obj)
