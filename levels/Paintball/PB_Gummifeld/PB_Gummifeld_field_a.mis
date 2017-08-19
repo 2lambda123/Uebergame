@@ -697,6 +697,7 @@ new SimGroup(MissionGroup) {
                position = "657.334 513.181 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -714,6 +715,7 @@ new SimGroup(MissionGroup) {
                position = "657.334 515.721 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -731,6 +733,7 @@ new SimGroup(MissionGroup) {
                position = "657.334 518.371 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -748,6 +751,7 @@ new SimGroup(MissionGroup) {
                position = "656.662 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -765,6 +769,7 @@ new SimGroup(MissionGroup) {
                position = "654.017 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -782,6 +787,7 @@ new SimGroup(MissionGroup) {
                position = "651.388 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -799,6 +805,7 @@ new SimGroup(MissionGroup) {
                position = "648.539 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -816,6 +823,7 @@ new SimGroup(MissionGroup) {
                position = "659.263 513.181 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -833,6 +841,7 @@ new SimGroup(MissionGroup) {
                position = "659.018 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -850,6 +859,7 @@ new SimGroup(MissionGroup) {
                position = "659.263 518.371 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -867,6 +877,7 @@ new SimGroup(MissionGroup) {
                position = "659.263 515.721 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -884,6 +895,7 @@ new SimGroup(MissionGroup) {
                position = "659.018 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -901,6 +913,7 @@ new SimGroup(MissionGroup) {
                position = "648.539 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -918,6 +931,7 @@ new SimGroup(MissionGroup) {
                position = "651.388 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -935,6 +949,7 @@ new SimGroup(MissionGroup) {
                position = "654.017 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -952,6 +967,7 @@ new SimGroup(MissionGroup) {
                position = "656.662 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -969,6 +985,7 @@ new SimGroup(MissionGroup) {
                position = "613.504 513.181 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -986,6 +1003,7 @@ new SimGroup(MissionGroup) {
                position = "613.504 515.721 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1003,6 +1021,7 @@ new SimGroup(MissionGroup) {
                position = "613.504 518.371 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1020,6 +1039,7 @@ new SimGroup(MissionGroup) {
                position = "613.384 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1037,6 +1057,7 @@ new SimGroup(MissionGroup) {
                position = "623.539 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1054,6 +1075,7 @@ new SimGroup(MissionGroup) {
                position = "620.91 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1071,6 +1093,7 @@ new SimGroup(MissionGroup) {
                position = "618.061 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1088,6 +1111,7 @@ new SimGroup(MissionGroup) {
                position = "615.433 513.181 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1105,6 +1129,7 @@ new SimGroup(MissionGroup) {
                position = "615.188 520.877 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1122,6 +1147,7 @@ new SimGroup(MissionGroup) {
                position = "615.433 518.371 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1139,6 +1165,7 @@ new SimGroup(MissionGroup) {
                position = "615.433 515.721 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1156,6 +1183,7 @@ new SimGroup(MissionGroup) {
                position = "615.188 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1173,6 +1201,7 @@ new SimGroup(MissionGroup) {
                position = "618.061 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1190,6 +1219,7 @@ new SimGroup(MissionGroup) {
                position = "620.91 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1207,6 +1237,7 @@ new SimGroup(MissionGroup) {
                position = "623.539 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1224,6 +1255,7 @@ new SimGroup(MissionGroup) {
                position = "613.384 522.469 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1253,6 +1285,7 @@ new SimGroup(MissionGroup) {
                position = "657.334 471.804 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1270,6 +1303,7 @@ new SimGroup(MissionGroup) {
                position = "657.334 474.344 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1287,6 +1321,7 @@ new SimGroup(MissionGroup) {
                position = "657.334 476.994 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1304,6 +1339,7 @@ new SimGroup(MissionGroup) {
                position = "656.662 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1321,6 +1357,7 @@ new SimGroup(MissionGroup) {
                position = "654.017 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1338,6 +1375,7 @@ new SimGroup(MissionGroup) {
                position = "651.388 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1355,6 +1393,7 @@ new SimGroup(MissionGroup) {
                position = "648.539 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1372,6 +1411,7 @@ new SimGroup(MissionGroup) {
                position = "659.263 471.804 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1389,6 +1429,7 @@ new SimGroup(MissionGroup) {
                position = "659.018 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1406,6 +1447,7 @@ new SimGroup(MissionGroup) {
                position = "659.263 476.994 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1423,6 +1465,7 @@ new SimGroup(MissionGroup) {
                position = "659.263 474.344 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1440,6 +1483,7 @@ new SimGroup(MissionGroup) {
                position = "659.018 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1457,6 +1501,7 @@ new SimGroup(MissionGroup) {
                position = "648.539 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1474,6 +1519,7 @@ new SimGroup(MissionGroup) {
                position = "651.388 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1491,6 +1537,7 @@ new SimGroup(MissionGroup) {
                position = "654.017 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1508,6 +1555,7 @@ new SimGroup(MissionGroup) {
                position = "656.662 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1525,6 +1573,7 @@ new SimGroup(MissionGroup) {
                position = "613.504 471.804 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1542,6 +1591,7 @@ new SimGroup(MissionGroup) {
                position = "613.504 474.344 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1559,6 +1609,7 @@ new SimGroup(MissionGroup) {
                position = "613.504 476.994 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1576,6 +1627,7 @@ new SimGroup(MissionGroup) {
                position = "613.384 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1593,6 +1645,7 @@ new SimGroup(MissionGroup) {
                position = "623.539 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1610,6 +1663,7 @@ new SimGroup(MissionGroup) {
                position = "620.91 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1627,6 +1681,7 @@ new SimGroup(MissionGroup) {
                position = "618.061 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1644,6 +1699,7 @@ new SimGroup(MissionGroup) {
                position = "615.433 471.804 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1661,6 +1717,7 @@ new SimGroup(MissionGroup) {
                position = "615.188 467.842 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1678,6 +1735,7 @@ new SimGroup(MissionGroup) {
                position = "615.433 476.994 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1695,6 +1753,7 @@ new SimGroup(MissionGroup) {
                position = "615.433 474.344 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1712,6 +1771,7 @@ new SimGroup(MissionGroup) {
                position = "615.188 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1729,6 +1789,7 @@ new SimGroup(MissionGroup) {
                position = "618.061 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1746,6 +1807,7 @@ new SimGroup(MissionGroup) {
                position = "620.91 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1763,6 +1825,7 @@ new SimGroup(MissionGroup) {
                position = "623.539 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -1780,6 +1843,7 @@ new SimGroup(MissionGroup) {
                position = "613.384 469.434 38.75";
                rotation = "1 0 0 0";
                scale = "1 1 1";
+               hidden = "1";
                canSave = "1";
                canSaveDynamicFields = "1";
             };
@@ -3938,7 +4002,7 @@ new SimGroup(MissionGroup) {
                renderNormals = "0";
                forceDetail = "-1";
                position = "583.843 498.881 38.4894";
-               rotation = "0.261575 -0.927144 0.268294 93.1724";
+               rotation = "0.261575 -0.927144 0.268294 93.1723";
                scale = "1 1 1";
                canSave = "1";
                canSaveDynamicFields = "1";
@@ -7259,7 +7323,7 @@ new SimGroup(MissionGroup) {
                renderNormals = "0";
                forceDetail = "-1";
                position = "569.301 413.699 38.5614";
-               rotation = "-1 0.000650107 -0.000663595 91.461";
+               rotation = "-1 0.000650107 -0.000663595 91.4611";
                scale = "1 1 1";
                canSave = "1";
                canSaveDynamicFields = "1";
