@@ -107,7 +107,11 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
    // prevent screen going blank and set loading screen only on first launch
    if ( $GameLaunched == 0 && $pref::Menu::Level ) // loading screen is only necessary for 3D menu
    {
-   Canvas.setContent("startupGui"); 
+   Canvas.setContent("startupGui");    
+   %text = getRandomStartupText();
+	startupGuiText.setText(%text);
+   if ($pref::Menu::RandomBackgrounds)
+      startupGui.setBitmap ( getRandomBackground() );
    Canvas.repaint();
    $GameLaunched = 1;
    }

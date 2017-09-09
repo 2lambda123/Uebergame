@@ -1,13 +1,3 @@
-
-function startupGui::onWake(%this)
-{  
-	%text = getRandomStartupText();
-	startupGuiText.setText(%text);
-   
-   if ($pref::Menu::RandomBackgrounds)
-   startupGui.setBitmap ( getRandomBackground() );
-}
-
 function getRandomStartupText(%text)
 {
    %list = new ArrayObject();
