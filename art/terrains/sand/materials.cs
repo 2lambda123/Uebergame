@@ -238,13 +238,14 @@ singleton Material(TerrainFX_ter_sand_wet_01)
    mapTo = "ter_sand_wet_01_B";    
    footstepSoundId = "1";    
    terrainMaterials = "1";    
-   ShowDust = "1";    
+   ShowDust = "0";    
    showFootprints = "1";   
    materialTag0 = "Terrain_Sand";    
    specularPower[0] = "1";  
    effectColor[0] = "0.803922 0.780392 0.635294 1";  
    effectColor[1] = "0.843137 0.780392 0.454902 0.349";  
    impactSoundId = "0";
+   specular[2] = "White";
 };
 
 new TerrainMaterial()

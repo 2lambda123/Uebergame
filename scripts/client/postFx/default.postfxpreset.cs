@@ -33,7 +33,6 @@ $PostFXManager::Settings::DOF::BlurCurveNear = "";
 $PostFXManager::Settings::DOF::BlurMax = "";
 $PostFXManager::Settings::DOF::BlurMin = "";
 $PostFXManager::Settings::DOF::EnableAutoFocus = "";
-$PostFXManager::Settings::DOF::EnableDOF = "";
 $PostFXManager::Settings::DOF::FocusRangeMax = "";
 $PostFXManager::Settings::DOF::FocusRangeMin = "";
 $PostFXManager::Settings::HDR::adaptRate = "2";

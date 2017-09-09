@@ -341,7 +341,7 @@ new SimGroup( TextureQualityGroup )
    {
       class = "GraphicsQualityLevel";
       caseSensitive = true;
-      key["$pref::Video::textureReductionLevel"] = 3;
+      key["$pref::Video::textureReductionLevel"] = 2;
       key["$pref::Reflect::refractTexScale"] = 0.25;
       key["$pref::Terrain::detailScale"] = 0.25;      
    };

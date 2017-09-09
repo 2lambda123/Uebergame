@@ -185,9 +185,9 @@ datablock ParticleEmitterData(UnderwaterGrenadeSparkEmitter)
 
 datablock ParticleData(UnderwaterGrenadeExplosionSmoke)
 {
-   textureName = "art/particles/sickieparticles/rock_impact_1_inner.png";
+   textureName = "art/particles/millsplash01.png";
    dragCoeffiecient = 105;
-   gravityCoefficient = "1";
+   gravityCoefficient = "0.99878";
    inheritedVelFactor = "1";
    constantAcceleration = -1.0;
    
@@ -198,19 +198,19 @@ datablock ParticleData(UnderwaterGrenadeExplosionSmoke)
    spinRandomMin = -100.0;
    spinRandomMax = 100.0;
 
-   colors[0] = "0.527559 0.598425 0.692913 0.502";
-   colors[1] = "0.511811 0.606299 0.716535 0.353";
-   colors[2] = "0.480315 0.574803 0.700787 0.253";
-   colors[3] = "0.505882 0.611765 0.701961 0.104";
-   sizes[0] = "2";  
-   sizes[1] = "2.5";
-   sizes[2] = "3.5";
-   sizes[3] = "4.5";
+   colors[0] = "0.519685 0.590551 0.685039 0.496063";
+   colors[1] = "0.511811 0.598425 0.708661 0.346457";
+   colors[2] = "0.480315 0.566929 0.692913 0.251969";
+   colors[3] = "0.503937 0.606299 0.700787 0.102362";
+   sizes[0] = "1.99902";  
+   sizes[1] = "2.49954";
+   sizes[2] = "3.49753";
+   sizes[3] = "4.49857";
    times[0] = 0.0;
    times[1] = 0.2;
-   times[2] = "0.6875";
+   times[2] = "0.686275";
    times[3] = 1;
-   animTexName = "art/particles/sickieparticles/rock_impact_1_inner.png";
+   animTexName = "art/particles/millsplash01.png";
    ejectionPeriodMS = "1";
    periodVarianceMS = "0";
    ejectionVelocity = "12";
@@ -218,6 +218,7 @@ datablock ParticleData(UnderwaterGrenadeExplosionSmoke)
    thetaMax = "180";
    particles = "UnderwaterGrenadeExplosionSmoke";
    blendStyle = "ADDITIVE";
+   animateTexture = "0";
 };
 
 datablock ParticleEmitterData(UnderwaterGrenadeExplosionSmokeEmitter)
@@ -234,7 +235,7 @@ datablock ParticleEmitterData(UnderwaterGrenadeExplosionSmokeEmitter)
    lifetimeMS = "200";
 
    particles = "UnderwaterGrenadeExplosionSmoke";
-   blendStyle = "ADDITIVE";
+   blendStyle = "NORMAL";
    lifetimeVarianceMS = "100";
 };
 

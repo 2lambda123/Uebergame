@@ -175,7 +175,7 @@ datablock ShapeBaseImageData( PaintballMarkerGreenIronSightImage : PaintballMark
    projectileSpread = "0.005";
    parentImage = "PaintballMarkerGreenWeaponImage";
 
-   stateTimeoutValue[1]             = 0.25;
+   stateTimeoutValue[1]             = 0.55;
    stateWaitForTimeout[1]           = true;
    stateSequence[1]                 = "idle";
    stateSound[1]                    = "";
