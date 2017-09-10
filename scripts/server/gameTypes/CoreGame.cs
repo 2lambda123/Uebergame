@@ -646,6 +646,23 @@ function CoreGame::pickObserverSpawn(%game, %client, %next)
    return %group.getObject(%spawnIdx);
 }
 
+function CoreGame::pickObserverSpawn2(%game, %client, %next)
+{
+   //LogEcho("\c4CoreGame::pickObserverSpawn(" SPC %game.class SPC %client.nameBase SPC %next SPC ")");
+   %group = nameToID("MissionGroup/ObserverDropPoints");
+   %count = %group.getCount();
+
+   if ( !%count || %group == -1 )
+   {
+      echo("no observer spawn points found");
+      return -1;
+   }    
+    
+   %spawnIdx = getRandom(%count-1);
+
+   return %group.getObject(%spawnIdx);
+}
+
 function CoreGame::pickSpawnPoint(%game, %team) 
 {
    // Only have 1 team free for all, clamp spawngroup
@@ -1929,7 +1946,7 @@ function CoreGame::SpectatorSetMode(%game, %data, %obj, %mode, %targetObj)
       case "NewConnect": // Free-flying spectator camera basically
          displaySpectatorHud(%client, 0);
          commandToClient(%client, 'setHudMode', 'Spectator');
-         %markerObj = %game.pickObserverSpawn(%client, true);
+         %markerObj = %game.pickObserverSpawn2(%client, true);
          %transform = %markerObj.getTransform();
          %obj.setTransform(%transform);
          %obj.setFlyMode();

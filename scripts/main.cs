@@ -53,14 +53,15 @@ function Torque::getHomePath(%this)
 function getMainMenuLevel(%levelName)
 {
    %list = new ArrayObject();
-   %list.add("0", "levels/Ambience/ambience_space_ocean_01_a.mis");
-   %list.add("1", "levels/Ambience/ambience_space_ocean_01_b.mis");
-   %list.add("2", "levels/Ambience/ambience_space_ocean_02_a.mis");
-   %list.add("3", "levels/Ambience/ambience_space_ocean_02_b.mis");
-   %list.add("4", "levels/Ambience/ambience_space_ocean_03_a.mis");
-   %list.add("5", "levels/Ambience/ambience_space_ocean_03_b.mis");
+   %list.add("0", "levels/Ambience/ambience_space_ocean_01.mis");
+   %list.add("1", "levels/Ambience/ambience_space_ocean_02.mis");
+   %list.add("2", "levels/Ambience/ambience_space_ocean_03.mis");
+   %list.add("3", "levels/Ambience/ambience_pazifik_island_01_dawn.mis");
+   %list.add("4", "levels/Ambience/ambience_pazifik_island_01_day.mis");
+   %list.add("5", "levels/Ambience/ambience_pazifik_island_01_night.mis");
+   %list.add("6", "levels/Ambience/ambience_pazifik_island_01_rain.mis");
    
-   %random = getRandom(0, 5);
+   %random = getRandom(0, 6);
    %levelName = %list.getValue(%random);
    
    return (%levelName);
