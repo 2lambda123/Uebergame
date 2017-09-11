@@ -59,5 +59,14 @@ function Paintball_playerDae::onLoad(%this)
    %this.setSequenceCyclic("reload", "0");
    %this.setSequencePriority("reload", "1");
    %this.setSequenceBlend("reload", "1", "root", "0");
+   %this.addSequence("ambient", "swim_root", "62", "83", "1", "1");   
+   %this.addSequence("ambient", "swim_forward", "62", "83", "1", "0");
+   %this.setSequenceGroundSpeed("swim_forward", "0 0.75 0", "0 0 0");
+   %this.addSequence("ambient", "swim_backward", "62", "83", "1", "0");
+   %this.setSequenceGroundSpeed("swim_backward", "0 0.75 0", "0 0 0");
+   %this.addSequence("ambient", "swim_left", "62", "83", "1", "0");
+   %this.setSequenceGroundSpeed("swim_left", "0 0 0", "0 0.75 0");
+   %this.addSequence("ambient", "swim_right", "62", "83", "1", "0");
+   %this.setSequenceGroundSpeed("swim_right", "0 0 0", "0 0.75 0");
    %this.addNode("mount1", "chest-1", "-0.197412 -0.152363 1.32498 1 0 0 0", "1");
 }
