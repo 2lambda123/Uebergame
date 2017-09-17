@@ -211,7 +211,7 @@ new SimGroup(MissionGroup) {
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
-      updateBasetex = "1";
+      updateBasetex = "0";
       position = "64 64 -512";
       rotation = "1 0 0 0";
       canSave = "1";
@@ -627,6 +627,7 @@ new SimGroup(MissionGroup) {
          useTrackDescriptionOnly = "0";
          isLooping = "1";
          isStreaming = "0";
+         sourceGroup = "AudioChannelEffects";
          volume = "0.12";
          pitch = "1";
          fadeInTime = "0";

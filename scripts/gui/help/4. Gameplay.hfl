@@ -12,7 +12,7 @@ Make sure to checkout your loadout (Armory dialog that opens with "i" button), y
 Goal:
 <font:Arial:16>Your goal is to kill the other players and after the match the player with the highest score wins.
 The scoring system rewards you for staying alive, by calculating your efficiency, so you can more quickly raise up in scores than others, if you do not die that often.
-The game will end after the time limit is hit ( 15 minutes by default), there is currently no score limit for deathmatch implemented.
+The game will end after the time limit is hit ( 10 minutes by default), there is currently no score limit for deathmatch implemented.
 
 <font:ArialBold:20>
 Paintball Deathmatch:
@@ -47,3 +47,51 @@ Same as regular Team Deathmatch.
 <font:ArialBold:16>
 Goal:
 <font:Arial:16>Same as in regular Team Deathmatch.
+
+<font:ArialBold:20>
+Retrieve the Flag:
+<font:Arial:16>
+Retrieve the Flag is a blue team vs red team gamemode. Each team has it's own starting area where player get spawned. Usually the map is divided into two sides, where
+each team has their starting location. But there may be exceptions.
+At the beginning of the match you can either just click fire which will auto assign you to a team or join a team manually through the Armory.
+If you switch teams through the Armory when you are in the game, your score gets reset, so your score only counts as long as you are in the game, so do not switch all the time.
+When friendly fire is enabled you can shoot and kill your own teammates, but you will receive some of the damage you inflict on yourself as punishment and it will costs you some score.
+If you repeatetly kill teammates you will be killed as punishment in addition, there is also the possibility to vote kick or ban people through the voting function in the Admin Menu.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Your goal is to retrieve the Flag. 
+The Flag spawns on the flag spawner or spawners placed around the map, usually somewhere in the middle between the two teams starting locations.
+The game ends when one team has hit the flag retrieve limit, or when the timelimit is hit.
+The individual score is just to see who is the best player, but does not count into which team wins.
+
+<font:ArialBold:20>
+Paintball Retrieve the Flag:
+<font:Arial:16>
+Same as regular Retrieve the Flag.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Same as in regular Retrieve the Flag.
+
+<font:ArialBold:20>
+Marked for Death:
+<font:Arial:16>
+Marked for Death is a blue team vs red team gamemode. Each team has it's own starting area where player get spawned. Usually the map is divided into two sides, where
+each team has their starting location. But there may be exceptions.
+At the beginning of the match you can either just click fire which will auto assign you to a team or join a team manually through the Armory.
+Important in this game type is that when you join a team the first player will be picked as mark and he gets a flag attached to him in his teams color, so everyone can see who is the target.
+If you switch teams through the Armory when you are in the game, your score gets reset, so your score only counts as long as you are in the game, so do not switch all the time.
+When friendly fire is enabled you can shoot and kill your own teammates, but you will receive some of the damage you inflict on yourself as punishment and it will costs you some score.
+If you repeatetly kill teammates you will be killed as punishment in addition, there is also the possibility to vote kick or ban people through the voting function in the Admin Menu.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Your goal is to kill the other teams marked player and protect your own teams marked player.
+The game ends when one team has hit the mark kill limit, or when the timelimit is hit.
+The individual score is just to see who is the best player, but does not count into which team wins.
+
+<font:ArialBold:20>
+Paintball Marked for Death:
+<font:Arial:16>
+Same as regular Marked for Death.
+<font:ArialBold:16>
+Goal:
+<font:Arial:16>Same as in regular Marked for Death.

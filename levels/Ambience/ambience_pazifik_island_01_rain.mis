@@ -232,7 +232,7 @@ new SimGroup(MissionGroup) {
       baseTexFormat = "DDS";
       lightMapSize = "256";
       screenError = "16";
-      updateBasetex = "1";
+      updateBasetex = "0";
       position = "64 64 -512";
       rotation = "1 0 0 0";
       canSave = "1";
