@@ -641,5 +641,47 @@ new SimGroup(ForestBrushGroup) {
          elevationMax = "10000";
       };
    };
+   new ForestBrush() {
+      internalName = "leaf_plants";
+      canSave = "1";
+      canSaveDynamicFields = "1";
+
+      new ForestBrushElement() {
+         internalName = "bigleaf_01_a";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "bigleaf_01_a";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.3";
+         scaleMax = "1";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "0";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "45";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+      new ForestBrushElement() {
+         internalName = "longleaf_01_a";
+         canSave = "1";
+         canSaveDynamicFields = "1";
+         ForestItemData = "longleaf_01_a";
+         probability = "1";
+         rotationRange = "360";
+         scaleMin = "0.6";
+         scaleMax = "1.4";
+         scaleExponent = "1";
+         sinkMin = "0";
+         sinkMax = "0";
+         sinkRadius = "1";
+         slopeMin = "0";
+         slopeMax = "45";
+         elevationMin = "-10000";
+         elevationMax = "10000";
+      };
+   };
 };
 //--- OBJECT WRITE END ---

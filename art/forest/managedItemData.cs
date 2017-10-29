@@ -270,7 +270,7 @@ datablock TSForestItemData(thintree_01_b)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.5";
+   radius = "0.3";
 };
 
 datablock TSForestItemData(thintree_01_c)
@@ -282,7 +282,7 @@ datablock TSForestItemData(thintree_01_c)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.5";
+   radius = "0.4";
 };
 
 datablock TSForestItemData(thintree_01_a)
@@ -294,7 +294,7 @@ datablock TSForestItemData(thintree_01_a)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.5";
+   radius = "0.3";
 };
 
 datablock TSForestItemData(deadbush_01_a)
@@ -375,4 +375,22 @@ datablock TSForestItemData(birch_01_a)
    branchAmp = "0.05";
    detailAmp = "0.1";
    detailFreq = "0.1";
+};
+
+datablock TSForestItemData(bigleaf_01_a)
+{
+   internalName = "bigleaf_01_a";
+   shapeFile = "art/shapes/plants/bigleaf/bigleaf_01/bigleaf_01_a.dts";
+   mass = "5";
+   radius = "0.5";
+};
+
+datablock TSForestItemData(longleaf_01_a)
+{
+   internalName = "longleaf_01_a";
+   shapeFile = "art/shapes/plants/longleaf/longleaf_01/longleaf_01_a.dts";
+   radius = "0.2";
+   branchAmp = "0.015";
+   detailAmp = "0.03";
+   detailFreq = "0.06";
 };
