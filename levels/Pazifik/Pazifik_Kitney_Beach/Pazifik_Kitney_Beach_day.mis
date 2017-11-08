@@ -205,7 +205,7 @@ new SimGroup(MissionGroup) {
       scale = "1 1 1";
       canSave = "1";
       canSaveDynamicFields = "1";
-      dataFile = "levels/Pazifik/Pazifik_Kitney_Beach/Pazifik_Kitney_Beach_day.forest";
+      dataFile = "levels/Pazifik/Pazifik_Kitney_Beach/Pazifik_Kitney_Beach.forest";
       lodReflectScalar = "2";
    };
    new ForestWindEmitter() {
