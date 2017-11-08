@@ -62,7 +62,7 @@ datablock ParticleEmitterData(PaintExplosionRedEmitter)
    lifetimeMS       = 250;
    particles = "PaintDustRed";
    blendStyle = "NORMAL";
-   ambientFactor = "0.66";
+   ambientFactor = "0.9";
 };
 //-----------------------------------------------------------------------------
 // Explosion

@@ -98,7 +98,7 @@ datablock ParticleEmitterData(PlayerBloodImpactEmitter)
    ejectionPeriodMS = "18";
    periodVarianceMS = "15";
    ejectionVelocity = "1";
-   velocityVariance = "0.5";
+   velocityVariance = "0.7";
    thetaMin = "120";
    thetaMax = "180";
    ambientFactor = "0.5";
@@ -146,7 +146,7 @@ datablock ParticleEmitterData(PlayerBloodSpillEmitter)
    thetaMax = "180";
    orientParticles = "1";
    particles = "PlayerBloodSpillParticle";
-   ambientFactor = "0.5";
+   ambientFactor = "0.9";
    blendStyle = "NORMAL";
    softParticles = "0";  
    phiVariance = "90";
@@ -190,7 +190,7 @@ datablock ParticleEmitterData(PlayerBloodDustEmitter)
    thetaMax = "180";
    orientParticles = "1";
    particles = "PlayerBloodDustParticle";
-   ambientFactor = "0.5";
+   ambientFactor = "0.75";
    blendStyle = "NORMAL";
    softParticles = "0";   
    lifetimeMS = "200";

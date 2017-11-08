@@ -74,6 +74,7 @@ datablock ParticleEmitterData(SmokeScreenSmokeEmitter1)
    orientOnVelocity = false;
    particles = "SmokeScreenSmoke";
    blendStyle = "NORMAL";
+   ambientFactor = "0.85";
 };
 
 datablock ParticleEmitterData(SmokeScreenSmokeEmitter2 : SmokeScreenSmokeEmitter1)

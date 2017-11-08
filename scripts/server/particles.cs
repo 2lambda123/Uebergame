@@ -58,7 +58,7 @@ datablock ParticleEmitterData(bloodBulletDirtSprayEmitter)
    thetaMax = "180";
    orientParticles = "1";
    particles = "bloodBulletDirtSpray";
-   ambientFactor = "0.5";
+   ambientFactor = "0.8";
    blendStyle = "NORMAL";
    softParticles = "0";     
 };  

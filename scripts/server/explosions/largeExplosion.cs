@@ -82,6 +82,7 @@ datablock ParticleEmitterData(LargeDebrisSparkEmitter)
    orientParticles  = false;
    lifetimeMS       = 300;
    particles        = "LargeDebrisSpark";
+   ambientFactor    = "0.2";
 };
 
 datablock ExplosionData(LargeDebrisExplosion)
@@ -151,6 +152,7 @@ datablock ParticleEmitterData(LargeDebrisFireEmitter)
    phiVariance      = 360;
    ejectionoffset   = 0.3;
    particles        = "LargeDebrisFireParticle";
+   ambientFactor    = "0.15";
 };
 
 datablock ParticleData(LargeDebrisSmokeParticle)
@@ -192,6 +194,7 @@ datablock ParticleEmitterData(LargeDebrisSmokeEmitter)
    ejectionOffset   = 0; // 0.3
    lifetimeMS       = 2500;
    particles        = "LargeDebrisSmokeParticle";
+   ambientFactor    = "0.35";
 };
 
 datablock DebrisData(LargeExplosionDebris)
@@ -263,9 +266,10 @@ datablock ParticleEmitterData(LargeBubblesEmitter)
    thetaMax         = 80;
    ejectionOffset   = 4;
    particles        = "LargeBubbleParticle";
-   blendStyle = "ADDITIVE";
+   blendStyle = "NORMAL";
    lifetimeMS = "0";
    lifetimeVarianceMS = "0";
+   ambientFactor = "0.3";
 };
 
 datablock ParticleData(LargeWaterMistParticle)
@@ -313,6 +317,7 @@ datablock ParticleEmitterData(LargeWaterMistEmitter)
    particles        = "LargeWaterMistParticle";
    blendStyle = "ADDITIVE";
    lifetimeVarianceMS = "250";
+   ambientFactor = "0.4";
 };
 
 datablock ParticleData(LargeWaterSparkParticle)
@@ -356,6 +361,7 @@ datablock ParticleEmitterData(LargeWaterSparksEmitter)
    orientParticles    = true;
    orientOnVelocity   = true;
    particles          = "LargeWaterSparkParticle";
+   ambientFactor      = "0.15";
 };
 
 datablock ExplosionData(LargeWaterExplosion)
@@ -426,6 +432,7 @@ datablock ParticleEmitterData(LargeSubBlastEmitter)
    orientParticles  = true;
    orientOnVelocity = true;
    particles        = "LargeSubBlastParticle";
+   ambientFactor    = "0.3";
 };
 
 datablock ParticleData(LargeSubFireParticle)
@@ -464,6 +471,7 @@ datablock ParticleEmitterData(LargeSubFireEmitter)
    phiVariance      = 360;
    ejectionoffset   = 5;
    particles        = "LargeSubFireParticle";
+   ambientFactor    = "0.15";
 };
 
 datablock ParticleData(LargeSubSmokeParticle)
@@ -502,6 +510,7 @@ datablock ParticleEmitterData(LargeSubSmokeEmitter)
    phiVariance      = 360;
    ejectionoffset   = 7;
    particles        = "LargeSubSmokeParticle";
+   ambientFactor    = "0.4";
 };
 
 datablock ParticleData(LargeSubSplatterParticle)
@@ -539,6 +548,7 @@ datablock ParticleEmitterData(LargeSubSplatterEmitter)
    phiReferenceVel  = 0;
    phiVariance      = 360;
    particles        = "LargeSubSplatterParticle";
+   ambientFactor    = "0.35";
 };
 
 datablock ParticleData(LargeSparkParticle)
@@ -582,6 +592,7 @@ datablock ParticleEmitterData(LargeSparkEmitter)
    orientParticles    = true;
    orientOnVelocity   = true;
    particles          = "LargeSparkParticle";
+   ambientFactor      = "0.1";
 };
 
 datablock ParticleData(LargeSmokeParticle)
@@ -620,6 +631,7 @@ datablock ParticleEmitterData(LargeSmokeEmitter)
    thetaMax         = 180;
    ejectionOffset   = 7;
    particles        = "LargeSmokeParticle";
+   ambientFactor    = "0.5";
 };
 
 datablock ParticleData(LargeDustParticle)
@@ -665,6 +677,7 @@ datablock ParticleEmitterData(LargeDustEmitter)
    overrideAdvances = false;
    lifetimeMS       = 500;
    particles        = "LargeDustParticle";
+   ambientFactor    = "0.4";
 };
 
 datablock ExplosionData(LargeSubExplosion1)

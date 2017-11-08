@@ -91,6 +91,8 @@ datablock ParticleEmitterData(UWGrenadeTrailEmitter)
    phiVariance      = 360;
    overrideAdvances = false;
    particles = "UWGrenadeTrailParticle";
+   blendStyle = "NORMAL";
+   ambientFactor = "0.2";
 };
 
 datablock ParticleData(GrenadeTrailParticle)
@@ -136,9 +138,10 @@ datablock ParticleEmitterData(GrenadeTrailEmitter)
 
    particles = "GrenadeTrailParticle";
    ejectionOffset = "0.1";
-   blendStyle = "NORMAL";
    orientParticles = "0";
    softParticles = "1";
+   blendStyle = "NORMAL";
+   ambientFactor = "0.65";
 };
 
 //-----------------------------------------------------------------------------

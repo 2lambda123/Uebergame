@@ -91,6 +91,7 @@ datablock ParticleEmitterData(RyderFireSmokeEmitter)
    originalName = "RyderFireSmokeEmitter";
    alignParticles = "0";
    orientParticles = "0";
+   ambientFactor = "0.5";
 };
 
 //-----------------------------------------------------------------------------

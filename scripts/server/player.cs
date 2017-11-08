@@ -530,8 +530,8 @@ datablock ParticleData(LightPuff)
    spinRandomMin        = -35.0;
    spinRandomMax        = 35.0;
    colors[0]     = "0.854902 0.854902 0.854902 1";
-   colors[1]     = "0.815686 0.803922 0.745098 0";
-   colors[2]     = "0.835294 0.835294 0.835294 1";
+   colors[1]     = "0.815686 0.803922 0.745098 0.3";
+   colors[2]     = "0.835294 0.835294 0.835294 0";
    sizes[0]      = "0.0976622";
    sizes[1]      = "0.799609";
    sizes[2]      = "1";
@@ -555,9 +555,9 @@ datablock ParticleEmitterData(LightPuffEmitter)
    phiReferenceVel  = 0;
    phiVariance      = 360;
    overrideAdvance = false;
-   useEmitterColors = true;
+   useEmitterColors = false;
    particles = "LightPuff";
-   ambientFactor = "0.5";
+   ambientFactor = "1";
    blendStyle = "NORMAL";
 };
 

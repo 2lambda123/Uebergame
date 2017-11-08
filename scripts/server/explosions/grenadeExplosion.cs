@@ -90,6 +90,8 @@ datablock ParticleEmitterData(GrenadeSplashEmitter)
    useEmitterSizes = "0";
    useEmitterColors = "0";
    overrideAdvances = "0";
+   blendStyle       = "Normal";
+   ambientFactor    = "0.5";
 };
 
 datablock SplashData(GrenadeSplash)
@@ -143,7 +145,8 @@ datablock ParticleEmitterData(GrenadeExplosionBubbleEmitter)
    phiVariance = 360;
    overrideAdvances = 0;
    particles = "GrenadeExplosionBubbleParticle";
-   blendStyle = "ADDITIVE";
+   blendStyle       = "NORMAL";
+   ambientFactor    = "0.3";
 };
 
 datablock ParticleData(UnderwaterGrenadeSparks)
@@ -181,6 +184,8 @@ datablock ParticleEmitterData(UnderwaterGrenadeSparkEmitter)
    orientParticles = true;
    lifetimeMS = 100;
    particles = "UnderwaterGrenadeSparks";
+   blendStyle       = "ADDITIVE";
+   ambientFactor    = "0.3";
 };
 
 datablock ParticleData(UnderwaterGrenadeExplosionSmoke)
@@ -225,18 +230,15 @@ datablock ParticleEmitterData(UnderwaterGrenadeExplosionSmokeEmitter)
 {
    ejectionPeriodMS = "2";
    periodVarianceMS = "1";
-
    ejectionVelocity = "10";
    velocityVariance = "6";
-
    thetaMin = 0.0;
    thetaMax = 90.0;
-
    lifetimeMS = "200";
-
+   lifetimeVarianceMS = "100";
    particles = "UnderwaterGrenadeExplosionSmoke";
    blendStyle = "NORMAL";
-   lifetimeVarianceMS = "100";
+   ambientFactor    = "0.45";
 };
 
 datablock ExplosionData(UnderwaterHandGrenadeSubExplosion1)
@@ -314,6 +316,7 @@ datablock ParticleEmitterData(GrenadeSparkEmitter)
    lifetimeMS       = 100;
    particles        = "GrenadeSparks";
    blendStyle = "ADDITIVE";
+   ambientFactor    = "0.2";
 };
 
 datablock ParticleData(GrenadeExplosionSmoke)
@@ -355,6 +358,8 @@ datablock ParticleEmitterData(GrenadeExplosionSmokeEmitter)
    thetaMax         = 180.0;
    lifetimeMS       = 250;
    particles        = "GrenadeExplosionSmoke";
+   blendStyle       = "NORMAL";
+   ambientFactor    = "0.65";
 };
 
 datablock ExplosionData(GrenadeSubExplosion1)
@@ -613,6 +618,7 @@ datablock ParticleEmitterData(FragSmokeEmitter)
    lifetimeVarianceMS = "0";
    useEmitterSizes = "0";
    useEmitterColors = "0";
+   ambientFactor = "0.5";
 };
 
 datablock ParticleData(FragSubSmoke)
@@ -667,6 +673,7 @@ datablock ParticleEmitterData(FragSubSmokeEmitter)
    lifetimeVarianceMS = "0";
    useEmitterSizes = "0";
    useEmitterColors = "0";
+   ambientFactor = "0.5";
 };
 
 datablock ExplosionData(FragSubExplosion1)

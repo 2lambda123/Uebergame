@@ -101,7 +101,8 @@ datablock ParticleEmitterData(UWBulletTrailEmitter)
    phiReferenceVel = 90;
    particles = "UWBulletTrailParticle";
    ejectionOffset = "0.1";
-   blendStyle = "ADDITIVE";
+   blendStyle = "NORMAL";
+   ambientFactor = "0.3";
 };
 
 datablock ParticleData(BulletTrailParticle)
@@ -149,6 +150,7 @@ datablock ParticleEmitterData(BulletTrailEmitter)
    particles = "BulletTrailParticle";
    ejectionOffset = "0.1";
    blendStyle = "NORMAL";
+   ambientFactor = "0.6";
 };
 
 //-----------------------------------------------------------------------------
@@ -189,6 +191,8 @@ datablock ParticleEmitterData(BulletSplashEmitter)
    orientParticles = true;
    lifetimeMS = 100;
    particles = "BulletSplashParticle";
+   blendStyle = "NORMAL";
+   ambientFactor = "0.25";
 };
 
 datablock SplashData(BulletSplash)
@@ -237,9 +241,10 @@ datablock ParticleEmitterData(BulletDustEmitter)
    thetaMin         = "60";
    thetaMax         = "100";
    lifetimeMS       = "0";
+   lifetimeVarianceMS = "0";
    particles = "BulletDust";
    blendStyle = "NORMAL";
-   lifetimeVarianceMS = "0";
+   ambientFactor = "0.75";
 };
 
 datablock ParticleData(BulletImpactSmokeParticle)
@@ -278,8 +283,9 @@ datablock ParticleEmitterData(BulletImpactSmoke)
    overrideAdvances = 0;
    particles = "BulletImpactSmokeParticle";
    lifetimeMS = 50;
-   blendStyle = "NORMAL";
    lifetimeVarianceMS = "40";
+   blendStyle = "NORMAL";
+   ambientFactor = "0.65";
 };
 
 datablock ParticleData(BulletSparks)
@@ -331,6 +337,7 @@ datablock ParticleEmitterData(BulletSparkEmitter)
    particles = "BulletSparks";
    lifetimeVarianceMS = "99";
    blendStyle = "ADDITIVE";
+   ambientFactor = "0.2";
 };
 
 datablock ExplosionData(BulletExplosion)
@@ -389,6 +396,8 @@ datablock ParticleEmitterData(BulletWaterMistEmitter)
    thetaMin         = 0.0;
    thetaMax         = 180.0;
    particles        = "BulletWaterMistParticle";
+   blendStyle       = "NORMAL";
+   ambientFactor    = "0.4";
 };
 
 datablock ParticleData(BulletWaterSplashParticle)
@@ -428,7 +437,8 @@ datablock ParticleEmitterData(BulletWaterSplashEmitter)
    orientParticles  = false;
    orientOnVelocity = false;
    particles        = "BulletWaterSplashParticle";
-   blendStyle = "ADDITIVE";
+   blendStyle       = "ADDITIVE";
+   ambientFactor    = "0.3";
 };
 
 datablock ParticleData(BulletWaterBubblesParticle)
@@ -471,7 +481,8 @@ datablock ParticleEmitterData(BulletWaterBubblesEmitter)
    orientParticles  = true;
    lifetimeMS       = "0";
    particles        = "BulletWaterBubblesParticle";
-   blendStyle = "ADDITIVE";
+   blendStyle       = "Normal";
+   ambientFactor    = "0.15";
 };
 
 datablock ExplosionData(BulletWaterExplosion)

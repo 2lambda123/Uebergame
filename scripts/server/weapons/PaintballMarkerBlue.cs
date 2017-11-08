@@ -100,7 +100,7 @@ datablock ParticleData(PaintballMarkerSmoke)
    colors[0]     = "0.996078 0.996078 0.996078 0.556";
    colors[1]     = "0.905882 0.905882 0.905882 0.456";
    colors[2]     = "0.8 0.8 0.8 0.307";
-   colors[3]     = "0.996078 0.996078 0.996078 0.245";
+   colors[3]     = "0.996078 0.996078 0.996078 0";
 
    sizes[0]      = "0.35";
    sizes[1]      = "0.595129";
@@ -124,7 +124,7 @@ datablock ParticleEmitterData(PaintballMarkerSmokeEmitter)
    thetaMax         = "0";
    lifetimeMS       = 250;
    particles = "PaintballMarkerSmoke";
-   ambientFactor = "0.5";
+   ambientFactor = "0.8";
    blendStyle = "NORMAL";
    softParticles = "0";
    originalName = "PaintballMarkerSmokeEmitter";
@@ -171,7 +171,7 @@ datablock ParticleEmitterData(PaintExplosionBlueEmitter)
    lifetimeMS       = 250;
    particles = "PaintDustBlue";
    blendStyle = "NORMAL";
-   ambientFactor = "0.5";
+   ambientFactor = "0.9";
 };
 //-----------------------------------------------------------------------------
 // Explosion
