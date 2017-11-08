@@ -6,9 +6,9 @@ singleton Material(Mat_weaponcrate_old_01)
    specular[0] = "0.5 0.5 0.5 1";
    specularPower[0] = "50";
    translucentBlendOp = "None";
-   diffuseMap[0] = "weapon_crate_old_01_D.dds";
-   normalMap[0] = "weapon_crate_old_01_N.dds";
-   specularMap[0] = "weapon_crate_old_01_S.dds";
+   diffuseMap[0] = "weaponcrate_old_01_D.dds";
+   normalMap[0] = "weaponcrate_old_01_N.dds";
+   specularMap[0] = "weaponcrate_old_01_S.dds";
    specular[2] = "1 1 1 1";
    showFootprints = "0";
 };
