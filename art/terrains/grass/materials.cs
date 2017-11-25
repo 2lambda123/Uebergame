@@ -135,7 +135,7 @@ new TerrainMaterial()
    detailSize = "5";
    normalMap = "art/terrains/grass/ter_grass_sparse_01_N";
    macroMap = "art/terrains/grass/ter_grass_sparse_01_M";
-   detailStrength = "1.2";
+   detailStrength = "1.4";
 };
 
 singleton Material(TerrainFX_ter_grass_tropic_01)    

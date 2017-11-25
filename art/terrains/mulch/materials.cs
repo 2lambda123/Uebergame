@@ -21,7 +21,7 @@ new TerrainMaterial()
    macroStrength = "0.5";
    internalName = "ter_mulch_dirt_01";
    macroMap = "art/terrains/mulch/ter_mulch_dirt_01_M";
-   detailStrength = "1.5";
+   detailStrength = "1.8";
    normalMap = "art/terrains/mulch/ter_mulch_dirt_01_N";
    parallaxScale = "0";
 };

@@ -24,4 +24,5 @@ new TerrainMaterial()
    macroDistance = "250";
    diffuseSize = "150";
    macroMap = "art/terrains/pavement/ter_pavement_largestone_01_B";
+   detailStrength = "1.2";
 };

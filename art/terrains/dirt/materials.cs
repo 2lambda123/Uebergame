@@ -160,6 +160,7 @@ new TerrainMaterial()
    macroStrength = "0.5";
    parallaxScale = "0.08";
    normalMap = "art/terrains/dirt/ter_dirt_gravel_04_N";
+   detailStrength = "1.5";
 };
 
 singleton Material(TerrainFX_ter_dirt_gravel_05)    

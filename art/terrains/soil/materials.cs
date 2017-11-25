@@ -25,6 +25,7 @@ new TerrainMaterial()
    parallaxScale = "0";
    macroStrength = "0.5";
    macroMap = "art/terrains/soil/ter_soil_dark_02_B";
+   detailStrength = "1.3";
 };
 
 singleton Material(TerrainFX_ter_soil_dark_02)    
@@ -81,5 +82,5 @@ new TerrainMaterial()
    macroMap = "art/terrains/soil/ter_soil_mixed_01_D";
    normalMap = "art/terrains/soil/ter_soil_mixed_01_N";
    macroStrength = "1";
-   detailStrength = "1.3";
+   detailStrength = "1.5";
 };

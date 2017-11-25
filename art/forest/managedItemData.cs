@@ -270,7 +270,7 @@ datablock TSForestItemData(thintree_01_b)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.3";
+   radius = "0.1";
 };
 
 datablock TSForestItemData(thintree_01_c)
@@ -282,7 +282,7 @@ datablock TSForestItemData(thintree_01_c)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.4";
+   radius = "0.2";
 };
 
 datablock TSForestItemData(thintree_01_a)
@@ -294,7 +294,7 @@ datablock TSForestItemData(thintree_01_a)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.3";
+   radius = "0.1";
 };
 
 datablock TSForestItemData(deadbush_01_a)

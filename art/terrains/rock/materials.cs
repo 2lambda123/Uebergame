@@ -65,6 +65,7 @@ new TerrainMaterial()
    useSideProjection = "0";
    macroMap = "art/terrains/rock/ter_rock_rough_02_M";
    macroStrength = "0.5";
+   detailStrength = "1.4";
 };
 
 new TerrainMaterial()

@@ -23,4 +23,5 @@ new TerrainMaterial()
    detailSize = "2";
    macroMap = "art/terrains/vegetation/ter_vegetation_hedge_01_M";
    normalMap = "art/terrains/vegetation/ter_vegetation_hedge_01_N";
+   detailStrength = "1.5";
 };

@@ -142,6 +142,7 @@ singleton Material(Mat_trail_dirt_01)
    materialTag0 = "RoadAndPath";
    translucent = "1";
    castShadows = "0";
+   translucentZWrite = "1";
 };
 
 singleton Material( Mat_ocean_wave_01 )

@@ -23,6 +23,7 @@ new TerrainMaterial()
    parallaxScale = "0";
    normalMap = "art/terrains/forest/ter_forest_dirt_01_N";
    macroMap = "art/terrains/forest/ter_forest_dirt_01_M";
+   detailStrength = "1.2";
 };
 
 singleton Material(TerrainFX_ter_forest_grass_01)    
@@ -69,7 +70,7 @@ new TerrainMaterial()
    diffuseMap = "art/terrains/forest/ter_forest_mixed_01_B";
    diffuseSize = "100";
    detailMap = "art/terrains/forest/ter_forest_mixed_01_D";
-   detailStrength = "1";
+   detailStrength = "1.2";
    detailDistance = "70";
    macroMap = "art/terrains/forest/ter_forest_mixed_01_M";
    macroSize = "45";
@@ -105,5 +106,5 @@ new TerrainMaterial()
    parallaxScale = "0";
    detailSize = "4";
    macroMap = "art/terrains/forest/ter_forest_plants_01_M";
-   detailStrength = "1.5";
+   detailStrength = "1.8";
 };
