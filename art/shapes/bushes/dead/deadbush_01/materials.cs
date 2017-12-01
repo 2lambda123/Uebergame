@@ -15,4 +15,5 @@ singleton Material(deadbush_01_a_deadbush_01)
    showFootprints = "0";
    materialTag0 = "shapes";
    materialTag1 = "bushes";
+   useAnisotropic[0] = "1";
 };

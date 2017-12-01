@@ -12,4 +12,5 @@ singleton Material(Mat_fern_01)
    alphaTest = "1";
    alphaRef = "80";
    specularMap[0] = "art/shapes/plants/ferns/fern_01/fern_01_D.dds";
+   useAnisotropic[0] = "1";
 };

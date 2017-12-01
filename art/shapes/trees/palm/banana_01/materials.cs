@@ -10,8 +10,8 @@ singleton Material(banana_01)
    normalMap[0] = "art/shapes/trees/palm/banana_01/banana_01_N.dds";
    specularMap[0] = "art/shapes/trees/palm/banana_01/banana_01_S.dds";
    accuScale[0] = "0.03125";
-   subSurface[0] = "1";
    alphaTest = "1";
    alphaRef = "128";
    showFootprints = "0";
+   useAnisotropic[0] = "1";
 };

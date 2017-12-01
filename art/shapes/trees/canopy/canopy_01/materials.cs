@@ -24,10 +24,10 @@ singleton Material(Mat_canopy_01_branch)
    diffuseMap[0] = "art/shapes/trees/canopy/canopy_01/canopy_01_branch_D.dds";
    normalMap[0] = "art/shapes/trees/canopy/canopy_01/canopy_01_branch_N.dds";
    specularMap[0] = "art/shapes/trees/canopy/canopy_01/canopy_01_branch_S.dds";
-   subSurface[0] = "1";
    alphaTest = "1";
    alphaRef = "110";
    showFootprints = "0";
+   useAnisotropic[0] = "1";
 };
 
 singleton Material(Mat_canopy_01_extras)
@@ -42,6 +42,7 @@ singleton Material(Mat_canopy_01_extras)
    specularMap[0] = "art/shapes/trees/canopy/canopy_01/canopy_01_extras_S.dds";
    alphaTest = "1";
    alphaRef = "10";
+   useAnisotropic[0] = "1";
 };
 
 singleton Material(Mat_canopy_01_LOD)
@@ -54,5 +55,4 @@ singleton Material(Mat_canopy_01_LOD)
    diffuseMap[0] = "art/shapes/trees/canopy/canopy_01/canopy_01_LOD.dds";
    alphaTest = "1";
    alphaRef = "110";
-   subSurface[0] = "1";
 };

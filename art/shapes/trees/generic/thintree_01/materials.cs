@@ -26,4 +26,5 @@ singleton Material(thintree_01_a_thintree_01_branch)
    alphaRef = "42";
    doubleSided = "1";
    showFootprints = "0";
+   useAnisotropic[0] = "1";
 };

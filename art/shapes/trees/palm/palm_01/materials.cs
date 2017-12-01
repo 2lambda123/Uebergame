@@ -13,8 +13,7 @@ singleton Material(Mat_palm_01_branch)
    alphaTest = "1";
    alphaRef = "64";
    showFootprints = "0";
-   useAnisotropic[0] = "1";
-   subSurface[0] = "1";
+   useAnisotropic[0] = "0";
 };
 
 singleton Material(Mat_palm_01_bark)
