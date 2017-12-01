@@ -28,7 +28,7 @@
 function toggleQuickChatHud( %val )
 {
    if ( %val )
-      canvas.pushdialog(QuickChatMenuHud);
+      Canvas.pushDialog(QuickChatMenuHud);
 }
 
 if( isObject(ChatMenuActionMapGroup) )

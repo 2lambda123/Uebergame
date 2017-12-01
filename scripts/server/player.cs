@@ -1653,6 +1653,9 @@ function Armor::onDisabled(%this, %player, %state)
    // Remove warning Gui in case the player was outside the mission area when he died
    //Canvas.popDialog (missionAreaWarningHud); //broken #fixit
    
+   // Close QuickChatMenuHud in case it is still open since it can no longer be closed if the player is dead
+   Canvas.popDialog(QuickChatMenuHud);
+   
    // Schedule corpse fade out
    %player.schedule( $CorpseTimeoutValue - 2000, "startFade", 2000, 0, true );
 
