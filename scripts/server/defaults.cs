@@ -30,7 +30,7 @@ $pref::Server::Name = "Uebergame server";
 $pref::Server::Info = "This is an Uebergame server.";
 
 // Text to appear on loading screen, multiple lines possible just add more varibles
-$pref::Server::Message0 = "Server Information";
+$pref::Server::Message0 = "Server Information:";
 $pref::Server::Message1 = "Welcome to the Uebergame server!";
 $pref::Server::Message2 = "Let the game begin.";
 
@@ -96,3 +96,4 @@ $pref::Server::MaxWeapons = 1; // 1-4
 $pref::Server::MaxSpecials = 0; // on/off
 $pref::Server::MaxGrenades = 1; // on/off
 $pref::Server::MaxMines = 0; // on/off
+$pref::Server::Hints = 1;

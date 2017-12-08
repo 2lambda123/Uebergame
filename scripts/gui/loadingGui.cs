@@ -56,6 +56,8 @@ function LoadingGui::reset(%this)
    LOAD_MissionType.setText("");
    LOAD_GameText.setText("");
    LOAD_ServerInfo.setText("");
+   LOAD_HintTitle.setText("");
+   LOAD_HintText.setText("");
    LoadingProgress.setValue(0);
    LoadingProgress.setText("WAITING FOR SERVER");
 
@@ -67,14 +69,13 @@ function LOAD_MessageVector::addLine(%this, %text)
    ChatHud::addLine(%this, %text);
 }
 
-//------------------------------------------------------------------------------
-// Before downloading a mission, the server transmits the mission
-// information through these messages.
-//------------------------------------------------------------------------------
+// Before downloading a mission, the server transmits the mission information through these messages.
 addMessageCallback('MsgLoadInfo', handleLoadInfoMessage);
 addMessageCallback('MsgLoadDescLine', handleLoadDescriptionMessage);
 addMessageCallback('MsgLoadRulesLine', handleLoadRulesLineMessage);
 addMessageCallback('MsgLoadServerInfoLine', handleLoadServerInfoMessage);
+addMessageCallback('MsgLoadHintTitleLine', handleLoadHintTitleMessage);
+addMessageCallback('MsgLoadHintTextLine', handleLoadHintTextMessage);
 addMessageCallback('MsgLoadInfoDone', handleLoadInfoDoneMessage);
 addMessageCallback('MsgLoadFailed', handleLoadFailedMessage);
 
@@ -144,6 +145,20 @@ function handleLoadServerInfoMessage(%msgType, %msgString, %line)
    %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
    // Use the bool TRUE to cause the text to reformat after each line being added.
    LOAD_ServerInfo.addtext( %text @ "\n\n", true );
+}
+
+function handleLoadHintTitleMessage(%msgType, %msgString, %line)
+{
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:22>" @ %line;
+   // Use the bool TRUE to cause the text to reformat after each line being added.
+   LOAD_HintTitle.addtext( %text @ "\n\n", true );
+}
+
+function handleLoadHintTextMessage(%msgType, %msgString, %line)
+{
+   %text = "<color:ffffff><shadowcolor:000000><shadow:2:2><font:ArialBold:18>" @ %line;
+   // Use the bool TRUE to cause the text to reformat after each line being added.
+   LOAD_HintText.addtext( %text @ "\n\n", true );
 }
 
 function handleLoadInfoDoneMessage(%msgType, %msgString)

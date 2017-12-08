@@ -34,6 +34,7 @@ function getRandomStartupText(%text)
    %list.add("30", "I see you");
    %list.add("31", "Boring startup screen");
    %list.add("32", "Replace me");
+   %list.add("33", "Game experience my change during online play");
    
    %random = getRandom(0, 32);
    %text = %list.getValue(%random);

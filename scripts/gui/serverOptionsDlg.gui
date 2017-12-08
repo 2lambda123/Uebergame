@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ServerOptionsDlg) {
    position = "0 0";
-   extent = "1920 1080";
+   extent = "1024 768";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -32,7 +32,7 @@
       anchorBottom = "0";
       anchorLeft = "1";
       anchorRight = "0";
-      position = "640 240";
+      position = "192 240";
       extent = "640 480";
       minExtent = "8 2";
       horizSizing = "center";
@@ -1282,6 +1282,26 @@
          visible = "1";
          active = "1";
          variable = "$pref::Server::DisallowVoteAdmin";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiCheckBoxCtrl() {
+         text = "Display loading screen tips";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         position = "455 148";
+         extent = "200 32";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiCheckBoxProfile";
+         visible = "1";
+         active = "1";
+         variable = "$pref::Server::Hints";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";
