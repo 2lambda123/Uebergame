@@ -83,6 +83,40 @@ singleton Material(Mat_wood_laminate_01)
    footstepSoundId = "0";
 };
 
+singleton Material(Mat_wood_pier_01_a)
+{
+   mapTo = "wood_pier_01_a";
+   materialTag0 = "wood";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   subSurfaceColor[0] = "1 0.2 0.2 1";
+   diffuseMap[0] = "art/textures/wood/wood_pier_01_a_D.dds";
+   normalMap[0] = "art/textures/wood/wood_pier_01_a_N.dds";
+   specularMap[0] = "art/textures/wood/wood_pier_01_a_S.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+};
+
+singleton Material(Mat_wood_pier_01_b)
+{
+   mapTo = "wood_pier_01_b";
+   materialTag0 = "wood";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   subSurfaceColor[0] = "1 0.2 0.2 1";
+   diffuseMap[0] = "art/textures/wood/wood_pier_01_b_D.dds";
+   normalMap[0] = "art/textures/wood/wood_pier_01_b_N.dds";
+   specularMap[0] = "art/textures/wood/wood_pier_01_b_S.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+};
+
 singleton Material(Mat_wood_planks_01)
 {
    mapTo = "wood_planks_01";
@@ -145,6 +179,23 @@ singleton Material(Mat_wood_planks_04)
    diffuseMap[0] = "art/textures/wood/wood_planks_04_D.dds";
    normalMap[0] = "art/textures/wood/wood_planks_04_N.dds";
    specularMap[0] = "art/textures/wood/wood_planks_04_S.dds";
+   useAnisotropic[0] = "1";
+   vertColor[0] = "1";
+   showFootprints = "0";
+   footstepSoundId = "0";
+};
+
+singleton Material(Mat_wood_planks_05)
+{
+   mapTo = "wood_planks_05";
+   materialTag0 = "wood";
+   specularPower[0] = "1";
+   pixelSpecular[0] = "0";
+   minnaertConstant[0] = "-1";
+   subSurfaceColor[0] = "1 0.2 0.2 1";
+   diffuseMap[0] = "art/textures/wood/wood_planks_05_D.dds";
+   normalMap[0] = "art/textures/wood/wood_planks_05_N.dds";
+   specularMap[0] = "art/textures/wood/wood_planks_05_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
    showFootprints = "0";

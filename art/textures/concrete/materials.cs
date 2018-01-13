@@ -46,7 +46,7 @@ singleton Material(Mat_concrete_mossy_01)
    minnaertConstant[0] = "-1";
    subSurfaceColor[0] = "1 0.2 0.2 1";
    diffuseMap[0] = "art/textures/concrete/concrete_mossy_01_D.dds";
-   normalMap[0] = "art/textures/concrete/concrete_mossy_01_N2.dds";
+   normalMap[0] = "art/textures/concrete/concrete_mossy_01_N.dds";
    specularMap[0] = "art/textures/concrete/concrete_mossy_01_S.dds";
    useAnisotropic[0] = "1";
    vertColor[0] = "1";
