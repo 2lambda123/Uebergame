@@ -822,7 +822,7 @@ datablock PlayerData(DefaultPlayerData : ArmorDamageScale)
    boundingBox = "0.65 0.75 1.85";
    crouchBoundingBox = "0.65 0.75 1.25";
    proneBoundingBox = "1 2.3 1";
-   swimBoundingBox = "1 2 2";
+   swimBoundingBox = "0.65 0.75 1.85";
 
    // Damage location details
    boxHeadPercentage       = 0.83;
