@@ -107,19 +107,19 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
    // prevent screen going blank and set loading screen only on first launch
    if ( $GameLaunched == 0 && $pref::Menu::Level ) // loading screen is only necessary for 3D menu
    {
-   Canvas.setContent("startupGui");    
-   %text = getRandomStartupText();
-	startupGuiText.setText(%text);
-   if ($pref::Menu::RandomBackgrounds)
-      startupGui.setBitmap ( getRandomBackground() );
-   Canvas.repaint();
-   $GameLaunched = 1;
+      Canvas.setContent("startupGui");    
+      %text = getRandomStartupText();
+      startupGuiText.setText(%text);
+      if ($pref::Menu::RandomBackgrounds)
+         startupGui.setBitmap ( getRandomBackground() );
+      Canvas.repaint();
+      $GameLaunched = 1;
    }
    else
    {
-   Canvas.setContent("backgroundGui");
-   Canvas.repaint();
-   $GameLaunched = 1;
+      Canvas.setContent("backgroundGui");
+      Canvas.repaint();
+      $GameLaunched = 1;
    } 
    
    if( !tge.createServer( %serverType, %level, %missionType ) )
@@ -129,7 +129,7 @@ function createAndConnectToLocalServer( %serverType, %level, %missionType )
    RootGroup.add( ServerConnection );
 
    %conn.setConnectArgs( getField($pref::Player, 0), getField($pref::Player, 1));
-   %conn.setJoinPassword( $Client::Password );
+   %conn.setJoinPassword( $pref::Server::Password ); // changed to the pref value instead of $Client::Password which locked people out of their own game
    
    %result = %conn.connectLocal();
    if( %result !$= "" )
