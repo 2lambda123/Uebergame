@@ -82,7 +82,7 @@
          tabHeight = "20";
          allowReorder = "0";
          defaultPage = "-1";
-         selectedPage = "5";
+         selectedPage = "1";
          frontTabPadding = "0";
          margin = "0 0 0 0";
          padding = "0 0 0 0";
@@ -988,13 +988,12 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "0";
+            visible = "1";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             tooltip = "Options for the High Definition Range Lighting postFX";
             hovertime = "1000";
             isContainer = "1";
-            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
@@ -1537,21 +1536,21 @@
                   canSave = "1";
                   canSaveDynamicFields = "0";
 
-                  new GuiCheckBoxCtrl(ppOptionsHDREffectsBlueShift) {
-                     text = " Enable Color Shift";
-                     groupNum = "-1";
-                     buttonType = "ToggleButton";
-                     useMouseEvents = "0";
-                     position = "11 4";
-                     extent = "117 24";
+                  new GuiSliderCtrl(ppOptionsHDREffectsBlueShift) {
+                     range = "0 2";
+                     ticks = "0";
+                     snap = "0";
+                     value = "0.2";
+                     position = "158 4";
+                     extent = "200 21";
                      minExtent = "8 2";
                      horizSizing = "right";
                      vertSizing = "bottom";
-                     profile = "GuiCheckBoxProfile";
+                     profile = "GuiSliderBoxProfile";
                      visible = "1";
                      active = "1";
                      tooltipProfile = "GuiToolTipProfile";
-                     tooltip = "Enables a scene tinting/Blue shift based on the color selected below.";
+                     tooltip = "Value : 1.60526";
                      hovertime = "1000";
                      isContainer = "0";
                      canSave = "1";
@@ -1560,6 +1559,7 @@
                   new GuiColorPickerCtrl(ppOptionsHDREffectsBlueShiftColorBlend) {
                      baseColor = "1 0 0.0235294 1";
                      pickColor = "0 0 0 1";
+                     useSRGB = "0";
                      selectorGap = "1";
                      displayMode = "BlendColor";
                      actionOnMove = "1";
@@ -1582,6 +1582,7 @@
                   new GuiColorPickerCtrl(ppOptionsHDREffectsBlueShiftColorBaseColor) {
                      baseColor = "1 0 0.0235294 1";
                      pickColor = "0 0 0 1";
+                     useSRGB = "0";
                      selectorGap = "1";
                      displayMode = "HorizColor";
                      actionOnMove = "1";
@@ -1598,6 +1599,29 @@
                      tooltip = "Select a color";
                      hovertime = "1000";
                      isContainer = "0";
+                     canSave = "1";
+                     canSaveDynamicFields = "0";
+                  };
+                  new GuiTextCtrl() {
+                     text = "Color Shift Intensity";
+                     maxLength = "1024";
+                     margin = "0 0 0 0";
+                     padding = "0 0 0 0";
+                     anchorTop = "1";
+                     anchorBottom = "0";
+                     anchorLeft = "1";
+                     anchorRight = "0";
+                     position = "10 4";
+                     extent = "129 20";
+                     minExtent = "8 2";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     profile = "GuiTextProfile";
+                     visible = "1";
+                     active = "1";
+                     tooltipProfile = "GuiToolTipProfile";
+                     hovertime = "1000";
+                     isContainer = "1";
                      canSave = "1";
                      canSaveDynamicFields = "0";
                   };
@@ -2461,12 +2485,13 @@
             horizSizing = "right";
             vertSizing = "bottom";
             profile = "GuiTabPageProfile";
-            visible = "1";
+            visible = "0";
             active = "1";
             tooltipProfile = "GuiToolTipProfile";
             tooltip = "Options for the SunBokeh postFX";
             hovertime = "1000";
             isContainer = "1";
+            hidden = "1";
             canSave = "1";
             canSaveDynamicFields = "0";
 
