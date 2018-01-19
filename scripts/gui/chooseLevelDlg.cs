@@ -110,7 +110,7 @@ function ChooseLevelDlgGoBtn::onMouseUp( %this )
    {
       activatePackage( "BootEditor" );
       ChooseLevelDlg.launchInEditor = false;
-     StartLevel( %mission, "SinglePlayer" );
+      StartLevel( %mission, "SinglePlayer" );
    }
    else
    {

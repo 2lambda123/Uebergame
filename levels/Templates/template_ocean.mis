@@ -24,7 +24,6 @@ new SimGroup(MissionGroup) {
          desc0 = "An infinite ocean empty template to start your level with";
          enabled = "1";
          levelName = "template_ocean";
-         MissionTypes = "";
    };
    new ScatterSky(theSky) {
       skyBrightness = "25";
@@ -140,7 +139,7 @@ new SimGroup(MissionGroup) {
       rippleDir[2] = "0.5 0.86";
       rippleSpeed[0] = "0.02";
       rippleSpeed[1] = "0.015";
-      rippleSpeed[2] = "0.01";
+      rippleSpeed[2] = "0.005";
       rippleTexScale[0] = "8 8";
       rippleTexScale[1] = "10 20";
       rippleTexScale[2] = "80 80";

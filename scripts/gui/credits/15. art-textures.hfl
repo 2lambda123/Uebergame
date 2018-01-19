@@ -5,6 +5,9 @@ asphalt_decay_01	CC0	Duion
 asphalt_floor_01	CC0	Duion
 asphalt_street_03	CC0	Duion
 
+atlas/
+atlas_gg_pacific_woods  MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
 bricks/
 bricks_cinder_01	CC0	Duion
 bricks_classic_01	CC0	Duion
@@ -59,6 +62,7 @@ marble_blotchy_01	CC0	Duion
 metal/
 metal_bare_01	CC0	Duion
 metal_corrugated_01	CC0	Duion
+metal_corrugated_02  MIT	Garagegames  Source:Pacific Demo, ported by Duion
 metal_floor_01	CC0	Duion
 metal_panels_01	CC0	Duion
 metal_panels_02	CC0	Duion
@@ -92,6 +96,7 @@ rock_spotted_01	CC0	Duion
 
 roof/
 roof_tar_01	CC0	Duion
+roof_thatch_01	CC0	Duion
 roof_tiles_01	CC0	Duion
 roof_tiles_02	CC0	Duion
 roof_tiles_03	CC0	Duion
@@ -117,6 +122,8 @@ wood_chipboard_02	CC0	Duion
 wood_dirty_01	CC0	Duion
 wood_dirty_02	CC0	Duion
 wood_laminate_01	CC0	Duion
+wood_pier_01_a  MIT	Garagegames  Source:Pacific Demo, ported by Duion
+wood_pier_01_b  MIT	Garagegames  Source:Pacific Demo, ported by Duion
 wood_planks_01	CC0	Duion
 wood_planks_02	CC0	Duion
 wood_planks_03	CC0	Duion

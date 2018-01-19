@@ -1,4 +1,4 @@
-Übergame v1.1.0.0
+Übergame v1.1.1.0
 =================
 
 Übergame is a free open source, realism like, multi-purpose,
@@ -31,6 +31,26 @@ https://github.com/Duion/Torque3D/tree/ueberengine-dev //latest development stat
 https://github.com/Duion/Torque3D/releases //quick access to all release builds
 
 
+Source for art:
+=================
+The source files for the art assets have been removed from the release package 
+since version 1.0.4.0, so in case you want the source files for the models, download
+an earlier package or go to:
+https://duion.com/art/3d-models //for the models
+https://duion.com/art/textures //for the textures
+
+I plan to rework all the assets source files and properly release them on the internet,
+but I'm behind the schedule and it is not complete yet.
+
+For derivative art assets from GarageGames based demo assets that were open sourced I created
+a repository where I upload my converted and updated versions of that:
+https://github.com/Duion/Pacific-remastered //For Pacific demo assets and assets that use parts of it.
+The Pacific assets are shipped with the game since version 1.0.8.0 and are actively used
+since version 1.1.0.0.
+
+Some assets source files may still be missing in any of those locations, so if you really really need
+them just ask me, then I can send you a messy version.
+
 Running dedicated servers:
 =================
 
@@ -49,7 +69,7 @@ automatically restart in case you want to run them long time and not care about 
 License:
 =================
 Copyright (c) 2012 GarageGames, LLC
-Copyright (c) 2016 Christian Femmer aka Duion
+Copyright (c) 2018 Christian Femmer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to

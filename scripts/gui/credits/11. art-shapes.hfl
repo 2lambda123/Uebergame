@@ -21,10 +21,17 @@ barriers/street/* 	CC0	Duion
 buildings/camouflage/
 camo_stand_01/* 	CC0	Duion
 
+buildings/huts/
+hut_beach_01/* 	CC0	Duion Info: Uses MIT licensed textures from textures folder
+hut_beach_02/* 	CC0	Duion Info: Uses MIT licensed textures from textures folder
+
+buildings/towers/lighthouses
+lighthouse_01.dts 	CC0	Duion
+
 bushes/dead/deadbush_01/
-deadbush_01_a 	CC0	Duion   Info: Only the mesh, not the texture
-deadbush_01_b 	CC0	Duion   Info: Only the mesh, not the texture
-deadbush_01_c 	CC0	Duion   Info: Only the mesh, not the texture
+deadbush_01_a 	CC0	Duion   Info: Uses MIT licensed textures from textures folder
+deadbush_01_b 	CC0	Duion   Info: Uses MIT licensed textures from textures folder
+deadbush_01_c 	CC0	Duion   Info: Uses MIT licensed textures from textures folder
 deadbush_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
 
 items/ammo/
@@ -38,22 +45,28 @@ suitcase_01_open 	CC0	Duion   Source: Original from Nobiax
 suitcase_01 	CC0	Duion   Source: Original from Nobiax
 
 items/health/
-medpack_01.dts 	CC0	Duion
 medpack_01 	CC0	Duion
 
 items/kit/*	MIT	Garagegames
 
+modules/walkways/
+pier_01/* 	CC0	Duion   Info: Uses MIT licensed textures from textures folder
+
 objectives/flag_stands/
-flag_stand_01.dts 	CC0	Duion
 flag_stand_01 	CC0	Duion
 
 objectives/flags/
-flag_01.dts 	CC0	Duion
 flag_01 	CC0	Duion
+
+plants/bigleaf/
+bigleaf_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
 
 plants/ferns/
 fern_01/* 	CC0	Duion
 fern_tropical_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
+
+plants/longleaf/
+longleaf_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion
 
 rocks/cliffs/cliffs_brown_01/* 	CC0	Duion
 
@@ -65,11 +78,11 @@ boulder.dts	MIT	Garagegames
 MossyRock02.png	MIT	Garagegames
 
 storage/barrels/metal/
-barrel_oil_01.dts 	CC0	Duion   Source: Original from Nobiax
 barrel_oil_01 	CC0	Duion   Source: Original from Nobiax
-barrel_oil_02.dts 	CC0	Duion   Source: Original from Nobiax
+barrel_oil_01 	CC0	Duion   Source: Original from Nobiax
+barrel_oil_02 	CC0	Duion   Source: Original from Nobiax
 barrel_oil_02_blue 	CC0	Duion   Source: Original from Nobiax
-barrel_oil_03.dts 	CC0	Duion
+barrel_oil_03	CC0	Duion
 barrel_oil_03 	CC0	Duion
 
 storage/barrels/plastic/
@@ -110,7 +123,7 @@ trees/fir/
 fir_01/* 	CC0	Duion
 
 trees/generic/
-thintree_01	MIT	Garagegames  Source:Pacific Demo, ported and redesigned by Duion
+thintree_01/*	MIT	Garagegames  Source:Pacific Demo, ported and redesigned by Duion
 
 trees/palm/
 banana_01/*	MIT	Garagegames  Source:Pacific Demo, ported by Duion

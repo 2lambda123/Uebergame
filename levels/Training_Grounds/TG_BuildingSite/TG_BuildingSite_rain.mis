@@ -28,7 +28,7 @@ new SimGroup(MissionGroup) {
          MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD";
    };
    new ScatterSky(Himmel) {
-      skyBrightness = "25";
+      skyBrightness = "30";
       sunSize = "1";
       colorizeAmount = "1";
       colorize = "0.152941 0.364706 0.552941 1";

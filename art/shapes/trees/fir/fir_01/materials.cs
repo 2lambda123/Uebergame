@@ -17,6 +17,8 @@ singleton Material(Mat_fir_01_branch)
    useAnisotropic[0] = "1";
    showFootprints = "0";
    specular[1] = "1 1 1 1";
+   accuEnabled[0] = "1";
+   accuDirection[0] = "-1";
 };
 
 singleton Material(Mat_fir_01_bark)
