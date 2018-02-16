@@ -211,7 +211,33 @@ function DEBUGGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 function DEBUGGame::startGame(%game)
 {
    CoreGame::startGame(%game);
-   centerPrintAll("\n<color:ff0000><font:Arial:12>HERE WE WILL SPAWN THE MONSTER", 5, 3);
+  
+   //Here we will be eventually spawning traps, NPCs and procedurally generate contents.
+   
+    //Actually spawn the dummy enemy
+   %npc = new AiPlayer()
+    {
+         dataBlock = PaintballPlayerData;
+         class = "BadBot";
+         client = -1;
+         team = 1; //Team 1 is assigned as we want it to be an enemy of the clients
+         isBot = true;
+         mMoveTolerance = 0.10;
+         allowWalk = true;
+         allowJump = true;
+         allowDrop = true;
+         allowSwim = true;
+         allowLedge = true;
+         allowClimb = true;
+         allowTeleport = true;
+    };
+    
+   //We could now arm the NPC and such.
+   
+   
+   %spawnPoint = %game.pickSpawnPoint(1); //we will change this to a custom spawning function
+   %npc.setPosition(%spawnPoint); 
+   %npc.tetherPoint = %spawnPoint;
 }
 
 function DEBUGGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
