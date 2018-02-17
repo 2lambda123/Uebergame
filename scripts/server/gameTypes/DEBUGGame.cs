@@ -22,7 +22,7 @@
 
 //--- GAME RULES BEGIN ---
 $HostGameRules["DEBUG", 0] = "Debug Game.";
-$HostGameRules["DEBUG", 1] = "Dummy rule!";
+$HostGameRules["DEBUG", 1] = "Kill the bad guy";
 //--- GAME RULES END ---
 
 $DM:TeamCount = 5; //start off DM team count at 5, so we can use 1-4 for teams
@@ -215,9 +215,9 @@ function DEBUGGame::startGame(%game)
    //Here we will be eventually spawning traps, NPCs and procedurally generate contents.
    
     //Actually spawn the dummy enemy
-   %npc = new AiPlayer()
+   %npc = new AiPlayer(EndBossExample)
     {
-         dataBlock = PaintballPlayerData;
+         dataBlock = DummyBossData;
          class = "BadBot";
          client = -1;
          team = 1; //Team 1 is assigned as we want it to be an enemy of the clients
@@ -231,7 +231,7 @@ function DEBUGGame::startGame(%game)
          allowClimb = true;
          allowTeleport = true;
     };
-    
+   MissionGroup.add(%npc);
    //We could now arm the NPC and such.
    
    
@@ -262,6 +262,11 @@ function DEBUGGame::onDeath(%game, %player, %client, %sourceObject, %sourceClien
    }
 
    messageClient(%client, 'MsgYourDeaths', "", %client.deaths + %client.suicides);
+   
+   
+   //Check winning, additional score and losing conditions here
+   if(%player.getID() == EndBossExample.getID()) //is it our boss who died?
+      %game.onFinalConditionMet();
 }
 
 function DEBUGGame::updateScore(%game, %cl)
@@ -284,15 +289,15 @@ function DEBUGGame::updateScore(%game, %cl)
 
 function DEBUGGame::checkScoreLimit(%game, %sourceClient)
 {
-   if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
-      %game.onGameScoreLimit();
+//    if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
+//       %game.onGameScoreLimit();
 }
 
 function DEBUGGame::onGameScoreLimit(%game)
 {
    //echo("DEBUGGame::onGameScoreLimit(" SPC %game.class SPC ")");
-   echo("Game over (scorelimit)");
-   %game.cycleGame();
+//    echo("Game over (scorelimit)");
+//    %game.cycleGame();
 }
 
 function DEBUGGame::endGame(%game)
@@ -336,4 +341,12 @@ function DEBUGGame::clientChooseSpawn(%game, %client, %option, %value)
          %msg = '\c2Drop zone: Castra.';
    }
    messageClient( %client, 'MsgDropZone', %msg );
+}
+
+
+function DEBUGGame::onFinalConditionMet(%game)
+{
+    //We might want to schedule this
+    centerPrintAll("\n<color:ff0000><font:Arial:24>The banana monster is dead, the world is a safer place now...", 5, 3);
+    %game.schedule(5000,"endGame");
 }
