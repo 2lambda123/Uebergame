@@ -26,10 +26,11 @@ $HostGameRules["DEBUG", 1] = "Kill the bad guy";
 //--- GAME RULES END ---
 
 $DM:TeamCount = 5; //start off DM team count at 5, so we can use 1-4 for teams
+$DEBUGGame::Matches = 3; //Number of matches we want
 
 package DEBUGGame
 {
-   function PBDMdummy()
+   function DEBUGGamedummy()
    {
       echo("All game types MUST have a package to activate! Even if all it contains is a dummy function.");
    }
@@ -208,12 +209,18 @@ function DEBUGGame::createPlayer(%game, %client, %spawnPoint, %respawn)
    %player.setSkinName( %client.skin );
 }
 
+
+//Here's the main function for the game mode, this is called once the map is created
 function DEBUGGame::startGame(%game)
 {
    CoreGame::startGame(%game);
   
    //Here we will be eventually spawning traps, NPCs and procedurally generate contents.
-   
+   %game.spawnDummyBoss();
+}
+
+function DEBUGGame::spawnDummyBoss(%game)
+{
     //Actually spawn the dummy enemy
    %npc = new AiPlayer(EndBossExample)
     {
@@ -234,16 +241,16 @@ function DEBUGGame::startGame(%game)
    MissionGroup.add(%npc);
    //We could now arm the NPC and such.
    
-   
    %spawnPoint = %game.pickSpawnPoint(1); //we will change this to a custom spawning function
    %npc.setPosition(%spawnPoint); 
    %npc.tetherPoint = %spawnPoint;
 }
 
+
 function DEBUGGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
    //LogEcho("DEBUGGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
-
+      
    // Call the default to handle the basics
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
 
@@ -256,17 +263,23 @@ function DEBUGGame::onDeath(%game, %player, %client, %sourceObject, %sourceClien
          if( %sourceClient.team != %client.team && %sourceClient != %client )
          {
             messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
-            %game.checkScoreLimit(%sourceClient);
+            //%game.checkScoreLimit(%sourceClient);
          }
       }
    }
-
+   
    messageClient(%client, 'MsgYourDeaths', "", %client.deaths + %client.suicides);
    
    
+   //Our winning condition is below
+   
    //Check winning, additional score and losing conditions here
    if(%player.getID() == EndBossExample.getID()) //is it our boss who died?
+   {
+      messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
       %game.onFinalConditionMet();
+      %player.schedule(2000,"delete");
+   }
 }
 
 function DEBUGGame::updateScore(%game, %cl)
@@ -286,31 +299,26 @@ function DEBUGGame::updateScore(%game, %cl)
    messageAll('MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
-
+/*
 function DEBUGGame::checkScoreLimit(%game, %sourceClient)
 {
-//    if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
-//       %game.onGameScoreLimit();
-}
-
+   if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
+      %game.onGameScoreLimit();
+}*/
+/*
 function DEBUGGame::onGameScoreLimit(%game)
 {
-   //echo("DEBUGGame::onGameScoreLimit(" SPC %game.class SPC ")");
-//    echo("Game over (scorelimit)");
-//    %game.cycleGame();
-}
+   echo("DEBUGGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   echo("Game over (scorelimit)");
+   %game.cycleGame();
+}*/
 
 function DEBUGGame::endGame(%game)
 {
    //LogEcho("DEBUGGame::endGame(" SPC %game SPC ")");
    if($Game::Running)
    {
-      %winner = getWord(%game.findTopScorer(), 0);
-      %tie = getWord(%game.findTopScorer(), 1);
-      if(%tie > 0)
-         messageAll( 'MsgGameOver', 'Match has ended in a tie.');
-      else
-         messageAll( 'MsgGameOver', 'Match has ended. %1 wins!', %winner.playerName );
+       messageAll( 'MsgGameOver', 'Match has ended.');
    }
    CoreGame::endGame(%game);
 }
@@ -346,7 +354,24 @@ function DEBUGGame::clientChooseSpawn(%game, %client, %option, %value)
 
 function DEBUGGame::onFinalConditionMet(%game)
 {
-    //We might want to schedule this
-    centerPrintAll("\n<color:ff0000><font:Arial:24>The banana monster is dead, the world is a safer place now...", 5, 3);
-    %game.schedule(5000,"endGame");
+    $DEBUGGame::Matches--; //decrease the matches number
+    
+    if($DEBUGGame::Matches > 0)
+    {
+        %game.schedule(6000,"rematch"); //here we can use a variable to count down and eventually respawn to have many matches
+        return;
+    }
+    else
+    {
+       centerPrintAll("\n<color:ff0000><font:Arial:24>The banana monster is dead, the world is a safer place now...", 5, 3);
+       %game.schedule(5000,"endGame");
+    }
+   
+}
+
+
+function DEBUGGame::rematch(%game)
+{
+    centerPrintAll("\n<color:ff0000><font:Arial:24>The banana monster is back!", 5, 3);
+    %game.spawnDummyBoss();
 }
