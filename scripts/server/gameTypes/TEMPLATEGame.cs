@@ -21,27 +21,27 @@
 //-----------------------------------------------------------------------------
 
 //--- GAME RULES BEGIN ---
-$HostGameRules["DEBUG", 0] = "Debug Game.";
-$HostGameRules["DEBUG", 1] = "Kill the bad guy";
+$HostGameRules["TEMPLATE", 0] = "Template Game.";
+$HostGameRules["TEMPLATE", 1] = "Kill the bad guy";
 //--- GAME RULES END ---
 
 $DM:TeamCount = 5; //start off DM team count at 5, so we can use 1-4 for teams
-$DEBUGGame::Matches = 3; //Number of matches we want
+$TEMPLATEGame::Matches = 3; //Number of matches we want
 
-package DEBUGGame
+package TEMPLATEGame
 {
-   function DEBUGGamedummy()
+   function TEMPLATEGamedummy()
    {
       echo("All game types MUST have a package to activate! Even if all it contains is a dummy function.");
    }
 };
 
-function DEBUGGame::setupGameParams(%game)
+function TEMPLATEGame::setupGameParams(%game)
 {
-   //LogEcho("DEBUGGame::setupGameParams(" SPC %game.class SPC ")");
+   //LogEcho("TEMPLATEGame::setupGameParams(" SPC %game.class SPC ")");
    
    %game.playerType = "DefaultPlayerData";
-   $gameMode = DEBUGGame;
+   $gameMode = TEMPLATEGame;
    
    CoreGame::setupGameParams(%game);
 
@@ -50,7 +50,7 @@ function DEBUGGame::setupGameParams(%game)
    %game.SCORE_PER_SUICIDE = -10;
 }
 
-function DEBUGGame::getTeamName(%game, %team)
+function TEMPLATEGame::getTeamName(%game, %team)
 {
    if(%team == 0)
       return addTaggedString($pref::Server::teamName[%team]);
@@ -58,9 +58,9 @@ function DEBUGGame::getTeamName(%game, %team)
       return 'Match';
 }
 
-function DEBUGGame::setUpTeams(%game)
+function TEMPLATEGame::setUpTeams(%game)
 {
-   //LogEcho("DEBUGGame::setUpTeams(" SPC %game.class SPC ")");
+   //LogEcho("TEMPLATEGame::setUpTeams(" SPC %game.class SPC ")");
    %group = nameToID("MissionGroup/Teams");
    if(%group == -1)
       return;
@@ -89,9 +89,9 @@ function DEBUGGame::setUpTeams(%game)
    %game.numTeams = 1;
 }
 
-function DEBUGGame::onClientEnterGame(%game, %client)
+function TEMPLATEGame::onClientEnterGame(%game, %client)
 {
-   //LogEcho("DEBUGGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("TEMPLATEGame::onClientEnterGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
 
    CoreGame::onClientEnterGame(%game, %client);
 
@@ -109,16 +109,16 @@ function DEBUGGame::onClientEnterGame(%game, %client)
    messageClient(%client, 'MsgYourKills', "", 0);
 }
 
-function DEBUGGame::onClientLeaveGame(%game, %client)
+function TEMPLATEGame::onClientLeaveGame(%game, %client)
 {
-   //LogEcho("DEBUGGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("TEMPLATEGame::onClientLeaveGame(" SPC %game.class @", "@ %client.nameBase SPC ")");
    %game.clearClientVaribles(%client);
    %game.updateScore(%client);
 
    CoreGame::onClientLeaveGame(%game, %client);
 }
 
-function DEBUGGame::getClientIndex(%game, %client)
+function TEMPLATEGame::getClientIndex(%game, %client)
 {
    // Find our index in the client group...
    for( %i = 0; %i < ClientGroup.getCount(); %i++ )
@@ -129,9 +129,9 @@ function DEBUGGame::getClientIndex(%game, %client)
    return -1;
 }
 
-function DEBUGGame::assignClientTeam(%game, %client)
+function TEMPLATEGame::assignClientTeam(%game, %client)
 {
-   //LogEcho("DEBUGGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
+   //LogEcho("TEMPLATEGame::assignClientTeam(" SPC %game.class @", "@ %client.nameBase SPC ")");
 
    // This is pretty simple, just get the clients index from the client group
    // plus four, we plus four because the index starts at zero.
@@ -160,9 +160,9 @@ function DEBUGGame::assignClientTeam(%game, %client)
    messageClient(%client, 'MsgYourKills', "", 0);
 }
 
-function DEBUGGame::clientChangeTeam(%game, %client, %team, %fromObs)
+function TEMPLATEGame::clientChangeTeam(%game, %client, %team, %fromObs)
 {
-   //LogEcho("DEBUGGame::clientChangeTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %fromObs SPC ")");
+   //LogEcho("TEMPLATEGame::clientChangeTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %fromObs SPC ")");
 
    if(%fromObs)
    {
@@ -171,9 +171,9 @@ function DEBUGGame::clientChangeTeam(%game, %client, %team, %fromObs)
    }
 }
 
-function DEBUGGame::clientJoinTeam(%game, %client, %team, %respawn)
+function TEMPLATEGame::clientJoinTeam(%game, %client, %team, %respawn)
 {
-   //LogEcho("DEBUGGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
+   //LogEcho("TEMPLATEGame::clientJoinTeam(" SPC %game.class @", "@ %client.nameBase @", "@ %team @", "@ %respawn SPC ")");
    if ( %team != 0 )
       return;
 
@@ -181,7 +181,7 @@ function DEBUGGame::clientJoinTeam(%game, %client, %team, %respawn)
    %game.spawnPlayer(%client, %respawn);
 }
 
-function DEBUGGame::createPlayer(%game, %client, %spawnPoint, %respawn)
+function TEMPLATEGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 {
    %player = CoreGame::createPlayer(%game, %client, %spawnPoint, %respawn);
    
@@ -211,7 +211,7 @@ function DEBUGGame::createPlayer(%game, %client, %spawnPoint, %respawn)
 
 
 //Here's the main function for the game mode, this is called once the map is created
-function DEBUGGame::startGame(%game)
+function TEMPLATEGame::startGame(%game)
 {
    CoreGame::startGame(%game);
   
@@ -219,7 +219,7 @@ function DEBUGGame::startGame(%game)
    %game.spawnDummyBoss();
 }
 
-function DEBUGGame::spawnDummyBoss(%game)
+function TEMPLATEGame::spawnDummyBoss(%game)
 {
     //Actually spawn the dummy enemy
    %npc = new AiPlayer(EndBossExample)
@@ -247,9 +247,9 @@ function DEBUGGame::spawnDummyBoss(%game)
 }
 
 
-function DEBUGGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
+function TEMPLATEGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
 {
-   //LogEcho("DEBUGGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+   //LogEcho("TEMPLATEGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
       
    // Call the default to handle the basics
    CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
@@ -282,9 +282,9 @@ function DEBUGGame::onDeath(%game, %player, %client, %sourceObject, %sourceClien
    }
 }
 
-function DEBUGGame::updateScore(%game, %cl)
+function TEMPLATEGame::updateScore(%game, %cl)
 {
-   //LogEcho("DEBUGGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
+   //LogEcho("TEMPLATEGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
    %killValue = %cl.kills * %game.SCORE_PER_KILL;
    %deathValue = %cl.deaths * %game.SCORE_PER_DEATH;
    %suicideValue = %cl.suicides * %game.SCORE_PER_SUICIDE;
@@ -300,22 +300,22 @@ function DEBUGGame::updateScore(%game, %cl)
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
 /*
-function DEBUGGame::checkScoreLimit(%game, %sourceClient)
+function TEMPLATEGame::checkScoreLimit(%game, %sourceClient)
 {
    if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
       %game.onGameScoreLimit();
 }*/
 /*
-function DEBUGGame::onGameScoreLimit(%game)
+function TEMPLATEGame::onGameScoreLimit(%game)
 {
-   echo("DEBUGGame::onGameScoreLimit(" SPC %game.class SPC ")");
+   echo("TEMPLATEGame::onGameScoreLimit(" SPC %game.class SPC ")");
    echo("Game over (scorelimit)");
    %game.cycleGame();
 }*/
 
-function DEBUGGame::endGame(%game)
+function TEMPLATEGame::endGame(%game)
 {
-   //LogEcho("DEBUGGame::endGame(" SPC %game SPC ")");
+   //LogEcho("TEMPLATEGame::endGame(" SPC %game SPC ")");
    if($Game::Running)
    {
        messageAll( 'MsgGameOver', 'Match has ended.');
@@ -323,20 +323,20 @@ function DEBUGGame::endGame(%game)
    CoreGame::endGame(%game);
 }
 
-function DEBUGGame::pushChooseTeamMenu(%game, %client)
+function TEMPLATEGame::pushChooseTeamMenu(%game, %client)
 {
    // This list MUST be sent in order so that it is sync with the clients drop down menu.
    %list = strupr($pref::Server::teamName[0] TAB "AUTOMATIC");
    commandToClient(%client, 'PushTeamMenu', addTaggedString(%list));
 }
 
-function DEBUGGame::pushChooseSpawnMenu(%game, %client)
+function TEMPLATEGame::pushChooseSpawnMenu(%game, %client)
 {
    %list = "Firebase";
    commandToClient( %client, 'PushSpawnMenu', %list );
 }
 
-function DEBUGGame::clientChooseSpawn(%game, %client, %option, %value)
+function TEMPLATEGame::clientChooseSpawn(%game, %client, %option, %value)
 {
    switch$ ( %option )
    {
@@ -352,11 +352,11 @@ function DEBUGGame::clientChooseSpawn(%game, %client, %option, %value)
 }
 
 
-function DEBUGGame::onFinalConditionMet(%game)
+function TEMPLATEGame::onFinalConditionMet(%game)
 {
-    $DEBUGGame::Matches--; //decrease the matches number
+    $TEMPLATEGame::Matches--; //decrease the matches number
     
-    if($DEBUGGame::Matches > 0)
+    if($TEMPLATEGame::Matches > 0)
     {
         %game.schedule(6000,"rematch"); //here we can use a variable to count down and eventually respawn to have many matches
         return;
@@ -370,7 +370,7 @@ function DEBUGGame::onFinalConditionMet(%game)
 }
 
 
-function DEBUGGame::rematch(%game)
+function TEMPLATEGame::rematch(%game)
 {
     centerPrintAll("\n<color:ff0000><font:Arial:24>The banana monster is back!", 5, 3);
     %game.spawnDummyBoss();
