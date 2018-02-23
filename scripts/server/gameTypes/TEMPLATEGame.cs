@@ -63,7 +63,7 @@ function TEMPLATEGame::setUpTeams(%game)
    //LogEcho("TEMPLATEGame::setUpTeams(" SPC %game.class SPC ")");
    %group = nameToID("MissionGroup/Teams");
    if(%group == -1)
-      return;
+      return
    
    // create a Team0 if it does not exist
    %team = nameToID("MissionGroup/Teams/Team0");
@@ -139,7 +139,7 @@ function TEMPLATEGame::assignClientTeam(%game, %client)
    // However, this may cause a problem if a gametype has more then x teams and we swicth to it..
    //%client.team = (%game.getClientIndex(%client) + 4);
 
-   %client.team = 0; //Assign each client to the same team, co-op mode
+   %client.team = 1; //Assign each client to the same team, co-op mode
    %client.lastTeam = %client.team;
 
    // Let everybody know this client joined the game
@@ -299,7 +299,7 @@ function TEMPLATEGame::spawnDummyBoss(%game)
          dataBlock = DummyBossData;
          class = "BadBot";
          client = -1;
-         team = 1; //Team 1 is assigned as we want it to be an enemy of the clients
+         team = -1; //Team 1 is assigned as we want it to be an enemy of the clients
          isBot = true;
          mMoveTolerance = 0.10;
          allowWalk = true;
