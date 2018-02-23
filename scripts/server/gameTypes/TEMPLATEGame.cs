@@ -209,79 +209,6 @@ function TEMPLATEGame::createPlayer(%game, %client, %spawnPoint, %respawn)
    %player.setSkinName( %client.skin );
 }
 
-
-//Here's the main function for the game mode, this is called once the map is created
-function TEMPLATEGame::startGame(%game)
-{
-   CoreGame::startGame(%game);
-  
-   //Here we will be eventually spawning traps, NPCs and procedurally generate contents.
-   %game.spawnDummyBoss();
-}
-
-function TEMPLATEGame::spawnDummyBoss(%game)
-{
-    //Actually spawn the dummy enemy
-   %npc = new AiPlayer(EndBossExample)
-    {
-         dataBlock = DummyBossData;
-         class = "BadBot";
-         client = -1;
-         team = 1; //Team 1 is assigned as we want it to be an enemy of the clients
-         isBot = true;
-         mMoveTolerance = 0.10;
-         allowWalk = true;
-         allowJump = true;
-         allowDrop = true;
-         allowSwim = true;
-         allowLedge = true;
-         allowClimb = true;
-         allowTeleport = true;
-    };
-   MissionGroup.add(%npc);
-   //We could now arm the NPC and such.
-   
-   %spawnPoint = %game.pickSpawnPoint(1); //we will change this to a custom spawning function
-   %npc.setPosition(%spawnPoint); 
-   %npc.tetherPoint = %spawnPoint;
-}
-
-
-function TEMPLATEGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
-{
-   //LogEcho("TEMPLATEGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
-      
-   // Call the default to handle the basics
-   CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
-
-   // Did a client controlled object kill this player?
-   if( isObject( %client ) )
-   {
-      // Did a client controlled object kill this player?
-      if( isObject( %sourceClient ) )
-      {
-         if( %sourceClient.team != %client.team && %sourceClient != %client )
-         {
-            messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
-            //%game.checkScoreLimit(%sourceClient);
-         }
-      }
-   }
-   
-   messageClient(%client, 'MsgYourDeaths', "", %client.deaths + %client.suicides);
-   
-   
-   //Our winning condition is below
-   
-   //Check winning, additional score and losing conditions here
-   if(%player.getID() == EndBossExample.getID()) //is it our boss who died?
-   {
-      messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
-      %game.onFinalConditionMet();
-      %player.schedule(2000,"delete");
-   }
-}
-
 function TEMPLATEGame::updateScore(%game, %cl)
 {
    //LogEcho("TEMPLATEGame::updateScore(" SPC %game.class @", "@ %cl.nameBase SPC ")");
@@ -299,7 +226,8 @@ function TEMPLATEGame::updateScore(%game, %cl)
    messageAll('MsgClientScoreChanged', "", %cl, %cl.score, %cl.kills, %cl.deaths, %cl.suicides, %cl.teamKills);
    messageClient(%cl, 'MsgYourScoreIs', "", %cl.score);
 }
-/*
+
+/* //This is left commented as the template game mode doesn't use a max score.
 function TEMPLATEGame::checkScoreLimit(%game, %sourceClient)
 {
    if ( %sourceClient.score >= $pref::Server::DMScoreLimit )
@@ -312,16 +240,6 @@ function TEMPLATEGame::onGameScoreLimit(%game)
    echo("Game over (scorelimit)");
    %game.cycleGame();
 }*/
-
-function TEMPLATEGame::endGame(%game)
-{
-   //LogEcho("TEMPLATEGame::endGame(" SPC %game SPC ")");
-   if($Game::Running)
-   {
-       messageAll( 'MsgGameOver', 'Match has ended.');
-   }
-   CoreGame::endGame(%game);
-}
 
 function TEMPLATEGame::pushChooseTeamMenu(%game, %client)
 {
@@ -352,6 +270,93 @@ function TEMPLATEGame::clientChooseSpawn(%game, %client, %option, %value)
 }
 
 
+/////////////// Most relevant functions for custom game mode /////////////////////////////////
+
+//Here's the main function for the game mode, this is called once the map is created
+function TEMPLATEGame::startGame(%game)
+{
+   CoreGame::startGame(%game);
+  
+   //Here we will be eventually spawning traps, NPCs and procedurally generate contents.
+   %game.spawnDummyBoss();
+}
+
+function TEMPLATEGame::endGame(%game)
+{
+   //LogEcho("TEMPLATEGame::endGame(" SPC %game SPC ")");
+   if($Game::Running)
+   {
+       messageAll( 'MsgGameOver', 'Match has ended.');
+   }
+   CoreGame::endGame(%game);
+}
+
+function TEMPLATEGame::spawnDummyBoss(%game)
+{
+    //Actually spawn the dummy enemy
+   %npc = new AiPlayer(EndBossExample)
+    {
+         dataBlock = DummyBossData;
+         class = "BadBot";
+         client = -1;
+         team = 1; //Team 1 is assigned as we want it to be an enemy of the clients
+         isBot = true;
+         mMoveTolerance = 0.10;
+         allowWalk = true;
+         allowJump = true;
+         allowDrop = true;
+         allowSwim = true;
+         allowLedge = true;
+         allowClimb = true;
+         allowTeleport = true;
+    };
+   MissionGroup.add(%npc);
+   //We could now arm the NPC and such.
+   
+   %spawnPoint = %game.pickSpawnPoint(1); //we will change this to a custom spawning function
+   %npc.setPosition(%spawnPoint); 
+   %npc.tetherPoint = %spawnPoint;
+}
+
+//This function is important to assign scores, check winning conditions and such.
+function TEMPLATEGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc)
+{
+   //LogEcho("TEMPLATEGame::onDeath(" SPC %game.class @", "@ %player.getClassName() @", "@ %client.nameBase @", "@ %sourceObject @", "@ %sourceClient @", "@ %damageType @", "@ %damLoc SPC ")");
+      
+   // Call the default to handle the basics
+   CoreGame::onDeath(%game, %player, %client, %sourceObject, %sourceClient, %damageType, %damLoc);
+
+   // Did a client controlled object kill this player?
+   if( isObject( %client ) ) //Note: this will always fail when %player.getID() == EndBossExample.getID() as it has no client.
+   {
+      // Did a client controlled object kill this player?
+      if( isObject( %sourceClient ) )
+      {
+         if( %sourceClient.team != %client.team && %sourceClient != %client )
+         {
+            messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
+            //%game.checkScoreLimit(%sourceClient);
+         }
+      }
+   }
+   
+   messageClient(%client, 'MsgYourDeaths', "", %client.deaths + %client.suicides);
+   
+   
+   //Our winning condition is below
+   
+   //Check winning, additional score and losing conditions here
+   if(%player.getID() == EndBossExample.getID()) //is it our boss who died?
+   {
+      %game.awardScoreKill(%sourceClient, %damageType);//our server-side object doesn't have a client, so the above isObject(%client) alsways failed in this case.
+      messageAll( 'MsgDeath', '%1 was killed by %2\c2 [%3]',"Banana boss", %sourceClient.playerName, $DamageText[%damageType] );
+      messageClient(%sourceClient, 'MsgYourKills', "", %sourceClient.kills);
+      %game.onFinalConditionMet();
+      %player.schedule(2000,"delete");
+   }
+}
+
+
 function TEMPLATEGame::onFinalConditionMet(%game)
 {
     $TEMPLATEGame::Matches--; //decrease the matches number
@@ -370,6 +375,7 @@ function TEMPLATEGame::onFinalConditionMet(%game)
 }
 
 
+//Get called by onFinalConditionMet() when $TEMPLATEGame::Matches > 0
 function TEMPLATEGame::rematch(%game)
 {
     centerPrintAll("\n<color:ff0000><font:Arial:24>The banana monster is back!", 5, 3);
