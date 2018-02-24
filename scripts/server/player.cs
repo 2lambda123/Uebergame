@@ -978,6 +978,42 @@ datablock PlayerData(PaintballPlayerData : DefaultPlayerData)
    switchTargetProbability = 0.3;
 };
 
+
+datablock PlayerData(DummyBossData : DefaultPlayerData)
+{
+   // stuff that transforms the default player into a paintballer
+   shapeFile = "art/shapes/trees/palm/banana_01/banana_01_a.dts";
+   shapeNameFP[0] = "";
+   boundingBox = "0.75 0.75 3.8";
+   crouchBoundingBox = "0.75 0.75 3.25";
+   renderFirstPerson = "1";
+   //fixes the head clipping, since the paintballer uses real first person
+   groundImpactMinSpeed    = "4.1";
+   groundImpactShakeFreq   = "3 3 3";
+   groundImpactShakeAmp    = "0.2 0.2 0.2";
+   groundImpactShakeDuration = "1";
+   groundImpactShakeFalloff = 10.0;
+   
+   maxInvRyder = "0";
+   
+   //BadBot AI settings
+   VisionRange = 90;
+   VisionFov = 120;
+   findItemRange = 30;
+   WaypointRange = 120;
+   WaypointFov = 90;
+   optimalRange["PaintballMarkerBlue"] = 10;
+   burstLength["PaintballMarkerBlue"] = 2000;
+   optimalRange["PaintballMarkerRed"] = 10;
+   burstLength["PaintballMarkerRed"] = 2000;
+   optimalRange["PaintballMarkerGreen"] = 10;
+   burstLength["PaintballMarkerGreen"] = 2000;
+   optimalRange["PaintballMarkerYellow"] = 10;
+   burstLength["PaintballMarkerYellow"] = 2000;
+   rangeTolerance = 5;
+   switchTargetProbability = 0.7;
+};
+
 //-----------------------------------------------------------------------------
 // SMS
 //            |Datablock|     |$SMS::ArmorName|     |Index|
