@@ -25,7 +25,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Training Level in the desert ruins by day";
          enabled = "1";
          levelName = "Training Grounds - Desert Ruins by day";
-         MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD";
+         MissionTypes = "DM PBDM TDM PBTDM RtF PBRtF MfD PBMfD Template";
    };
    new ScatterSky(Himmel) {
       skyBrightness = "15";
@@ -43,8 +43,8 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
-      staticRefreshFreq = "64";
-      dynamicRefreshFreq = "15";
+      staticRefreshFreq = "250";
+      dynamicRefreshFreq = "8";
       brightness = "0.9";
       flareType = "SunFlareExample2";
       flareScale = "1";
@@ -60,7 +60,7 @@ new SimGroup(MissionGroup) {
       shadowType = "PSSM";
       texSize = "512";
       overDarkFactor = "2000 1000 500 100";
-      shadowDistance = "400";
+      shadowDistance = "200";
       shadowSoftness = "0.15";
       numSplits = "4";
       logWeight = "0.91";

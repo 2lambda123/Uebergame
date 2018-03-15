@@ -43,8 +43,8 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "0";
       moonElevation = "45";
       castShadows = "1";
-      staticRefreshFreq = "64";
-      dynamicRefreshFreq = "15";
+      staticRefreshFreq = "66";
+      dynamicRefreshFreq = "8";
       brightness = "1";
       flareType = "NullLightFlare";
       flareScale = "1";
@@ -60,7 +60,7 @@ new SimGroup(MissionGroup) {
       shadowType = "PSSM";
       texSize = "512";
       overDarkFactor = "2000 1000 500 100";
-      shadowDistance = "400";
+      shadowDistance = "200";
       shadowSoftness = "0.15";
       numSplits = "4";
       logWeight = "0.91";
@@ -4880,8 +4880,8 @@ new SimGroup(MissionGroup) {
          color = "0.996078 0.964706 0.772549 1";
          brightness = "1";
          castShadows = "0";
-         staticRefreshFreq = "16";
-         dynamicRefreshFreq = "15";
+         staticRefreshFreq = "66";
+         dynamicRefreshFreq = "8";
          priority = "2";
          animate = "0";
          animationPeriod = "1";
@@ -4913,8 +4913,8 @@ new SimGroup(MissionGroup) {
          color = "0.996078 0.964706 0.772549 1";
          brightness = "1";
          castShadows = "0";
-         staticRefreshFreq = "16";
-         dynamicRefreshFreq = "15";
+         staticRefreshFreq = "66";
+         dynamicRefreshFreq = "8";
          priority = "3";
          animate = "0";
          animationPeriod = "1";
@@ -4946,8 +4946,8 @@ new SimGroup(MissionGroup) {
          color = "0.996078 0.964706 0.772549 1";
          brightness = "1";
          castShadows = "0";
-         staticRefreshFreq = "16";
-         dynamicRefreshFreq = "15";
+         staticRefreshFreq = "66";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "0";
          animationPeriod = "1";
@@ -4979,8 +4979,8 @@ new SimGroup(MissionGroup) {
          color = "0.996078 0.964706 0.772549 1";
          brightness = "1";
          castShadows = "0";
-         staticRefreshFreq = "16";
-         dynamicRefreshFreq = "15";
+         staticRefreshFreq = "66";
+         dynamicRefreshFreq = "8";
          priority = "4";
          animate = "0";
          animationPeriod = "1";
@@ -5011,7 +5011,7 @@ new SimGroup(MissionGroup) {
          brightness = "0.3";
          castShadows = "0";
          staticRefreshFreq = "250";
-         dynamicRefreshFreq = "15";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "1";
          animationPeriod = "1";
@@ -5021,7 +5021,7 @@ new SimGroup(MissionGroup) {
          shadowType = "DualParaboloidSinglePass";
          texSize = "512";
          overDarkFactor = "2000 1000 500 100";
-         shadowDistance = "400";
+         shadowDistance = "200";
          shadowSoftness = "0.15";
          numSplits = "1";
          logWeight = "0.91";
@@ -5042,7 +5042,7 @@ new SimGroup(MissionGroup) {
          brightness = "0.3";
          castShadows = "0";
          staticRefreshFreq = "250";
-         dynamicRefreshFreq = "15";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "1";
          animationPeriod = "1";
@@ -5052,7 +5052,7 @@ new SimGroup(MissionGroup) {
          shadowType = "DualParaboloidSinglePass";
          texSize = "512";
          overDarkFactor = "2000 1000 500 100";
-         shadowDistance = "400";
+         shadowDistance = "200";
          shadowSoftness = "0.15";
          numSplits = "1";
          logWeight = "0.91";
@@ -5073,7 +5073,7 @@ new SimGroup(MissionGroup) {
          brightness = "0.3";
          castShadows = "0";
          staticRefreshFreq = "250";
-         dynamicRefreshFreq = "15";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "1";
          animationPeriod = "1";
@@ -5083,7 +5083,7 @@ new SimGroup(MissionGroup) {
          shadowType = "DualParaboloidSinglePass";
          texSize = "512";
          overDarkFactor = "2000 1000 500 100";
-         shadowDistance = "400";
+         shadowDistance = "200";
          shadowSoftness = "0.15";
          numSplits = "1";
          logWeight = "0.91";
@@ -5104,7 +5104,7 @@ new SimGroup(MissionGroup) {
          brightness = "0.3";
          castShadows = "0";
          staticRefreshFreq = "250";
-         dynamicRefreshFreq = "15";
+         dynamicRefreshFreq = "8";
          priority = "1";
          animate = "1";
          animationPeriod = "1";
@@ -5114,7 +5114,7 @@ new SimGroup(MissionGroup) {
          shadowType = "DualParaboloidSinglePass";
          texSize = "512";
          overDarkFactor = "2000 1000 500 100";
-         shadowDistance = "400";
+         shadowDistance = "200";
          shadowSoftness = "0.15";
          numSplits = "1";
          logWeight = "0.91";

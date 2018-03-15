@@ -42,7 +42,7 @@ new SimGroup(MissionGroup) {
       ambient = "0.66 0.66 0.66 1";
       brightness = "1";
       castShadows = "1";
-      staticRefreshFreq = "250";
+      staticRefreshFreq = "66";
       dynamicRefreshFreq = "8";
       coronaEnabled = "1";
       coronaScale = "0.5";
@@ -53,7 +53,7 @@ new SimGroup(MissionGroup) {
       shadowType = "PSSM";
       texSize = "1024";
       overDarkFactor = "3000 2000 1000 250";
-      shadowDistance = "400";
+      shadowDistance = "200";
       shadowSoftness = "0.25";
       numSplits = "4";
       logWeight = "0.96";

@@ -41,7 +41,7 @@ new SimGroup(MissionGroup) {
       moonAzimuth = "140";
       moonElevation = "33";
       castShadows = "1";
-      staticRefreshFreq = "250";
+      staticRefreshFreq = "66";
       dynamicRefreshFreq = "8";
       brightness = "1";
       flareType = "SunFlareExample2";
@@ -58,7 +58,7 @@ new SimGroup(MissionGroup) {
       shadowType = "PSSM";
       texSize = "512";
       overDarkFactor = "2000 1000 500 500";
-      shadowDistance = "400";
+      shadowDistance = "200";
       shadowSoftness = "0.2";
       numSplits = "4";
       logWeight = "0.92";
