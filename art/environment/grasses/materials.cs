@@ -79,16 +79,6 @@ singleton Material(Mat_groundcover_grass_03_tall)
    doubleSided = "1";
 };
 
-singleton Material(Mat_groundcover_J_Grass02)
-{
-   mapTo = "groundcover_J_Grass02";
-   diffuseMap[0] = "art/environment/grasses/J_Grass02_dry.dds";
-   materialTag0 = "groundcover";
-   alphaTest = "1";
-   alphaRef = "60";
-   doubleSided = "1";
-};
-
 singleton Material(Mat_groundcover_grass_tropic_01)
 {
    mapTo = "groundcover_grass_tropic_01";

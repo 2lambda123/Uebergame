@@ -168,7 +168,7 @@ new SimGroup(MissionGroup) {
       canSaveDynamicFields = "1";
 
       new GroundCover(drygrass) {
-         Material = "Mat_groundcover_J_Grass02";
+         Material = "Mat_groundcover_grass_01_dry";
          radius = "100";
          dissolveRadius = "80";
          reflectScale = "0.25";
