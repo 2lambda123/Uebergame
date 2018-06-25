@@ -2936,7 +2936,7 @@ function ShapeEdDetails::onToggleImposter( %this, %useImposter )
       %bbPolarSteps = 0;
       %bbDetailLevel = 0;
       %bbDimension = 128;
-      %bbIncludePoles = 0;
+      %bbIncludePoles = 1;
       %bbPolarAngle = 0;
 
       // Add a new imposter detail level to the shape
