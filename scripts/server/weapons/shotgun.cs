@@ -68,7 +68,7 @@ datablock ProjectileData( ShotgunProjectile )
 {
    projectileShapeName = "";
    //sound               = "";
-   directDamage        = 12;
+   directDamage        = 13;
    radiusDamage        = 0;
    damageRadius        = 0;
    areaImpulse         = 0.5;
@@ -186,7 +186,7 @@ datablock ShapeBaseImageData(ShotgunWeaponImage)
    projectile = ShotgunProjectile;
    underWaterProjectile = ShotgunUnderWaterProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.023;
+   projectileSpread = 0.02;
    projectileNum = 8;
 
    altProjectile = GrenadeLauncherProjectile;
@@ -389,7 +389,7 @@ datablock ShapeBaseImageData( ShotgunIronSightImage : ShotgunWeaponImage )
    eyeOffset = "-0.16 0 0.05";
    eyeRotation = "0.574892 0.0910342 0.813149 4.72198";
 
-   projectileSpread = 0.018;
+   projectileSpread = 0.016;
    parentImage = "ShotgunWeaponImage";
 
    // Called when the weapon is first mounted and there is ammo.
