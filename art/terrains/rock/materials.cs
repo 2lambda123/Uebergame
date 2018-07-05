@@ -125,6 +125,52 @@ new TerrainMaterial()
    useSideProjection = "1";
 };
 
+singleton Material(TerrainFX_ter_rock_rugged_02)    
+{    
+   mapTo = "ter_rock_rugged_02_B";    
+   footstepSoundId = "0";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Rock";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_rugged_02_B";
+   internalName = "ter_rock_rugged_02";
+   diffuseSize = "180";
+   macroSize = "36";
+   macroStrength = "0.6";
+   detailDistance = "100";
+   detailMap = "art/terrains/rock/ter_rock_rugged_02_D";
+   parallaxScale = "0";
+   useSideProjection = "0";
+   detailStrength = "0.9";
+   detailSize = "5";
+   macroMap = "art/terrains/rock/ter_rock_rugged_02_D";
+   normalMap = "art/terrains/rock/ter_rock_rugged_02_N";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_rugged_02_B";
+   internalName = "ter_rock_rugged_02_side";
+   diffuseSize = "180";
+   macroSize = "36";
+   macroStrength = "0.8";
+   detailDistance = "100";
+   detailMap = "art/terrains/rock/ter_rock_rugged_02_D";
+   parallaxScale = "0";
+   useSideProjection = "1";
+   detailStrength = "0.9";
+   detailSize = "5";
+   macroMap = "art/terrains/rock/ter_rock_rugged_02_D";
+   normalMap = "art/terrains/rock/ter_rock_rugged_02_N";
+};
+
 singleton Material(TerrainFX_ter_rock_shale_01)    
 {    
    mapTo = "ter_rock_shale_01_B";    
@@ -168,6 +214,97 @@ new TerrainMaterial()
    parallaxScale = "0.1";
    useSideProjection = "1";
    macroMap = "art/terrains/rock/ter_rock_shale_01_M";
+};
+
+singleton Material(TerrainFX_ter_rock_shale_02)    
+{    
+   mapTo = "ter_rock_shale_02_B";    
+   footstepSoundId = "0";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Rock";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_shale_02_B";
+   detailMap = "art/terrains/rock/ter_rock_shale_02_D";
+   detailDistance = "100";
+   internalName = "ter_rock_shale_02";
+   diffuseSize = "512";
+   detailSize = "6";
+   macroSize = "55";
+   macroStrength = "0.6";
+   parallaxScale = "0";
+   useSideProjection = "0";
+   detailStrength = "0.7";
+   macroMap = "art/terrains/rock/ter_rock_shale_02_D";
+   normalMap = "art/terrains/rock/ter_rock_shale_02_N";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_shale_02_B";
+   detailMap = "art/terrains/rock/ter_rock_shale_02_D";
+   detailDistance = "100";
+   internalName = "ter_rock_shale_02_side";
+   diffuseSize = "250";
+   detailSize = "4";
+   macroSize = "20";
+   macroStrength = "0.7";
+   normalMap = "art/terrains/rock/ter_rock_shale_02_N";
+   parallaxScale = "0.1";
+   useSideProjection = "1";
+   macroMap = "art/terrains/rock/ter_rock_shale_02_M";
+};
+
+singleton Material(TerrainFX_ter_rock_shale_03)    
+{    
+   mapTo = "ter_rock_shale_03_B";    
+   footstepSoundId = "0";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Rock";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_shale_03_B";
+   detailMap = "art/terrains/rock/ter_rock_shale_03_D";
+   detailDistance = "100";
+   internalName = "ter_rock_shale_03";
+   diffuseSize = "200";
+   detailSize = "5";
+   macroSize = "52";
+   macroStrength = "0.7";
+   parallaxScale = "0";
+   useSideProjection = "0";
+   detailStrength = "0.6";
+   macroMap = "art/terrains/rock/ter_rock_shale_03_M";
+   macroDistance = "500";
+   normalMap = "art/terrains/rock/ter_rock_shale_03_N";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/rock/ter_rock_shale_03_B";
+   detailMap = "art/terrains/rock/ter_rock_shale_03_D";
+   detailDistance = "100";
+   internalName = "ter_rock_shale_03_side";
+   diffuseSize = "250";
+   detailSize = "4";
+   macroSize = "20";
+   macroStrength = "0.7";
+   normalMap = "art/terrains/rock/ter_rock_shale_03_N";
+   parallaxScale = "0.1";
+   useSideProjection = "1";
+   macroMap = "art/terrains/rock/ter_rock_shale_03_M";
 };
 
 singleton Material(TerrainFX_ter_rock_spotted_01)    

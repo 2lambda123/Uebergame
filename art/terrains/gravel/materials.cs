@@ -1,3 +1,31 @@
+singleton Material(TerrainFX_ter_gravel_overgrown_01)    
+{    
+   mapTo = "ter_gravel_overgrown_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "1";    
+   showFootprints = "1";   
+   materialTag0 = "Terrain_Gravel";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/gravel/ter_gravel_overgrown_01_B";
+   diffuseSize = "512";
+   detailMap = "art/terrains/gravel/ter_gravel_overgrown_01_D";
+   detailDistance = "100";
+   macroSize = "22";
+   internalName = "ter_gravel_overgrown_01";
+   detailSize = "5";
+   macroStrength = "0.35";
+   parallaxScale = "0";
+   detailStrength = "0.7";
+   macroMap = "art/terrains/gravel/ter_gravel_overgrown_01_D";
+   normalMap = "art/terrains/gravel/ter_gravel_overgrown_01_N";
+};
+
 singleton Material(TerrainFX_ter_gravel_plain_01)    
 {    
    mapTo = "ter_gravel_plain_01_B";    

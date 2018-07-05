@@ -138,6 +138,34 @@ new TerrainMaterial()
    detailStrength = "1.4";
 };
 
+singleton Material(TerrainFX_ter_grass_sparse_02)    
+{    
+   mapTo = "ter_grass_sparse_02_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Grass";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/grass/ter_grass_sparse_02_B";
+   detailMap = "art/terrains/grass/ter_grass_sparse_02_D";
+   internalName = "ter_grass_sparse_02";
+   diffuseSize = "512";
+   detailDistance = "100";
+   macroSize = "38";
+   macroStrength = "0.6";
+   parallaxScale = "0";
+   detailSize = "5";
+   detailStrength = "1";
+   macroMap = "art/terrains/grass/ter_grass_sparse_02_M";
+   normalMap = "art/terrains/grass/ter_grass_sparse_02_N";
+};
+
 singleton Material(TerrainFX_ter_grass_tropic_01)    
 {    
    mapTo = "ter_grass_tropic_01_B";    

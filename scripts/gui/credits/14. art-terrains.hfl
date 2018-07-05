@@ -16,6 +16,7 @@ ter_dirt_gravel_04	CC0	Duion
 ter_dirt_gravel_05	CC0	Duion
 
 forest/
+ter_forest_conifer_01	CC0	Duion
 ter_forest_dirt_01	CC0	Duion
 ter_forest_grass_01	CC0	Duion
 ter_forest_mixed_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
@@ -27,8 +28,10 @@ ter_grass_flowers_02	CC0	Duion
 ter_grass_lush_01	CC0	Duion
 ter_grass_short_01	CC0	Duion
 ter_grass_sparse_01	CC0	Duion
+ter_grass_sparse_02	CC0	Duion
 
 gravel/
+ter_gravel_overgrown_01	CC0	Duion
 ter_gravel_plain_01	CC0	Duion
 ter_gravel_rough_01	CC0	Duion
 ter_gravel_sparse_01	CC0	Duion
@@ -44,7 +47,10 @@ ter_rock_ocean_01	MIT	Garagegames  Source:Pacific Demo, ported by Duion
 ter_rock_rough_01	CC0	Duion
 ter_rock_rough_02	CC0	Duion
 ter_rock_rugged_01	CC0	Duion
+ter_rock_rugged_02	CC0	Duion
 ter_rock_shale_01	CC0	Duion
+ter_rock_shale_02	CC0	Duion
+ter_rock_shale_03	CC0	Duion
 ter_rock_spotted_01	CC0	Duion
 
 rubble/

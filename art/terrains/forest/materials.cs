@@ -1,3 +1,31 @@
+singleton Material(TerrainFX_ter_forest_conifer_01)    
+{    
+   mapTo = "ter_forest_conifer_01_B";    
+   footstepSoundId = "1";    
+   terrainMaterials = "1";    
+   ShowDust = "0";    
+   showFootprints = "0";   
+   materialTag0 = "Terrain_Forest";    
+   specularPower[0] = "1";  
+   impactSoundId = "0";
+};
+
+new TerrainMaterial()
+{
+   diffuseMap = "art/terrains/forest/ter_forest_conifer_01_B";
+   diffuseSize = "256";
+   detailMap = "art/terrains/forest/ter_forest_conifer_01_D";
+   detailDistance = "100";
+   macroSize = "22";
+   internalName = "ter_forest_conifer_01";
+   detailSize = "5";
+   macroStrength = "0.5";
+   parallaxScale = "0";
+   detailStrength = "1";
+   macroMap = "art/terrains/forest/ter_forest_conifer_01_M";
+   normalMap = "art/terrains/forest/ter_forest_conifer_01_N";
+};
+
 singleton Material(TerrainFX_ter_forest_dirt_01)    
 {    
    mapTo = "ter_forest_dirt_01_B";    
