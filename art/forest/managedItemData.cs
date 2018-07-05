@@ -394,3 +394,84 @@ datablock TSForestItemData(longleaf_01_a)
    detailAmp = "0.03";
    detailFreq = "0.06";
 };
+
+datablock TSForestItemData(cedar_01_5m_a)
+{
+   internalName = "cedar_01_5m_a";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_5m_a.dts";
+   radius = "0.5";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_8m_a)
+{
+   internalName = "cedar_01_8m_a";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_8m_a.dts";
+   radius = "0.8";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_8m_b)
+{
+   internalName = "cedar_01_8m_b";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_8m_b.dts";
+   radius = "0.8";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_12m_a)
+{
+   internalName = "cedar_01_12m_a";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_12m_a.dts";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_12m_b)
+{
+   internalName = "cedar_01_12m_b";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_12m_b.dts";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_15m_a)
+{
+   internalName = "cedar_01_15m_a";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_15m_a.dts";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_15m_b)
+{
+   internalName = "cedar_01_15m_b";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_15m_b.dts";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_2m_a)
+{
+   internalName = "cedar_01_2m_a";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_2m_a.dts";
+   radius = "0.3";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(cedar_01_12m_a_dead)
+{
+   internalName = "cedar_01_12m_a_dead";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_12m_a_dead.dts";
+   windScale = "0";
+};
+
+datablock TSForestItemData(cedar_01_15m_a_dead)
+{
+   internalName = "cedar_01_15m_a_dead";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_15m_a_dead.dts";
+   windScale = "0";
+};
+
+datablock TSForestItemData(cedar_01_stump_a)
+{
+   internalName = "cedar_01_stump_a";
+   shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_stump_a.dts";
+   windScale = "0";
+};
