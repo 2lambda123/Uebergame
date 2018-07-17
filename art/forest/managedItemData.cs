@@ -475,3 +475,41 @@ datablock TSForestItemData(cedar_01_stump_a)
    shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_stump_a.dts";
    windScale = "0";
 };
+
+datablock TSForestItemData(poplar_01_15m_a)
+{
+   internalName = "poplar_01_15m_a";
+   shapeFile = "art/shapes/trees/poplar/poplar_01/poplar_01_15m_a.dts";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(poplar_01_15m_b)
+{
+   internalName = "poplar_01_15m_b";
+   shapeFile = "art/shapes/trees/poplar/poplar_01/poplar_01_15m_b.dts";
+   windScale = "0.5";
+};
+
+datablock TSForestItemData(poplar_01_6m_a)
+{
+   internalName = "poplar_01_6m_a";
+   shapeFile = "art/shapes/trees/poplar/poplar_01/poplar_01_6m_a.dts";
+   windScale = "0.5";
+   radius = "0.65";
+};
+
+datablock TSForestItemData(poplar_01_12m_a)
+{
+   internalName = "poplar_01_12m_a";
+   shapeFile = "art/shapes/trees/poplar/poplar_01/poplar_01_12m_a.dts";
+   windScale = "0.5";
+   radius = "0.8";
+};
+
+datablock TSForestItemData(poplar_01_4m_a)
+{
+   internalName = "poplar_01_4m_a";
+   shapeFile = "art/shapes/trees/poplar/poplar_01/poplar_01_4m_a.dts";
+   windScale = "0.5";
+   radius = "0.5";
+};
