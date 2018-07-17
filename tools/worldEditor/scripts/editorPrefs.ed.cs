@@ -33,7 +33,7 @@ EditorSettings.setDefaultValue(  "displayType",             $EditTsCtrl::Display
 EditorSettings.setDefaultValue(  "orthoFOV",                "50" );
 EditorSettings.setDefaultValue(  "orthoShowGrid",           "1" );
 EditorSettings.setDefaultValue(  "currentEditor",           "WorldEditorInspectorPlugin" );
-EditorSettings.setDefaultValue(  "newLevelFile",            "tools/levels/Construct.mis" );
+EditorSettings.setDefaultValue(  "newLevelFile",            "levels/Templates/template_construct.mis" );
 EditorSettings.setDefaultValue(  "newGameObjectDir",        "scripts/server/gameObjects" );
 
 if( isFile( "C:/Program Files/Torsion/torsion.exe" ) )
