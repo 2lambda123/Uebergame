@@ -55,7 +55,7 @@ new SimGroup(MissionGroup) {
       shadowType = "PSSM";
       texSize = "512";
       overDarkFactor = "3000 2000 1000 250";
-      shadowDistance = "200";
+      shadowDistance = "400";
       shadowSoftness = "0.25";
       numSplits = "4";
       logWeight = "0.96";
