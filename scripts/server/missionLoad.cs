@@ -238,8 +238,19 @@ function Torque::loadMissionStage2(%this, %missionFile, %missionType, %isFirstMi
    // Add the aiPlayer bots and aiClients
    if ( $pref::Server::AiCount > 0 && !$UsingMainMenuLevel )
    {
-      //addAiPlayers( $pref::Server::AiCount );
-      connectBots( $pref::Server::AiCount );
+      if ($pref::Server::AiCountRandomize) // Allows to connect a randomized amount of bots
+      {
+         %minimumAiCount = $pref::Server::AiCountMinimum;
+         %randomAiCount = getRandom ( %minimumAiCount, $pref::Server::AiCount );   
+            if ( %randomAiCount < 0 )
+               %randomAiCount = 0;
+            
+         connectBots( %randomAiCount );
+      }
+      else
+      {
+         connectBots( $pref::Server::AiCount );
+      }
    }
 
    $LoadingMission = false;

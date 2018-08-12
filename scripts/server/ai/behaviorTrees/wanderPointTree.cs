@@ -39,7 +39,7 @@ new Root(WanderPointTree) {
       
             new RandomWait() {
                waitMinMs = "1000";
-               waitMaxMs = "15000";
+               waitMaxMs = "30000";
                internalName = "WaitForSignal timeout";
                canSave = "1";
                canSaveDynamicFields = "1";

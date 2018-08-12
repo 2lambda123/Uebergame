@@ -56,6 +56,8 @@ $pref::Server::SuperAdminPassword = "changemetoo";
 // Misc server settings.
 $pref::Server::BadWordFilter = 1;
 $pref::Server::AiCount = 0;
+$pref::Server::AiCountRandomize = 0:
+$pref::Server::AiCountMinimum = 1;
 $pref::Server::BaseSacking = 1;
 $pref::Server::ConnectLog = 0;
 $pref::Server::MissionFile = "levels/TG_DesertRuins/TG_DesertRuins_day.mis";

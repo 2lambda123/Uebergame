@@ -39,6 +39,7 @@ function ServerOptionsDlg::onWake(%this)
    SOP_RtFScoreLimit.setValue( $pref::Server::RtFScoreLimit );
    SOP_MfDScoreLimit.setValue( $pref::Server::MfDScoreLimit );
    SOP_MaxWeapons.setValue( $pref::Server::MaxWeapons );
+   SOP_MinAiCount.setValue( $pref::Server::AiCountMinimum );
 }
 
 function ServerOptionsDlg::onSleep(%this)
@@ -88,6 +89,9 @@ function ServerOptionsDlg::onSleep(%this)
   
    if ( checkIsNumber( SOP_MaxWeapons.getValue() ) )
       $pref::Server::MaxWeapons = SOP_MaxWeapons.getValue();
+   
+   if ( isCleanNumber( SOP_MinAiCount.getValue() ) ) // can be negative value
+      $pref::Server::AiCountMinimum = SOP_MinAiCount.getValue();
 }
 
 function checkIsNumber(%string)
