@@ -13,7 +13,7 @@ new SimGroup(MissionGroup) {
       fogDensity = "0.0005";
       fogDensityOffset = "40";
       fogAtmosphereHeight = "200";
-      canvasClearColor = "145 227 254 255";
+      canvasClearColor = "145 145 145 255";
       ambientLightBlendPhase = "1";
       ambientLightBlendCurve = "0 0 -1 -1";
       advancedLightmapSupport = "0";
@@ -24,7 +24,7 @@ new SimGroup(MissionGroup) {
          desc0 = "Battle Grounds - Riverside Park";
          enabled = "1";
          levelName = "Battle Grounds - Riverside Park";
-         MissionTypes = "DM PBDM TDM PBTDM MfD PBMfD";
+         MissionTypes = "BRDM BRPBDM BRTDM BRPBTDM";
    };
    new ScatterSky(theSky) {
       skyBrightness = "25";
@@ -190,8 +190,8 @@ new SimGroup(MissionGroup) {
          outdoorWeight = "1";
          isAIControlled = "0";
          dataBlock = "SpawnSphereMarker";
-         position = "313 87.4904 64.1587";
-         rotation = "1 0 0 20";
+         position = "348.454 511.321 63.342";
+         rotation = "0.0203437 -0.232529 0.972377 189.725";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
@@ -8206,7 +8206,7 @@ new SimGroup(MissionGroup) {
          renderNormals = "0";
          forceDetail = "-1";
          position = "143.923 418.372 32.8839";
-         rotation = "-0.780576 -0.422257 -0.46087 99.0011";
+         rotation = "-0.780576 -0.422257 -0.46087 99.0012";
          scale = "1 1 1";
          canSave = "1";
          canSaveDynamicFields = "1";
