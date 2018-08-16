@@ -27,7 +27,7 @@
 datablock SFXProfile(RyderFireSound)
 {
    filename = "art/sound/weapons/V_22P_01.wav";
-   description = AudioClose3D;
+   description = AudioBulletFire;
    preload = true;
 };
 

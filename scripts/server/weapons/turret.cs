@@ -60,7 +60,7 @@ datablock SFXProfile(TurretThrown)
 datablock SFXProfile(TurretFireSound)
 {
    filename = "art/sound/weapons/turret/wpn_turret_fire";
-   description = AudioClose3D;
+   description = AudioBulletFire;
    preload = true;
 };
 

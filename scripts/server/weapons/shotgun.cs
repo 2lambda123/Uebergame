@@ -27,7 +27,7 @@
 datablock SFXProfile(ShotgunFireSound)
 {
    filename = "art/sound/weapons/shotgun_fire";
-   description = AudioClose3D;
+   description = AudioBulletFire;
    preload = true;
 };
 

@@ -26,14 +26,14 @@
 datablock SFXProfile(LurkerFireSound)
 {
    filename = "art/sound/weapons/D_32P_01_loop.wav";
-   description = AudioClose3D;
+   description = AudioBulletFire;
    preload = true;
 };
 
 datablock SFXProfile(LurkerFireStopSound)
 {
    filename = "art/sound/weapons/D_32P_01_end.wav";
-   description = AudioClose3D;
+   description = AudioBulletFire;
    preload = true;
 };
 

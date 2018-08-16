@@ -27,7 +27,7 @@
  datablock SFXProfile(BulletImpactSound)
 {
    filename = "art/sound/weapons/ricochet/bullet_ricochet_01";
-   description = BulletImpactDesc;
+   description = AudioBulletImpact;
    preload = true;
 };
 
@@ -36,7 +36,7 @@ datablock SFXPlayList(BulletImpactSoundList)
    random = "StrictRandom";
    loopMode = "Single";
    numSlotsToPlay = "1";
-   description = "BulletImpactDesc";
+   description = "AudioBulletImpact";
    track[0] = "BulletImpactSound";
    pitchScaleVariance[0] = "-0.2 0.2";
    track[1] = "BulletImpactSound";

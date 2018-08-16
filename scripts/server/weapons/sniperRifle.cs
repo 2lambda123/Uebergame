@@ -27,7 +27,7 @@
 datablock SFXProfile(SniperFireSound)
 {
    filename = "art/sound/weapons/sniper_fire";
-   description = BulletFireDesc;
+   description = AudioBulletFire;
    preload = true;
 };
 

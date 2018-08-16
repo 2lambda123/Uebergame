@@ -30,22 +30,14 @@
 singleton SFXDescription( AudioDefault3D : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 20.0;
+   ReferenceDistance = 5.0;
    MaxDistance       = 100.0;
-};
-
-singleton SFXDescription( AudioSoft3D : AudioEffect )
-{
-   is3D              = true;
-   ReferenceDistance = 20.0;
-   MaxDistance       = 100.0;
-   volume = 0.4;
 };
 
 singleton SFXDescription( AudioClose3D : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 5.0;
+   ReferenceDistance = 2.0;
    MaxDistance       = 50.0;
    priority = "1";
 };
@@ -53,30 +45,34 @@ singleton SFXDescription( AudioClose3D : AudioEffect )
 singleton SFXDescription( AudioClosest3D : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 5.0;
+   ReferenceDistance = 2.0;
    MaxDistance       = 20.0;
    priority = "1";
 };
 
-singleton SFXDescription(BulletFireDesc : AudioEffect )
+singleton SFXDescription( AudioBulletFire : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 10.0;
-   MaxDistance       = 60.0;
+   ReferenceDistance = 2.0;
+   MaxDistance       = 70.0;
+   priority = "1";
+   volume = 0.8;
 };
 
-singleton SFXDescription(BulletImpactDesc : AudioEffect )
+singleton SFXDescription(AudioBulletImpact : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 5.0;
-   MaxDistance       = 20.0;
+   ReferenceDistance = 1.0;
+   MaxDistance       = 25.0;
+   priority = "2";
 };
 
 singleton SFXDescription(AudioGrenadeImpact : AudioEffect )
 {
    is3D              = true;
-   ReferenceDistance = 15.0;
+   ReferenceDistance = 10.0;
    MaxDistance       = 70.0;
+   volume = 0.8;
 };
 
 //-----------------------------------------------------------------------------
