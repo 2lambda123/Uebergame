@@ -25,6 +25,7 @@
 // Game rules:
 $HostGameRules["BRDM", 0] = "Eliminate the competition.";
 $HostGameRules["BRDM", 1] = "Player with the best kill to death ratio wins!";
+$HostGameRules["BRDM", 2] = "Pre-pre-alpha version of the new Battle Royale game mode, which means it is just regular Deathmatch for now.";
 
 $DM:TeamCount = 5; // start off DM team count at 5, so we can use 1-4 for teams
 

@@ -25,6 +25,7 @@
 //--- GAME RULES BEGIN ---
 $HostGameRules["BRTDM", 0] = "Kill the enemy and don't get killed.";
 $HostGameRules["BRTDM", 1] = "Team with the most kills wins!";
+$HostGameRules["BRTDM", 2] = "Pre-pre-alpha version of the new Battle Royale game mode, which means it is just regular Team Deathmatch for now.";
 //--- GAME RULES END ---
 
 package BRTDMGame
@@ -84,7 +85,13 @@ function BRTDMGame::setUpTeams(%game)
       %dropSet = new SimSet("TeamDrops" @ %game.numTeams);
       MissionCleanup.add(%dropSet);
       //echo("DROPSET CREATED: " @ %dropSet);
-      %spawns = nameToID("MissionGroup/Teams/team" @ %game.numTeams @ "/SpawnSpheres" @ %game.numTeams);
+      
+      %spawns1 = nameToID("MissionGroup/Teams/Team1/SpawnSpheres1");
+      if (%spawns1.getCount() == 0) // Check if Spawnspheres for Team1 etc have been created, if not use Deathmatch spawns
+         %spawns = nameToID("MissionGroup/Teams/Team0/SpawnSpheres0");   
+      else
+         %spawns = nameToID("MissionGroup/Teams/Team" @ %game.numTeams @ "/SpawnSpheres" @ %game.numTeams);         
+      
       if ( %spawns != -1 )
       {
          %count = %spawns.getCount();
