@@ -95,7 +95,11 @@ function AIConnection::onConnect(%client, %name)
    {
    case "DMGame":
       %client.setBotFav( %client.getRandomLoadout() );
+   case "BRDMGame":
+      %client.setBotFav( %client.getRandomLoadout() );      
    case "TDMGame":
+      %client.setBotFav( %client.getRandomLoadout() );
+   case "BRTDMGame":
       %client.setBotFav( %client.getRandomLoadout() );
    case "RtFGame":
       %client.setBotFav( %client.getRandomLoadout() );
@@ -103,7 +107,11 @@ function AIConnection::onConnect(%client, %name)
       %client.setBotFav( %client.getRandomLoadout() );
    case "PBDMGame":
       %client.setBotFav( %client.getRandomLoadout2() );
+   case "BRPBDMGame":
+      %client.setBotFav( %client.getRandomLoadout2() );
    case "PBTDMGame":
+      %client.setBotFav( %client.getRandomLoadout2() );
+   case "BRPBTDMGame":
       %client.setBotFav( %client.getRandomLoadout2() );
    case "PBRtFGame":
       %client.setBotFav( %client.getRandomLoadout2() );

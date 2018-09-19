@@ -86,8 +86,126 @@ function objectiveHud::configure(%this, %gameType)
          %this.add(%this.yourKills);
          %this.add(%this.deathsLabel);
          %this.add(%this.yourDeaths);
+         
+      case "BRDMGame":
+         %this.scoreLabel = new GuiTextCtrl() {
+            profile = "ObjTextTeamLeftProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "30 25";
+            extent = "50 16";
+            visible = "1";
+            text = "SCORE";
+         };
+         %this.yourScore = new GuiTextCtrl() {
+            profile = "ObjTextTeamCenterProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "120 25";
+            extent = "30 16";
+            visible = "1";
+         };
+         %this.killsLabel = new GuiTextCtrl() {
+            profile = "ObjTextTeamLeftProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "30 45";
+            extent = "50 16";
+            visible = "1";
+            text = "KILLS";
+         };
+         %this.yourKills = new GuiTextCtrl() {
+            profile = "ObjTextTeamCenterProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "120 45";
+            extent = "30 16";
+            visible = "1";
+         };
+         %this.deathsLabel = new GuiTextCtrl() {
+            profile = "ObjTextTeamLeftProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "195 35";
+            extent = "50 16";
+            visible = "1";
+            text = "DEATHS";
+         };
+         %this.yourDeaths = new GuiTextCtrl() {
+            profile = "ObjTextTeamCenterProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "260 35";
+            extent = "30 16";
+            visible = "1";
+         };
+         %this.add(%this.scoreLabel);
+         %this.add(%this.yourScore);
+         %this.add(%this.killsLabel);
+         %this.add(%this.yourKills);
+         %this.add(%this.deathsLabel);
+         %this.add(%this.yourDeaths);
 		 
-	 case "PBDMGame":
+	   case "PBDMGame":
+         %this.scoreLabel = new GuiTextCtrl() {
+            profile = "ObjTextTeamLeftProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "30 25";
+            extent = "50 16";
+            visible = "1";
+            text = "SCORE";
+         };
+         %this.yourScore = new GuiTextCtrl() {
+            profile = "ObjTextTeamCenterProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "120 25";
+            extent = "30 16";
+            visible = "1";
+         };
+         %this.killsLabel = new GuiTextCtrl() {
+            profile = "ObjTextTeamLeftProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "30 45";
+            extent = "50 16";
+            visible = "1";
+            text = "KILLS";
+         };
+         %this.yourKills = new GuiTextCtrl() {
+            profile = "ObjTextTeamCenterProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "120 45";
+            extent = "30 16";
+            visible = "1";
+         };
+         %this.deathsLabel = new GuiTextCtrl() {
+            profile = "ObjTextTeamLeftProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "195 35";
+            extent = "50 16";
+            visible = "1";
+            text = "DEATHS";
+         };
+         %this.yourDeaths = new GuiTextCtrl() {
+            profile = "ObjTextTeamCenterProfile";
+            horizSizing = "relative";
+            vertSizing = "relative";
+            position = "260 35";
+            extent = "30 16";
+            visible = "1";
+         };
+         %this.add(%this.scoreLabel);
+         %this.add(%this.yourScore);
+         %this.add(%this.killsLabel);
+         %this.add(%this.yourKills);
+         %this.add(%this.deathsLabel);
+         %this.add(%this.yourDeaths);
+         
+	   case "BRPBDMGame":
          %this.scoreLabel = new GuiTextCtrl() {
             profile = "ObjTextTeamLeftProfile";
             horizSizing = "relative";
@@ -221,8 +339,160 @@ function objectiveHud::configure(%this, %gameType)
             %this.add(%this.deathsLabel[%i]);
             %this.add(%this.deaths[%i]);
          }
+         
+      case "BRTDMGame":
+         %this.teamName[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "30 25";
+		extent = "70 16";
+		visible = "1";
+         };
+         %this.teamName[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "30 45";
+		extent = "70 16";
+		visible = "1";
+         };
+         %this.teamScore[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "120 25";
+		extent = "25 16";
+		visible = "1";
+         };
+         %this.teamScore[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "120 45";
+		extent = "25 16";
+		visible = "1";
+         };
+         %this.deathsLabel[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "165 25";
+		extent = "70 16";
+		visible = "1";
+		text = "Deaths:";
+         };
+         %this.deathsLabel[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "165 45";
+		extent = "70 16";
+		visible = "1";
+		text = "Deaths:";
+         };
+         %this.deaths[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "245 25";
+		extent = "43 16";
+		visible = "1";
+         };
+         %this.deaths[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "245 45";
+		extent = "43 16";
+		visible = "1";
+         };
+
+         for(%i = 1; %i <= 2; %i++)
+         {
+            %this.add(%this.teamName[%i]);
+            %this.add(%this.teamScore[%i]);
+            %this.add(%this.deathsLabel[%i]);
+            %this.add(%this.deaths[%i]);
+         }
 
 		case "PBTDMGame":
+         %this.teamName[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "30 25";
+		extent = "70 16";
+		visible = "1";
+         };
+         %this.teamName[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "30 45";
+		extent = "70 16";
+		visible = "1";
+         };
+         %this.teamScore[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "120 25";
+		extent = "25 16";
+		visible = "1";
+         };
+         %this.teamScore[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "120 45";
+		extent = "25 16";
+		visible = "1";
+         };
+         %this.deathsLabel[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "165 25";
+		extent = "70 16";
+		visible = "1";
+		text = "Deaths:";
+         };
+         %this.deathsLabel[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "165 45";
+		extent = "70 16";
+		visible = "1";
+		text = "Deaths:";
+         };
+         %this.deaths[1] = new GuiTextCtrl() {
+		profile = "ObjTextTeamLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "245 25";
+		extent = "43 16";
+		visible = "1";
+         };
+         %this.deaths[2] = new GuiTextCtrl() {
+		profile = "ObjTextLeftProfile";
+		horizSizing = "relative";
+		vertSizing = "relative";
+		position = "245 45";
+		extent = "43 16";
+		visible = "1";
+         };
+
+         for(%i = 1; %i <= 2; %i++)
+         {
+            %this.add(%this.teamName[%i]);
+            %this.add(%this.teamScore[%i]);
+            %this.add(%this.deathsLabel[%i]);
+            %this.add(%this.deaths[%i]);
+         }
+         
+		case "BRPBTDMGame":
          %this.teamName[1] = new GuiTextCtrl() {
 		profile = "ObjTextTeamLeftProfile";
 		horizSizing = "relative";

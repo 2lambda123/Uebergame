@@ -1,7 +1,7 @@
 //--- OBJECT WRITE BEGIN ---
 %guiContent = new GuiControl(ChooseLevelDlg) {
    position = "0 0";
-   extent = "1920 1080";
+   extent = "1024 768";
    minExtent = "8 8";
    horizSizing = "width";
    vertSizing = "height";
@@ -47,7 +47,7 @@
       canSaveDynamicFields = "0";
 
       new GuiBitmapCtrl(CL_Preview) {
-         bitmap = "levels/Training_Grounds/TG_Fields/TG_Fields_rain_preview";
+         bitmap = "levels/Battle_Grounds/BG_RiversidePark/BG_RiversidePark_preview";
          color = "255 255 255 255";
          wrap = "0";
          position = "4 22";
@@ -157,24 +157,6 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiBitmapCtrl() {
-         bitmap = "art/gui/hudfillx3.png";
-         color = "255 255 255 255";
-         wrap = "0";
-         position = "475 112";
-         extent = "84 20";
-         minExtent = "8 2";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "GuiDefaultProfile";
-         visible = "1";
-         active = "1";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
       new GuiTextCtrl() {
          text = "Mission Type:";
          maxLength = "255";
@@ -254,8 +236,8 @@
             columns = "0";
             fitParentWidth = "1";
             clipColumnText = "1";
-            position = "1 -73";
-            extent = "259 504";
+            position = "1 1";
+            extent = "259 18";
             minExtent = "8 8";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -290,26 +272,6 @@
          canSave = "1";
          canSaveDynamicFields = "0";
       };
-      new GuiCheckBoxCtrl(CL_isMultiplayer) {
-         text = "Multiplayer";
-         groupNum = "-1";
-         buttonType = "ToggleButton";
-         useMouseEvents = "0";
-         position = "476 110";
-         extent = "120 25";
-         minExtent = "8 8";
-         horizSizing = "right";
-         vertSizing = "bottom";
-         profile = "GuiCheckBoxProfile";
-         visible = "1";
-         active = "1";
-         variable = "$pref::Server::Multiplayer";
-         tooltipProfile = "GuiToolTipProfile";
-         hovertime = "1000";
-         isContainer = "0";
-         canSave = "1";
-         canSaveDynamicFields = "0";
-      };
       new GuiPopUpMenuCtrl(CL_LevelType) {
          maxPopupHeight = "200";
          sbUsesNAColor = "0";
@@ -324,7 +286,7 @@
          anchorLeft = "1";
          anchorRight = "0";
          position = "282 115";
-         extent = "156 25";
+         extent = "220 25";
          minExtent = "127 23";
          horizSizing = "right";
          vertSizing = "bottom";
@@ -393,6 +355,44 @@
          visible = "1";
          active = "1";
          command = "toggleServerOptionsDlg();";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiBitmapCtrl() {
+         bitmap = "art/gui/hudfillx3.png";
+         color = "255 255 255 255";
+         wrap = "0";
+         position = "530 114";
+         extent = "88 20";
+         minExtent = "8 2";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiDefaultProfile";
+         visible = "1";
+         active = "1";
+         tooltipProfile = "GuiToolTipProfile";
+         hovertime = "1000";
+         isContainer = "0";
+         canSave = "1";
+         canSaveDynamicFields = "0";
+      };
+      new GuiCheckBoxCtrl(CL_isMultiplayer) {
+         text = "Multiplayer";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         position = "532 112";
+         extent = "87 25";
+         minExtent = "8 8";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         profile = "GuiCheckBoxProfile";
+         visible = "1";
+         active = "1";
+         variable = "$pref::Server::Multiplayer";
          tooltipProfile = "GuiToolTipProfile";
          hovertime = "1000";
          isContainer = "0";

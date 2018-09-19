@@ -16,7 +16,7 @@
    isContainer = "1";
    canSave = "1";
    canSaveDynamicFields = "1";
-      SFXSource = "24843";
+      SFXSource = "22214";
 
    new GuiBitmapCtrl(LOAD_MapPic) {
       color = "255 255 255 255";
@@ -131,7 +131,7 @@
             matchColor = "0 0 255 255";
             maxColorIndex = "9";
             position = "2 2";
-            extent = "1020 48";
+            extent = "1020 16";
             minExtent = "12 12";
             horizSizing = "relative";
             vertSizing = "relative";
@@ -211,7 +211,7 @@
       maxChars = "-1";
       useURLMouseCursor = "0";
       position = "8 480";
-      extent = "360 14";
+      extent = "400 14";
       minExtent = "8 8";
       horizSizing = "right";
       vertSizing = "top";

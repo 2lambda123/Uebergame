@@ -152,7 +152,7 @@ function getRandomHintText(%text)
    %list.add("28", "When hosting a game, check out the 'Server Options' there are lots of things you can change to host your own custom matches");
    %list.add("29", "The game runs sluggish even though you have a powerful PC? Then your ping may be too high, this is when you live too far away from the location the server is in, this is a physical limitation and not the game's fault");
    %list.add("30", "You can create server sided mods with Uebergame edit files in scripts/server and when you host a server, the changes will be in effect for all players, no need to download any files for the others, take care to not break the game though");
-   %list.add("31", "Right click will aim your weapon, you will shoot more accurate in that mode, you get some zoom, but you cannot sprint, reload, jump etc it also takes a while dependend on weapon until you are read to fire again");
+   %list.add("31", "Right click will aim your weapon, you will shoot more accurate in that mode, you get some zoom, but you cannot sprint, reload, jump etc it also takes a while dependend on weapon until you are ready to fire again");
    %list.add("32", "Pressing 'ctrl k' and you will commit suicide, helpful if you are stuck or fallen into the void alternatively there is also a button in the Armory dialog for it ");
    %list.add("33", "The editor allows you to edit levels in realtime, even when people are playing on it on your server, but be careful, changing some things may crash the game, but most features are relatively safe to use.");
    %list.add("34", "If you are bad at the game, you should train more, practice makes a master");

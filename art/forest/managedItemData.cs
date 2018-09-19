@@ -270,7 +270,7 @@ datablock TSForestItemData(thintree_01_b)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.1";
+   radius = "0.2";
 };
 
 datablock TSForestItemData(thintree_01_c)
@@ -282,7 +282,7 @@ datablock TSForestItemData(thintree_01_c)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.2";
+   radius = "0.3";
 };
 
 datablock TSForestItemData(thintree_01_a)
@@ -294,7 +294,7 @@ datablock TSForestItemData(thintree_01_a)
    branchAmp = "0.1";
    detailAmp = "0.1";
    detailFreq = "0.1";
-   radius = "0.1";
+   radius = "0.2";
 };
 
 datablock TSForestItemData(deadbush_01_a)
@@ -459,14 +459,14 @@ datablock TSForestItemData(cedar_01_12m_a_dead)
 {
    internalName = "cedar_01_12m_a_dead";
    shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_12m_a_dead.dts";
-   windScale = "0";
+   windScale = "0.5";
 };
 
 datablock TSForestItemData(cedar_01_15m_a_dead)
 {
    internalName = "cedar_01_15m_a_dead";
    shapeFile = "art/shapes/trees/cedar/cedar_01/cedar_01_15m_a_dead.dts";
-   windScale = "0";
+   windScale = "0.5";
 };
 
 datablock TSForestItemData(cedar_01_stump_a)
