@@ -103,13 +103,11 @@ function clientCmdSetHudMode(%mode)
    clientCmdHideReticle();
    clientDeploySensorOff();
    objectiveHud.setVisible(false);
-   TargetHud.setVisible(false); //toggle for debug reasons, set to false later again
 
    switch$( $HudMode )
    {
       case "Spectator":
          HudClock.setVisible(true);
-         TargetHud.setVisible(true);
 
       case "HudTest":
          ClusterHud.setVisible(true);

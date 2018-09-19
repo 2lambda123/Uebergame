@@ -321,35 +321,6 @@
          canSaveDynamicFields = "0";
       };
    };
-   new GuiShapeNameHud(TargetHud) {
-      fillColor = "0 0 0 0.25";
-      frameColor = "1 1 1 1";
-      textColor = "0 1 0 1";
-      labelFillColor = "0.25 0.25 0.25 0.25";
-      labelFrameColor = "0 1 0 1";
-      enemyTextColor = "1 0 0 1";
-      neutralTextColor = "1 1 1 1";
-      showFill = "0";
-      showFrame = "0";
-      showLabelFill = "0";
-      showLabelFrame = "0";
-      labelPadding = "0 0";
-      verticalOffset = "1";
-      distanceFade = "0.1";
-      position = "0 0";
-      extent = "1024 768";
-      minExtent = "640 480";
-      horizSizing = "width";
-      vertSizing = "height";
-      profile = "GuiShapeNameProfile";
-      visible = "1";
-      active = "1";
-      tooltipProfile = "GuiToolTipProfile";
-      hovertime = "1000";
-      isContainer = "0";
-      canSave = "1";
-      canSaveDynamicFields = "1";
-   };
    new GuiCrossHairHud(reticle) {
       damageFillColor = "1 1 1 1";
       damageFrameColor = "1 1 1 1";
