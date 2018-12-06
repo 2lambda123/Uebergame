@@ -338,10 +338,10 @@ datablock TSForestItemData(birch_01_b)
    internalName = "birch_01_b";
    shapeFile = "art/shapes/trees/birch/birch_01/birch_01_b.dts";
    windScale = "1";
-   trunkBendScale = "0.015";
+   trunkBendScale = "0.01";
    branchAmp = "0.05";
-   detailAmp = "0.1";
-   detailFreq = "0.1";
+   detailAmp = "0.08";
+   detailFreq = "0.05";
 };
 
 datablock TSForestItemData(birch_01_c)
@@ -349,10 +349,10 @@ datablock TSForestItemData(birch_01_c)
    internalName = "birch_01_c";
    shapeFile = "art/shapes/trees/birch/birch_01/birch_01_c.dts";
    windScale = "1";
-   trunkBendScale = "0.015";
+   trunkBendScale = "0.01";
    branchAmp = "0.05";
-   detailAmp = "0.1";
-   detailFreq = "0.1";
+   detailAmp = "0.08";
+   detailFreq = "0.05";
 };
 
 datablock TSForestItemData(birch_01_d)
@@ -360,10 +360,10 @@ datablock TSForestItemData(birch_01_d)
    internalName = "birch_01_d";
    shapeFile = "art/shapes/trees/birch/birch_01/birch_01_d.dts";
    windScale = "1";
-   trunkBendScale = "0.015";
+   trunkBendScale = "0.01";
    branchAmp = "0.05";
-   detailAmp = "0.1";
-   detailFreq = "0.1";
+   detailAmp = "0.08";
+   detailFreq = "0.05";
 };
 
 datablock TSForestItemData(birch_01_a)
@@ -371,10 +371,10 @@ datablock TSForestItemData(birch_01_a)
    internalName = "birch_01_a";
    shapeFile = "art/shapes/trees/birch/birch_01/birch_01_a.dts";
    windScale = "1";
-   trunkBendScale = "0.015";
+   trunkBendScale = "0.01";
    branchAmp = "0.05";
-   detailAmp = "0.1";
-   detailFreq = "0.1";
+   detailAmp = "0.08";
+   detailFreq = "0.05";
 };
 
 datablock TSForestItemData(bigleaf_01_a)

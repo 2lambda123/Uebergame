@@ -70,12 +70,12 @@ new TerrainMaterial()
 {
    diffuseMap = "art/terrains/asphalt/ter_asphalt_decay_01_B";
    diffuseSize = "250";
-   detailStrength = "2";
+   detailStrength = "1.5";
    detailDistance = "100";
    macroMap = "art/terrains/asphalt/ter_asphalt_decay_01_D";
-   macroSize = "42";
+   macroSize = "38";
    internalName = "ter_asphalt_decay_01";
-   macroStrength = "0.5";
+   macroStrength = "0.8";
    detailSize = "4";
    parallaxScale = "0.04";
    detailMap = "art/terrains/asphalt/ter_asphalt_decay_01_D";

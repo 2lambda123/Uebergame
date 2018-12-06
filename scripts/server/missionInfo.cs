@@ -158,16 +158,22 @@ function getRandomHintText(%text)
    %list.add("34", "If you are bad at the game, you should train more, practice makes a master");
    %list.add("35", "If you can beat the Bots then you qualify as skilled");
    %list.add("36", "Uebergame is primarily a multiplayer game, 'multi' comes from latin and means 'many', so it means it is a game played by many, so invite some friends for the best experience");
-   %list.add("37", "Game experience my change during online play");
+   %list.add("37", "Game experience may change during online play");
    %list.add("38", "Gameplay experience depends primarily on the people you play with");
    %list.add("39", "Game will need players to work");
    %list.add("40", "If you are out of ammo in battle, sometimes it may be quicker to switch to the pistol and finishing of the enemy before reloading");
    %list.add("41", "Try out the different kind of grenades you can chose in the armory");
    %list.add("42", "Try out the different kind special abilities in the armory 'Munitions' lets you drop ammo packs and 'Medical' lets you drop medpacks. Those abilities are meant to be some kind of class system, but there are only two yet");
-   %list.add("43", "Game will need players to work");
-   %list.add("44", "No hipsters were used in the production of Uebergame");
-   %list.add("45", "Anything is possible in Uebergame, the only limit is yourself");
-   %list.add("46", "Anything is possible in Uebergame, the only limit is your imagination");
+   %list.add("43", "Anything is possible in Uebergame, the only limit is yourself");
+   %list.add("44", "Anything is possible in Uebergame, the only limit is your imagination");  
+   %list.add("45", "No hipsters were used in the production of Uebergame");
+   %list.add("46", "This game is developed by not real game developers");
+   %list.add("47", "This game is not developed by real game developers");
+   %list.add("48", "This is not a game");
+   %list.add("49", "This game is not intended to be a game");
+   %list.add("50", "The developer is just a troll and not a developer");
+   %list.add("51", "This game has never been developed");
+
    
    %random = getRandom(0, 46);
    %text = %list.getValue(%random);

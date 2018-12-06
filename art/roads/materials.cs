@@ -46,19 +46,19 @@ singleton Material(Mat_road_asphalt_small_01)
    mapTo = "road_asphalt_small_01";
    diffuseMap[0] = "art/roads/road_asphalt_small_01_D.dds";
    materialTag0 = "RoadAndPath";
-   normalMap[0] = "art/roads/road_asphalt_small_01_N.dds";
    specularPower[0] = "1";
    specularStrength[0] = "0.5";
-   specularMap[0] = "art/roads/road_asphalt_small_01_S.dds";
    useAnisotropic[0] = "1";
-   alphaTest = "0";
-   alphaRef = "128";
+   alphaTest = "1";
+   alphaRef = "64";
    showFootprints = "0";
    footstepSoundId = "0";
    impactSoundId = "0";
-   translucent = "1";
+   translucent = "0";
    translucentZWrite = "1";
-   castShadows = "0";
+   castShadows = "1";
+   normalMap[0] = "art/roads/road_asphalt_small_01_N.dds";
+   specularMap[0] = "art/roads/road_asphalt_small_01_S.dds";
 };
 
 singleton Material(Mat_road_asphalt_stripes_01)
@@ -66,21 +66,21 @@ singleton Material(Mat_road_asphalt_stripes_01)
    mapTo = "road_asphalt_stripes_01";
    diffuseMap[0] = "art/roads/road_asphalt_stripes_01_D.dds";
    materialTag0 = "RoadAndPath";
-   normalMap[0] = "art/roads/road_asphalt_stripes_01_N.dds";
-   specularMap[0] = "art/roads/road_asphalt_stripes_01_S.dds";
    useAnisotropic[0] = "1";
    castShadows = "0";
    translucentBlendOp = "LerpAlpha";
-   alphaTest = "0";
-   alphaRef = "128";
+   alphaTest = "1";
+   alphaRef = "64";
    showFootprints = "0";
    footstepSoundId = "0";
    impactSoundId = "0";
    specularPower[0] = "1";
    specularStrength[0] = "0.5";
    effectColor[0] = "InvisibleBlack";
-   translucent = "1";
+   translucent = "0";
    translucentZWrite = "1";
+   normalMap[0] = "art/roads/road_asphalt_stripes_01_N.dds";
+   specularMap[0] = "art/roads/road_asphalt_stripes_01_S.dds";
 };
 
 singleton Material(Mat_road_sand_01)
@@ -98,8 +98,26 @@ singleton Material(Mat_road_sand_01)
    materialTag0 = "RoadAndPath";
    translucent = "1";
    castShadows = "0";
-   normalMap[0] = "art/roads/road_sand_01_N.dds";
-   specularMap[0] = "art/roads/road_sand_01_S.dds";
+   specular[2] = "1 1 1 1";
+   accuSpecular[0] = "0.9";
+   translucentZWrite = "1";
+};
+
+singleton Material(Mat_road_sand_01_wet)
+{
+   mapTo = "road_sand_01_wet";
+   diffuseMap[0] = "art/roads/road_sand_01_wet_D.dds";
+   specularPower[0] = "8";
+   specularStrength[0] = "1";
+   useAnisotropic[0] = "1";
+   alphaTest = "0";
+   alphaRef = "0";
+   showFootprints = "1";
+   footstepSoundId = "1";
+   impactSoundId = "1";
+   materialTag0 = "RoadAndPath";
+   translucent = "1";
+   castShadows = "0";
    specular[2] = "1 1 1 1";
    accuSpecular[0] = "0.9";
    translucentZWrite = "1";

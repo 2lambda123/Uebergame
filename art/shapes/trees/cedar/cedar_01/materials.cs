@@ -29,4 +29,5 @@ singleton Material(Mat_cedar_01_bark)
    translucentBlendOp = "None";
    diffuseMap[0] = "art/shapes/trees/cedar/cedar_01/cedar_01_bark_D.dds";
    normalMap[0] = "art/shapes/trees/cedar/cedar_01/cedar_01_bark_N.dds";
+   footstepSoundId = "0";
 };
