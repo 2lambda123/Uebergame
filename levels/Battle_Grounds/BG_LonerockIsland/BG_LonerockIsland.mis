@@ -1301,7 +1301,7 @@ new SimGroup(MissionGroup) {
                outdoorWeight = "1";
                isAIControlled = "0";
                dataBlock = "SpawnSphereMarker";
-               position = "519.384 615.713 140.917";
+               position = "517.639 617.201 140.917";
                rotation = "1 0 0 0";
                scale = "1 1 1";
                canSave = "1";

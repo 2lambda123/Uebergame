@@ -239,7 +239,7 @@ datablock ShapeBaseImageData(SniperRifleWeaponImage)
    projectile = SniperProjectile;
    underWaterProjectile = SniperUnderWaterProjectile;
    projectileType = Projectile;
-   projectileSpread = 0.02;
+   projectileSpread = 0.015;
 
    //altProjectile = GrenadeLauncherProjectile;
    //altProjectileSpread = "0.02";
